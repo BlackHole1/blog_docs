@@ -1,0 +1,759 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>journald.conf</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><a name="journald.conf" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a><div class="titlepage" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></div><div class="refnamediv" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><h2 data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">journald.conf, journald.conf.d, journald@.conf — Journal service configuration files<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">journald.conf，journald.conf.d，journald@.conf — 日志服务配置文件</font></font></font></p></div><div class="refsynopsisdiv" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><h2 data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Synopsis<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h2><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/journald.conf</code></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/journald.conf.d/*.conf</code></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/systemd/journald.conf.d/*.conf</code></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/lib/systemd/journald.conf.d/*.conf</code></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/journald@<em class="replaceable"><code>NAMESPACE</code></em>.conf</code></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/journald@<em class="replaceable"><code>NAMESPACE</code></em>.conf.d/*.conf</code></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/systemd/journald@<em class="replaceable"><code>NAMESPACE</code></em>.conf.d/*.conf</code></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/lib/systemd/journald@<em class="replaceable"><code>NAMESPACE</code></em>.conf.d/*.conf</code></p></div><div class="refsect1" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><a name="id-1.5" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a><h2 id="Description" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Description<a class="headerlink" title="Permalink to this headline" href="#Description" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h2><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">These files configure various parameters of the systemd journal service,
+    <a href="systemd-journald.service.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald.service</span>(8)</span></a>.
+    See
+    <a href="systemd.syntax.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.syntax</span>(7)</span></a>
+    for a general description of the syntax.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些文件配置了 systemd 日志服务的各种参数，systemd-journald.service(8)。有关语法的一般描述，请参阅 systemd.syntax(7)。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">The <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald</strong></span> instance managing the default namespace is configured by
+    <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/journald.conf</code> and associated drop-ins. Instances managing other
+    namespaces read <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/journald@<em class="replaceable"><code>NAMESPACE</code></em>.conf</code>
+    and associated drop-ins with the namespace identifier filled in. This allows each namespace to carry
+    a distinct configuration. See
+    <a href="systemd-journald.service.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald.service</span>(8)</span></a>
+    for details about journal namespaces.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">管理默认命名空间的 systemd-journald 实例由 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/journald.conf</code> 和相关的附加配置文件配置。管理其他命名空间的实例读取 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/journald@<em class="replaceable"><code>NAMESPACE</code></em>.conf</code> 和相关的附加配置文件，其中填入了命名空间标识符。这允许每个命名空间携带不同的配置。有关日志命名空间的详细信息，请参阅 systemd-journald.service(8)。</font></font></font></p></div><div class="refsection" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><a name="main-conf" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a><h2 data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Configuration Directories and Precedence<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配置目录和优先级</font></font></font></h2><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">The default configuration is set during compilation, so configuration is only needed when it is
+    necessary to deviate from those defaults. The main configuration file is either in
+    <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/lib/systemd/</code> or <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/</code> and contains commented out
+    entries showing the defaults as a guide to the administrator. Local overrides can be created by creating
+    drop-ins, as described below. The main configuration file can also be edited for this purpose (or a copy
+    in <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/</code> if it's shipped in <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/</code>) however using drop-ins for
+    local configuration is recommended over modifications to the main configuration file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认配置是在编译期间设置的，因此只有在需要偏离这些默认设置时才需要配置。主配置文件位于 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/lib/systemd/</code> 或 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/</code> 中，其中包含已注释掉的条目，显示默认设置，供管理员参考。可以通过创建 drop-ins 来创建本地覆盖，如下所述。也可以编辑主配置文件以实现此目的（或者如果它在 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/</code> 中提供，则可以在 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/</code> 中提供副本），但是建议使用 drop-ins 来进行本地配置，而不是修改主配置文件。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">In addition to the "main" configuration file, drop-in configuration snippets are read from
+    <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/lib/systemd/*.conf.d/</code>, <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/local/lib/systemd/*.conf.d/</code>,
+    and <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/*.conf.d/</code>. Those drop-ins have higher precedence and override the
+    main configuration file. Files in the <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">*.conf.d/</code> configuration subdirectories are
+    sorted by their filename in lexicographic order, regardless of in which of the subdirectories they
+    reside. When multiple files specify the same option, for options which accept just a single value, the
+    entry in the file sorted last takes precedence, and for options which accept a list of values, entries
+    are collected as they occur in the sorted files.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">除了“主”配置文件外，还会从 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/lib/systemd/*.conf.d/</code> 、 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/local/lib/systemd/*.conf.d/</code> 和 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/systemd/*.conf.d/</code> 中读取附加配置片段。这些附加配置片段具有更高的优先级，并会覆盖主配置文件。 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">*.conf.d/</code> 配置子目录中的文件将按字典顺序排序，而不管它们位于哪个子目录中。当多个文件指定相同选项时，对于只接受单个值的选项，最后排序的文件中的条目优先，并且对于接受值列表的选项，条目将按照排序后的文件中出现的顺序收集。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">When packages need to customize the configuration, they can install drop-ins under
+    <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/</code>. Files in <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/</code> are reserved for the local administrator,
+    who may use this logic to override the configuration files installed by vendor packages. Drop-ins have to
+    be used to override package drop-ins, since the main configuration file has lower precedence. It is
+    recommended to prefix all filenames in those subdirectories with a two-digit number and a dash, to
+    simplify the ordering of the files. This also defined a concept of drop-in priority to allow
+    distributions to ship drop-ins within a specific range lower than the range used by users. This should
+    lower the risk of package drop-ins overriding accidentally drop-ins defined by users.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当软件包需要自定义配置时，它们可以在 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/usr/</code> 下安装附加文件。 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/</code> 中的文件保留给本地管理员使用，管理员可以使用此逻辑来覆盖供应商软件包安装的配置文件。必须使用附加文件来覆盖软件包的附加文件，因为主配置文件的优先级较低。建议在这些子目录中的所有文件名前加上两位数字和一个破折号，以简化文件的排序。这还定义了一个附加文件优先级的概念，允许发行版在用户使用的范围之下的特定范围内提供附加文件。这应该降低软件包的附加文件意外覆盖用户定义的附加文件的风险。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">To disable a configuration file supplied by the vendor, the recommended way is to place a symlink
+    to <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/dev/null</code> in the configuration directory in <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/</code>, with the
+    same filename as the vendor configuration file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">要禁用供应商提供的配置文件，推荐的方法是在 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/etc/</code> 的配置目录中放置一个指向 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/dev/null</code> 的符号链接，与供应商配置文件具有相同的文件名。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><a name="id-1.7" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a><h2 id="Options" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Options<a class="headerlink" title="Permalink to this headline" href="#Options" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h2><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">All options are configured in the
+    [Journal] section:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">所有选项都在 [Journal] 部分中配置：</font></font></font></p><div class="variablelist" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><dl class="variablelist" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><dt id="Storage=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Storage=</code></span><a class="headerlink" title="Permalink to this term" href="#Storage=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Controls where to store journal data. One of "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">persistent</code>", "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">auto</code>" and "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">none</code>". If
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code>", journal log data will be stored only in memory, i.e. below the
+        <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/log/journal</code> hierarchy (which is created if needed). If
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">persistent</code>", data will be stored preferably on disk, i.e. below the
+        <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal</code> hierarchy (which is created if needed), with a fallback to
+        <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/log/journal</code> (which is created if needed), during early boot and if the disk
+        is not writable. "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">auto</code>" behaves like "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">persistent</code>" if the
+        <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal</code> directory exists, and "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code>" otherwise
+        (the existence of the directory controls the storage mode). "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">none</code>" turns off all
+        storage, all log data received will be dropped (but forwarding to other targets, such as the console,
+        the kernel log buffer, or a syslog socket will still work). Defaults to "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">auto</code>" in
+        the default journal namespace, and "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">persistent</code>" in all others.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">控制日志数据存储位置。其中之一为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code> "，" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">persistent</code> "，" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">auto</code> " 和 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">none</code> "。如果为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code> "，则日志数据将仅存储在内存中，即在 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/log/journal</code> 层次结构下（如果需要会创建）。如果为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">persistent</code> "，数据将优先存储在磁盘上，即在 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal</code> 层次结构下（如果需要会创建），在早期引导和磁盘不可写时会回退到 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/log/journal</code> （如果需要会创建）。如果 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">auto</code> " 的行为类似于 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">persistent</code> "，如果 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal</code> 目录存在，则行为类似于 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code> "（目录的存在控制存储模式）。" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">none</code> " 关闭所有存储，所有接收到的日志数据将被丢弃（但转发到其他目标，如控制台、内核日志缓冲区或 syslog 套接字仍将正常工作）。默认为默认日志命名空间中的 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">auto</code> "，在其他所有命名空间中为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">persistent</code> "。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Note that journald will initially use volatile storage, until a call to
+        <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">journalctl --flush</strong></span> (or sending <code class="constant" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SIGUSR1</code> to journald) will cause
+        it to switch to persistent logging (under the conditions mentioned above). This is done automatically
+        on boot via "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journal-flush.service</code>".<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，journald 最初将使用易失性存储，直到调用 journalctl --flush（或向 journald 发送 <code class="constant" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SIGUSR1</code> ）将导致其切换到持久日志记录（在上述条件下）。这在引导时通过 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journal-flush.service</code> " 自动完成。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Note that when this option is changed to "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code>", existing persistent data
+        is not removed. In the other direction,
+        <a href="journalctl.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">journalctl</span>(1)</span></a> with
+        the <code class="option" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">--flush</code> option may be used to move volatile data to persistent storage.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，当将此选项更改为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code> " 时，现有的持久数据不会被删除。在另一个方向上，可以使用带有 <code class="option" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">--flush</code> 选项的 journalctl(1) 将易失性数据移动到持久存储中。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">When journal namespacing (see <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogNamespace=</code> in
+        <a href="systemd.exec.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.exec</span>(5)</span></a>) is
+        used, setting <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Storage=</code> to "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code>" or "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">auto</code>"
+        will not have an effect on the creation of the per-namespace logs directory in
+        <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal/</code>, as the <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald@.service</code> service
+        file by default carries <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogsDirectory=</code>. To turn that off, add a unit file drop-in
+        file that sets <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogsDirectory=</code> to an empty string.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当使用日志命名空间（请参阅 systemd.exec(5) 中的 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogNamespace=</code> ）时，将 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Storage=</code> 设置为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">volatile</code> " 或 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">auto</code> " 将不会影响在 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal/</code> 中创建每个命名空间日志目录的过程，因为 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald@.service</code> 服务文件默认携带 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogsDirectory=</code> 。要关闭该功能，请添加一个单元文件附加文件，将 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogsDirectory=</code> 设置为空字符串。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Note that per-user journal files are not supported unless persistent storage is enabled, thus
+        making <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">journalctl --user</strong></span> unavailable.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，除非启用了持久存储，否则不支持每个用户的日志文件，因此使 journalctl --user 不可用。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v186" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 186.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 186 中。</font></font></font></p></dd><dt id="Compress=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Compress=</code></span><a class="headerlink" title="Permalink to this term" href="#Compress=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Can take a boolean value. If enabled (the
+        default), data objects that shall be stored in the journal
+        and are larger than the default threshold of 512 bytes are
+        compressed before they are written to the file system. It
+        can also be set to a number of bytes to specify the
+        compression threshold directly. Suffixes like K, M, and G
+        can be used to specify larger units.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">可以采用布尔值。如果启用（默认情况下），要存储在日志中且大于默认阈值 512 字节的数据对象在写入文件系统之前会被压缩。也可以设置为字节数以直接指定压缩阈值。可以使用 K、M 和 G 等后缀来指定更大的单位。</font></font></font></p></dd><dt id="Seal=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Seal=</code></span><a class="headerlink" title="Permalink to this term" href="#Seal=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Takes a boolean value. If enabled (the
+        default), and a sealing key is available (as created by
+        <a href="journalctl.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">journalctl</span>(1)</span></a>'s
+        <code class="option" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">--setup-keys</code> command), Forward Secure Sealing
+        (FSS) for all persistent journal files is enabled. FSS is
+        based on <a class="ulink" href="https://eprint.iacr.org/2013/397" target="_top" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Seekable Sequential Key
+        Generators</a> by G. A. Marson and B. Poettering
+        (doi:10.1007/978-3-642-40203-6_7) and may be used to protect
+        journal files from unnoticed alteration.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受布尔值。如果启用（默认情况下），并且存在密封密钥（如由 journalctl(1)的 <code class="option" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">--setup-keys</code> 命令创建），则为所有持久性日志文件启用前向安全密封（FSS）。FSS 基于 G. A. Marson 和 B. Poettering 的可寻址顺序密钥生成器（doi:10.1007/978-3-642-40203-6_7），可用于保护日志文件免受未经注意的更改。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v189" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 189.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 189 中。</font></font></font></p></dd><dt id="SplitMode=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SplitMode=</code></span><a class="headerlink" title="Permalink to this term" href="#SplitMode=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Controls whether to split up journal files per user, either "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">uid</code>" or
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">none</code>". Split journal files are primarily useful for access control: on UNIX/Linux access
+        control is managed per file, and the journal daemon will assign users read access to their journal files. If
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">uid</code>", all regular users (with UID outside the range of system users, dynamic service users,
+        and the nobody user) will each get their own journal files, and system users will log to the system journal.
+        See <a class="ulink" href="https://systemd.io/UIDS-GIDS" target="_top" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Users, Groups, UIDs and GIDs on systemd systems</a>
+        for more details about UID ranges.
+        If "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">none</code>", journal files are not split up by user and all messages are
+        instead stored in the single system journal. In this mode unprivileged users generally do not have access to
+        their own log data. Note that splitting up journal files by user is only available for journals stored
+        persistently. If journals are stored on volatile storage (see <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Storage=</code> above), only a single
+        journal file is used. Defaults to "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">uid</code>".<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">控制是否按用户拆分日志文件，可以是“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">uid</code> ”或“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">none</code> ”。拆分的日志文件主要用于访问控制：在 UNIX/Linux 上，访问控制是按文件管理的，日志守护程序将为用户分配对其日志文件的读取权限。如果是“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">uid</code> ”，则所有常规用户（UID 在系统用户、动态服务用户和 nobody 用户范围之外）将各自获得自己的日志文件，并且系统用户将记录到系统日志中。有关 UID 范围的更多详细信息，请参阅 systemd 系统上的用户、组、UID 和 GID。如果是“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">none</code> ”，则不按用户拆分日志文件，而是将所有消息存储在单个系统日志中。在此模式下，普通用户通常无法访问自己的日志数据。请注意，仅当日志持久存储时，才可以按用户拆分日志文件。如果日志存储在易失性存储上（请参阅上文 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Storage=</code> ），则仅使用单个日志文件。默认为“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">uid</code> ”。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v190" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 190.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 190 中。</font></font></font></p></dd><dt id="RateLimitIntervalSec=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitIntervalSec=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitBurst=</code></span><a class="headerlink" title="Permalink to this term" href="#RateLimitIntervalSec=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitIntervalSec=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitBurst=</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Configures the rate limiting that is applied
+        to all messages generated on the system. If, in the time
+        interval defined by <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitIntervalSec=</code>,
+        more messages than specified in
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitBurst=</code> are logged by a service,
+        all further messages within the interval are dropped until the
+        interval is over. A message about the number of dropped
+        messages is generated. This rate limiting is applied
+        per-service, so that two services which log do not interfere
+        with each other's limits. Defaults to 10000 messages in 30s.
+        The time specification for
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitIntervalSec=</code> may be specified in the
+        following units: "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">s</code>", "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">min</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">h</code>", "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ms</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">us</code>". To turn off any kind of rate limiting,
+        set either value to 0.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配置应用于系统上生成的所有消息的速率限制。如果在由 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitIntervalSec=</code> 定义的时间间隔内，某个服务记录的消息数量超过 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitBurst=</code> 指定的数量，则在该时间间隔内进一步记录的所有消息都将被丢弃，直到时间间隔结束。将生成有关已丢弃消息数量的消息。此速率限制是针对每个服务应用的，因此记录日志的两个服务不会干扰彼此的限制。默认为 30 秒内的 10000 条消息。 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitIntervalSec=</code> 的时间规范可以用以下单位指定：" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">s</code> "，" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">min</code> "，" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">h</code> "，" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ms</code> "，" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">us</code> "。要关闭任何类型的速率限制，请将任一值设置为 0。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Note that the effective rate limit is multiplied by a
+        factor derived from the available free disk space for the journal.
+        Currently, this factor is calculated using the base 2 logarithm.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，有效的速率限制会乘以一个根据日志可用空间计算的因子。目前，此因子是使用底数为 2 的对数计算的。</font></font></font></p><div class="table" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><a name="id-1.7.3.5.3.3" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a><p class="title" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><b data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Table&nbsp;1.&nbsp;Example <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitBurst=</code> rate
+            modifications by the available disk space<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">表 1。根据可用磁盘空间的示例 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RateLimitBurst=</code> 速率修改</font></font></font></b></p><div class="table-contents" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><table class="table" summary="Example RateLimitBurst= rate
+            modifications by the available disk space" border="1" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><colgroup data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><col class="freespace" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><col class="multiplier" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></colgroup><thead data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><tr data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><th data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Available Disk Space<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">可用磁盘空间</font></font></font></th><th data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Burst Multiplier<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">爆发乘数</font></font></font></th></tr></thead><tbody data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><tr data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><td data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">&lt;= 1MB</td><td>1</td></tr><tr data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><td data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">&lt;= 16MB</td><td>2</td></tr><tr data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><td data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">&lt;= 256MB</td><td>3</td></tr><tr data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><td data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">&lt;= 4GB</td><td>4</td></tr><tr data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><td data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">&lt;= 64GB</td><td>5</td></tr><tr data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><td data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">&lt;= 1TB</td><td>6</td></tr></tbody></table></div></div><br class="table-break" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">If a service provides rate limits for itself through
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogRateLimitIntervalSec=</code> and/or <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogRateLimitBurst=</code>
+        in <a href="systemd.exec.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.exec</span>(5)</span></a>,
+        those values will override the settings specified here.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果一个服务通过 systemd.exec(5)中的 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogRateLimitIntervalSec=</code> 和/或 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LogRateLimitBurst=</code> 为自身提供速率限制，则这些值将覆盖此处指定的设置。</font></font></font></p></dd><dt id="SystemMaxUse=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemKeepFree=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFileSize=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFiles=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxUse=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeKeepFree=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxFileSize=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxFiles=</code></span><a class="headerlink" title="Permalink to this term" href="#SystemMaxUse=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemKeepFree=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFileSize=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFiles=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxUse=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeKeepFree=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxFileSize=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxFiles=</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Enforce size limits on the journal files
+        stored. The options prefixed with "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">System</code>"
+        apply to the journal files when stored on a persistent file
+        system, more specifically
+        <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal</code>. The options prefixed
+        with "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Runtime</code>" apply to the journal files
+        when stored on a volatile in-memory file system, more
+        specifically <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/log/journal</code>. The former
+        is used only when <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/</code> is mounted,
+        writable, and the directory
+        <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal</code> exists. Otherwise, only
+        the latter applies. Note that this means that during early
+        boot and if the administrator disabled persistent logging,
+        only the latter options apply, while the former apply if
+        persistent logging is enabled and the system is fully booted
+        up. <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">journalctl</strong></span> and
+        <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald</strong></span> ignore all files with
+        names not ending with "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">.journal</code>" or
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">.journal~</code>", so only such files, located in
+        the appropriate directories, are taken into account when
+        calculating current disk usage.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">强制对存储的日志文件实施大小限制。以“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">System</code> ”为前缀的选项适用于将日志文件存储在持久文件系统上时，更具体地说是 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal</code> 。以“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Runtime</code> ”为前缀的选项适用于将日志文件存储在易失性内存文件系统上时，更具体地说是 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/log/journal</code> 。只有在挂载了 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/</code> 、可写，并且目录 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/var/log/journal</code> 存在时才使用前者。否则，只适用后者。请注意，在早期引导期间，如果管理员禁用了持久记录，只适用后者选项，而如果启用了持久记录并且系统完全启动，则适用前者选项。journalctl 和 systemd-journald 会忽略所有名称不以“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">.journal</code> ”或“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">.journal~</code> ”结尾的文件，因此只有这样的文件，位于适当的目录中时，才会在计算当前磁盘使用量时被考虑。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code> and
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxUse=</code> control how much disk space
+        the journal may use up at most.
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemKeepFree=</code> and
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeKeepFree=</code> control how much disk
+        space systemd-journald shall leave free for other uses.
+        <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald</strong></span> will respect both limits
+        and use the smaller of the two values.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code> 和 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxUse=</code> 控制日志最多可以使用多少磁盘空间。 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemKeepFree=</code> 和 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeKeepFree=</code> 控制 systemd-journald 应为其他用途保留多少磁盘空间。systemd-journald 将尊重这两个限制，并使用其中较小的值。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">The first pair defaults to 10% and the second to 15% of
+        the size of the respective file system, but each value is
+        capped to 4G. If the file system is nearly full and either
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemKeepFree=</code> or
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeKeepFree=</code> are violated when
+        systemd-journald is started, the limit will be raised to the
+        percentage that is actually free. This means that if there was
+        enough free space before and journal files were created, and
+        subsequently something else causes the file system to fill up,
+        journald will stop using more space, but it will not be
+        removing existing files to reduce the footprint again,
+        either. Also note that only archived files are deleted to reduce the
+        space occupied by journal files. This means that, in effect, there might
+        still be more space used than <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code> or
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxUse=</code> limit after a vacuuming operation is
+        complete.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">第一对默认为各自文件系统大小的 10％，第二对为 15％，但每个值都被限制在 4G。如果文件系统几乎满了，并且在启动 systemd-journald 时违反了 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemKeepFree=</code> 或 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeKeepFree=</code> ，则限制将提高到实际空闲的百分比。这意味着如果之前有足够的空闲空间并创建了日志文件，随后其他原因导致文件系统填满，journald 将停止使用更多空间，但也不会删除现有文件以再次减少占用空间。还请注意，仅删除已存档文件以减少日志文件占用的空间。这意味着实际上，在清理操作完成后，可能仍然使用比 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code> 或 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxUse=</code> 限制更多的空间。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFileSize=</code> and <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxFileSize=</code> control how
+        large individual journal files may grow at most. This influences the granularity in which disk space
+        is made available through rotation, i.e. deletion of historic data. Defaults to one eighth of the
+        values configured with <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code> and <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxUse=</code> capped
+        to 128M, so that usually seven rotated journal files are kept as history. If the journal compact 
+        mode is enabled (enabled by default), the maximum file size is capped to 4G.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFileSize=</code> 和 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxFileSize=</code> 控制单个日志文件的最大增长量。这影响了通过旋转（即删除历史数据）提供磁盘空间的粒度。默认为配置为 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code> 和 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxUse=</code> 的值的八分之一，上限为 128M，因此通常会保留七个旋转的日志文件作为历史记录。如果启用了日志压缩模式（默认启用），则最大文件大小限制为 4G。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Specify values in bytes or use K, M, G, T, P, E as units for the specified sizes (equal to
+        1024, 1024², … bytes). Note that size limits are enforced synchronously when journal files are
+        extended, and no explicit rotation step triggered by time is needed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定以字节为单位的值，或使用 K、M、G、T、P、E 作为指定大小的单位（等于 1024、1024²，...字节）。请注意，当日志文件扩展时，大小限制会同步执行，并且不需要通过时间触发显式的旋转步骤。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFiles=</code> and
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxFiles=</code> control how many
+        individual journal files to keep at most. Note that only
+        archived files are deleted to reduce the number of files until
+        this limit is reached; active files will stay around. This
+        means that, in effect, there might still be more journal files
+        around in total than this limit after a vacuuming operation is
+        complete. This setting defaults to 100.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFiles=</code> 和 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">RuntimeMaxFiles=</code> 控制最多保留多少个单独的日志文件。请注意，仅删除已存档文件以减少文件数量，直到达到此限制为止；活动文件将继续存在。这意味着，在实际效果上，在完全完成清理操作后，可能仍然存在比此限制更多的日志文件。此设置默认为 100。</font></font></font></p></dd><dt id="MaxFileSec=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxFileSec=</code></span><a class="headerlink" title="Permalink to this term" href="#MaxFileSec=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">The maximum time to store entries in a single
+        journal file before rotating to the next one. Normally,
+        time-based rotation should not be required as size-based
+        rotation with options such as
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFileSize=</code> should be sufficient to
+        ensure that journal files do not grow without bounds. However,
+        to ensure that not too much data is lost at once when old
+        journal files are deleted, it might make sense to change this
+        value from the default of one month. Set to 0 to turn off this
+        feature. This setting takes time values which may be suffixed
+        with the units "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">year</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">month</code>", "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">week</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">day</code>", "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">h</code>" or
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">m</code>" to override the default time unit of
+        seconds.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在切换到下一个日志文件之前，单个日志文件中存储条目的最长时间。通常情况下，不应该需要基于时间的旋转，因为基于大小的旋转与选项（如 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxFileSize=</code> ）应该足以确保日志文件不会无限增长。然而，为了确保在删除旧的日志文件时不会一次丢失太多数据，可能有必要将此值从默认值一个月更改。设置为 0 以关闭此功能。此设置采用时间值，可以在后面加上单位" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">year</code> "" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">month</code> "" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">week</code> "" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">day</code> "" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">h</code> "或" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">m</code> "来覆盖默认的时间单位秒。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v195" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 195.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 195 中添加。</font></font></font></p></dd><dt id="MaxRetentionSec=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxRetentionSec=</code></span><a class="headerlink" title="Permalink to this term" href="#MaxRetentionSec=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">The maximum time to store journal entries.
+        This controls whether journal files containing entries older
+        than the specified time span are deleted. Normally, time-based
+        deletion of old journal files should not be required as
+        size-based deletion with options such as
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code> should be sufficient to
+        ensure that journal files do not grow without bounds. However,
+        to enforce data retention policies, it might make sense to
+        change this value from the default of 0 (which turns off this
+        feature). This setting also takes time values which may be
+        suffixed with the units "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">year</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">month</code>", "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">week</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">day</code>", "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">h</code>" or "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">
+        m</code>" to override the default time unit of
+        seconds.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">存储日志条目的最长时间。这控制是否删除包含超过指定时间跨度的条目的日志文件。通常，不应需要基于时间的删除旧日志文件，因为基于大小的删除与选项（如 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SystemMaxUse=</code> ）足以确保日志文件不会无限增长。但是，为了执行数据保留政策，可能有必要将此值从默认值 0（关闭此功能）更改。此设置还接受时间值，可以在后面加上单位“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">year</code> ”、“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">month</code> ”、“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">week</code> ”、“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">day</code> ”、“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">h</code> ”或“ <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">
+        m</code> ”，以覆盖默认的秒时间单位。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v195" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 195.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 195 中。</font></font></font></p></dd><dt id="SyncIntervalSec=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">SyncIntervalSec=</code></span><a class="headerlink" title="Permalink to this term" href="#SyncIntervalSec=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">The timeout before synchronizing journal files
+        to disk. After syncing, journal files are placed in the
+        OFFLINE state. Note that syncing is unconditionally done
+        immediately after a log message of priority CRIT, ALERT or
+        EMERG has been logged. This setting hence applies only to
+        messages of the levels ERR, WARNING, NOTICE, INFO, DEBUG. The
+        default timeout is 5 minutes. <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将日志文件同步到磁盘之前的超时时间。同步后，日志文件将置于离线状态。请注意，仅在记录了优先级为 CRIT、ALERT 或 EMERG 的日志消息后，才会无条件立即执行同步。因此，此设置仅适用于 ERR、WARNING、NOTICE、INFO、DEBUG 级别的消息。默认超时时间为 5 分钟。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v199" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 199.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 199 版本中添加。</font></font></font></p></dd><dt id="ForwardToSyslog=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToSyslog=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToKMsg=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToConsole=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToWall=</code></span><a class="headerlink" title="Permalink to this term" href="#ForwardToSyslog=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToSyslog=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToKMsg=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToConsole=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToWall=</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Control whether log messages received by the journal daemon shall be forwarded to a
+        traditional syslog daemon, to the kernel log buffer (kmsg), to the system console, or sent as wall
+        messages to all logged-in users.  These options take boolean arguments. If forwarding to syslog is
+        enabled but nothing reads messages from the socket, forwarding to syslog has no effect. By default,
+        only forwarding to wall is enabled. These settings may be overridden at boot time with the kernel
+        command line options "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.forward_to_syslog</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.forward_to_kmsg</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.forward_to_console</code>", and
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.forward_to_wall</code>". If the option name is specified without
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">=</code>" and the following argument, true is assumed. Otherwise, the argument is parsed
+        as a boolean.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">控制日志消息是否由日志守护程序转发到传统的 syslog 守护程序，内核日志缓冲区（kmsg），系统控制台，或作为墙消息发送给所有已登录用户。这些选项接受布尔参数。如果启用了转发到 syslog 但没有任何内容从套接字读取消息，则转发到 syslog 没有效果。默认情况下，只启用了转发到墙。这些设置可以在引导时使用内核命令行选项 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.forward_to_syslog</code> ", " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.forward_to_kmsg</code> ", " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.forward_to_console</code> ", 和 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.forward_to_wall</code> " 覆盖。如果未指定选项名称而不带 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">=</code> " 和后续参数，则假定为 true。否则，参数将被解析为布尔值。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">When forwarding to the console, the TTY to log to can be changed with
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">TTYPath=</code>, described below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当转发到控制台时，可以使用下面描述的 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">TTYPath=</code> 更改要记录的 TTY。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">When forwarding to the kernel log buffer (kmsg), make sure to select a suitably large size for
+        the log buffer, for example by adding "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">log_buf_len=8M</code>" to the kernel command line.
+        <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd</strong></span> will automatically disable kernel's rate-limiting applied to userspace
+        processes (equivalent to setting "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">printk.devkmsg=on</code>").<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当转发到内核日志缓冲区（kmsg）时，请确保为日志缓冲区选择适当大的大小，例如通过在内核命令行中添加 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">log_buf_len=8M</code> "。systemd 将自动禁用应用于用户空间进程的内核速率限制（相当于设置 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">printk.devkmsg=on</code> "）。</font></font></font></p></dd><dt id="MaxLevelStore=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelStore=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelSyslog=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelKMsg=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelConsole=</code>, </span><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelWall=</code></span><a class="headerlink" title="Permalink to this term" href="#MaxLevelStore=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelStore=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelSyslog=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelKMsg=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelConsole=</code> ， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelWall=</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Controls the maximum log level of messages
+        that are stored in the journal, forwarded to syslog, kmsg, the
+        console or wall (if that is enabled, see above). As argument,
+        takes one of
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">emerg</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">alert</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">crit</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">err</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">warning</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">notice</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">info</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">debug</code>",
+        or integer values in the range of 0–7 (corresponding to the
+        same levels). Messages equal or below the log level specified
+        are stored/forwarded, messages above are dropped. Defaults to
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">debug</code>" for <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelStore=</code>
+        and <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelSyslog=</code>, to ensure that the all
+        messages are stored in the journal and forwarded to syslog.
+        Defaults to
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">notice</code>" for <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelKMsg=</code>,
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">info</code>" for <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelConsole=</code>,
+        and "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">emerg</code>" for
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelWall=</code>. These settings may be
+        overridden at boot time with the kernel command line options
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_store=</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_syslog=</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_kmsg=</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_console=</code>",
+        "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_wall=</code>".<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">控制存储在日志、转发到 syslog、kmsg、控制台或墙壁（如果启用了的话）中的消息的最大日志级别。作为参数，接受 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">emerg</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">alert</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">crit</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">err</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">warning</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">notice</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">info</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">debug</code> " 中的一个，或者在 0-7 范围内的整数值（对应相同级别）。存储/转发等于或低于指定日志级别的消息，高于该级别的消息将被丢弃。对于 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelStore=</code> 和 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelSyslog=</code> ，默认为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">debug</code> "，以确保所有消息都存储在日志中并转发到 syslog。对于 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelKMsg=</code> ，默认为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">notice</code> "，对于 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelConsole=</code> ，默认为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">info</code> "，对于 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">MaxLevelWall=</code> ，默认为 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">emerg</code> "。这些设置可以在引导时使用内核命令行选项 " <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_store=</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_syslog=</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_kmsg=</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_console=</code> "、" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journald.max_level_wall=</code> " 覆盖。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v185" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 185.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 185 中添加。</font></font></font></p></dd><dt id="ReadKMsg=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ReadKMsg=</code></span><a class="headerlink" title="Permalink to this term" href="#ReadKMsg=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Takes a boolean value. If enabled <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journal</strong></span> processes
+        <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/dev/kmsg</code> messages generated by the kernel. In the default journal namespace
+        this option is enabled by default, it is disabled in all others.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受布尔值。如果启用，systemd-journal 进程会处理内核生成的 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/dev/kmsg</code> 消息。在默认的日志命名空间中，默认情况下启用此选项，在所有其他命名空间中禁用。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v235" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 235.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 235 中添加。</font></font></font></p></dd><dt id="Audit=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Audit=</code></span><a class="headerlink" title="Permalink to this term" href="#Audit=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Takes a boolean value. If enabled <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald</strong></span> will turn on
+        kernel auditing on start-up. If disabled it will turn it off. If unset it will neither enable nor
+        disable it, leaving the previous state unchanged.  This means if another tool turns on auditing even
+        if <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald</strong></span> left it off, it will still collect the generated
+        messages. Defaults to on.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受布尔值。如果启用，systemd-journald 将在启动时打开内核审计。如果禁用，它将关闭它。如果未设置，它既不会启用也不会禁用它，保持先前的状态不变。这意味着如果另一个工具打开了审计，即使 systemd-journald 将其关闭，它仍将收集生成的消息。默认为开启。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Note that this option does not control whether <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald</strong></span> collects
+        generated audit records, it just controls whether it tells the kernel to generate them. If you need
+        to prevent <span class="command" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><strong data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald</strong></span> from collecting the generated messages, the socket
+        unit "<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald-audit.socket</code>" can be disabled and in this case this setting
+        is without effect.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，此选项不控制 systemd-journald 是否收集生成的审计记录，它只控制是否告诉内核生成它们。如果您需要阻止 systemd-journald 收集生成的消息，可以禁用套接字单元" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald-audit.socket</code> "，在这种情况下，此设置将无效。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 246。</font></font></font></p></dd><dt id="TTYPath=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">TTYPath=</code></span><a class="headerlink" title="Permalink to this term" href="#TTYPath=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Change the console TTY to use if
+        <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToConsole=yes</code> is used. Defaults to
+        <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/dev/console</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将控制台 TTY 更改为 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToConsole=yes</code> 使用的 TTY。默认为 <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/dev/console</code> 。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v185" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 185.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 185 中。</font></font></font></p></dd><dt id="LineMax=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">LineMax=</code></span><a class="headerlink" title="Permalink to this term" href="#LineMax=" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a></dt><dd data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">The maximum line length to permit when converting stream logs into record logs. When a systemd
+        unit's standard output/error are connected to the journal via a stream socket, the data read is split into
+        individual log records at newline ("<code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">\n</code>", ASCII 10) and <code class="constant" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">NUL</code> characters. If no such delimiter is
+        read for the specified number of bytes a hard log record boundary is artificially inserted, breaking up overly
+        long lines into multiple log records. Selecting overly large values increases the possible memory usage of the
+        Journal daemon for each stream client, as in the worst case the journal daemon needs to buffer the specified
+        number of bytes in memory before it can flush a new log record to disk. Also note that permitting overly large
+        line maximum line lengths affects compatibility with traditional log protocols as log records might not fit
+        anymore into a single <code class="constant" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">AF_UNIX</code> or <code class="constant" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">AF_INET</code> datagram. Takes a size in
+        bytes. If the value is suffixed with K, M, G or T, the specified size is parsed as Kilobytes, Megabytes,
+        Gigabytes, or Terabytes (with the base 1024), respectively. Defaults to 48K, which is relatively large but
+        still small enough so that log records likely fit into network datagrams along with extra room for
+        metadata. Note that values below 79 are not accepted and will be bumped to 79.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在将流日志转换为记录日志时允许的最大行长度。当 systemd 单元的标准输出/错误通过流套接字连接到日志时，读取的数据在换行符（" <code class="literal" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">\n</code> "，ASCII 10）和 <code class="constant" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">NUL</code> 字符处分割为单独的日志记录。如果在指定的字节数中未读取到这样的分隔符，则会人为地插入硬日志记录边界，将过长的行分割为多个日志记录。选择过大的值会增加每个流客户端的 Journal 守护程序的可能内存使用量，因为在最坏的情况下，Journal 守护程序需要在可以将新的日志记录刷新到磁盘之前在内存中缓冲指定数量的字节。还请注意，允许过大的行最大行长度会影响与传统日志协议的兼容性，因为日志记录可能不再适合单个 <code class="constant" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">AF_UNIX</code> 或 <code class="constant" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">AF_INET</code> 数据报中。以字节为单位。如果值后缀为 K、M、G 或 T，则指定的大小将解析为千字节、兆字节、千兆字节或兆字节（基数为 1024）。 默认为 48K，这相对较大，但仍然足够小，以便日志记录可能与额外的元数据一起适合网络数据报中。请注意，不接受低于 79 的值，将被提升至 79。</font></font></font></p><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1"><a name="v235" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a>Added in version 235.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 235 中添加。</font></font></font></p></dd></dl></div></div><div class="refsect1" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><a name="id-1.8" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a><h2 id="Forwarding to traditional syslog daemons" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">Forwarding to traditional syslog daemons<a class="headerlink" title="Permalink to this headline" href="#Forwarding%20to%20traditional%20syslog%20daemons" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">转发到传统的 syslog 守护程序</font></font></font></h2><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">
+      Journal events can be transferred to a different logging daemon
+      in two different ways. With the first method, messages are
+      immediately forwarded to a socket
+      (<code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/systemd/journal/syslog</code>), where the
+      traditional syslog daemon can read them. This method is
+      controlled by the <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToSyslog=</code> option. With a
+      second method, a syslog daemon behaves like a normal journal
+      client, and reads messages from the journal files, similarly to
+      <a href="journalctl.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">journalctl</span>(1)</span></a>.
+      With this, messages do not have to be read immediately,
+      which allows a logging daemon which is only started late in boot
+      to access all messages since the start of the system. In
+      addition, full structured meta-data is available to it. This
+      method of course is available only if the messages are stored in
+      a journal file at all. So it will not work if
+      <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Storage=none</code> is set. It should be noted that
+      usually the <span class="emphasis" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><em data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">second</em></span> method is used by syslog
+      daemons, so the <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Storage=</code> option, and not the
+      <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToSyslog=</code> option, is relevant for them.
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">日志事件可以以两种不同的方式传输到不同的日志守护程序。通过第一种方法，消息立即转发到一个套接字（ <code class="filename" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">/run/systemd/journal/syslog</code> ），传统的 syslog 守护程序可以从中读取消息。此方法由 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToSyslog=</code> 选项控制。通过第二种方法，syslog 守护程序表现得像一个普通的日志客户端，并从日志文件中读取消息，类似于 journalctl(1)。通过这种方式，消息不必立即被读取，这允许一个仅在引导过程后启动的日志守护程序访问自系统启动以来的所有消息。此外，完整的结构化元数据也对其可用。当然，只有当消息根本存储在日志文件中时，才会提供此方法。因此，如果设置了 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Storage=none</code> ，它将无法工作。应该注意，通常 syslog 守护程序使用第二种方法，因此对它们来说， <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">Storage=</code> 选项而不是 <code class="varname" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">ForwardToSyslog=</code> 选项是相关的。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><a name="id-1.9" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"></a><h2 id="See Also" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">另请参阅 ¶</font></font></font></h2><p data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee" data-immersive-translate-paragraph="1">
+        <a href="systemd.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd</span>(1)</span></a>,
+        <a href="systemd-journald.service.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-journald.service</span>(8)</span></a>,
+        <a href="journalctl.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">journalctl</span>(1)</span></a>,
+        <a href="systemd.journal-fields.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd.journal-fields</span>(7)</span></a>,
+        <a href="systemd-system.conf.html#" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="citerefentry" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee"><span class="refentrytitle" data-immersive-translate-walked="1fb1896c-b737-4712-8dfe-f7898287eaee">systemd-system.conf</span>(5)</span></a>
+      </p></div></div>
+</body></html>

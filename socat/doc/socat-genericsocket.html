@@ -1,0 +1,781 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+<title>Generic sockets with Socat</title>
+<link rel="stylesheet" type="text/css" href="dest-unreach.css">
+
+
+
+
+<h1 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Generic sockets with Socat<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 Socat 的通用套接字</font></font></font></h1>
+
+<h2 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></h2>
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Beginning with version 1.7.0 socat provides means to freely control 
+  important aspects of socket handling. This allows to experiment with socket
+  types and protocols that are not explicitely implemented in socat.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">从版本 1.7.0 开始，socat 提供了自由控制套接字处理的重要方面的手段。这允许尝试在 socat 中未明确实现的套接字类型和协议。</font></font></font></p>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">The related socat features fall into three major categories:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关的 socat 功能分为三大类：</font></font></font></p><p data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+
+</p><ul data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+  <li data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">address options for changing socket parameters while using common 
+    socket types:
+    <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">pf (protocol-family), so-type (socktype), so-prototype (protocol)</tt><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">更改套接字参数的地址选项，同时使用常见的套接字类型： <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">pf (protocol-family), so-type (socktype), so-prototype (protocol)</tt> </font></font></font>
+  </li>
+  <li data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">address options for setting arbitrary socket options:
+    <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">setsockopt-int, setsockopt-string, setsockopt-bin</tt><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为设置任意套接字选项的地址选项: <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">setsockopt-int, setsockopt-string, setsockopt-bin</tt> </font></font></font></li>
+  <li data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">address types for passing almost arbitrary parameters and address data to
+    the standard system calls:
+    <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">socket-connect, socket-listen, socket-sendto, socket-recv,
+      socket-recvfrom, socket-datagram</tt><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">用于将几乎任意参数和地址数据传递给标准系统调用的地址类型: <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">socket-connect, socket-listen, socket-sendto, socket-recv,
+      socket-recvfrom, socket-datagram</tt> </font></font></font></li>
+</ul>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">In practice this gives you two possibilities:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">实际上，这给您两种可能性:</font></font></font></p>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">If you want to cope with sockets staying within the usual domains ( =
+  protocol families = address families) which are IPv4, IPv6, UNIX/local, and
+  raw interface for socat 1.7.0, it is sufficient to learn about a couple of
+  <a href="#GENERIC_OPTIONS" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">address options</a> that allow to change default
+  parameters, and to apply generic socket options.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果您想处理套接字保持在通常的域内（=协议族=地址族），这些域包括 IPv4、IPv6、UNIX/local 和 socat 1.7.0 的原始接口，只需了解一些地址选项即可，这些选项允许更改默认参数，并应用通用套接字选项。</font></font></font></p> 
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">For other address families socat provides <a href="#GENERIC_ADDRESSES" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">generic socket addresses</a>. 
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">对于其他地址族，socat 提供通用套接字地址。</font></font></font></p>
+
+
+<a name="GENERIC_OPTIONS" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></a>
+<h2 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Generic socket options<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通用套接字选项</font></font></font></h2>
+
+<h3 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Example 1: DCCP communication<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 1：DCCP 通信</font></font></font></h3>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">A relatively new communication protocol has been introduced in the Internet
+  community for which no socat address type has been implemented up to version
+  1.7.0
+  (see <a href="http://www.ietf.org/html.charters/dccp-charter.html" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">IETF's
+  Datagram Congestion Control Protocol</a>
+  and <a href="http://www.linuxfoundation.org/en/Net:DCCP#python_support#python_support" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Linux
+  foundation Net:DCCP</a> for more info). Taken that the
+  operating system implements DCCP, it is possible to use this protocol
+  with socat while just employing standard socket addresses and some options.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">一个相对较新的通信协议已经引入互联网社区，截至版本 1.7.0，尚未实现任何 socat 地址类型（请参阅 IETF 的 Datagram Congestion Control Protocol 和 Linux 基金会的 Net:DCCP 了解更多信息）。假设操作系统实现了 DCCP，可以在 socat 中使用此协议，只需使用标准套接字地址和一些选项。</font></font></font></p>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">A simple server that accepts a DCCP connection, passes the arriving data to a
+  subprocess for converting upper case to lower case characters, and then
+  returns it to the client: 
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">一个简单的服务器接受 DCCP 连接，将到达的数据传递给子进程以将大写字符转换为小写字符，然后将其返回给客户端：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><span class="shell" data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+socat TCP4-LISTEN:4096,reuseaddr,type=6,prototype=33 exec:'tr A-Z a-z',pty,raw,echo=0
+</span></span>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">A simple client that sends some upper case characters to the server via DCCP
+  and prints what the server returns:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">一个简单的客户端，通过 DCCP 将一些大写字符发送到服务器，并打印服务器返回的内容：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><span class="shell" data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+echo ABCD |socat - TCP4-CONNECT:localhost:4096,type=6,prototype=33
+</span></span>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">We choose the TCP4 addresses as base because it best matches the DCCP
+  requirements:
+  <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">我们选择 TCP4 地址作为基础，因为它最符合 DCCP 的要求：</font></font></font></p><ol data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+    <li data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">DCCP is (here) based on IPv4<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">DCCP 是基于 IPv4 的</font></font></font></li>
+    <li data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">DCCP is stream oriented and uses <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">connect()</tt> and <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">listen();
+	accept()</tt> calls<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">DCCP 是面向流的，并使用 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">connect()</tt> 和 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">listen();
+	accept()</tt> 调用</font></font></font></li>
+    <li data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">DCCP protocol uses ports<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">DCCP 协议使用端口</font></font></font></li>
+  </ol>
+<p data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></p>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Option <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><a href="socat.html#OPTION_SO_TYPE">type</a>=6</tt> changes TCP's
+  <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">SOCK_STREAM</tt> parameter to <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">SOCK_DCCP</tt>, and <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+    <a href="socat.html#OPTION_SO_PROTOTYPE">prototype</a>=33</tt> replaces the
+  default <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">IPPROTO_TCP</tt> with <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">IPPROTO_DCCP</tt>.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429"><a href="socat.html#OPTION_SO_TYPE">type</a>=6</tt> 将 TCP 的 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">SOCK_STREAM</tt> 参数更改为 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">SOCK_DCCP</tt> ，而 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">
+    <a href="socat.html#OPTION_SO_PROTOTYPE">prototype</a>=33</tt> 将默认的 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">IPPROTO_TCP</tt> 替换为 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">IPPROTO_DCCP</tt> 。</font></font></font></p>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">DCCP has an important parameter, the service code. It provides another
+  multiplexing layer beyond the protocol ports. The Linux implementation of DCCP
+  allows to set this parameter with code like <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">setsocktopt(fd, SOL_DCCP,
+  DCCP_SOCKOPT_SERVICE, {1}, sizeof(int))</tt>. The equivalent generic socat
+  option is: <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><a href="socat.html#OPTION_SETSOCKOPT_INT">setsockopt-int</a>=269:2:1</tt> for service code 1.
+  If the service codes on server and client do not match the <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">connect()</tt>
+  operation fails with error:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">DCCP 有一个重要的参数，即服务代码。它提供了协议端口之外的另一个多路复用层。DCCP 的 Linux 实现允许使用类似 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">setsocktopt(fd, SOL_DCCP,
+  DCCP_SOCKOPT_SERVICE, {1}, sizeof(int))</tt> 的代码设置此参数。等效的通用 socat 选项是： <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429"><a href="socat.html#OPTION_SETSOCKOPT_INT">setsockopt-int</a>=269:2:1</tt> 用于服务代码 1。如果服务器和客户端上的服务代码不匹配，则 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">connect()</tt> 操作将因错误而失败：</font></font></font></p><p data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+
+<table border="1" bgcolor="e08080" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tbody data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">... E connect(3, AF=2 127.0.0.1:4096, 16): Invalid request code</tt></td></tr></tbody></table>
+
+</p><p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Please note that this examples works with IPv6 as well, you just need to
+  replace the TCP4 words with TCP6, and the IPv4 socket address with an
+  appropriate IPv6 socket address, e.g. <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">[::1]</tt>!
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，这些示例也适用于 IPv6，您只需将 TCP4 更改为 TCP6，并将 IPv4 套接字地址更改为适当的 IPv6 套接字地址，例如 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">[::1]</tt> ！</font></font></font></p>
+
+<a name="GENERIC_ADDRESSES" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></a>
+<h2 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Generic socket addresses<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通用套接字地址</font></font></font></h2>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">socat's generic socket addresses are a more comprehensive mechanism that
+  allows to deal with protocol families whose socket addresses are not supported
+  by socat - no semantical parsing, no structured assignment to the struct
+  components are available. Instead, the socket address records for binding and
+  connecting/sending are specified in unstructured hexadecimal form. The
+  following example demonstrates this by performing simple data transfer over
+  raw AppleTalk protocol.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">socat 的通用套接字地址是一种更全面的机制，允许处理协议族的套接字地址不受 socat 支持的情况 - 没有语义解析，也没有将结构化分配给结构组件。相反，用于绑定和连接/发送的套接字地址记录以非结构化十六进制形式指定。以下示例通过在原始 AppleTalk 协议上执行简单数据传输来演示这一点。</font></font></font></p>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Note: I do not have any knowledge about AppleTalk. I just managed to
+  configure my Linux host to tolerate the creation of a receiving and a sending 
+  socket. Don't blame me nor ask me for support if it does not work for you.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：我对 AppleTalk 一无所知。我只是设法配置我的 Linux 主机以容忍创建一个接收套接字和一个发送套接字。如果对您不起作用，请不要责怪我，也不要向我寻求支持。</font></font></font></p>
+
+<a name="EXAMPLE_APPLETALK" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></a>
+<h3 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Enabling AppleTalk protocol<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">启用 AppleTalk 协议</font></font></font></h3>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Install the <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">netatalk</tt> package. Check that <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">/etc/netatalk/atalkd.conf</tt>
+  has an entry like <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">eth0 -phase 2 -net 0-65534 -addr 65280.243</tt>. The
+  last part is an arbitrary (?) host address, some of the following values must
+  fit it. Make sure the <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">atalkd</tt> daemon is running. Run the AppleTalk
+  ping command:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">安装 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">netatalk</tt> 包。检查 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">/etc/netatalk/atalkd.conf</tt> 是否有类似 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">eth0 -phase 2 -net 0-65534 -addr 65280.243</tt> 的条目。最后一部分是一个任意的主机地址，一些以下值必须匹配它。确保 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">atalkd</tt> 守护程序正在运行。运行 AppleTalk ping 命令：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><span class="shell" data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+aecho 65280.243
+</span></span>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">If you get an error like:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果您遇到类似错误：</font></font></font></p>
+
+<table border="1" bgcolor="#e08080" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tbody data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Device or resource busy</tt></td></tr></tbody></table>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">then try to restart <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">atalkd</tt>:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">然后尝试重新启动 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">atalkd</tt> ：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><span class="shell" data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+/etc/init.d/atalkd restart
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">/etc/init.d/atalkd 重新启动</font></font></font></span></span>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">When <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">aecho</tt> works like <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">ping</tt> you are ready for the next step.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">aecho</tt> 的工作方式类似于 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">ping</tt> 时，您已准备好进行下一步。</font></font></font></p>  
+  
+<h3 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Example 2: AppleTalk datagram communication<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">例子 2：AppleTalk 数据报通信</font></font></font></h3>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">We start a socat process with a receiver and echo service:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">我们启动一个带有接收器和回显服务的 socat 进程：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><span class="shell" data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+socat SOCKET-RECVFROM:5:2:0:x40x00x0000x00x00x0000000000000000 PIPE
+</span></span>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Then, in another shell on the same host, we start a client socket process
+  that sends data to the server and gets the answer:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">然后，在同一台主机上的另一个 shell 中，我们启动一个客户端套接字进程，向服务器发送数据并获取答复：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><span class="shell" data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+echo ABCD |socat - SOCKET-DATAGRAM:5:2:0:x40x00xff00xf3x00x0000000000000000 
+</span></span>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">The client process should print the data.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">客户端进程应打印数据。</font></font></font></p>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">How did this work? The generic socat address has just used the system call
+  parameters that were provided on command line, without knowing anything about
+  AppleTalk sockets and protocol. The values 5, 2, and 0 are directly used for
+  the <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">socket()</tt> call: they specify the domain (<tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">PF_APPLETALK=5</tt>),
+  socket type (<tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">SOCK_DGRAM=2</tt>), and no protocol (0) - values for Linux.
+  The long hex strings define the socket addresses. They can only be constructed
+  with knowledge of the underlying structure. In
+  <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">/usr/include/linux/atalk.h</tt> we find the following declarations:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这是如何工作的？通用的 socat 地址只是使用了在命令行上提供的系统调用参数，而不知道任何关于 AppleTalk sockets 和协议的信息。值 5、2 和 0 直接用于 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">socket()</tt> 调用：它们指定了域（ <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">PF_APPLETALK=5</tt> ）、套接字类型（ <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">SOCK_DGRAM=2</tt> ）和无协议（0）- 适用于 Linux 的值。长十六进制字符串定义了套接字地址。只有了解底层结构才能构建它们。在 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">/usr/include/linux/atalk.h</tt> 中，我们找到以下声明：</font></font></font></p>
+
+<pre>struct atalk_addr {
+        __be16  s_net;
+        __u8    s_node;
+};
+
+struct sockaddr_at {
+        sa_family_t       sat_family;
+        __u8              sat_port;
+        struct atalk_addr sat_addr;
+        char              sat_zero[8];
+</pre>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">After rolling out <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">atalk_addr</tt> and considering implicit padding by the
+ C programming language we get the following byte map:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在推出 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">atalk_addr</tt> 并考虑 C 编程语言的隐式填充后，我们得到以下字节映射：</font></font></font></p>
+
+<table border="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+<tbody data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><th>component</th><th>offset</th><th>length</th><th>value</th><th>meaning</th></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>sat_family</td><td>0</td><td>2</td><td>x0005</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">address family<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">地址族</font></font></font></td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>sat_port</td><td>2</td><td>1</td><td>x40</td><td>port</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>-</td><td>3</td><td>1</td><td>x00</td><td>padding</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>sat_addr.s_net</td><td>4</td><td>2</td><td>xff00</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">network address<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">网络地址</font></font></font></td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>sat_addr.s_node</td><td>6</td><td>1</td><td>xf3</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">node address<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">节点地址</font></font></font></td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>-</td><td>7</td><td>1</td><td>x00</td><td>padding</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>sat_zero</td><td>8</td><td>8</td><td>x0000000000000000</td><td>padding</td></tr>
+</tbody></table>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Note that hexadecimal ff00 is the same as decimal 65280, and hexadecimal xf3
+  is the same as decimal 243 - these are the numbers specified in
+  <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">atalkd.conf</tt>.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，十六进制 ff00 等同于十进制 65280，十六进制 xf3 等同于十进制 243 - 这些是在 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">atalkd.conf</tt> 中指定的数字。</font></font></font></p>
+  
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">The address family component must be omitted from the socket address because
+  it is added by socat implicitely. The resulting hexadecimal representation of
+  the target socket address is therefore:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">由于 socat 隐式添加了地址族组件，因此必须从套接字地址中省略地址族组件。因此，目标套接字地址的十六进制表示如下：</font></font></font></p>
+<tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">x40x00xff00xf3x00x0000000000000000</tt>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">The receiver just has to specify the port, so its bind address data is:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接收方只需指定端口，因此其绑定地址数据为：</font></font></font></p>
+<tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">x40x00x0000x00x00x0000000000000000</tt>
+
+<h2 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Parameters for well known socket types<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">众所周知的套接字类型的参数</font></font></font></h2>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Finding the correct parameters and socket addresses is not always trivial.
+  Therefore this section provides tables with the parameters of common socket
+  types. Some of these types are directly implemented by socat (and other
+  programs). Establishing interoperability between a directly implemented
+  socket and a generic socket might be your first step before entering unknown
+  ground.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">找到正确的参数和套接字地址并不总是简单的。因此，本节提供了常见套接字类型参数的表格。其中一些类型是由 socat（和其他程序）直接实现的。在进入未知领域之前，建立直接实现套接字和通用套接字之间的互操作性可能是您的第一步。</font></font></font></p>
+  
+<h3 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Socket parameters<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">套接字参数</font></font></font></h3>
+
+<h4 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Table: parameter names for "well known" sockets:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">表： "众所周知" 套接字的参数名称：</font></font></font></h4>
+
+<table border="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+<tbody data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><th>name</th><th>domain</th><th>socktype</th><th>protocol</th><th data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"> </th><th>level</th><th>remark</th></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>UDP4</td><td>PF_INET</td><td>SOCK_DGRAM</td><td>IPPROTO_UDP</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"> </td><td>SOL_UDP</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>UDP6</td><td>PF_INET6</td><td>SOCK_DGRAM</td><td>IPPROTO_UDP</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"> </td><td>SOL_UDP</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">raw IPv4<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">原始 IPv4</font></font></font></td><td>PF_INET</td><td>SOCK_RAW</td><td>IPPROTO_RAW</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"> </td><td>SOL_IP</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">raw IPv6<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">原始 IPv6</font></font></font></td><td>PF_INET6</td><td>SOCK_RAW</td><td>IPPROTO_RAW</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"> </td><td>SOL_IPV6</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>UNIX</td><td>PF_LOCAL</td><td>SOCK_DGRAM</td><td>0</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"> </td><td>SOL_SOCKET</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"> </td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>PACKET</td><td>PF_PACKET</td><td>SOCK_RAW</td><td>768</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></td><td>SOL_PACKET</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">tcpdump (include layer 2 header)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">tcpdump（包括第二层标头）</font></font></font></td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>PACKET</td><td>PF_PACKET</td><td>SOCK_DGRAM</td><td>768</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"></td><td>SOL_PACKET</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">no level 2 header<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">没有第二层标头</font></font></font></td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SCTP4</td><td>PF_INET</td><td>SOCK_SEQPACKET</td><td>IPPROTO_SCTP</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"> </td><td>SOL_SCTP</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"> </td></tr>
+</tbody></table>
+
+<h4 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Table: parameter values:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">表：参数值：</font></font></font></h4>
+
+<table border="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+<tbody data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><th>name</th><th>Linux</th><th>FreeBSD</th><th>NetBSD</th><th>OpenBSD</th><th>Solaris</th><th>AIX</th><th>Cygwin</th><th data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">Mac OS X</th><th>HP-UX</th></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>PF_LOCAL</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>PF_INET</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>PF_APPLETALK</td><td>5</td><td>16</td><td>16</td><td>16</td><td>16</td><td>16</td><td>16</td><td>16</td><td>16</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>PF_INET6</td><td>10</td><td>28</td><td>24</td><td>24</td><td>26</td><td>24</td><td>-</td><td>30</td><td>22</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>PF_PACKET</td><td>17</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOCK_STREAM</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOCK_DGRAM</td><td>2</td><td>2</td><td>2</td><td>2</td><td>1</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOCK_RAW</td><td>3</td><td>3</td><td>3</td><td>3</td><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOCK_SEQPACKET</td><td>5</td><td>5</td><td>5</td><td>5</td><td>6</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOCK_DCCP</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">(6)</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOCK_PACKET</td><td>10</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>IPPROTO_IP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>IPPROTO_TCP</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>IPPROTO_UDP</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>IPPROTO_DCCP</td><td>33</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>IPPROTO_SCTP</td><td>132</td><td>132</td><td>-</td><td>-</td><td>132</td><td>132</td><td>-</td><td>-</td><td>-</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>IPPROTO_RAW</td><td>255</td><td>255</td><td>255</td><td>255</td><td>255</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOL_SOCKET</td><td>1</td><td>65535</td><td>65535</td><td>65535</td><td>65535</td><td>65535</td><td>65535</td><td>65535</td><td>65535</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOL_IP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOL_TCP</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOL_UDP</td><td>17</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>17</td><td>-</td><td>-</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOL_IPV6</td><td>41</td><td>41</td><td>41</td><td>41</td><td>41</td><td>41</td><td>-</td><td>41</td><td>41</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOL_PACKET</td><td>263</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>SOL_DCCP</td><td>269</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</tbody></table>
+
+
+<h3 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Socket address specifications<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">套接字地址规范</font></font></font></h3>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">These hexadecimal data define socket addresses for local and remote sockets,
+and for bind and range options. The basis is the <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">struct sockaddr_*</tt> for
+the respective address family that should be declared in the C include files.
+Please keep in mind that their first two bytes (<tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">sa_family</tt> and - on BSD
+- <tt data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">sa_len</tt>) are implicitely prepended by socat.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些十六进制数据定义了本地和远程套接字的套接字地址，以及绑定和范围选项。基础是应在 C 包含文件中声明的相应地址族的 <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">struct sockaddr_*</tt> 。请记住，它们的前两个字节（ <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">sa_family</tt> 和 - 在 BSD 上 - <tt data-immersive-translate-walked="0756c2a4-7a38-4d2e-9d21-1be864ffa429">sa_len</tt> ）会被 socat 隐式地添加在前面。</font></font></font></p>
+
+<h4 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Linux on 32bit Intel:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Linux 在 32 位 Intel 上：</font></font></font></h4>
+
+<table border="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+<tbody data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><th>name</th><th data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">socket address type (without leading address family)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">套接字地址类型（不包括前导地址族）</font></font></font></th><th data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">binary specification<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">二进制规范</font></font></font></th></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>IPv4</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">2 bytes port, 4 bytes IPv4 addr, 8 bytes 0<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2 字节端口，4 字节 IPv4 地址，8 字节 0</font></font></font></td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">x0016
+x7f000001 x0000000000000000</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>IPv6</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">2 bytes port, 4 bytes flowinfo, 16 bytes IPv6 addr, 4 bytes scope-id<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2 字节端口，4 字节流信息，16 字节 IPv6 地址，4 字节范围 ID</font></font></font></td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">x0016 x00000000 x0102030405060708090a0b0c0d0e0f x00000000</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>UNIX</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">variable length path name, 0 terminated<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">可变长度路径名，以 0 结尾</font></font></font></td><td>x2f746d702f736f636b00</td></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>PACKET</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">2 bytes protocol (0x0003), interface index as int in host byte order, 8 bytes 0<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2 字节协议（0x0003），接口索引作为主机字节顺序中的整数，8 字节 0</font></font></font></td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">x0003 x02000000 x0000000000000000</td></tr>
+</tbody></table>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">For AppleTalk see above <a href="#EXAMPLE_APPLETALK" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">example</a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">对于 AppleTalk，请参见上面的示例。</font></font></font></p>
+
+<h4 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Solaris on 32bit Intel:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">32 位英特尔上的 Solaris</font></font></font></h4>
+
+<table border="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+<tbody data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><th>name</th><th data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">socket address type (without leading address family)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">套接字地址类型（不包括前导地址族）</font></font></font></th><th data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">binary specification<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">二进制规范</font></font></font></th></tr>
+<tr data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><td>IPv6</td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">2 bytes port, 4 bytes flowinfo, 16 bytes IPv6 addr, 4
+    bytes scope-id, 4 bytes src-id<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2 字节端口，4 字节流信息，16 字节 IPv6 地址，4 字节范围 ID，4 字节源 ID</font></font></font></td><td data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">x0016 x00000000 x0102030405060708090a0b0c0d0e0f x00000000 x00000000</td></tr>
+</tbody></table>
+
+<h3 data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Forever - play on...<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">永远 - 继续玩下去...</font></font></font></h3>
+
+<p data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">Eager to experiment with exotic socket types? Run nmap's protocol scan and
+see what is available on your system:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">渴望尝试异国情调的套接字类型？运行 nmap 的协议扫描，看看您的系统上有什么可用的：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff"><span class="shell" data-immersive-translate-paragraph="1" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+nmap -sO localhost
+</span></span>
+
+<p data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+<small data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">Copyright: Gerhard Rieger 2008<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版权所有：Gerhard Rieger 2008</font></font></font></small><br data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">
+<small data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff" data-immersive-translate-paragraph="1">License: <a href="http://www.fsf.org/licensing/licenses/fdl.html" data-immersive-translate-walked="8aee4126-93b0-49aa-8fcc-dd0c976a28ff">GNU Free Documentation License (FDL)</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">许可证：GNU 自由文档许可证（FDL）</font></font></font></small>
+</p>
+
+
+
+</body></html>

@@ -1,0 +1,72 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_message_new_signal</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_message_new_signal"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_message_new_signal, sd_bus_message_new_signal_to — Create a signal message</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int sd_bus_message_new_signal(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>sd_bus_message **<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">interface</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">member</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int sd_bus_message_new_signal_to(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>sd_bus_message **<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">destination</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">interface</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">member</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>The <code class="function">sd_bus_message_new_signal()</code> function creates a new bus message
+    object that encapsulates a D-Bus signal, and returns it in the <em class="parameter"><code>m</code></em> output
+    parameter. The signal will be sent to path <em class="parameter"><code>path</code></em>, on the interface
+    <em class="parameter"><code>interface</code></em>, member <em class="parameter"><code>member</code></em>. When this message is
+    sent, no reply is expected. See
+    <a href="sd_bus_message_new_method_call.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_method_call</span>(1)</span></a>
+    for a short description of the meaning of the <em class="parameter"><code>path</code></em>,
+    <em class="parameter"><code>interface</code></em>, and <em class="parameter"><code>member</code></em> parameters.
+    </p><p><code class="function">sd_bus_message_new_signal_to()</code> is a shorthand for creating a new bus message
+    to a specific destination. It's behavior is similar to calling
+    <code class="function">sd_bus_message_new_signal()</code> followed by calling
+    <a href="sd_bus_message_set_destination.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_set_destination</span>(3)</span></a>.
+    </p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>This function returns 0 if the message object was successfully created, and a negative
+    errno-style error code otherwise.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>The output parameter <em class="parameter"><code>m</code></em> is
+          <code class="constant">NULL</code>.</p><p>The <em class="parameter"><code>path</code></em> parameter is not a valid D-Bus path
+          ("<code class="literal">/an/object/path</code>"), the <em class="parameter"><code>interface</code></em> parameter is not
+          a valid D-Bus interface name ("<code class="literal">an.interface.name</code>"), or the
+          <em class="parameter"><code>member</code></em> parameter is not a valid D-Bus member
+          ("<code class="literal">Name</code>").</p></dd><dt id="-ENOTCONN"><span class="term"><code class="constant">-ENOTCONN</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOTCONN">¶</a></dt><dd><p>The bus parameter <em class="parameter"><code>bus</code></em> is <code class="constant">NULL</code> or
+          the bus is not connected.</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Send a simple signal</b></p><div class="example-contents"><pre class="programlisting">/* SPDX-License-Identifier: MIT-0 */
+
+#include &lt;systemd/sd-bus.h&gt;
+#define _cleanup_(f) __attribute__((cleanup(f)))
+
+int send_unit_files_changed(sd_bus *bus) {
+  _cleanup_(sd_bus_message_unrefp) sd_bus_message *message = NULL;
+  int r;
+
+  r = sd_bus_message_new_signal(bus, &amp;message,
+                                "/org/freedesktop/systemd1",
+                                "org.freedesktop.systemd1.Manager",
+                                "UnitFilesChanged");
+  if (r &lt; 0)
+    return r;
+
+  return sd_bus_send(bus, message, NULL);
+}
+</pre><p>This function in systemd sources is used to emit the
+      "<code class="literal">UnitFilesChanged</code>" signal when the unit files have been changed.
+      </p></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_emit_signal.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_signal</span>(3)</span></a>
+      <a href="sd_bus_message_set_destination.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_set_destination</span>(3)</span></a>
+    </p></div></div></body></html>

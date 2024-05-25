@@ -1,0 +1,52 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_set_connected_signal</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_set_connected_signal"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_set_connected_signal, sd_bus_get_connected_signal — Control emission of local connection establishment signal on bus connections</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_set_connected_signal</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">b</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_get_connected_signal</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_bus_set_connected_signal()</code> may be used to control whether a local, synthetic
+    <code class="function">Connected()</code> signal message shall be generated and enqueued for dispatching when the connection
+    is fully established. If the <em class="parameter"><code>b</code></em> parameter is zero the message is not generated (the default),
+    otherwise it is generated.</p><p><code class="function">sd_bus_get_connected_signal()</code> may be used to query whether this feature is enabled. It
+    returns zero if not, positive otherwise.</p><p>The <code class="function">Connected()</code> signal message is generated from the
+    "<code class="literal">org.freedesktop.DBus.Local</code>" service and interface, and
+    "<code class="literal">/org/freedesktop/DBus/Local</code>" object path. Use
+    <a href="sd_bus_match_signal_async.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_match_signal_async</span>(3)</span></a> to
+    match on this signal.</p><p>This message is particularly useful on slow transports where connections take a long time to be
+    established. This is especially the case when
+    <a href="sd_bus_set_watch_bind.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_watch_bind</span>(3)</span></a> is
+    used. The signal is generated when the
+    <a href="sd_bus_is_ready.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_is_ready</span>(3)</span></a> returns
+    positive for the first time.</p><p>The <code class="function">Connected()</code> signal corresponds with the <code class="function">Disconnected()</code> signal
+    that is synthesized locally when the connection is terminated. The latter is generated unconditionally however,
+    unlike the former which needs to be enabled explicitly before it is generated, with
+    <code class="function">sd_bus_set_connected_signal()</code>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these functions return 0 or a positive integer. On failure, they return a negative
+    errno-style error code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-ECHILD"><span class="term"><code class="constant">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD">¶</a></dt><dd><p>The bus connection has been created in a different process, library or module instance.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_set_connected_signal()</code> and
+    <code class="function">sd_bus_get_connected_signal()</code> were added in version 237.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_match_signal_async.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_match_signal_async</span>(3)</span></a>,
+      <a href="sd_bus_set_watch_bind.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_watch_bind</span>(3)</span></a>,
+      <a href="sd_bus_is_ready.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_is_ready</span>(3)</span></a>
+    </p></div></div></body></html>

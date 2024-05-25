@@ -1,0 +1,844 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><!-- source: doc/socat-multicast.html -->
+
+<title>IP Multicasting with Socat</title>
+<link rel="stylesheet" type="text/css" href="dest-unreach.css">
+
+
+
+
+<h1 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">IP Multicasting with Socat<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 Socat 进行 IP 多播</font></font></font></h1>
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></h2>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+Multicasting (and broadcasting which is also discussed in this article)
+provides a means to direct a single packet to more than one host. Special
+addresses are defined for this purpose and are handled specially by network
+adapters, networking hardware, and IP stacks.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">多播（以及本文中讨论的广播）提供了一种将单个数据包定向到多个主机的方法。为此目的定义了特殊地址，并由网络适配器、网络硬件和 IP 栈特殊处理。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+IPv4 specifications provide broadcasting and multicasting; IPv6 provides
+multicasting but replaces broadcasting by special multicast modes. UNIX domain
+sockets do not know broadcasting or multicasting.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">IPv4 规范提供了广播和多播；IPv6 提供了多播，但通过特殊的多播模式替代了广播。UNIX 域套接字不了解广播或多播。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+The following examples use UDP/IPv4 only. However, they can easily be
+adapted for raw IPv4 sockets. IPv6 multicasting has not yet been successfully
+used with socat; please contact the author if you have positive experiences or
+ideas that go beyond <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">IPV6_ADD_MEMBERSHIP</tt>. 
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">以下示例仅使用 UDP/IPv4。但是，它们可以很容易地适应原始 IPv4 套接字。IPv6 多播尚未成功地与 socat 一起使用；如果您有积极的经验或超出 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">IPV6_ADD_MEMBERSHIP</tt> 的想法，请与作者联系。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+All multicast examples presented in this document use multicast address
+224.1.0.1; it can be replaced by any valid IPv4 multicast address (except 
+<a href="#ALLSYSTEMS" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">all-systems</a>).
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">本文档中提供的所有组播示例均使用组播地址 224.1.0.1；可以用任何有效的 IPv4 组播地址（除了 all-systems）替换它。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+We assume a local network with address 192.168.10.0 and mask 255.255.255.0; an
+eventual "client" has 192.168.10.1, example "server" and example peer have
+192.168.10.2 in all examples. Change these addresses and mask to your own
+requirements.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">我们假设一个具有地址 192.168.10.0 和掩码 255.255.255.0 的本地网络；一个可能的“客户端”具有 192.168.10.1，示例“服务器”和示例对等体在所有示例中均具有 192.168.10.2。将这些地址和掩码更改为符合您需求的内容。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+All the following examples work bidirectionally except when otherwise noticed. 
+For "clients" we just use <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">STDIO</tt>, and for "servers" we use <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">EXEC:hostname</tt> which
+ingores its input but shows us which host the reply comes from. Replace these
+socat addresses with what is appropriate for your needs (e.g. shell script
+invocations). Port 6666 can be replaced with any other port (but for ports &lt;
+1024 root privilege might be required).
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">除非另有通知，所有以下示例均可双向工作。对于“客户端”，我们只使用 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">STDIO</tt> ，对于“服务器”，我们使用 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">EXEC:hostname</tt> ，它忽略其输入但显示我们收到回复的主机。将这些 socat 地址替换为适合您需求的内容（例如，shell 脚本调用）。端口 6666 可以替换为任何其他端口（但对于端口&lt;1024，可能需要 root 权限）。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+Different kinds of broadcast addresses exist: 255.255.255.255 is local network
+only; for the IPv4 network 192.168.10.0/24 the "official" broadcast address
+is 192.168.10.255; the network address 192.168.10.0 is also interpreted as
+broadcast by some hosts. The two latter forms are routed by gateways. In the
+following examples we only use broadcast address 192.168.10.255.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">存在不同类型的广播地址：255.255.255.255 仅用于本地网络；对于 IPv4 网络 192.168.10.0/24，"官方" 广播地址是 192.168.10.255；网络地址 192.168.10.0 也被一些主机解释为广播。后两种形式由网关路由。在以下示例中，我们仅使用广播地址 192.168.10.255。</font></font></font></p>
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Example 1: Multicast client and servers<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 1：多播客户端和服务器</font></font></font></h2>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">This example builds something like a "supervisor" or "client" that
+communicates with a set of "servers". The supervisor may send packets to the
+multicast address, and the servers may send response packets. Note that the
+servers would also respond to other clients' requests.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此示例构建类似于“监督员”或“客户端”的东西，它与一组“服务器”通信。监督员可以向多播地址发送数据包，服务器可以发送响应数据包。请注意，服务器也会响应其他客户端的请求。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Multicast server:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">多播服务器:</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><span class="shell" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+socat UDP4-RECVFROM:6666,ip-add-membership=224.1.0.1:192.168.10.2,fork EXEC:hostname
+</span></span>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+This command receives multicast packets addressed to 224.1.0.1 and forks a
+child process for each. The child processes may each send one or more reply
+packets back to the particular sender. 192.168.10.2 means the address of the
+interface where multicasts should be received.
+Run this command on a number of hosts, and they will all respond in
+parallel.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此命令接收寻址为 224.1.0.1 的多播数据包，并为每个数据包派生一个子进程。子进程可以向特定发送者发送一个或多个回复数据包。192.168.10.2 表示应接收多播的接口地址。在多台主机上运行此命令，它们将并行响应。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Multicast client:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">多播客户端:</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><span class="shell" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+socat STDIO UDP4-DATAGRAM:224.1.0.1:6666,range=192.168.10.0/24
+</span></span>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+This process transfers data from stdin to the multicast address, and transfers 
+packets received from the local network to stdout. It does not matter in which
+direction the first data is passed.
+A packet from the network is accepted by the IP stack for our socket if:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此过程将数据从标准输入传输到多播地址，并将从本地网络接收到的数据包传输到标准输出。第一批数据传递的方向并不重要。如果网络中的数据包被我们的套接字接受，则会被 IP 栈接受。</font></font></font></p><ul data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">it is an incoming UDP/IPv4 packet<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这是一个传入的 UDP/IPv4 数据包</font></font></font></li>
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">its target port matches the local port assigned to the socket (random)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">其目标端口与分配给套接字的本地端口匹配（随机）</font></font></font></li>
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">its target address matches one of the hosts local addresses or the any-host
+multicast address<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">其目标地址与主机的本地地址或任意主机多播地址之一匹配</font></font></font></li>
+</ul>
+Of these packets, socat handles only those matching the following criteria:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在这些数据包中，socat 仅处理符合以下条件的数据包：</font></font></font><ul data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">the source address is within the given range<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">源地址在给定范围内</font></font></font></li>
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">the source port is 6666<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">源端口为 6666</font></font></font></li>
+</ul>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"></p>
+
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Example 2: Broadcast client and servers<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 2：广播客户端和服务器</font></font></font></h2>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Broadcast server:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">广播服务器：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><span class="shell" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+socat UDP4-RECVFROM:6666,broadcast,fork EXEC:hostname
+</span></span>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+This command receives packets addressed to a local broadcast address and forks
+a child process for each. The child processes may each send one or more reply
+packets back to the particular sender. 
+Run this command on a number of hosts, and they will all respond in
+parallel.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此命令接收发送到本地广播地址的数据包，并为每个数据包创建一个子进程。每个子进程可以向特定发送方发送一个或多个回复数据包。在多台主机上运行此命令，它们将并行响应。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Broadcast client:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">广播客户端：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><span class="shell" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+socat STDIO UDP4-DATAGRAM:192.168.10.255:6666,broadcast,range=192.168.10.0/24
+</span></span>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+This process transfers data from stdin to the broadcast address, and transfers 
+packets received from the local network to stdout. It does not matter in which
+direction the first data is passed.
+A packet from the network is accepted by the IP stack for our socket if:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此过程将数据从标准输入传输到广播地址，并将从本地网络接收到的数据包传输到标准输出。第一批数据传输的方向并不重要。如果网络中的数据包满足以下条件，则会被 IP 栈接受到我们的套接字中：</font></font></font></p><ul data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">it is an incoming UDP/IPv4 packet<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">它是一个传入的 UDP/IPv4 数据包</font></font></font></li>
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">its target port matches the local port assigned to the socket (6666)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">其目标端口与套接字分配的本地端口（6666）匹配</font></font></font></li>
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">its target address matches one of the hosts local addresses or the any-host
+multicast address, or a local broadcast address<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">其目标地址与主机的本地地址或任一主机多播地址或本地广播地址之一匹配</font></font></font></li>
+</ul>
+Of these packets, socat handles only those matching the following criteria:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在这些数据包中，socat 仅处理符合以下条件的数据包：</font></font></font><ul data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">the source address is within the given range<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">源地址在给定范围内</font></font></font></li>
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">the source port is 6666<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">源端口是 6666</font></font></font></li>
+</ul>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">The <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">broadcast</tt> option is only required for sending or receiving
+local broadcasts.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">“ <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">broadcast</tt> ”选项仅在发送或接收本地广播时才需要。</font></font></font></p>
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Example 3: Multicast peers<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 3：多播对等方</font></font></font></h2>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">It is possible to combine multicast sender and receiver in one socat
+address. This allows to start processes on different hosts on the local network
+that will communicate symmetrically, so each process can send messages that are
+received by all the other ones.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">可以将多播发送器和接收器组合在一个 socat 地址中。这样可以在本地网络上的不同主机上启动进程，使它们可以对称通信，因此每个进程都可以发送消息，而所有其他进程都会接收到这些消息。</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><span class="shell" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+socat STDIO UDP4-DATAGRAM:224.1.0.1:6666,bind=:6666,range=192.168.10.0/24,ip-add-membership=224.1.0.1:192.168.10.2
+</span></span>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+This command is valid for host 192.168.10.2; adapt this address to the
+particular interface addresses of the hosts.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此命令适用于主机 192.168.10.2；请根据主机的特定接口地址调整此地址。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+Starting this process opens a socket on port 6666 that will receive packets
+directed to multicast address 224.1.0.1. Only packets with matching source
+address and source port 6666 will be handled though. When this process sends
+data to the network the packets will be addressed to 224.1.0.1:6666 and have a
+source address of 192.168.10.2:6666, matching the accept criteria of the peers
+on the local network.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">启动此过程会在端口 6666 上打开一个套接字，用于接收定向到多播地址 224.1.0.1 的数据包。只有源地址和源端口为 6666 的数据包才会被处理。当此过程向网络发送数据时，数据包将被寻址为 224.1.0.1:6666，并具有源地址 192.168.10.2:6666，符合本地网络上对等体的接受标准。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Note: this command receives the packets it just has sent; add option
+<tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">ip-multicast-loop=0</tt> if this in undesired.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：此命令接收它刚刚发送的数据包；如果这是不希望的，请添加选项 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">ip-multicast-loop=0</tt> 。</font></font></font></p>
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Example 4: Broadcast peers<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 4：广播对等体</font></font></font></h2>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Just as with multicast, it is possible to combine broadcast sender and
+receiver in one socat address.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">就像多播一样，可以在一个 socat 地址中组合广播发送器和接收器。</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><span class="shell" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+socat STDIO UDP4-DATAGRAM:255.255.255.255:6666,bind=:6666,range=192.168.10.0/24,broadcast
+</span></span>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+Starting this process opens a socket on port 6666 that will receive packets
+directed to a local broadcast addresses. Only packets with matching source
+address and source port 6666 will be handled though. When this process sends
+data to the network the packets will be addressed to 255.255.255.255:6666 and
+have a source address of 192.168.10.2:6666, matching the accept criteria of
+the peers on the local network.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">启动此进程会在端口 6666 上打开一个套接字，用于接收定向到本地广播地址的数据包。但只有源地址和源端口为 6666 的数据包才会被处理。当此进程向网络发送数据时，数据包将被寻址为 255.255.255.255:6666，并具有源地址 192.168.10.2:6666，与本地网络上的对等方的接受标准相匹配。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Note: this command receives the packets it just has sent; there does not
+seem to exist a simple way to prevent this.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：此命令接收它刚刚发送的数据包；似乎没有简单的方法来阻止这种情况发生。</font></font></font></p>
+
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Troubleshooting<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">故障排除</font></font></font></h2>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+If you do not get an error message during operation, but the packets do not
+reach the target processes, use <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">tcpdump</tt> to see if the packets have the
+correct source and destination addresses and ports, and if they leave and enter
+the hosts as expected.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果在操作过程中没有收到错误消息，但数据包未到达目标进程，请使用 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">tcpdump</tt> 查看数据包是否具有正确的源和目标地址和端口，并且它们是否按预期离开和进入主机。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+The following subsections discuss some typical sources of trouble.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">下面的小节讨论了一些典型的故障源。</font></font></font></p>
+
+<h3 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">IP filters<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">IP 过滤器</font></font></font></h3>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+If you do not succeed in receiving multicast or broadcast packets, check if
+iptables are activated on the receiving or sending host. They might be
+configured to disallow this traffic. 
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果您无法接收多播或广播数据包，请检查接收或发送主机上是否激活了 iptables。它们可能被配置为禁止此流量。</font></font></font></p>
+
+<h3 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Do not bind()<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">不要绑定()</font></font></font></h3>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+When using multicast communications, you should not bind the sockets to a
+specific IP address. It seems that the (Linux) IP stack compares the
+destination address with the bind address, not taking care of the multicast
+property of the incoming packet.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在使用多播通信时，不应将套接字绑定到特定的 IP 地址。似乎（Linux）IP 栈将目标地址与绑定地址进行比较，而不考虑传入数据包的多播属性。</font></font></font></p>
+
+<h3 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Routing<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">路由</font></font></font></h3>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+When you receive an error like:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当您收到类似错误时：</font></font></font></p>
+<table border="1" bgcolor="#e08080" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><tbody data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><tr data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><td data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">... E sendto(3, 0x80c2e44, 4,
+0, AF=2 224.1.0.1:6666, 16): Network is unreachable</tt></td></tr></tbody></table>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">you have a routing problem. The (Linux) IP stack seems to handle multicast
+addresses just like unicast addresses when determining their route (interface
+  and gateway), i.e. the routing table needs an entry that somehow matches the
+  target address. <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">您可能遇到了路由问题。 (Linux) IP 栈在确定多播地址的路由（接口和网关）时似乎与单播地址一样处理，即路由表需要有一个条目与目标地址匹配。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+For the same reason, multicast packets will probably leave your host on the
+interface with the default route if it is specified.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">出于同样的原因，如果指定了默认路由，多播数据包可能会通过您的主机上的接口离开。</font></font></font></p>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+Set a multicast/broadcast route with the following command (Linux):<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用以下命令设置多播/广播路由（Linux）：</font></font></font></p>
+<span class="frame" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><span class="shell" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+route add -net 224.0.0.0/3 gw 192.168.10.2
+</span></span>
+
+<a name="ALLSYSTEMS" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"></a>
+<h3 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">ALL-SYSTEMS multicast address<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">ALL-SYSTEMS 多播地址</font></font></font></h3>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+<tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">224.0.0.1</tt> is the all-systems multicast address: all
+datagram sockets appear to be automatically member of this group on all
+interfaces. This membership cannot be dropped on Linux (you need iptables to
+filter packets).
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">224.0.0.1</tt> 是所有系统的多播地址：所有数据报套接字似乎自动成为此组的成员，出现在所有接口上。在 Linux 上无法取消此成员身份（您需要使用 iptables 来过滤数据包）。</font></font></font></p>
+
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">(In)Security<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">（不）安全</font></font></font></h2>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">When you use the above examples you should understand that all datagram
+sockets without exception accept all packets that are directly addressed to
+them;
+the multi- and broadcast receiving features are just extensions to this
+functionality. socat currently has no means to handle incoming packets
+differently whether they are addressed to unicast, multicast, or broadcast
+addresses. However, for EXEC'd scripts socat can provide this info in
+environment variables.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当您使用上述示例时，应了解所有数据报套接字无一例外地接受所有直接寻址到它们的数据包；多播和广播接收功能只是此功能的扩展。socat 目前无法处理传入数据包的方式，无论它们是寻址到单播、多播还是广播地址。但是，对于执行的脚本，socat 可以在环境变量中提供此信息。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Authentication or encryption are not available.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">认证或加密不可用。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">It is very easy to fake the source address of UDP (or raw IP) packets. You
+should understand whether your network is protected from address spoofing
+attacks.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">很容易伪造 UDP（或原始 IP）数据包的源地址。您应该了解您的网络是否受到地址欺骗攻击的保护。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Broadcast and multicast traffic can trivially be received by <em data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">any</em>
+host on the local network.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">广播和组播流量可以轻松地被本地网络上的任何主机接收。</font></font></font></p>
+
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">History<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史</font></font></font></h2>
+
+Starting with version 1.5.0, socat provides a set of address types that
+allow various operations on datagram oriented sockets:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">从版本 1.5.0 开始，socat 提供了一组地址类型，允许在数据报导向套接字上执行各种操作：</font></font></font><dl data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<dt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">SENDTO<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发送至</font></font></font></dt><dd data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">send packets to a remote socket and receive packet from this
+remote socket only<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发送数据包到远程套接字，并仅从该远程套接字接收数据包</font></font></font></dd>
+<dt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">RECV<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接收</font></font></font></dt><dd data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">receive all packets that arrive on the local socket, but do
+not reply<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接收到所有到达本地套接字的数据包，但不回复</font></font></font></dd>
+<dt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">RECVFROM<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接收来自</font></font></font></dt><dd data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">receive all packets that arrive on the local socket, and
+reply using child processes<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接收到所有到达本地套接字的数据包，并使用子进程进行回复</font></font></font></dd>
+</dl>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+These modes already enable several different client/server oriented operations.
+Moreover, the SENDTO addresses can send to multicast and broadcast addresses
+(the latter requires the <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">broadcast</tt> option though). RECV and RECVFROM
+also would accept packets addressed to a local broadcast address (with option
+<tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">broadcast</tt>) or the all-systems multicast address.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些模式已经可以实现多种不同的客户端/服务器操作。此外，SENDTO 地址可以发送到多播和广播地址（后者需要 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">broadcast</tt> 选项）。RECV 和 RECVFROM 也可以接收发送到本地广播地址的数据包（使用选项 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">broadcast</tt> ）或所有系统的多播地址。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+These address types had, however, two major caveats: 
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些地址类型有两个主要的注意事项：</font></font></font></p><ul data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Missing control of multicast group membership in the RECV and RECVFROM
+addresses<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 RECV 和 RECVFROM 地址中缺少对多播组成员身份的控制</font></font></font></li>
+<li data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">The SENDTO address would never accept a reply to a broadcast or multicast
+addressed packet because the source address of incoming replies would not match
+the target address of the sent packet.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">SENDTO 地址永远不会接受广播或多播地址数据包的回复，因为传入回复的源地址不会匹配发送数据包的目标地址。</font></font></font></li></ul>
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"></p>
+
+<h3 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">New Features in socat 1.6.0<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">socat 1.6.0 中的新功能</font></font></font></h3>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+socat version 1.6.0 addresses these problems and provides a new more generic
+datagram address type (*-DATAGRAM) and the new address option IP-ADD-MEMBERSHIP.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">socat 版本 1.6.0 解决了这些问题，并提供了一个新的更通用的数据报地址类型 (*-DATAGRAM) 和新的地址选项 IP-ADD-MEMBERSHIP。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+  Please note that multicasting on IPv6 requires a patch that has been
+  introduced past version 1.7.3.2! Use option like
+  <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">ipv6-join-group=[ff02::d]:eth0</tt>.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，IPv6 上的多播需要一个补丁，该补丁在版本 1.7.3.2 之后引入！使用选项如 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">ipv6-join-group=[ff02::d]:eth0</tt> 。</font></font></font></p>
+
+<h3 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">New Features in socat 1.7.0<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">socat 1.7.0 中的新功能</font></font></font></h3>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+socat version 1.7.0 helps to find more information about incoming packets in
+environment variables that can be used in scripts or programs invoked by
+socat. The option <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">ip-pktinfo</tt> (on non-BSD systems) 
+or <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">ip-recvdstaddr</tt> (on BSD systems) is required to get basic
+information about incoming packets.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">socat 版本 1.7.0 帮助查找有关传入数据包的更多信息，这些信息可以在由 socat 调用的脚本或程序中使用环境变量。选项 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">ip-pktinfo</tt> （在非 BSD 系统上）或 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">ip-recvdstaddr</tt> （在 BSD 系统上）需要获取有关传入数据包的基本信息。</font></font></font></p>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+Example: Start a receiver of the following form (tried on Linux):
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例：启动以下形式的接收器（在 Linux 上尝试）：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><span class="shell" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+socat -u UDP-RECVFROM:8888,reuseaddr,ip-add-membership=224.1.0.1:192.168.10.2,ip-pktinfo,fork SYSTEM:export
+</span></span>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+Then send a multicast packet from the client:
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">然后从客户端发送一个多播数据包：</font></font></font></p>
+
+<span class="frame" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e"><span class="shell" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+echo |socat -u STDIO UDP-DATAGRAM:224.1.0.1:8888
+</span></span>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+On the server the following text should appear (only interesting lines shown):
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在服务器上应该显示以下文本（仅显示有趣的行）：</font></font></font></p>
+
+<pre>export SOCAT_IP_DSTADDR="224.1.0.1"
+export SOCAT_IP_IF="eth0"
+export SOCAT_IP_LOCADDR="192.168.10.2"
+export SOCAT_PEERADDR="192.168.10.1"
+export SOCAT_PEERPORT="41159"
+</pre>
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">
+<tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">SOCAT_IP_IF</tt> shows the interface where the packet entered the server;
+<tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">SOCAT_IP_LOCADDR</tt> shows the IP address of this interface;
+<tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">SOCAT_IP_DSTADDR</tt> shows the target address of the packet;
+<tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">SOCAT_PEERADDR</tt> and <tt data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">SOCAT_PEERPORT</tt> are the client socket
+values.
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">SOCAT_IP_IF</tt> 显示数据包进入服务器的接口； <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">SOCAT_IP_LOCADDR</tt> 显示此接口的 IP 地址； <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">SOCAT_IP_DSTADDR</tt> 显示数据包的目标地址； <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">SOCAT_PEERADDR</tt> 和 <tt data-immersive-translate-walked="1ee06a98-04b3-4516-a8bd-bae4ffc71f17">SOCAT_PEERPORT</tt> 是客户端套接字的值。</font></font></font></p>
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">More info about socat datagrams<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">有关 socat 数据报的更多信息</font></font></font></h2>
+
+<h3 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Links regarding this tutorial<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">有关本教程的链接</font></font></font></h3>
+<a href="socat.html#ADDRESS_UDP4_DATAGRAM" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">address UDP4-DATAGRAM<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">地址 UDP4-DATAGRAM</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#ADDRESS_UDP4_RECVFROM" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">address UDP4-RECVFROM<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">地址 UDP4-RECVFROM</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#OPTION_RANGE" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">option range<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项范围</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#OPTION_SO_BROADCAST" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">option broadcast<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项广播</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#OPTION_IP_ADD_MEMBERSHIP" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">option ip-add-membership<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项 IP 添加成员</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#OPTION_FORK" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">option fork<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项分叉</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#OPTION_BIND" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">option bind<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项绑定</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+
+<h3 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Other datagram addresses<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">其他数据报地址</font></font></font></h3>
+<a href="socat.html#ADDRESS_UDP4_RECV" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">address UDP4-RECV</a>: pure datagram receiver<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">地址 UDP4-RECV：纯数据报接收器</font></font></font><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#ADDRESS_UDP4_SENDTO" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">address UDP4-SENDTO</a>: communicate
+with one peer address<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">地址 UDP4-SENDTO：与一个对等地址通信</font></font></font><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#ADDRESS_UDP4_LISTEN" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">address UDP4-LISTEN</a>: pseudo stream server<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">地址 UDP4-LISTEN：伪流服务器</font></font></font><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#ADDRESS_UDP4_CONNECT" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">address UDP4-CONNECT</a>: pseudo stream client<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">地址 UDP4-CONNECT：伪流客户端</font></font></font><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+
+<h3 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Related socat option groups<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关的 socat 选项组</font></font></font></h3>
+<a href="socat.html#GROUP_IP" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">IP options<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">IP 选项</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#GROUP_SOCKET" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">socket options<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">套接字选项</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#GROUP_FD" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">file descriptor options<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文件描述符选项</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#GROUP_RANGE" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">range options<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">范围选项</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html#GROUP_CHILD" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">child process options<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">子进程选项</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+
+
+<h2 data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">References<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考资料</font></font></font></h2>
+<a href="../../socat" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">socat home page<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">socat 主页</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="socat.html" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">socat man page<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">socat 手册页面</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="http://en.wikipedia.org/wiki/Multicast" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">multicasting on Wikipedia<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">维基百科上的多播</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<a href="http://en.wikipedia.org/wiki/Broadcast_address" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">broadcasting on Wikipedia<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">维基百科上的广播</font></font></font></a><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+
+<p data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<small data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">This document was last modified in May 2009.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">该文档最后修改于 2009 年 5 月。</font></font></font></small><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<small data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">Copyright: Gerhard Rieger 2007-2009<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版权所有：Gerhard Rieger 2007-2009</font></font></font></small><br data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">
+<small data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e" data-immersive-translate-paragraph="1">License: <a href="http://www.fsf.org/licensing/licenses/fdl.html" data-immersive-translate-walked="6ad73ce8-cfbb-4934-815a-cd96513fbc4e">GNU Free Documentation License (FDL)</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">许可证：GNU 自由文档许可证（FDL）</font></font></font></small>
+</p>
+
+
+
+</body></html>

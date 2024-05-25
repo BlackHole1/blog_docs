@@ -1,0 +1,81 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-id128</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-id128"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-id128 — Generate and print sd-128 identifiers</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">systemd-id128</code>  [OPTIONS...]  new </p></div><div class="cmdsynopsis"><p><code class="command">systemd-id128</code>  [OPTIONS...]  machine-id </p></div><div class="cmdsynopsis"><p><code class="command">systemd-id128</code>  [OPTIONS...]  boot-id </p></div><div class="cmdsynopsis"><p><code class="command">systemd-id128</code>  [OPTIONS...]  invocation-id </p></div><div class="cmdsynopsis"><p><code class="command">systemd-id128</code>  [OPTIONS...]  show  [NAME|UUID...]</p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>id128</strong></span> may be used to conveniently print
+    <a href="sd-id128.html#"><span class="citerefentry"><span class="refentrytitle">sd-id128</span>(3)</span></a>
+    UUIDs. What identifier is printed depends on the specific verb.</p><p>With <span class="command"><strong>new</strong></span>, a new random identifier will be generated.</p><p>With <span class="command"><strong>machine-id</strong></span>, the identifier of the current machine will be
+    printed. See
+    <a href="machine-id.html#"><span class="citerefentry"><span class="refentrytitle">machine-id</span>(5)</span></a>.
+    </p><p>With <span class="command"><strong>boot-id</strong></span>, the identifier of the current boot will be
+    printed.</p><p>With <span class="command"><strong>invocation-id</strong></span>, the identifier of the current service invocation
+    will be printed. This is available in systemd services. See
+    <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.
+    </p><p>With <span class="command"><strong>show</strong></span>, well-known IDs are printed (for now, only GPT partition type UUIDs),
+    along with brief identifier strings. When no arguments are specified, all known IDs are shown. When
+    arguments are specified, they may be the identifiers or ID values of one or more known IDs, which are
+    then printed with their name, or arbitrary IDs, which are then printed with a placeholder name. Combine
+    with <code class="option">--uuid</code> to list the IDs in UUID style, i.e. the way GPT partition type UUIDs are
+    usually shown.</p><p><span class="command"><strong>machine-id</strong></span>, <span class="command"><strong>boot-id</strong></span>, and <span class="command"><strong>show</strong></span> may be
+    combined with the <code class="option">--app-specific=<em class="replaceable"><code>app-id</code></em></code> switch to generate
+    application-specific IDs. See
+    <a href="sd_id128_get_machine.html#"><span class="citerefentry"><span class="refentrytitle">sd_id128_get_machine</span>(3)</span></a>
+    for the discussion when this is useful. Support for <span class="command"><strong>show --app-specific=</strong></span> was added in
+    version 255.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="-p"><span class="term"><code class="option">-p</code>, </span><span class="term"><code class="option">--pretty</code></span><a class="headerlink" title="Permalink to this term" href="#-p">¶</a></dt><dd><p>Generate output as programming language snippets.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="-P"><span class="term"><code class="option">-P</code>, </span><span class="term"><code class="option">--value</code></span><a class="headerlink" title="Permalink to this term" href="#-P">¶</a></dt><dd><p>Only print the value. May be combined with
+        <code class="option">-u</code>/<code class="option">--uuid</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="-a app-id"><span class="term"><code class="option">-a <em class="replaceable"><code>app-id</code></em></code>, </span><span class="term"><code class="option">--app-specific=<em class="replaceable"><code>app-id</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#-a%20app-id">¶</a></dt><dd><p>With this option, identifiers will be printed that are the result of hashing the
+        application identifier <em class="replaceable"><code>app-id</code></em> and another ID. The
+        <em class="replaceable"><code>app-id</code></em> argument must be a valid sd-id128 string identifying the
+        application. When used with <span class="command"><strong>machine-id</strong></span>, the other ID will be the machine ID as
+        described in
+        <a href="machine-id.html#"><span class="citerefentry"><span class="refentrytitle">machine-id</span>(5)</span></a>, when
+        used with <span class="command"><strong>boot-id</strong></span>, the other ID will be the boot ID, and when used with
+        <span class="command"><strong>show</strong></span>, the other ID or IDs should be specified via the positional arguments.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="-u"><span class="term"><code class="option">-u</code>, </span><span class="term"><code class="option">--uuid</code></span><a class="headerlink" title="Permalink to this term" href="#-u">¶</a></dt><dd><p>Generate output as a UUID formatted in the "canonical representation", with five
+        groups of digits separated by hyphens. See the Wikipedia entry for
+        <a class="ulink" href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Format#Format" target="_top">Universally Unique Identifiers</a>
+        for more discussion.</p><p><a name="v244"></a>Added in version 244.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>On success 0 is returned, and a non-zero failure code otherwise.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Show a well-known UUID</b></p><div class="example-contents"><pre class="programlisting">
+$ systemd-id128 show --value user-home
+773f91ef66d449b5bd83d683bf40ad16
+
+$ systemd-id128 show --value --uuid user-home
+773f91ef-66d4-49b5-bd83-d683bf40ad16
+
+$ systemd-id128 show 773f91ef-66d4-49b5-bd83-d683bf40ad16
+NAME      ID
+user-home 773f91ef66d449b5bd83d683bf40ad16
+      </pre></div></div><br class="example-break"><div class="example"><a name="id-1.8.3"></a><p class="title"><b>Example 2. Generate an application-specific UUID</b></p><div class="example-contents"><pre class="programlisting">
+$ systemd-id128 machine-id -u
+3a9d668b-4db7-4939-8a4a-5e78a03bffb7
+
+$ systemd-id128 new -u
+1fb8f24b-02df-458d-9659-cc8ace68e28a
+
+$ systemd-id128 machine-id -u -a 1fb8f24b-02df-458d-9659-cc8ace68e28a
+47b82cb1-5339-43da-b2a6-1c350aef1bd1
+
+$ systemd-id128 -Pu show 3a9d668b-4db7-4939-8a4a-5e78a03bffb7 \
+    -a 1fb8f24b-02df-458d-9659-cc8ace68e28a
+47b82cb1-5339-43da-b2a6-1c350aef1bd1
+      </pre><p>On a given machine with the ID 3a9d668b-4db7-4939-8a4a-5e78a03bffb7, for the application
+      1fb8f24b-02df-458d-9659-cc8ace68e28a, we generate an application-specific machine ID
+      (47b82cb1-5339-43da-b2a6-1c350aef1bd1). If we want to later recreate the same calculation on a
+      different machine, we need to specify both IDs explicitly as parameters to <span class="command"><strong>show</strong></span>.
+      </p></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-id128.html#"><span class="citerefentry"><span class="refentrytitle">sd-id128</span>(3)</span></a>,
+      <a href="sd_id128_get_machine.html#"><span class="citerefentry"><span class="refentrytitle">sd_id128_get_machine</span>(3)</span></a>
+    </p></div></div></body></html>

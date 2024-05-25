@@ -1,0 +1,191 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-dissect</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-dissect"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-dissect, mount.ddi — Dissect Discoverable Disk Images (DDIs)</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...]   <em class="replaceable"><code>IMAGE</code></em> </code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--mount</code>   <em class="replaceable"><code>IMAGE</code></em>    <em class="replaceable"><code>PATH</code></em> </code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--umount</code>   <em class="replaceable"><code>PATH</code></em> </code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--attach</code>   <em class="replaceable"><code>IMAGE</code></em> </code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--detach</code>   <em class="replaceable"><code>PATH</code></em> </code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--list</code>   <em class="replaceable"><code>IMAGE</code></em> </code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--mtree</code>   <em class="replaceable"><code>IMAGE</code></em> </code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--with</code>   <em class="replaceable"><code>IMAGE</code></em>   [<em class="replaceable"><code>COMMAND</code></em>...]</code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--copy-from</code>   <em class="replaceable"><code>IMAGE</code></em>    <em class="replaceable"><code>PATH</code></em>   [<em class="replaceable"><code>TARGET</code></em>]</code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--copy-to</code>   <em class="replaceable"><code>IMAGE</code></em>   [<em class="replaceable"><code>SOURCE</code></em>]   <em class="replaceable"><code>PATH</code></em> </code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--discover</code></code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-dissect [OPTIONS...] <code class="option">--validate</code>   <em class="replaceable"><code>IMAGE</code></em> </code> </p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-dissect</strong></span> is a tool for introspecting and interacting with file system OS
+    disk images, specifically Discoverable Disk Images (DDIs). It supports four different operations:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Show general OS image information, including the image's
+      <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> data,
+      machine ID, partition information and more.</p></li><li class="listitem"><p>Mount an OS image to a local directory. In this mode it will dissect the OS image and
+      mount the included partitions according to their designation onto a directory and possibly
+      sub-directories.</p></li><li class="listitem"><p>Unmount an OS image from a local directory. In this mode it will recursively unmount
+      the mounted partitions and remove the underlying loop device, including all the partition sub-devices.
+      </p></li><li class="listitem"><p>Copy files and directories in and out of an OS image.</p></li></ol></div><p>The tool may operate on three types of OS images:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>OS disk images containing a GPT partition table envelope, with partitions marked
+      according to the <a class="ulink" href="https://uapi-group.org/specifications/specs/discoverable_partitions_specification" target="_top">Discoverable Partitions
+      Specification</a>.</p></li><li class="listitem"><p>OS disk images containing just a plain file-system without an enveloping partition
+      table. (This file system is assumed to be the root file system of the OS.)</p></li><li class="listitem"><p>OS disk images containing a GPT or MBR partition table, with a single
+      partition only. (This partition is assumed to contain the root file system of the OS.)</p></li></ol></div><p>OS images may use any kind of Linux-supported file systems. In addition they may make use of LUKS
+    disk encryption, and contain Verity integrity information. Note that qualifying OS images may be booted
+    with <a href="systemd-nspawn.html#"><span class="citerefentry"><span class="refentrytitle">systemd-nspawn</span>(1)</span></a>'s
+    <code class="option">--image=</code> switch, and be used as root file system for system service using the
+    <code class="varname">RootImage=</code> unit file setting, see
+    <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.</p><p>Note that the partition table shown when invoked without command switch (as listed below) does not
+    necessarily show all partitions included in the image, but just the partitions that are understood and
+    considered part of an OS disk image. Specifically, partitions of unknown types are ignored, as well as
+    duplicate partitions (i.e. more than one per partition type), as are root and <code class="filename">/usr/</code>
+    partitions of architectures not compatible with the local system. In other words: this tool will display
+    what it operates with when mounting the image. To display the complete list of partitions use a tool such
+    as <a href="https://man7.org/linux/man-pages/man8/fdisk.8.html"><span class="citerefentry"><span class="refentrytitle">fdisk</span>(8)</span></a>.</p><p>The <span class="command"><strong>systemd-dissect</strong></span> command may be invoked as <span class="command"><strong>mount.ddi</strong></span> in
+    which case it implements the <a href="https://man7.org/linux/man-pages/man8/mount.8.html"><span class="citerefentry"><span class="refentrytitle">mount</span>(8)</span></a> "external
+    helper" interface. This ensures disk images compatible with <span class="command"><strong>systemd-dissect</strong></span> can be
+    mounted directly by <span class="command"><strong>mount</strong></span> and <a href="https://man7.org/linux/man-pages/man5/fstab.5.html"><span class="citerefentry"><span class="refentrytitle">fstab</span>(5)</span></a>. For
+    details see below.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Commands">Commands<a class="headerlink" title="Permalink to this headline" href="#Commands">¶</a></h2><p>If neither of the command switches listed below are passed the specified disk image is opened and
+    general information about the image and the contained partitions and their use is shown.</p><div class="variablelist"><dl class="variablelist"><dt id="--mount"><span class="term"><code class="option">--mount</code>, </span><span class="term"><code class="option">-m</code></span><a class="headerlink" title="Permalink to this term" href="#--mount">¶</a></dt><dd><p>Mount the specified OS image to the specified directory. This will dissect the image,
+        determine the OS root file system — as well as possibly other partitions — and mount them to the
+        specified directory. If the OS image contains multiple partitions marked with the <a class="ulink" href="https://uapi-group.org/specifications/specs/discoverable_partitions_specification" target="_top">Discoverable Partitions Specification</a>
+        multiple nested mounts are established. This command expects two arguments: a path to an image file
+        and a path to a directory where to mount the image.</p><p>To unmount an OS image mounted like this use the <code class="option">--umount</code> operation.</p><p>When the OS image contains LUKS encrypted or Verity integrity protected file systems
+        appropriate volumes are automatically set up and marked for automatic disassembly when the image is
+        unmounted.</p><p>The OS image may either be specified as path to an OS image stored in a regular file or may
+        refer to block device node (in the latter case the block device must be the "whole" device, i.e. not
+        a partition device). (The other supported commands described here support this, too.)</p><p>All mounted file systems are checked with the appropriate <a href="https://man7.org/linux/man-pages/man8/fsck.8.html"><span class="citerefentry"><span class="refentrytitle">fsck</span>(8)</span></a>
+        implementation in automatic fixing mode, unless explicitly turned off (<code class="option">--fsck=no</code>) or
+        read-only operation is requested (<code class="option">--read-only</code>).</p><p>Note that this functionality is also available in <a href="https://man7.org/linux/man-pages/man8/mount.8.html"><span class="citerefentry"><span class="refentrytitle">mount</span>(8)</span></a> via a
+        command such as <span class="command"><strong>mount -t ddi myimage.raw targetdir/</strong></span>, as well as in <a href="https://man7.org/linux/man-pages/man5/fstab.5.html"><span class="citerefentry"><span class="refentrytitle">fstab</span>(5)</span></a>. For
+        details, see below.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="-M"><span class="term"><code class="option">-M</code></span><a class="headerlink" title="Permalink to this term" href="#-M">¶</a></dt><dd><p>This is a shortcut for <code class="option">--mount --mkdir</code>.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--umount"><span class="term"><code class="option">--umount</code>, </span><span class="term"><code class="option">-u</code></span><a class="headerlink" title="Permalink to this term" href="#--umount">¶</a></dt><dd><p>Unmount an OS image from the specified directory. This command expects one argument:
+        a directory where an OS image was mounted.</p><p>All mounted partitions will be recursively unmounted, and the underlying loop device will be
+        removed, along with all its partition sub-devices.</p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="-U"><span class="term"><code class="option">-U</code></span><a class="headerlink" title="Permalink to this term" href="#-U">¶</a></dt><dd><p>This is a shortcut for <code class="option">--umount --rmdir</code>.</p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="--attach"><span class="term"><code class="option">--attach</code></span><a class="headerlink" title="Permalink to this term" href="#--attach">¶</a></dt><dd><p>Attach the specified disk image to an automatically allocated loopback block device,
+        and print the path to the loopback block device to standard output. This is similar to an invocation
+        of <span class="command"><strong>losetup --find --show</strong></span>, but will validate the image as DDI before attaching, and
+        derive the correct sector size to use automatically. Moreover, it ensures the per-partition block
+        devices are created before returning. Takes a path to a disk image file.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="--detach"><span class="term"><code class="option">--detach</code></span><a class="headerlink" title="Permalink to this term" href="#--detach">¶</a></dt><dd><p>Detach the specified disk image from a loopback block device. This undoes the effect
+        of <code class="option">--attach</code> above. This expects either a path to a loopback block device as an
+        argument, or the path to the backing image file. In the latter case it will automatically determine
+        the right device to detach.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="--list"><span class="term"><code class="option">--list</code>, </span><span class="term"><code class="option">-l</code></span><a class="headerlink" title="Permalink to this term" href="#--list">¶</a></dt><dd><p>Prints the paths of all the files and directories in the specified OS image or
+        directory to standard output.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="--mtree"><span class="term"><code class="option">--mtree</code></span><a class="headerlink" title="Permalink to this term" href="#--mtree">¶</a></dt><dd><p>Generates a BSD
+        <a href="http://linux.die.net/man/8/mtree"><span class="citerefentry"><span class="refentrytitle">mtree</span>(8)</span></a>
+        compatible file manifest of the specified disk image or directory. This is useful for comparing image
+        contents in detail, including inode information and other metadata. While the generated manifest will
+        contain detailed inode information, it currently excludes extended attributes, file system
+        capabilities, MAC labels,
+        <a href="https://man7.org/linux/man-pages/man1/chattr.1.html"><span class="citerefentry"><span class="refentrytitle">chattr</span>(1)</span></a>
+        file flags,
+        <a href="https://btrfs.readthedocs.io/en/latest/btrfs-man5.html"><span class="citerefentry"><span class="refentrytitle">btrfs</span>(5)</span></a>
+        subvolume information, and various other file metadata. File content information is shown via a
+        SHA256 digest. Additional fields might be added in future. Note that inode information such as link
+        counts, inode numbers and timestamps is excluded from the output on purpose, as it typically
+        complicates reproducibility.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="--with"><span class="term"><code class="option">--with</code></span><a class="headerlink" title="Permalink to this term" href="#--with">¶</a></dt><dd><p>Runs the specified command with the specified OS image mounted. This will mount the
+        image to a temporary directory, switch the current working directory to it, and invoke the specified
+        command line as child process. Once the process ends it will unmount the image again, and remove the
+        temporary directory. If no command is specified a shell is invoked. The image is mounted writable,
+        use <code class="option">--read-only</code> to switch to read-only operation. The invoked process will have the
+        <code class="varname">$SYSTEMD_DISSECT_ROOT</code> environment variable set, containing the absolute path name
+        of the temporary mount point, i.e. the same directory that is set as the current working
+        directory. It will also have the <code class="varname">$SYSTEMD_DISSECT_DEVICE</code> environment variable set,
+        containing the absolute path name of the loop device the image was attached to.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="--copy-from"><span class="term"><code class="option">--copy-from</code>, </span><span class="term"><code class="option">-x</code></span><a class="headerlink" title="Permalink to this term" href="#--copy-from">¶</a></dt><dd><p>Copies a file or directory from the specified OS image or directory into the
+        specified location on the host file system. Expects three arguments: a path to an image file or
+        directory, a source path (relative to the image's root directory) and a destination path (relative to
+        the current working directory, or an absolute path, both outside of the image). If the destination
+        path is omitted or specified as dash ("<code class="literal">-</code>"), the specified file is written to
+        standard output. If the source path in the image file system refers to a regular file it is copied to
+        the destination path. In this case access mode, extended attributes and timestamps are copied as
+        well, but file ownership is not. If the source path in the image refers to a directory, it is copied
+        to the destination path, recursively with all containing files and directories. In this case the file
+        ownership is copied too.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--copy-to"><span class="term"><code class="option">--copy-to</code>, </span><span class="term"><code class="option">-a</code></span><a class="headerlink" title="Permalink to this term" href="#--copy-to">¶</a></dt><dd><p>Copies a file or directory from the specified location in the host file system into
+        the specified OS image or directory. Expects three arguments: a path to an image file or directory, a
+        source path (relative to the current working directory, or an absolute path, both outside of the
+        image) and a destination path (relative to the image's root directory). If the source path is omitted
+        or specified as dash ("<code class="literal">-</code>"), the data to write is read from standard input. If the
+        source path in the host file system refers to a regular file, it is copied to the destination path.
+        In this case access mode, extended attributes and timestamps are copied as well, but file ownership
+        is not. If the source path in the host file system refers to a directory it is copied to the
+        destination path, recursively with all containing files and directories. In this case the file
+        ownership is copied too.</p><p>As with <code class="option">--mount</code> file system checks are implicitly run before the copy
+        operation begins.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--discover"><span class="term"><code class="option">--discover</code></span><a class="headerlink" title="Permalink to this term" href="#--discover">¶</a></dt><dd><p>Show a list of DDIs in well-known directories. This will show machine, portable
+        service and system/configuration extension disk images in the usual directories
+        <code class="filename">/usr/lib/machines/</code>, <code class="filename">/usr/lib/portables/</code>,
+        <code class="filename">/usr/lib/confexts/</code>, <code class="filename">/var/lib/machines/</code>,
+        <code class="filename">/var/lib/portables/</code>, <code class="filename">/var/lib/extensions/</code> and so
+        on.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="--validate"><span class="term"><code class="option">--validate</code></span><a class="headerlink" title="Permalink to this term" href="#--validate">¶</a></dt><dd><p>Validates the partition arrangement of a disk image (DDI), and ensures it matches the
+        image policy specified via <code class="option">--image-policy=</code>, if one is specified. This parses the
+        partition table and probes the file systems in the image, but does not attempt to mount them (nor to
+        set up disk encryption/authentication via LUKS/Verity). It does this taking the configured image
+        dissection policy into account. Since this operation does not mount file systems, this command –
+        unlike all other commands implemented by this tool – requires no privileges other than the ability to
+        access the specified file. Prints "OK" and returns zero if the image appears to be in order and
+        matches the specified image dissection policy. Otherwise prints an error message and returns
+        non-zero.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--read-only"><span class="term"><code class="option">--read-only</code>, </span><span class="term"><code class="option">-r</code></span><a class="headerlink" title="Permalink to this term" href="#--read-only">¶</a></dt><dd><p>Operate in read-only mode. By default <code class="option">--mount</code> will establish
+        writable mount points. If this option is specified they are established in read-only mode
+        instead.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--fsck=no"><span class="term"><code class="option">--fsck=no</code></span><a class="headerlink" title="Permalink to this term" href="#--fsck=no">¶</a></dt><dd><p>Turn off automatic file system checking. By default when an image is accessed for
+        writing (by <code class="option">--mount</code> or <code class="option">--copy-to</code>) the file systems contained in the
+        OS image are automatically checked using the appropriate <a href="https://man7.org/linux/man-pages/man8/fsck.8.html"><span class="citerefentry"><span class="refentrytitle">fsck</span>(8)</span></a>
+        command, in automatic fixing mode. This behavior may be switched off using
+        <code class="option">--fsck=no</code>.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--growfs=no"><span class="term"><code class="option">--growfs=no</code></span><a class="headerlink" title="Permalink to this term" href="#--growfs=no">¶</a></dt><dd><p>Turn off automatic growing of accessed file systems to their partition size, if
+        marked for that in the GPT partition table. By default when an image is accessed for writing (by
+        <code class="option">--mount</code> or <code class="option">--copy-to</code>) the file systems contained in the OS image
+        are automatically grown to their partition sizes, if bit 59 in the GPT partition flags is set for
+        partition types that are defined by the <a class="ulink" href="https://uapi-group.org/specifications/specs/discoverable_partitions_specification" target="_top">Discoverable Partitions Specification</a>. This
+        behavior may be switched off using <code class="option">--growfs=no</code>. File systems are grown automatically
+        on access if all of the following conditions are met:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>The file system is mounted writable</p></li><li class="listitem"><p>The file system currently is smaller than the partition it is contained in (and thus can be grown)</p></li><li class="listitem"><p>The image contains a GPT partition table</p></li><li class="listitem"><p>The file system is stored on a partition defined by the Discoverable Partitions Specification</p></li><li class="listitem"><p>Bit 59 of the GPT partition flags for this partition is set, as per specification</p></li><li class="listitem"><p>The <code class="option">--growfs=no</code> option is not passed.</p></li></ol></div><p><a name="v249"></a>Added in version 249.</p></dd><dt id="--mkdir"><span class="term"><code class="option">--mkdir</code></span><a class="headerlink" title="Permalink to this term" href="#--mkdir">¶</a></dt><dd><p>If combined with <code class="option">--mount</code> the directory to mount the OS image to is
+        created if it is missing. Note that the directory is not automatically removed when the disk image is
+        unmounted again.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--rmdir"><span class="term"><code class="option">--rmdir</code></span><a class="headerlink" title="Permalink to this term" href="#--rmdir">¶</a></dt><dd><p>If combined with <code class="option">--umount</code> the specified directory where the OS image
+        is mounted is removed after unmounting the OS image.</p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="--discard="><span class="term"><code class="option">--discard=</code></span><a class="headerlink" title="Permalink to this term" href="#--discard=">¶</a></dt><dd><p>Takes one of "<code class="literal">disabled</code>", "<code class="literal">loop</code>",
+        "<code class="literal">all</code>", "<code class="literal">crypto</code>". If "<code class="literal">disabled</code>" the image is
+        accessed with empty block discarding turned off. If "<code class="literal">loop</code>" discarding is enabled if
+        operating on a regular file. If "<code class="literal">crypt</code>" discarding is enabled even on encrypted file
+        systems. If "<code class="literal">all</code>" discarding is unconditionally enabled.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--in-memory"><span class="term"><code class="option">--in-memory</code></span><a class="headerlink" title="Permalink to this term" href="#--in-memory">¶</a></dt><dd><p>If specified an in-memory copy of the specified disk image is used. This may be used
+        to operate with write-access on a (possibly read-only) image, without actually modifying the original
+        file. This may also be used in order to operate on a disk image without keeping the originating file
+        system busy, in order to allow it to be unmounted.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="--root-hash="><span class="term"><code class="option">--root-hash=</code>, </span><span class="term"><code class="option">--root-hash-sig=</code>, </span><span class="term"><code class="option">--verity-data=</code></span><a class="headerlink" title="Permalink to this term" href="#--root-hash=">¶</a></dt><dd><p>Configure various aspects of Verity data integrity for the OS image. Option
+        <code class="option">--root-hash=</code> specifies a hex-encoded top-level Verity hash to use for setting up the
+        Verity integrity protection. Option <code class="option">--root-hash-sig=</code> specifies the path to a file
+        containing a PKCS#7 signature for the hash. This signature is passed to the kernel during activation,
+        which will match it against signature keys available in the kernel keyring.  Option
+        <code class="option">--verity-data=</code> specifies a path to a file with the Verity data to use for the OS
+        image, in case it is stored in a detached file. It is recommended to embed the Verity data directly
+        in the image, using the Verity mechanisms in the <a class="ulink" href="https://uapi-group.org/specifications/specs/discoverable_partitions_specification" target="_top">Discoverable Partitions Specification</a>.
+        </p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--loop-ref="><span class="term"><code class="option">--loop-ref=</code></span><a class="headerlink" title="Permalink to this term" href="#--loop-ref=">¶</a></dt><dd><p>Configures the "reference" string the kernel shall report as backing file for the
+        loopback block device. While this is supposed to be a path or filename referencing the backing file,
+        this is not enforced and the kernel accepts arbitrary free-form strings, chosen by the user. Accepts
+        arbitrary strings up to a length of 63 characters. This sets the kernel's
+        "<code class="literal">.lo_file_name</code>" field for the block device. Note this is distinct from the
+        <code class="filename">/sys/class/block/loopX/loop/backing_file</code> attribute file that always reports a
+        path referring to the actual backing file. The latter is subject to mount namespace translation, the
+        former is not.</p><p>This setting is particularly useful in combination with the <code class="option">--attach</code> command,
+        as it allows later referencing the allocated loop device via
+        <code class="filename">/dev/disk/by-loop-ref/…</code> symlinks. Example: first, set up the loopback device
+        via <span class="command"><strong>systemd-dissect attach --loop-ref=quux foo.raw</strong></span>, and then reference it in a
+        command via the specified filename: <span class="command"><strong>cfdisk /dev/disk/by-loop-ref/quux</strong></span>.
+        </p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="--mtree-hash=no"><span class="term"><code class="option">--mtree-hash=no</code></span><a class="headerlink" title="Permalink to this term" href="#--mtree-hash=no">¶</a></dt><dd><p>If combined with <code class="option">--mtree</code>, turns off inclusion of file hashes in the
+        mtree output. This makes the <code class="option">--mtree</code> faster when operating on large images.
+        </p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="--image-policy=policy"><span class="term"><code class="option">--image-policy=<em class="replaceable"><code>policy</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--image-policy=policy">¶</a></dt><dd><p>Takes an image policy string as argument, as per
+    <a href="systemd.image-policy.html#"><span class="citerefentry"><span class="refentrytitle">systemd.image-policy</span>(7)</span></a>. The
+    policy is enforced when operating on the disk image specified via <code class="option">--image=</code>, see
+    above. If not specified defaults to the "<code class="literal">*</code>" policy, i.e. all recognized file systems
+    in the image are used.</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="--no-legend"><span class="term"><code class="option">--no-legend</code></span><a class="headerlink" title="Permalink to this term" href="#--no-legend">¶</a></dt><dd><p>Do not print the legend, i.e. column headers and the
+      footer with hints.</p></dd><dt id="--json=MODE"><span class="term"><code class="option">--json=</code><em class="replaceable"><code>MODE</code></em></span><a class="headerlink" title="Permalink to this term" href="#--json=MODE">¶</a></dt><dd><p>Shows output formatted as JSON. Expects one of "<code class="literal">short</code>" (for the
+    shortest possible output without any redundant whitespace or line breaks), "<code class="literal">pretty</code>"
+    (for a pretty version of the same, with indentation and line breaks) or "<code class="literal">off</code>" (to turn
+    off JSON output, the default).</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>On success, 0 is returned, a non-zero failure code otherwise. If the <code class="option">--with</code>
+    command is used the exit status of the invoked command is propagated.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="Invocation as /sbin/mount.ddi">Invocation as <span class="command"><strong>/sbin/mount.ddi</strong></span><a class="headerlink" title="Permalink to this headline" href="#Invocation%20as%20/sbin/mount.ddi">¶</a></h2><p>The <span class="command"><strong>systemd-dissect</strong></span> executable may be symlinked to
+    <code class="filename">/sbin/mount.ddi</code>. If invoked through that it implements <a href="https://man7.org/linux/man-pages/man8/mount.8.html"><span class="citerefentry"><span class="refentrytitle">mount</span>(8)</span></a>'s
+    "external helper" interface for the (pseudo) file system type "<code class="literal">ddi</code>". This means
+    conformant disk images may be mounted directly via</p><pre class="programlisting"># mount -t ddi myimage.raw targetdir/</pre><p>in a fashion mostly equivalent to:</p><pre class="programlisting"># systemd-dissect --mount myimage.raw targetdir/</pre><p>Note that since a single DDI may contain multiple file systems it should later be unmounted with
+    <span class="command"><strong>umount -R targetdir/</strong></span>, for recursive operation.</p><p>This functionality is particularly useful to mount DDIs automatically at boot via simple
+    <code class="filename">/etc/fstab</code> entries. For example:</p><pre class="programlisting">/path/to/myimage.raw /images/myimage/ ddi defaults 0 0</pre><p>When invoked this way the mount options "<code class="literal">ro</code>", "<code class="literal">rw</code>",
+    "<code class="literal">discard</code>", "<code class="literal">nodiscard</code>" map to the corresponding options listed above
+    (i.e. <code class="option">--read-only</code>, <code class="option">--discard=all</code>,
+    <code class="option">--discard=disabled</code>). Mount options are <span class="emphasis"><em>not</em></span> generically passed on to
+    the file systems inside the images.</p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.10.2"></a><p class="title"><b>Example 1. Generate a tarball from an OS disk image</b></p><div class="example-contents"><pre class="programlisting"># systemd-dissect --with foo.raw tar cz . &gt;foo.tar.gz</pre></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.11"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-nspawn.html#"><span class="citerefentry"><span class="refentrytitle">systemd-nspawn</span>(1)</span></a>,
+      <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>,
+      <a class="ulink" href="https://uapi-group.org/specifications/specs/discoverable_partitions_specification" target="_top">Discoverable Partitions Specification</a>,
+      <a href="https://man7.org/linux/man-pages/man8/mount.8.html"><span class="citerefentry"><span class="refentrytitle">mount</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/umount.8.html"><span class="citerefentry"><span class="refentrytitle">umount</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/fdisk.8.html"><span class="citerefentry"><span class="refentrytitle">fdisk</span>(8)</span></a>
+    </p></div></div></body></html>

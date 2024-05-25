@@ -1,0 +1,955 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_add_object</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="sd_bus_add_object" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><div class="titlepage" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></div><div class="refnamediv" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><h2 data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">sd_bus_add_object, sd_bus_add_fallback, sd_bus_add_object_vtable, sd_bus_add_fallback_vtable, sd_bus_add_filter, SD_BUS_VTABLE_CAPABILITY, SD_BUS_VTABLE_START, SD_BUS_VTABLE_END, SD_BUS_METHOD_WITH_NAMES_OFFSET, SD_BUS_METHOD_WITH_NAMES, SD_BUS_METHOD_WITH_OFFSET, SD_BUS_METHOD, SD_BUS_SIGNAL_WITH_NAMES, SD_BUS_SIGNAL, SD_BUS_WRITABLE_PROPERTY, SD_BUS_PROPERTY, SD_BUS_PARAM — Declare properties and methods for a D-Bus path<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">sd_bus_add_object、sd_bus_add_fallback、sd_bus_add_object_vtable、sd_bus_add_fallback_vtable、sd_bus_add_filter、SD_BUS_VTABLE_CAPABILITY、SD_BUS_VTABLE_START、SD_BUS_VTABLE_END、SD_BUS_METHOD_WITH_NAMES_OFFSET、SD_BUS_METHOD_WITH_NAMES、SD_BUS_METHOD_WITH_OFFSET、SD_BUS_METHOD、SD_BUS_SIGNAL_WITH_NAMES、SD_BUS_SIGNAL、SD_BUS_WRITABLE_PROPERTY、SD_BUS_PROPERTY、SD_BUS_PARAM — 为 D-Bus 路径声明属性和方法</font></font></font></p></div><div class="refsynopsisdiv" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><h2 data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Synopsis<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">简介</font></font></font></h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus-vtable.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">typedef int (*<b class="fsfunc">sd_bus_message_handler_t</b>)(</code></td><td>sd_bus_message *<var class="pdparam">m</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_error *<var class="pdparam">ret_error</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">typedef int (*<b class="fsfunc">sd_bus_property_get_t</b>)(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">interface</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">property</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_message *<var class="pdparam">reply</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_error *<var class="pdparam">ret_error</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">typedef int (*<b class="fsfunc">sd_bus_property_set_t</b>)(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">interface</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">property</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_message *<var class="pdparam">value</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_error *<var class="pdparam">ret_error</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">typedef int (*<b class="fsfunc">sd_bus_object_find_t</b>)(</code></td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">interface</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var>, </td></tr><tr><td>&nbsp;</td><td>void **<var class="pdparam">ret_found</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_error *<var class="pdparam">ret_error</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_add_object</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_slot **<var class="pdparam">slot</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_message_handler_t <var class="pdparam">callback</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_add_fallback</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_slot **<var class="pdparam">slot</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_message_handler_t <var class="pdparam">callback</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_add_object_vtable</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_slot **<var class="pdparam">slot</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">interface</var>, </td></tr><tr><td>&nbsp;</td><td>const sd_bus_vtable *<var class="pdparam">vtable</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_add_fallback_vtable</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_slot **<var class="pdparam">slot</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">prefix</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">interface</var>, </td></tr><tr><td>&nbsp;</td><td>const sd_bus_vtable *<var class="pdparam">vtable</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_object_find_t <var class="pdparam">find</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_add_filter</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_slot **<var class="pdparam">slot</var>, </td></tr><tr><td>&nbsp;</td><td>sd_bus_message_handler_t <var class="pdparam">callback</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><p>
+        <code class="constant">SD_BUS_VTABLE_CAPABILITY(<em class="replaceable"><code>capability</code></em>)</code>
+      </p><p>
+        <code class="constant">SD_BUS_VTABLE_START(<em class="replaceable"><code>flags</code></em>)</code>
+      </p><p>
+        <code class="constant">SD_BUS_VTABLE_END</code>
+      </p><p>
+        <code class="constant">SD_BUS_METHOD_WITH_ARGS_OFFSET(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>args</code></em>,
+        <em class="replaceable"><code>result</code></em>,
+        <em class="replaceable"><code>handler</code></em>,
+        <em class="replaceable"><code>offset</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_METHOD_WITH_ARGS(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>args</code></em>,
+        <em class="replaceable"><code>result</code></em>,
+        <em class="replaceable"><code>handler</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_METHOD_WITH_NAMES_OFFSET(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>signature</code></em>,
+        <em class="replaceable"><code>in_names</code></em>,
+        <em class="replaceable"><code>result</code></em>,
+        <em class="replaceable"><code>out_names</code></em>,
+        <em class="replaceable"><code>handler</code></em>,
+        <em class="replaceable"><code>offset</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_METHOD_WITH_NAMES(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>signature</code></em>,
+        <em class="replaceable"><code>in_names</code></em>,
+        <em class="replaceable"><code>result</code></em>,
+        <em class="replaceable"><code>out_names</code></em>,
+        <em class="replaceable"><code>handler</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_METHOD_WITH_OFFSET(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>signature</code></em>,
+        <em class="replaceable"><code>result</code></em>,
+        <em class="replaceable"><code>handler</code></em>,
+        <em class="replaceable"><code>offset</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_METHOD(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>signature</code></em>,
+        <em class="replaceable"><code>result</code></em>,
+        <em class="replaceable"><code>handler</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_SIGNAL_WITH_ARGS(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>args</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_SIGNAL_WITH_NAMES(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>signature</code></em>,
+        <em class="replaceable"><code>names</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_SIGNAL(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>signature</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_WRITABLE_PROPERTY(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>signature</code></em>,
+        <em class="replaceable"><code>get</code></em>,
+        <em class="replaceable"><code>set</code></em>,
+        <em class="replaceable"><code>offset</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_PROPERTY(<em class="replaceable"><code>member</code></em>,
+        <em class="replaceable"><code>signature</code></em>,
+        <em class="replaceable"><code>get</code></em>,
+        <em class="replaceable"><code>offset</code></em>,
+        <em class="replaceable"><code>flags</code></em>)
+        </code>
+      </p><p>
+        <code class="constant">SD_BUS_PARAM(<em class="replaceable"><code>name</code></em>)</code>
+      </p><p>
+        <code class="constant">SD_BUS_ARGS(<em class="replaceable"><code>...</code></em>)</code>
+      </p><p>
+        <code class="constant">SD_BUS_RESULT(<em class="replaceable"><code>...</code></em>)</code>
+      </p><p>
+        <code class="constant">SD_BUS_NO_ARGS</code>
+      </p><p>
+        <code class="constant">SD_BUS_NO_RESULT</code>
+      </p></div></div><div class="refsect1" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.5" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><h2 id="Description" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Description<a class="headerlink" title="Permalink to this headline" href="#Description" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h2><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> is used to declare attributes for the
+    object path <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">path</code></em> connected to the bus connection
+    <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">bus</code></em> under the interface <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">interface</code></em>. The table
+    <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">vtable</code></em> may contain property declarations using
+    <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PROPERTY()</code> or <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_WRITABLE_PROPERTY()</code>,
+    method declarations using <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD()</code>,
+    <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES()</code>,
+    <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_OFFSET()</code>, or
+    <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES_OFFSET()</code>, and signal declarations using
+    <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL_WITH_NAMES()</code> or <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL()</code>, see
+    below. The <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code></em> parameter contains a pointer that will be passed
+    to various callback functions. It may be specified as <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">NULL</code> if no value is
+    necessary. An interface can have any number of vtables attached to it.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> 用于声明与总线连接 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">bus</code> 下接口 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">interface</code> 关联的对象路径 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">path</code> 的属性。表 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">vtable</code> 可包含使用 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PROPERTY()</code> 或 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_WRITABLE_PROPERTY()</code> 进行属性声明，使用 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD()</code> 、 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES()</code> 、 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_OFFSET()</code> 或 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES_OFFSET()</code> 进行方法声明，以及使用 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL_WITH_NAMES()</code> 或 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL()</code> 进行信号声明，详见下文。 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code> 参数包含将传递给各种回调函数的指针。如果不需要值，则可以指定为 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">NULL</code> 。一个接口可以附加任意数量的 vtable。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback_vtable()</code> is similar to
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code>, but is used to register "fallback" attributes.
+    When looking for an attribute declaration, bus object paths registered with
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> are checked first. If no match is found, the
+    fallback vtables are checked for each prefix of the bus object path, i.e. with the last
+    slash-separated components successively removed. This allows the vtable to be used for an
+    arbitrary number of dynamically created objects.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback_vtable()</code> 类似于 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> ，但用于注册“fallback”属性。在查找属性声明时，首先检查使用 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> 注册的总线对象路径。如果找不到匹配项，则依次检查每个总线对象路径的前缀的回退 vtables，即逐渐删除最后一个斜杠分隔的组件。这允许 vtable 用于任意数量的动态创建对象。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Parameter <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">find</code></em> is a function which is used to locate the target
+    object based on the bus object path <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">path</code></em>. It must return
+    <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">1</code> and set the <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_found</code></em> output parameter if the
+    object is found, return <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">0</code> if the object was not found, and return a
+    negative errno-style error code or initialize the error structure
+    <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_error</code></em> on error. The pointer passed in
+    <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_found</code></em> will be used as the <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code></em> parameter
+    for the callback functions (offset by the <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">offset</code></em> offsets as specified in
+    the vtable entries).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">find</code> 是一个函数，用于根据总线对象路径 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">path</code> 定位目标对象。如果找到对象，则必须返回 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">1</code> 并设置 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_found</code> 输出参数，如果未找到对象，则返回 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">0</code> ，如果出现错误则返回负的 errno 风格错误代码或初始化错误结构 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_error</code> 。传递给 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_found</code> 的指针将用作回调函数的 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code> 参数（根据 vtable 条目中指定的 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">offset</code> 偏移量进行偏移）。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object()</code> attaches a callback directly to the object path
+    <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">path</code></em>. An object path can have any number of callbacks attached to it.
+    Each callback is prepended to the list of callbacks which are always called in order.
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback()</code> is similar to
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object()</code> but applies to fallback paths instead.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object()</code> 直接将回调附加到对象路径 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">path</code> 。一个对象路径可以附加任意数量的回调。每个回调都会预先添加到始终按顺序调用的回调列表中。 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback()</code> 类似于 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object()</code> ，但适用于回退路径。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_filter()</code> installs a callback that is invoked for each
+    incoming D-Bus message. Filters can be used to handle logic common to all messages received by
+    a service (e.g. authentication or authorization).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_filter()</code> 安装一个回调，用于处理每个传入的 D-Bus 消息。可以使用过滤器来处理所有由服务接收的消息的公共逻辑（例如身份验证或授权）。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">When a request is received, any associated callbacks are called sequentially until a
+    callback returns a non-zero integer. Return zero from a callback to give other callbacks the
+    chance to process the request. Callbacks are called in the following order: first, global
+    callbacks installed with <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_filter()</code> are called. Second, callbacks
+    attached directly to the request object path are called, followed by any D-Bus method callbacks
+    attached to the request object path, interface and member. Finally, the property callbacks
+    attached to the request object path, interface and member are called. If the final callback
+    returns zero, an error reply is sent back to the caller indicating no matching object for the
+    request was found.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当收到请求时，将按顺序调用任何关联的回调，直到回调返回非零整数为止。从回调中返回零以让其他回调有机会处理请求。回调按以下顺序调用：首先，调用使用 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_filter()</code> 安装的全局回调。其次，调用直接附加到请求对象路径的回调，然后调用附加到请求对象路径、接口和成员的任何 D-Bus 方法回调。最后，调用附加到请求对象路径、接口和成员的属性回调。如果最终回调返回零，则向调用者发送错误回复，指示未找到请求的匹配对象。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Note that you can return a positive integer from a <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">method</code></em> callback without
+    immediately sending a reply. This informs sd-bus this callback will take responsibility for
+    replying to the request without forcing the callback to produce a reply immediately. This allows
+    a callback to perform any number of asynchronous operations required to construct a reply.
+    However, if producing a reply takes too long, the method call will time out at the caller. This is
+    only available to methods and not properties.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，您可以从 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">method</code> 回调中返回一个正整数，而无需立即发送回复。这通知 sd-bus 此回调将负责回复请求，而不强制回调立即产生回复。这允许回调执行构建回复所需的任意数量的异步操作。但是，如果生成回复花费太长时间，方法调用将在调用者处超时。这仅适用于方法，而不适用于属性。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">If a callback was invoked to handle a request that expects a reply and the callback
+    returns a negative value, the value is interpreted as a negative errno-style error code and sent
+    back to the caller as a D-Bus error as if
+    <a href="sd_bus_reply_method_errno.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_reply_method_errno</span>(3)</span></a>
+    was called. Additionally, all callbacks take a <span class="structname" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_error</span> output
+    parameter that can be used to provide more detailed error information. If
+    <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_error</code></em> is set when the callback finishes, the corresponding D-Bus
+    error is sent back to the caller as if
+    <a href="sd_bus_reply_method_error.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_reply_method_error</span>(3)</span></a>
+    was called. Any error stored in <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_error</code></em> takes priority over any
+    negative values returned by the same callback when determining which error to send back to
+    the caller. Use
+    <a href="sd_bus_error_set.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_error_set</span>(3)</span></a>
+    or one of its variants to set <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_error</code></em> and return a negative integer
+    from a callback with a single function call. To send an error reply after a callback has already
+    finished, use
+    <a href="sd_bus_reply_method_errno.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_reply_method_errno</span>(3)</span></a>
+    or one of its variants.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果调用回调来处理一个期望回复的请求，并且回调返回一个负值，该值将被解释为一个负的 errno 风格的错误代码，并作为 D-Bus 错误发送回调用者，就好像调用了 sd_bus_reply_method_errno(3) 一样。此外，所有回调都带有一个 sd_bus_error 输出参数，可用于提供更详细的错误信息。如果在回调完成时设置了 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_error</code> ，则相应的 D-Bus 错误将被发送回调用者，就好像调用了 sd_bus_reply_method_error(3) 一样。任何存储在 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_error</code> 中的错误都优先于相同回调返回的任何负值，用于确定要发送回调用者的错误。使用 sd_bus_error_set(3) 或其变体之一来设置 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">ret_error</code> ，并从回调中返回一个负整数，只需一个函数调用。要在回调已经完成后发送错误回复，请使用 sd_bus_reply_method_errno(3) 或其变体之一。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">For all functions, a match slot is created internally. If the output parameter
+    <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">slot</code></em> is <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">NULL</code>, a "floating" slot object is
+    created, see
+    <a href="sd_bus_slot_set_floating.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_slot_set_floating</span>(3)</span></a>.
+    Otherwise, a pointer to the slot object is returned. In that case, the reference to the slot
+    object should be dropped when the vtable is not needed anymore, see
+    <a href="sd_bus_slot_unref.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_slot_unref</span>(3)</span></a>.
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">对于所有函数，内部会创建一个匹配槽。如果输出参数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">slot</code> 是 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">NULL</code> ，则会创建一个“浮动”槽对象，请参阅 sd_bus_slot_set_floating(3)。否则，将返回指向槽对象的指针。在这种情况下，当不再需要 vtable 时，应丢弃对槽对象的引用，请参阅 sd_bus_slot_unref(3)。</font></font></font></p><div class="refsect2" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.5.11" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><h3 id="The sd_bus_vtable array" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">The <span class="structname" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_vtable</span> array<a class="headerlink" title="Permalink to this headline" href="#The%20sd_bus_vtable%20array" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">sd_bus_vtable 数组</font></font></font></h3><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">The array consists of the structures of type <span class="structname" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_vtable</span>, but it
+      should never be filled in manually, but through one of the following macros:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">该数组由类型为 sd_bus_vtable 的结构组成，但不应手动填充，而应通过以下宏之一进行填充：</font></font></font></p><div class="variablelist" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><dl class="variablelist" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><dt id="SD_BUS_VTABLE_START(flags)" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_START(<em class="replaceable"><code>flags</code></em>)</code>, </span><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_END</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_START(flags)" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_START(<em class="replaceable"><code>flags</code></em>)</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_END</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Those must always be the first and last element. The
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code></em> parameter can be used to set attributes that apply to the whole
+          array; see the "Flags" section below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些必须始终是第一个和最后一个元素。 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code> 参数可用于设置适用于整个数组的属性；请参阅下面的“标志”部分。</font></font></font></p></dd><dt id="SD_BUS_METHOD_WITH_ARGS_OFFSET()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS_OFFSET()</code>, </span><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS()</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_METHOD_WITH_ARGS_OFFSET()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS_OFFSET()</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS()</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Declare a D-Bus method with the name <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code></em>,
+          arguments <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code></em> and result <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code></em>.
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code></em> expects a sequence of argument type/name pairs wrapped in the
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_ARGS()</code> macro. The elements at even indices in this list describe the
+          types of the method's arguments. The method's parameter signature is the concatenation of all the
+          string literals at even indices in <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code></em>. If a method has no parameters,
+          pass <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_NO_ARGS</code> to <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code></em>. The elements at uneven
+          indices describe the names of the method's arguments. <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code></em> expects a
+          sequence of type/name pairs wrapped in the <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_RESULT()</code> macro in the same
+          format as <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_ARGS()</code>. The method's result signature is the concatenation of
+          all the string literals at even indices in <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code></em>. If a method has no
+          result, pass <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_NO_RESULT</code> to <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code></em>. Note that
+          argument types are expected to be quoted string literals and argument names are expected to be
+          unquoted string literals. See below for a complete example.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用名称为 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code> 、参数为 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code> 和结果为 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code> 声明一个 D-Bus 方法。 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code> 期望在 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_ARGS()</code> 宏中包装的参数类型/名称对序列。此列表中偶数索引处的元素描述方法参数的类型。方法的参数签名是 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code> 中偶数索引处的所有字符串文字的串联。如果方法没有参数，请将 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_NO_ARGS</code> 传递给 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code> 。奇数索引处的元素描述方法参数的名称。 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code> 期望在与 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_ARGS()</code> 相同格式的 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_RESULT()</code> 宏中包装的类型/名称对序列。方法的结果签名是 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code> 中偶数索引处的所有字符串文字的串联。如果方法没有结果，请将 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_NO_RESULT</code> 传递给 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code> 。请注意，参数类型应为带引号的字符串文字，参数名称应为未带引号的字符串文字。请参阅下面的完整示例。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">The handler function <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">handler</code></em> must be of type
+          <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_message_handler_t</code>. It will be called to handle the incoming messages
+          that call this method. It receives a pointer that is the <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code></em>
+          parameter passed to the registration function offset by <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">offset</code></em> bytes.
+          This may be used to pass pointers to different fields in the same data structure to different
+          methods in the same vtable. To send a reply from <em class="parameter" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">handler</code></em>, call
+          <a href="sd_bus_reply_method_return.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_reply_method_return</span>(3)</span></a>
+          with the message the callback was invoked with. Parameter <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code></em> is a
+          combination of flags, see below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">处理程序函数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">handler</code> 必须是类型 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_message_handler_t</code> 。它将被调用来处理调用此方法的传入消息。它接收一个指针，该指针是通过偏移 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">offset</code> 字节传递给注册函数的 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code> 参数。这可用于将指针传递给同一数据结构中的不同字段，以便在同一 vtable 中的不同方法中使用。要从 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">handler</code> 发送回复，请使用调用回调时调用的消息调用 sd_bus_reply_method_return(3)。参数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code> 是标志的组合，请参见下文。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS()</code> is a shorthand for calling
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS_OFFSET()</code> with an offset of zero.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS()</code> 是使用偏移量为零调用 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS_OFFSET()</code> 的简写。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_METHOD_WITH_NAMES_OFFSET()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES_OFFSET()</code>, </span><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES()</code>, </span><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_OFFSET()</code>, </span><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD()</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_METHOD_WITH_NAMES_OFFSET()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES_OFFSET()</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES()</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_OFFSET()</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD()</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Declare a D-Bus method with the name <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code></em>,
+          parameter signature <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">signature</code></em>, result signature
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code></em>. Parameters <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">in_names</code></em> and
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">out_names</code></em> specify the argument names of the input and output
+          arguments in the function signature. <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">in_names</code></em> and
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">out_names</code></em> should be created using the
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PARAM()</code> macro, see below. In all other regards, this macro behaves
+          exactly the same as <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS_OFFSET()</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用名称为 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code> 的 D-Bus 方法声明，参数签名为 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">signature</code> ，结果签名为 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">result</code> 。参数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">in_names</code> 和 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">out_names</code> 指定函数签名中输入和输出参数的参数名称。应使用 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PARAM()</code> 宏创建 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">in_names</code> 和 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">out_names</code> ，请参见下文。在其他方面，此宏的行为与 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS_OFFSET()</code> 完全相同。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES()</code>,
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_OFFSET()</code>, and <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD()</code>
+          are variants which specify zero offset (<em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code></em> parameter is
+          passed with no change), leave the names unset (i.e. no parameter names), or both.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_NAMES()</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_OFFSET()</code> 和 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD()</code> 是变体，指定零偏移（ <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code> 参数不变），不设置名称（即没有参数名称），或两者都是。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Prefer using <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS_OFFSET()</code> and
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS()</code> over these macros as they allow specifying argument
+          types and names next to each other which is less error-prone than first specifying all argument
+          types followed by specifying all argument names.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">更倾向于使用 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS_OFFSET()</code> 和 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_METHOD_WITH_ARGS()</code> 而不是这些宏，因为它们允许在一起指定参数类型和名称，这比首先指定所有参数类型然后指定所有参数名称更不容易出错。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_SIGNAL_WITH_ARGS()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL_WITH_ARGS()</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_SIGNAL_WITH_ARGS()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Declare a D-Bus signal with the name <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code></em> and
+          arguments <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code></em>. <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code></em> expects a sequence of
+          argument type/name pairs wrapped in the <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_ARGS()</code> macro. The elements at
+          even indices in this list describe the types of the signal's arguments. The signal's parameter
+          signature is the concatenation of all the string literals at even indices in
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code></em>. If a signal has no parameters, pass
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_NO_ARGS</code> to <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code></em>. The elements at uneven
+          indices describe the names of the signal's arguments. Parameter <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code></em> is
+          a combination of flags. See below for a complete example.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用名称为 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code> 和参数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code> 声明一个 D-Bus 信号。 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code> 期望在 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_ARGS()</code> 宏中包装的参数类型/名称对序列。此列表中偶数索引处的元素描述信号参数的类型。信号的参数签名是 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code> 中偶数索引处所有字符串文字的串联。如果信号没有参数，则传递 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_NO_ARGS</code> 给 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">args</code> 。奇数索引处的元素描述信号参数的名称。参数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code> 是标志的组合。请参阅下面的完整示例。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_SIGNAL_WITH_NAMES()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL_WITH_NAMES()</code>, </span><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL()</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_SIGNAL_WITH_NAMES()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL_WITH_NAMES()</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL()</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Declare a D-Bus signal with the name <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code></em>,
+          parameter signature <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">signature</code></em>, and argument names
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">names</code></em>. <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">names</code></em> should be
+          created using the <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PARAM()</code> macro, see below.
+          Parameter <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code></em> is a combination of flags, see below.
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用名称为 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code> 、参数签名 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">signature</code> 和参数名称 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">names</code> 声明一个 D-Bus 信号。 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">names</code> 应使用 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PARAM()</code> 宏创建，参见下文。参数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code> 是标志的组合，参见下文。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL()</code> is equivalent to
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL_WITH_NAMES()</code> with the <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">names</code></em> parameter
+          unset (i.e. no parameter names).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL()</code> 等同于 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL_WITH_NAMES()</code> ，其中 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">names</code> 参数未设置（即没有参数名称）。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Prefer using <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL_WITH_ARGS()</code> over these macros as it allows
+          specifying argument types and names next to each other which is less error-prone than first
+          specifying all argument types followed by specifying all argument names.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">更倾向于使用 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_SIGNAL_WITH_ARGS()</code> 而不是这些宏，因为它允许在一起指定参数类型和名称，这比先指定所有参数类型再指定所有参数名称更不容易出错。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_WRITABLE_PROPERTY()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_WRITABLE_PROPERTY()</code>, </span><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PROPERTY()</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_WRITABLE_PROPERTY()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_WRITABLE_PROPERTY()</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PROPERTY()</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Declare a D-Bus property with the name <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code></em>
+          and value signature <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">signature</code></em>. Parameters
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">get</code></em> and <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">set</code></em> are the getter and
+          setter methods. They are called with a pointer that is the
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code></em> parameter passed to the registration function offset
+          by <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">offset</code></em> bytes. This may be used pass pointers to different
+          fields in the same data structure to different setters and getters in the same vtable.
+          Parameter <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code></em> is a combination of flags, see below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用名称 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">member</code> 和值签名 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">signature</code> 声明一个 D-Bus 属性。参数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">get</code> 和 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">set</code> 是 getter 和 setter 方法。它们使用一个指针调用，该指针是传递给注册函数的第 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">offset</code> 个字节的偏移量。这可以用于将指针传递给同一数据结构中的不同字段的不同设置器和获取器。参数 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code> 是标志的组合，请参见下文。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">The setter and getter methods may be omitted (specified as
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">NULL</code>), if the property is one of the basic types or
+          "<code class="literal" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">as</code>" in case of read-only properties. In those cases, the
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code></em> and <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">offset</code></em> parameters must
+          together point to a valid variable of the corresponding type. A default setter and getter
+          will be provided, which simply copy the argument between this variable and the message.
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果属性是基本类型之一或者是只读属性的情况下，可以省略设置器和获取器方法（指定为 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">NULL</code> ）。在这些情况下， <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">userdata</code> 和 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">offset</code> 参数必须一起指向相应类型的有效变量。将提供默认的设置器和获取器，它们只是在此变量和消息之间复制参数。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PROPERTY()</code> is used to define a read-only property.
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PROPERTY()</code> 用于定义只读属性。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 246。</font></font></font></p></dd><dt id="SD_BUS_PARAM()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_PARAM()</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_PARAM()" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Parameter names should be wrapped in this macro, see the example below.
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参数名称应该用这个宏包裹起来，参见下面的示例。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 246。</font></font></font></p></dd></dl></div></div><div class="refsect2" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.5.12" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><h3 id="Flags" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Flags<a class="headerlink" title="Permalink to this headline" href="#Flags" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">标志 ¶</font></font></font></h3><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">The <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code></em> parameter is used to specify a combination of
+      <a class="ulink" href="https://dbus.freedesktop.org/doc/dbus-specification.html#introspection-format#introspection-format" target="_top" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">D-Bus annotations</a>.
+      <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">flags</code> 参数用于指定一组 D-Bus 注释。</font></font></font></p><div class="variablelist" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><dl class="variablelist" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><dt id="SD_BUS_VTABLE_DEPRECATED" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_DEPRECATED</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_DEPRECATED" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Mark this vtable entry as deprecated using the
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Deprecated</code> annotation in introspection data. If
+          specified for <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_START()</code>, the annotation is applied to the
+          enclosing interface.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用内省数据中的 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Deprecated</code> 注释将此 vtable 条目标记为已弃用。如果对 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_START()</code> 指定，则该注释将应用于封闭接口。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_VTABLE_HIDDEN" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_HIDDEN</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_HIDDEN" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Make this vtable entry hidden. It will not be shown in introspection data.
+          If specified for <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_START()</code>, all entries in the array are
+          hidden.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使此 vtable 条目隐藏。它不会显示在内省数据中。如果对 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_START()</code> 指定，则数组中的所有条目都将被隐藏。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_VTABLE_METHOD_NO_REPLY" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_METHOD_NO_REPLY</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_METHOD_NO_REPLY" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Mark this vtable entry as a method that will not return a reply using the
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Method.NoReply</code> annotation in introspection data.
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将此 vtable 条目标记为一个方法，该方法不会使用内省数据中的 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Method.NoReply</code> 注释返回回复。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 246。</font></font></font></p></dd><dt id="SD_BUS_VTABLE_PROPERTY_CONST" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_CONST</code>, </span><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_CHANGE</code>, </span><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_INVALIDATION</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_PROPERTY_CONST" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_CONST</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_CHANGE</code> ， <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_INVALIDATION</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Those three flags correspond to different values of the
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Property.EmitsChangedSignal</code> annotation, which
+          specifies whether the
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Properties.PropertiesChanged</code> signal is emitted
+          whenever the property changes. <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_CONST</code>
+          corresponds to <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">const</code> and means that the property never changes during
+          the lifetime of the object it belongs to, so no signal needs to be emitted.
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_CHANGE</code> corresponds to
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">true</code> and means that the signal is emitted.
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_INVALIDATION</code> corresponds to
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">invalidates</code> and means that the signal is emitted, but the value is
+          not included in the signal.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这三个标志对应于 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Property.EmitsChangedSignal</code> 注释的不同值，该注释指定了是否在属性更改时发出 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Properties.PropertiesChanged</code> 信号。 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_CONST</code> 对应于 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">const</code> ，表示属性在其所属对象的生命周期内永远不会更改，因此不需要发出信号。 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_CHANGE</code> 对应于 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">true</code> ，表示信号已发出。 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_INVALIDATION</code> 对应于 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">invalidates</code> ，表示已发出信号，但该值未包含在信号中。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_VTABLE_PROPERTY_EXPLICIT" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EXPLICIT</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_PROPERTY_EXPLICIT" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Mark this vtable property entry as requiring explicit request to for the
+          value to be shown (generally because the value is large or slow to calculate). This entry
+          cannot be combined with <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_CHANGE</code>, and will
+          not be shown in property listings by default (e.g. <span class="command" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><strong data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">busctl introspect</strong></span>).
+          This corresponds to the <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.systemd1.Explicit</code> annotation
+          in introspection data.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将此 vtable 属性条目标记为需要显式请求以显示值（通常是因为值很大或计算速度较慢）。此条目不能与 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_PROPERTY_EMITS_CHANGE</code> 结合使用，并且默认情况下不会显示在属性列表中（例如，busctl introspect）。这对应于内省数据中的 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.systemd1.Explicit</code> 注释。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_VTABLE_SENSITIVE" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_SENSITIVE</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_SENSITIVE" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Mark this vtable method entry as processing sensitive data. When set,
+          incoming method call messages and their outgoing reply messages are marked as sensitive using
+          <a href="sd_bus_message_sensitive.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_message_sensitive</span>(3)</span></a>,
+          so that they are erased from memory when freed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将此 vtable 方法条目标记为处理敏感数据。设置后，传入的方法调用消息及其传出的回复消息将使用 sd_bus_message_sensitive(3) 标记为敏感，以便在释放时从内存中擦除。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_VTABLE_ABSOLUTE_OFFSET" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_ABSOLUTE_OFFSET</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_ABSOLUTE_OFFSET" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Mark this vtable method or property entry so that the user data pointer passed to
+          its associated handler functions is determined slightly differently: instead of adding the offset
+          parameter of the entry to the user data pointer specified during vtable registration, the offset is
+          passed directly, converted to a pointer, without taking the user data pointer specified during
+          vtable registration into account.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将此 vtable 方法或属性条目标记为使传递给其关联处理程序函数的用户数据指针稍有不同：不是将条目的偏移参数添加到在 vtable 注册期间指定的用户数据指针中，而是直接传递偏移量，转换为指针，而不考虑在 vtable 注册期间指定的用户数据指针。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="SD_BUS_VTABLE_CAPABILITY(capability)" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_CAPABILITY(<em class="replaceable"><code>capability</code></em>)</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_CAPABILITY(capability)" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Access to this vtable entry will be allowed if the calling process has the
+          capability <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">capability</code></em>, as described in
+          <a href="sd_bus_query_sender_privilege.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_query_sender_privilege</span>(3)</span></a>.
+          If used for <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_START()</code>, provides a default for all entries in the
+          array. If not specified, either for an individual entry or the whole array,
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">CAP_SYS_ADMIN</code> is checked by default. See <a href="https://man7.org/linux/man-pages/man7/capabilities.7.html" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">capabilities</span>(7)</span></a>
+          for information about capabilities.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果调用进程具有 sd_bus_query_sender_privilege(3) 中描述的功能 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">capability</code> ，则将允许访问此 vtable 条目。如果用于 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_START()</code> ，则为数组中的所有条目提供默认值。如果未指定单个条目或整个数组的情况，将默认检查 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">CAP_SYS_ADMIN</code> 。有关功能的信息，请参阅 capabilities(7)。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Note that vtable entries may be marked as unprivileged and the whole bus may be marked as
+          trusted, see the discussion of <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_UNPRIVILEGED</code> below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，vtable 条目可能被标记为非特权，并且整个总线可能被标记为受信任，请参阅下面关于 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_UNPRIVILEGED</code> 的讨论。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v251" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 251.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 251 中。</font></font></font></p></dd><dt id="SD_BUS_VTABLE_UNPRIVILEGED" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">SD_BUS_VTABLE_UNPRIVILEGED</code></span><a class="headerlink" title="Permalink to this term" href="#SD_BUS_VTABLE_UNPRIVILEGED" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Mark this vtable entry as unprivileged. Access to privileged entries is limited to
+          users with appropriate capabilities as described above. In practice many vtable entries are marked
+          as unprivileged, and either are open to everyone, or the decision whether to allow access is taken
+          later, e.g. by delegating to <a class="ulink" href="https://www.freedesktop.org/software/polkit/docs/latest/" target="_top" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">polkit</a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将此 vtable 条目标记为非特权。对特权条目的访问仅限于具有适当权限的用户，如上所述。实际上，许多 vtable 条目都被标记为非特权，并且要么对所有人开放，要么稍后再决定是否允许访问，例如通过委托给 polkit。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">The whole bus may be marked as trusted, in which case annotations at the entry level are
+          ignored, see
+          <a href="sd_bus_set_trusted.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_set_trusted</span>(3)</span></a>.
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">整个总线可以被标记为受信任，此时入口级别的注释将被忽略，请参阅 sd_bus_set_trusted(3)。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">When <span class="emphasis" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><em data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">not</em></span> specified, the
+          <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.systemd1.Privileged</code> annotation with value
+          "<code class="literal" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">true</code>" will be shown in introspection data.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当未指定时，将在内省数据中显示具有值 " <code class="literal" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">true</code> " 的 " <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.systemd1.Privileged</code> " 注释。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Note that this page describes checks implemented in the D-Bus client. The D-Bus server has an
+          additional policy that may permit or deny connections, see
+          "CONFIGURATION FILE" in
+          <a href="https://man7.org/linux/man-pages/man1/dbus-daemon.1.html" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">dbus-daemon</span>(1)</span></a>.
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，此页面描述了在 D-Bus 客户端中实现的检查。D-Bus 服务器具有可能允许或拒绝连接的额外策略，请参阅 dbus-daemon(1) 中的“配置文件”。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 246。</font></font></font></p></dd></dl></div></div></div><div class="refsect1" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.6" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><h2 id="Examples" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 ¶</font></font></font></h2><div class="example" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.6.2" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><p class="title" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><b data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Example&nbsp;1.&nbsp;Create a simple listener on the bus<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 1. 在总线上创建一个简单的监听器</font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><pre class="programlisting">/* SPDX-License-Identifier: MIT-0 */
+
+#include &lt;errno.h&gt;
+#include &lt;stdbool.h&gt;
+#include &lt;stddef.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;systemd/sd-bus.h&gt;
+
+#define _cleanup_(f) __attribute__((cleanup(f)))
+
+#define check(x) ({                             \
+  int r = (x);                                  \
+  errno = r &lt; 0 ? -r : 0;                       \
+  printf(#x ": %m\n");                          \
+  if (r &lt; 0)                                    \
+    return EXIT_FAILURE;                        \
+  })
+
+typedef struct object {
+  char *name;
+  uint32_t number;
+} object;
+
+static int method(sd_bus_message *m, void *userdata, sd_bus_error *error) {
+  printf("Got called with userdata=%p\n", userdata);
+
+  if (sd_bus_message_is_method_call(m,
+                                    "org.freedesktop.systemd.VtableExample",
+                                    "Method4"))
+    return 1;
+
+  const char *string;
+  check(sd_bus_message_read(m, "s", &amp;string));
+  check(sd_bus_reply_method_return(m, "s", string));
+
+  return 1;
+}
+
+static const sd_bus_vtable vtable[] = {
+        SD_BUS_VTABLE_START(0),
+        SD_BUS_METHOD(
+            "Method1", "s", "s", method, 0),
+        SD_BUS_METHOD_WITH_NAMES_OFFSET(
+            "Method2",
+            "so", SD_BUS_PARAM(string) SD_BUS_PARAM(path),
+            "s", SD_BUS_PARAM(returnstring),
+            method, offsetof(object, number),
+            SD_BUS_VTABLE_DEPRECATED),
+        SD_BUS_METHOD_WITH_ARGS_OFFSET(
+            "Method3",
+            SD_BUS_ARGS("s", string, "o", path),
+            SD_BUS_RESULT("s", returnstring),
+            method, offsetof(object, number),
+            SD_BUS_VTABLE_UNPRIVILEGED),
+        SD_BUS_METHOD_WITH_ARGS(
+            "Method4",
+            SD_BUS_NO_ARGS,
+            SD_BUS_NO_RESULT,
+            method,
+            SD_BUS_VTABLE_UNPRIVILEGED),
+        SD_BUS_SIGNAL(
+            "Signal1",
+            "so",
+            0),
+        SD_BUS_SIGNAL_WITH_NAMES(
+            "Signal2",
+            "so", SD_BUS_PARAM(string) SD_BUS_PARAM(path),
+            0),
+        SD_BUS_SIGNAL_WITH_ARGS(
+            "Signal3",
+            SD_BUS_ARGS("s", string, "o", path),
+            0),
+        SD_BUS_WRITABLE_PROPERTY(
+            "AutomaticStringProperty", "s", NULL, NULL,
+            offsetof(object, name),
+            SD_BUS_VTABLE_PROPERTY_EMITS_CHANGE),
+        SD_BUS_WRITABLE_PROPERTY(
+            "AutomaticIntegerProperty", "u", NULL, NULL,
+            offsetof(object, number),
+            SD_BUS_VTABLE_PROPERTY_EMITS_INVALIDATION),
+        SD_BUS_VTABLE_END
+};
+
+int main(int argc, char **argv) {
+  _cleanup_(sd_bus_flush_close_unrefp) sd_bus *bus = NULL;
+
+  sd_bus_default(&amp;bus);
+
+  object object = { .number = 666 };
+  check((object.name = strdup("name")) != NULL);
+
+  check(sd_bus_add_object_vtable(bus, NULL,
+                                 "/org/freedesktop/systemd/VtableExample",
+                                 "org.freedesktop.systemd.VtableExample",
+                                 vtable,
+                                 &amp;object));
+
+  check(sd_bus_request_name(bus,
+                            "org.freedesktop.systemd.VtableExample",
+                            0));
+
+  for (;;) {
+    check(sd_bus_wait(bus, UINT64_MAX));
+    check(sd_bus_process(bus, NULL));
+  }
+
+  check(sd_bus_release_name(bus, "org.freedesktop.systemd.VtableExample"));
+  free(object.name);
+
+  return 0;
+}
+</pre><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">This creates a simple client on the bus (the user bus, when run as normal user). We may
+      use the D-Bus <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Introspectable.Introspect</code> call to
+      acquire the XML description of the interface:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这将在总线上创建一个简单的客户端（当作为普通用户运行时为用户总线）。我们可以使用 D-Bus <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">org.freedesktop.DBus.Introspectable.Introspect</code> 调用来获取接口的 XML 描述：</font></font></font></p><pre class="programlisting">&lt;!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"https://www.freedesktop.org/standards/dbus/1.0/introspect.dtd"&gt;
+&lt;!-- SPDX-License-Identifier: LGPL-2.1-or-later --&gt;
+&lt;node&gt;
+ &lt;interface name="org.freedesktop.DBus.Peer"&gt;
+  &lt;method name="Ping"/&gt;
+  &lt;method name="GetMachineId"&gt;
+   &lt;arg type="s" name="machine_uuid" direction="out"/&gt;
+  &lt;/method&gt;
+ &lt;/interface&gt;
+ &lt;interface name="org.freedesktop.DBus.Introspectable"&gt;
+  &lt;method name="Introspect"&gt;
+   &lt;arg name="xml_data" type="s" direction="out"/&gt;
+  &lt;/method&gt;
+ &lt;/interface&gt;
+ &lt;interface name="org.freedesktop.DBus.Properties"&gt;
+  &lt;method name="Get"&gt;
+   &lt;arg name="interface_name" direction="in" type="s"/&gt;
+   &lt;arg name="property_name" direction="in" type="s"/&gt;
+   &lt;arg name="value" direction="out" type="v"/&gt;
+  &lt;/method&gt;
+  &lt;method name="GetAll"&gt;
+   &lt;arg name="interface_name" direction="in" type="s"/&gt;
+   &lt;arg name="props" direction="out" type="a{sv}"/&gt;
+  &lt;/method&gt;
+  &lt;method name="Set"&gt;
+   &lt;arg name="interface_name" direction="in" type="s"/&gt;
+   &lt;arg name="property_name" direction="in" type="s"/&gt;
+   &lt;arg name="value" direction="in" type="v"/&gt;
+  &lt;/method&gt;
+  &lt;signal name="PropertiesChanged"&gt;
+   &lt;arg type="s" name="interface_name"/&gt;
+   &lt;arg type="a{sv}" name="changed_properties"/&gt;
+   &lt;arg type="as" name="invalidated_properties"/&gt;
+  &lt;/signal&gt;
+ &lt;/interface&gt;
+ &lt;interface name="org.freedesktop.systemd.VtableExample"&gt;
+  &lt;method name="Method1"&gt;
+   &lt;arg type="s" direction="in"/&gt;
+   &lt;arg type="s" direction="out"/&gt;
+  &lt;/method&gt;
+  &lt;method name="Method2"&gt;
+   &lt;arg type="s" name="string" direction="in"/&gt;
+   &lt;arg type="o" name="path" direction="in"/&gt;
+   &lt;arg type="s" name="returnstring" direction="out"/&gt;
+   &lt;annotation name="org.freedesktop.DBus.Deprecated" value="true"/&gt;
+  &lt;/method&gt;
+  &lt;property name="AutomaticStringProperty" type="s" access="readwrite"&gt;
+  &lt;/property&gt;
+  &lt;property name="AutomaticIntegerProperty" type="u" access="readwrite"&gt;
+   &lt;annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="invalidates"/&gt;
+  &lt;/property&gt;
+ &lt;/interface&gt;
+&lt;/node&gt;
+
+</pre></div></div><br class="example-break" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></div><div class="refsect1" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.7" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><h2 id="Return Value" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">返回值 ¶</font></font></font></h2><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">On success, <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> and
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback_vtable()</code> return a non-negative integer. On
+    failure, they return a negative errno-style error code.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">成功时， <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> 和 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback_vtable()</code> 返回一个非负整数。失败时，它们返回一个负的 errno 风格的错误代码。</font></font></font></p><div class="refsect2" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.7.3" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><h3 id="Errors" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">错误 ¶</font></font></font></h3><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Returned errors may indicate the following problems:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">返回的错误可能表示以下问题：</font></font></font></p><div class="variablelist" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><dl class="variablelist" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><dt id="-EINVAL" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">One of the required parameters is <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">NULL</code> or invalid. A
+          reserved D-Bus interface was passed as the <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">interface</code></em> parameter.
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">其中一个必需的参数是 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">NULL</code> 或无效。保留的 D-Bus 接口被传递为 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">interface</code> 参数。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 246。</font></font></font></p></dd><dt id="-ENOPKG" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">-ENOPKG</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOPKG" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">The bus cannot be resolved.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">公交车无法解决。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="-ECHILD" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">The bus was created in a different process, library or module instance.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">公交车是在不同的进程、库或模块实例中创建的。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="-ENOMEM" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Memory allocation failed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内存分配失败。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="-EPROTOTYPE" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">-EPROTOTYPE</code></span><a class="headerlink" title="Permalink to this term" href="#-EPROTOTYPE" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> and
+          <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback_vtable()</code> have been both called for the same bus
+          object path, which is not allowed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> 和 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback_vtable()</code> 已经同时为相同的总线对象路径调用，这是不允许的。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 246 中。</font></font></font></p></dd><dt id="-EEXIST" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">-EEXIST</code></span><a class="headerlink" title="Permalink to this term" href="#-EEXIST" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a></dt><dd data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">This vtable has already been registered for this
+          <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">interface</code></em> and <em class="replaceable" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">path</code></em>.
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这个 vtable 已经为这个 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">interface</code> 和 <code data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">path</code> 注册过。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 246。</font></font></font></p></dd></dl></div></div></div><div class="refsect1" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.8" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><h2 id="Notes" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意事项 ¶</font></font></font></h2><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="pkgconfig-text" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">libsystemd</code>&nbsp;<a href="http://linux.die.net/man/1/pkg-config" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">pkg-config</span>(1)</span></a>
+  file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此处描述的函数可作为共享库使用，可以通过 <code class="constant" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">libsystemd</code> pkg-config(1) 文件进行编译和链接。</font></font></font></p><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><a name="getenv" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">setenv()</code>
+from an early phase of the program when no other threads have been started.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此处描述的代码使用了 getenv(3)，该函数被声明为非多线程安全。这意味着调用此处描述的函数的代码不能从并行线程中调用 setenv(3)。建议仅在程序的早期阶段进行对 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">setenv()</code> 的调用，此时尚未启动其他线程。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.9" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><h2 id="History" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">History<a class="headerlink" title="Permalink to this headline" href="#History" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h2><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_property_get_t()</code>,
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_property_set_t()</code>,
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_object_find_t()</code>,
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object()</code>,
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback()</code>,
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code>,
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback_vtable()</code>, and
+    <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_filter()</code> were added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版本 246 中添加了 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_property_get_t()</code> , <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_property_set_t()</code> , <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_object_find_t()</code> , <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object()</code> , <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback()</code> , <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_object_vtable()</code> , <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_fallback_vtable()</code> , 和 <code class="function" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_add_filter()</code> 。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><a name="id-1.10" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"></a><h2 id="See Also" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h2><p data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6" data-immersive-translate-paragraph="1">
+      <a href="sd-bus.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd-bus</span>(3)</span></a>,
+      <a href="busctl.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">busctl</span>(1)</span></a>,
+      <a href="sd_bus_emit_properties_changed.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_emit_properties_changed</span>(3)</span></a>,
+      <a href="sd_bus_emit_object_added.html#" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="citerefentry" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6"><span class="refentrytitle" data-immersive-translate-walked="1835b9a4-b399-4b66-b3e1-aef7aa01b5e6">sd_bus_emit_object_added</span>(3)</span></a>
+    </p></div></div>
+</body></html>

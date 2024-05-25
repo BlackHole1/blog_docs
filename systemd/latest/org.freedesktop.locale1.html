@@ -1,0 +1,89 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>org.freedesktop.locale1</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="org.freedesktop.locale1"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>org.freedesktop.locale1 — The D-Bus interface of systemd-localed</p></div><div class="refsect1"><a name="id-1.4"></a><h2 id="Introduction">Introduction<a class="headerlink" title="Permalink to this headline" href="#Introduction">¶</a></h2><p>
+    <a href="systemd-localed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-localed.service</span>(8)</span></a>
+    is a system service that can be used to control the system locale and keyboard mapping from user
+    programs. This page describes the D-Bus interface.</p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="The D-Bus API">The D-Bus API<a class="headerlink" title="Permalink to this headline" href="#The%20D-Bus%20API">¶</a></h2><p>The service exposes the following interfaces on the bus:</p><pre class="programlisting">
+node /org/freedesktop/locale1 {
+  interface org.freedesktop.locale1 {
+    methods:
+      SetLocale(in  as locale,
+                in  b interactive);
+      SetVConsoleKeyboard(in  s keymap,
+                          in  s keymap_toggle,
+                          in  b convert,
+                          in  b interactive);
+      SetX11Keyboard(in  s layout,
+                     in  s model,
+                     in  s variant,
+                     in  s options,
+                     in  b convert,
+                     in  b interactive);
+    properties:
+      readonly as Locale = ['...', ...];
+      readonly s X11Layout = '...';
+      readonly s X11Model = '...';
+      readonly s X11Variant = '...';
+      readonly s X11Options = '...';
+      readonly s VConsoleKeymap = '...';
+      readonly s VConsoleKeymapToggle = '...';
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="refsect2"><a name="id-1.5.16"></a><h3 id="Methods">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods">¶</a></h3><p>If you set a new system locale all old system locale settings will be dropped and the new
+      settings will be saved to disk. The locale will also be passed to the system manager, and subsequently started
+      daemons will inherit the new system locale. Note that already running daemons will not learn about the
+      new value.</p><p>The <code class="function">SetVConsoleKeyboard()</code> method may be used to set the key mapping for the
+      virtual console. Similarly, <code class="function">SetX11Keyboard()</code> may be used to set the default key
+      mapping of any X11 servers.</p><p>Note that <code class="function">SetVConsoleKeyboard()</code> instantly applies the new key mapping to the
+      console, while <code class="function">SetX11Keyboard()</code> simply sets a default that may be used by later
+      sessions.</p><p>The boolean argument <code class="varname">convert</code> may be set to optionally convert the console
+      keyboard configuration to X11 keyboard mappings and vice versa. If true and
+      <code class="function">SetVConsoleKeyboard()</code> is used, the nearest X11 keyboard setting for the chosen
+      console setting is set. If true and <code class="function">SetX11Keyboard()</code> is used, the nearest console
+      keyboard setting for the chosen X11 setting is set. Hence, it is usually sufficient to call only one of the
+      two functions.</p><p>For graphical UIs that need to set the system keyboard mapping simply invoke
+      <code class="function">SetX11Keyboard()</code>, set <code class="varname">convert=true</code> and ignore
+      <code class="function">SetVConsoleKeyboard()</code>.</p><p>Use the empty string for the keymap parameters you wish not to set.</p><p>The <code class="varname">interactive</code> boolean parameters can be used to control whether
+      <a class="ulink" href="https://www.freedesktop.org/software/polkit/docs/latest/" target="_top">polkit</a>
+      should interactively ask the user for authentication credentials if required.</p></div><div class="refsect2"><a name="id-1.5.17"></a><h3 id="Signals">Signals<a class="headerlink" title="Permalink to this headline" href="#Signals">¶</a></h3><p>Whenever the system locale or keymap is changed via the daemon,
+      <code class="function">PropertyChanged</code> signals are sent out to which clients can subscribe.</p></div><div class="refsect2"><a name="id-1.5.18"></a><h3 id="Properties">Properties<a class="headerlink" title="Permalink to this headline" href="#Properties">¶</a></h3><p>The system locale is shown in the <code class="varname">Locale</code> property. It is an array containing
+      environment-variable-assignment-like strings. The following strings are known:
+      <code class="varname">LANG=</code>, <code class="varname">LC_CTYPE=</code>, <code class="varname">LC_NUMERIC=</code>,
+      <code class="varname">LC_TIME=</code>, <code class="varname">LC_COLLATE=</code>, <code class="varname">LC_MONETARY=</code>,
+      <code class="varname">LC_MESSAGES=</code>, <code class="varname">LC_PAPER=</code>, <code class="varname">LC_NAME=</code>,
+      <code class="varname">LC_ADDRESS=</code>, <code class="varname">LC_TELEPHONE=</code>, <code class="varname">LC_MEASUREMENT=</code>,
+      <code class="varname">LC_IDENTIFICATION=</code>.</p><p>The <code class="varname">X11Layout</code>, <code class="varname">X11Model</code>, <code class="varname">X11Variant</code>, and
+      <code class="varname">X11Options</code> properties show values configurable with
+      <code class="function">SetX11Keyboard()</code> described above (or <code class="function">SetVConsoleKeyboard()</code>
+      with <code class="varname">convert=true</code>). The <code class="varname">VConsoleKeymap</code> and
+      <code class="varname">VConsoleKeymapToggle</code> properties show values configurable with
+      <code class="function">SetVConsoleKeyboard()</code> (or <code class="function">SetX11Keyboard()</code> with
+      <code class="varname">convert=true</code>).</p></div><div class="refsect2"><a name="id-1.5.19"></a><h3 id="Security">Security<a class="headerlink" title="Permalink to this headline" href="#Security">¶</a></h3><p>Changing the system locale or keymap using this interface is authenticated via polkit. The
+      polkit action for <code class="function">SetLocale()</code> is
+      <code class="constant">org.freedesktop.locale1.set-locale</code>. The polkit action for
+      <code class="function">SetX11Keyboard()</code> and <code class="function">SetVConsoleKeyboard()</code> is
+      <code class="constant">org.freedesktop.locale1.set-keyboard</code>.</p></div></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.6.2"></a><p class="title"><b>Example 1. Introspect <code class="interfacename">org.freedesktop.locale1</code> on the bus</b></p><div class="example-contents"><pre class="programlisting">
+$ gdbus introspect --system \
+  --dest org.freedesktop.locale1 \
+  --object-path /org/freedesktop/locale1
+      </pre></div></div><br class="example-break"></div><div class="refsect1"><a name="versioning"></a><h2 id="Versioning">Versioning<a class="headerlink" title="Permalink to this headline" href="#Versioning">¶</a></h2><p>These D-Bus interfaces follow <a class="ulink" href="https://0pointer.de/blog/projects/versioning-dbus.html" target="_top">
+    the usual interface versioning guidelines</a>.</p></div></div></body></html>

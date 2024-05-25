@@ -1,0 +1,268 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>org.freedesktop.portable1</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="org.freedesktop.portable1"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>org.freedesktop.portable1 — The D-Bus interface of systemd-portabled</p></div><div class="refsect1"><a name="id-1.4"></a><h2 id="Introduction">Introduction<a class="headerlink" title="Permalink to this headline" href="#Introduction">¶</a></h2><p>
+    <a href="systemd-portabled.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-portabled.service</span>(8)</span></a>
+    is a system service that may be used to attach, detach and inspect portable services. This page describes the
+    D-Bus interface.</p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="The Manager Object">The Manager Object<a class="headerlink" title="Permalink to this headline" href="#The%20Manager%20Object">¶</a></h2><p>The service exposes the following interfaces on the Manager object on the bus:</p><pre class="programlisting">
+node /org/freedesktop/portable1 {
+  interface org.freedesktop.portable1.Manager {
+    methods:
+      GetImage(in  s image,
+               out o object);
+      ListImages(out a(ssbtttso) images);
+      GetImageOSRelease(in  s image,
+                        out a{ss} os_release);
+      GetImageMetadata(in  s image,
+                       in  as matches,
+                       out s image,
+                       out ay os_release,
+                       out a{say} units);
+      GetImageMetadataWithExtensions(in  s image,
+                                     in  as extensions,
+                                     in  as matches,
+                                     in  t flags,
+                                     out s image,
+                                     out ay os_release,
+                                     out a{say} extensions,
+                                     out a{say} units);
+      GetImageState(in  s image,
+                    out s state);
+      GetImageStateWithExtensions(in  s image,
+                                  in  as extensions,
+                                  in  t flags,
+                                  out s state);
+      AttachImage(in  s image,
+                  in  as matches,
+                  in  s profile,
+                  in  b runtime,
+                  in  s copy_mode,
+                  out a(sss) changes);
+      AttachImageWithExtensions(in  s image,
+                                in  as extensions,
+                                in  as matches,
+                                in  s profile,
+                                in  s copy_mode,
+                                in  t flags,
+                                out a(sss) changes);
+      DetachImage(in  s image,
+                  in  b runtime,
+                  out a(sss) changes);
+      DetachImageWithExtensions(in  s image,
+                                in  as extensions,
+                                in  t flags,
+                                out a(sss) changes);
+      ReattachImage(in  s image,
+                    in  as matches,
+                    in  s profile,
+                    in  b runtime,
+                    in  s copy_mode,
+                    out a(sss) changes_removed,
+                    out a(sss) changes_updated);
+      ReattachImageWithExtensions(in  s image,
+                                  in  as extensions,
+                                  in  as matches,
+                                  in  s profile,
+                                  in  s copy_mode,
+                                  in  t flags,
+                                  out a(sss) changes_removed,
+                                  out a(sss) changes_updated);
+      RemoveImage(in  s image);
+      MarkImageReadOnly(in  s image,
+                        in  b read_only);
+      SetImageLimit(in  s image,
+                    in  t limit);
+      SetPoolLimit(in  t limit);
+    properties:
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s PoolPath = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t PoolUsage = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t PoolLimit = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly as Profiles = ['...', ...];
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="refsect2"><a name="id-1.5.27"></a><h3 id="Methods">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods">¶</a></h3><p><code class="function">GetImage()</code> may be used to get the image object path of the image with the
+      specified name.</p><p><code class="function">ListImages()</code> returns an array of all currently known images. The
+      structures in the array consist of the following fields: image name, type, read-only flag, creation
+      time, modification time, current disk space, usage and image object path.</p><p><code class="function">GetImageOSRelease()</code> retrieves the OS release information of an image.
+      This method returns an array of key value pairs read from the
+      <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> file in
+      the image and is useful to identify the operating system used in a portable service.</p><p><code class="function">GetImageMetadata()</code> retrieves metadata associated with an image.
+      This method returns the image name, the image's <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> content in the form of a (streamable) array of bytes,
+      and a list of portable units contained in the image, in the form of a string (unit name) and
+      an array of bytes with the content.</p><p><code class="function">GetImageMetadataWithExtensions()</code> retrieves metadata associated with an
+      image. This method is a superset of <code class="function">GetImageMetadata()</code> with the addition of a list
+      of extensions as input parameter, which were overlaid on top of the main image via
+      <code class="function">AttachImageWithExtensions()</code>. The path of each extension and an array of bytes with
+      the content of the respective extension-release file are returned, one such structure for each
+      extension named in the input arguments.</p><p><code class="function">GetImageState()</code> retrieves the image state as one of the following
+      strings:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>detached</p></li><li class="listitem"><p>attached</p></li><li class="listitem"><p>attached-runtime</p></li><li class="listitem"><p>enabled</p></li><li class="listitem"><p>enabled-runtime</p></li><li class="listitem"><p>running</p></li><li class="listitem"><p>running-runtime</p></li></ul></div><p><code class="function">GetImageStateWithExtensions()</code> is a superset of
+      <code class="function">GetImageState()</code>, with additional support for a list of extensions
+      as input parameters, which is necessary to query the state in case the image was attached
+      in that particular way. The <code class="varname">flag</code> parameter is currently unused and
+      reserved for future purposes.</p><p><code class="function">AttachImage()</code> attaches a portable image to the system.
+      This method takes an image path or name, a list of strings that will be used to search for
+      unit files inside the image (partial or complete matches), a string indicating which
+      portable profile to use for the image (see <code class="varname">Profiles</code> property for
+      a list of available profiles), a boolean indicating whether to attach the image only
+      for the current boot session, and a string representing the preferred copy mode
+      (whether to copy the image or to just symlink it) with the following possible values:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(null)</p></li><li class="listitem"><p>copy</p></li><li class="listitem"><p>symlink</p></li></ul></div><p>
+      This method returns the list of changes applied to the system (for example, which unit was
+      added and is now available as a system service). Each change is represented as a triplet of
+      strings: the type of change applied, the path on which it was applied, and the source
+      (if any). The type of change applied will be one of the following possible values:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>copy</p></li><li class="listitem"><p>symlink</p></li><li class="listitem"><p>write</p></li><li class="listitem"><p>mkdir</p></li></ul></div><p>
+      Note that an image cannot be attached if a unit that it contains is already present
+      on the system.</p><p><code class="function">AttachImageWithExtensions()</code> attaches a portable image to the system.
+      This method is a superset of <code class="function">AttachImage()</code> with the addition of
+      a list of extensions as input parameter, which will be overlaid on top of the main
+      image. When this method is used, detaching must be done by passing the same arguments via the
+      <code class="function">DetachImageWithExtensions()</code> method. For more details on this functionality,
+      see the <code class="varname">MountImages=</code> entry on
+      <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>
+      and <a href="systemd-sysext.html#"><span class="citerefentry"><span class="refentrytitle">systemd-sysext</span>(8)</span></a>.
+      </p><p><code class="function">DetachImage()</code> detaches a portable image from the system.
+      This method takes an image path or name, and a boolean indicating whether the image to
+      detach was attached only for the current boot session or persistently. This method
+      returns the list of changes applied to the system (for example, which unit was removed
+      and is no longer available as a system service). Each change is represented as a triplet of
+      strings: the type of change applied, the path on which it was applied, and the source
+      (if any). The type of change applied will be one of the following possible values:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>unlink</p></li></ul></div><p>
+      Note that an image cannot be detached if a unit that it contains is running.</p><p><code class="function">DetachImageWithExtensions()</code> detaches a portable image from the system.
+      This method is a superset of <code class="function">DetachImage()</code> with the addition of
+      a list of extensions as input parameter, which were overlaid on top of the main
+      image via <code class="function">AttachImageWithExtensions()</code>.
+      The <code class="varname">flag</code> parameter is currently unused and reserved for future purposes.</p><p><code class="function">ReattachImage()</code> combines the effects of the
+      <code class="function">AttachImage()</code> method and the <code class="function">DetachImage()</code> method.
+      The difference is that it is allowed to reattach an image while one or more of its units
+      are running. The reattach operation will fail if no matching image is attached.
+      The input parameters match the <code class="function">AttachImage()</code> method, and the return
+      parameters are the combination of the return parameters of the
+      <code class="function">DetachImage()</code> method (first array, units that were removed) and the
+      <code class="function">AttachImage()</code> method (second array, units that were updated or added).</p><p><code class="function">ReattachImageWithExtensions()</code> reattaches a portable image to the system.
+      This method is a superset of <code class="function">ReattachImage()</code> with the addition of
+      a list of extensions as input parameter, which will be overlaid on top of the main
+      image. For more details on this functionality, see the <code class="varname">MountImages=</code> entry on
+      <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>
+      and <a href="systemd-sysext.html#"><span class="citerefentry"><span class="refentrytitle">systemd-sysext</span>(8)</span></a>.
+      The <code class="varname">flag</code> parameter is currently unused and reserved for future purposes</p><p><code class="function">RemoveImage()</code> removes the image with the specified name.</p><p><code class="function">MarkImageReadOnly()</code> toggles the read-only flag of an image.</p><p><code class="function">SetPoolLimit()</code> sets an overall quota limit on the pool of images.</p><p><code class="function">SetImageLimit()</code> sets a per-image quota limit.</p><p>The <code class="function">AttachImageWithExtensions()</code>,
+      <code class="function">DetachImageWithExtensions()</code> and
+      <code class="function">ReattachImageWithExtensions()</code> methods take in options as flags instead of
+      booleans to allow for extendability. <code class="varname">SD_SYSTEMD_PORTABLE_FORCE_ATTACH</code> will cause
+      safety checks that ensure the units are not running while the new image is attached or detached
+      to be skipped. <code class="varname">SD_SYSTEMD_PORTABLE_FORCE_EXTENSION</code> will cause the check that the
+      <code class="filename">extension-release.<em class="replaceable"><code>NAME</code></em></code> file in the extension image
+      matches the image name to be skipped. They are defined as follows:</p><pre class="programlisting">
+#define SD_SYSTEMD_PORTABLE_RUNTIME            (UINT64_C(1) &lt;&lt; 0)
+#define SD_SYSTEMD_PORTABLE_FORCE_ATTACH       (UINT64_C(1) &lt;&lt; 1)
+#define SD_SYSTEMD_PORTABLE_FORCE_EXTENSION    (UINT64_C(1) &lt;&lt; 2)
+      </pre></div><div class="refsect2"><a name="id-1.5.28"></a><h3 id="Properties">Properties<a class="headerlink" title="Permalink to this headline" href="#Properties">¶</a></h3><p><code class="varname">PoolPath</code> specifies the file system path where images are written to.</p><p><code class="varname">PoolUsage</code> specifies the current usage size of the image pool in bytes.</p><p><code class="varname">PoolLimit</code> specifies the size limit of the image pool in bytes.</p><p><code class="varname">Profiles</code> specifies the available runtime profiles for portable services.</p></div></div><div class="refsect1"><a name="id-1.6"></a><h2 id="The Image Object">The Image Object<a class="headerlink" title="Permalink to this headline" href="#The%20Image%20Object">¶</a></h2><p>The service exposes the following interfaces on the Image object on the bus:</p><pre class="programlisting">
+node /org/freedesktop/portable1 {
+  interface org.freedesktop.portable1.Image {
+    methods:
+      GetOSRelease(out a{ss} os_release);
+      GetMetadata(in  as matches,
+                  out s image,
+                  out ay os_release,
+                  out a{say} units);
+      GetMetadataWithExtensions(in  as extensions,
+                                in  as matches,
+                                in  t flags,
+                                out s image,
+                                out ay os_release,
+                                out a{say} extensions,
+                                out a{say} units);
+      GetState(out s state);
+      GetStateWithExtensions(in  as extensions,
+                             in  t flags,
+                             out s state);
+      Attach(in  as matches,
+             in  s profile,
+             in  b runtime,
+             in  s copy_mode,
+             out a(sss) changes);
+      AttachWithExtensions(in  as extensions,
+                           in  as matches,
+                           in  s profile,
+                           in  s copy_mode,
+                           in  t flags,
+                           out a(sss) changes);
+      Detach(in  b runtime,
+             out a(sss) changes);
+      DetachWithExtensions(in  as extensions,
+                           in  t flags,
+                           out a(sss) changes);
+      Reattach(in  as matches,
+               in  s profile,
+               in  b runtime,
+               in  s copy_mode,
+               out a(sss) changes_removed,
+               out a(sss) changes_updated);
+      ReattachWithExtensions(in  as extensions,
+                             in  as matches,
+                             in  s profile,
+                             in  s copy_mode,
+                             in  t flags,
+                             out a(sss) changes_removed,
+                             out a(sss) changes_updated);
+      Remove();
+      MarkReadOnly(in  b read_only);
+      SetLimit(in  t limit);
+    properties:
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s Name = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s Path = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s Type = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly b ReadOnly = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t CreationTimestamp = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t ModificationTimestamp = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t Usage = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t Limit = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t UsageExclusive = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t LimitExclusive = ...;
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="refsect2"><a name="id-1.6.30"></a><h3 id="Methods1">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods1">¶</a></h3><p>The following methods implement the same operation as the respective methods on the
+      <code class="interfacename">Manager</code> object (see above). However, these methods operate on the image
+      object and hence does not take an image name parameter. Invoking the methods directly on the Manager
+      object has the advantage of not requiring a <code class="function">GetImage()</code> call to get the image object
+      for a specific image name. Calling the methods on the Manager object is hence a round trip
+      optimization. List of methods:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>GetOSRelease()</p></li><li class="listitem"><p>GetMetadata()</p></li><li class="listitem"><p>GetMetadataWithExtensions()</p></li><li class="listitem"><p>GetState()</p></li><li class="listitem"><p>Attach()</p></li><li class="listitem"><p>AttachWithExtensions()</p></li><li class="listitem"><p>Detach()</p></li><li class="listitem"><p>DetachWithExtensions()</p></li><li class="listitem"><p>Reattach()</p></li><li class="listitem"><p>ReattachWithExtensions()</p></li><li class="listitem"><p>Remove()</p></li><li class="listitem"><p>MarkReadOnly()</p></li><li class="listitem"><p>SetLimit()</p></li></ul></div></div><div class="refsect2"><a name="id-1.6.31"></a><h3 id="Properties1">Properties<a class="headerlink" title="Permalink to this headline" href="#Properties1">¶</a></h3><p><code class="varname">Name</code> specifies the image name.</p><p><code class="varname">Path</code> specifies the file system path where image is stored.</p><p><code class="varname">Type</code> specifies the image type.</p><p><code class="varname">ReadOnly</code> specifies whether the image is read-only.</p><p><code class="varname">CreationTimestamp</code> specifies the image creation timestamp.</p><p><code class="varname">ModificationTimestamp</code> specifies the image modification timestamp.</p><p><code class="varname">Usage</code> specifies the image disk usage.</p><p><code class="varname">Limit</code> specifies the image disk usage limit.</p><p><code class="varname">UsageExclusive</code> specifies the image disk usage (exclusive).</p><p><code class="varname">LimitExclusive</code> specifies the image disk usage limit (exclusive).</p></div></div><div class="refsect1"><a name="versioning"></a><h2 id="Versioning">Versioning<a class="headerlink" title="Permalink to this headline" href="#Versioning">¶</a></h2><p>These D-Bus interfaces follow <a class="ulink" href="https://0pointer.de/blog/projects/versioning-dbus.html" target="_top">
+    the usual interface versioning guidelines</a>.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><div class="refsect2"><a name="id-1.8.2"></a><h3 id="The Manager Object1">The Manager Object<a class="headerlink" title="Permalink to this headline" href="#The%20Manager%20Object1">¶</a></h3><p><code class="function">GetImageStateWithExtensions()</code> was added in version 251.</p></div><div class="refsect2"><a name="id-1.8.3"></a><h3 id="The Image Object1">The Image Object<a class="headerlink" title="Permalink to this headline" href="#The%20Image%20Object1">¶</a></h3><p><code class="function">GetStateWithExtensions()</code> was added in version 251.</p><p><code class="function">ReattachWithExtensions()</code> was added in version 254.</p></div></div></div></body></html>

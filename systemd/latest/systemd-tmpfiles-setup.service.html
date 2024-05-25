@@ -1,0 +1,214 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-tmpfiles</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-tmpfiles"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-tmpfiles, systemd-tmpfiles-setup.service, systemd-tmpfiles-setup-dev-early.service, systemd-tmpfiles-setup-dev.service, systemd-tmpfiles-clean.service, systemd-tmpfiles-clean.timer — Creates, deletes and cleans up volatile
+    and temporary files and directories</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">systemd-tmpfiles</code>  [OPTIONS...] [<em class="replaceable"><code>CONFIGFILE</code></em>...]</p></div><p>System units:
+</p><div class="literallayout"><p><code class="filename">systemd-tmpfiles-setup.service</code><br>
+<code class="filename">systemd-tmpfiles-setup-dev-early.service</code><br>
+<code class="filename">systemd-tmpfiles-setup-dev.service</code><br>
+<code class="filename">systemd-tmpfiles-clean.service</code><br>
+<code class="filename">systemd-tmpfiles-clean.timer</code></p></div><p>User units:
+</p><div class="literallayout"><p><code class="filename">systemd-tmpfiles-setup.service</code><br>
+<code class="filename">systemd-tmpfiles-clean.service</code><br>
+<code class="filename">systemd-tmpfiles-clean.timer</code></p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-tmpfiles</strong></span> creates, deletes, and cleans up volatile and temporary files
+    and directories, using the configuration file format and location specified in
+    <a href="tmpfiles.d.html#"><span class="citerefentry"><span class="refentrytitle">tmpfiles.d</span>(5)</span></a>. It must
+    be invoked with one or more options <code class="option">--create</code>, <code class="option">--remove</code>, and
+    <code class="option">--clean</code>, to select the respective subset of operations.</p><p>By default, directives from all configuration files are applied. When invoked with
+    <code class="option">--replace=<em class="replaceable"><code>PATH</code></em></code>, arguments specified on the command line are
+    used instead of the configuration file <em class="replaceable"><code>PATH</code></em>. Otherwise, if one or more
+    absolute filenames are passed on the command line, only the directives in these files are applied. If
+    "<code class="literal">-</code>" is specified instead of a filename, directives are read from standard input. If only
+    the basename of a configuration file is specified, all configuration directories as specified in
+    <a href="tmpfiles.d.html#"><span class="citerefentry"><span class="refentrytitle">tmpfiles.d</span>(5)</span></a> are
+    searched for a matching file and the file found that has the highest priority is executed.</p><p>System services (<code class="filename">systemd-tmpfiles-setup.service</code>,
+    <code class="filename">systemd-tmpfiles-setup-dev-early.service</code>,
+    <code class="filename">systemd-tmpfiles-setup-dev.service</code>,
+    <code class="filename">systemd-tmpfiles-clean.service</code>) invoke <span class="command"><strong>systemd-tmpfiles</strong></span> to create
+    system files and to perform system wide cleanup. Those services read administrator-controlled
+    configuration files in <code class="filename">tmpfiles.d/</code> directories. User services
+    (<code class="filename">systemd-tmpfiles-setup.service</code>,
+    <code class="filename">systemd-tmpfiles-clean.service</code>) also invoke <span class="command"><strong>systemd-tmpfiles</strong></span>, but
+    it reads a separate set of files, which includes user-controlled files under
+    <code class="filename">~/.config/user-tmpfiles.d/</code> and <code class="filename">~/.local/share/user-tmpfiles.d/</code>,
+    and administrator-controlled files under <code class="filename">/usr/share/user-tmpfiles.d/</code>. Users may use
+    this to create and clean up files under their control, but the system instance performs global cleanup
+    and is not influenced by user configuration. Note that this means a time-based cleanup configured in the
+    system instance, such as the one typically configured for <code class="filename">/tmp/</code>, will thus also
+    affect files created by the user instance if they are placed in <code class="filename">/tmp/</code>, even if the
+    user instance's time-based cleanup is turned off.</p><p>To re-apply settings after configuration has been modified, simply restart
+    <code class="filename">systemd-tmpfiles-clean.service</code>, which will apply any settings which can be safely
+    executed at runtime. To debug <span class="command"><strong>systemd-tmpfiles</strong></span>, it may be useful to invoke it
+    directly from the command line with increased log level (see <code class="varname">$SYSTEMD_LOG_LEVEL</code>
+    below).</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--create"><span class="term"><code class="option">--create</code></span><a class="headerlink" title="Permalink to this term" href="#--create">¶</a></dt><dd><p>If this option is passed, all files and
+        directories marked with
+        <code class="varname">f</code>,
+        <code class="varname">F</code>,
+        <code class="varname">w</code>,
+        <code class="varname">d</code>,
+        <code class="varname">D</code>,
+        <code class="varname">v</code>,
+        <code class="varname">p</code>,
+        <code class="varname">L</code>,
+        <code class="varname">c</code>,
+        <code class="varname">b</code>,
+        <code class="varname">m</code>
+        in the configuration files are created or written to. Files
+        and directories marked with
+        <code class="varname">z</code>,
+        <code class="varname">Z</code>,
+        <code class="varname">t</code>,
+        <code class="varname">T</code>,
+        <code class="varname">a</code>, and
+        <code class="varname">A</code> have their ownership, access mode and
+        security labels set.</p></dd><dt id="--clean"><span class="term"><code class="option">--clean</code></span><a class="headerlink" title="Permalink to this term" href="#--clean">¶</a></dt><dd><p>If this option is passed, all files and
+        directories with an age parameter configured will be cleaned
+        up.</p></dd><dt id="--remove"><span class="term"><code class="option">--remove</code></span><a class="headerlink" title="Permalink to this term" href="#--remove">¶</a></dt><dd><p>If this option is passed, the contents of
+        directories marked with <code class="varname">D</code> or
+        <code class="varname">R</code>, and files or directories themselves
+        marked with <code class="varname">r</code> or <code class="varname">R</code> are
+        removed unless an exclusive or shared BSD lock is taken on them (see <a href="https://man7.org/linux/man-pages/man2/flock.2.html"><span class="citerefentry"><span class="refentrytitle">flock</span>(2)</span></a>).
+        </p></dd><dt id="--user"><span class="term"><code class="option">--user</code></span><a class="headerlink" title="Permalink to this term" href="#--user">¶</a></dt><dd><p>Execute "user" configuration, i.e. <code class="filename">tmpfiles.d</code>
+        files in user configuration directories.</p><p><a name="v236"></a>Added in version 236.</p></dd><dt id="--boot"><span class="term"><code class="option">--boot</code></span><a class="headerlink" title="Permalink to this term" href="#--boot">¶</a></dt><dd><p>Also execute lines with an exclamation mark. Lines that are not safe to be executed
+        on a running system may be marked in this way. <span class="command"><strong>systemd-tmpfiles</strong></span> is executed in
+        early boot with <code class="option">--boot</code> specified and will execute those lines. When invoked again
+        later, it should be called without <code class="option">--boot</code>.</p><p><a name="v209"></a>Added in version 209.</p></dd><dt id="--graceful"><span class="term"><code class="option">--graceful</code></span><a class="headerlink" title="Permalink to this term" href="#--graceful">¶</a></dt><dd><p>Ignore configuration lines pertaining to unknown users or groups. This option is
+        intended to be used in early boot before all users or groups have been created.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="--prefix=path"><span class="term"><code class="option">--prefix=<em class="replaceable"><code>path</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--prefix=path">¶</a></dt><dd><p>Only apply rules with paths that start with
+        the specified prefix. This option can be specified multiple
+        times.</p><p><a name="v212"></a>Added in version 212.</p></dd><dt id="--exclude-prefix=path"><span class="term"><code class="option">--exclude-prefix=<em class="replaceable"><code>path</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--exclude-prefix=path">¶</a></dt><dd><p>Ignore rules with paths that start with the
+        specified prefix. This option can be specified multiple
+        times.</p><p><a name="v207"></a>Added in version 207.</p></dd><dt id="-E"><span class="term"><code class="option">-E</code></span><a class="headerlink" title="Permalink to this term" href="#-E">¶</a></dt><dd><p>A shortcut for "<code class="literal">--exclude-prefix=/dev --exclude-prefix=/proc
+        --exclude-prefix=/run --exclude-prefix=/sys</code>", i.e. exclude the hierarchies typically backed
+        by virtual or memory file systems. This is useful in combination with <code class="option">--root=</code>, if
+        the specified directory tree contains an OS tree without these virtual/memory file systems mounted
+        in, as it is typically not desirable to create any files and directories below these subdirectories
+        if they are supposed to be overmounted during runtime.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--root=root"><span class="term"><code class="option">--root=<em class="replaceable"><code>root</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--root=root">¶</a></dt><dd><p>Takes a directory path as an argument. All paths will be prefixed with the given alternate
+        <em class="replaceable"><code>root</code></em> path, including config search paths.</p><p>When this option is used, the libc Name Service Switch (NSS) is bypassed for resolving users
+        and groups. Instead the files <code class="filename">/etc/passwd</code> and <code class="filename">/etc/group</code>
+        inside the alternate root are read directly. This means that users/groups not listed in these files
+        will not be resolved, i.e. LDAP NIS and other complex databases are not considered.</p><p>Consider combining this with <code class="option">-E</code> to ensure the invocation does not create files
+        or directories below mount points in the OS image operated on that are typically overmounted during
+        runtime.</p><p><a name="v212"></a>Added in version 212.</p></dd><dt id="--image=image"><span class="term"><code class="option">--image=<em class="replaceable"><code>image</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--image=image">¶</a></dt><dd><p>Takes a path to a disk image file or block device node. If specified all operations
+        are applied to file system in the indicated disk image. This is similar to <code class="option">--root=</code>
+        but operates on file systems stored in disk images or block devices. The disk image should either
+        contain just a file system or a set of file systems within a GPT partition table, following the
+        <a class="ulink" href="https://uapi-group.org/specifications/specs/discoverable_partitions_specification" target="_top">Discoverable Partitions
+        Specification</a>. For further information on supported disk images, see
+        <a href="systemd-nspawn.html#"><span class="citerefentry"><span class="refentrytitle">systemd-nspawn</span>(1)</span></a>'s
+        switch of the same name.</p><p>Implies <code class="option">-E</code>.</p><p><a name="v247"></a>Added in version 247.</p></dd><dt id="--image-policy=policy"><span class="term"><code class="option">--image-policy=<em class="replaceable"><code>policy</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--image-policy=policy">¶</a></dt><dd><p>Takes an image policy string as argument, as per
+    <a href="systemd.image-policy.html#"><span class="citerefentry"><span class="refentrytitle">systemd.image-policy</span>(7)</span></a>. The
+    policy is enforced when operating on the disk image specified via <code class="option">--image=</code>, see
+    above. If not specified defaults to the "<code class="literal">*</code>" policy, i.e. all recognized file systems
+    in the image are used.</p></dd><dt id="--replace=PATH"><span class="term"><code class="option">--replace=<em class="replaceable"><code>PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--replace=PATH">¶</a></dt><dd><p>When this option is given, one or more positional arguments
+        must be specified. All configuration files found in the directories listed in
+        <a href="tmpfiles.d.html#"><span class="citerefentry"><span class="refentrytitle">tmpfiles.d</span>(5)</span></a>
+        will be read, and the configuration given on the command line will be
+        handled instead of and with the same priority as the configuration file
+        <em class="replaceable"><code>PATH</code></em>.</p><p>This option is intended to be used when package installation scripts
+        are running and files belonging to that package are not yet available on
+        disk, so their contents must be given on the command line, but the admin
+        configuration might already exist and should be given higher priority.
+        </p><p><a name="v238"></a>Added in version 238.</p></dd><dt id="--cat-config"><span class="term"><code class="option">--cat-config</code></span><a class="headerlink" title="Permalink to this term" href="#--cat-config">¶</a></dt><dd><p>Copy the contents of config files to standard output.
+      Before each file, the filename is printed as a comment.</p></dd><dt id="--tldr"><span class="term"><code class="option">--tldr</code></span><a class="headerlink" title="Permalink to this term" href="#--tldr">¶</a></dt><dd><p>Copy the contents of config files to standard output. Only the "interesting" parts of the
+      configuration files are printed, comments and empty lines are skipped. Before each file, the filename
+      is printed as a comment.</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div><p>It is possible to combine <code class="option">--create</code>, <code class="option">--clean</code>, and <code class="option">--remove</code>
+    in one invocation (in which case removal and cleanup are executed before creation of new files). For example,
+    during boot the following command line is executed to ensure that all temporary and volatile directories are
+    removed and created according to the configuration file:</p><pre class="programlisting">systemd-tmpfiles --remove --create</pre></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Credentials">Credentials<a class="headerlink" title="Permalink to this headline" href="#Credentials">¶</a></h2><p><span class="command"><strong>systemd-tmpfiles</strong></span> supports the service credentials logic as implemented by
+    <code class="varname">ImportCredential=</code>/<code class="varname">LoadCredential=</code>/<code class="varname">SetCredential=</code>
+    (see <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(1)</span></a> for
+    details). The following credentials are used when passed in:</p><div class="variablelist"><dl class="variablelist"><dt id="tmpfiles.extra"><span class="term"><code class="varname">tmpfiles.extra</code></span><a class="headerlink" title="Permalink to this term" href="#tmpfiles.extra">¶</a></dt><dd><p> The contents of this credential may contain additional lines to operate on. The
+        credential contents should follow the same format as any other <code class="filename">tmpfiles.d/</code>
+        drop-in configuration file. If this credential is passed it is processed after all of the drop-in
+        files read from the file system. The lines in the credential can hence augment existing lines of the
+        OS, but not override them.</p><p><a name="v252"></a>Added in version 252.</p></dd></dl></div><p>Note that by default the <code class="filename">systemd-tmpfiles-setup.service</code> unit file (and related
+    unit files) is set up to inherit the "<code class="literal">tmpfiles.extra</code>" credential from the service
+    manager.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Environment">Environment<a class="headerlink" title="Permalink to this headline" href="#Environment">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_LOG_LEVEL"><span class="term"><code class="varname">$SYSTEMD_LOG_LEVEL</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_LEVEL">¶</a></dt><dd><p><a name="log-level-body"></a>The maximum log level of emitted messages (messages with a higher
+      log level, i.e. less important ones, will be suppressed). Either one of (in order of decreasing
+      importance) <code class="constant">emerg</code>, <code class="constant">alert</code>, <code class="constant">crit</code>,
+      <code class="constant">err</code>, <code class="constant">warning</code>, <code class="constant">notice</code>,
+      <code class="constant">info</code>, <code class="constant">debug</code>, or an integer in the range 0…7. See
+      <a href="https://man7.org/linux/man-pages/man3/syslog.3.html"><span class="citerefentry"><span class="refentrytitle">syslog</span>(3)</span></a>
+      for more information.</p></dd><dt id="$SYSTEMD_LOG_COLOR"><span class="term"><code class="varname">$SYSTEMD_LOG_COLOR</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_COLOR">¶</a></dt><dd><p><a name="log-color-body"></a>A boolean. If true, messages written to the tty will be colored
+      according to priority.</p><p>This setting is only useful when messages are written directly to the terminal, because
+      <a href="journalctl.html#"><span class="citerefentry"><span class="refentrytitle">journalctl</span>(1)</span></a> and
+      other tools that display logs will color messages based on the log level on their own.</p></dd><dt id="$SYSTEMD_LOG_TIME"><span class="term"><code class="varname">$SYSTEMD_LOG_TIME</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_TIME">¶</a></dt><dd><p><a name="log-time-body"></a>A boolean. If true, console log messages will be prefixed with a
+      timestamp.</p><p>This setting is only useful when messages are written directly to the terminal or a file, because
+      <a href="journalctl.html#"><span class="citerefentry"><span class="refentrytitle">journalctl</span>(1)</span></a> and
+      other tools that display logs will attach timestamps based on the entry metadata on their own.</p></dd><dt id="$SYSTEMD_LOG_LOCATION"><span class="term"><code class="varname">$SYSTEMD_LOG_LOCATION</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_LOCATION">¶</a></dt><dd><p><a name="log-location-body"></a>A boolean. If true, messages will be prefixed with a filename
+      and line number in the source code where the message originates.</p><p>Note that the log location is often attached as metadata to journal entries anyway. Including it
+      directly in the message text can nevertheless be convenient when debugging programs.</p></dd><dt id="$SYSTEMD_LOG_TARGET"><span class="term"><code class="varname">$SYSTEMD_LOG_TARGET</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_TARGET">¶</a></dt><dd><p><a name="log-target-body"></a>The destination for log messages. One of
+      <code class="constant">console</code> (log to the attached tty), <code class="constant">console-prefixed</code> (log to
+      the attached tty but with prefixes encoding the log level and "facility", see <a href="https://man7.org/linux/man-pages/man3/syslog.3.html"><span class="citerefentry"><span class="refentrytitle">syslog</span>(3)</span></a>,
+      <code class="constant">kmsg</code> (log to the kernel circular log buffer), <code class="constant">journal</code> (log to
+      the journal), <code class="constant">journal-or-kmsg</code> (log to the journal if available, and to kmsg
+      otherwise), <code class="constant">auto</code> (determine the appropriate log target automatically, the default),
+      <code class="constant">null</code> (disable log output).</p></dd><dt id="$SYSTEMD_PAGER"><span class="term"><code class="varname">$SYSTEMD_PAGER</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_PAGER">¶</a></dt><dd><p>Pager to use when <code class="option">--no-pager</code> is not given; overrides
+      <code class="varname">$PAGER</code>. If neither <code class="varname">$SYSTEMD_PAGER</code> nor <code class="varname">$PAGER</code> are set, a
+      set of well-known pager implementations are tried in turn, including
+      <a href="https://man7.org/linux/man-pages/man1/less.1.html"><span class="citerefentry"><span class="refentrytitle">less</span>(1)</span></a> and
+      <a href="https://man7.org/linux/man-pages/man1/more.1.html"><span class="citerefentry"><span class="refentrytitle">more</span>(1)</span></a>, until one is found. If
+      no pager implementation is discovered no pager is invoked. Setting this environment variable to an empty string
+      or the value "<code class="literal">cat</code>" is equivalent to passing <code class="option">--no-pager</code>.</p><p>Note: if <code class="varname">$SYSTEMD_PAGERSECURE</code> is not set, <code class="varname">$SYSTEMD_PAGER</code>
+      (as well as <code class="varname">$PAGER</code>) will be silently ignored.</p></dd><dt id="$SYSTEMD_LESS"><span class="term"><code class="varname">$SYSTEMD_LESS</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LESS">¶</a></dt><dd><p>Override the options passed to <span class="command"><strong>less</strong></span> (by default
+      "<code class="literal">FRSXMK</code>").</p><p>Users might want to change two options in particular:</p><div class="variablelist"><dl class="variablelist"><dt id="K"><span class="term"><code class="option">K</code></span><a class="headerlink" title="Permalink to this term" href="#K">¶</a></dt><dd></dd><dt id="X"><span class="term"><code class="option">X</code></span><a class="headerlink" title="Permalink to this term" href="#X">¶</a></dt><dd></dd></dl></div><p>See
+      <a href="https://man7.org/linux/man-pages/man1/less.1.html"><span class="citerefentry"><span class="refentrytitle">less</span>(1)</span></a>
+      for more discussion.</p></dd><dt id="$SYSTEMD_LESSCHARSET"><span class="term"><code class="varname">$SYSTEMD_LESSCHARSET</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LESSCHARSET">¶</a></dt><dd><p>Override the charset passed to <span class="command"><strong>less</strong></span> (by default "<code class="literal">utf-8</code>", if
+      the invoking terminal is determined to be UTF-8 compatible).</p></dd><dt id="$SYSTEMD_PAGERSECURE"><span class="term"><code class="varname">$SYSTEMD_PAGERSECURE</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_PAGERSECURE">¶</a></dt><dd><p>Takes a boolean argument. When true, the "secure" mode of the pager is enabled; if
+      false, disabled. If <code class="varname">$SYSTEMD_PAGERSECURE</code> is not set at all, secure mode is enabled
+      if the effective UID is not the same as the owner of the login session, see
+      <a href="https://man7.org/linux/man-pages/man2/geteuid.2.html"><span class="citerefentry"><span class="refentrytitle">geteuid</span>(2)</span></a>
+      and <a href="sd_pid_get_owner_uid.html#"><span class="citerefentry"><span class="refentrytitle">sd_pid_get_owner_uid</span>(3)</span></a>.
+      In secure mode, <code class="option">LESSSECURE=1</code> will be set when invoking the pager, and the pager shall
+      disable commands that open or create new files or start new subprocesses. When
+      <code class="varname">$SYSTEMD_PAGERSECURE</code> is not set at all, pagers which are not known to implement
+      secure mode will not be used. (Currently only
+      <a href="https://man7.org/linux/man-pages/man1/less.1.html"><span class="citerefentry"><span class="refentrytitle">less</span>(1)</span></a>
+      implements secure mode.)</p><p>Note: when commands are invoked with elevated privileges, for example under <a href="https://man7.org/linux/man-pages/man8/sudo.8.html"><span class="citerefentry"><span class="refentrytitle">sudo</span>(8)</span></a> or
+      <a href="http://linux.die.net/man/1/pkexec"><span class="citerefentry"><span class="refentrytitle">pkexec</span>(1)</span></a>, care
+      must be taken to ensure that unintended interactive features are not enabled. "Secure" mode for the
+      pager may be enabled automatically as describe above. Setting <code class="varname">SYSTEMD_PAGERSECURE=0</code>
+      or not removing it from the inherited environment allows the user to invoke arbitrary commands. Note
+      that if the <code class="varname">$SYSTEMD_PAGER</code> or <code class="varname">$PAGER</code> variables are to be
+      honoured, <code class="varname">$SYSTEMD_PAGERSECURE</code> must be set too. It might be reasonable to completely
+      disable the pager using <code class="option">--no-pager</code> instead.</p></dd><dt id="$SYSTEMD_COLORS"><span class="term"><code class="varname">$SYSTEMD_COLORS</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_COLORS">¶</a></dt><dd><p>Takes a boolean argument. When true, <span class="command"><strong>systemd</strong></span> and related utilities
+      will use colors in their output, otherwise the output will be monochrome. Additionally, the variable can
+      take one of the following special values: "<code class="literal">16</code>", "<code class="literal">256</code>" to restrict the use
+      of colors to the base 16 or 256 ANSI colors, respectively. This can be specified to override the automatic
+      decision based on <code class="varname">$TERM</code> and what the console is connected to.</p></dd><dt id="$SYSTEMD_URLIFY"><span class="term"><code class="varname">$SYSTEMD_URLIFY</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_URLIFY">¶</a></dt><dd><p>The value must be a boolean. Controls whether clickable links should be generated in
+      the output for terminal emulators supporting this. This can be specified to override the decision that
+      <span class="command"><strong>systemd</strong></span> makes based on <code class="varname">$TERM</code> and other conditions.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.9"></a><h2 id="Unprivileged --cleanup operation">Unprivileged --cleanup operation<a class="headerlink" title="Permalink to this headline" href="#Unprivileged%20--cleanup%20operation">¶</a></h2><p><span class="command"><strong>systemd-tmpfiles</strong></span> tries to avoid changing
+    the access and modification times on the directories it accesses,
+    which requires <code class="constant">CAP_FOWNER</code> privileges. When
+    running as non-root, directories which are checked for files to
+    clean up will have their access time bumped, which might prevent
+    their cleanup.
+    </p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>On success, 0 is returned. If the configuration was syntactically invalid (syntax errors, missing
+    arguments, …), so some lines had to be ignored, but no other errors occurred, <code class="constant">65</code> is
+    returned (<code class="constant">EX_DATAERR</code> from <code class="filename">/usr/include/sysexits.h</code>). If the
+    configuration was syntactically valid, but could not be executed (lack of permissions, creation of files
+    in missing directories, invalid contents when writing to <code class="filename">/sys/</code> values, …),
+    <code class="constant">73</code> is returned (<code class="constant">EX_CANTCREAT</code> from
+    <code class="filename">/usr/include/sysexits.h</code>). Otherwise, <code class="constant">1</code> is returned
+    (<code class="constant">EXIT_FAILURE</code> from <code class="filename">/usr/include/stdlib.h</code>).</p><p>Note: when creating items, if the target already exists, but is of the wrong type or otherwise does
+    not match the requested state, and forced operation has not been requested with "<code class="literal">+</code>",
+    a message is emitted, but the failure is otherwise ignored.</p></div><div class="refsect1"><a name="id-1.11"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="tmpfiles.d.html#"><span class="citerefentry"><span class="refentrytitle">tmpfiles.d</span>(5)</span></a>
+    </p></div></div></body></html>

@@ -1,0 +1,124 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_id128_get_machine</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_id128_get_machine"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_id128_get_machine, sd_id128_get_app_specific, sd_id128_get_machine_app_specific, sd_id128_get_boot, sd_id128_get_boot_app_specific, sd_id128_get_invocation — Retrieve 128-bit IDs</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-id128.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_id128_get_machine</b>(</code></td><td>sd_id128_t *<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_id128_get_app_specific</b>(</code></td><td>sd_id128_t <var class="pdparam">base</var>, </td></tr><tr><td> </td><td>sd_id128_t <var class="pdparam">app_id</var>, </td></tr><tr><td> </td><td>sd_id128_t *<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_id128_get_machine_app_specific</b>(</code></td><td>sd_id128_t <var class="pdparam">app_id</var>, </td></tr><tr><td> </td><td>sd_id128_t *<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_id128_get_boot</b>(</code></td><td>sd_id128_t *<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_id128_get_boot_app_specific</b>(</code></td><td>sd_id128_t <var class="pdparam">app_id</var>, </td></tr><tr><td> </td><td>sd_id128_t *<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_id128_get_invocation</b>(</code></td><td>sd_id128_t *<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_id128_get_machine()</code> returns the machine ID of the executing host. This reads and
+    parses the <a href="machine-id.html#"><span class="citerefentry"><span class="refentrytitle">machine-id</span>(5)</span></a>
+    file. This function caches the machine ID internally to make retrieving the machine ID a cheap operation. This ID
+    may be used wherever a unique identifier for the local system is needed. However, it is recommended to use this ID
+    as-is only in trusted environments. In untrusted environments it is recommended to derive an application specific
+    ID from this machine ID, in an irreversible (cryptographically secure) way. To make this easy
+    <code class="function">sd_id128_get_machine_app_specific()</code> is provided, see below.</p><p><code class="function">sd_id128_get_app_specific()</code> returns a machine ID that is a combination of the
+    <em class="parameter"><code>base</code></em> and <em class="parameter"><code>app_id</code></em> parameters. Internally, this function
+    calculates HMAC-SHA256 of the <em class="parameter"><code>app_id</code></em> parameter keyed by the
+    <em class="parameter"><code>base</code></em> parameter, and truncates this result to fit in
+    <span class="structname">sd_id128_t</span> and turns it into a valid Variant 1 Version 4 UUID, in accordance
+    with <a class="ulink" href="https://tools.ietf.org/html/rfc4122" target="_top">RFC 4122</a>. Neither of the two input
+    parameters can be calculated from the output parameter <em class="parameter"><code>ret</code></em>.</p><p><code class="function">sd_id128_get_machine_app_specific()</code> is similar to
+    <code class="function">sd_id128_get_machine()</code>, but retrieves a machine ID that is specific to the
+    application that is identified by the indicated application ID. It is recommended to use this function
+    instead of <code class="function">sd_id128_get_machine()</code> when passing an ID to untrusted environments, in
+    order to make sure that the original machine ID may not be determined externally. This way, the ID used
+    by the application remains stable on a given machine, but cannot be easily correlated with IDs used in
+    other applications on the same machine. The application-specific ID should be generated via a tool like
+    <span class="command"><strong>systemd-id128 new</strong></span>, and may be compiled into the application. This function will return
+    the same application-specific ID for each combination of machine ID and application ID. Internally, this
+    function calls <code class="function">sd_id128_get_app_specific()</code> with the result from
+    <code class="function">sd_id128_get_machine()</code> and the <em class="parameter"><code>app_id</code></em> parameter.</p><p><code class="function">sd_id128_get_boot()</code> returns the boot ID of the executing kernel. This reads and parses
+    the <code class="filename">/proc/sys/kernel/random/boot_id</code> file exposed by the kernel. It is randomly generated early
+    at boot and is unique for every running kernel instance. See <a href="https://man7.org/linux/man-pages/man4/random.4.html"><span class="citerefentry"><span class="refentrytitle">random</span>(4)</span></a> for more
+    information. This function also internally caches the returned ID to make this call a cheap operation. It is
+    recommended to use this ID as-is only in trusted environments. In untrusted environments it is recommended to
+    derive an application specific ID using <code class="function">sd_id128_get_boot_app_specific()</code>, see below.</p><p><code class="function">sd_id128_get_boot_app_specific()</code> is analogous to
+    <code class="function">sd_id128_get_machine_app_specific()</code>, but returns an ID that changes between
+    boots. Some machines may be used for a long time without rebooting, hence the boot ID may remain constant
+    for a long time, and has properties similar to the machine ID during that time.</p><p><code class="function">sd_id128_get_invocation()</code> returns the invocation ID of the currently executed
+    service. In its current implementation, this tries to read and parse the following:
+    </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The <code class="varname">$INVOCATION_ID</code> environment variable that the service manager sets when
+        activating a service.</p></li><li class="listitem"><p>An entry in the kernel keyring that the system service manager sets when activating a service.
+        </p></li></ul></div><p>
+    See <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>
+    for details. The ID is cached internally. In future a different mechanism to determine the invocation ID
+    may be added.</p><p>Note that <code class="function">sd_id128_get_machine_app_specific()</code>,
+    <code class="function">sd_id128_get_boot()</code>, <code class="function">sd_id128_get_boot_app_specific()</code>, and
+    <code class="function">sd_id128_get_invocation()</code> always return UUID Variant 1 Version 4 compatible IDs.
+    <code class="function">sd_id128_get_machine()</code> will also return a UUID Variant 1 Version 4 compatible ID on
+    new installations but might not on older. It is possible to convert the machine ID non-reversibly into a
+    UUID Variant 1 Version 4 compatible one. For more information, see
+    <a href="machine-id.html#"><span class="citerefentry"><span class="refentrytitle">machine-id</span>(5)</span></a>. It is
+    hence guaranteed that these functions will never return the ID consisting of all zero or all one bits
+    (<code class="constant">SD_ID128_NULL</code>, <code class="constant">SD_ID128_ALLF</code>) — with the possible exception of
+    <code class="function">sd_id128_get_machine()</code>, as mentioned.</p><p>For more information about the "<code class="literal">sd_id128_t</code>"
+    type see
+    <a href="sd-id128.html#"><span class="citerefentry"><span class="refentrytitle">sd-id128</span>(3)</span></a>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>Those calls return 0 on success (in which case <em class="parameter"><code>ret</code></em> is filled in),
+    or a negative errno-style error code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-ENOENT"><span class="term"><code class="constant">-ENOENT</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOENT">¶</a></dt><dd><p>Returned by <code class="function">sd_id128_get_machine()</code> and
+          <code class="function">sd_id128_get_machine_app_specific()</code> when <code class="filename">/etc/machine-id</code>
+          is missing.</p><p><a name="v242"></a>Added in version 242.</p></dd><dt id="-ENOMEDIUM"><span class="term"><code class="constant">-ENOMEDIUM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEDIUM">¶</a></dt><dd><p>Returned by <code class="function">sd_id128_get_machine()</code> and
+          <code class="function">sd_id128_get_machine_app_specific()</code> when <code class="filename">/etc/machine-id</code>
+          is empty or all zeros. Also returned by <code class="function">sd_id128_get_invocation()</code> when the
+          invocation ID is all zeros.</p><p><a name="v242"></a>Added in version 242.</p></dd><dt id="-ENOPKG"><span class="term"><code class="constant">-ENOPKG</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOPKG">¶</a></dt><dd><p>Returned by <code class="function">sd_id128_get_machine()</code> and
+          <code class="function">sd_id128_get_machine_app_specific()</code> when the content of
+          <code class="filename">/etc/machine-id</code> is "<code class="literal">uninitialized</code>".</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="-ENOSYS"><span class="term"><code class="constant">-ENOSYS</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOSYS">¶</a></dt><dd><p>Returned by <code class="function">sd_id128_get_boot()</code> and
+          <code class="function">sd_id128_get_boot_app_specific()</code> when <code class="filename">/proc/</code> is not
+          mounted.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="-ENXIO"><span class="term"><code class="constant">-ENXIO</code></span><a class="headerlink" title="Permalink to this term" href="#-ENXIO">¶</a></dt><dd><p>Returned by <code class="function">sd_id128_get_invocation()</code> if no invocation ID is
+          set. Also returned by <code class="function">sd_id128_get_app_specific()</code>,
+          <code class="function">sd_id128_get_machine_app_specific()</code>, and
+          <code class="function">sd_id128_get_boot_app_specific()</code> when the <em class="parameter"><code>app_id</code></em>
+          parameter is all zeros.</p><p><a name="v242"></a>Added in version 242.</p></dd><dt id="-EUCLEAN"><span class="term"><code class="constant">-EUCLEAN</code></span><a class="headerlink" title="Permalink to this term" href="#-EUCLEAN">¶</a></dt><dd><p>Returned by any of the functions described here when the configured value has
+          invalid format.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="-EPERM"><span class="term"><code class="constant">-EPERM</code></span><a class="headerlink" title="Permalink to this term" href="#-EPERM">¶</a></dt><dd><p>Requested information could not be retrieved because of insufficient permissions.
+          </p><p><a name="v242"></a>Added in version 242.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Application-specific machine ID</b></p><div class="example-contents"><p>First, generate the application ID:</p><pre class="programlisting">$ systemd-id128 -p new
+As string:
+c273277323db454ea63bb96e79b53e97
+
+As UUID:
+c2732773-23db-454e-a63b-b96e79b53e97
+
+As man:sd-id128(3) macro:
+#define MESSAGE_XYZ SD_ID128_MAKE(c2,73,27,73,23,db,45,4e,a6,3b,b9,6e,79,b5,3e,97)
+...
+</pre><p>Then use the new identifier in an example application:</p><pre class="programlisting">/* SPDX-License-Identifier: MIT-0 */
+
+#include &lt;stdio.h&gt;
+#include &lt;systemd/sd-id128.h&gt;
+
+#define OUR_APPLICATION_ID SD_ID128_MAKE(c2,73,27,73,23,db,45,4e,a6,3b,b9,6e,79,b5,3e,97)
+
+int main(int argc, char *argv[]) {
+  sd_id128_t id;
+  sd_id128_get_machine_app_specific(OUR_APPLICATION_ID, &amp;id);
+  printf("Our application ID: " SD_ID128_FORMAT_STR "\n", SD_ID128_FORMAT_VAL(id));
+  return 0;
+}
+</pre></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_id128_get_machine()</code> and
+    <code class="function">sd_id128_get_boot()</code> were added in version 187.</p><p><code class="function">sd_id128_get_invocation()</code> was added in version 232.</p><p><code class="function">sd_id128_get_machine_app_specific()</code> was added in version 233.</p><p><code class="function">sd_id128_get_boot_app_specific()</code> was added in version 240.</p><p><code class="function">sd_id128_get_app_specific()</code> was added in version 255.</p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-id128.html#"><span class="citerefentry"><span class="refentrytitle">systemd-id128</span>(1)</span></a>,
+      <a href="sd-id128.html#"><span class="citerefentry"><span class="refentrytitle">sd-id128</span>(3)</span></a>,
+      <a href="machine-id.html#"><span class="citerefentry"><span class="refentrytitle">machine-id</span>(5)</span></a>,
+      <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>,
+      <a href="sd_id128_randomize.html#"><span class="citerefentry"><span class="refentrytitle">sd_id128_randomize</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man4/random.4.html"><span class="citerefentry"><span class="refentrytitle">random</span>(4)</span></a>
+    </p></div></div></body></html>

@@ -1,0 +1,68 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_error_add_map</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_error_add_map"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_error_add_map, sd_bus_error_map, SD_BUS_ERROR_MAP, SD_BUS_ERROR_END — Additional sd-dbus error mappings</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><pre class="funcsynopsisinfo">typedef struct {
+        const char *name;
+        int code;
+        …
+} sd_bus_error_map;</pre><pre class="funcsynopsisinfo"><code class="constant">SD_BUS_ERROR_MAP(<em class="replaceable"><code>name</code></em>, <em class="replaceable"><code>code</code></em>)</code></pre><pre class="funcsynopsisinfo"><code class="constant">SD_BUS_ERROR_MAP_END</code></pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_add_map</b>(</code></td><td>const sd_bus_error_map *<var class="pdparam">map</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>The <code class="function">sd_bus_error_add_map()</code> call may be
+    used to register additional mappings for converting D-Bus errors
+    to Linux <code class="varname">errno</code>-style errors. The mappings
+    defined with this call are consulted by calls such as
+    <a href="sd_bus_error_set.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_error_set</span>(3)</span></a>
+    or
+    <a href="sd_bus_error_get_errno.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_error_get_errno</span>(3)</span></a>. By
+    default, a number of generic, standardized mappings are known, as
+    documented in
+    <a href="sd-bus-errors.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus-errors</span>(3)</span></a>. Use
+    this call to add further, application-specific mappings.</p><p>The function takes a pointer to an array of
+    <span class="structname">sd_bus_error_map</span> structures. A reference
+    to the specified array is added to the lookup tables for error
+    mappings. Note that the structure is not copied, and that it is hence
+    essential that the array stays available and constant during the
+    entire remaining runtime of the process.</p><p>The mapping array should be put together with a series of
+    <code class="constant">SD_BUS_ERROR_MAP()</code> macro invocations that
+    take a literal name string and a (positive)
+    <code class="varname">errno</code>-style error number. The last entry of the
+    array should be an invocation of the
+    <code class="constant">SD_BUS_ERROR_MAP_END</code> macro. The array should not be
+    put together without use of these two macros.</p><p>Note that the call is idempotent: it is safe to invoke it
+    multiple times with the parameter, which will only add the passed
+    mapping array once.</p><p>Note that the memory allocated by this call is not intended
+    to be freed during the lifetime of the process. It should not be
+    freed explicitly.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p><code class="function">sd_bus_error_add_map()</code> returns a
+    positive value when the new array was added to the lookup
+    tables. It returns zero when the same array was already added
+    before. On error, a negative <code class="varname">errno</code>-style error
+    code is returned. See below for known error codes.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>The specified mapping array is invalid.</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_error_add_map()</code> was added in version 223.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_error.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_error</span>(3)</span></a>,
+      <a href="sd-bus-errors.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus-errors</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man3/errno.3.html"><span class="citerefentry"><span class="refentrytitle">errno</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man3/strerror_r.3.html"><span class="citerefentry"><span class="refentrytitle">strerror_r</span>(3)</span></a>
+    </p></div></div></body></html>

@@ -1,0 +1,51 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-bless-boot.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-bless-boot.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-bless-boot.service, systemd-bless-boot — Mark current boot process as successful</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-bless-boot.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-bless-boot</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">systemd-bless-boot.service</code> is a system service that marks the current boot process as
+    successful. It's automatically pulled into the initial transaction when
+    <a href="systemd-bless-boot-generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd-bless-boot-generator</span>(8)</span></a>
+    detects that <a href="systemd-boot.html#"><span class="citerefentry"><span class="refentrytitle">systemd-boot</span>(7)</span></a> style
+    boot counting is used.</p><p>Internally, the service operates based on the <code class="varname">LoaderBootCountPath</code> EFI variable (of the
+    vendor UUID <code class="constant">4a67b082-0a4c-41cf-b6c7-440b29bb8c4</code>), which is passed from the boot loader to the
+    OS. It contains a file system path (relative to the EFI system partition) of the <a class="ulink" href="https://uapi-group.org/specifications/specs/boot_loader_specification" target="_top">Boot Loader Specification</a> compliant boot loader entry
+    file or unified kernel image file that was used to boot up the
+    system. <span class="command"><strong>systemd-bless-boot.service</strong></span> removes the two 'tries done' and 'tries left' numeric boot
+    counters from the filename, which indicates to future invocations of the boot loader that the entry has completed
+    booting successfully at least once. (This service will hence rename the boot loader entry file or unified kernel
+    image file on the first successful boot.)</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The <code class="filename">/usr/lib/systemd/systemd-bless-boot</code> executable may also be invoked from the
+    command line, taking one of the following command arguments:</p><div class="variablelist"><dl class="variablelist"><dt id="status"><span class="term"><code class="option">status</code></span><a class="headerlink" title="Permalink to this term" href="#status">¶</a></dt><dd><p>The current status of the boot loader entry file or unified kernel image file is shown. This
+        outputs one of "<code class="literal">good</code>", "<code class="literal">bad</code>", "<code class="literal">indeterminate</code>",
+        "<code class="literal">clean</code>", depending on the state and previous invocations of the command. The string
+        "<code class="literal">indeterminate</code>" is shown initially after boot, before it has been marked as "good" or
+        "bad". The string "<code class="literal">good</code>" is shown after the boot was marked as "good" with the
+        <code class="option">good</code> command below, and "bad" conversely after the <code class="option">bad</code> command was
+        invoked. The string "<code class="literal">clean</code>" is returned when boot counting is currently not in effect.</p><p>This command is implied if no command argument is specified.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="good"><span class="term"><code class="option">good</code></span><a class="headerlink" title="Permalink to this term" href="#good">¶</a></dt><dd><p>When invoked, the current boot loader entry file or unified kernel image file will be marked as
+        "good", executing the file rename operation described above. This command is intended to be invoked at the end
+        of a successful boot. The <code class="filename">systemd-bless-boot.service</code> unit invokes this
+        command.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="bad"><span class="term"><code class="option">bad</code></span><a class="headerlink" title="Permalink to this term" href="#bad">¶</a></dt><dd><p>When called the 'tries left' counter in the boot loader entry file name or unified kernel image
+        file name is set to zero, marking the boot loader entry or kernel image as "bad", so that the boot loader won't
+        consider it anymore on future boots (at least as long as there are other entries available that are not marked
+        "bad" yet). This command is normally not executed, but can be used to instantly put an end to the boot counting
+        logic if a problem is detected and persistently mark the boot entry as bad.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="indeterminate"><span class="term"><code class="option">indeterminate</code></span><a class="headerlink" title="Permalink to this term" href="#indeterminate">¶</a></dt><dd><p>This command undoes any marking of the current boot loader entry file or unified kernel image
+        file as good or bad. This is implemented by renaming the boot loader entry file or unified kernel image file
+        back to the path encoded in the <code class="varname">LoaderBootCountPath</code> EFI variable.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-boot.html#"><span class="citerefentry"><span class="refentrytitle">systemd-boot</span>(7)</span></a>,
+      <a href="systemd.special.html#"><span class="citerefentry"><span class="refentrytitle">systemd.special</span>(7)</span></a>
+    </p></div></div></body></html>

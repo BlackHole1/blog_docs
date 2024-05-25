@@ -1,0 +1,782 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>podman-container-checkpoint — Podman  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css">
+    <link rel="stylesheet" type="text/css" href="../../../_/static/css/badge_only.css">
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css">
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="../../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <link rel="index" title="Index" href="../genindex.html">
+    <link rel="search" title="Search" href="../search.html">
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css">
+  
+
+  
+  
+
+  
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "markdown/podman-container-checkpoint.1", "programming_language": "go", "project": "podman", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "alabaster", "user_analytics_code": "", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+  
+
+    <div class="document" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+      <div class="documentwrapper" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+        <div class="bodywrapper" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+          
+
+          <div class="body" role="main" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+            
+  <section id="name" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h1 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">NAME<a class="headerlink" href="#name" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h1>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">podman-container-checkpoint - Checkpoint one or more running containers<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman-container-checkpoint - 检查一个或多个正在运行的容器</font></font></font></p>
+</section>
+<section id="synopsis" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h1 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">SYNOPSIS<a class="headerlink" href="#synopsis" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h1>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">podman container checkpoint</strong> [<em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">options</em>] <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> [<em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> …]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman 容器检查点 [选项] 容器 [容器 …]</font></font></font></p>
+</section>
+<section id="description" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h1 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h1>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">podman container checkpoint</strong> checkpoints all the processes in one or more <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">containers</em>. A <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> can be restored from a checkpoint with <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a class="reference internal" href="podman-container-restore.1.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="std std-doc" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">podman-container-restore</span></a></strong>. The <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container IDs</em> or <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">names</em> are used as input.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman 容器检查点检查一个或多个容器中的所有进程。可以使用 podman-container-restore 从检查点还原容器。容器的 ID 或名称被用作输入。</font></font></font></p>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">IMPORTANT: If the container is using <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">systemd</strong> as <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">entrypoint</strong> checkpointing the container might not be possible.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">重要提示：如果容器使用 systemd 作为入口点检查点，则可能无法对容器进行检查点。</font></font></font></em></p>
+</section>
+<section id="options" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h1 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">OPTIONS<a class="headerlink" href="#options" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h1>
+<section id="all-a" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--all</strong>, <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">-a</strong><a class="headerlink" href="#all-a" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Checkpoint all running <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">containers</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">检查点所有正在运行的容器。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">IMPORTANT: This OPTION does not need a container name or ID as input argument.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">重要提示：此选项不需要容器名称或 ID 作为输入参数。</font></font></font></em></p>
+</section>
+<section id="compress-c-zstd-none-gzip" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--compress</strong>, <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">-c</strong>=<strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">zstd</strong> | <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">none</em> | <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">gzip</em><a class="headerlink" href="#compress-c-zstd-none-gzip" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Specify the compression algorithm used for the checkpoint archive created
+with the <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--export, -e</strong> OPTION. Possible algorithms are <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">zstd</strong>, <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">none</em>
+and <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">gzip</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定用于使用 --export, -e 选项创建的检查点存档的压缩算法。可能的算法有 zstd、none 和 gzip。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+One possible reason to use <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">none</em> is to enable faster creation of checkpoint
+archives. Not compressing the checkpoint archive can result in faster checkpoint
+archive creation.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 none 的一个可能原因是为了加快检查点存档的创建速度。不压缩检查点存档可以导致更快的检查点存档创建。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">zstd</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 zstd。</font></font></font></p>
+</section>
+<section id="create-image-image" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--create-image</strong>=<em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">image</em><a class="headerlink" href="#create-image-image" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Create a checkpoint image from a running container. This is a standard OCI image
+created in the local image store. It consists of a single layer that contains
+all of the checkpoint files. The content of this image layer is in the same format as a
+checkpoint created with <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--export</strong>. A checkpoint image can be pushed to a
+standard container registry and pulled on a different system to enable container
+migration. In addition, the image can be exported with <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">podman image save</strong> and
+inspected with <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">podman inspect</strong>. Inspecting a checkpoint image displays
+additional information, stored as annotations, about the host environment used
+to do the checkpoint:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">从运行中的容器创建一个检查点镜像。这是在本地镜像存储中创建的标准 OCI 镜像。它由一个包含所有检查点文件的单个层组成。此镜像层的内容与使用 --export 创建的检查点的格式相同。检查点镜像可以推送到标准容器注册表，并在不同系统上拉取，以实现容器迁移。此外，可以使用 podman image save 导出镜像，并使用 podman inspect 进行检查。检查检查点镜像会显示有关用于执行检查点的主机环境的附加信息，存储为注释：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.name</strong>: Human-readable name of the original
+container.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.name: 原始容器的可读名称。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.rawImageName</strong>: Unprocessed name of the
+image used to create the original container (as specified by the user).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.rawImageName: 用于创建原始容器的镜像的未处理名称（由用户指定）。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.rootfsImageID</strong>: ID of the image used to
+create the original container.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.rootfsImageID: 用于创建原始容器的镜像的 ID。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.rootfsImageName</strong>: Image name used to
+create the original container.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.rootfsImageName: 用于创建原始容器的镜像名称。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.podman.version</strong>: Version of Podman used to
+create the checkpoint.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.podman.version: 用于创建检查点的 Podman 版本。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.criu.version</strong>: Version of CRIU used to
+create the checkpoint.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.criu.version: 用于创建检查点的 CRIU 版本。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.runtime.name</strong>: Container runtime (e.g.,
+runc, crun) used to create the checkpoint.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.runtime.name: 用于创建检查点的容器运行时（例如 runc、crun）。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.runtime.version</strong>: Version of the container
+runtime used to create the checkpoint.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.runtime.version: 用于创建检查点的容器运行时版本。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.conmon.version</strong>: Version of conmon used
+with the original container.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.conmon.version: 用于原始容器的 conmon 版本。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.host.arch</strong>: CPU architecture of the host
+on which the checkpoint was created.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.host.arch: 创建检查点的主机的 CPU 架构。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.host.kernel</strong>: Version of Linux kernel
+of the host where the checkpoint was created.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.host.kernel: 创建检查点的主机的 Linux 内核版本。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.cgroups.version</strong>: cgroup version used by
+the host where the checkpoint was created.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.cgroups.version: 在创建检查点的主机上使用的 cgroup 版本。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.distribution.version</strong>: Version of host
+distribution on which the checkpoint was created.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.distribution.version: 创建检查点的主机发行版的版本。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">io.podman.annotations.checkpoint.distribution.name</strong>: Name of host
+distribution on which the checkpoint was created.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">io.podman.annotations.checkpoint.distribution.name: 创建检查点的主机发行版的名称。</font></font></font></p></li>
+</ul>
+</section>
+<section id="export-e-archive" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--export</strong>, <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">-e</strong>=<em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">archive</em><a class="headerlink" href="#export-e-archive" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Export the checkpoint to a tar.gz file. The exported checkpoint can be used
+to import the <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> on another system and thus enabling container live
+migration. This checkpoint archive also includes all changes to the <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container’s</em>
+root file-system, if not explicitly disabled using <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--ignore-rootfs</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将检查点导出为 tar.gz 文件。导出的检查点可用于在另一个系统上导入容器，从而实现容器的实时迁移。如果未使用 --ignore-rootfs 明确禁用，此检查点存档还包括对容器根文件系统的所有更改。</font></font></font></p>
+</section>
+<section id="file-locks" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--file-locks</strong><a class="headerlink" href="#file-locks" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Checkpoint a <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> with file locks. If an application running in the container
+is using file locks, this OPTION is required during checkpoint and restore. Otherwise
+checkpointing <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">containers</em> with file locks is expected to fail. If file locks are not
+used, this option is ignored.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用文件锁检查容器。如果在容器中运行的应用程序正在使用文件锁，则在检查点和恢复期间需要此选项。否则，预计使用文件锁检查点容器将失败。如果未使用文件锁，则忽略此选项。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font></p>
+</section>
+<section id="ignore-rootfs" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--ignore-rootfs</strong><a class="headerlink" href="#ignore-rootfs" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">If a checkpoint is exported to a tar.gz file it is possible with the help of <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--ignore-rootfs</strong> to explicitly disable including changes to the root file-system into the checkpoint archive file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果将检查点导出到 tar.gz 文件，则可以通过 --ignore-rootfs 明确禁用将根文件系统的更改包含在检查点存档文件中。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">IMPORTANT: This OPTION only works in combination with <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--export, -e</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">重要提示：此选项仅在与 --export, -e 结合使用时有效。</font></font></font></em></p>
+</section>
+<section id="ignore-volumes" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--ignore-volumes</strong><a class="headerlink" href="#ignore-volumes" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">This OPTION must be used in combination with the <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--export, -e</strong> OPTION.
+When this OPTION is specified, the content of volumes associated with
+the <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> is not included into the checkpoint tar.gz file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此选项必须与 --export, -e 选项结合使用。当指定此选项时，与容器关联的卷内容不会包含在检查点 tar.gz 文件中。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font></p>
+</section>
+<section id="keep-k" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--keep</strong>, <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">-k</strong><a class="headerlink" href="#keep-k" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Keep all temporary log and statistics files created by CRIU during checkpointing. These files are not deleted if checkpointing fails for further debugging. If checkpointing succeeds these files are theoretically not needed, but if these files are needed Podman can keep the files for further analysis.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">保留由 CRIU 在检查点期间创建的所有临时日志和统计文件。如果检查点失败，这些文件不会被删除，以便进行进一步的调试。如果检查点成功，理论上这些文件是不需要的，但如果这些文件是需要的，Podman 可以保留这些文件以供进一步分析。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font></p>
+</section>
+<section id="latest-l" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--latest</strong>, <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">-l</strong><a class="headerlink" href="#latest-l" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Instead of providing the <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container ID</em> or <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">name</em>, use the last created <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em>. The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.
+<em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">IMPORTANT: This OPTION is not available with the remote Podman client, including Mac and Windows (excluding WSL2) machines. This OPTION does not need a container name or ID as input argument.</em><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用最后创建的容器，而不是提供容器的 ID 或名称。默认值为 false。重要提示：此选项在远程 Podman 客户端中不可用，包括 Mac 和 Windows（不包括 WSL2）机器。此选项不需要容器名称或 ID 作为输入参数。</font></font></font></p>
+</section>
+<section id="leave-running-r" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--leave-running</strong>, <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">-R</strong><a class="headerlink" href="#leave-running-r" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Leave the <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> running after checkpointing instead of stopping it.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在检查点后保持容器运行，而不是停止它。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font></p>
+</section>
+<section id="pre-checkpoint-p" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--pre-checkpoint</strong>, <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">-P</strong><a class="headerlink" href="#pre-checkpoint-p" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Dump the <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container’s</em> memory information only, leaving the <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> running. Later
+operations supersedes prior dumps. It only works on <code class="docutils literal notranslate" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="pre">runc</span> <span class="pre">1.0-rc3</span></code> or <code class="docutils literal notranslate" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="pre">higher</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">仅转储容器的内存信息，使容器保持运行状态。后续操作将取代先前的转储。它仅适用于 <code class="docutils literal notranslate" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="pre">runc</span> <span class="pre">1.0-rc3</span></code> 或 <code class="docutils literal notranslate" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="pre">higher</span></code> 。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font></p>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">The functionality to only checkpoint the memory of the container and in a second
+checkpoint only write out the memory pages which have changed since the first
+checkpoint relies on the Linux kernel’s soft-dirty bit, which is not available
+on all systems as it depends on the system architecture and the configuration
+of the Linux kernel. Podman verifies if the current system supports this
+functionality and return an error if the current system does not support it.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">仅检查点容器的内存功能，并在第二个检查点中仅写出自第一个检查点以来发生更改的内存页面，依赖于 Linux 内核的软脏位，该位并非所有系统都可用，因为它取决于系统架构和 Linux 内核的配置。Podman 验证当前系统是否支持此功能，并在当前系统不支持时返回错误。</font></font></font></p>
+</section>
+<section id="print-stats" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--print-stats</strong><a class="headerlink" href="#print-stats" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--打印统计信息 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Print out statistics about checkpointing the container(s). The output is
+rendered in a JSON array and contains information about how much time different
+checkpoint operations required. Many of the checkpoint statistics are created
+by CRIU and just passed through to Podman. The following information is provided
+in the JSON array:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印有关对容器进行检查点操作的统计信息。输出以 JSON 数组的形式呈现，并包含有关不同检查点操作所需时间的信息。许多检查点统计信息由 CRIU 创建，并仅传递给 Podman。JSON 数组中提供了以下信息：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">podman_checkpoint_duration</strong>: Overall time (in microseconds) needed to create
+all checkpoints.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman_checkpoint_duration: 创建所有检查点所需的总时间（以微秒为单位）。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">runtime_checkpoint_duration</strong>: Time (in microseconds) the container runtime
+needed to create the checkpoint.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">runtime_checkpoint_duration: 容器运行时创建检查点所需的时间（以微秒为单位）。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">freezing_time</strong>: Time (in microseconds) CRIU needed to pause (freeze) all
+processes in the container (measured by CRIU).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">冻结时间：CRIU 需要暂停（冻结）容器中所有进程所需的时间（以 CRIU 测量）。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">frozen_time</strong>: Time (in microseconds) all processes in the container were
+paused (measured by CRIU).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">冻结时间：容器中所有进程被暂停所需的时间（以 CRIU 测量）。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">memdump_time</strong>: Time (in microseconds) needed to extract all required memory
+pages from all container processes (measured by CRIU).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内存转储时间：从所有容器进程中提取所有必需内存页面所需的时间（以 CRIU 测量）。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">memwrite_time</strong>: Time (in microseconds) needed to write all required memory
+pages to the corresponding checkpoint image files (measured by CRIU).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">写入内存时间：将所有必需的内存页面写入相应的检查点图像文件所需的时间（由 CRIU 测量）。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">pages_scanned</strong>: Number of memory pages scanned to determine if they need
+to be checkpointed (measured by CRIU).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">扫描的页面数：用于确定是否需要对其进行检查点的内存页面数（由 CRIU 测量）。</font></font></font></p></li>
+<li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">pages_written</strong>: Number of memory pages actually written to the checkpoint
+image files (measured by CRIU).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">写入的页面数：实际写入检查点图像文件的内存页面数（由 CRIU 测量）。</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font></p>
+</section>
+<section id="tcp-established" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--tcp-established</strong><a class="headerlink" href="#tcp-established" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Checkpoint a <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> with established TCP connections. If the checkpoint
+image contains established TCP connections, this OPTION is required during
+restore. Defaults to not checkpointing <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">containers</em> with established TCP
+connections.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用已建立的 TCP 连接检查点容器。如果检查点镜像包含已建立的 TCP 连接，则在恢复期间需要此选项。默认情况下，不对具有已建立的 TCP 连接的容器进行检查点。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font></p>
+</section>
+<section id="with-previous" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h2 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--with-previous</strong><a class="headerlink" href="#with-previous" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a></h2>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Check out the <em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">container</em> with previous criu image files in pre-dump. It only works on <code class="docutils literal notranslate" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="pre">runc</span> <span class="pre">1.0-rc3</span></code> or <code class="docutils literal notranslate" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="pre">higher</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">检查包含先前 criu 镜像文件的容器在预转储中。仅适用于 <code class="docutils literal notranslate" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="pre">runc</span> <span class="pre">1.0-rc3</span></code> 或 <code class="docutils literal notranslate" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="pre">higher</span></code> 。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+The default is <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">false</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认值为 false。</font></font></font><br data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<em data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">IMPORTANT: This OPTION is not available with <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--pre-checkpoint</strong></em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">重要提示：此选项在 --pre-checkpoint 模式下不可用。</font></font></font></p>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">This option requires that the option <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--pre-checkpoint</strong> has been used before on the
+same container. Without an existing pre-checkpoint, this option fails.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此选项要求在同一容器上先使用选项 --pre-checkpoint。如果没有现有的预检查点，此选项将失败。</font></font></font></p>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Also see <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--pre-checkpoint</strong> for additional information about <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">--pre-checkpoint</strong>
+availability on different systems.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">另请参阅关于不同系统上 --pre-checkpoint 可用性的更多信息。</font></font></font></p>
+</section>
+</section>
+<section id="examples" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h1 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">EXAMPLES<a class="headerlink" href="#examples" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例</font></font></font></h1>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Make a checkpoint for the container “mywebserver”.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为容器“mywebserver”创建一个检查点。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># podman container checkpoint mywebserver</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Create a checkpoint image for the container “mywebserver”.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为容器“mywebserver”创建一个检查点图像。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># podman container checkpoint --create-image mywebserver-checkpoint-1 mywebserver</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Dumps the container’s memory information of the latest container into an archive.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将最新容器的内存信息转储到一个存档中。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># podman container checkpoint -P -e pre-checkpoint.tar.gz -l</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Keep the container’s memory information from an older dump and add the new container’s memory information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">保留来自旧转储的容器内存信息，并添加新容器的内存信息。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># podman container checkpoint --with-previous -e checkpoint.tar.gz -l</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Dump the container’s memory information of the latest container into an archive with the specified compress method.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将最新容器的内存信息转储到具有指定压缩方法的存档中。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># podman container checkpoint -l --compress=none --export=dump.tar</span>
+<span class="c1"># podman container checkpoint -l --compress=gzip --export=dump.tar.gz</span>
+</pre></div>
+</div>
+</section>
+<section id="see-also" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h1 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">SEE ALSO<a class="headerlink" href="#see-also" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a class="reference internal" href="podman.1.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="std std-doc" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">podman(1)</span></a></strong>, <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a class="reference internal" href="podman-container-restore.1.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="std std-doc" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">podman-container-restore(1)</span></a></strong>, <strong data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">criu(8)</strong></p>
+</section>
+<section id="history" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h1 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">HISTORY<a class="headerlink" href="#history" title="Link to this heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">September 2018, Originally compiled by Adrian Reber <a class="reference external" href="mailto:areber%40redhat.com" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">areber<span data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">@</span>redhat<span data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">.</span>com</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2018 年 9 月，最初由 Adrian Reber areber@redhat.com 编译。</font></font></font></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+        <div class="sphinxsidebarwrapper" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h1 class="logo" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a href="../index.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Podman</a></h1>
+
+
+
+
+
+
+
+
+<h3 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Navigation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">导航</font></font></font></h3>
+<p class="caption" role="heading" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><span class="caption-text" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Contents:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内容:</font></font></font></span></p>
+<ul data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<li class="toctree-l1" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a class="reference internal" href="../Introduction.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a class="reference internal" href="../Commands.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Commands<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">命令</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a class="reference internal" href="../Reference.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Reference<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a class="reference internal" href="../Tutorials.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Tutorials<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">教程</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a class="reference internal" href="../Search.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Search<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">搜索</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a class="reference external" href="https://podman-py.readthedocs.io/en/latest/" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Podman Python</a></li>
+</ul>
+
+<div class="relations" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+<h3 data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Related Topics<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关主题</font></font></font></h3>
+<ul data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+  <li data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"><a href="../index.html" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">Documentation overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档概述</font></font></font></a><ul data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a"></div>
+    </div>
+    <div class="footer" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a" data-immersive-translate-paragraph="1">
+      ©2019, team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">Alabaster 0.7.16</a>
+      
+      |
+      <a href="https://docs.podman.io/en/latest/_sources/markdown/podman-container-checkpoint.1.md.txt" rel="nofollow" data-immersive-translate-walked="e34352f2-8a5f-4cba-8e5c-5f19d21e6b9a">Page source</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">©2019，团队。| 由 Sphinx 7.3.7 &amp; Alabaster 0.7.16 提供支持。| 页面来源</font></font></font>
+    </div>
+
+    
+
+    
+  
+</body></html>

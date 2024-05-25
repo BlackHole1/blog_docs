@@ -1,0 +1,185 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>userdbctl</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="userdbctl"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>userdbctl — Inspect users, groups and group memberships</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">userdbctl</code>  [OPTIONS...] {COMMAND} [NAME...]</p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>userdbctl</strong></span> may be used to inspect user and groups (as well as group memberships)
+    of the system. This client utility inquires user/group information provided by various system services,
+    both operating on JSON user/group records (as defined by the <a class="ulink" href="https://systemd.io/USER_RECORD" target="_top">JSON User Records</a> and <a class="ulink" href="https://systemd.io/GROUP_RECORD" target="_top">JSON Group Records</a> definitions), and classic UNIX NSS/glibc
+    user and group records. This tool is primarily a client to the <a class="ulink" href="https://systemd.io/USER_GROUP_API" target="_top">User/Group Record Lookup API via Varlink</a>, and may also
+    pick up drop-in JSON user and group records from <code class="filename">/etc/userdb/</code>,
+    <code class="filename">/run/userdb/</code>, <code class="filename">/run/host/userdb/</code>,
+    <code class="filename">/usr/lib/userdb/</code>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--output=MODE"><span class="term"><code class="option">--output=</code><em class="replaceable"><code>MODE</code></em></span><a class="headerlink" title="Permalink to this term" href="#--output=MODE">¶</a></dt><dd><p>Choose the output mode, takes one of "<code class="literal">classic</code>",
+        "<code class="literal">friendly</code>", "<code class="literal">table</code>", "<code class="literal">json</code>". If
+        "<code class="literal">classic</code>", an output very close to the format of <code class="filename">/etc/passwd</code> or
+        <code class="filename">/etc/group</code> is generated. If "<code class="literal">friendly</code>" a more comprehensive and
+        user friendly, human readable output is generated; if "<code class="literal">table</code>" a minimal, tabular
+        output is generated; if "<code class="literal">json</code>" a JSON formatted output is generated. Defaults to
+        "<code class="literal">friendly</code>" if a user/group is specified on the command line,
+        "<code class="literal">table</code>" otherwise.</p><p>Note that most output formats do not show all available information. In particular,
+        "<code class="literal">classic</code>" and "<code class="literal">table</code>" show only the most important fields. Various
+        modes also do not show password hashes. Use "<code class="literal">json</code>" to view all fields, including
+        any authentication fields.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="--json=FORMAT"><span class="term"><code class="option">--json=</code><em class="replaceable"><code>FORMAT</code></em></span><a class="headerlink" title="Permalink to this term" href="#--json=FORMAT">¶</a></dt><dd><p>Selects JSON output mode (like <code class="option">--output=json</code>) and selects the
+        precise display mode. Takes one of "<code class="literal">pretty</code>" or "<code class="literal">short</code>". If
+        "<code class="literal">pretty</code>", human-friendly whitespace and newlines are inserted in the output to make
+        the JSON data more readable. If "<code class="literal">short</code>", all superfluous whitespace is
+        suppressed.</p><p><a name="v250"></a>Added in version 250.</p></dd><dt id="--service=SERVICE:SERVICE…"><span class="term"><code class="option">--service=</code><em class="replaceable"><code>SERVICE</code></em>[<span class="optional">:<em class="replaceable"><code>SERVICE…</code></em></span>], </span><span class="term"><code class="option">-s</code> <em class="replaceable"><code>SERVICE</code></em>:<em class="replaceable"><code>SERVICE…</code></em></span><a class="headerlink" title="Permalink to this term" href="#--service=SERVICE:SERVICE%E2%80%A6">¶</a></dt><dd><p>Controls which services to query for users/groups. Takes a list of one or more
+        service names, separated by "<code class="literal">:</code>". See below for a list of well-known service
+        names. If not specified all available services are queried at once.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="--with-nss=BOOL"><span class="term"><code class="option">--with-nss=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--with-nss=BOOL">¶</a></dt><dd><p>Controls whether to include classic glibc/NSS user/group lookups in the output. If
+        <code class="option">--with-nss=no</code> is used any attempts to resolve or enumerate users/groups provided
+        only via glibc NSS is suppressed. If <code class="option">--with-nss=yes</code> is specified such users/groups
+        are included in the output (which is the default).</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="--with-varlink=BOOL"><span class="term"><code class="option">--with-varlink=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--with-varlink=BOOL">¶</a></dt><dd><p>Controls whether to include Varlink user/group lookups in the output, i.e. those done
+        via the <a class="ulink" href="https://systemd.io/USER_GROUP_API" target="_top">User/Group Record Lookup API via
+        Varlink</a>. If <code class="option">--with-varlink=no</code> is used any attempts to resolve or enumerate
+        users/groups provided only via Varlink are suppressed. If <code class="option">--with-varlink=yes</code> is
+        specified such users/groups are included in the output (which is the default).</p><p><a name="v249"></a>Added in version 249.</p></dd><dt id="--with-dropin=BOOL"><span class="term"><code class="option">--with-dropin=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--with-dropin=BOOL">¶</a></dt><dd><p>Controls whether to include user/group lookups in the output that are defined using
+        drop-in files in <code class="filename">/etc/userdb/</code>, <code class="filename">/run/userdb/</code>,
+        <code class="filename">/run/host/userdb/</code>, <code class="filename">/usr/lib/userdb/</code>. If
+        <code class="option">--with-dropin=no</code> is used these records are suppressed. If
+        <code class="option">--with-dropin=yes</code> is specified such users/groups are included in the output (which
+        is the default).</p><p><a name="v249"></a>Added in version 249.</p></dd><dt id="--synthesize=BOOL"><span class="term"><code class="option">--synthesize=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--synthesize=BOOL">¶</a></dt><dd><p>Controls whether to synthesize records for the root and nobody users/groups if they
+        aren't defined otherwise. By default (or "<code class="literal">yes</code>") such records are implicitly
+        synthesized if otherwise missing since they have special significance to the OS. When
+        "<code class="literal">no</code>" this synthesizing is turned off.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="-N"><span class="term"><code class="option">-N</code></span><a class="headerlink" title="Permalink to this term" href="#-N">¶</a></dt><dd><p>This option is short for <code class="option">--with-nss=no</code>
+        <code class="option">--synthesize=no</code>. Use this option to show only records that are natively defined as
+        JSON user or group records, with all NSS/glibc compatibility and all implicit synthesis turned
+        off.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="--multiplexer=BOOL"><span class="term"><code class="option">--multiplexer=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--multiplexer=BOOL">¶</a></dt><dd><p>Controls whether to do lookups via the multiplexer service (if specified as true, the
+        default) or do lookups in the client (if specified as false). Using the multiplexer service is
+        typically preferable, since it runs in a locked down sandbox.</p><p><a name="v250"></a>Added in version 250.</p></dd><dt id="--chain"><span class="term"><code class="option">--chain</code></span><a class="headerlink" title="Permalink to this term" href="#--chain">¶</a></dt><dd><p>When used with the <span class="command"><strong>ssh-authorized-keys</strong></span> command, this will allow
+        passing an additional command line after the user name that is chain executed after the lookup
+        completed. This allows chaining multiple tools that show SSH authorized keys.</p><p><a name="v250"></a>Added in version 250.</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="--no-legend"><span class="term"><code class="option">--no-legend</code></span><a class="headerlink" title="Permalink to this term" href="#--no-legend">¶</a></dt><dd><p>Do not print the legend, i.e. column headers and the
+      footer with hints.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Commands">Commands<a class="headerlink" title="Permalink to this headline" href="#Commands">¶</a></h2><p>The following commands are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="user USER…"><span class="term"><span class="command"><strong>user</strong></span> [<span class="optional"><em class="replaceable"><code>USER</code></em>…</span>]</span><a class="headerlink" title="Permalink to this term" href="#user%20USER%E2%80%A6">¶</a></dt><dd><p>List all known users records or show details of one or more specified user
+        records. Use <code class="option">--output=</code> to tweak output mode.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="group GROUP…"><span class="term"><span class="command"><strong>group</strong></span> [<span class="optional"><em class="replaceable"><code>GROUP</code></em>…</span>]</span><a class="headerlink" title="Permalink to this term" href="#group%20GROUP%E2%80%A6">¶</a></dt><dd><p>List all known group records or show details of one or more specified group
+        records. Use <code class="option">--output=</code> to tweak output mode.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="users-in-group GROUP…"><span class="term"><span class="command"><strong>users-in-group</strong></span> [<span class="optional"><em class="replaceable"><code>GROUP</code></em>…</span>]</span><a class="headerlink" title="Permalink to this term" href="#users-in-group%20GROUP%E2%80%A6">¶</a></dt><dd><p>List users that are members of the specified groups. If no groups are specified list
+        all user/group memberships defined. Use <code class="option">--output=</code> to tweak output
+        mode.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="groups-of-user USER…"><span class="term"><span class="command"><strong>groups-of-user</strong></span> [<span class="optional"><em class="replaceable"><code>USER</code></em>…</span>]</span><a class="headerlink" title="Permalink to this term" href="#groups-of-user%20USER%E2%80%A6">¶</a></dt><dd><p>List groups that the specified users are members of. If no users are specified list
+        all user/group memberships defined (in this case <span class="command"><strong>groups-of-user</strong></span> and
+        <span class="command"><strong>users-in-group</strong></span> are equivalent). Use <code class="option">--output=</code> to tweak output
+        mode.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="services"><span class="term"><span class="command"><strong>services</strong></span></span><a class="headerlink" title="Permalink to this term" href="#services">¶</a></dt><dd><p>List all services currently providing user/group definitions to the system. See below
+        for a list of well-known services providing user information.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="ssh-authorized-keys"><span class="term"><span class="command"><strong>ssh-authorized-keys</strong></span></span><a class="headerlink" title="Permalink to this term" href="#ssh-authorized-keys">¶</a></dt><dd><p>Show SSH authorized keys for this account. This command is intended to be used to
+        allow the SSH daemon to pick up authorized keys from user records, see below.</p><p><a name="v245"></a>Added in version 245.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Well-Known Services">Well-Known Services<a class="headerlink" title="Permalink to this headline" href="#Well-Known%20Services">¶</a></h2><p>The <span class="command"><strong>userdbctl services</strong></span> command will list all currently running services that
+    provide user or group definitions to the system. The following well-known services are shown among
+    this list:</p><div class="variablelist"><dl class="variablelist"><dt id="io.systemd.DynamicUser"><span class="term"><code class="constant">io.systemd.DynamicUser</code></span><a class="headerlink" title="Permalink to this term" href="#io.systemd.DynamicUser">¶</a></dt><dd><p>This service is provided by the system service manager itself (i.e. PID 1) and
+        makes all users (and their groups) synthesized through the <code class="varname">DynamicUser=</code> setting in
+        service unit files available to the system (see
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a> for
+        details about this setting).</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="io.systemd.Home"><span class="term"><code class="constant">io.systemd.Home</code></span><a class="headerlink" title="Permalink to this term" href="#io.systemd.Home">¶</a></dt><dd><p>This service is provided by
+        <a href="systemd-homed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-homed.service</span>(8)</span></a>
+        and makes all users (and their groups) belonging to home directories managed by that service
+        available to the system.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="io.systemd.Machine"><span class="term"><code class="constant">io.systemd.Machine</code></span><a class="headerlink" title="Permalink to this term" href="#io.systemd.Machine">¶</a></dt><dd><p>This service is provided by
+        <a href="systemd-machined.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-machined.service</span>(8)</span></a>
+        and synthesizes records for all users/groups used by a container that employs user
+        namespacing.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="io.systemd.Multiplexer"><span class="term"><code class="constant">io.systemd.Multiplexer</code></span><a class="headerlink" title="Permalink to this term" href="#io.systemd.Multiplexer">¶</a></dt><dd><p>This service is provided by
+        <a href="systemd-userdbd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-userdbd.service</span>(8)</span></a>
+        and multiplexes user/group look-ups to all other running lookup services. This is the primary entry point
+        for user/group record clients, as it simplifies client side implementation substantially since they
+        can ask a single service for lookups instead of asking all running services in parallel.
+        <span class="command"><strong>userdbctl</strong></span> uses this service preferably, too, unless <code class="option">--with-nss=</code>
+        or <code class="option">--service=</code> are used, in which case finer control over the services to talk to is
+        required.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="io.systemd.NameServiceSwitch"><span class="term"><code class="constant">io.systemd.NameServiceSwitch</code></span><a class="headerlink" title="Permalink to this term" href="#io.systemd.NameServiceSwitch">¶</a></dt><dd><p>This service is (also) provided by
+        <a href="systemd-userdbd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-userdbd.service</span>(8)</span></a>
+        and converts classic NSS/glibc user and group records to JSON user/group records, providing full
+        backwards compatibility. Use <code class="option">--with-nss=no</code> to disable this compatibility, see
+        above. Note that compatibility is actually provided in both directions:
+        <a href="nss-systemd.html#"><span class="citerefentry"><span class="refentrytitle">nss-systemd</span>(8)</span></a> will
+        automatically synthesize classic NSS/glibc user/group records from all JSON user/group records
+        provided to the system, thus using both APIs is mostly equivalent and provides access to the same
+        data, however the NSS/glibc APIs necessarily expose a more reduced set of fields
+        only.</p><p><a name="v245"></a>Added in version 245.</p></dd><dt id="io.systemd.DropIn"><span class="term"><code class="constant">io.systemd.DropIn</code></span><a class="headerlink" title="Permalink to this term" href="#io.systemd.DropIn">¶</a></dt><dd><p>This service is (also) provided by
+        <a href="systemd-userdbd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-userdbd.service</span>(8)</span></a>
+        and picks up JSON user/group records from <code class="filename">/etc/userdb/</code>,
+        <code class="filename">/run/userdb/</code>, <code class="filename">/run/host/userdb/</code>,
+        <code class="filename">/usr/lib/userdb/</code>.</p><p><a name="v249"></a>Added in version 249.</p></dd></dl></div><p>Note that <span class="command"><strong>userdbctl</strong></span> has internal support for NSS-based lookups too. This means
+    that if neither <code class="constant">io.systemd.Multiplexer</code> nor
+    <code class="constant">io.systemd.NameServiceSwitch</code> are running look-ups into the basic user/group
+    databases will still work.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="Integration with SSH">Integration with SSH<a class="headerlink" title="Permalink to this headline" href="#Integration%20with%20SSH">¶</a></h2><p>The <span class="command"><strong>userdbctl</strong></span> tool may be used to make the list of SSH authorized keys possibly
+    contained in a user record available to the SSH daemon for authentication. For that configure the
+    following in <a href="http://linux.die.net/man/5/sshd_config"><span class="citerefentry"><span class="refentrytitle">sshd_config</span>(5)</span></a>:</p><pre class="programlisting">…
+AuthorizedKeysCommand /usr/bin/userdbctl ssh-authorized-keys %u
+AuthorizedKeysCommandUser root
+…</pre><p>Sometimes it's useful to allow chain invocation of another program to list SSH authorized keys. By
+    using the <code class="option">--chain</code> such a tool may be chain executed by <span class="command"><strong>userdbctl
+    ssh-authorized-keys</strong></span> once a lookup completes (regardless if an SSH key was found or
+    not). Example:</p><pre class="programlisting">…
+AuthorizedKeysCommand /usr/bin/userdbctl ssh-authorized-keys %u --chain /usr/bin/othertool %u
+AuthorizedKeysCommandUser root
+…</pre><p>The above will first query the userdb database for SSH keys, and then chain execute
+    <span class="command"><strong>/usr/bin/othertool</strong></span> to also be queried.</p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>On success, 0 is returned, a non-zero failure code otherwise.</p></div><div class="refsect1"><a name="id-1.11"></a><h2 id="Environment">Environment<a class="headerlink" title="Permalink to this headline" href="#Environment">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_LOG_LEVEL"><span class="term"><code class="varname">$SYSTEMD_LOG_LEVEL</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_LEVEL">¶</a></dt><dd><p><a name="log-level-body"></a>The maximum log level of emitted messages (messages with a higher
+      log level, i.e. less important ones, will be suppressed). Either one of (in order of decreasing
+      importance) <code class="constant">emerg</code>, <code class="constant">alert</code>, <code class="constant">crit</code>,
+      <code class="constant">err</code>, <code class="constant">warning</code>, <code class="constant">notice</code>,
+      <code class="constant">info</code>, <code class="constant">debug</code>, or an integer in the range 0…7. See
+      <a href="https://man7.org/linux/man-pages/man3/syslog.3.html"><span class="citerefentry"><span class="refentrytitle">syslog</span>(3)</span></a>
+      for more information.</p></dd><dt id="$SYSTEMD_LOG_COLOR"><span class="term"><code class="varname">$SYSTEMD_LOG_COLOR</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_COLOR">¶</a></dt><dd><p><a name="log-color-body"></a>A boolean. If true, messages written to the tty will be colored
+      according to priority.</p><p>This setting is only useful when messages are written directly to the terminal, because
+      <a href="journalctl.html#"><span class="citerefentry"><span class="refentrytitle">journalctl</span>(1)</span></a> and
+      other tools that display logs will color messages based on the log level on their own.</p></dd><dt id="$SYSTEMD_LOG_TIME"><span class="term"><code class="varname">$SYSTEMD_LOG_TIME</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_TIME">¶</a></dt><dd><p><a name="log-time-body"></a>A boolean. If true, console log messages will be prefixed with a
+      timestamp.</p><p>This setting is only useful when messages are written directly to the terminal or a file, because
+      <a href="journalctl.html#"><span class="citerefentry"><span class="refentrytitle">journalctl</span>(1)</span></a> and
+      other tools that display logs will attach timestamps based on the entry metadata on their own.</p></dd><dt id="$SYSTEMD_LOG_LOCATION"><span class="term"><code class="varname">$SYSTEMD_LOG_LOCATION</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_LOCATION">¶</a></dt><dd><p><a name="log-location-body"></a>A boolean. If true, messages will be prefixed with a filename
+      and line number in the source code where the message originates.</p><p>Note that the log location is often attached as metadata to journal entries anyway. Including it
+      directly in the message text can nevertheless be convenient when debugging programs.</p></dd><dt id="$SYSTEMD_LOG_TID"><span class="term"><code class="varname">$SYSTEMD_LOG_TID</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_TID">¶</a></dt><dd><p><a name="log-tid-body"></a>A boolean. If true, messages will be prefixed with the current
+      numerical thread ID (TID).</p><p>Note that the this information is attached as metadata to journal entries anyway. Including it
+      directly in the message text can nevertheless be convenient when debugging programs.</p></dd><dt id="$SYSTEMD_LOG_TARGET"><span class="term"><code class="varname">$SYSTEMD_LOG_TARGET</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_TARGET">¶</a></dt><dd><p><a name="log-target-body"></a>The destination for log messages. One of
+      <code class="constant">console</code> (log to the attached tty), <code class="constant">console-prefixed</code> (log to
+      the attached tty but with prefixes encoding the log level and "facility", see <a href="https://man7.org/linux/man-pages/man3/syslog.3.html"><span class="citerefentry"><span class="refentrytitle">syslog</span>(3)</span></a>,
+      <code class="constant">kmsg</code> (log to the kernel circular log buffer), <code class="constant">journal</code> (log to
+      the journal), <code class="constant">journal-or-kmsg</code> (log to the journal if available, and to kmsg
+      otherwise), <code class="constant">auto</code> (determine the appropriate log target automatically, the default),
+      <code class="constant">null</code> (disable log output).</p></dd><dt id="$SYSTEMD_LOG_RATELIMIT_KMSG"><span class="term"><code class="varname">$SYSTEMD_LOG_RATELIMIT_KMSG</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_RATELIMIT_KMSG">¶</a></dt><dd><p><a name="log-ratelimit-kmsg-body"></a> Whether to ratelimit kmsg or not. Takes a boolean.
+      Defaults to "<code class="literal">true</code>". If disabled, systemd will not ratelimit messages written to kmsg.
+      </p></dd><dt id="$SYSTEMD_PAGER"><span class="term"><code class="varname">$SYSTEMD_PAGER</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_PAGER">¶</a></dt><dd><p>Pager to use when <code class="option">--no-pager</code> is not given; overrides
+      <code class="varname">$PAGER</code>. If neither <code class="varname">$SYSTEMD_PAGER</code> nor <code class="varname">$PAGER</code> are set, a
+      set of well-known pager implementations are tried in turn, including
+      <a href="https://man7.org/linux/man-pages/man1/less.1.html"><span class="citerefentry"><span class="refentrytitle">less</span>(1)</span></a> and
+      <a href="https://man7.org/linux/man-pages/man1/more.1.html"><span class="citerefentry"><span class="refentrytitle">more</span>(1)</span></a>, until one is found. If
+      no pager implementation is discovered no pager is invoked. Setting this environment variable to an empty string
+      or the value "<code class="literal">cat</code>" is equivalent to passing <code class="option">--no-pager</code>.</p><p>Note: if <code class="varname">$SYSTEMD_PAGERSECURE</code> is not set, <code class="varname">$SYSTEMD_PAGER</code>
+      (as well as <code class="varname">$PAGER</code>) will be silently ignored.</p></dd><dt id="$SYSTEMD_LESS"><span class="term"><code class="varname">$SYSTEMD_LESS</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LESS">¶</a></dt><dd><p>Override the options passed to <span class="command"><strong>less</strong></span> (by default
+      "<code class="literal">FRSXMK</code>").</p><p>Users might want to change two options in particular:</p><div class="variablelist"><dl class="variablelist"><dt id="K"><span class="term"><code class="option">K</code></span><a class="headerlink" title="Permalink to this term" href="#K">¶</a></dt><dd></dd><dt id="X"><span class="term"><code class="option">X</code></span><a class="headerlink" title="Permalink to this term" href="#X">¶</a></dt><dd></dd></dl></div><p>See
+      <a href="https://man7.org/linux/man-pages/man1/less.1.html"><span class="citerefentry"><span class="refentrytitle">less</span>(1)</span></a>
+      for more discussion.</p></dd><dt id="$SYSTEMD_LESSCHARSET"><span class="term"><code class="varname">$SYSTEMD_LESSCHARSET</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LESSCHARSET">¶</a></dt><dd><p>Override the charset passed to <span class="command"><strong>less</strong></span> (by default "<code class="literal">utf-8</code>", if
+      the invoking terminal is determined to be UTF-8 compatible).</p></dd><dt id="$SYSTEMD_PAGERSECURE"><span class="term"><code class="varname">$SYSTEMD_PAGERSECURE</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_PAGERSECURE">¶</a></dt><dd><p>Takes a boolean argument. When true, the "secure" mode of the pager is enabled; if
+      false, disabled. If <code class="varname">$SYSTEMD_PAGERSECURE</code> is not set at all, secure mode is enabled
+      if the effective UID is not the same as the owner of the login session, see
+      <a href="https://man7.org/linux/man-pages/man2/geteuid.2.html"><span class="citerefentry"><span class="refentrytitle">geteuid</span>(2)</span></a>
+      and <a href="sd_pid_get_owner_uid.html#"><span class="citerefentry"><span class="refentrytitle">sd_pid_get_owner_uid</span>(3)</span></a>.
+      In secure mode, <code class="option">LESSSECURE=1</code> will be set when invoking the pager, and the pager shall
+      disable commands that open or create new files or start new subprocesses. When
+      <code class="varname">$SYSTEMD_PAGERSECURE</code> is not set at all, pagers which are not known to implement
+      secure mode will not be used. (Currently only
+      <a href="https://man7.org/linux/man-pages/man1/less.1.html"><span class="citerefentry"><span class="refentrytitle">less</span>(1)</span></a>
+      implements secure mode.)</p><p>Note: when commands are invoked with elevated privileges, for example under <a href="https://man7.org/linux/man-pages/man8/sudo.8.html"><span class="citerefentry"><span class="refentrytitle">sudo</span>(8)</span></a> or
+      <a href="http://linux.die.net/man/1/pkexec"><span class="citerefentry"><span class="refentrytitle">pkexec</span>(1)</span></a>, care
+      must be taken to ensure that unintended interactive features are not enabled. "Secure" mode for the
+      pager may be enabled automatically as describe above. Setting <code class="varname">SYSTEMD_PAGERSECURE=0</code>
+      or not removing it from the inherited environment allows the user to invoke arbitrary commands. Note
+      that if the <code class="varname">$SYSTEMD_PAGER</code> or <code class="varname">$PAGER</code> variables are to be
+      honoured, <code class="varname">$SYSTEMD_PAGERSECURE</code> must be set too. It might be reasonable to completely
+      disable the pager using <code class="option">--no-pager</code> instead.</p></dd><dt id="$SYSTEMD_COLORS"><span class="term"><code class="varname">$SYSTEMD_COLORS</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_COLORS">¶</a></dt><dd><p>Takes a boolean argument. When true, <span class="command"><strong>systemd</strong></span> and related utilities
+      will use colors in their output, otherwise the output will be monochrome. Additionally, the variable can
+      take one of the following special values: "<code class="literal">16</code>", "<code class="literal">256</code>" to restrict the use
+      of colors to the base 16 or 256 ANSI colors, respectively. This can be specified to override the automatic
+      decision based on <code class="varname">$TERM</code> and what the console is connected to.</p></dd><dt id="$SYSTEMD_URLIFY"><span class="term"><code class="varname">$SYSTEMD_URLIFY</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_URLIFY">¶</a></dt><dd><p>The value must be a boolean. Controls whether clickable links should be generated in
+      the output for terminal emulators supporting this. This can be specified to override the decision that
+      <span class="command"><strong>systemd</strong></span> makes based on <code class="varname">$TERM</code> and other conditions.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.12"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-userdbd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-userdbd.service</span>(8)</span></a>,
+      <a href="systemd-homed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-homed.service</span>(8)</span></a>,
+      <a href="nss-systemd.html#"><span class="citerefentry"><span class="refentrytitle">nss-systemd</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man1/getent.1.html"><span class="citerefentry"><span class="refentrytitle">getent</span>(1)</span></a>
+    </p></div></div></body></html>

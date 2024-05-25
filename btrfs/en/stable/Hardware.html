@@ -1,0 +1,977 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+
+
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware considerations — BTRFS  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css">
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css">
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script async="async" src="../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html">
+    <link rel="search" title="Search" href="search.html">
+    <link rel="next" title="Changes (feature/version)" href="Feature-by-version.html">
+    <link rel="prev" title="Administration" href="Administration.html">
+    <link href="_static/style.css" rel="stylesheet" type="text/css">
+
+
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/Documentation/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "Hardware", "programming_language": "words", "project": "btrfs", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "", "version": "stable"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+
+ 
+  <div class="wy-grid-for-nav" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+      <div class="wy-side-scroll" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+        <div class="wy-side-nav-search" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+
+          
+          
+          <a href="index.html" class="icon icon-home" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">
+            BTRFS
+          </a>
+              <div class="version" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">
+                stable
+              <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">稳定</font></font></font></div>
+<div role="search" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+    <input type="hidden" name="check_keywords" value="yes" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+    <input type="hidden" name="area" value="default" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+              <p class="caption" role="heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><span class="caption-text" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概述</font></font></font></span></p>
+<ul class="current" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Introduction.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Status.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Status<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">状态</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="man-index.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Manual pages<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">手册页面</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Administration.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Administration<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">管理</font></font></font></a></li>
+<li class="toctree-l1 current" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="current reference internal" href="#" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Hardware considerations<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">硬件考虑</font></font></font></a><ul data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#storage-model" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Storage model<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">存储模型</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#when-things-go-wrong" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">When things go wrong<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当事情出错时</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#main-memory" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Main memory<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">主存储器</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#direct-memory-access-dma" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Direct memory access (DMA)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">直接内存访问（DMA）</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#rotational-disks-hdd" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Rotational disks (HDD)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">旋转式磁盘（HDD）</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#solid-state-drives-ssd" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Solid state drives (SSD)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">固态硬盘（SSD）</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#nvm-express-non-volatile-memory-nvme" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">NVM express, non-volatile memory (NVMe)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">NVM Express，非易失性存储器（NVMe）</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#drive-firmware" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Drive firmware<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">驱动固件</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#sd-flash-cards" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">SD flash cards<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">SD 闪存卡</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="#hardware-as-the-main-source-of-filesystem-corruptions" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Hardware as the main source of filesystem corruptions<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">硬件作为文件系统损坏的主要来源</font></font></font></a></li>
+</ul>
+</li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Feature-by-version.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Changes (feature/version)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">变更（功能/版本）</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Kernel-by-version.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Changes (kernel/version)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">变更（内核/版本）</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="CHANGES.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Changes (btrfs-progs)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">变更（btrfs-progs）</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Contributors.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Contributors<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">贡献者</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Glossary.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Glossary<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">术语表</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="INSTALL.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Installation instructions<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">安装说明</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Source-repositories.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Source repositories<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">源代码库</font></font></font></a></li>
+</ul>
+<p class="caption" role="heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><span class="caption-text" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Features<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">特性</font></font></font></span></p>
+<ul data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Common-features.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Common Linux features<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">常见的 Linux 特性</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Custom-ioctls.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Custom ioctls<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">自定义 ioctls</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Auto-repair.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Auto-repair on read<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">读取时自动修复</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Balance.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Balance<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">平衡</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Compression.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Compression<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">压缩</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Checksumming.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Checksumming<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">校验和</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Convert.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Convert<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">转换</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Deduplication.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Deduplication<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">重复数据删除</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Defragmentation.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Defragmentation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">碎片整理</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Inline-files.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Inline files<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内联文件</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Qgroups.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Quota groups<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配额组</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Reflink.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Reflink<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">引用链接</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Resize.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Resize<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">调整大小</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Scrub.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Scrub<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">擦拭</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Seeding-device.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Seeding device<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">种子设备</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Send-receive.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Send/receive<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发送/接收</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Subpage.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Subpage support<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">子页面支持</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Subvolumes.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Subvolumes<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">子卷</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Swapfile.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Swapfile<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">交换文件</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Tree-checker.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Tree checker<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">树检查器</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Trim.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Trim/discard<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">修剪/丢弃</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Volume-management.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Volume management<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">卷管理</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Zoned-mode.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Zoned mode<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">分区模式</font></font></font></a></li>
+</ul>
+<p class="caption" role="heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><span class="caption-text" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Developer documentation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">开发者文档</font></font></font></span></p>
+<ul data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/Development-notes.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Development notes<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">开发说明</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/Developer-s-FAQ.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Developer’s FAQ<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">开发者常见问题解答</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="DocConventions.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Conventions and style for documentation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档约定和风格</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/Experimental.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Experimental features<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">实验性功能</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/dev-btrfs-design.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Btrfs design<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Btrfs 设计</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/dev-btrees.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Btrees</a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/On-disk-format.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">On-disk Format<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">磁盘格式</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/dev-send-stream.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Send stream format<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发送流格式</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/dev-json.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">JSON output<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">JSON 输出</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/dev-internal-apis.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Internal APIs<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内部 API</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="dev/ReleaseChecklist.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Release checklist<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发布清单</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="btrfs-ioctl.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">btrfs-ioctl(2)</a></li>
+</ul>
+<p class="caption" role="heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><span class="caption-text" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">TODO<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">待办事项</font></font></font></span></p>
+<ul data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Quick-start.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Quick start<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">快速开始</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="Interoperability.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Interoperability<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">互操作性</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference internal" href="trouble-index.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Troubleshooting pages<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">故障排除页面</font></font></font></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><nav class="wy-nav-top" aria-label="Mobile navigation menu" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">BTRFS</a>
+      </nav>
+
+      <div class="wy-nav-content" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+        <div class="rst-content" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+          <div role="navigation" aria-label="Page navigation" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+  <ul class="wy-breadcrumbs" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+      <li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a href="index.html" class="icon icon-home" aria-label="Home" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a></li>
+      <li class="breadcrumb-item active" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Hardware considerations<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">硬件考虑事项</font></font></font></li>
+      <li class="wy-breadcrumbs-aside" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+              <a href="https://github.com/kdave/btrfs-progs/blob/5d97c32d6f94cf6f473a5f82964e3edaeb1b146e/Documentation/Hardware.rst" class="fa fa-github" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"> Edit on GitHub<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 GitHub 上编辑</font></font></font></a>
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+           <div itemprop="articleBody" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+             
+  <section id="hardware-considerations" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h1 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Hardware considerations<a class="headerlink" href="#hardware-considerations" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">硬件考虑</font></font></font></h1>
+<section id="storage-model" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Storage model<a class="headerlink" href="#storage-model" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">存储模型</font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">A storage model is a model that captures key physical aspects of data
+structure in a data store. A filesystem is the logical structure organizing
+data on top of the storage device.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">存储模型是捕捉数据存储中数据结构的关键物理方面的模型。文件系统是在存储设备顶部组织数据的逻辑结构。</font></font></font></em></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">The filesystem assumes several features or limitations of the storage device
+and utilizes them or applies measures to guarantee reliability. BTRFS in
+particular is based on a COW (copy on write) mode of writing, i.e. not updating
+data in place but rather writing a new copy to a different location and then
+atomically switching the pointers.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文件系统假定存储设备具有几个特性或限制，并利用它们或采取措施来保证可靠性。特别是 BTRFS 基于写时复制（COW）模式，即不在原地更新数据，而是将新副本写入不同位置，然后原子地切换指针。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">In an ideal world, the device does what it promises. The filesystem assumes
+that this may not be true so additional mechanisms are applied to either detect
+misbehaving hardware or get valid data by other means. The devices may (and do)
+apply their own detection and repair mechanisms but we won’t assume any.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在理想世界中，设备会实现其承诺。文件系统假定这可能不是真实的，因此会应用额外的机制来检测设备的异常行为或通过其他方式获取有效数据。设备可能（也确实）应用其自己的检测和修复机制，但我们不会假设任何情况。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">The following assumptions about storage devices are considered (sorted by
+importance, numbers are for further reference):<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">考虑了关于存储设备的以下假设（按重要性排序，数字供进一步参考）：</font></font></font></p>
+<ol class="arabic simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">atomicity of reads and writes of blocks/sectors (the smallest unit of data
+the device presents to the upper layers)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">读取和写入块/扇区（设备向上层呈现的最小数据单元）的原子性</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">there’s a flush command that instructs the device to forcibly order writes
+before and after the command; alternatively there’s a barrier command that
+facilitates the ordering but may not flush the data<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">有一个刷新命令，指示设备在命令之前和之后强制排序写入；或者有一个屏障命令，促进排序但可能不刷新数据</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">data sent to write to a given device offset will be written without further
+changes to the data and to the offset<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发送到给定设备偏移量的写入数据将被写入，而不会对数据和偏移量进行进一步更改</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">writes can be reordered by the device, unless explicitly serialized by the
+flush command<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">写入可以被设备重新排序，除非通过刷新命令明确序列化</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">reads and writes can be freely reordered and interleaved<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">读取和写入可以自由重新排序和交错</font></font></font></p></li>
+</ol>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">The consistency model of BTRFS builds on these assumptions. The logical data
+updates are grouped, into a generation, written on the device, serialized by
+the flush command and then the super block is written ending the generation.
+All logical links among metadata comprising a consistent view of the data may
+not cross the generation boundary.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">BTRFS 的一致性模型建立在这些假设之上。逻辑数据更新被分组成一代，写入设备，通过刷新命令序列化，然后写入超级块结束该代。所有元数据之间的逻辑链接组成了数据的一致视图，可能不会跨越代边界。</font></font></font></p>
+</section>
+<section id="when-things-go-wrong" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">When things go wrong<a class="headerlink" href="#when-things-go-wrong" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当事情出错时 </font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">No or partial atomicity of block reads/writes (1)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">块读/写的不完全原子性 (1)</font></font></font></strong></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Problem</em>: a partial block contents is written (<em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">torn write</em>), e.g. due to a
+power glitch or other electronics failure during the read/write<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">问题: 写入部分块内容 (断裂写入)，例如由于读/写期间的电源故障或其他电子故障</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Detection</em>: checksum mismatch on read<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">检测：读取时校验和不匹配</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Repair</em>: use another copy or rebuild from multiple blocks using some encoding
+scheme<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">修复：使用另一个副本或使用某种编码方案从多个块重新构建</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">The flush command does not flush (2)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">刷新命令不刷新（2）</font></font></font></strong></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">This is perhaps the most serious problem and impossible to mitigate by
+filesystem without limitations and design restrictions. What could happen in
+the worst case is that writes from one generation bleed to another one, while
+still letting the filesystem consider the generations isolated. Crash at any
+point would leave data on the device in an inconsistent state without any hint
+what exactly got written, what is missing and leading to stale metadata link
+information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这可能是最严重的问题，文件系统无法通过限制和设计约束来减轻。在最糟糕的情况下可能发生的是，一个世代的写入会泄漏到另一个世代，同时让文件系统认为这些世代是隔离的。在任何时候崩溃都会使设备上的数据处于不一致状态，而没有任何线索表明到底写入了什么，缺少了什么，导致了陈旧的元数据链接信息。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Devices usually honor the flush command, but for performance reasons may do
+internal caching, where the flushed data are not yet persistently stored. A
+power failure could lead to a similar scenario as above, although it’s less
+likely that later writes would be written before the cached ones. This is
+beyond what a filesystem can take into account. Devices or controllers are
+usually equipped with batteries or capacitors to write the cache contents even
+after power is cut. (<em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Battery backed write cache</em>)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">设备通常会遵守刷新命令，但出于性能原因可能会进行内部缓存，刷新的数据尚未持久存储。断电可能导致与上述类似的情况，尽管后续写入在缓存写入之前的可能性较小。这超出了文件系统所能考虑的范围。设备或控制器通常配备电池或电容器，以便在断电后仍能写入缓存内容。（带电池备份写缓存）</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Data get silently changed on write (3)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">数据在写入时会悄悄地发生变化（3）</font></font></font></strong></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Such thing should not happen frequently, but still can happen spuriously due
+the complex internal workings of devices or physical effects of the storage
+media itself.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这种事情不应该经常发生，但由于设备的复杂内部工作或存储介质本身的物理效应，仍然可能偶尔发生。</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Problem</em>: while the data are written atomically, the contents get changed<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">问题：虽然数据是以原子方式写入的，但内容发生了变化</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Detection</em>: checksum mismatch on read<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">检测：读取时校验和不匹配</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Repair</em>: use another copy or rebuild from multiple blocks using some
+encoding scheme<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">修复：使用另一个副本或使用某种编码方案从多个块重新构建</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Data get silently written to another offset (3)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">数据悄悄地写入另一个偏移量（3）</font></font></font></strong></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">This would be another serious problem as the filesystem has no information
+when it happens. For that reason the measures have to be done ahead of time.
+This problem is also commonly called <em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">ghost write</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当发生这种情况时，这将是另一个严重问题，因为文件系统在其发生时没有任何信息。因此，必须提前采取措施。这个问题通常也被称为幽灵写入。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">The metadata blocks have the checksum embedded in the blocks, so a correct
+atomic write would not corrupt the checksum. It’s likely that after reading
+such block the data inside would not be consistent with the rest. To rule that
+out there’s embedded block number in the metadata block. It’s the logical
+block number because this is what the logical structure expects and verifies.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">元数据块中嵌入了校验和，因此正确的原子写入不会损坏校验和。很可能在读取这样的块之后，内部数据与其余部分不一致。为了排除这种可能性，在元数据块中嵌入了块编号。这是逻辑块编号，因为这是逻辑结构所期望并验证的内容。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">The following is based on information publicly available, user feedback,
+community discussions or bug report analyses. It’s not complete and further
+research is encouraged when in doubt.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">以下内容基于公开信息、用户反馈、社区讨论或错误报告分析。这并不完整，当有疑问时鼓励进一步研究。</font></font></font></p>
+</section>
+<section id="main-memory" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Main memory<a class="headerlink" href="#main-memory" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">主存储器 </font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">The data structures and raw data blocks are temporarily stored in computer
+memory before they get written to the device. It is critical that memory is
+reliable because even simple bit flips can have vast consequences and lead to
+damaged structures, not only in the filesystem but in the whole operating
+system.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在将数据结构和原始数据块写入设备之前，它们会临时存储在计算机内存中。内存的可靠性至关重要，因为即使是简单的位翻转也可能导致严重后果，并导致结构受损，不仅仅是在文件系统中，还包括整个操作系统。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Based on experience in the community, memory bit flips are more common than one
+would think. When it happens, it’s reported by the tree-checker or by a checksum
+mismatch after reading blocks. There are some very obvious instances of bit
+flips that happen, e.g. in an ordered sequence of keys in metadata blocks. We can
+easily infer from the other data what values get damaged and how. However, fixing
+that is not straightforward and would require cross-referencing data from the
+entire filesystem to see the scope.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">根据社区的经验，内存位翻转比人们想象的要常见。当发生这种情况时，树检查器或在读取块后发生校验和不匹配会报告。有一些非常明显的位翻转实例会发生，例如在元数据块中键的有序序列中。我们可以轻松地从其他数据推断出哪些值受损以及受损程度。然而，修复这个问题并不简单，需要跨引用整个文件系统的数据来查看范围。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">If available, ECC memory should lower the chances of bit flips, but this
+type of memory is not available in all cases. A memory test should be performed
+in case there’s a visible bit flip pattern, though this may not detect a faulty
+memory module because the actual load of the system could be the factor making
+the problems appear. In recent years attacks on how the memory modules operate
+have been demonstrated (<em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">rowhammer</em>) achieving specific bits to be flipped.
+While these were targeted, this shows that a series of reads or writes can
+affect unrelated parts of memory.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果可用，ECC 内存应该降低位翻转的机会，但并非所有情况下都有这种类型的内存。如果存在可见的位翻转模式，应进行内存测试，尽管这可能无法检测到有问题的内存模块，因为系统的实际负载可能是导致问题出现的因素。近年来，对内存模块操作的攻击已经得到证明（rowhammer），实现特定位的翻转。尽管这些是有针对性的，但这表明一系列读取或写入可能会影响内存的不相关部分。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Block group profiles with redundancy (like RAID1) will not protect against
+memory errors as the blocks are first stored in memory before they are written
+to the devices from the same source.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">具有冗余的块组配置文件（如 RAID1）不会保护内存错误，因为块首先存储在内存中，然后从相同来源写入设备。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">A filesystem mounted read-only will not affect the underlying block device in
+almost 100% (with highly unlikely exceptions). The exception is a tree-log that
+needs to be replayed during mount (and before the read-only mount takes place),
+working memory is needed for that and that can be affected by bit flips.
+There’s a theoretical case where bit flip changes the filesystem status from
+read-only to read-write.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">挂载为只读的文件系统几乎不会影响底层块设备（几乎 100％，极少数例外）。例外情况是在挂载期间需要重放的树日志（在只读挂载之前进行），这需要工作内存，而这可能会受到位翻转的影响。存在一种理论情况，即位翻转将文件系统状态从只读更改为读写。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Further reading:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">进一步阅读：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference external" href="https://en.wikipedia.org/wiki/Row_hammer" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">https://en.wikipedia.org/wiki/Row_hammer</a></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">memory overclocking, XMP, potential risks<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内存超频，XMP，潜在风险</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">What to do:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">该怎么办：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">run <em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">memtest</em>, note that sometimes memory errors happen only when the system
+is under heavy load that the default memtest cannot trigger<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">运行内存测试，注意有时候内存错误只会在系统承受重负载时发生，而默认的内存测试无法触发这种情况</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">memory errors may appear as filesystem going read-only due to “pre write”
+check, that verify meta data before they get written but fail some basic
+consistency checks<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内存错误可能会导致文件系统变为只读，这是由于“预写”检查引起的，该检查在写入之前验证元数据，但未通过一些基本一致性检查</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">newly built systems should be tested before being put to production use,
+ideally start a IO/CPU load that will be run on such system later; namely
+systems that will utilize overclocking or special performance features<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">新构建的系统在投入生产使用之前应该进行测试，最好启动一个会在该系统上运行的 IO/CPU 负载测试；特别是那些将利用超频或特殊性能功能的系统</font></font></font></p></li>
+</ul>
+</section>
+<section id="direct-memory-access-dma" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Direct memory access (DMA)<a class="headerlink" href="#direct-memory-access-dma" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">直接内存访问（DMA）</font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Another class of errors is related to DMA (direct memory access) performed
+by device drivers. While this could be considered a software error, the
+data transfers that happen without CPU assistance may accidentally corrupt
+other pages. Storage devices utilize DMA for performance reasons, the
+filesystem structures and data pages are passed back and forth, making
+errors possible in case page life time is not properly tracked.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">另一类错误与设备驱动程序执行的 DMA（直接内存访问）有关。虽然这可能被视为软件错误，但在没有 CPU 协助的情况下发生的数据传输可能会意外损坏其他页面。存储设备利用 DMA 来提高性能，文件系统结构和数据页面来回传递，如果页面寿命没有正确跟踪，可能会出现错误。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">There are lots of quirks (device-specific workarounds) in Linux kernel
+drivers (regarding not only DMA) that are added when found. The quirks
+may avoid specific errors or disable some features to avoid worse problems.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 Linux 内核驱动程序中存在许多怪癖（特定设备的解决方法），当发现时会添加到其中（不仅限于 DMA）。这些怪癖可能避免特定错误或禁用某些功能以避免更严重的问题。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">What to do:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">该怎么办：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">use up-to-date kernel (recent releases or maintained long term support versions)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用最新的内核（最新发布版或长期维护版本）</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">as this may be caused by faulty drivers, keep the systems up-to-date<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">由于可能是由于驱动程序故障引起的，请保持系统保持最新状态</font></font></font></p></li>
+</ul>
+</section>
+<section id="rotational-disks-hdd" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Rotational disks (HDD)<a class="headerlink" href="#rotational-disks-hdd" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">旋转磁盘（HDD）</font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Rotational HDDs typically fail at the level of individual sectors or small clusters.
+Read failures are caught on the levels below the filesystem and are returned to
+the user as <em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">EIO - Input/output error</em>. Reading the blocks repeatedly may
+return the data eventually, but this is better done by specialized tools and
+filesystem takes the result of the lower layers. Rewriting the sectors may
+trigger internal remapping but this inevitably leads to data loss.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">旋转式硬盘驱动器（HDD）通常在单个扇区或小簇的级别上发生故障。读取失败会在文件系统下的级别上被捕获，并作为 EIO - 输入/输出错误返回给用户。重复读取块可能最终会返回数据，但最好由专门工具完成，文件系统会接收下层的结果。重写扇区可能会触发内部重映射，但这不可避免地会导致数据丢失。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Disk firmware is technically software but from the filesystem perspective is
+part of the hardware. IO requests are processed, and caching or various
+other optimizations are performed, which may lead to bugs under high load or
+unexpected physical conditions or unsupported use cases.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">硬盘固件在技术上是软件，但从文件系统的角度来看，它是硬件的一部分。IO 请求会被处理，并执行缓存或各种其他优化，这可能会在高负载或意外物理条件或不支持的用例下导致错误。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Disks are connected by cables with two ends, both of which can cause problems
+when not attached properly. Data transfers are protected by checksums and the
+lower layers try hard to transfer the data correctly or not at all. The errors
+from badly-connecting cables may manifest as large amount of failed read or
+write requests, or as short error bursts depending on physical conditions.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">硬盘通过两端连接的电缆连接，当连接不正确时，两端都可能导致问题。数据传输受校验和保护，较低的层次会尽力正确传输数据，或者根本不传输。由于连接不良的电缆可能导致大量失败的读取或写入请求，或者根据物理条件而定，表现为短暂的错误突发。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">What to do:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">该怎么办：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">check <strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">smartctl</strong> for potential issues<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">检查 smartctl 是否存在潜在问题</font></font></font></p></li>
+</ul>
+</section>
+<section id="solid-state-drives-ssd" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Solid state drives (SSD)<a class="headerlink" href="#solid-state-drives-ssd" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">固态硬盘（SSD）</font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">The mechanism of information storage is different from HDDs and this affects
+the failure mode as well. The data are stored in cells grouped in large blocks
+with limited number of resets and other write constraints. The firmware tries
+to avoid unnecessary resets and performs optimizations to maximize the storage
+media lifetime. The known techniques are deduplication (blocks with same
+fingerprint/hash are mapped to same physical block), compression or internal
+remapping and garbage collection of used memory cells. Due to the additional
+processing there are measures to verify the data e.g. by ECC codes.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">信息存储机制与 HDD 不同，这也影响了故障模式。数据存储在以大块为单位的单元中，具有有限数量的重置和其他写入约束。固件试图避免不必要的重置，并执行优化以最大化存储介质的寿命。已知的技术包括去重（具有相同指纹/哈希的块被映射到同一物理块）、压缩或内部重映射以及已使用内存单元的垃圾收集。由于额外的处理，有措施来验证数据，例如通过 ECC 码。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">The observations of failing SSDs show that the whole electronic fails at once
+or affects a lot of data (e.g. stored on one chip). Recovering such data
+may need specialized equipment and reading data repeatedly does not help as
+it’s possible with HDDs.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">失败的固态硬盘的观察表明，整个电子设备一次性失效或影响大量数据（例如存储在一个芯片上的数据）。恢复这些数据可能需要专门的设备，反复读取数据并不能像 HDD 那样有助于恢复。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">There are several technologies of the memory cells with different
+characteristics and price. The lifetime is directly affected by the type and
+frequency of data written.  Writing “too much” distinct data (e.g. encrypted)
+may render the internal deduplication ineffective and lead to a lot of rewrites
+and increased wear of the memory cells.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内存单元有几种不同特性和价格的技术。寿命直接受到写入数据类型和频率的影响。写入“过多”不同的数据（例如加密数据）可能使内部去重失效，并导致大量重写和增加内存单元的磨损。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">There are several technologies and manufacturers so it’s hard to describe them
+but there are some that exhibit similar behaviour:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">有几种技术和制造商，因此很难描述它们，但有一些表现出类似的行为：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">expensive SSD will use more durable memory cells and is optimized for
+reliability and high load<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">昂贵的固态硬盘将使用更耐用的内存单元，并针对可靠性和高负载进行了优化。</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">cheap SSD is projected for a lower load (“desktop user”) and is optimized for
+cost, it may employ the optimizations and/or extended error reporting
+partially or not at all<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">廉价的固态硬盘适用于较低负载（“桌面用户”），并且经过成本优化，可能部分或完全采用优化和/或扩展的错误报告</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">It’s not possible to reliably determine the expected lifetime of an SSD due to
+lack of information about how it works or due to lack of reliable stats provided
+by the device.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">由于缺乏关于其工作原理的信息或由于设备提供的可靠统计数据不足，无法可靠地确定固态硬盘的预期寿命。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Metadata writes tend to be the biggest component of lifetime writes to a SSD,
+so there is some value in reducing them. Depending on the device class (high
+end/low end) the features like DUP block group profiles may affect the
+reliability in both ways:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">元数据写入往往是固态硬盘寿命写入的最大组成部分，因此减少它们具有一定的价值。根据设备类别（高端/低端），像 DUP 块组配置文件这样的功能可能会以两种方式影响可靠性。</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">high end</em> are typically more reliable and using <em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">single</em> for data and
+metadata could be suitable to reduce device wear<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">高端产品通常更可靠，并且单独用于数据和元数据可能适合减少设备磨损</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">low end</em> could lack ability to identify errors so an additional redundancy
+at the filesystem level (checksums, <em data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">DUP</em>) could help<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">低端产品可能缺乏识别错误的能力，因此在文件系统级别增加额外的冗余（校验和、DUP）可能有所帮助</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Only users who consume 50 to 100% of the SSD’s actual lifetime writes need to be
+concerned by the write amplification of btrfs DUP metadata. Most users will be
+far below 50% of the actual lifetime, or will write the drive to death and
+discover how many writes 100% of the actual lifetime was. SSD firmware often
+adds its own write multipliers that can be arbitrary and unpredictable and
+dependent on application behavior, and these will typically have far greater
+effect on SSD lifespan than DUP metadata. It’s more or less impossible to
+predict when a SSD will run out of lifetime writes to within a factor of two, so
+it’s hard to justify wear reduction as a benefit.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">只有消耗 SSD 实际寿命写入量的 50 到 100% 的用户需要关注 btrfs DUP 元数据的写放大。大多数用户的写入量远低于实际寿命的 50%，或者会写入到设备死亡并发现 100% 实际寿命的写入量是多少。SSD 固件通常会添加自己的写入倍增器，这些倍增器可能是任意的、不可预测的，并且取决于应用程序的行为，这些倍增器通常对 SSD 寿命的影响要远远大于 DUP 元数据。几乎不可能准确预测 SSD 何时耗尽寿命写入量，因此很难将减少磨损作为一个好处来证明。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Further reading:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">进一步阅读：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference external" href="https://www.snia.org/educational-library/ssd-and-deduplication-end-spinning-disk-2012" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">https://www.snia.org/educational-library/ssd-and-deduplication-end-spinning-disk-2012</a></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference external" href="https://www.snia.org/educational-library/realities-solid-state-storage-2013-2013" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">https://www.snia.org/educational-library/realities-solid-state-storage-2013-2013</a></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference external" href="https://www.snia.org/educational-library/ssd-performance-primer-2013" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">https://www.snia.org/educational-library/ssd-performance-primer-2013</a></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference external" href="https://www.snia.org/educational-library/how-controllers-maximize-ssd-life-2013" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">https://www.snia.org/educational-library/how-controllers-maximize-ssd-life-2013</a></p></li>
+</ul>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">What to do:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">该怎么办：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">run <strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">smartctl</strong> or self-tests to look for potential issues<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">运行 smartctl 或自检以查找潜在问题</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">keep the firmware up-to-date<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">保持固件最新</font></font></font></p></li>
+</ul>
+</section>
+<section id="nvm-express-non-volatile-memory-nvme" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">NVM express, non-volatile memory (NVMe)<a class="headerlink" href="#nvm-express-non-volatile-memory-nvme" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">NVM Express，非易失性存储器（NVMe）</font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">NVMe is a type of persistent memory usually connected over a system bus (PCIe)
+or similar interface and the speeds are an order of magnitude faster than SSD.
+It is also a non-rotating type of storage, and is not typically connected by a
+cable. It’s not a SCSI type device either but rather a complete specification
+for logical device interface.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">NVMe 是一种通常通过系统总线（PCIe）或类似接口连接的持久性存储器类型，速度比固态硬盘快一个数量级。它也是一种非旋转式存储，通常不通过电缆连接。它也不是 SCSI 类型设备，而是逻辑设备接口的完整规范。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">In a way the errors could be compared to a combination of SSD class and regular
+memory. Errors may exhibit as random bit flips or IO failures. There are tools
+to access the internal log (<strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">nvme log</strong> and <strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">nvme-cli</strong>) for a more detailed
+analysis.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在某种程度上，错误可以被比作 SSD 类和常规内存的组合。错误可能表现为随机位翻转或 IO 故障。有工具可以访问内部日志（nvme 日志和 nvme-cli）进行更详细的分析。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">There are separate error detection and correction steps performed e.g. on the
+bus level and in most cases never making in to the filesystem level. Once this
+happens it could mean there’s some systematic error like overheating or bad
+physical connection of the device. You may want to run self-tests (using
+<strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">smartctl</strong>).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">有单独的错误检测和纠正步骤，例如在总线级别上执行，在大多数情况下从未进入文件系统级别。一旦发生这种情况，可能意味着存在一些系统性错误，如过热或设备的不良物理连接。您可能希望运行自检（使用 smartctl）。</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference external" href="https://en.wikipedia.org/wiki/NVM_Express" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">https://en.wikipedia.org/wiki/NVM_Express</a></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a class="reference external" href="https://www.smartmontools.org/wiki/NVMe_Support" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">https://www.smartmontools.org/wiki/NVMe_Support</a></p></li>
+</ul>
+</section>
+<section id="drive-firmware" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Drive firmware<a class="headerlink" href="#drive-firmware" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">驱动器固件 </font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Firmware is technically still software but embedded into the hardware. As all
+software has bugs, so does firmware. Storage devices can update the firmware
+and fix known bugs. In some cases the it’s possible to avoid certain bugs by
+quirks (device-specific workarounds) in Linux kernel.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">固件在技术上仍然是软件，但嵌入到硬件中。正如所有软件都有漏洞一样，固件也有漏洞。存储设备可以更新固件并修复已知的漏洞。在某些情况下，可以通过 Linux 内核中的技巧（设备特定的解决方法）来避免某些漏洞。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">A faulty firmware can cause wide range of corruptions from small and localized
+to large affecting lots of data. Self-repair capabilities may not be sufficient.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">故障的固件可能导致从小范围和局部的损坏到影响大量数据的广泛损坏。自我修复能力可能不足。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">What to do:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">该怎么办：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">check for firmware updates in case there are known problems, note that
+updating firmware can be risky on itself<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">检查固件更新以防存在已知问题，请注意更新固件本身可能存在风险</font></font></font></p></li>
+<li data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">use up-to-date kernel (recent releases or maintained long term support versions)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用最新的内核（最新发布版或长期维护版本）</font></font></font></p></li>
+</ul>
+</section>
+<section id="sd-flash-cards" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">SD flash cards<a class="headerlink" href="#sd-flash-cards" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">SD 闪存卡 </font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">There are a lot of devices with low power consumption and thus using storage
+media based on low power consumption too, typically flash memory stored on
+a chip enclosed in a detachable card package. An improperly inserted card may be
+damaged by electrical spikes when the device is turned on or off. The chips
+storing data in turn may be damaged permanently. All types of flash memory
+have a limited number of rewrites, so the data are internally translated by FTL
+(flash translation layer). This is implemented in firmware (technically a
+software) and prone to bugs that manifest as hardware errors.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">有许多低功耗设备，因此使用基于低功耗的存储介质，通常是存储在可拆卸卡包中的芯片上的闪存存储器。当设备开启或关闭时，不正确插入的卡可能会受到电压峰值的损坏。存储数据的芯片可能会永久受损。所有类型的闪存存储器都有有限的重写次数，因此数据通过 FTL（闪存转换层）进行内部转换。这是在固件中实现的（技术上是软件），容易出现表现为硬件错误的错误。</font></font></font></p>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Adding redundancy like using DUP profiles for both data and metadata can help
+in some cases but a full backup might be the best option once problems appear
+and replacing the card could be required as well.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">增加冗余，例如同时为数据和元数据使用 DUP 配置文件，在某些情况下可能有所帮助，但一旦出现问题，完整备份可能是最佳选择，同时可能需要更换卡。</font></font></font></p>
+</section>
+<section id="hardware-as-the-main-source-of-filesystem-corruptions" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+<h2 data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Hardware as the main source of filesystem corruptions<a class="headerlink" href="#hardware-as-the-main-source-of-filesystem-corruptions" title="Link to this heading" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">硬件是文件系统损坏的主要原因。</font></font></font></h2>
+<p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><strong data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">If you use unreliable hardware and don’t know about that, don’t blame the
+filesystem when it tells you.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果你使用不可靠的硬件并且对此一无所知，当文件系统告诉你时不要责怪它。</font></font></font></strong></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1"><div class="rst-footer-buttons" role="navigation" aria-label="Footer" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+        <a href="Administration.html" class="btn btn-neutral float-left" title="Administration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Feature-by-version.html" class="btn btn-neutral float-right" title="Changes (feature/version)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr>
+
+  <div role="contentinfo" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+    <p data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">© Copyright .
+      <span class="commit" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Revision <code data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">5d97c32d</code>.
+      </span><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">© 版权所有。修订版 <code data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">5d97c32d</code> 。</font></font></font></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">theme</a>
+    provided by <a href="https://readthedocs.org" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">Read the Docs</a>.
+   
+
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用由 Read the Docs 提供的主题构建的 Sphinx。</font></font></font></footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+    <span class="rst-current-version" data-toggle="rst-current-version" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">
+      <span class="fa fa-book" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"> Read the Docs</span>
+      v: stable
+      <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">阅读文档 v: 稳定</font></font></font><span class="fa fa-caret-down" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"></span>
+    </span>
+    <div class="rst-other-versions" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+      <dl data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+        <dt data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Versions<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版本</font></font></font></dt>
+        
+          <dd data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a href="../../index.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">latest<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">最新</font></font></font></a></dd>
+        
+          <dd data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646"><a href="index.html" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">stable<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">稳定</font></font></font></a></dd>
+        
+      </dl>
+      <dl data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+        <dt data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Downloads<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">下载</font></font></font></dt>
+        
+      </dl>
+      <dl data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+        
+        <dt data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">On Read the Docs<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 Read the Docs 上</font></font></font></dt>
+          <dd data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+            <a href="https://readthedocs.org/projects/btrfs/?fromdocs=btrfs" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Project Home<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">项目主页</font></font></font></a>
+          </dd>
+          <dd data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646">
+            <a href="https://readthedocs.org/builds/btrfs/?fromdocs=btrfs" data-immersive-translate-walked="57d9845d-a98d-4da1-9287-6b5602ee6646" data-immersive-translate-paragraph="1">Builds<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">构建</font></font></font></a>
+          </dd>
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>

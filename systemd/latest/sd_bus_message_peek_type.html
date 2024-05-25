@@ -1,0 +1,105 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_message_read</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_message_read"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_message_read, sd_bus_message_readv, sd_bus_message_peek_type — Read a sequence of values from a message</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_message_read</b>(</code></td><td>sd_bus_message *<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">types</var>, </td></tr><tr><td> </td><td>...<code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_message_readv</b>(</code></td><td>sd_bus_message *<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">types</var>, </td></tr><tr><td> </td><td>va_list <var class="pdparam">ap</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_message_peek_type</b>(</code></td><td>sd_bus_message *<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>char *<var class="pdparam">type</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">contents</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_bus_message_read()</code> reads a sequence of fields from the D-Bus message object
+    <em class="parameter"><code>m</code></em> and advances the read position in the message. The type string
+    <em class="parameter"><code>types</code></em> describes the types of items expected in the message and the field arguments
+    that follow. The type string may be <code class="constant">NULL</code> or empty, in which case nothing is read.
+    </p><p>The type string is composed of the elements described in
+    <a href="sd_bus_message_append.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_append</span>(3)</span></a>,
+    i.e. basic and container types. It must contain zero or more single "complete types". The type string is
+    <code class="constant">NUL</code>-terminated.</p><p>For each type specified in the type string, one or more arguments need to be specified after the
+    <em class="parameter"><code>types</code></em> parameter, in the same order. The arguments must be pointers to appropriate
+    types (a pointer to <span class="type">int8_t</span> for a "<code class="literal">y</code>" in the type string, a pointer to
+    <span class="type">int32_t</span> for an "<code class="literal">i</code>", a pointer to <span class="type">const char*</span> for an
+    "<code class="literal">s</code>", ...)  which are set based on the values in the message. As an exception, in case of
+    array and variant types, the first argument is an "input" argument that further specifies how the message
+    should be read. See the table below for a complete list of allowed arguments and their types. Note that,
+    if the basic type is a pointer (e.g., <span class="type">const char *</span> in the case of a string), the argument is
+    a pointer to a pointer, and also the pointer value that is written is only borrowed and the contents must
+    be copied if they are to be used after the end of the message's lifetime. If the type is
+    "<code class="literal">h</code>" (UNIX file descriptor), the descriptor is not duplicated by this call and the
+    returned descriptor remains in possession of the message object, and needs to be duplicated by the caller
+    in order to keep an open reference to it after the message object is freed.</p><p>Each argument may also be <code class="constant">NULL</code>, in which case the value is read and ignored.
+    </p><div class="table"><a name="id-1.5.6"></a><p class="title"><b>Table 1. Item type specifiers</b></p><div class="table-contents"><table class="table" summary="Item type specifiers" border="1"><colgroup><col class="specifier"><col class="constant"><col class="description"><col class="type1"><col class="type2"></colgroup><thead><tr><th>Specifier</th><th>Constant</th><th>Description</th><th>Type of the first argument</th><th>Types of the subsequent arguments, if any</th></tr></thead><tbody><tr><td>"<code class="literal">y</code>"</td><td><code class="constant">SD_BUS_TYPE_BYTE</code></td><td>8-bit unsigned integer</td><td><span class="type">uint8_t *</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">b</code>"</td><td><code class="constant">SD_BUS_TYPE_BOOLEAN</code></td><td>boolean</td><td><span class="type">int *</span> (NB: not <span class="type">bool *</span>)</td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">n</code>"</td><td><code class="constant">SD_BUS_TYPE_INT16</code></td><td>16-bit signed integer</td><td><span class="type">int16_t *</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">q</code>"</td><td><code class="constant">SD_BUS_TYPE_UINT16</code></td><td>16-bit unsigned integer</td><td><span class="type">uint16_t *</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">i</code>"</td><td><code class="constant">SD_BUS_TYPE_INT32</code></td><td>32-bit signed integer</td><td><span class="type">int32_t *</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">u</code>"</td><td><code class="constant">SD_BUS_TYPE_UINT32</code></td><td>32-bit unsigned integer</td><td><span class="type">uint32_t *</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">x</code>"</td><td><code class="constant">SD_BUS_TYPE_INT64</code></td><td>64-bit signed integer</td><td><span class="type">int64_t *</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">t</code>"</td><td><code class="constant">SD_BUS_TYPE_UINT64</code></td><td>64-bit unsigned integer</td><td><span class="type">uint64_t *</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">d</code>"</td><td><code class="constant">SD_BUS_TYPE_DOUBLE</code></td><td>IEEE 754 double precision floating-point</td><td><span class="type">double *</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">s</code>"</td><td><code class="constant">SD_BUS_TYPE_STRING</code></td><td>UTF-8 string</td><td><span class="type">const char **</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">o</code>"</td><td><code class="constant">SD_BUS_TYPE_OBJECT_PATH</code></td><td>D-Bus object path string</td><td><span class="type">const char **</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">g</code>"</td><td><code class="constant">SD_BUS_TYPE_SIGNATURE</code></td><td>D-Bus signature string</td><td><span class="type">const char **</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">h</code>"</td><td><code class="constant">SD_BUS_TYPE_UNIX_FD</code></td><td>UNIX file descriptor</td><td><span class="type">int *</span></td><td class="auto-generated"> </td></tr><tr><td>"<code class="literal">a</code>"</td><td><code class="constant">SD_BUS_TYPE_ARRAY</code></td><td>array</td><td><span class="type">int</span>, which specifies the expected length <em class="parameter"><code>n</code></em> of the array</td><td><em class="parameter"><code>n</code></em> sets of arguments appropriate for the array element type</td></tr><tr><td>"<code class="literal">v</code>"</td><td><code class="constant">SD_BUS_TYPE_VARIANT</code></td><td>variant</td><td>signature string</td><td>arguments appropriate for the types specified by the signature</td></tr><tr><td>"<code class="literal">(</code>"</td><td><code class="constant">SD_BUS_TYPE_STRUCT_BEGIN</code></td><td>array start</td><td rowspan="2" colspan="2">arguments appropriate for the structure elements</td></tr><tr><td>"<code class="literal">)</code>"</td><td><code class="constant">SD_BUS_TYPE_STRUCT_END</code></td><td>array end</td></tr><tr><td>"<code class="literal">{</code>"</td><td><code class="constant">SD_BUS_TYPE_DICT_ENTRY_BEGIN</code></td><td>dictionary entry start</td><td rowspan="2">arguments appropriate for the first type in the pair</td><td rowspan="2">arguments appropriate for the second type in the pair</td></tr><tr><td>"<code class="literal">}</code>"</td><td><code class="constant">SD_BUS_TYPE_DICT_ENTRY_END</code></td><td>dictionary entry end</td></tr></tbody></table></div></div><br class="table-break"><p>If objects of the specified types are not present at the current position in the message, an error
+    is returned.</p><p>The <code class="function">sd_bus_message_readv()</code> is equivalent to the
+    <code class="function">sd_bus_message_read()</code>, except that it is called with a "<code class="literal">va_list</code>"
+    instead of a variable number of arguments. This function does not call the <code class="function">va_end()</code>
+    macro. Because it invokes the <code class="function">va_arg()</code> macro, the value of <em class="parameter"><code>ap</code></em>
+    is undefined after the call.</p><p><code class="function">sd_bus_message_peek_type()</code> determines the type of the next element in
+    <em class="parameter"><code>m</code></em> to be read by <code class="function">sd_bus_message_read()</code> or similar functions.
+    On success, the type is stored in <em class="parameter"><code>type</code></em>, if it is not <code class="constant">NULL</code>.
+    If the type is a container type, the type of its elements is stored in <em class="parameter"><code>contents</code></em>,
+    if it is not <code class="constant">NULL</code>. If this function successfully determines the type of the next
+    element in <em class="parameter"><code>m</code></em>, it returns a positive integer. If there are no more elements to be
+    read, it returns zero.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these functions return a non-negative integer. On failure, they return a negative
+    errno-style error code.</p><div class="refsect2"><a name="errors"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>Specified type string is invalid or the message parameter is
+          <code class="constant">NULL</code>.</p></dd><dt id="-ENXIO"><span class="term"><code class="constant">-ENXIO</code></span><a class="headerlink" title="Permalink to this term" href="#-ENXIO">¶</a></dt><dd><p>The message does not contain the specified type at current position.
+          </p></dd><dt id="-EBADMSG"><span class="term"><code class="constant">-EBADMSG</code></span><a class="headerlink" title="Permalink to this term" href="#-EBADMSG">¶</a></dt><dd><p>The message cannot be parsed.</p></dd><dt id="-EBUSY"><span class="term"><code class="constant">-EBUSY</code></span><a class="headerlink" title="Permalink to this term" href="#-EBUSY">¶</a></dt><dd><p>When reading from a container, this error will be returned if unread elements
+          are left in the container.</p><p><a name="v251"></a>Added in version 251.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><p>Read a single basic type (a 64-bit integer):
+    </p><pre class="programlisting">sd_bus_message *m;
+int64_t x;
+
+sd_bus_message_read(m, "x", &amp;x);</pre><p>Read a boolean value:</p><pre class="programlisting">sd_bus_message *m;
+int x; /* Do not use C99 'bool' type here, it's typically smaller
+          in memory and would cause memory corruption */
+
+sd_bus_message_read(m, "b", &amp;x);</pre><p>Read all types of integers:</p><pre class="programlisting">uint8_t y;
+int16_t n;
+uint16_t q;
+int32_t i;
+uint32_t u;
+int32_t x;
+uint32_t t;
+double d;
+
+sd_bus_message_read(m, "ynqiuxtd", &amp;y, &amp;n, &amp;q, &amp;i, &amp;u, &amp;x, &amp;t, &amp;d);</pre><p>Read a structure composed of a string and a D-Bus path:</p><pre class="programlisting">const char *s, *p;
+
+sd_bus_message_read(m, "(so)", &amp;s, &amp;p);
+</pre><p>Read a variant, with the real type "gt" (signature, unsigned integer):
+     </p><pre class="programlisting">const char *s;
+uint64_t *v;
+
+sd_bus_message_read(m, "v", "gt", &amp;s, &amp;v);</pre><p>Read a dictionary containing three pairs of type {integer=&gt;string}:
+     </p><pre class="programlisting">int i, j, k;
+const char *s, *t, *u;
+
+sd_bus_message_read(m, "a{is}", 3, &amp;i, &amp;s, &amp;j, &amp;t, &amp;k, &amp;u);
+     </pre><p>Read a single file descriptor, and duplicate it in order to keep it open after the message is
+     freed.</p><pre class="programlisting">sd_bus_message *m;
+int fd, fd_copy;
+
+sd_bus_message_read(m, "h", &amp;fd);
+fd_copy = fcntl(fd, FD_DUPFD_CLOEXEC, 3);</pre></div><div class="refsect1"><a name="id-1.9"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_message_read()</code> and
+    <code class="function">sd_bus_message_readv()</code> were added in version 240.</p><p><code class="function">sd_bus_message_peek_type()</code> was added in version 246.</p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_message_read_basic.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_read_basic</span>(3)</span></a>,
+      <a href="sd_bus_message_skip.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_skip</span>(3)</span></a>,
+      <a href="sd_bus_message_append.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_append</span>(3)</span></a>,
+      <a href="sd_bus_message_enter_container.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_enter_container</span>(3)</span></a>
+    </p></div></div></body></html>

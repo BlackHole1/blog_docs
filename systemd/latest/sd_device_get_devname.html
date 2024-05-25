@@ -1,0 +1,69 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_device_get_syspath</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_device_get_syspath"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_device_get_syspath, sd_device_get_devpath, sd_device_get_sysname, sd_device_get_sysnum, sd_device_get_subsystem, sd_device_get_devtype, sd_device_get_devname, sd_device_get_devnum, sd_device_get_ifindex, sd_device_get_driver, sd_device_get_diskseq — Returns various fields of device objects</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-device.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_syspath</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_devpath</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_sysname</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_sysnum</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_subsystem</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_devtype</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_devname</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_devnum</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>dev_t *<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_ifindex</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>int *<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_driver</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_device_get_diskseq</b>(</code></td><td>sd_device *<var class="pdparam">device</var>, </td></tr><tr><td> </td><td>uint64_t *<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_device_get_syspath()</code> returns the sysfs path of the specified device record,
+    including the <code class="filename">/sys</code> prefix. Example: <code class="filename">/sys/devices/virtual/tty/tty7</code></p><p><code class="function">sd_device_get_devpath()</code> returns the sysfs path of the specified device record,
+    excluding the <code class="filename">/sys</code> prefix. Example: <code class="filename">/devices/virtual/tty/tty7</code></p><p><code class="function">sd_device_get_sysname()</code> returns the sysfs name of the specified device record,
+    i.e. the last component of the sysfs path. Example: "<code class="literal">tty7</code>" for the device
+    <code class="filename">/sys/devices/virtual/tty/tty7</code></p><p><code class="function">sd_device_get_sysnum()</code> returns the sysfs device number of the specified device
+    record, i.e. the numeric suffix of the last component of the sysfs path. Example: "<code class="literal">7</code>"
+    for the device <code class="filename">/sys/devices/virtual/tty/tty7</code></p><p><code class="function">sd_device_get_subsystem()</code> returns the kernel subsystem of the specified device
+    record. This is a short string fitting into a filename, and thus does not contain a slash and cannot be
+    empty. Example: "<code class="literal">tty</code>", "<code class="literal">block</code>" or "<code class="literal">net</code>".</p><p><code class="function">sd_device_get_devtype()</code> returns the device type of the specified device
+    record, if the subsystem manages multiple types of devices. Example: for devices of the
+    "<code class="literal">block</code>" subsystem this can be "<code class="literal">disk</code>" or "<code class="literal">partition</code>"
+    </p><p><code class="function">sd_device_get_devname()</code> returns the device node path of the specified device
+    record if the device has a device node. Example: for <code class="filename">/sys/devices/virtual/tty/tty7</code>
+    the string <code class="filename">/dev/tty7</code> is typically returned.</p><p><code class="function">sd_device_get_devnum()</code> returns the device node major/minor
+    (i.e. <span class="type">dev_t</span>) of the specified device record if the device has a device node (i.e. the one
+    returned by <code class="function">sd_device_get_devname()</code>). For devices belonging to the
+    "<code class="literal">block</code>" subsystem this refers to a block device node, in all other cases to a character
+    device node. Example: for the <code class="filename">/sys/devices/virtual/tty/tty7</code> device this typically
+    returns the device number with major/minor "<code class="literal">4:7</code>".</p><p><code class="function">sd_device_get_ifindex()</code> returns the network interface index of the specified
+    device record, if the device encapsulates a network interface device, i.e. belongs to the
+    "<code class="literal">net</code>" subsystem. Example: the "<code class="literal">lo</code>" interface typically has interface
+    index 1.</p><p><code class="function">sd_device_get_driver()</code> returns the kernel driver name attached to the
+    device. Note that the driver field is set on the devices consumed by the driver, not on the device
+    created by it. Example: a PCI device <code class="filename">/sys/bus/pci/devices/0000:00:1f.6</code> might be
+    attached to a driver "<code class="literal">e1000e</code>".</p><p><code class="function">sd_device_get_diskseq()</code> returns the kernel disk sequence number of the block
+    device. This number monotonically increases whenever a backing medium of a block device changes without
+    the device name changing, and is relevant for block devices encapsulating devices with changing media
+    (e.g. floppy or CD-ROM), or loopback block devices. Only defined for block devices, i.e. those of
+    subsystem "<code class="literal">block</code>".</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these calls return 0 or a positive integer. On failure, they return a negative
+    errno-style error code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>A specified parameter is invalid.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="-ENOENT"><span class="term"><code class="constant">-ENOENT</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOENT">¶</a></dt><dd><p>The requested field is not present in the device record.</p><p><a name="v251"></a>Added in version 251.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_device_get_syspath()</code>,
+    <code class="function">sd_device_get_devpath()</code>,
+    <code class="function">sd_device_get_sysname()</code>,
+    <code class="function">sd_device_get_sysnum()</code>,
+    <code class="function">sd_device_get_subsystem()</code>,
+    <code class="function">sd_device_get_devtype()</code>,
+    <code class="function">sd_device_get_devname()</code>,
+    <code class="function">sd_device_get_devnum()</code>,
+    <code class="function">sd_device_get_ifindex()</code>,
+    <code class="function">sd_device_get_driver()</code>, and
+    <code class="function">sd_device_get_diskseq()</code> were added in version 251.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>
+    </p></div></div></body></html>

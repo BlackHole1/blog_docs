@@ -1,0 +1,657 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd.timer</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><a name="systemd.timer" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a><div class="titlepage" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></div><div class="refnamediv" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><h2 data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">systemd.timer — Timer unit configuration<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">systemd.timer — 定时器单元配置</font></font></font></p></div><div class="refsynopsisdiv" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><h2 data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Synopsis<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">简介</font></font></font></h2><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><em class="replaceable"><code>timer</code></em>.timer</code></p></div><div class="refsect1" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><a name="id-1.5" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a><h2 id="Description" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Description<a class="headerlink" title="Permalink to this headline" href="#Description" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h2><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">A unit configuration file whose name ends in
+    "<code class="literal" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">.timer</code>" encodes information about a timer
+    controlled and supervised by systemd, for timer-based
+    activation.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">一个以“ <code class="literal" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">.timer</code> ”结尾的单元配置文件编码了关于由 systemd 控制和监督的定时器的信息，用于基于定时器的激活。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">This man page lists the configuration options specific to
+    this unit type. See
+    <a href="systemd.unit.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.unit</span>(5)</span></a>
+    for the common options of all unit configuration files. The common
+    configuration items are configured in the generic [Unit] and
+    [Install] sections. The timer specific configuration options are
+    configured in the [Timer] section.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">本手册列出了特定于此单元类型的配置选项。有关所有单元配置文件的常见选项，请参阅 systemd.unit(5)。通用配置项在通用的 [Unit] 和 [Install] 部分中配置。定时器特定的配置选项在 [Timer] 部分中配置。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">For each timer file, a matching unit file must exist,
+    describing the unit to activate when the timer elapses. By
+    default, a service by the same name as the timer (except for the
+    suffix) is activated. Example: a timer file
+    <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">foo.timer</code> activates a matching service
+    <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">foo.service</code>. The unit to activate may be
+    controlled by <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Unit=</code> (see below).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">对于每个定时器文件，必须存在一个匹配的单元文件，描述定时器到期时要激活的单元。默认情况下，会激活与定时器同名的服务（除了后缀）。例如：定时器文件 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">foo.timer</code> 会激活匹配的服务 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">foo.service</code> 。要激活的单元可以通过 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Unit=</code> （见下文）来控制。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Note that in case the unit to activate is already active at the time the timer elapses it is not restarted,
+    but simply left running. There is no concept of spawning new service instances in this case. Due to this, services
+    with <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RemainAfterExit=yes</code> set (which stay around continuously even after the service's main
+    process exited) are usually not suitable for activation via repetitive timers, as they will only be activated
+    once, and then stay around forever. Target units, which by default do not deactivate on their own, can be
+    activated repeatedly by timers by setting <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">StopWhenUnneeded=yes</code> on them. This will cause a
+    target unit to be stopped immediately after its activation, if it is not a dependency of another running unit.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，如果要激活的单元在定时器到期时已经处于活动状态，则不会重新启动，而是保持运行状态。在这种情况下，没有生成新服务实例的概念。因此，具有设置 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RemainAfterExit=yes</code> 的服务（即使在服务的主进程退出后仍然持续存在）通常不适合通过重复定时器激活，因为它们只会被激活一次，然后永远保持活动状态。目标单元默认不会自行停止，可以通过在其上设置 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">StopWhenUnneeded=yes</code> 来通过定时器重复激活它们。这将导致目标单元在激活后立即停止，如果它不是另一个正在运行的单元的依赖项。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><a name="id-1.6" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a><h2 id="Automatic Dependencies" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Automatic Dependencies<a class="headerlink" title="Permalink to this headline" href="#Automatic%20Dependencies" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">自动依赖 ¶</font></font></font></h2><div class="refsect2" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><a name="id-1.6.2" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a><h3 id="Implicit Dependencies" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Implicit Dependencies<a class="headerlink" title="Permalink to this headline" href="#Implicit%20Dependencies" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">隐式依赖 ¶</font></font></font></h3><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">The following dependencies are implicitly added:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">以下依赖项将被隐式添加：</font></font></font></p><div class="itemizedlist" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><ul class="itemizedlist" style="list-style-type: disc; " data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><li class="listitem" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Timer units automatically gain a <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Before=</code>
+        dependency on the service they are supposed to activate.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">定时器单元会自动获得一个 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Before=</code> 依赖于它们应该激活的服务。</font></font></font></p></li></ul></div></div><div class="refsect2" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><a name="id-1.6.3" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a><h3 id="Default Dependencies" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Default Dependencies<a class="headerlink" title="Permalink to this headline" href="#Default%20Dependencies" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认依赖关系 ¶</font></font></font></h3><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">The following dependencies are added unless <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">DefaultDependencies=no</code> is set:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">除非设置了 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">DefaultDependencies=no</code> ，否则会添加以下依赖项：</font></font></font></p><div class="itemizedlist" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><ul class="itemizedlist" style="list-style-type: disc; " data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><li class="listitem" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Timer units will automatically have dependencies of type <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Requires=</code> and
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">After=</code> on <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">sysinit.target</code>, a dependency of type <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Before=</code>
+        on <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">timers.target</code>, as well as <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Conflicts=</code> and <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Before=</code> on
+        <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">shutdown.target</code> to ensure that they are stopped cleanly prior to system shutdown. Only timer
+        units involved with early boot or late system shutdown should disable the
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">DefaultDependencies=</code> option.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">定时器单元将自动在 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">sysinit.target</code> 上具有类型为 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Requires=</code> 和 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">After=</code> 的依赖关系，在 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">timers.target</code> 上具有类型为 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Before=</code> 的依赖关系，以及在 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">shutdown.target</code> 上具有 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Conflicts=</code> 和 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Before=</code> 以确保它们在系统关闭之前被干净地停止。只有涉及早期引导或系统晚期关闭的定时器单元应禁用 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">DefaultDependencies=</code> 选项。</font></font></font></p></li><li class="listitem" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Timer units with at least one <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> directive acquire a pair
+        of additional <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">After=</code> dependencies on <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">time-set.target</code> and
+        <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">time-sync.target</code>, in order to avoid being started before the system clock has
+        been correctly set. See
+        <a href="systemd.special.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.special</span>(7)</span></a>
+        for details on these two targets.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">具有至少一个 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> 指令的定时器单元会在 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">time-set.target</code> 和 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">time-sync.target</code> 上获得一对额外的 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">After=</code> 依赖关系，以避免在系统时钟正确设置之前启动。有关这两个目标的详细信息，请参阅 systemd.special(7)。</font></font></font></p></li></ul></div></div></div><div class="refsect1" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><a name="id-1.7" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a><h2 id="Options" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Options<a class="headerlink" title="Permalink to this headline" href="#Options" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h2><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Timer unit files may include [Unit] and [Install] sections, which are described in
+    <a href="systemd.unit.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.unit</span>(5)</span></a>.
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">定时器单元文件可能包括 [Unit] 和 [Install] 部分，这些部分在 systemd.unit(5) 中有描述。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Timer unit files must include a [Timer] section, which carries
+    information about the timer it defines. The options specific to
+    the [Timer] section of timer units are the following:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">定时器单元文件必须包含一个 [Timer] 部分，其中包含有关其定义的定时器的信息。定时器单元的 [Timer] 部分特定选项如下：</font></font></font></p><div class="variablelist" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><dl class="variablelist" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><dt id="OnActiveSec=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnActiveSec=</code>, </span><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code>, </span><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code>, </span><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitActiveSec=</code>, </span><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitInactiveSec=</code></span><a class="headerlink" title="Permalink to this term" href="#OnActiveSec=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnActiveSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitActiveSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitInactiveSec=</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Defines monotonic timers relative to different
+        starting points:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相对于不同起始点定义单调定时器：</font></font></font></p><div class="table" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><a name="id-1.7.4.1.6.2" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a><p class="title" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><b data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Table&nbsp;1.&nbsp;Settings and their starting points<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">表 1. 设置及其起始点</font></font></font></b></p><div class="table-contents" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><table class="table" summary="Settings and their starting points" border="1" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><colgroup data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><col data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><col data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></colgroup><thead data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><tr data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><th>Setting</th><th>Meaning</th></tr></thead><tbody data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><tr data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnActiveSec=</code></td><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Defines a timer relative to the moment the timer unit itself is activated.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">定义一个与定时器单元自身激活时刻相关的定时器。</font></font></font></td></tr><tr data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code></td><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Defines a timer relative to when the machine was booted up. In containers, for the system manager instance, this is mapped to <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code>, making both equivalent.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">定义一个与计算机启动时刻相关的定时器。在容器中，对于系统管理器实例，这被映射到 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code> ，使两者等效。</font></font></font></td></tr><tr data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code></td><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Defines a timer relative to when the service manager was first started. For system timer units this is very similar to <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code> as the system service manager is generally started very early at boot. It's primarily useful when configured in units running in the per-user service manager, as the user service manager is generally started on first login only, not already during boot.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">定义一个与服务管理器首次启动时刻相关的定时器。对于系统定时器单元，这与 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code> 非常相似，因为系统服务管理器通常在启动时期间非常早就启动。当配置在运行在每个用户服务管理器中的单元中时，这主要是有用的，因为用户服务管理器通常仅在首次登录时启动，而不是在启动时就已经启动。</font></font></font></td></tr><tr data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitActiveSec=</code></td><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Defines a timer relative to when the unit the timer unit is activating was last activated.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相对于激活计时器单元的单位上次激活的时间定义计时器。</font></font></font></td></tr><tr data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitInactiveSec=</code></td><td data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Defines a timer relative to when the unit the timer unit is activating was last deactivated.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相对于激活计时器单元的单位上次停用的时间定义计时器。</font></font></font></td></tr></tbody></table></div></div><br class="table-break" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Multiple directives may be combined of the same and of different types, in which case the timer
+        unit will trigger whenever any of the specified timer expressions elapse. For example, by combining
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code> and <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitActiveSec=</code>, it is possible to define a
+        timer that elapses in regular intervals and activates a specific service each time. Moreover, both
+        monotonic time expressions and <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> calendar expressions may be combined in
+        the same timer unit.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">可以组合多个相同类型和不同类型的指令，此时计时器单元将在任何指定的计时器表达式经过时触发。例如，通过组合 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code> 和 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitActiveSec=</code> ，可以定义一个按照固定间隔经过并每次激活特定服务的计时器。此外，单调时间表达式和 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> 日历表达式可以在同一个计时器单元中组合。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">The arguments to the directives are time spans
+        configured in seconds. Example: "OnBootSec=50" means 50s after
+        boot-up. The argument may also include time units. Example:
+        "OnBootSec=5h 30min" means 5 hours and 30 minutes after
+        boot-up. For details about the syntax of time spans, see
+        <a href="systemd.time.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.time</span>(7)</span></a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指令的参数是以秒为单位配置的时间跨度。例如："OnBootSec=50" 表示开机后 50 秒。参数也可以包括时间单位。例如："OnBootSec=5h 30min" 表示开机后 5 小时 30 分钟。有关时间跨度语法的详细信息，请参阅 systemd.time(7)。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">If a timer configured with <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code>
+        or <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code> is already in the past
+        when the timer unit is activated, it will immediately elapse
+        and the configured unit is started. This is not the case for
+        timers defined in the other directives.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果配置了 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code> 或 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code> 的定时器在激活定时器单元时已经过去，它将立即过去，并启动配置的单元。对于在其他指令中定义的定时器，情况并非如此。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">These are monotonic timers, independent of wall-clock time and timezones. If the computer is
+        temporarily suspended, the monotonic clock generally pauses, too. Note that if
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">WakeSystem=</code> is used, a different monotonic clock is selected that continues to
+        advance while the system is suspended and thus can be used as the trigger to resume the
+        system.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些是单调定时器，独立于挂钟时间和时区。如果计算机暂时挂起，单调时钟通常也会暂停。请注意，如果使用 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">WakeSystem=</code> ，将选择不同的单调时钟，该时钟在系统挂起时继续前进，因此可以用作恢复系统的触发器。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">If the empty string is assigned to any of these options, the list of timers is reset (both
+        monotonic timers and <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> timers, see below), and all prior assignments
+        will have no effect.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果将空字符串分配给这些选项中的任何一个，计时器列表将被重置（包括单调计时器和 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> 计时器，见下文），并且所有先前的分配将不起作用。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Note that timers do not necessarily expire at the
+        precise time configured with these settings, as they are
+        subject to the <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> setting
+        below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，计时器不一定会在使用这些设置配置的精确时间到期，因为它们受到下文中 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> 设置的影响。</font></font></font></p></dd><dt id="OnCalendar=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code></span><a class="headerlink" title="Permalink to this term" href="#OnCalendar=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Defines realtime (i.e. wallclock) timers with calendar event expressions. See
+        <a href="systemd.time.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.time</span>(7)</span></a> for
+        more information on the syntax of calendar event expressions. Otherwise, the semantics are similar to
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnActiveSec=</code> and related settings.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用日历事件表达式定义实时（即挂钟）计时器。有关日历事件表达式语法的更多信息，请参阅 systemd.time(7)。否则，语义与 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnActiveSec=</code> 和相关设置类似。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Note that timers do not necessarily expire at the precise time configured with this setting, as
+        it is subject to the <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> setting below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，定时器不一定会在使用此设置配置的精确时间到期，因为它受下面的 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> 设置的影响。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">May be specified more than once, in which case the timer unit will trigger whenever any of the
+        specified expressions elapse. Moreover calendar timers and monotonic timers (see above) may be
+        combined within the same timer unit.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">可以指定多次，这样定时器单元将在任何指定的表达式经过时触发。此外，日历定时器和单调定时器（见上文）可以在同一定时器单元中组合使用。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">If the empty string is assigned to any of these options, the list of timers is reset (both
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> timers and monotonic timers, see above), and all prior assignments
+        will have no effect.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果将空字符串分配给这些选项中的任何一个，定时器列表将被重置（包括 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> 定时器和单调定时器，见上文），并且所有先前的分配将不起作用。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Note that calendar timers might be triggered at unexpected times if the system's realtime clock
+        is not set correctly. Specifically, on systems that lack a battery-buffered Realtime Clock (RTC) it
+        might be wise to enable <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd-time-wait-sync.service</code> to ensure the clock is
+        adjusted to a network time source <span class="emphasis" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><em data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">before</em></span> the timer event is set up. Timer units
+        with at least one <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> expression are automatically ordered after
+        <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">time-sync.target</code>, which <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd-time-wait-sync.service</code> is
+        ordered before.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，如果系统的实时时钟未正确设置，日历定时器可能会在意外时间触发。具体来说，在缺乏电池缓冲的实时时钟（RTC）的系统上，建议启用 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd-time-wait-sync.service</code> 以确保在设置定时器事件之前将时钟调整为网络时间源。至少有一个 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> 表达式的定时器单元会自动在 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">time-sync.target</code> 之后排序，而 <code class="filename" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd-time-wait-sync.service</code> 会在其之前排序。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">When a system is temporarily put to sleep (i.e. system suspend or hibernation) the realtime
+        clock does not pause. When a calendar timer elapses while the system is sleeping it will not be acted
+        on immediately, but once the system is later resumed it will catch up and process all timers that
+        triggered while the system was sleeping. Note that if a calendar timer elapsed more than once while
+        the system was continuously sleeping the timer will only result in a single service activation. If
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">WakeSystem=</code> (see below) is enabled a calendar time event elapsing while the system
+        is suspended will cause the system to wake up (under the condition the system's hardware supports
+        time-triggered wake-up functionality).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当系统暂时进入睡眠状态（即系统暂停或休眠）时，实时时钟不会暂停。当系统处于睡眠状态时，如果日历定时器到期，它不会立即执行，但一旦系统稍后恢复，它将赶上并处理系统处于睡眠状态时触发的所有定时器。请注意，如果在系统持续休眠时日历定时器到期超过一次，则定时器只会导致单个服务激活。如果启用 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">WakeSystem=</code> （请参阅下文），则在系统暂停时发生日历时间事件将导致系统唤醒（在系统硬件支持基于时间的唤醒功能的条件下）。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><a name="v197" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a>Added in version 197.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">自版本 197 中添加。</font></font></font></p></dd><dt id="AccuracySec=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code></span><a class="headerlink" title="Permalink to this term" href="#AccuracySec=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Specify the accuracy the timer shall elapse
+        with. Defaults to 1min. The timer is scheduled to elapse
+        within a time window starting with the time specified in
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code>,
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnActiveSec=</code>,
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code>,
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code>,
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitActiveSec=</code> or
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitInactiveSec=</code> and ending the time
+        configured with <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> later. Within
+        this time window, the expiry time will be placed at a
+        host-specific, randomized, but stable position that is
+        synchronized between all local timer units. This is done in
+        order to optimize power consumption to suppress unnecessary
+        CPU wake-ups. To get best accuracy, set this option to
+        1us. Note that the timer is still subject to the timer slack
+        configured via
+        <a href="systemd-system.conf.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd-system.conf</span>(5)</span></a>'s
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">TimerSlackNSec=</code> setting. See
+        <a href="https://man7.org/linux/man-pages/man2/prctl.2.html" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">prctl</span>(2)</span></a>
+        for details. To optimize power consumption, make sure to set
+        this value as high as possible and as low as
+        necessary.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定计时器应该经过的准确性。默认为 1 分钟。计时器被安排在一个时间窗口内经过，该时间窗口从 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnActiveSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitActiveSec=</code> 或 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitInactiveSec=</code> 指定的时间开始，并在 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> 后结束。在这个时间窗口内，到期时间将被放置在一个特定于主机的、随机但稳定的位置，该位置在所有本地计时器单元之间同步。这样做是为了优化功耗，以抑制不必要的 CPU 唤醒。为了获得最佳准确性，请将此选项设置为 1 微秒。请注意，计时器仍然受到通过 systemd-system.conf(5)的 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">TimerSlackNSec=</code> 设置配置的计时器松弛的影响。有关详细信息，请参阅 prctl(2)。为了优化功耗，请确保将此值设置得尽可能高，但又尽可能低。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Note that this setting is primarily a power saving option that allows coalescing CPU
+        wake-ups. It should not be confused with <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> (see below) which
+        adds a random value to the time the timer shall elapse next and whose purpose is the opposite: to
+        stretch elapsing of timer events over a longer period to reduce workload spikes. For further details
+        and explanations and how both settings play together, see below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，此设置主要是一种节能选项，允许合并 CPU 唤醒。不应将其与 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> （见下文）混淆，后者会向计时器的下一个到期时间添加一个随机值，其目的相反：延长计时器事件的到期时间，以减少工作负载峰值。有关更多详细信息和解释以及这两个设置如何共同发挥作用，请参见下文。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><a name="v209" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a>Added in version 209.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 209 中添加。</font></font></font></p></dd><dt id="RandomizedDelaySec=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code></span><a class="headerlink" title="Permalink to this term" href="#RandomizedDelaySec=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Delay the timer by a randomly selected, evenly distributed amount of time between 0
+        and the specified time value. Defaults to 0, indicating that no randomized delay shall be applied.
+        Each timer unit will determine this delay randomly before each iteration, and the delay will simply
+        be added on top of the next determined elapsing time, unless modified with
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">FixedRandomDelay=</code>, see below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将计时器延迟一个在 0 到指定时间值之间随机选择的均匀分布的时间量。默认为 0，表示不应用任何随机延迟。每个计时器单元将在每次迭代之前随机确定此延迟，并且该延迟将简单地添加到下一个确定的到期时间之上，除非使用 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">FixedRandomDelay=</code> 进行修改，见下文。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">This setting is useful to stretch dispatching of similarly configured timer events over a
+        certain time interval, to prevent them from firing all at the same time, possibly resulting in
+        resource congestion.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此设置对于将类似配置的计时器事件的分派拉伸到一定时间间隔非常有用，以防止它们同时触发，可能导致资源拥塞。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Note the relation to <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> above: the latter allows the service
+        manager to coalesce timer events within a specified time range in order to minimize wakeups, while
+        this setting does the opposite: it stretches timer events over an interval, to make it unlikely that
+        they fire simultaneously. If <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> and
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> are used in conjunction, first the randomized delay is added, and
+        then the result is possibly further shifted to coalesce it with other timer events happening on the
+        system. As mentioned above <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> defaults to 1 minute and
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> to 0, thus encouraging coalescing of timer events. In order to
+        optimally stretch timer events over a certain range of time, set
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=1us</code> and <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> to some higher value.
+        <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意与上面的 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> 之间的关系：后者允许服务管理器在指定的时间范围内合并计时器事件，以最小化唤醒，而此设置则相反：它将计时器事件延伸到一个时间间隔，以使它们不太可能同时触发。如果同时使用 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> 和 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> ，首先会添加随机延迟，然后可能进一步将结果移动以使其与系统上发生的其他计时器事件合并。如上所述， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=</code> 默认为 1 分钟， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> 默认为 0，因此鼓励计时器事件的合并。为了最佳地将计时器事件延伸到一定的时间范围内，请将 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">AccuracySec=1us</code> 和 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> 设置为较高的值。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><a name="v229" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a>Added in version 229.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 229 中。</font></font></font></p></dd><dt id="FixedRandomDelay=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">FixedRandomDelay=</code></span><a class="headerlink" title="Permalink to this term" href="#FixedRandomDelay=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Takes a boolean argument. When enabled, the randomized offset specified by
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> is reused for all firings of the same timer. For a given timer
+        unit, the offset depends on the machine ID, user identifier and timer name, which means that it is
+        stable between restarts of the manager. This effectively creates a fixed offset for an individual
+        timer, reducing the jitter in firings of this timer, while still avoiding firing at the same time as
+        other similarly configured timers.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受布尔参数。启用时，由 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> 指定的随机偏移量将用于同一计时器的所有触发。对于给定的计时器单位，偏移量取决于机器 ID、用户标识符和计时器名称，这意味着在管理器重新启动时它是稳定的。这实际上为单个计时器创建了一个固定的偏移量，减少了该计时器触发时的抖动，同时仍然避免与其他类似配置的计时器同时触发。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">This setting has no effect if <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> is set to 0. Defaults to
+        <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">false</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> 设置为 0，则此设置无效。默认为 <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">false</code> 。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><a name="v247" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a>Added in version 247.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 247 中添加。</font></font></font></p></dd><dt id="OnClockChange=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnClockChange=</code>, </span><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnTimezoneChange=</code></span><a class="headerlink" title="Permalink to this term" href="#OnClockChange=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnClockChange=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnTimezoneChange=</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">These options take boolean arguments. When true, the service unit will be triggered
+        when the system clock (<code class="constant" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">CLOCK_REALTIME</code>) jumps relative to the monotonic clock
+        (<code class="constant" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">CLOCK_MONOTONIC</code>), or when the local system timezone is modified. These options
+        can be used alone or in combination with other timer expressions (see above) within the same timer
+        unit. These options default to <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">false</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些选项接受布尔参数。当为 true 时，服务单元将在系统时钟（ <code class="constant" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">CLOCK_REALTIME</code> ）相对于单调时钟（ <code class="constant" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">CLOCK_MONOTONIC</code> ）跳变，或者本地系统时区被修改时触发。这些选项可以单独使用，也可以与同一计时器单元中的其他计时器表达式（见上文）结合使用。这些选项默认为 <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">false</code> 。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><a name="v242" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a>Added in version 242.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 242 中添加。</font></font></font></p></dd><dt id="Unit=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Unit=</code></span><a class="headerlink" title="Permalink to this term" href="#Unit=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">The unit to activate when this timer elapses.
+        The argument is a unit name, whose suffix is not
+        "<code class="literal" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">.timer</code>". If not specified, this value
+        defaults to a service that has the same name as the timer
+        unit, except for the suffix. (See above.) It is recommended
+        that the unit name that is activated and the unit name of the
+        timer unit are named identically, except for the
+        suffix.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当此计时器到期时激活的单元。参数是一个单位名称，其后缀不是 " <code class="literal" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">.timer</code> "。如果未指定，则此值默认为与计时器单元同名的服务，除了后缀。（见上文。）建议激活的单元名称和计时器单元的单元名称除了后缀外完全相同。</font></font></font></p></dd><dt id="Persistent=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Persistent=</code></span><a class="headerlink" title="Permalink to this term" href="#Persistent=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Takes a boolean argument. If true, the time when the service unit was last triggered
+        is stored on disk.  When the timer is activated, the service unit is triggered immediately if it
+        would have been triggered at least once during the time when the timer was inactive. Such triggering
+        is nonetheless subject to the delay imposed by <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code>.
+        This is useful to catch up on missed runs of the service when the system was powered down. Note that
+        this setting only has an effect on timers configured with <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code>. Defaults to
+        <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">false</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受一个布尔参数。如果为真，则存储服务单元上次触发的时间。当定时器被激活时，如果在定时器处于非活动状态时至少触发了一次服务单元，则立即触发服务单元。这种触发仍然受到 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RandomizedDelaySec=</code> 强加的延迟的影响。当系统关闭电源时，这对于补偿错过的服务运行非常有用。请注意，此设置仅对使用 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnCalendar=</code> 配置的定时器有效。默认为 <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">false</code> 。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Use <span class="command" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><strong data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemctl clean --what=state …</strong></span> on the timer unit to remove the timestamp
+        file maintained by this option from disk. In particular, use this command before uninstalling a timer
+        unit. See
+        <a href="systemctl.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemctl</span>(1)</span></a> for
+        details.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在定时器单元上使用 systemctl clean --what=state …来从磁盘中删除此选项维护的时间戳文件。特别是，在卸载定时器单元之前使用此命令。有关详细信息，请参阅 systemctl(1)。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><a name="v212" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a>Added in version 212.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 212 中添加。</font></font></font></p></dd><dt id="WakeSystem=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">WakeSystem=</code></span><a class="headerlink" title="Permalink to this term" href="#WakeSystem=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Takes a boolean argument. If true, an elapsing timer will cause the system to resume
+        from suspend, should it be suspended and if the system supports this. Note that this option will only
+        make sure the system resumes on the appropriate times, it will not take care of suspending it again
+        after any work that is to be done is finished. Defaults to
+        <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">false</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受一个布尔参数。如果为真，则经过的定时器将导致系统从挂起状态恢复，如果系统支持的话。请注意，此选项仅确保系统在适当的时间恢复，它不会在完成任何工作后再次挂起系统。默认为 <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">false</code> 。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Note that this functionality requires privileges and is thus generally only available in the
+        system service manager.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，此功能需要特权，因此通常仅在系统服务管理器中可用。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Note that behaviour of monotonic clock timers (as configured with
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnActiveSec=</code>, <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code>, <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code>,
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitActiveSec=</code>, <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitInactiveSec=</code>, see above) is altered
+        depending on this option. If false, a monotonic clock is used that is paused during system suspend
+        (<code class="constant" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">CLOCK_MONOTONIC</code>), if true a different monotonic clock is used that continues
+        advancing during system suspend (<code class="constant" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">CLOCK_BOOTTIME</code>), see
+        <a href="https://man7.org/linux/man-pages/man2/clock_getres.2.html" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">clock_getres</span>(2)</span></a> for
+        details.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，单调时钟定时器的行为（如使用 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnActiveSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnBootSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnStartupSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitActiveSec=</code> ， <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">OnUnitInactiveSec=</code> 配置的）取决于此选项。如果为 false，则使用在系统暂停期间暂停的单调时钟（ <code class="constant" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">CLOCK_MONOTONIC</code> ），如果为 true，则使用不同的单调时钟，在系统暂停期间继续前进（ <code class="constant" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">CLOCK_BOOTTIME</code> ），有关详细信息，请参阅 clock_getres(2)。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><a name="v212" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a>Added in version 212.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 212 中添加。</font></font></font></p></dd><dt id="RemainAfterElapse=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RemainAfterElapse=</code></span><a class="headerlink" title="Permalink to this term" href="#RemainAfterElapse=" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a></dt><dd data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Takes a boolean argument. If true, a timer will stay loaded, and its state remains
+        queryable even after it elapsed and the associated unit (as configured with <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Unit=</code>,
+        see above) deactivated again. If false, an elapsed timer unit that cannot elapse anymore is unloaded
+        once its associated unit deactivated again. Turning this off is particularly useful for transient
+        timer units. Note that this setting has an effect when repeatedly starting a timer unit: if
+        <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RemainAfterElapse=</code> is on, starting the timer a second time has no effect. However,
+        if <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RemainAfterElapse=</code> is off and the timer unit was already unloaded, it can be
+        started again, and thus the service can be triggered multiple times. Defaults to
+        <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">true</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受一个布尔参数。如果为 true，则计时器将保持加载，并且即使在其已过期且关联的单元（如使用 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Unit=</code> 配置的，见上文）再次停用后，其状态仍然可查询。如果为 false，则无法再过期的已过期计时器单元在其关联的单元再次停用后将被卸载。关闭此选项对于瞬时计时器单元特别有用。请注意，此设置在重复启动计时器单元时会产生影响：如果 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RemainAfterElapse=</code> 打开，则第二次启动计时器不会产生影响。但是，如果 <code class="varname" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">RemainAfterElapse=</code> 关闭且计时器单元已卸载，则可以再次启动它，从而可以多次触发服务。默认为 <code class="option" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">true</code> 。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><a name="v229" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a>Added in version 229.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 229 中添加。</font></font></font></p></dd></dl></div><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1"><a name="shared-unit-options" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a>Check
+    <a href="systemd.unit.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.unit</span>(5)</span></a>,
+    <a href="systemd.exec.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.exec</span>(5)</span></a>, and
+    <a href="systemd.kill.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.kill</span>(5)</span></a> for more
+    settings.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">查看 systemd.unit(5), systemd.exec(5) 和 systemd.kill(5) 以获取更多设置。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><a name="id-1.8" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"></a><h2 id="See Also" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h2><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">Environment variables with details on the trigger will be set for triggered units. See the
+      "<code class="literal" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Environment Variables Set or Propagated by the Service Manager</code>" section in
+      <a href="systemd.exec.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.exec</span>(5)</span></a>
+      for more details.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">触发单元的详细信息将设置为触发单元的环境变量。有关更多详细信息，请参阅 systemd.exec(5) 中的 " <code class="literal" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">Environment Variables Set or Propagated by the Service Manager</code> " 部分。</font></font></font></p><p data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b" data-immersive-translate-paragraph="1">
+        <a href="systemd.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd</span>(1)</span></a>,
+        <a href="systemctl.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemctl</span>(1)</span></a>,
+        <a href="systemd.unit.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.unit</span>(5)</span></a>,
+        <a href="systemd.service.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.service</span>(5)</span></a>,
+        <a href="systemd.time.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.time</span>(7)</span></a>,
+        <a href="systemd.directives.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd.directives</span>(7)</span></a>,
+        <a href="systemd-system.conf.html#" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">systemd-system.conf</span>(5)</span></a>,
+        <a href="https://man7.org/linux/man-pages/man2/prctl.2.html" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="citerefentry" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b"><span class="refentrytitle" data-immersive-translate-walked="12b9afa0-eb4a-4243-bf66-c841cf150c2b">prctl</span>(2)</span></a>
+      </p></div></div>
+</body></html>

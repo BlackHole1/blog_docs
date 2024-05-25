@@ -1,0 +1,320 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>os-release</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="os-release"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>os-release, initrd-release, extension-release — Operating system identification</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">/etc/os-release</code></p><p><code class="filename">/usr/lib/os-release</code></p><p><code class="filename">/etc/initrd-release</code></p><p><code class="filename">/usr/lib/extension-release.d/extension-release.<em class="replaceable"><code>IMAGE</code></em></code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>The <code class="filename">/etc/os-release</code> and
+    <code class="filename">/usr/lib/os-release</code> files contain operating
+    system identification data.</p><p>The format of <code class="filename">os-release</code> is a newline-separated list of
+    environment-like shell-compatible variable assignments. It is possible to source the configuration from
+    Bourne shell scripts, however, beyond mere variable assignments, no shell features are supported (this
+    means variable expansion is explicitly not supported), allowing applications to read the file without
+    implementing a shell compatible execution engine. Variable assignment values must be enclosed in double
+    or single quotes if they include spaces, semicolons or other special characters outside of A–Z, a–z,
+    0–9. (Assignments that do not include these special characters may be enclosed in quotes too, but this is
+    optional.) Shell special characters ("$", quotes, backslash, backtick) must be escaped with backslashes,
+    following shell style. All strings should be in UTF-8 encoding, and non-printable characters should not
+    be used. Concatenation of multiple individually quoted strings is not supported. Lines beginning with "#"
+    are treated as comments. Blank lines are permitted and ignored.</p><p>The file <code class="filename">/etc/os-release</code> takes
+    precedence over <code class="filename">/usr/lib/os-release</code>.
+    Applications should check for the former, and exclusively use its
+    data if it exists, and only fall back to
+    <code class="filename">/usr/lib/os-release</code> if it is missing.
+    Applications should not read data from both files at the same
+    time. <code class="filename">/usr/lib/os-release</code> is the recommended
+    place to store OS release information as part of vendor trees.
+    <code class="filename">/etc/os-release</code> should be a relative symlink
+    to <code class="filename">/usr/lib/os-release</code>, to provide
+    compatibility with applications only looking at
+    <code class="filename">/etc/</code>. A relative symlink instead of an
+    absolute symlink is necessary to avoid breaking the link in a
+    chroot or initrd environment such as dracut.</p><p><code class="filename">os-release</code> contains data that is
+    defined by the operating system vendor and should generally not be
+    changed by the administrator.</p><p>As this file only encodes names and identifiers it should
+    not be localized.</p><p>The <code class="filename">/etc/os-release</code> and
+    <code class="filename">/usr/lib/os-release</code> files might be symlinks
+    to other files, but it is important that the file is available
+    from earliest boot on, and hence must be located on the root file
+    system.</p><p><code class="filename">os-release</code> must not contain repeating keys. Nevertheless, readers should pick
+    the entries later in the file in case of repeats, similarly to how a shell sourcing the file would. A
+    reader may warn about repeating entries.</p><p>For a longer rationale for <code class="filename">os-release</code>
+    please refer to the <a class="ulink" href="https://0pointer.de/blog/projects/os-release" target="_top">Announcement of <code class="filename">/etc/os-release</code></a>.</p><div class="refsect2"><a name="id-1.5.10"></a><h3 id="/etc/initrd-release"><code class="filename">/etc/initrd-release</code><a class="headerlink" title="Permalink to this headline" href="#/etc/initrd-release">¶</a></h3><p>In the <a class="ulink" href="https://docs.kernel.org/admin-guide/initrd.html" target="_top">initrd</a>,
+      <code class="filename">/etc/initrd-release</code> plays the same role as <code class="filename">os-release</code> in the
+      main system. Additionally, the presence of that file means that the system is in the initrd phase.
+      <code class="filename">/etc/os-release</code> should be symlinked to <code class="filename">/etc/initrd-release</code>
+      (or vice versa), so programs that only look for <code class="filename">/etc/os-release</code> (as described
+      above) work correctly.</p><p>The rest of this document that talks about <code class="filename">os-release</code> should be understood
+      to apply to <code class="filename">initrd-release</code> too.</p></div><div class="refsect2"><a name="id-1.5.11"></a><h3 id="/usr/lib/extension-release.d/extension-release.IMAGE"><code class="filename">/usr/lib/extension-release.d/extension-release.<em class="replaceable"><code>IMAGE</code></em></code><a class="headerlink" title="Permalink to this headline" href="#/usr/lib/extension-release.d/extension-release.IMAGE">¶</a></h3><p><code class="filename">/usr/lib/extension-release.d/extension-release.<em class="replaceable"><code>IMAGE</code></em></code>
+      plays the same role for extension images as <code class="filename">os-release</code> for the main system, and
+      follows the syntax and rules as described in the <a class="ulink" href="https://systemd.io/PORTABLE_SERVICES" target="_top">Portable Services</a> page. The purpose of this
+      file is to identify the extension and to allow the operating system to verify that the extension image
+      matches the base OS. This is typically implemented by checking that the <code class="varname">ID=</code> options
+      match, and either <code class="varname">SYSEXT_LEVEL=</code> exists and matches too, or if it is not present,
+      <code class="varname">VERSION_ID=</code> exists and matches. This ensures ABI/API compatibility between the
+      layers and prevents merging of an incompatible image in an overlay.</p><p>In order to identify the extension image itself, the same fields defined below can be added to the
+      <code class="filename">extension-release</code> file with a <code class="varname">SYSEXT_</code> prefix (to disambiguate
+      from fields used to match on the base image). E.g.: <code class="varname">SYSEXT_ID=myext</code>,
+      <code class="varname">SYSEXT_VERSION_ID=1.2.3</code>.</p><p>In the <code class="filename">extension-release.<em class="replaceable"><code>IMAGE</code></em></code> filename, the
+      <em class="replaceable"><code>IMAGE</code></em> part must exactly match the file name of the containing image with the
+      suffix removed. In case it is not possible to guarantee that an image file name is stable and doesn't
+      change between the build and the deployment phases, it is possible to relax this check: if exactly one
+      file whose name matches "<code class="literal"><code class="filename">extension-release.*</code></code>" is present in this
+      directory, and the file is tagged with a <code class="varname">user.extension-release.strict</code>
+      <a href="https://man7.org/linux/man-pages/man7/xattr.7.html"><span class="citerefentry"><span class="refentrytitle">xattr</span>(7)</span></a> set to the
+      string "<code class="literal">0</code>", it will be used instead.</p><p>The rest of this document that talks about <code class="filename">os-release</code> should be understood
+      to apply to <code class="filename">extension-release</code> too.</p></div></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following OS identifications parameters may be set using
+    <code class="filename">os-release</code>:</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="General information identifying the operating system">General information identifying the operating system<a class="headerlink" title="Permalink to this headline" href="#General%20information%20identifying%20the%20operating%20system">¶</a></h3><div class="variablelist"><dl class="variablelist"><dt id="NAME="><span class="term"><code class="varname">NAME=</code></span><a class="headerlink" title="Permalink to this term" href="#NAME=">¶</a></dt><dd><p>A string identifying the operating system, without a version component, and
+          suitable for presentation to the user. If not set, a default of "<code class="literal">NAME=Linux</code>" may
+          be used.</p><p>Examples: "<code class="literal">NAME=Fedora</code>", "<code class="literal">NAME="Debian GNU/Linux"</code>".
+          </p></dd><dt id="ID="><span class="term"><code class="varname">ID=</code></span><a class="headerlink" title="Permalink to this term" href="#ID=">¶</a></dt><dd><p>A lower-case string (no spaces or other characters outside of 0–9, a–z, ".", "_"
+          and "-") identifying the operating system, excluding any version information and suitable for
+          processing by scripts or usage in generated filenames. If not set, a default of
+          "<code class="literal">ID=linux</code>" may be used. Note that even though this string may not include
+          characters that require shell quoting, quoting may nevertheless be used.</p><p>Examples: "<code class="literal">ID=fedora</code>", "<code class="literal">ID=debian</code>".</p></dd><dt id="ID_LIKE="><span class="term"><code class="varname">ID_LIKE=</code></span><a class="headerlink" title="Permalink to this term" href="#ID_LIKE=">¶</a></dt><dd><p>A space-separated list of operating system identifiers in the same syntax as the
+          <code class="varname">ID=</code> setting. It should list identifiers of operating systems that are closely
+          related to the local operating system in regards to packaging and programming interfaces, for
+          example listing one or more OS identifiers the local OS is a derivative from.  An OS should
+          generally only list other OS identifiers it itself is a derivative of, and not any OSes that are
+          derived from it, though symmetric relationships are possible. Build scripts and similar should
+          check this variable if they need to identify the local operating system and the value of
+          <code class="varname">ID=</code> is not recognized. Operating systems should be listed in order of how
+          closely the local operating system relates to the listed ones, starting with the closest. This
+          field is optional.</p><p>Examples: for an operating system with "<code class="literal">ID=centos</code>", an assignment of
+          "<code class="literal">ID_LIKE="rhel fedora"</code>" would be appropriate. For an operating system with
+          "<code class="literal">ID=ubuntu</code>", an assignment of "<code class="literal">ID_LIKE=debian</code>" is appropriate.
+          </p></dd><dt id="PRETTY_NAME="><span class="term"><code class="varname">PRETTY_NAME=</code></span><a class="headerlink" title="Permalink to this term" href="#PRETTY_NAME=">¶</a></dt><dd><p>A pretty operating system name in a format suitable for presentation to the
+          user. May or may not contain a release code name or OS version of some kind, as suitable. If not
+          set, a default of "<code class="literal">PRETTY_NAME="Linux"</code>" may be used</p><p>Example: "<code class="literal">PRETTY_NAME="Fedora 17 (Beefy Miracle)"</code>".</p></dd><dt id="CPE_NAME="><span class="term"><code class="varname">CPE_NAME=</code></span><a class="headerlink" title="Permalink to this term" href="#CPE_NAME=">¶</a></dt><dd><p>A CPE name for the operating system, in URI binding syntax, following the <a class="ulink" href="http://scap.nist.gov/specifications/cpe/" target="_top">Common Platform Enumeration Specification</a> as
+          proposed by the NIST. This field is optional.</p><p>Example: "<code class="literal">CPE_NAME="cpe:/o:fedoraproject:fedora:17"</code>"</p></dd><dt id="VARIANT="><span class="term"><code class="varname">VARIANT=</code></span><a class="headerlink" title="Permalink to this term" href="#VARIANT=">¶</a></dt><dd><p>A string identifying a specific variant or edition of the operating system suitable
+          for presentation to the user. This field may be used to inform the user that the configuration of
+          this system is subject to a specific divergent set of rules or default configuration settings. This
+          field is optional and may not be implemented on all systems.</p><p>Examples: "<code class="literal">VARIANT="Server Edition"</code>", "<code class="literal">VARIANT="Smart Refrigerator
+          Edition"</code>".</p><p>Note: this field is for display purposes only. The <code class="varname">VARIANT_ID</code> field should
+          be used for making programmatic decisions.</p><p><a name="v220"></a>Added in version 220.</p></dd><dt id="VARIANT_ID="><span class="term"><code class="varname">VARIANT_ID=</code></span><a class="headerlink" title="Permalink to this term" href="#VARIANT_ID=">¶</a></dt><dd><p>A lower-case string (no spaces or other characters outside of 0–9, a–z, ".", "_" and
+          "-"), identifying a specific variant or edition of the operating system. This may be interpreted by
+          other packages in order to determine a divergent default configuration. This field is optional and
+          may not be implemented on all systems.</p><p>Examples: "<code class="literal">VARIANT_ID=server</code>", "<code class="literal">VARIANT_ID=embedded</code>".
+          </p><p><a name="v220"></a>Added in version 220.</p></dd></dl></div></div><div class="refsect2"><a name="id-1.6.4"></a><h3 id="Information about the version of the operating system">Information about the version of the operating system<a class="headerlink" title="Permalink to this headline" href="#Information%20about%20the%20version%20of%20the%20operating%20system">¶</a></h3><div class="variablelist"><dl class="variablelist"><dt id="VERSION="><span class="term"><code class="varname">VERSION=</code></span><a class="headerlink" title="Permalink to this term" href="#VERSION=">¶</a></dt><dd><p>A string identifying the operating system version, excluding any OS name
+          information, possibly including a release code name, and suitable for presentation to the
+          user. This field is optional.</p><p>Examples: "<code class="literal">VERSION=17</code>", "<code class="literal">VERSION="17 (Beefy Miracle)"</code>".
+          </p></dd><dt id="VERSION_ID="><span class="term"><code class="varname">VERSION_ID=</code></span><a class="headerlink" title="Permalink to this term" href="#VERSION_ID=">¶</a></dt><dd><p>A lower-case string (mostly numeric, no spaces or other characters outside of 0–9,
+          a–z, ".", "_" and "-") identifying the operating system version, excluding any OS name information
+          or release code name, and suitable for processing by scripts or usage in generated filenames. This
+          field is optional.</p><p>Examples: "<code class="literal">VERSION_ID=17</code>", "<code class="literal">VERSION_ID=11.04</code>".
+          </p></dd><dt id="VERSION_CODENAME="><span class="term"><code class="varname">VERSION_CODENAME=</code></span><a class="headerlink" title="Permalink to this term" href="#VERSION_CODENAME=">¶</a></dt><dd><p>A lower-case string (no spaces or other characters outside of 0–9, a–z, ".", "_"
+          and "-") identifying the operating system release code name, excluding any OS name information or
+          release version, and suitable for processing by scripts or usage in generated filenames. This field
+          is optional and may not be implemented on all systems.</p><p>Examples: "<code class="literal">VERSION_CODENAME=buster</code>",
+          "<code class="literal">VERSION_CODENAME=xenial</code>".</p><p><a name="v231"></a>Added in version 231.</p></dd><dt id="BUILD_ID="><span class="term"><code class="varname">BUILD_ID=</code></span><a class="headerlink" title="Permalink to this term" href="#BUILD_ID=">¶</a></dt><dd><p>A string uniquely identifying the system image originally used as the installation
+          base. In most cases, <code class="varname">VERSION_ID</code> or
+          <code class="varname">IMAGE_ID</code>+<code class="varname">IMAGE_VERSION</code> are updated when the entire system
+          image is replaced during an update. <code class="varname">BUILD_ID</code> may be used in distributions where
+          the original installation image version is important: <code class="varname">VERSION_ID</code> would change
+          during incremental system updates, but <code class="varname">BUILD_ID</code> would not. This field is
+          optional.</p><p>Examples: "<code class="literal">BUILD_ID="2013-03-20.3"</code>", "<code class="literal">BUILD_ID=201303203</code>".
+          </p><p><a name="v200"></a>Added in version 200.</p></dd><dt id="IMAGE_ID="><span class="term"><code class="varname">IMAGE_ID=</code></span><a class="headerlink" title="Permalink to this term" href="#IMAGE_ID=">¶</a></dt><dd><p> A lower-case string (no spaces or other characters outside of 0–9, a–z, ".", "_"
+          and "-"), identifying a specific image of the operating system. This is supposed to be used for
+          environments where OS images are prepared, built, shipped and updated as comprehensive, consistent
+          OS images. This field is optional and may not be implemented on all systems, in particularly not on
+          those that are not managed via images but put together and updated from individual packages and on
+          the local system.</p><p>Examples: "<code class="literal">IMAGE_ID=vendorx-cashier-system</code>",
+          "<code class="literal">IMAGE_ID=netbook-image</code>".</p><p><a name="v249"></a>Added in version 249.</p></dd><dt id="IMAGE_VERSION="><span class="term"><code class="varname">IMAGE_VERSION=</code></span><a class="headerlink" title="Permalink to this term" href="#IMAGE_VERSION=">¶</a></dt><dd><p>A lower-case string (mostly numeric, no spaces or other characters outside of 0–9,
+          a–z, ".", "_" and "-") identifying the OS image version. This is supposed to be used together with
+          <code class="varname">IMAGE_ID</code> described above, to discern different versions of the same image.
+          </p><p>Examples: "<code class="literal">IMAGE_VERSION=33</code>", "<code class="literal">IMAGE_VERSION=47.1rc1</code>".
+          </p><p><a name="v249"></a>Added in version 249.</p></dd></dl></div><p>To summarize: if the image updates are built and shipped as comprehensive units,
+      <code class="varname">IMAGE_ID</code>+<code class="varname">IMAGE_VERSION</code> is the best fit. Otherwise, if updates
+      eventually completely replace previously installed contents, as in a typical binary distribution,
+      <code class="varname">VERSION_ID</code> should be used to identify major releases of the operating system.
+      <code class="varname">BUILD_ID</code> may be used instead or in addition to <code class="varname">VERSION_ID</code> when
+      the original system image version is important.</p></div><div class="refsect2"><a name="id-1.6.5"></a><h3 id="Presentation information and links">Presentation information and links<a class="headerlink" title="Permalink to this headline" href="#Presentation%20information%20and%20links">¶</a></h3><div class="variablelist"><dl class="variablelist"><dt id="HOME_URL="><span class="term"><code class="varname">HOME_URL=</code>, </span><span class="term"><code class="varname">DOCUMENTATION_URL=</code>, </span><span class="term"><code class="varname">SUPPORT_URL=</code>, </span><span class="term"><code class="varname">BUG_REPORT_URL=</code>, </span><span class="term"><code class="varname">PRIVACY_POLICY_URL=</code></span><a class="headerlink" title="Permalink to this term" href="#HOME_URL=">¶</a></dt><dd><p>Links to resources on the Internet related to the operating system.
+          <code class="varname">HOME_URL=</code> should refer to the homepage of the operating system, or alternatively
+          some homepage of the specific version of the operating system.
+          <code class="varname">DOCUMENTATION_URL=</code> should refer to the main documentation page for this
+          operating system.  <code class="varname">SUPPORT_URL=</code> should refer to the main support page for the
+          operating system, if there is any. This is primarily intended for operating systems which vendors
+          provide support for. <code class="varname">BUG_REPORT_URL=</code> should refer to the main bug reporting page
+          for the operating system, if there is any. This is primarily intended for operating systems that
+          rely on community QA. <code class="varname">PRIVACY_POLICY_URL=</code> should refer to the main privacy
+          policy page for the operating system, if there is any. These settings are optional, and providing
+          only some of these settings is common. These URLs are intended to be exposed in "About this system"
+          UIs behind links with captions such as "About this Operating System", "Obtain Support", "Report a
+          Bug", or "Privacy Policy". The values should be in <a class="ulink" href="https://tools.ietf.org/html/rfc3986" target="_top">RFC3986 format</a>, and should be
+          "<code class="literal">http:</code>" or "<code class="literal">https:</code>" URLs, and possibly "<code class="literal">mailto:</code>"
+          or "<code class="literal">tel:</code>". Only one URL shall be listed in each setting. If multiple resources
+          need to be referenced, it is recommended to provide an online landing page linking all available
+          resources.</p><p>Examples: "<code class="literal">HOME_URL="https://fedoraproject.org/"</code>",
+          "<code class="literal">BUG_REPORT_URL="https://bugzilla.redhat.com/"</code>".</p></dd><dt id="SUPPORT_END="><span class="term"><code class="varname">SUPPORT_END=</code></span><a class="headerlink" title="Permalink to this term" href="#SUPPORT_END=">¶</a></dt><dd><p>The date at which support for this version of the OS ends. (What exactly "lack of
+          support" means varies between vendors, but generally users should assume that updates, including
+          security fixes, will not be provided.) The value is a date in the ISO 8601 format
+          "<code class="literal">YYYY-MM-DD</code>", and specifies the first day on which support <span class="emphasis"><em>is
+          not</em></span> provided.</p><p>For example, "<code class="literal">SUPPORT_END=2001-01-01</code>" means that the system was supported
+          until the end of the last day of the previous millennium.</p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="LOGO="><span class="term"><code class="varname">LOGO=</code></span><a class="headerlink" title="Permalink to this term" href="#LOGO=">¶</a></dt><dd><p>A string, specifying the name of an icon as defined by <a class="ulink" href="https://standards.freedesktop.org/icon-theme-spec/latest" target="_top">freedesktop.org Icon Theme
+          Specification</a>. This can be used by graphical applications to display an operating system's
+          or distributor's logo. This field is optional and may not necessarily be implemented on all
+          systems.</p><p>Examples: "<code class="literal">LOGO=fedora-logo</code>", "<code class="literal">LOGO=distributor-logo-opensuse</code>"
+          </p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="ANSI_COLOR="><span class="term"><code class="varname">ANSI_COLOR=</code></span><a class="headerlink" title="Permalink to this term" href="#ANSI_COLOR=">¶</a></dt><dd><p>A suggested presentation color when showing the OS name on the console. This should
+          be specified as string suitable for inclusion in the ESC [ m ANSI/ECMA-48 escape code for setting
+          graphical rendition. This field is optional.</p><p>Examples: "<code class="literal">ANSI_COLOR="0;31"</code>" for red, "<code class="literal">ANSI_COLOR="1;34"</code>"
+          for light blue, or "<code class="literal">ANSI_COLOR="0;38;2;60;110;180"</code>" for Fedora blue.
+          </p></dd><dt id="VENDOR_NAME="><span class="term"><code class="varname">VENDOR_NAME=</code></span><a class="headerlink" title="Permalink to this term" href="#VENDOR_NAME=">¶</a></dt><dd><p>The name of the OS vendor. This is the name of the organization or company which
+          produces the OS. This field is optional.</p><p>This name is intended to be exposed in "About this system" UIs or software update UIs when
+          needed to distinguish the OS vendor from the OS itself. It is intended to be human readable.</p><p>Examples: "<code class="literal">VENDOR_NAME="Fedora Project"</code>" for Fedora Linux,
+          "<code class="literal">VENDOR_NAME="Canonical"</code>" for Ubuntu.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="VENDOR_URL="><span class="term"><code class="varname">VENDOR_URL=</code></span><a class="headerlink" title="Permalink to this term" href="#VENDOR_URL=">¶</a></dt><dd><p>The homepage of the OS vendor. This field is optional. The
+          <code class="varname">VENDOR_NAME=</code> field should be set if this one is, although clients must be
+          robust against either field not being set.</p><p>The value should be in <a class="ulink" href="https://tools.ietf.org/html/rfc3986" target="_top">RFC3986 format</a>, and should be
+          "<code class="literal">http:</code>" or "<code class="literal">https:</code>" URLs. Only one URL shall be listed in the
+          setting.</p><p>Examples: "<code class="literal">VENDOR_URL="https://fedoraproject.org/"</code>",
+          "<code class="literal">VENDOR_URL="https://canonical.com/"</code>".</p><p><a name="v254"></a>Added in version 254.</p></dd></dl></div></div><div class="refsect2"><a name="id-1.6.6"></a><h3 id="Distribution-level defaults and metadata">Distribution-level defaults and metadata<a class="headerlink" title="Permalink to this headline" href="#Distribution-level%20defaults%20and%20metadata">¶</a></h3><div class="variablelist"><dl class="variablelist"><dt id="DEFAULT_HOSTNAME="><span class="term"><code class="varname">DEFAULT_HOSTNAME=</code></span><a class="headerlink" title="Permalink to this term" href="#DEFAULT_HOSTNAME=">¶</a></dt><dd><p>A string specifying the hostname if
+          <a href="hostname.html#"><span class="citerefentry"><span class="refentrytitle">hostname</span>(5)</span></a> is not
+          present and no other configuration source specifies the hostname. Must be either a single DNS label
+          (a string composed of 7-bit ASCII lower-case characters and no spaces or dots, limited to the
+          format allowed for DNS domain name labels), or a sequence of such labels separated by single dots
+          that forms a valid DNS FQDN. The hostname must be at most 64 characters, which is a Linux
+          limitation (DNS allows longer names).</p><p>See <a href="org.freedesktop.hostname1.html#"><span class="citerefentry"><span class="refentrytitle">org.freedesktop.hostname1</span>(5)</span></a>
+          for a description of how
+          <a href="systemd-hostnamed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-hostnamed.service</span>(8)</span></a>
+          determines the fallback hostname.</p><p><a name="v248"></a>Added in version 248.</p></dd><dt id="ARCHITECTURE="><span class="term"><code class="varname">ARCHITECTURE=</code></span><a class="headerlink" title="Permalink to this term" href="#ARCHITECTURE=">¶</a></dt><dd><p>A string that specifies which CPU architecture the userspace binaries require.
+          The architecture identifiers are the same as for <code class="varname">ConditionArchitecture=</code>
+          described in <a href="systemd.unit.html#"><span class="citerefentry"><span class="refentrytitle">systemd.unit</span>(5)</span></a>.
+          The field is optional and should only be used when just single architecture is supported.
+          It may provide redundant information when used in a GPT partition with a GUID type that already
+          encodes the architecture. If this is not the case, the architecture should be specified in
+          e.g., an extension image, to prevent an incompatible host from loading it.
+          </p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="SYSEXT_LEVEL="><span class="term"><code class="varname">SYSEXT_LEVEL=</code></span><a class="headerlink" title="Permalink to this term" href="#SYSEXT_LEVEL=">¶</a></dt><dd><p>A lower-case string (mostly numeric, no spaces or other characters outside of 0–9,
+          a–z, ".", "_" and "-") identifying the operating system extensions support level, to indicate which
+          extension images are supported. See <code class="filename">/usr/lib/extension-release.d/extension-release.<em class="replaceable"><code>IMAGE</code></em></code>,
+          <a class="ulink" href="https://docs.kernel.org/admin-guide/initrd.html" target="_top">initrd</a> and
+          <a href="systemd-sysext.html#"><span class="citerefentry"><span class="refentrytitle">systemd-sysext</span>(8)</span></a>)
+          for more information.</p><p>Examples: "<code class="literal">SYSEXT_LEVEL=2</code>", "<code class="literal">SYSEXT_LEVEL=15.14</code>".
+          </p><p><a name="v248"></a>Added in version 248.</p></dd><dt id="CONFEXT_LEVEL="><span class="term"><code class="varname">CONFEXT_LEVEL=</code></span><a class="headerlink" title="Permalink to this term" href="#CONFEXT_LEVEL=">¶</a></dt><dd><p>Semantically the same as <code class="varname">SYSEXT_LEVEL=</code> but for confext images.
+          See <code class="filename">/etc/extension-release.d/extension-release.<em class="replaceable"><code>IMAGE</code></em></code>
+          for more information.</p><p>Examples: "<code class="literal">CONFEXT_LEVEL=2</code>", "<code class="literal">CONFEXT_LEVEL=15.14</code>".
+          </p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="SYSEXT_SCOPE="><span class="term"><code class="varname">SYSEXT_SCOPE=</code></span><a class="headerlink" title="Permalink to this term" href="#SYSEXT_SCOPE=">¶</a></dt><dd><p>Takes a space-separated list of one or more of the strings
+          "<code class="literal">system</code>", "<code class="literal">initrd</code>" and "<code class="literal">portable</code>". This field is
+          only supported in <code class="filename">extension-release.d/</code> files and indicates what environments
+          the system extension is applicable to: i.e. to regular systems, to initrds, or to portable service
+          images. If unspecified, "<code class="literal">SYSEXT_SCOPE=system portable</code>" is implied, i.e. any system
+          extension without this field is applicable to regular systems and to portable service environments,
+          but not to initrd environments.</p><p><a name="v250"></a>Added in version 250.</p></dd><dt id="CONFEXT_SCOPE="><span class="term"><code class="varname">CONFEXT_SCOPE=</code></span><a class="headerlink" title="Permalink to this term" href="#CONFEXT_SCOPE=">¶</a></dt><dd><p>Semantically the same as <code class="varname">SYSEXT_SCOPE=</code> but for confext images.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="PORTABLE_PREFIXES="><span class="term"><code class="varname">PORTABLE_PREFIXES=</code></span><a class="headerlink" title="Permalink to this term" href="#PORTABLE_PREFIXES=">¶</a></dt><dd><p>Takes a space-separated list of one or more valid prefix match strings for the
+          <a class="ulink" href="https://systemd.io/PORTABLE_SERVICES" target="_top">Portable Services</a> logic.
+          This field serves two purposes: it is informational, identifying portable service images as such
+          (and thus allowing them to be distinguished from other OS images, such as bootable system images).
+          It is also used when a portable service image is attached: the specified or implied portable
+          service prefix is checked against the list specified here, to enforce restrictions how images may
+          be attached to a system.</p><p><a name="v250"></a>Added in version 250.</p></dd></dl></div></div><div class="refsect2"><a name="id-1.6.7"></a><h3 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h3><p>If you are using this file to determine the OS or a specific version of it, use the
+      <code class="varname">ID</code> and <code class="varname">VERSION_ID</code> fields, possibly with
+      <code class="varname">ID_LIKE</code> as fallback for <code class="varname">ID</code>. When looking for an OS identification
+      string for presentation to the user use the <code class="varname">PRETTY_NAME</code> field.</p><p>Note that operating system vendors may choose not to provide version information, for example to
+      accommodate for rolling releases. In this case, <code class="varname">VERSION</code> and
+      <code class="varname">VERSION_ID</code> may be unset. Applications should not rely on these fields to be
+      set.</p><p>Operating system vendors may extend the file format and introduce new fields. It is highly
+      recommended to prefix new fields with an OS specific name in order to avoid name clashes. Applications
+      reading this file must ignore unknown fields.</p><p>Example: "<code class="literal">DEBIAN_BTS="debbugs://bugs.debian.org/"</code>".</p><p>Container and sandbox runtime managers may make the host's identification data available to
+      applications by providing the host's <code class="filename">/etc/os-release</code> (if available, otherwise
+      <code class="filename">/usr/lib/os-release</code> as a fallback) as
+      <code class="filename">/run/host/os-release</code>.</p></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.7.2"></a><p class="title"><b>Example 1. <code class="filename">os-release</code> file for Fedora Workstation</b></p><div class="example-contents"><pre class="programlisting">NAME=Fedora
+VERSION="32 (Workstation Edition)"
+ID=fedora
+VERSION_ID=32
+PRETTY_NAME="Fedora 32 (Workstation Edition)"
+ANSI_COLOR="0;38;2;60;110;180"
+LOGO=fedora-logo-icon
+CPE_NAME="cpe:/o:fedoraproject:fedora:32"
+HOME_URL="https://fedoraproject.org/"
+DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f32/system-administrators-guide/"
+SUPPORT_URL="https://fedoraproject.org/wiki/Communicating_and_getting_help"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=32
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=32
+PRIVACY_POLICY_URL="https://fedoraproject.org/wiki/Legal:PrivacyPolicy"
+VARIANT="Workstation Edition"
+VARIANT_ID=workstation</pre></div></div><br class="example-break"><div class="example"><a name="id-1.7.3"></a><p class="title"><b>Example 2. <code class="filename">extension-release</code> file for an extension for Fedora Workstation 32</b></p><div class="example-contents"><pre class="programlisting">ID=fedora
+VERSION_ID=32</pre></div></div><br class="example-break"><div class="example"><a name="id-1.7.4"></a><p class="title"><b>Example 3. Reading <code class="filename">os-release</code> in
+      <a href="https://man7.org/linux/man-pages/man1/sh.1.html"><span class="citerefentry"><span class="refentrytitle">sh</span>(1)</span></a></b></p><div class="example-contents"><pre class="programlisting">#!/bin/sh -eu
+# SPDX-License-Identifier: MIT-0
+
+test -e /etc/os-release &amp;&amp; os_release='/etc/os-release' || os_release='/usr/lib/os-release'
+. "${os_release}"
+
+echo "Running on ${PRETTY_NAME:-Linux}"
+
+if [ "${ID:-linux}" = "debian" ] || [ "${ID_LIKE#*debian*}" != "${ID_LIKE}" ]; then
+    echo "Looks like Debian!"
+fi
+</pre></div></div><br class="example-break"><div class="example"><a name="id-1.7.5"></a><p class="title"><b>Example 4. Reading <code class="filename">os-release</code> in
+      <a href="http://linux.die.net/man/1/python"><span class="citerefentry"><span class="refentrytitle">python</span>(1)</span></a> (versions &gt;= 3.10)</b></p><div class="example-contents"><pre class="programlisting">#!/usr/bin/python
+# SPDX-License-Identifier: MIT-0
+
+import platform
+os_release = platform.freedesktop_os_release()
+
+pretty_name = os_release.get('PRETTY_NAME', 'Linux')
+print(f'Running on {pretty_name!r}')
+
+if 'fedora' in [os_release.get('ID', 'linux'),
+                *os_release.get('ID_LIKE', '').split()]:
+    print('Looks like Fedora!')
+</pre><p>See docs for <a class="ulink" href="https://docs.python.org/3/library/platform.html#platform.freedesktop_os_release#platform.freedesktop_os_release" target="_top">
+      <code class="function">platform.freedesktop_os_release</code></a> for more details.
+      </p></div></div><br class="example-break"><div class="example"><a name="id-1.7.6"></a><p class="title"><b>Example 5. Reading <code class="filename">os-release</code> in
+      <a href="http://linux.die.net/man/1/python"><span class="citerefentry"><span class="refentrytitle">python</span>(1)</span></a> (any version)</b></p><div class="example-contents"><pre class="programlisting">#!/usr/bin/python
+# SPDX-License-Identifier: MIT-0
+
+import ast
+import re
+import sys
+
+def read_os_release():
+    try:
+        filename = '/etc/os-release'
+        f = open(filename)
+    except FileNotFoundError:
+        filename = '/usr/lib/os-release'
+        f = open(filename)
+
+    for line_number, line in enumerate(f, start=1):
+        line = line.rstrip()
+        if not line or line.startswith('#'):
+            continue
+        m = re.match(r'([A-Z][A-Z_0-9]+)=(.*)', line)
+        if m:
+            name, val = m.groups()
+            if val and val[0] in '"\'':
+                val = ast.literal_eval(val)
+            yield name, val
+        else:
+            print(f'{filename}:{line_number}: bad line {line!r}',
+                  file=sys.stderr)
+
+os_release = dict(read_os_release())
+
+pretty_name = os_release.get('PRETTY_NAME', 'Linux')
+print(f'Running on {pretty_name!r}')
+
+if 'debian' in [os_release.get('ID', 'linux'),
+                *os_release.get('ID_LIKE', '').split()]:
+    print('Looks like Debian!')
+</pre><p>Note that the above version that uses the built-in implementation is preferred
+      in most cases, and the open-coded version here is provided for reference.</p></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.8"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+        <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+        <a href="http://linux.die.net/man/1/lsb_release"><span class="citerefentry"><span class="refentrytitle">lsb_release</span>(1)</span></a>,
+        <a href="hostname.html#"><span class="citerefentry"><span class="refentrytitle">hostname</span>(5)</span></a>,
+        <a href="machine-id.html#"><span class="citerefentry"><span class="refentrytitle">machine-id</span>(5)</span></a>,
+        <a href="machine-info.html#"><span class="citerefentry"><span class="refentrytitle">machine-info</span>(5)</span></a>
+      </p></div></div></body></html>

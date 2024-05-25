@@ -1,0 +1,60 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-sysctl.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-sysctl.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-sysctl.service, systemd-sysctl — Configure kernel parameters at boot</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">/usr/lib/systemd/systemd-sysctl</code>  [OPTIONS...] [<em class="replaceable"><code>CONFIGFILE</code></em>...]</p></div><p><code class="filename">systemd-sysctl.service</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">systemd-sysctl.service</code> is an early boot
+    service that configures
+    <a href="https://man7.org/linux/man-pages/man8/sysctl.8.html"><span class="citerefentry"><span class="refentrytitle">sysctl</span>(8)</span></a>
+    kernel parameters by invoking <span class="command"><strong>/usr/lib/systemd/systemd-sysctl</strong></span>.</p><p>When invoked with no arguments, <span class="command"><strong>/usr/lib/systemd/systemd-sysctl</strong></span> applies
+    all directives from configuration files listed in
+    <a href="sysctl.d.html#"><span class="citerefentry"><span class="refentrytitle">sysctl.d</span>(5)</span></a>.
+    If one or more filenames are passed on the command line, only the directives in these files are
+    applied.</p><p>In addition, <code class="option">--prefix=</code> option may be used to limit which sysctl
+    settings are applied.</p><p>See
+    <a href="sysctl.d.html#"><span class="citerefentry"><span class="refentrytitle">sysctl.d</span>(5)</span></a>
+    for information about the configuration of sysctl settings. After sysctl configuration is
+    changed on disk, it must be written to the files in <code class="filename">/proc/sys/</code> before it
+    takes effect. It is possible to update specific settings, or simply to reload all configuration,
+    see Examples below.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="--prefix="><span class="term"><code class="option">--prefix=</code></span><a class="headerlink" title="Permalink to this term" href="#--prefix=">¶</a></dt><dd><p>Only apply rules with the specified prefix.</p><p><a name="v230"></a>Added in version 230.</p></dd><dt id="--strict="><span class="term"><code class="option">--strict=</code></span><a class="headerlink" title="Permalink to this term" href="#--strict=">¶</a></dt><dd><p>Always return non-zero exit code on failure (including invalid sysctl variable
+          name and insufficient permissions), unless the sysctl variable name is prefixed with a "-"
+          character.</p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="--cat-config"><span class="term"><code class="option">--cat-config</code></span><a class="headerlink" title="Permalink to this term" href="#--cat-config">¶</a></dt><dd><p>Copy the contents of config files to standard output.
+      Before each file, the filename is printed as a comment.</p></dd><dt id="--tldr"><span class="term"><code class="option">--tldr</code></span><a class="headerlink" title="Permalink to this term" href="#--tldr">¶</a></dt><dd><p>Copy the contents of config files to standard output. Only the "interesting" parts of the
+      configuration files are printed, comments and empty lines are skipped. Before each file, the filename
+      is printed as a comment.</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Credentials">Credentials<a class="headerlink" title="Permalink to this headline" href="#Credentials">¶</a></h2><p><span class="command"><strong>systemd-sysctl</strong></span> supports the service credentials logic as implemented by
+    <code class="varname">ImportCredential=</code>/<code class="varname">LoadCredential=</code>/<code class="varname">SetCredential=</code>
+    (see <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(1)</span></a> for
+    details). The following credentials are used when passed in:</p><div class="variablelist"><dl class="variablelist"><dt id="sysctl.extra"><span class="term"><code class="varname">sysctl.extra</code></span><a class="headerlink" title="Permalink to this term" href="#sysctl.extra">¶</a></dt><dd><p>The contents of this credential may contain additional lines to operate on. The
+        credential contents should follow the same format as any other <code class="filename">sysctl.d/</code> drop-in
+        configuration file. If this credential is passed it is processed after all of the drop-in files read
+        from the file system. The settings configured in the credential hence take precedence over those in
+        the file system.</p><p><a name="v252"></a>Added in version 252.</p></dd></dl></div><p>Note that by default the <code class="filename">systemd-sysctl.service</code> unit file is set up to inherit
+    the "<code class="literal">sysctl.extra</code>" credential from the service manager.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Reset all sysctl settings</b></p><div class="example-contents"><pre class="programlisting">systemctl restart systemd-sysctl</pre></div></div><br class="example-break"><div class="example"><a name="id-1.8.3"></a><p class="title"><b>Example 2. View coredump handler configuration</b></p><div class="example-contents"><pre class="programlisting"># sysctl kernel.core_pattern
+kernel.core_pattern = |/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t %P %I
+</pre></div></div><br class="example-break"><div class="example"><a name="id-1.8.4"></a><p class="title"><b>Example 3. Update coredump handler configuration</b></p><div class="example-contents"><pre class="programlisting"># /usr/lib/systemd/systemd-sysctl --prefix kernel.core_pattern</pre><p>This searches all the directories listed in
+      <a href="sysctl.d.html#"><span class="citerefentry"><span class="refentrytitle">sysctl.d</span>(5)</span></a>
+      for configuration files and writes <code class="filename">/proc/sys/kernel/core_pattern</code>.</p></div></div><br class="example-break"><div class="example"><a name="id-1.8.5"></a><p class="title"><b>Example 4. Update coredump handler configuration according to a specific file</b></p><div class="example-contents"><pre class="programlisting"># /usr/lib/systemd/systemd-sysctl 50-coredump.conf</pre><p>This applies all the settings found in <code class="filename">50-coredump.conf</code>.
+      Either <code class="filename">/etc/sysctl.d/50-coredump.conf</code>, or
+      <code class="filename">/run/sysctl.d/50-coredump.conf</code>, or
+      <code class="filename">/usr/lib/sysctl.d/50-coredump.conf</code> will be used, in the order
+      of preference.</p></div></div><br class="example-break"><p>See
+    <a href="https://man7.org/linux/man-pages/man8/sysctl.8.html"><span class="citerefentry"><span class="refentrytitle">sysctl</span>(8)</span></a>
+    for various ways to directly apply sysctl settings.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sysctl.d.html#"><span class="citerefentry"><span class="refentrytitle">sysctl.d</span>(5)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/sysctl.8.html"><span class="citerefentry"><span class="refentrytitle">sysctl</span>(8)</span></a>
+    </p></div></div></body></html>

@@ -1,0 +1,118 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd.environment-generator</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd.environment-generator"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd.environment-generator — systemd environment file generators</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">/usr/lib/systemd/system-environment-generators/some-generator</code> </p></div><div class="cmdsynopsis"><p><code class="command">/usr/lib/systemd/user-environment-generators/some-generator</code> </p></div><p>
+      </p><div class="literallayout"><p><code class="filename">/run/systemd/system-environment-generators/*</code><br>
+<code class="filename">/etc/systemd/system-environment-generators/*</code><br>
+<code class="filename">/usr/local/lib/systemd/system-environment-generators/*</code><br>
+<code class="filename">/usr/lib/systemd/system-environment-generators/*</code></p></div><p>
+    </p><p>
+      </p><div class="literallayout"><p><code class="filename">/run/systemd/user-environment-generators/*</code><br>
+<code class="filename">/etc/systemd/user-environment-generators/*</code><br>
+<code class="filename">/usr/local/lib/systemd/user-environment-generators/*</code><br>
+<code class="filename">/usr/lib/systemd/user-environment-generators/*</code></p></div><p>
+    </p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>Generators are small executables that live in
+    <code class="filename">/usr/lib/systemd/system-environment-generators/</code> and other directories listed above.
+    <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a> will
+    execute those binaries very early at the startup of each manager and at configuration
+    reload time, before running the generators described in
+    <a href="systemd.generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd.generator</span>(7)</span></a>
+    and before starting any units. Environment generators can override the environment that the
+    manager exports to services and other processes.</p><p>Generators are loaded from a set of paths determined during compilation, as listed
+    above. System and user environment generators are loaded from directories with names ending in
+    <code class="filename">system-environment-generators/</code> and
+    <code class="filename">user-environment-generators/</code>, respectively. Generators found in directories
+    listed earlier override the ones with the same name in directories lower in the list. A symlink
+    to <code class="filename">/dev/null</code> or an empty file can be used to mask a generator, thereby
+    preventing it from running. Please note that the order of the two directories with the highest
+    priority is reversed with respect to the unit load path, and generators in
+    <code class="filename">/run/</code> overwrite those in <code class="filename">/etc/</code>.</p><p>After installing new generators or updating the configuration, <span class="command"><strong>systemctl
+    daemon-reload</strong></span> may be executed. This will re-run all generators, updating environment
+    configuration. It will be used for any services that are started subsequently.</p><p>Environment file generators are executed similarly to unit file generators described
+    in
+    <a href="systemd.generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd.generator</span>(7)</span></a>,
+    with the following differences:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Generators are executed sequentially in the alphanumerical order of the final
+        component of their name. The output of each generator output is immediately parsed and used
+        to update the environment for generators that run after that. Thus, later generators can use
+        and/or modify the output of earlier generators.</p></li><li class="listitem"><p>Generators are run by every manager instance, their output can be different for each
+        user.</p></li></ul></div><p>It is recommended to use numerical prefixes for generator names to simplify ordering.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.6.2"></a><p class="title"><b>Example 1. A simple generator that extends an environment variable if a directory exists in the file system</b></p><div class="example-contents"><pre class="programlisting"># 50-xdg-data-dirs.sh
+
+#!/bin/sh
+# SPDX-License-Identifier: MIT-0
+
+# set the default value
+XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share/:/usr/share}"
+
+# add a directory if it exists
+if [ -d /opt/foo/share ]; then
+    XDG_DATA_DIRS="/opt/foo/share:${XDG_DATA_DIRS}"
+fi
+
+# write our output
+echo "XDG_DATA_DIRS=${XDG_DATA_DIRS}"
+</pre></div></div><br class="example-break"><div class="example"><a name="id-1.6.3"></a><p class="title"><b>Example 2. A more complicated generator which reads existing configuration and mutates one variable</b></p><div class="example-contents"><pre class="programlisting"># 90-rearrange-path.py
+
+#!/usr/bin/env python3
+# SPDX-License-Identifier: MIT-0
+
+"""
+
+Proof-of-concept systemd environment generator that makes sure that bin dirs
+are always after matching sbin dirs in the path.
+(Changes /sbin:/bin:/foo/bar to /bin:/sbin:/foo/bar.)
+
+This generator shows how to override the configuration possibly created by
+earlier generators. It would be easier to write in bash, but let's have it
+in Python just to prove that we can, and to serve as a template for more
+interesting generators.
+
+"""
+
+import os
+import pathlib
+
+def rearrange_bin_sbin(path):
+    """Make sure any pair of …/bin, …/sbin directories is in this order
+
+    &gt;&gt;&gt; rearrange_bin_sbin('/bin:/sbin:/usr/sbin:/usr/bin')
+    '/bin:/sbin:/usr/bin:/usr/sbin'
+    """
+    items = [pathlib.Path(p) for p in path.split(':')]
+    for i in range(len(items)):
+        if 'sbin' in items[i].parts:
+            ind = items[i].parts.index('sbin')
+            bin = pathlib.Path(*items[i].parts[:ind], 'bin', *items[i].parts[ind+1:])
+            if bin in items[i+1:]:
+                j = i + 1 + items[i+1:].index(bin)
+                items[i], items[j] = items[j], items[i]
+    return ':'.join(p.as_posix() for p in items)
+
+if __name__ == '__main__':
+    path = os.environ['PATH'] # This should be always set.
+                              # If it's not, we'll just crash, which is OK too.
+    new = rearrange_bin_sbin(path)
+    if new != path:
+        print('PATH={}'.format(new))
+</pre></div></div><br class="example-break"><div class="example"><a name="id-1.6.4"></a><p class="title"><b>Example 3. Debugging a generator</b></p><div class="example-contents"><pre class="programlisting">SYSTEMD_LOG_LEVEL=debug VAR_A=something VAR_B="something else" \
+/usr/lib/systemd/system-environment-generators/path-to-generator
+</pre></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See also">See also<a class="headerlink" title="Permalink to this headline" href="#See%20also">¶</a></h2><p>
+      <a href="systemd-environment-d-generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd-environment-d-generator</span>(8)</span></a>,
+      <a href="systemd.generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd.generator</span>(7)</span></a>,
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemctl.html#"><span class="citerefentry"><span class="refentrytitle">systemctl</span>(1)</span></a>
+    </p></div></div></body></html>

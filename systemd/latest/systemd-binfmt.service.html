@@ -1,0 +1,33 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-binfmt.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-binfmt.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-binfmt.service, systemd-binfmt — Configure additional binary formats for executables at boot</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-binfmt.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-binfmt</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">systemd-binfmt.service</code> is an early boot
+    service that registers additional binary formats for executables
+    in the kernel.</p><p>See
+    <a href="binfmt.d.html#"><span class="citerefentry"><span class="refentrytitle">binfmt.d</span>(5)</span></a>
+    for information about the configuration of this service.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="--unregister"><span class="term"><code class="option">--unregister</code></span><a class="headerlink" title="Permalink to this term" href="#--unregister">¶</a></dt><dd><p>If passed, instead of registering configured binary formats in the kernel, the
+        reverse operation is executed: all currently registered binary formats are unregistered from the
+        kernel.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="--cat-config"><span class="term"><code class="option">--cat-config</code></span><a class="headerlink" title="Permalink to this term" href="#--cat-config">¶</a></dt><dd><p>Copy the contents of config files to standard output.
+      Before each file, the filename is printed as a comment.</p></dd><dt id="--tldr"><span class="term"><code class="option">--tldr</code></span><a class="headerlink" title="Permalink to this term" href="#--tldr">¶</a></dt><dd><p>Copy the contents of config files to standard output. Only the "interesting" parts of the
+      configuration files are printed, comments and empty lines are skipped. Before each file, the filename
+      is printed as a comment.</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="binfmt.d.html#"><span class="citerefentry"><span class="refentrytitle">binfmt.d</span>(5)</span></a>,
+      <a href="http://linux.die.net/man/8/wine"><span class="citerefentry"><span class="refentrytitle">wine</span>(8)</span></a>
+    </p></div></div></body></html>

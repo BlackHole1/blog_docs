@@ -1,0 +1,578 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sysctl.d</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="sysctl.d" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><div class="titlepage" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></div><div class="refnamediv" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><h2 data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">sysctl.d — Configure kernel parameters at boot<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">sysctl.d — 在启动时配置内核参数</font></font></font></p></div><div class="refsynopsisdiv" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><h2 data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Synopsis<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">简介</font></font></font></h2><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/sysctl.d/*.conf</code></p><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/run/sysctl.d/*.conf</code></p><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/lib/sysctl.d/*.conf</code></p><pre class="programlisting">key.name.under.proc.sys = some value
+key/name/under/proc/sys = some value
+key/middle.part.with.dots/foo = 123
+key.middle/part/with/dots.foo = 123
+-key.that.will.not.fail = value
+key.pattern.*.with.glob = whatever
+-key.pattern.excluded.with.glob
+key.pattern.overridden.with.glob = custom
+</pre></div><div class="refsect1" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="id-1.5" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><h2 id="Description" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Description<a class="headerlink" title="Permalink to this headline" href="#Description" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h2><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">At boot,
+    <a href="systemd-sysctl.service.html#" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">systemd-sysctl.service</span>(8)</span></a>
+    reads configuration files from the above directories to configure
+    <a href="https://man7.org/linux/man-pages/man8/sysctl.8.html" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">sysctl</span>(8)</span></a>
+    kernel parameters.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在启动时，systemd-sysctl.service(8) 从上述目录中读取配置文件，以配置 sysctl(8) 内核参数。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="id-1.6" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><h2 id="Configuration Format" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Configuration Format<a class="headerlink" title="Permalink to this headline" href="#Configuration%20Format" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配置格式 ¶</font></font></font></h2><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">The configuration files contain a list of variable
+    assignments, separated by newlines. Empty lines and lines whose
+    first non-whitespace character is "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">#</code>" or
+    "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">;</code>" are ignored.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配置文件包含一系列变量赋值，由换行符分隔。空行和第一个非空白字符为 " <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">#</code> " 或 " <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">;</code> " 的行将被忽略。</font></font></font></p><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Note that either "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/</code>" or "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">.</code>" may be used as separators within
+    sysctl variable names. If the first separator is a slash, remaining slashes and dots are left intact. If
+    the first separator is a dot, dots and slashes are interchanged.
+    "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">kernel.domainname=foo</code>" and "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">kernel/domainname=foo</code>" are equivalent and
+    will cause "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">foo</code>" to be written to
+    <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/proc/sys/kernel/domainname</code>. Either
+    "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.conf.enp3s0/200.forwarding</code>" or
+    "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net/ipv4/conf/enp3s0.200/forwarding</code>" may be used to refer to
+    <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/proc/sys/net/ipv4/conf/enp3s0.200/forwarding</code>. A glob
+    <a href="https://man7.org/linux/man-pages/man7/glob.7.html" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">glob</span>(7)</span></a> pattern may be
+    used to write the same value to all matching keys. Keys for which an explicit pattern exists will be
+    excluded from any glob matching. In addition, a key may be explicitly excluded from being set by any
+    matching glob patterns by specifying the key name prefixed with a "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">-</code>" character and not
+    followed by "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">=</code>", see SYNOPSIS.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，" <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/</code> " 或 " <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">.</code> " 可以用作 sysctl 变量名称中的分隔符。如果第一个分隔符是斜杠，则保留剩余的斜杠和点。如果第一个分隔符是点，则点和斜杠互换。" <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">kernel.domainname=foo</code> " 和 " <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">kernel/domainname=foo</code> " 是等效的，并将导致将 " <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">foo</code> " 写入 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/proc/sys/kernel/domainname</code> 。可以使用 " <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.conf.enp3s0/200.forwarding</code> " 或 " <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net/ipv4/conf/enp3s0.200/forwarding</code> " 来引用 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/proc/sys/net/ipv4/conf/enp3s0.200/forwarding</code> 。可以使用 glob glob(7) 模式将相同的值写入所有匹配的键。具有显式模式的键将被排除在任何 glob 匹配之外。此外，可以通过指定以 " <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">-</code> " 字符为前缀且不跟随 " <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">=</code> " 的键名称来明确排除键不被任何匹配的 glob 模式设置，参见概要。</font></font></font></p><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Any access permission errors and attempts to write variables not present on the local system are
+    logged at debug level and do not cause the service to fail. Other types of errors when setting variables
+    are logged with higher priority and cause the service to return failure at the end (after processing
+    other variables). As an exception, if a variable assignment is prefixed with a single
+    "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">-</code>" character, failure to set the variable for any reason will be logged at debug level
+    and will not cause the service to fail.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">任何访问权限错误和尝试写入本地系统上不存在的变量都会以调试级别记录，并不会导致服务失败。设置变量时的其他类型错误会以更高的优先级记录，并在最后导致服务返回失败（在处理其他变量后）。作为例外，如果变量赋值以单个“ <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">-</code> ”字符为前缀，由于任何原因未能设置变量将以调试级别记录，并不会导致服务失败。</font></font></font></p><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">The settings configured with <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">sysctl.d</code> files will be applied early on boot. The
+    network interface-specific options will also be applied individually for each network interface as it
+    shows up in the system. (More specifically, <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.conf.*</code>,
+    <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv6.conf.*</code>, <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.neigh.*</code> and
+    <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv6.neigh.*</code>).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">sysctl.d</code> 文件配置的设置将在引导时早期应用。网络接口特定选项也将分别应用于系统中显示的每个网络接口。（更具体地说， <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.conf.*</code> ， <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv6.conf.*</code> ， <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.neigh.*</code> 和 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv6.neigh.*</code> ）。</font></font></font></p><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Many sysctl parameters only become available when certain
+    kernel modules are loaded. Modules are usually loaded on demand,
+    e.g. when certain hardware is plugged in or network brought up.
+    This means that
+    <a href="systemd-sysctl.service.html#" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">systemd-sysctl.service</span>(8)</span></a>
+    which runs during early boot will not configure such parameters if
+    they become available after it has run. To set such parameters, it
+    is recommended to add an
+    <a href="udev.html#" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">udev</span>(7)</span></a>
+    rule to set those parameters when they become available.
+    Alternatively, a slightly simpler and less efficient option is to
+    add the module to
+    <a href="modules-load.d.html#" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">modules-load.d</span>(5)</span></a>,
+    causing it to be loaded statically before sysctl settings are
+    applied (see example below).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">许多 sysctl 参数只有在加载某些内核模块时才会变得可用。模块通常是按需加载的，例如当插入某些硬件或网络启动时。这意味着在早期引导期间运行的 systemd-sysctl.service(8) 将不会配置这些参数，如果这些参数在其运行后变得可用。要设置这些参数，建议添加一个 udev(7) 规则，在这些参数变得可用时设置这些参数。另外，一个稍微简单且效率较低的选项是将模块添加到 modules-load.d(5)，使其在应用 sysctl 设置之前静态加载（请参见下面的示例）。</font></font></font></p></div><div class="refsection" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="confd" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><h2 data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Configuration Directories and Precedence<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配置目录和优先级</font></font></font></h2><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Configuration files are read from directories in <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/</code>,
+    <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/run/</code>, <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/local/lib/</code>, and <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/lib/</code>, in
+    order of precedence, as listed in the SYNOPSIS section above. Files must have the
+    "<code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">.conf</code>" extension. Files in <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/</code> override files with the same name
+    in <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/run/</code>, <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/local/lib/</code>, and
+    <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/lib/</code>. Files in <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/run/</code> override files with the same name
+    under <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配置文件按照优先顺序从 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/</code> 、 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/run/</code> 、 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/local/lib/</code> 和 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/lib/</code> 的目录中读取，如上面的概要部分所列。文件必须具有“ <code class="literal" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">.conf</code> ”扩展名。 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/</code> 中的文件会覆盖 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/run/</code> 、 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/local/lib/</code> 和 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/lib/</code> 中具有相同名称的文件。 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/run/</code> 中的文件会覆盖 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/</code> 下具有相同名称的文件。</font></font></font></p><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">All configuration files are sorted by their filename in lexicographic order, regardless of which of
+    the directories they reside in. If multiple files specify the same option, the entry in the file with the
+    lexicographically latest name will take precedence. Thus, the configuration in a certain file may either
+    be replaced completely (by placing a file with the same name in a directory with higher priority), or
+    individual settings might be changed (by specifying additional settings in a file with a different name
+    that is ordered later).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">所有配置文件都按照它们的文件名按字典顺序排序，无论它们位于哪个目录中。如果多个文件指定相同的选项，则具有字典顺序最晚名称的文件中的条目将优先。因此，某个文件中的配置可能会被完全替换（通过将具有更高优先级目录中相同名称的文件放置在其中），或者可能更改单个设置（通过在稍后排序的具有不同名称的文件中指定附加设置）。</font></font></font></p><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Packages should install their configuration files in <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/lib/</code> (distribution
+    packages) or <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/local/lib/</code> (local installs). Files in <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/</code>
+    are reserved for the local administrator, who may use this logic to override the configuration files
+    installed by vendor packages. It is recommended to prefix all filenames with a two-digit number and a
+    dash, to simplify the ordering of the files.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">包应该将它们的配置文件安装在 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/lib/</code> （发行版包）或 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/usr/local/lib/</code> （本地安装）中。 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/</code> 中的文件保留给本地管理员，管理员可以使用此逻辑来覆盖供应商包安装的配置文件。建议所有文件名都以两位数字和短横线开头，以简化文件的排序。</font></font></font></p><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">If the administrator wants to disable a configuration file supplied by the vendor, the recommended
+    way is to place a symlink to <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/dev/null</code> in the configuration directory in
+    <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/</code>, with the same filename as the vendor configuration file. If the vendor
+    configuration file is included in the initrd image, the image has to be regenerated.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果管理员想要禁用供应商提供的配置文件，推荐的方法是在 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/</code> 的配置目录中放置一个指向 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/dev/null</code> 的符号链接，文件名与供应商配置文件相同。如果供应商配置文件包含在 initrd 映像中，则必须重新生成映像。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="id-1.8" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><h2 id="Examples" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 ¶</font></font></font></h2><div class="example" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="id-1.8.2" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><p class="title" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><b data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Example&nbsp;1.&nbsp;Set kernel YP domain name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 1. 设置内核 YP 域名</font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/sysctl.d/domain-name.conf</code>:
+      </p><pre class="programlisting">kernel.domainname=example.com</pre></div></div><br class="example-break" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><div class="example" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="id-1.8.3" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><p class="title" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><b data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Example&nbsp;2.&nbsp;Apply settings available only when a certain module is loaded (method one)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 2. 仅在加载某个模块时应用可用设置（方法一）</font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/udev/rules.d/99-bridge.rules</code>:
+      </p><pre class="programlisting">ACTION=="add", SUBSYSTEM=="module", KERNEL=="br_netfilter", \
+      RUN+="/usr/lib/systemd/systemd-sysctl --prefix=/net/bridge"
+</pre><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/sysctl.d/bridge.conf</code>:
+      </p><pre class="programlisting">net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+</pre><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">This method applies settings when the module is
+      loaded. Please note that, unless the <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">br_netfilter</code>
+      module is loaded, bridged packets will not be filtered by
+      Netfilter (starting with kernel 3.18), so simply not loading the
+      module is sufficient to avoid filtering.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此方法在加载模块时应用设置。请注意，除非加载 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">br_netfilter</code> 模块，否则桥接数据包将不会被 Netfilter 进行过滤（从内核 3.18 开始），因此简单地不加载该模块就足以避免过滤。</font></font></font></p></div></div><br class="example-break" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><div class="example" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="id-1.8.4" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><p class="title" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><b data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Example&nbsp;3.&nbsp;Apply settings available only when a certain module is loaded (method two)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 3. 仅在加载特定模块时应用可用设置（第二种方法）</font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/modules-load.d/bridge.conf</code>:
+      </p><pre class="programlisting">br_netfilter</pre><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/sysctl.d/bridge.conf</code>:
+      </p><pre class="programlisting">net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+</pre><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">This method forces the module to be always loaded. Please
+      note that, unless the <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">br_netfilter</code> module is
+      loaded, bridged packets will not be filtered with Netfilter
+      (starting with kernel 3.18), so simply not loading the module is
+      sufficient to avoid filtering.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此方法强制始终加载模块。请注意，除非加载 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">br_netfilter</code> 模块，否则桥接数据包将不会通过 Netfilter 进行过滤（从内核 3.18 开始），因此简单地不加载该模块就足以避免过滤。</font></font></font></p></div></div><br class="example-break" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><div class="example" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="id-1.8.5" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><p class="title" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><b data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">Example&nbsp;4.&nbsp;Set network routing properties for all interfaces<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">例子 4. 为所有接口设置网络路由属性</font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">/etc/sysctl.d/20-rp_filter.conf</code>:</p><pre class="programlisting">net.ipv4.conf.default.rp_filter = 2
+net.ipv4.conf.*.rp_filter = 2
+-net.ipv4.conf.all.rp_filter
+net.ipv4.conf.hub0.rp_filter = 1
+</pre><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">The <code class="option" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">rp_filter</code> key will be set to "2" for all interfaces, except "hub0". We set
+      <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.conf.default.rp_filter</code> first, so any interfaces which are added
+      <span class="emphasis" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><em data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">later</em></span> will get this value (this also covers any interfaces detected while we're
+      running). The glob matches any interfaces which were detected <span class="emphasis" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><em data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">earlier</em></span>. The glob
+      will also match <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.conf.all.rp_filter</code>, which we don't want to set at all, so
+      it is explicitly excluded. And "hub0" is excluded from the glob because it has an explicit setting.
+      <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">“ <code class="option" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">rp_filter</code> ” 键将被设置为“2”，除了“hub0”之外的所有接口。我们首先设置 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.conf.default.rp_filter</code> ，因此稍后添加的任何接口都将获得此值（这也包括我们运行时检测到的任何接口）。通配符匹配任何先前检测到的接口。通配符还将匹配 <code class="filename" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">net.ipv4.conf.all.rp_filter</code> ，我们不希望设置它，因此它被明确排除。而“hub0”被排除在通配符之外，因为它有一个明确的设置。</font></font></font></p></div></div><br class="example-break" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></div><div class="refsect1" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><a name="id-1.9" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"></a><h2 id="See Also" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h2><p data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab" data-immersive-translate-paragraph="1">
+      <a href="systemd.html#" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">systemd</span>(1)</span></a>,
+      <a href="systemd-sysctl.service.html#" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">systemd-sysctl.service</span>(8)</span></a>,
+      <a href="systemd-delta.html#" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">systemd-delta</span>(1)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/sysctl.8.html" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">sysctl</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man5/sysctl.conf.5.html" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">sysctl.conf</span>(5)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/modprobe.8.html" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="citerefentry" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab"><span class="refentrytitle" data-immersive-translate-walked="441be07b-7711-4365-9784-451159879dab">modprobe</span>(8)</span></a>
+    </p></div></div>
+</body></html>

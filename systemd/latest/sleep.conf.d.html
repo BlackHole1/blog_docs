@@ -1,0 +1,125 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-sleep.conf</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-sleep.conf"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-sleep.conf, sleep.conf.d — Suspend and hibernation configuration file</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">/etc/systemd/sleep.conf</code></p><p><code class="filename">/etc/systemd/sleep.conf.d/*.conf</code></p><p><code class="filename">/run/systemd/sleep.conf.d/*.conf</code></p><p><code class="filename">/usr/lib/systemd/sleep.conf.d/*.conf</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd</strong></span> supports four general
+    power-saving modes:</p><div class="variablelist"><dl class="variablelist"><dt id="suspend"><span class="term">suspend</span><a class="headerlink" title="Permalink to this term" href="#suspend">¶</a></dt><dd><p>a low-power state
+        where execution of the OS is paused,
+        and complete power loss might result
+        in lost data, and which is fast to
+        enter and exit. This corresponds to
+        suspend, standby, or freeze states as
+        understood by the kernel.
+        </p><p><a name="v203"></a>Added in version 203.</p></dd><dt id="hibernate"><span class="term">hibernate</span><a class="headerlink" title="Permalink to this term" href="#hibernate">¶</a></dt><dd><p>a low-power state
+        where execution of the OS is paused,
+        and complete power loss does not
+        result in lost data, and which might
+        be slow to enter and exit. This
+        corresponds to the hibernation as
+        understood by the kernel.
+        </p><p><a name="v203"></a>Added in version 203.</p></dd><dt id="hybrid-sleep"><span class="term">hybrid-sleep</span><a class="headerlink" title="Permalink to this term" href="#hybrid-sleep">¶</a></dt><dd><p>a low-power state
+        where execution of the OS is paused,
+        which might be slow to enter, and on
+        complete power loss does not result in
+        lost data but might be slower to exit
+        in that case. This mode is called
+        suspend-to-both by the kernel.
+        </p><p><a name="v203"></a>Added in version 203.</p></dd><dt id="suspend-then-hibernate"><span class="term">suspend-then-hibernate</span><a class="headerlink" title="Permalink to this term" href="#suspend-then-hibernate">¶</a></dt><dd><p>A low power state where the system is initially suspended (the state is stored in
+          RAM). If the system supports low-battery alarms (ACPI _BTP), then the system will be woken up by
+          the ACPI low-battery signal and hibernated (the state is then stored on disk). Also, if not
+          interrupted within the timespan specified by <code class="varname">HibernateDelaySec=</code> or the estimated
+          timespan until the system battery charge level goes down to 5%, then the system will be woken up by the
+          RTC alarm and hibernated. The estimated timespan is calculated from the change of the battery
+          capacity level after the time specified by <code class="varname">SuspendEstimationSec=</code> or when
+          the system is woken up from the suspend.</p><p><a name="v239"></a>Added in version 239.</p></dd></dl></div><p>Settings in these files determine what strings
+    will be written to
+    <code class="filename">/sys/power/disk</code> and
+    <code class="filename">/sys/power/state</code> by
+    <a href="systemd-sleep.html#"><span class="citerefentry"><span class="refentrytitle">systemd-sleep</span>(8)</span></a>
+    when
+    <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>
+    attempts to suspend or hibernate the machine.
+    See
+    <a href="systemd.syntax.html#"><span class="citerefentry"><span class="refentrytitle">systemd.syntax</span>(7)</span></a>
+    for a general description of the syntax.</p></div><div class="refsection"><a name="main-conf"></a><h2>Configuration Directories and Precedence</h2><p>The default configuration is set during compilation, so configuration is only needed when it is
+    necessary to deviate from those defaults. The main configuration file is either in
+    <code class="filename">/usr/lib/systemd/</code> or <code class="filename">/etc/systemd/</code> and contains commented out
+    entries showing the defaults as a guide to the administrator. Local overrides can be created by creating
+    drop-ins, as described below. The main configuration file can also be edited for this purpose (or a copy
+    in <code class="filename">/etc/</code> if it's shipped in <code class="filename">/usr/</code>) however using drop-ins for
+    local configuration is recommended over modifications to the main configuration file.</p><p>In addition to the "main" configuration file, drop-in configuration snippets are read from
+    <code class="filename">/usr/lib/systemd/*.conf.d/</code>, <code class="filename">/usr/local/lib/systemd/*.conf.d/</code>,
+    and <code class="filename">/etc/systemd/*.conf.d/</code>. Those drop-ins have higher precedence and override the
+    main configuration file. Files in the <code class="filename">*.conf.d/</code> configuration subdirectories are
+    sorted by their filename in lexicographic order, regardless of in which of the subdirectories they
+    reside. When multiple files specify the same option, for options which accept just a single value, the
+    entry in the file sorted last takes precedence, and for options which accept a list of values, entries
+    are collected as they occur in the sorted files.</p><p>When packages need to customize the configuration, they can install drop-ins under
+    <code class="filename">/usr/</code>. Files in <code class="filename">/etc/</code> are reserved for the local administrator,
+    who may use this logic to override the configuration files installed by vendor packages. Drop-ins have to
+    be used to override package drop-ins, since the main configuration file has lower precedence. It is
+    recommended to prefix all filenames in those subdirectories with a two-digit number and a dash, to
+    simplify the ordering of the files. This also defined a concept of drop-in priority to allow
+    distributions to ship drop-ins within a specific range lower than the range used by users. This should
+    lower the risk of package drop-ins overriding accidentally drop-ins defined by users.</p><p>To disable a configuration file supplied by the vendor, the recommended way is to place a symlink
+    to <code class="filename">/dev/null</code> in the configuration directory in <code class="filename">/etc/</code>, with the
+    same filename as the vendor configuration file.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options can be configured in the
+    [Sleep] section of
+    <code class="filename">/etc/systemd/sleep.conf</code> or a
+    <code class="filename">sleep.conf.d</code> file:</p><div class="variablelist"><dl class="variablelist"><dt id="AllowSuspend="><span class="term"><code class="varname">AllowSuspend=</code>, </span><span class="term"><code class="varname">AllowHibernation=</code>, </span><span class="term"><code class="varname">AllowHybridSleep=</code>, </span><span class="term"><code class="varname">AllowSuspendThenHibernate=</code></span><a class="headerlink" title="Permalink to this term" href="#AllowSuspend=">¶</a></dt><dd><p>By default any power-saving mode is advertised if possible (i.e.
+        the kernel supports that mode, the necessary resources are available). Those
+        switches can be used to disable specific modes.</p><p>If <code class="varname">AllowHibernation=no</code> or <code class="varname">AllowSuspend=no</code> is
+        used, this implies <code class="varname">AllowSuspendThenHibernate=no</code> and
+        <code class="varname">AllowHybridSleep=no</code>, since those methods use both suspend and hibernation
+        internally. <code class="varname">AllowSuspendThenHibernate=yes</code> and
+        <code class="varname">AllowHybridSleep=yes</code> can be used to override and enable those specific
+        modes.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="HibernateMode="><span class="term"><code class="varname">HibernateMode=</code></span><a class="headerlink" title="Permalink to this term" href="#HibernateMode=">¶</a></dt><dd><p>The string to be written to <code class="filename">/sys/power/disk</code> by <a href="systemd-hibernate.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-hibernate.service</span>(8)</span></a>.
+        More than one value can be specified by separating multiple values with whitespace. They will be
+        tried in turn, until one is written without error. If none of the writes succeed, the operation will
+        be aborted.</p><p>The allowed set of values is determined by the kernel and is shown in the file itself (use
+        <span class="command"><strong>cat /sys/power/disk</strong></span> to display). See the kernel documentation page
+        <a class="ulink" href="https://www.kernel.org/doc/html/latest/admin-guide/pm/sleep-states.html#basic-sysfs-interfaces-for-system-suspend-and-hibernation#basic-sysfs-interfaces-for-system-suspend-and-hibernation" target="_top">
+          Basic sysfs Interfaces for System Suspend and Hibernation</a> for more details.</p><p>
+        <a href="systemd-suspend-then-hibernate.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-suspend-then-hibernate.service</span>(8)</span></a>
+        uses the value of <code class="varname">HibernateMode=</code> when hibernating.</p><p><a name="v203"></a>Added in version 203.</p></dd><dt id="SuspendState="><span class="term"><code class="varname">SuspendState=</code></span><a class="headerlink" title="Permalink to this term" href="#SuspendState=">¶</a></dt><dd><p>The string to be written to <code class="filename">/sys/power/state</code> by <a href="systemd-suspend.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-suspend.service</span>(8)</span></a>.
+        More than one value can be specified by separating multiple values with whitespace. They will be
+        tried in turn, until one is written without error. If none of the writes succeed, the operation will
+        be aborted.</p><p>The allowed set of values is determined by the kernel and is shown in the file itself (use
+        <span class="command"><strong>cat /sys/power/state</strong></span> to display). See <a class="ulink" href="https://www.kernel.org/doc/html/latest/admin-guide/pm/sleep-states.html#basic-sysfs-interfaces-for-system-suspend-and-hibernation#basic-sysfs-interfaces-for-system-suspend-and-hibernation" target="_top">
+          Basic sysfs Interfaces for System Suspend and Hibernation</a> for more details.</p><p>
+        <a href="systemd-suspend-then-hibernate.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-suspend-then-hibernate.service</span>(8)</span></a>
+        uses this value when suspending.</p><p><a name="v203"></a>Added in version 203.</p></dd><dt id="HibernateDelaySec="><span class="term"><code class="varname">HibernateDelaySec=</code></span><a class="headerlink" title="Permalink to this term" href="#HibernateDelaySec=">¶</a></dt><dd><p>The amount of time the system spends in suspend mode before the system is
+          automatically put into hibernate mode. Only used by
+          <a href="systemd-suspend-then-hibernate.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-suspend-then-hibernate.service</span>(8)</span></a>.
+          If the system has a battery, then defaults to the estimated timespan until the system battery charge level goes down to 5%.
+          If the system has no battery, then defaults to 2h.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="SuspendEstimationSec="><span class="term"><code class="varname">SuspendEstimationSec=</code></span><a class="headerlink" title="Permalink to this term" href="#SuspendEstimationSec=">¶</a></dt><dd><p>The RTC alarm will wake the system after the specified timespan to measure the system battery
+          capacity level and estimate battery discharging rate, which is used for estimating timespan until the system battery charge
+          level goes down to 5%. Only used by
+          <a href="systemd-suspend-then-hibernate.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-suspend-then-hibernate.service</span>(8)</span></a>.
+          Defaults to 1h.</p><p><a name="v253"></a>Added in version 253.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Example: freeze">Example: freeze<a class="headerlink" title="Permalink to this headline" href="#Example:%20freeze">¶</a></h2><p>Example: to exploit the <span class="quote">“<span class="quote">freeze</span>”</span> mode added
+    in Linux 3.9, one can use <span class="command"><strong>systemctl suspend</strong></span>
+    with
+    </p><pre class="programlisting">[Sleep]
+SuspendState=freeze</pre></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd-sleep.html#"><span class="citerefentry"><span class="refentrytitle">systemd-sleep</span>(8)</span></a>,
+      <a href="systemd-suspend.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-suspend.service</span>(8)</span></a>,
+      <a href="systemd-hibernate.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-hibernate.service</span>(8)</span></a>,
+      <a href="systemd-hybrid-sleep.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-hybrid-sleep.service</span>(8)</span></a>,
+      <a href="systemd-suspend-then-hibernate.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-suspend-then-hibernate.service</span>(8)</span></a>,
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd.directives.html#"><span class="citerefentry"><span class="refentrytitle">systemd.directives</span>(7)</span></a>
+    </p></div></div></body></html>

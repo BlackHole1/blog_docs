@@ -1,0 +1,85 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_message_new</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_message_new"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_message_new, sd_bus_message_ref, sd_bus_message_unref, sd_bus_message_unrefp, SD_BUS_MESSAGE_METHOD_CALL, SD_BUS_MESSAGE_METHOD_RETURN, SD_BUS_MESSAGE_METHOD_ERROR, SD_BUS_MESSAGE_SIGNAL, sd_bus_message_get_bus — Create a new bus message object and create or destroy references to it</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><pre class="funcsynopsisinfo"><span class="token">enum</span> {
+      <code class="constant">SD_BUS_MESSAGE_METHOD_CALL</code>,
+      <code class="constant">SD_BUS_MESSAGE_METHOD_RETURN</code>,
+      <code class="constant">SD_BUS_MESSAGE_METHOD_ERROR</code>,
+      <code class="constant">SD_BUS_MESSAGE_SIGNAL</code>,
+};</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_message_new</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>sd_bus_message **<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>uint8_t <var class="pdparam">type</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">sd_bus_message *<b class="fsfunc">sd_bus_message_ref</b>(</code></td><td>sd_bus_message *<var class="pdparam">m</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">sd_bus_message *<b class="fsfunc">sd_bus_message_unref</b>(</code></td><td>sd_bus_message *<var class="pdparam">m</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">void <b class="fsfunc">sd_bus_message_unrefp</b>(</code></td><td>sd_bus_message **<var class="pdparam">mp</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">sd_bus *<b class="fsfunc">sd_bus_message_get_bus</b>(</code></td><td>sd_bus_message *<var class="pdparam">m</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_bus_message_new()</code> creates a new bus message object attached to the
+    bus <em class="parameter"><code>bus</code></em> and returns it in the output parameter <em class="parameter"><code>m</code></em>.
+    This object is reference-counted, and will be destroyed when all references are gone. Initially,
+    the caller of this function owns the sole reference to the message object. Note that the message
+    object holds a reference to the bus object, so the bus object will not be destroyed as long as
+    the message exists.</p><p>Note: this is a low-level call. In most cases functions like
+    <a href="sd_bus_message_new_method_call.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_method_call</span>(3)</span></a>,
+    <a href="sd_bus_message_new_method_error.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_method_error</span>(3)</span></a>,
+    <a href="sd_bus_message_new_method_return.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_method_return</span>(3)</span></a>,
+    and <a href="sd_bus_message_new_signal.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_signal</span>(3)</span></a>
+    that create a message of a certain type and initialize various fields are easier to use.</p><p>The <em class="parameter"><code>type</code></em> parameter specifies the type of the message.  It must be
+    one of <code class="constant">SD_BUS_MESSAGE_METHOD_CALL</code> — a method call,
+    <code class="constant">SD_BUS_MESSAGE_METHOD_RETURN</code> — a method call reply,
+    <code class="constant">SD_BUS_MESSAGE_METHOD_ERROR</code> — an error reply to a method call,
+    <code class="constant">SD_BUS_MESSAGE_SIGNAL</code> — a broadcast message with no reply.
+    </p><p>The flag to allow interactive authorization is initialized based on the current value set
+    in the bus object, see
+    <a href="sd_bus_set_allow_interactive_authorization.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_allow_interactive_authorization</span>(3)</span></a>.
+    This may be changed using
+    <a href="sd_bus_message_set_allow_interactive_authorization.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_set_allow_interactive_authorization</span>(3)</span></a>.
+    </p><p><code class="function">sd_bus_message_ref()</code> increases the internal reference counter of
+    <em class="parameter"><code>m</code></em> by one.</p><p><code class="function">sd_bus_message_unref()</code> decreases the internal reference counter of
+    <em class="parameter"><code>m</code></em> by one. Once the reference count has dropped to zero, message object is
+    destroyed and cannot be used anymore, so further calls to <code class="function">sd_bus_message_ref()</code> or
+    <code class="function">sd_bus_message_unref()</code> are illegal.</p><p><code class="function">sd_bus_message_unrefp()</code> is similar to
+    <code class="function">sd_bus_message_unref()</code> but takes a pointer to a
+    pointer to an <span class="type">sd_bus_message</span> object. This call is useful in
+    conjunction with GCC's and LLVM's <a class="ulink" href="https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html" target="_top">Clean-up
+    Variable Attribute</a>. See
+    <a href="sd_bus_new.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_new</span>(3)</span></a>
+    for an example how to use the cleanup attribute.</p><p><code class="function">sd_bus_message_ref()</code> and <code class="function">sd_bus_message_unref()</code>
+    execute no operation if the passed in bus message object address is
+    <code class="constant">NULL</code>. <code class="function">sd_bus_message_unrefp()</code> will first dereference
+    its argument, which must not be <code class="constant">NULL</code>, and will execute no operation if
+    <span class="emphasis"><em>that</em></span> is <code class="constant">NULL</code>.
+    </p><p><code class="function">sd_bus_message_get_bus()</code> returns the bus object that message
+    <em class="parameter"><code>m</code></em> is attached to.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, <code class="function">sd_bus_message_new()</code> returns 0 or a positive integer. On
+    failure, it returns a negative errno-style error code.</p><p><code class="function">sd_bus_message_ref()</code> always returns the argument.
+    </p><p><code class="function">sd_bus_message_unref()</code> always returns
+    <code class="constant">NULL</code>.</p><p><code class="function">sd_bus_message_get_bus()</code> always returns the bus object.</p><div class="refsect2"><a name="id-1.6.6"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>Specified <em class="parameter"><code>type</code></em> is invalid.</p></dd><dt id="-ENOTCONN"><span class="term"><code class="constant">-ENOTCONN</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOTCONN">¶</a></dt><dd><p>The bus parameter <em class="parameter"><code>bus</code></em> is <code class="constant">NULL</code> or
+          the bus is not connected.</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_message_new()</code>,
+    <code class="function">sd_bus_message_ref()</code>,
+    <code class="function">sd_bus_message_unref()</code>,
+    <code class="function">sd_bus_message_unrefp()</code>, and
+    <code class="function">sd_bus_message_get_bus()</code> were added in version 240.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_new.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_new</span>(3)</span></a>,
+      <a href="sd_bus_message_new_method_call.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_method_call</span>(3)</span></a>,
+      <a href="sd_bus_message_new_method_error.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_method_error</span>(3)</span></a>,
+      <a href="sd_bus_message_new_method_return.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_method_return</span>(3)</span></a>,
+      <a href="sd_bus_message_new_signal.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_signal</span>(3)</span></a>
+    </p></div></div></body></html>

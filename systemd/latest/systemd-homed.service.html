@@ -1,0 +1,51 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-homed.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-homed.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-homed.service, systemd-homed — Home Area/User Account Manager</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-homed.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-homed</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-homed</strong></span> is a system service that may be used to create, remove, change or
+    inspect home areas (directories and network mounts and real or loopback block devices with a filesystem,
+    optionally encrypted).</p><p>Most of <span class="command"><strong>systemd-homed</strong></span>'s functionality is accessible through the
+    <a href="homectl.html#"><span class="citerefentry"><span class="refentrytitle">homectl</span>(1)</span></a> command.</p><p>See the <a class="ulink" href="https://systemd.io/HOME_DIRECTORY" target="_top">Home Directories</a> documentation for
+    details about the format and design of home areas managed by
+    <code class="filename">systemd-homed.service</code>.</p><p>Each home directory managed by <code class="filename">systemd-homed.service</code> synthesizes a local user
+    and group. These are made available to the system using the <a class="ulink" href="https://systemd.io/USER_GROUP_API" target="_top">User/Group Record Lookup API via Varlink</a>, and thus may be
+    browsed with
+    <a href="userdbctl.html#"><span class="citerefentry"><span class="refentrytitle">userdbctl</span>(1)</span></a>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Key Management">Key Management<a class="headerlink" title="Permalink to this headline" href="#Key%20Management">¶</a></h2><p>User records are cryptographically signed with a public/private key pair (the signature is part of
+    the JSON record itself). For a user to be permitted to log in locally the public key matching the
+    signature of their user record must be installed. For a user record to be modified locally the private
+    key matching the signature must be installed locally, too. The keys are stored in the
+    <code class="filename">/var/lib/systemd/home/</code> directory:</p><div class="variablelist"><dl class="variablelist"><dt id="/var/lib/systemd/home/local.private"><span class="term"><code class="filename">/var/lib/systemd/home/local.private</code></span><a class="headerlink" title="Permalink to this term" href="#/var/lib/systemd/home/local.private">¶</a></dt><dd><p>The private key of the public/private key pair used for local records. Currently,
+        only a single such key may be installed.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="/var/lib/systemd/home/local.public"><span class="term"><code class="filename">/var/lib/systemd/home/local.public</code></span><a class="headerlink" title="Permalink to this term" href="#/var/lib/systemd/home/local.public">¶</a></dt><dd><p>The public key of the public/private key pair used for local records. Currently,
+        only a single such key may be installed.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="/var/lib/systemd/home/*.public"><span class="term"><code class="filename">/var/lib/systemd/home/*.public</code></span><a class="headerlink" title="Permalink to this term" href="#/var/lib/systemd/home/*.public">¶</a></dt><dd><p>Additional public keys. Any users whose user records are signed with any of these keys
+        are permitted to log in locally. An arbitrary number of keys may be installed this
+        way.</p><p><a name="v246"></a>Added in version 246.</p></dd></dl></div><p>All key files listed above are in PEM format.</p><p>In order to migrate a home directory from a host "<code class="literal">foobar</code>" to another host
+    "<code class="literal">quux</code>" it is hence sufficient to copy
+    <code class="filename">/var/lib/systemd/home/local.public</code> from the host "<code class="literal">foobar</code>" to
+    "<code class="literal">quux</code>", maybe calling the file on the destination <code class="filename">/var/lib/systemd/home/foobar.public</code>, reflecting the origin of the key. If the
+    user record should be modifiable on "<code class="literal">quux</code>" the pair
+    <code class="filename">/var/lib/systemd/home/local.public</code> and
+    <code class="filename">/var/lib/systemd/home/local.private</code> need to be copied from "<code class="literal">foobar</code>"
+    to "<code class="literal">quux</code>", and placed under the identical paths there, as currently only a single
+    private key is supported per host. Note of course that the latter means that user records
+    generated/signed before the key pair is copied in, lose their validity.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="homed.conf.html#"><span class="citerefentry"><span class="refentrytitle">homed.conf</span>(5)</span></a>,
+      <a href="homectl.html#"><span class="citerefentry"><span class="refentrytitle">homectl</span>(1)</span></a>,
+      <a href="pam_systemd_home.html#"><span class="citerefentry"><span class="refentrytitle">pam_systemd_home</span>(8)</span></a>,
+      <a href="userdbctl.html#"><span class="citerefentry"><span class="refentrytitle">userdbctl</span>(1)</span></a>,
+      <a href="org.freedesktop.home1.html#"><span class="citerefentry"><span class="refentrytitle">org.freedesktop.home1</span>(5)</span></a>
+    </p></div></div></body></html>

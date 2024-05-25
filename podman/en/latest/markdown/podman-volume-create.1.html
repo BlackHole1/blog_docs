@@ -1,0 +1,762 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>podman-volume-create — Podman  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css">
+    <link rel="stylesheet" type="text/css" href="../../../_/static/css/badge_only.css">
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css">
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="../../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <link rel="index" title="Index" href="../genindex.html">
+    <link rel="search" title="Search" href="../search.html">
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css">
+  
+
+  
+  
+
+  
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "markdown/podman-volume-create.1", "programming_language": "go", "project": "podman", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "alabaster", "user_analytics_code": "", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+  
+
+    <div class="document" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+      <div class="documentwrapper" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+        <div class="bodywrapper" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+          
+
+          <div class="body" role="main" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+            
+  <section id="name" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">NAME<a class="headerlink" href="#name" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h1>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">podman-volume-create - Create a new volume<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman-volume-create - 创建一个新卷</font></font></font></p>
+</section>
+<section id="synopsis" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">SYNOPSIS<a class="headerlink" href="#synopsis" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h1>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">podman volume create</strong> [<em data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">options</em>] [<em data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">name</em>]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman volume create [选项] [名称]</font></font></font></p>
+</section>
+<section id="description" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h1>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Creates an empty volume and prepares it to be used by containers. The volume
+can be created with a specific name, if a name is not given a random name is
+generated. You can add metadata to the volume by using the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">--label</strong> flag and
+driver options can be set using the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">--opt</strong> flag.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个空卷并准备让容器使用。可以使用特定名称创建卷，如果未提供名称，则会生成随机名称。您可以使用 --label 标志向卷添加元数据，并可以使用 --opt 标志设置驱动程序选项。</font></font></font></p>
+</section>
+<section id="options" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">OPTIONS<a class="headerlink" href="#options" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h1>
+<section id="driver-d-driver" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h2 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">--driver</strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">-d</strong>=<em data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">driver</em><a class="headerlink" href="#driver-d-driver" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a></h2>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Specify the volume driver name (default <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">local</strong>).
+There are two drivers supported by Podman itself: <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">local</strong> and <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">image</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定卷驱动程序名称（默认为本地）。Podman 本身支持两种驱动程序：本地和镜像。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">local</strong> driver uses a directory on disk as the backend by default, but can also use the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">mount(8)</strong> command to mount a filesystem as the volume if <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">--opt</strong> is specified.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">本地驱动程序默认使用磁盘上的目录作为后端，但如果指定了 --opt，则还可以使用 mount(8) 命令将文件系统挂载为卷。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">image</strong> driver uses an image as the backing store of for the volume.
+An overlay filesystem is created, which allows changes to the volume to be committed as a new layer on top of the image.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">镜像驱动程序使用镜像作为卷的后备存储。创建一个叠加文件系统，允许将卷的更改提交为图像顶部的新层。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Using a value other than <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">local</strong> or <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">image</strong>, Podman attempts to create the volume using a volume plugin with the given name.
+Such plugins must be defined in the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">volume_plugins</strong> section of the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference external" href="https://github.com/containers/common/blob/main/docs/containers.conf.5.md" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">containers.conf(5)</a></strong> configuration file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用除了本地或镜像之外的值，Podman 尝试使用给定名称的卷插件创建卷。这些插件必须在 containers.conf(5) 配置文件的 volume_plugins 部分中定义。</font></font></font></p>
+</section>
+<section id="help" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h2 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">--help</strong><a class="headerlink" href="#help" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--帮助 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Print usage statement<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印使用说明</font></font></font></p>
+</section>
+<section id="ignore" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h2 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">--ignore</strong><a class="headerlink" href="#ignore" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a></h2>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Don’t fail if the named volume already exists, instead just print the name. Note that the new options are not applied to the existing volume.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果命名卷已经存在，则不要失败，而是只打印名称。请注意，新选项不会应用于现有卷。</font></font></font></p>
+</section>
+<section id="label-l-label" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h2 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">--label</strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">-l</strong>=<em data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">label</em><a class="headerlink" href="#label-l-label" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--label, -l=label</font></font></font></h2>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Set metadata for a volume (e.g., --label mykey=value).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为卷设置元数据（例如，--label mykey=value）。</font></font></font></p>
+</section>
+<section id="opt-o-option" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h2 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">--opt</strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">-o</strong>=<em data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">option</em><a class="headerlink" href="#opt-o-option" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--opt，-o=选项</font></font></font></h2>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Set driver specific options.
+For the default driver, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">local</strong>, this allows a volume to be configured to mount a filesystem on the host.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">设置特定于驱动程序的选项。对于默认驱动程序 local，这允许配置卷以在主机上挂载文件系统。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">For the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">local</span></code> driver the following options are supported: <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">type</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">device</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code>, and <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">[no]copy</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">对于 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">local</span></code> 驱动程序，支持以下选项： <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">type</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">device</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> 和 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">[no]copy</span></code> 。</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<li data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">type</span></code> option sets the type of the filesystem to be mounted, and is equivalent to the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-t</span></code> flag to <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">mount(8)</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">type</span></code> 选项设置要挂载的文件系统的类型，并等效于 mount(8) 命令的 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-t</span></code> 标志。</font></font></font></p></li>
+<li data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">device</span></code> option sets the device to be mounted, and is equivalent to the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">device</span></code> argument to <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">mount(8)</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">device</span></code> 选项设置要挂载的设备，并等效于 mount(8) 命令的 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">device</span></code> 参数。</font></font></font></p></li>
+<li data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">copy</span></code> option enables copying files from the container image path where the mount is created to the newly created volume on the first run.  <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">copy</span></code> is the default.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">copy</span></code> 选项启用从创建挂载的容器镜像路径到首次运行时新创建的卷的文件复制。 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">copy</span></code> 是默认值。</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> option sets options for the mount, and is equivalent to the filesystem
+options (also <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-o</span></code>) passed to <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">mount(8)</strong> with the following exceptions:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> 选项设置挂载的选项，相当于传递给 mount(8) 的文件系统选项（也是 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-o</span></code> ），但有以下例外：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<li data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> option supports <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">uid</span></code> and <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">gid</span></code> options to set the UID and GID of the created volume that are not normally supported by <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">mount(8)</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> 选项支持 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">uid</span></code> 和 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">gid</span></code> 选项，用于设置创建的卷的 UID 和 GID，这些选项通常不受 mount(8) 支持。</font></font></font></p></li>
+<li data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> option supports the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">size</span></code> option to set the maximum size of the created volume, the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">inodes</span></code> option to set the maximum number of inodes for the volume, and <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">noquota</span></code> to completely disable quota support even for tracking of disk usage.
+The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">size</span></code> option is supported on the “tmpfs” and “xfs[note]” file systems.
+The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">inodes</span></code> option is supported on the “xfs[note]” file systems.
+Note: xfs filesystems must be mounted with the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">prjquota</span></code> flag described in the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">xfs_quota(8)</strong> man page. Podman will throw an error if they’re not.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> 选项支持 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">size</span></code> 选项，用于设置创建的卷的最大大小， <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">inodes</span></code> 选项用于设置卷的最大 inode 数，以及 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">noquota</span></code> 用于完全禁用配额支持，即使用于跟踪磁盘使用情况。 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">size</span></code> 选项支持“tmpfs” 和 “xfs[note]” 文件系统。 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">inodes</span></code> 选项支持“xfs[note]” 文件系统。注意：xfs 文件系统必须使用 xfs_quota(8) 手册中描述的 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">prjquota</span></code> 标志挂载。如果没有挂载，Podman 将抛出错误。</font></font></font></p></li>
+<li data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> option supports using volume options other than the UID/GID options with the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">local</strong> driver and requires root privileges.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> 选项支持在本地驱动程序中使用除 UID/GID 选项之外的卷选项，并需要 root 权限。</font></font></font></p></li>
+<li data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> options supports the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">timeout</span></code> option which allows users to set a driver specific timeout in seconds before volume creation fails. For example, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">--opt=o=timeout=10</strong> sets a driver timeout of 10 seconds.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> 选项支持 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">timeout</span></code> 选项，允许用户在卷创建失败之前设置驱动程序特定的超时时间（以秒为单位）。例如，--opt=o=timeout=10 设置驱动程序超时时间为 10 秒。</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">Note</strong></em> Do not confuse the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">--opt,-o</span></code> create option with the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-o</span></code> mount option.  For example, with <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">podman</span> <span class="pre">volume</span> <span class="pre">create</span></code>, use <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-o=o=uid=1000</span></code> <em data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">not</em> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-o=uid=1000</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，不要将 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">--opt,-o</span></code> 创建选项与 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-o</span></code> 挂载选项混淆。例如，在 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">podman</span> <span class="pre">volume</span> <span class="pre">create</span></code> 中，请使用 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-o=o=uid=1000</span></code> 而不是 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">-o=uid=1000</span></code> 。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">For the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">image</strong> driver, the only supported option is <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">image</span></code>, which specifies the image the volume is based on.
+This option is mandatory when using the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">image</strong> driver.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">对于镜像驱动程序，唯一支持的选项是 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">image</span></code> ，它指定了卷所基于的镜像。在使用镜像驱动程序时，此选项是强制的。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">When not using the <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">local</strong> and <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">image</strong> drivers, the given options are passed directly to the volume plugin. In this case, supported options are dictated by the plugin in question, not Podman.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当不使用本地和镜像驱动程序时，给定的选项将直接传递给卷插件。在这种情况下，支持的选项由相关插件而不是 Podman 决定。</font></font></font></p>
+</section>
+</section>
+<section id="examples" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">EXAMPLES<a class="headerlink" href="#examples" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例</font></font></font></h1>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Create empty volume.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建空卷。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman volume create
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Create empty named volume.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建空命名卷。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman volume create myvol
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Create empty named volume with specified label.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建具有指定标签的空命名卷。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman volume create --label foo=bar myvol
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Create tmpfs named volume with specified size and mount options.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建具有指定大小和挂载选项的 tmpfs 命名卷。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># podman volume create --opt device=tmpfs --opt type=tmpfs --opt o=size=2M,nodev,noexec myvol</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Create tmpfs named volume testvol with specified options.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用指定选项创建名为 testvol 的 tmpfs 卷。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># podman volume create --opt device=tmpfs --opt type=tmpfs --opt o=uid=1000,gid=1000 testvol</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Create image named volume using the specified local image in containers/storage.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 containers/storage 中使用指定的本地镜像创建镜像卷。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># podman volume create --driver image --opt image=fedora:latest fedoraVol</span>
+</pre></div>
+</div>
+</section>
+<section id="quotas" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">QUOTAS<a class="headerlink" href="#quotas" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配额 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">podman</span> <span class="pre">volume</span> <span class="pre">create</span></code> uses <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">XFS</span> <span class="pre">project</span> <span class="pre">quota</span> <span class="pre">controls</span></code> for controlling the size and the number of inodes of builtin volumes. The directory used to store the volumes must be an <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">XFS</span></code> file system and be mounted with the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">pquota</span></code> option.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">podman</span> <span class="pre">volume</span> <span class="pre">create</span></code> 使用 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">XFS</span> <span class="pre">project</span> <span class="pre">quota</span> <span class="pre">controls</span></code> 来控制内置卷的大小和索引节点数量。用于存储卷的目录必须是 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">XFS</span></code> 文件系统，并使用 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">pquota</span></code> 选项挂载。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Example /etc/fstab entry:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 /etc/fstab 条目：</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">podman</span><span class="o">/</span><span class="n">podman</span><span class="o">-</span><span class="n">var</span> <span class="o">/</span><span class="n">var</span> <span class="n">xfs</span> <span class="n">defaults</span><span class="p">,</span><span class="n">x</span><span class="o">-</span><span class="n">systemd</span><span class="o">.</span><span class="n">device</span><span class="o">-</span><span class="n">timeout</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">pquota</span> <span class="mi">1</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Podman generates project IDs for each builtin volume, but these project IDs need to be unique for the XFS file system. These project IDs by default are generated randomly, with a potential for overlap with other quotas on the same file
+system.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Podman 为每个内置卷生成项目 ID，但这些项目 ID 需在 XFS 文件系统中保持唯一。这些项目 ID 默认情况下是随机生成的，有可能与同一文件系统上的其他配额重叠。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The xfs_quota tool can be used to assign a project ID to the storage driver directory, e.g.:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">xfs_quota 工具可用于为存储驱动目录分配项目 ID，例如：</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">100000</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">containers</span><span class="o">/</span><span class="n">storage</span><span class="o">/</span><span class="n">overlay</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">projects</span>
+<span class="n">echo</span> <span class="mi">200000</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">containers</span><span class="o">/</span><span class="n">storage</span><span class="o">/</span><span class="n">volumes</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">projects</span>
+<span class="n">echo</span> <span class="n">storage</span><span class="p">:</span><span class="mi">100000</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">projid</span>
+<span class="n">echo</span> <span class="n">volumes</span><span class="p">:</span><span class="mi">200000</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">projid</span>
+<span class="n">xfs_quota</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">c</span> <span class="s1">'project -s storage volumes'</span> <span class="o">/&lt;</span><span class="n">xfs</span> <span class="n">mount</span> <span class="n">point</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">In the example above we are configuring the overlay storage driver for newly
+created containers as well as volumes to use project IDs with a <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">start offset</strong>.
+All containers are assigned larger project IDs (e.g. &gt;= 100000).
+All volume assigned project IDs larger project IDs starting with 200000.
+This prevents xfs_quota management conflicts with containers/storage.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在上面的示例中，我们正在配置覆盖存储驱动程序，以便为新创建的容器和卷使用具有起始偏移量的项目 ID。所有容器被分配较大的项目 ID（例如 &gt;= 100000）。所有卷分配的项目 ID 大于等于 200000 的项目 ID。这可以防止 xfs_quota 与容器/存储的管理冲突。</font></font></font></p>
+</section>
+<section id="mount-examples" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">MOUNT EXAMPLES<a class="headerlink" href="#mount-examples" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">挂载示例</font></font></font></h1>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">podman</span> <span class="pre">volume</span> <span class="pre">create</span></code> allows the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">type</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">device</span></code>, and <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> options to be passed to <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">mount(8)</span></code> when using the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">local</span></code> driver.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">podman</span> <span class="pre">volume</span> <span class="pre">create</span></code> 允许在使用 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">local</span></code> 驱动程序时传递 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">type</span></code> 、 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">device</span></code> 和 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">o</span></code> 选项。</font></font></font></p>
+</section>
+<section id="s3fs-fuse" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">s3fs-fuse</a><a class="headerlink" href="#s3fs-fuse" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a></h1>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">s3fs-fuse</a> or just <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">s3fs</span></code>, is a <a class="reference external" href="https://github.com/libfuse/libfuse" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">fuse</a> filesystem that allows s3 prefixes to be mounted as filesystem mounts.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">s3fs-fuse 或者只是 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">s3fs</span></code> ，是一个 fuse 文件系统，允许将 s3 前缀挂载为文件系统挂载点。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Installing:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">安装中:</font></font></font></strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>doas<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>s3fs-fuse
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Simple usage:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">简单使用:</font></font></font></strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>s3fs<span class="w"> </span>--help
+$<span class="w"> </span>s3fs<span class="w"> </span>-o<span class="w"> </span>use_xattr,endpoint<span class="o">=</span>aq-central-1<span class="w"> </span>bucket:/prefix<span class="w"> </span>/mnt
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Equivalent through <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">mount(8)</span></code><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通过 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">mount(8)</span></code> 等效:</font></font></font></strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>fuse.s3fs<span class="w"> </span>-o<span class="w"> </span>use_xattr,endpoint<span class="o">=</span>aq-central-1<span class="w"> </span>bucket:/prefix<span class="w"> </span>/mnt
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Equivalent through <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">podman</span> <span class="pre">volume</span> <span class="pre">create</span></code><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通过 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">podman</span> <span class="pre">volume</span> <span class="pre">create</span></code> 等效</font></font></font></strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>podman<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>s3fs-fuse-volume<span class="w"> </span>-o<span class="w"> </span><span class="nv">type</span><span class="o">=</span>fuse.s3fs<span class="w"> </span>-o<span class="w"> </span><span class="nv">device</span><span class="o">=</span>bucket:/prefix<span class="w"> </span>-o<span class="w"> </span><span class="nv">o</span><span class="o">=</span>use_xattr,endpoint<span class="o">=</span>aq-central-1
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The volume can then be mounted in a container with<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">然后可以将卷挂载到容器中</font></font></font></strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>podman<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>s3fs-fuse-volume:/s3:z<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>fedora:latest
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Please see the available <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse/wiki/Fuse-Over-Amazon#options#options" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">options</a> on their wiki.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请查看他们维基上提供的选项。</font></font></font></p>
+<section id="using-with-other-container-users" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h2 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Using with other container users<a class="headerlink" href="#using-with-other-container-users" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">与其他容器用户一起使用 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The above example works because the volume is mounted as the host user and inside the container <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">root</span></code> is mapped to the user in the host.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">上面的示例之所以有效，是因为卷被挂载为主机用户，并且在容器内 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">root</span></code> 被映射到主机中的用户。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">If the mount is accessed by a different user inside the container, a “Permission denied” error will be raised.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果容器内的不同用户访问挂载点，则会引发“权限被拒绝”错误。</font></font></font></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>podman<span class="w"> </span>run<span class="w"> </span>--user<span class="w"> </span>bin:bin<span class="w"> </span>-v<span class="w"> </span>s3fs-fuse-volume:/s3:z,U<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>fedora:latest
+$<span class="w"> </span>ls<span class="w"> </span>/s3
+<span class="c1"># ls: /s3: Permission denied</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">In FUSE-land, mounts are protected for the user who mounted them; specify the <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">allow_other</span></code> mount option if other users need access.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 FUSE 领域，挂载对于挂载它们的用户是受保护的；如果其他用户需要访问，请指定 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">allow_other</span></code> 挂载选项。</font></font></font></p>
+<blockquote data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<div data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Note: This will remove the normal fuse <a class="reference external" href="https://github.com/libfuse/libfuse/wiki/FAQ#why-dont-other-users-have-access-to-the-mounted-filesystem#why-dont-other-users-have-access-to-the-mounted-filesystem" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">security measures</a> on the mount point, after which, the normal filesystem permissions will have to protect it<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：这将移除挂载点上的正常 FUSE 安全措施，之后，正常的文件系统权限将必须保护它。</font></font></font></p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>podman<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>s3fs-fuse-other-volume<span class="w"> </span>-o<span class="w"> </span><span class="nv">type</span><span class="o">=</span>fuse.s3fs<span class="w"> </span>-o<span class="w"> </span><span class="nv">device</span><span class="o">=</span>bucket:/prefix<span class="w"> </span>-o<span class="w"> </span><span class="nv">o</span><span class="o">=</span>allow_other,use_xattr,endpoint<span class="o">=</span>aq-central-1
+$<span class="w"> </span>podman<span class="w"> </span>run<span class="w"> </span>--user<span class="w"> </span>bin:bin<span class="w"> </span>-v<span class="w"> </span>s3fs-fuse-volume:/s3:z,U<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>fedora:latest
+$<span class="w"> </span>ls<span class="w"> </span>/s3
+</pre></div>
+</div>
+</section>
+<section id="the-prefix-must-exist" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h2 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">The Prefix must exist<a class="headerlink" href="#the-prefix-must-exist" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">前缀必须存在。</font></font></font></h2>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">s3fs</span></code> will fail to mount if the prefix does not exist in the bucket.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果存储桶中不存在前缀， <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">s3fs</span></code> 将无法挂载。</font></font></font></p>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Create a s3-directory by putting an empty object at the desired <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">prefix/</span></code> key<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通过在所需的 <code class="docutils literal notranslate" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="pre">prefix/</span></code> 键处放置一个空对象来创建 s3 目录。</font></font></font></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>aws<span class="w"> </span>s3api<span class="w"> </span>put-object<span class="w"> </span>--bucket<span class="w"> </span>bucket<span class="w"> </span>--key<span class="w"> </span>prefix/
+</pre></div>
+</div>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">If performance is the priority, please check out the more performant <a class="reference external" href="https://github.com/kahing/goofys" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">goofys</a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果性能是首要考虑因素，请查看性能更高的 goofys。</font></font></font></p>
+<blockquote data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<div data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">FUSE filesystems exist for <a class="reference external" href="https://github.com/GoogleCloudPlatform/gcsfuse" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">Google Cloud Storage</a> and <a class="reference external" href="https://github.com/Azure/azure-storage-fuse" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">Azure Blob Storage</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为 Google Cloud Storage 和 Azure Blob Storage 存在 FUSE 文件系统</font></font></font></p>
+</div></blockquote>
+</section>
+</section>
+<section id="see-also" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">SEE ALSO<a class="headerlink" href="#see-also" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference internal" href="podman.1.html" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="std std-doc" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">podman(1)</span></a></strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference external" href="https://github.com/containers/common/blob/main/docs/containers.conf.5.md" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">containers.conf(5)</a></strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference internal" href="podman-volume.1.html" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="std std-doc" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">podman-volume(1)</span></a></strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">mount(8)</strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">xfs_quota(8)</strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">xfs_quota(8)</strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">projects(5)</strong>, <strong data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">projid(5)</strong></p>
+</section>
+<section id="history" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">HISTORY<a class="headerlink" href="#history" title="Link to this heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">January 2020, updated with information on volume plugins by Matthew Heon <a class="reference external" href="mailto:mheon%40redhat.com" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">mheon<span data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">@</span>redhat<span data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">.</span>com</a>
+November 2018, Originally compiled by Urvashi Mohnani <a class="reference external" href="mailto:umohnani%40redhat.com" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">umohnani<span data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">@</span>redhat<span data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">.</span>com</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2020 年 1 月，由 Matthew Heon mheon@redhat.com 更新了有关卷插件的信息，2018 年 11 月，最初由 Urvashi Mohnani umohnani@redhat.com 编译</font></font></font></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+        <div class="sphinxsidebarwrapper" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h1 class="logo" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a href="../index.html" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Podman</a></h1>
+
+
+
+
+
+
+
+
+<h3 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Navigation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">导航</font></font></font></h3>
+<p class="caption" role="heading" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><span class="caption-text" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Contents:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内容:</font></font></font></span></p>
+<ul data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<li class="toctree-l1" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference internal" href="../Introduction.html" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference internal" href="../Commands.html" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Commands<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">命令</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference internal" href="../Reference.html" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Reference<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference internal" href="../Tutorials.html" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Tutorials<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">教程</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference internal" href="../Search.html" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Search<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">搜索</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a class="reference external" href="https://podman-py.readthedocs.io/en/latest/" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Podman Python</a></li>
+</ul>
+
+<div class="relations" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+<h3 data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Related Topics<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关主题</font></font></font></h3>
+<ul data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+  <li data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"><a href="../index.html" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">Documentation overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档概述</font></font></font></a><ul data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18"></div>
+    </div>
+    <div class="footer" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18" data-immersive-translate-paragraph="1">
+      ©2019, team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">Alabaster 0.7.16</a>
+      
+      |
+      <a href="https://docs.podman.io/en/latest/_sources/markdown/podman-volume-create.1.md.txt" rel="nofollow" data-immersive-translate-walked="71135eb6-49be-4b33-a9aa-dc78a0cd5f18">Page source</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">©2019，团队。| 由 Sphinx 7.3.7 &amp; Alabaster 0.7.16 提供支持。| 页面来源</font></font></font>
+    </div>
+
+    
+
+    
+  
+</body></html>

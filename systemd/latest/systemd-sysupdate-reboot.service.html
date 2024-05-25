@@ -1,0 +1,119 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-sysupdate</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-sysupdate"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-sysupdate, systemd-sysupdate.service, systemd-sysupdate.timer, systemd-sysupdate-reboot.service, systemd-sysupdate-reboot.timer — Automatically Update OS or Other Resources</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">systemd-sysupdate</code>  [OPTIONS...]</p></div><p><code class="filename">systemd-sysupdate.service</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-sysupdate</strong></span> atomically updates the host OS, container images, portable
+    service images or other sources, based on the transfer configuration files described in
+    <a href="sysupdate.d.html#"><span class="citerefentry"><span class="refentrytitle">sysupdate.d</span>(5)</span></a>.</p><p>This tool implements file, directory, or partition based update schemes, supporting multiple
+    parallel installed versions of specific resources in an A/B (or even: A/B/C, A/B/C/D/, …) style. A/B
+    updating means that when one version of a resource is currently being used, the next version can be
+    downloaded, unpacked, and prepared in an entirely separate location, independently of the first, and — once
+    complete — be activated, swapping the roles so that it becomes the used one and the previously used one
+    becomes the one that is replaced by the next update, and so on. The resources to update are defined
+    in transfer files, one for each resource to be updated. For example, resources that may be updated with
+    this tool could be: a root file system partition, a matching Verity partition plus one kernel image. The
+    combination of the three would be considered a complete OS update.</p><p>The tool updates partitions, files or directory trees always in whole, and operates with at least
+    two versions of each of these resources: the <span class="emphasis"><em>current</em></span> version, plus the
+    <span class="emphasis"><em>next</em></span> version: the one that is being updated to, and which is initially incomplete as
+    the downloaded data is written to it; plus optionally more versions. Once the download of a newer version
+    is complete it becomes the current version, releasing the version previously considered current for
+    deletion/replacement/updating.</p><p>When installing new versions the tool will directly download, decompress, unpack and write the new
+    version into the destination. This is done in a robust fashion so that an incomplete download can be
+    recognized on next invocation, and flushed out before a new attempt is initiated.</p><p>Note that when writing updates to a partition, the partition has to exist already, as
+    <span class="command"><strong>systemd-sysupdate</strong></span> will not automatically create new partitions. Use a tool such as
+    <a href="systemd-repart.html#"><span class="citerefentry"><span class="refentrytitle">systemd-repart</span>(8)</span></a> to
+    automatically create additional partitions to be used with <span class="command"><strong>systemd-sysupdate</strong></span> on
+    boot.</p><p>The tool can both be used on the running OS, to update the OS in "online" state from within itself,
+    and on "offline" disk images, to update them from the outside based on transfer files
+    embedded in the disk images. For the latter, see <code class="option">--image=</code> below. The latter is
+    particularly interesting to update container images or portable service images.</p><p>The <code class="filename">systemd-sysupdate.service</code> system service will automatically update the
+    host OS based on the installed transfer files. It is triggered in regular intervals via
+    <code class="filename">systemd-sysupdate.timer</code>. The <code class="filename">systemd-sysupdate-reboot.service</code>
+    will automatically reboot the system after a new version is installed. It is triggered via
+    <code class="filename">systemd-sysupdate-reboot.timer</code>. The two services are separate from each other as it
+    is typically advisable to download updates regularly while the system is up, but delay reboots until the
+    appropriate time (i.e. typically at night). The two sets of service/timer units may be enabled
+    separately.</p><p>For details about transfer files and examples see
+    <a href="sysupdate.d.html#"><span class="citerefentry"><span class="refentrytitle">sysupdate.d</span>(5)</span></a>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Command">Command<a class="headerlink" title="Permalink to this headline" href="#Command">¶</a></h2><p>The following commands are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="list VERSION"><span class="term"><code class="option">list</code> [<span class="optional"><em class="replaceable"><code>VERSION</code></em></span>]</span><a class="headerlink" title="Permalink to this term" href="#list%20VERSION">¶</a></dt><dd><p>If invoked without an argument, enumerates downloadable and installed versions, and
+        shows a summarizing table with the discovered versions and their properties, including whether
+        there's a newer candidate version to update to. If a version argument is specified, shows details
+        about the specific version, including the individual files that need to be transferred to acquire the
+        version.</p><p>If no command is explicitly specified this command is implied.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="check-new"><span class="term"><code class="option">check-new</code></span><a class="headerlink" title="Permalink to this term" href="#check-new">¶</a></dt><dd><p>Checks if there's a new version available. This internally enumerates downloadable and
+        installed versions and returns exit status 0 if there's a new version to update to, non-zero
+        otherwise. If there is a new version to update to, its version identifier is written to standard
+        output.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="update VERSION"><span class="term"><code class="option">update</code> [<span class="optional"><em class="replaceable"><code>VERSION</code></em></span>]</span><a class="headerlink" title="Permalink to this term" href="#update%20VERSION">¶</a></dt><dd><p>Installs (updates to) the specified version, or if none is specified to the newest
+        version available. If the version is already installed or no newer version available, no operation is
+        executed.</p><p>If a new version to install/update to is found, old installed versions are deleted until at
+        least one new version can be installed, as configured via <code class="varname">InstanceMax=</code> in
+        <a href="sysupdate.d.html#"><span class="citerefentry"><span class="refentrytitle">sysupdate.d</span>(5)</span></a>, or
+        via the available partition slots of the right type. This implicit operation can also be invoked
+        explicitly via the <span class="command"><strong>vacuum</strong></span> command described below.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="vacuum"><span class="term"><code class="option">vacuum</code></span><a class="headerlink" title="Permalink to this term" href="#vacuum">¶</a></dt><dd><p>Deletes old installed versions until the limits configured via
+        <code class="varname">InstanceMax=</code> in
+        <a href="sysupdate.d.html#"><span class="citerefentry"><span class="refentrytitle">sysupdate.d</span>(5)</span></a> are
+        met again. Normally, it should not be necessary to invoke this command explicitly, since it is
+        implicitly invoked whenever a new update is initiated.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="pending"><span class="term"><code class="option">pending</code></span><a class="headerlink" title="Permalink to this term" href="#pending">¶</a></dt><dd><p>Checks whether a newer version of the OS is installed than the one currently
+        running. Returns zero if so, non-zero otherwise. This compares the newest installed version's
+        identifier with the OS image version as reported by the <code class="varname">IMAGE_VERSION=</code> field in
+        <code class="filename">/etc/os-release</code>. If the former is newer than the latter, an update was
+        apparently completed but not activated (i.e. rebooted into) yet.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="reboot"><span class="term"><code class="option">reboot</code></span><a class="headerlink" title="Permalink to this term" href="#reboot">¶</a></dt><dd><p>Similar to the <code class="option">pending</code> command but immediately reboots in case a
+        newer version of the OS has been installed than the one currently running. This operation can be done
+        implicitly together with the <span class="command"><strong>update</strong></span> command, after a completed update via the
+        <code class="option">--reboot</code> switch, see below. This command will execute no operation (and return
+        success) if no update has been installed, and thus the system was not rebooted.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="components"><span class="term"><code class="option">components</code></span><a class="headerlink" title="Permalink to this term" href="#components">¶</a></dt><dd><p>Lists components that can be updated. This enumerates the
+        <code class="filename">/etc/sysupdate.*.d/</code>, <code class="filename">/run/sysupdate.*.d/</code> and
+        <code class="filename">/usr/lib/sysupdate.*.d/</code> directories that contain transfer files. This command is
+        useful to list possible parameters for <code class="option">--component=</code> (see below).</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--component="><span class="term"><code class="option">--component=</code>, </span><span class="term"><code class="option">-C</code></span><a class="headerlink" title="Permalink to this term" href="#--component=">¶</a></dt><dd><p>Selects the component to update. Takes a component name as argument. This has the
+        effect of slightly altering the search logic for transfer files. If this switch is not used, the
+        transfer files are loaded from <code class="filename">/etc/sysupdate.d/*.conf</code>,
+        <code class="filename">/run/sysupdate.d/*.conf</code> and <code class="filename">/usr/lib/sysupdate.d/*.conf</code>. If
+        this switch is used, the specified component name is used to alter the directories to look in to be
+        <code class="filename">/etc/sysupdate.<em class="replaceable"><code>component</code></em>.d/*.conf</code>,
+        <code class="filename">/run/sysupdate.<em class="replaceable"><code>component</code></em>.d/*.conf</code> and
+        <code class="filename">/usr/lib/sysupdate.<em class="replaceable"><code>component</code></em>.d/*.conf</code>, each time with
+        the <code class="filename"><em class="replaceable"><code>component</code></em></code> string replaced with the specified
+        component name.</p><p>Use the <span class="command"><strong>components</strong></span> command to list available components to update. This enumerates
+        the directories matching this naming rule.</p><p>Components may be used to define a separate set of transfer files for different components of
+        the OS that shall be updated separately. Do not use this concept for resources that shall always be
+        updated together in a synchronous fashion. Simply define multiple transfer files within the same
+        <code class="filename">sysupdate.d/</code> directory for these cases.</p><p>This option may not be combined with <code class="option">--definitions=</code>.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="--definitions="><span class="term"><code class="option">--definitions=</code></span><a class="headerlink" title="Permalink to this term" href="#--definitions=">¶</a></dt><dd><p>A path to a directory. If specified, the transfer <code class="filename">*.conf</code> files
+        are read from this directory instead of <code class="filename">/usr/lib/sysupdate.d/*.conf</code>,
+        <code class="filename">/etc/sysupdate.d/*.conf</code>, and <code class="filename">/run/sysupdate.d/*.conf</code>.</p><p>This option may not be combined with <code class="option">--component=</code>.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="--root="><span class="term"><code class="option">--root=</code></span><a class="headerlink" title="Permalink to this term" href="#--root=">¶</a></dt><dd><p>Takes a path to a directory to use as root file system when searching for
+        <code class="filename">sysupdate.d/*.conf</code> files.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="--image="><span class="term"><code class="option">--image=</code></span><a class="headerlink" title="Permalink to this term" href="#--image=">¶</a></dt><dd><p>Takes a path to a disk image file or device to mount and use in a similar fashion to
+        <code class="option">--root=</code>, see above. If this is used and partition resources are updated this is done
+        inside the specified disk image.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="--image-policy=policy"><span class="term"><code class="option">--image-policy=<em class="replaceable"><code>policy</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--image-policy=policy">¶</a></dt><dd><p>Takes an image policy string as argument, as per
+    <a href="systemd.image-policy.html#"><span class="citerefentry"><span class="refentrytitle">systemd.image-policy</span>(7)</span></a>. The
+    policy is enforced when operating on the disk image specified via <code class="option">--image=</code>, see
+    above. If not specified defaults to the "<code class="literal">*</code>" policy, i.e. all recognized file systems
+    in the image are used.</p></dd><dt id="--instances-max="><span class="term"><code class="option">--instances-max=</code>, </span><span class="term"><code class="option">-m</code></span><a class="headerlink" title="Permalink to this term" href="#--instances-max=">¶</a></dt><dd><p>Takes a decimal integer greater than or equal to 2. Controls how many versions to
+        keep at any time. This option may also be configured inside the transfer files, via the
+        <code class="varname">InstancesMax=</code> setting, see
+        <a href="sysupdate.d.html#"><span class="citerefentry"><span class="refentrytitle">sysupdate.d</span>(5)</span></a> for
+        details.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="--sync="><span class="term"><code class="option">--sync=</code></span><a class="headerlink" title="Permalink to this term" href="#--sync=">¶</a></dt><dd><p>Takes a boolean argument, defaults to yes. This may be used to specify whether the
+        newly updated resource versions shall be synchronized to disk when appropriate (i.e. after the
+        download is complete, before it is finalized, and again after finalization). This should not be
+        turned off, except to improve runtime performance in testing environments.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="--verify="><span class="term"><code class="option">--verify=</code></span><a class="headerlink" title="Permalink to this term" href="#--verify=">¶</a></dt><dd><p>Takes a boolean argument, defaults to yes. Controls whether to cryptographically
+        verify downloads. Do not turn this off, except in testing environments.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="--reboot"><span class="term"><code class="option">--reboot</code></span><a class="headerlink" title="Permalink to this term" href="#--reboot">¶</a></dt><dd><p>When used in combination with the <span class="command"><strong>update</strong></span> command and a new version is
+        installed, automatically reboots the system immediately afterwards.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="--no-legend"><span class="term"><code class="option">--no-legend</code></span><a class="headerlink" title="Permalink to this term" href="#--no-legend">¶</a></dt><dd><p>Do not print the legend, i.e. column headers and the
+      footer with hints.</p></dd><dt id="--json=MODE"><span class="term"><code class="option">--json=</code><em class="replaceable"><code>MODE</code></em></span><a class="headerlink" title="Permalink to this term" href="#--json=MODE">¶</a></dt><dd><p>Shows output formatted as JSON. Expects one of "<code class="literal">short</code>" (for the
+    shortest possible output without any redundant whitespace or line breaks), "<code class="literal">pretty</code>"
+    (for a pretty version of the same, with indentation and line breaks) or "<code class="literal">off</code>" (to turn
+    off JSON output, the default).</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>On success, 0 is returned, a non-zero failure code otherwise.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sysupdate.d.html#"><span class="citerefentry"><span class="refentrytitle">sysupdate.d</span>(5)</span></a>,
+      <a href="systemd-repart.html#"><span class="citerefentry"><span class="refentrytitle">systemd-repart</span>(8)</span></a>
+    </p></div></div></body></html>

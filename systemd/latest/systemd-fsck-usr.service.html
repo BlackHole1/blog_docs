@@ -1,0 +1,68 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-fsck@.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-fsck@.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-fsck@.service, systemd-fsck-root.service, systemd-fsck-usr.service, systemd-fsck — File system checker logic</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-fsck@.service</code></p><p><code class="filename">systemd-fsck-root.service</code></p><p><code class="filename">systemd-fsck-usr.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-fsck</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">systemd-fsck@.service</code>, <code class="filename">systemd-fsck-root.service</code>, and
+    <code class="filename">systemd-fsck-usr.service</code> are services responsible for file system checks. They are
+    instantiated for each device that is configured for file system checking.
+    <code class="filename">systemd-fsck-root.service</code> and <code class="filename">systemd-fsck-usr.service</code> are
+    responsible for file system checks on the root and /usr file system, respectively, but only if the root
+    filesystem was not checked in the initrd. <code class="filename">systemd-fsck@.service</code> is used for all
+    other file systems and for the root file system in the initrd.</p><p>These services are started at boot if <code class="option">passno</code> in <code class="filename">/etc/fstab</code>
+    for the file system is set to a value greater than zero, but only if it is also configured to be
+    mounted at boot (i.e. without "<code class="literal">noauto</code>" option). The file system check for root is
+    performed before the other file systems. Other file systems may be checked in parallel, except when
+    they are on the same rotating disk.</p><p><code class="filename">systemd-fsck</code> does not know any details
+    about specific filesystems, and simply executes file system
+    checkers specific to each filesystem type
+    (<code class="filename">fsck.<em class="replaceable"><code>type</code></em></code>). These checkers will decide if
+    the filesystem should actually be checked based on the time since
+    last check, number of mounts, unclean unmount, etc.</p><p><code class="filename">systemd-fsck-root.service</code> and <code class="filename">systemd-fsck-usr.service</code>
+    will activate <code class="filename">reboot.target</code> if <span class="command"><strong>fsck</strong></span> returns the "System
+    should reboot" condition, or <code class="filename">emergency.target</code> if <span class="command"><strong>fsck</strong></span>
+    returns the "Filesystem errors left uncorrected" condition.</p><p><code class="filename">systemd-fsck@.service</code> will fail if
+    <span class="command"><strong>fsck</strong></span> returns with either "System should reboot"
+    or "Filesystem errors left uncorrected" conditions. For filesystems
+    listed in <code class="filename">/etc/fstab</code> without "<code class="literal">nofail</code>"
+    or "<code class="literal">noauto</code>" options, "<code class="literal">local-fs.target</code>"
+    will then activate <code class="filename">emergency.target</code>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Kernel Command Line">Kernel Command Line<a class="headerlink" title="Permalink to this headline" href="#Kernel%20Command%20Line">¶</a></h2><p><span class="command"><strong>systemd-fsck</strong></span> understands these kernel
+    command line parameters:</p><div class="variablelist"><dl class="variablelist"><dt id="fsck.mode="><span class="term"><code class="varname">fsck.mode=</code></span><a class="headerlink" title="Permalink to this term" href="#fsck.mode=">¶</a></dt><dd><p>One of "<code class="literal">auto</code>",
+        "<code class="literal">force</code>", "<code class="literal">skip</code>". Controls
+        the mode of operation. The default is "<code class="literal">auto</code>",
+        and ensures that file system checks are done when the file
+        system checker deems them necessary. "<code class="literal">force</code>"
+        unconditionally results in full file system checks.
+        "<code class="literal">skip</code>" skips any file system
+        checks.</p><p><a name="v186"></a>Added in version 186.</p></dd><dt id="fsck.repair="><span class="term"><code class="varname">fsck.repair=</code></span><a class="headerlink" title="Permalink to this term" href="#fsck.repair=">¶</a></dt><dd><p>One of "<code class="literal">preen</code>",
+        "<code class="literal">yes</code>", "<code class="literal">no</code>". Controls the
+        mode of operation. The default is "<code class="literal">preen</code>",
+        and will automatically repair problems that can be safely
+        fixed. "<code class="literal">yes</code>" will answer yes to all
+        questions by fsck and "<code class="literal">no</code>" will answer no to
+        all questions. </p><p><a name="v213"></a>Added in version 213.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/fsck.8.html"><span class="citerefentry"><span class="refentrytitle">fsck</span>(8)</span></a>,
+      <a href="systemd-quotacheck.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-quotacheck.service</span>(8)</span></a>,
+      <a href="https://btrfs.readthedocs.io/en/latest/fsck.btrfs.html"><span class="citerefentry"><span class="refentrytitle">fsck.btrfs</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/fsck.cramfs.8.html"><span class="citerefentry"><span class="refentrytitle">fsck.cramfs</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/fsck.ext4.8.html"><span class="citerefentry"><span class="refentrytitle">fsck.ext4</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/fsck.fat.8.html"><span class="citerefentry"><span class="refentrytitle">fsck.fat</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/fsck.hfsplus.8.html"><span class="citerefentry"><span class="refentrytitle">fsck.hfsplus</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/fsck.minix.8.html"><span class="citerefentry"><span class="refentrytitle">fsck.minix</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/fsck.ntfs.8.html"><span class="citerefentry"><span class="refentrytitle">fsck.ntfs</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/fsck.xfs.8.html"><span class="citerefentry"><span class="refentrytitle">fsck.xfs</span>(8)</span></a>
+    </p></div></div></body></html>

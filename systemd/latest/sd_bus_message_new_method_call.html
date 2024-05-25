@@ -1,0 +1,126 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_message_new_method_call</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_message_new_method_call"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_message_new_method_call, sd_bus_message_new_method_return — Create a method call message</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_message_new_method_call</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>sd_bus_message **<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">destination</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">interface</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">member</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_message_new_method_return</b>(</code></td><td>sd_bus_message *<var class="pdparam">call</var>, </td></tr><tr><td> </td><td>sd_bus_message **<var class="pdparam">m</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>The <code class="function">sd_bus_message_new_method_call()</code> function creates a new bus
+    message object that encapsulates a D-Bus method call, and returns it in the
+    <em class="parameter"><code>m</code></em> output parameter. The call will be made on the destination
+    <em class="parameter"><code>destination</code></em>, path <em class="parameter"><code>path</code></em>, on the interface
+    <em class="parameter"><code>interface</code></em>, member <em class="parameter"><code>member</code></em>.</p><p>Briefly, the <span class="emphasis"><em>destination</em></span> is a dot-separated name that identifies a
+    service connected to the bus. The <span class="emphasis"><em>path</em></span> is a slash-separated identifier of
+    an object within the destination that resembles a file system path. The meaning of this path is
+    defined by the destination. The <span class="emphasis"><em>interface</em></span> is a dot-separated name that
+    resembles a Java interface name that identifies a group of methods and signals supported by the
+    object identified by path. Methods and signals are collectively called
+    <span class="emphasis"><em>members</em></span> and are identified by a simple name composed of ASCII letters,
+    numbers, and underscores. See the <a class="ulink" href="https://dbus.freedesktop.org/doc/dbus-tutorial.html#concepts#concepts" target="_top">D-Bus Tutorial</a> for an
+    in-depth explanation.</p><p>The <em class="parameter"><code>destination</code></em> parameter may be <code class="constant">NULL</code>. The
+    <em class="parameter"><code>interface</code></em> parameter may be <code class="constant">NULL</code>, if the destination
+    has only a single member with the given name and there is no ambiguity if the interface name is
+    omitted.</p><p>Note that this is a low level interface. See
+    <a href="sd_bus_call_method.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_call_method</span>(3)</span></a>
+    for a more convenient way of calling D-Bus methods.</p><p>The <code class="function">sd_bus_message_new_method_return()</code> function creates a new bus
+    message object that is a reply to the method call <em class="parameter"><code>call</code></em> and returns it in
+    the <em class="parameter"><code>m</code></em> output parameter. The <em class="parameter"><code>call</code></em> parameter must be
+    a method call message. The sender of <em class="parameter"><code>call</code></em> is used as the destination.
+    </p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these functions return a non-negative integer. On failure, they return a
+    negative errno-style error code.</p><div class="refsect2"><a name="errors"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>The output parameter <em class="parameter"><code>m</code></em> is
+          <code class="constant">NULL</code>.</p><p>The <em class="parameter"><code>destination</code></em> parameter is non-null and is not a valid D-Bus
+          service name ("<code class="literal">org.somewhere.Something</code>"), the <em class="parameter"><code>path</code></em>
+          parameter is not a valid D-Bus path ("<code class="literal">/an/object/path</code>"), the
+          <em class="parameter"><code>interface</code></em> parameter is non-null and is not a valid D-Bus interface
+          name ("<code class="literal">an.interface.name</code>"), or the <em class="parameter"><code>member</code></em> parameter
+          is not a valid D-Bus member ("<code class="literal">Name</code>").</p><p>The <em class="parameter"><code>call</code></em> parameter is not a method call object.</p></dd><dt id="-ENOTCONN"><span class="term"><code class="constant">-ENOTCONN</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOTCONN">¶</a></dt><dd><p>The bus parameter <em class="parameter"><code>bus</code></em> is <code class="constant">NULL</code> or
+          the bus is not connected.</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p></dd><dt id="-EPERM"><span class="term"><code class="constant">-EPERM</code></span><a class="headerlink" title="Permalink to this term" href="#-EPERM">¶</a></dt><dd><p>The <em class="parameter"><code>call</code></em> parameter is not sealed.</p></dd><dt id="-EOPNOTSUPP"><span class="term"><code class="constant">-EOPNOTSUPP</code></span><a class="headerlink" title="Permalink to this term" href="#-EOPNOTSUPP">¶</a></dt><dd><p>The <em class="parameter"><code>call</code></em> message does not have a cookie.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Make a call to a D-Bus method that takes a single parameter</b></p><div class="example-contents"><pre class="programlisting">/* SPDX-License-Identifier: MIT-0 */
+
+/* This is equivalent to:
+ * busctl call org.freedesktop.systemd1 /org/freedesktop/systemd1 \
+ *       org.freedesktop.systemd1.Manager GetUnitByPID $$
+ *
+ * Compile with 'cc print-unit-path.c -lsystemd'
+ */
+
+#include &lt;errno.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+
+#include &lt;systemd/sd-bus.h&gt;
+
+#define _cleanup_(f) __attribute__((cleanup(f)))
+#define DESTINATION "org.freedesktop.systemd1"
+#define PATH        "/org/freedesktop/systemd1"
+#define INTERFACE   "org.freedesktop.systemd1.Manager"
+#define MEMBER      "GetUnitByPID"
+
+static int log_error(int error, const char *message) {
+  errno = -error;
+  fprintf(stderr, "%s: %m\n", message);
+  return error;
+}
+
+int main(int argc, char **argv) {
+  _cleanup_(sd_bus_flush_close_unrefp) sd_bus *bus = NULL;
+  _cleanup_(sd_bus_error_free) sd_bus_error error = SD_BUS_ERROR_NULL;
+  _cleanup_(sd_bus_message_unrefp) sd_bus_message *reply = NULL, *m = NULL;
+  int r;
+
+  r = sd_bus_open_system(&amp;bus);
+  if (r &lt; 0)
+    return log_error(r, "Failed to acquire bus");
+
+  r = sd_bus_message_new_method_call(bus, &amp;m,
+                                     DESTINATION, PATH, INTERFACE, MEMBER);
+  if (r &lt; 0)
+    return log_error(r, "Failed to create bus message");
+
+  r = sd_bus_message_append(m, "u", (unsigned) getpid());
+  if (r &lt; 0)
+    return log_error(r, "Failed to append to bus message");
+
+  r = sd_bus_call(bus, m, -1, &amp;error, &amp;reply);
+  if (r &lt; 0)
+    return log_error(r, MEMBER " call failed");
+
+  const char *ans;
+  r = sd_bus_message_read(reply, "o", &amp;ans);
+  if (r &lt; 0)
+    return log_error(r, "Failed to read reply");
+
+  printf("Unit path is \"%s\".\n", ans);
+
+  return 0;
+}
+</pre><p>This defines a minimally useful program that will open a connection to the bus, create a
+      message object, send it, wait for the reply, and finally extract and print the answer. It does
+      error handling and proper memory management.</p></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_message_new_method_call()</code> and
+    <code class="function">sd_bus_message_new_method_return()</code> were added in version 246.</p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_call.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_call</span>(3)</span></a>,
+      <a href="sd_bus_call_method.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_call_method</span>(3)</span></a>,
+      <a href="sd_bus_path_encode.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_path_encode</span>(3)</span></a>
+    </p></div></div></body></html>

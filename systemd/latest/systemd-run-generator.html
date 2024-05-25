@@ -1,0 +1,47 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-run-generator</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-run-generator"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-run-generator — Generator for invoking commands specified on the kernel command line as system service</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">/usr/lib/systemd/system-generators/systemd-run-generator</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">systemd-run-generator</code> is a generator
+    that reads the kernel command line and understands three
+    options:</p><p>If the <code class="option">systemd.run=</code> option is specified and followed by a command line, a unit named
+    <code class="filename">kernel-command-line.service</code> is generated for it and booted into. The service has
+    <code class="varname">Type=oneshot</code> set, and has <code class="varname">SuccessAction=exit</code> and
+    <code class="varname">FailureAction=exit</code> configured by default, thus ensuring that the system is shut down as soon as
+    the command completes. The exit status of the command line is propagated to the invoking container manager, if
+    this applies (which might propagate this further, to the calling shell — e.g.
+    <a href="systemd-nspawn.html#"><span class="citerefentry"><span class="refentrytitle">systemd-nspawn</span>(7)</span></a> does this). If
+    this option is used multiple times the unit file will contain multiple <code class="varname">ExecStart=</code> lines, to
+    execute all commands in order. The command is started as regular service, i.e. with
+    <code class="varname">DefaultDependencies=</code> on. </p><p>Use <code class="option">systemd.run_success_action=</code> and <code class="option">systemd.run_failure_action=</code> to tweak
+    how to react to the process completing. In particular assigning "<code class="literal">none</code>" will leave the system
+    running after the command completes. For further details on supported arguments, see
+    <a href="systemd.unit.html#"><span class="citerefentry"><span class="refentrytitle">systemd.unit</span>(5)</span></a>.</p><p><code class="filename">systemd-run-generator</code> implements
+    <a href="systemd.generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd.generator</span>(7)</span></a>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Example">Example<a class="headerlink" title="Permalink to this headline" href="#Example">¶</a></h2><p>Use a command like the following to add a user to the user database inside a container run with
+    <a href="systemd-nspawn.html#"><span class="citerefentry"><span class="refentrytitle">systemd-nspawn</span>(7)</span></a>:</p><pre class="programlisting"># systemd-nspawn -D mycontainer -b systemd.run='"adduser test"'</pre><p>(Note the requirement for double quoting in the command line above. The first level of quoting ('') is
+    processed and removed by the command shell used to invoke <span class="command"><strong>systemd-nspawn</strong></span>. The second level of
+    quoting ("") is propagated to the kernel command line of the container and processed and removed by
+    <span class="command"><strong>systemd-run-generator</strong></span>. Both together make sure both words of the specified command line
+    <span class="command"><strong>adduser test</strong></span> end up in the generated unit file together and are neither split apart by the
+    command shell nor by the generator.)</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemctl.html#"><span class="citerefentry"><span class="refentrytitle">systemctl</span>(1)</span></a>,
+      <a href="kernel-command-line.html#"><span class="citerefentry"><span class="refentrytitle">kernel-command-line</span>(7)</span></a>,
+      <a href="systemd-nspawn.html#"><span class="citerefentry"><span class="refentrytitle">systemd-nspawn</span>(7)</span></a>,
+      <a href="systemd.unit.html#"><span class="citerefentry"><span class="refentrytitle">systemd.unit</span>(5)</span></a>,
+      <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+    </p></div></div></body></html>

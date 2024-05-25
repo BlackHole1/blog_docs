@@ -1,0 +1,60 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>homed.conf</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="homed.conf"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>homed.conf, homed.conf.d — Home area/user account manager configuration files</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">/etc/systemd/homed.conf</code></p><p><code class="filename">/etc/systemd/homed.conf.d/*.conf</code></p><p><code class="filename">/run/systemd/homed.conf.d/*.conf</code></p><p><code class="filename">/usr/lib/systemd/homed.conf.d/*.conf</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>These configuration files control default parameters for home areas/user accounts created and
+    managed by
+    <a href="systemd-homed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-homed.service</span>(8)</span></a>.</p></div><div class="refsection"><a name="main-conf"></a><h2>Configuration Directories and Precedence</h2><p>The default configuration is set during compilation, so configuration is only needed when it is
+    necessary to deviate from those defaults. The main configuration file is either in
+    <code class="filename">/usr/lib/systemd/</code> or <code class="filename">/etc/systemd/</code> and contains commented out
+    entries showing the defaults as a guide to the administrator. Local overrides can be created by creating
+    drop-ins, as described below. The main configuration file can also be edited for this purpose (or a copy
+    in <code class="filename">/etc/</code> if it's shipped in <code class="filename">/usr/</code>) however using drop-ins for
+    local configuration is recommended over modifications to the main configuration file.</p><p>In addition to the "main" configuration file, drop-in configuration snippets are read from
+    <code class="filename">/usr/lib/systemd/*.conf.d/</code>, <code class="filename">/usr/local/lib/systemd/*.conf.d/</code>,
+    and <code class="filename">/etc/systemd/*.conf.d/</code>. Those drop-ins have higher precedence and override the
+    main configuration file. Files in the <code class="filename">*.conf.d/</code> configuration subdirectories are
+    sorted by their filename in lexicographic order, regardless of in which of the subdirectories they
+    reside. When multiple files specify the same option, for options which accept just a single value, the
+    entry in the file sorted last takes precedence, and for options which accept a list of values, entries
+    are collected as they occur in the sorted files.</p><p>When packages need to customize the configuration, they can install drop-ins under
+    <code class="filename">/usr/</code>. Files in <code class="filename">/etc/</code> are reserved for the local administrator,
+    who may use this logic to override the configuration files installed by vendor packages. Drop-ins have to
+    be used to override package drop-ins, since the main configuration file has lower precedence. It is
+    recommended to prefix all filenames in those subdirectories with a two-digit number and a dash, to
+    simplify the ordering of the files. This also defined a concept of drop-in priority to allow
+    distributions to ship drop-ins within a specific range lower than the range used by users. This should
+    lower the risk of package drop-ins overriding accidentally drop-ins defined by users.</p><p>To disable a configuration file supplied by the vendor, the recommended way is to place a symlink
+    to <code class="filename">/dev/null</code> in the configuration directory in <code class="filename">/etc/</code>, with the
+    same filename as the vendor configuration file.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are available in the [Home] section:</p><div class="variablelist"><dl class="variablelist"><dt id="DefaultStorage="><span class="term"><code class="varname">DefaultStorage=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultStorage=">¶</a></dt><dd><p>The default storage to use for home areas. Takes one of "<code class="literal">luks</code>",
+        "<code class="literal">fscrypt</code>", "<code class="literal">directory</code>", "<code class="literal">subvolume</code>",
+        "<code class="literal">cifs</code>". For details about these options, see
+        <a href="homectl.html#"><span class="citerefentry"><span class="refentrytitle">homectl</span>(1)</span></a>. If not
+        configured or assigned the empty string, the default storage is automatically determined: if not
+        running in a container environment and <code class="filename">/home/</code> is not itself encrypted, defaults
+        to "<code class="literal">luks</code>". Otherwise defaults to "<code class="literal">subvolume</code>" if
+        <code class="filename">/home/</code> is on a btrfs file system, and "<code class="literal">directory</code>"
+        otherwise. Note that the storage selected on the <span class="command"><strong>homectl</strong></span> command line always takes
+        precedence.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="DefaultFileSystemType="><span class="term"><code class="varname">DefaultFileSystemType=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultFileSystemType=">¶</a></dt><dd><p>When using "<code class="literal">luks</code>" as storage (see above), selects the default file
+        system to use inside the user's LUKS volume. Takes one of "<code class="literal">btrfs</code>",
+        "<code class="literal">ext4</code>" or "<code class="literal">xfs</code>". If not specified defaults to
+        "<code class="literal">btrfs</code>". This setting has no effect if a different storage mechanism is used. The
+        file system type selected on the <span class="command"><strong>homectl</strong></span> command line always takes
+        precedence.</p><p><a name="v246"></a>Added in version 246.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-homed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-homed.service</span>(8)</span></a>
+      </p></div></div></body></html>

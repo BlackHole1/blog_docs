@@ -1,0 +1,93 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd.pcrlock</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd.pcrlock"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd.pcrlock, systemd.pcrlock.d — PCR measurement prediction files</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="literallayout"><p><br>
+<code class="filename">/etc/pcrlock.d/*.pcrlock</code><br>
+<code class="filename">/etc/pcrlock.d/*.pcrlock.d/*.pcrlock</code><br>
+<code class="filename">/run/pcrlock.d/*.pcrlock</code><br>
+<code class="filename">/run/pcrlock.d/*.pcrlock.d/*.pcrlock</code><br>
+<code class="filename">/var/lib/pcrlock.d/*.pcrlock</code><br>
+<code class="filename">/var/lib/pcrlock.d/*.pcrlock.d/*.pcrlock</code><br>
+<code class="filename">/usr/local/pcrlock.d/*.pcrlock</code><br>
+<code class="filename">/usr/local/pcrlock.d/*.pcrlock.d/*.pcrlock</code><br>
+<code class="filename">/usr/lib/pcrlock.d/*.pcrlock</code><br>
+<code class="filename">/usr/lib/pcrlock.d/*.pcrlock.d/*.pcrlock</code></p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">*.pcrlock</code> files define expected TPM2 PCR measurements of components involved
+    in the boot
+    process. <a href="systemd-pcrlock.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrlock</span>(1)</span></a>
+    uses such pcrlock files to analyze and predict TPM2 PCR measurements. The pcrlock files are JSON arrays
+    that follow a subset of the <a class="ulink" href="https://trustedcomputinggroup.org/resource/canonical-event-log-format/" target="_top">TCG Common Event Log Format
+    (CEL-JSON)</a> specification. Specifically the "<code class="literal">recnum</code>", "<code class="literal">content</code>",
+    and "<code class="literal">content_type</code>" record fields are not used and ignored if present. Each pcrlock file
+    defines one set of expected, ordered PCR measurements of a specific component of the boot.</p><p>*.pcrlock files may be placed in various <code class="filename">.d/</code> drop-in directories (see above
+    for a full list). All matching files discovered in these directories are sorted alphabetically by their
+    file name (without taking the actual directory they were found in into account): pcrlock files with
+    alphabetically earlier names are expected to cover measurements done before those with alphabetically
+    later names. In order to make positioning pcrlock files in the boot process convenient the files are
+    expected (by convention, this is not enforced) to be named
+    "<code class="literal"><em class="replaceable"><code>NNN</code></em>-<em class="replaceable"><code>component</code></em>.pcrlock</code>" (where
+    <em class="replaceable"><code>NNN</code></em> is a three-digit decimal number), for example
+    <code class="filename">750-enter-initrd.pcrlock</code>.</p><p>For various components of the boot process more than one alternative pcrlock file shall be
+    supported (i.e. "variants"). For example to cover multiple kernels installed in parallel in the access
+    policy, or multiple versions of the boot loader. This can be done by placing
+    <code class="filename">*.pcrlock.d/*.pcrlock</code> in the drop-in dirs, i.e. a common directory for a specific
+    component, that contains one or more pcrlock files each covering one <span class="emphasis"><em>variant</em></span> of the
+    component. Example: <code class="filename">650-kernel.pcrlock.d/6.5.5-200.fc38.x86_64.pcrlock</code> and
+    <code class="filename">650-kernel.pcrlock.d/6.5.7-100.fc38.x86_64.pcrlock</code></p><p>Use <span class="command"><strong>systemd-pcrlock list-components</strong></span> to list all pcrlock files currently
+    installed.</p><p>Use the various <span class="command"><strong>lock-*</strong></span> commands of <span class="command"><strong>systemd-pcrlock</strong></span> to
+    automatically generate suitable pcrlock files for various types of resources.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Well-known Components">Well-known Components<a class="headerlink" title="Permalink to this headline" href="#Well-known%20Components">¶</a></h2><p>Components of the boot process may be defined freely by the administrator or OS vendor. The
+    following components are well-known however, and are defined by systemd. The list below is useful for
+    ordering local pcrlock files properly against these components of the boot.</p><div class="variablelist"><dl class="variablelist"><dt id="240-secureboot-policy.pcrlock"><span class="term"><code class="filename">240-secureboot-policy.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#240-secureboot-policy.pcrlock">¶</a></dt><dd><p>The SecureBoot policy, as recorded to PCR 7. May be generated via
+        <span class="command"><strong>systemd-pcrlock lock-secureboot-policy</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="250-firmware-code-early.pcrlock"><span class="term"><code class="filename">250-firmware-code-early.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#250-firmware-code-early.pcrlock">¶</a></dt><dd><p>Firmware code measurements, as recorded to PCR 0 and 2, up to the separator
+        measurement (see <code class="filename">400-secureboot-separator.pcrlock.</code> below). May be generated via
+        <span class="command"><strong>systemd-pcrlock lock-firmware-code</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="250-firmware-config-early.pcrlock"><span class="term"><code class="filename">250-firmware-config-early.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#250-firmware-config-early.pcrlock">¶</a></dt><dd><p>Firmware configuration measurements, as recorded to PCR 1 and 3, up to the separator
+        measurement (see <code class="filename">400-secureboot-separator.pcrlock.</code> below). May be generated via
+        <span class="command"><strong>systemd-pcrlock lock-firmware-config</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="350-action-efi-application.pcrlock"><span class="term"><code class="filename">350-action-efi-application.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#350-action-efi-application.pcrlock">¶</a></dt><dd><p>The EFI "Application" measurement done once by the firmware. Statically defined.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="400-secureboot-separator.pcrlock"><span class="term"><code class="filename">400-secureboot-separator.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#400-secureboot-separator.pcrlock">¶</a></dt><dd><p>The EFI "separator" measurement on PCR 7 done once by the firmware to indicate where
+        firmware control transitions into boot loader/OS control. Statically defined.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="500-separator.pcrlock"><span class="term"><code class="filename">500-separator.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#500-separator.pcrlock">¶</a></dt><dd><p>The EFI "separator" measurements on PCRs 0-6 done once by the firmware to indicate
+        where firmware control transitions into boot loader/OS control. Statically defined.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="550-firmware-code-late.pcrlock"><span class="term"><code class="filename">550-firmware-code-late.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#550-firmware-code-late.pcrlock">¶</a></dt><dd><p>Firmware code measurements, as recorded to PCR 0 and 2, after the separator
+        measurement (see <code class="filename">400-secureboot-separator.pcrlock.</code> above). May be generated via
+        <span class="command"><strong>systemd-pcrlock lock-firmware-code</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="550-firmware-config-late.pcrlock"><span class="term"><code class="filename">550-firmware-config-late.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#550-firmware-config-late.pcrlock">¶</a></dt><dd><p>Firmware configuration measurements, as recorded to PCR 1 and 3, after the separator
+        measurement (see <code class="filename">400-secureboot-separator.pcrlock.</code> above). May be generated via
+        <span class="command"><strong>systemd-pcrlock lock-firmware-config</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="600-gpt.pcrlock"><span class="term"><code class="filename">600-gpt.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#600-gpt.pcrlock">¶</a></dt><dd><p>The GPT partition table of the booted medium, as recorded to PCR 5 by the
+        firmware. May be generated via <span class="command"><strong>systemd-pcrlock lock-gpt</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="620-secureboot-authority.pcrlock"><span class="term"><code class="filename">620-secureboot-authority.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#620-secureboot-authority.pcrlock">¶</a></dt><dd><p>The SecureBoot authority, as recorded to PCR 7. May be generated via
+        <span class="command"><strong>systemd-pcrlock lock-secureboot-authority</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="700-action-efi-exit-boot-services.pcrlock"><span class="term"><code class="filename">700-action-efi-exit-boot-services.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#700-action-efi-exit-boot-services.pcrlock">¶</a></dt><dd><p>The EFI action generated when <code class="function">ExitBootServices()</code> is generated,
+        i.e. the UEFI environment is left and the OS takes over. Covers the PCR 5 measurement. Statically
+        defined.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="710-kernel-cmdline.pcrlock"><span class="term"><code class="filename">710-kernel-cmdline.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#710-kernel-cmdline.pcrlock">¶</a></dt><dd><p>The kernel command line, as measured by the Linux kernel to PCR 9. May be generated
+        via <span class="command"><strong>systemd-pcrlock lock-kernel-cmdline</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="720-kernel-initrd.pcrlock"><span class="term"><code class="filename">720-kernel-initrd.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#720-kernel-initrd.pcrlock">¶</a></dt><dd><p>The kernel initrd, as measured by the Linux kernel to PCR 9. May be generated
+        via <span class="command"><strong>systemd-pcrlock lock-kernel-initrd</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="750-enter-initrd.pcrlock"><span class="term"><code class="filename">750-enter-initrd.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#750-enter-initrd.pcrlock">¶</a></dt><dd><p>The measurement to PCR 11
+        <a href="systemd-pcrphase-initrd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrphase-initrd.service</span>(8)</span></a>
+        makes when the initrd initializes. Statically defined.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="800-leave-initrd.pcrlock"><span class="term"><code class="filename">800-leave-initrd.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#800-leave-initrd.pcrlock">¶</a></dt><dd><p>The measurement to PCR 11
+        <a href="systemd-pcrphase-initrd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrphase-initrd.service</span>(8)</span></a>
+        makes when the initrd finishes. Statically defined.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="820-machine-id.pcrlock"><span class="term"><code class="filename">820-machine-id.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#820-machine-id.pcrlock">¶</a></dt><dd><p>The measurement to PCR 15
+        <a href="systemd-pcrmachine.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrmachine.service</span>(8)</span></a>
+        makes at boot, covering <code class="filename">/etc/machine-id</code> contents. May be generated via
+        <span class="command"><strong>systemd-pcrlock lock-machine-id</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="830-root-file-system.pcrlock"><span class="term"><code class="filename">830-root-file-system.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#830-root-file-system.pcrlock">¶</a></dt><dd><p>The measurement to PCR 15
+        <a href="systemd-pcrfs-root.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrfs-root.service</span>(8)</span></a>
+        makes at boot, covering the root file system identity. May be generated
+        via <span class="command"><strong>systemd-pcrlock lock-file-system</strong></span>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="850-sysinit.pcrlock"><span class="term"><code class="filename">850-sysinit.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#850-sysinit.pcrlock">¶</a></dt><dd><p>The measurement to PCR 11
+        <a href="systemd-pcrphase-sysinit.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrphase-sysinit.service</span>(8)</span></a>
+        makes when the main userspace did basic initialization and will now proceed to start regular system
+        services. Statically defined.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="900-ready.pcrlock"><span class="term"><code class="filename">900-ready.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#900-ready.pcrlock">¶</a></dt><dd><p>The measurement to PCR 11
+        <a href="systemd-pcrphase.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrphase.service</span>(8)</span></a>
+        makes when the system fully booted up. Statically defined.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="950-shutdown.pcrlock"><span class="term"><code class="filename">950-shutdown.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#950-shutdown.pcrlock">¶</a></dt><dd><p>The measurement to PCR 11
+        <a href="systemd-pcrphase.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrphase.service</span>(8)</span></a>
+        makes when the system begins shutdown. Statically defined.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="990-final.pcrlock"><span class="term"><code class="filename">990-final.pcrlock</code></span><a class="headerlink" title="Permalink to this term" href="#990-final.pcrlock">¶</a></dt><dd><p>The measurement to PCR 11
+        <a href="systemd-pcrphase-sysinit.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrphase-sysinit.service</span>(8)</span></a>
+        makes when the system is close to finishing shutdown. Statically defined.</p><p><a name="v255"></a>Added in version 255.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-pcrlock.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrlock</span>(1)</span></a>
+    </p></div></div></body></html>

@@ -1,0 +1,592 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-fstab-generator</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><a name="systemd-fstab-generator" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a><div class="titlepage" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></div><div class="refnamediv" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><h2 data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">systemd-fstab-generator — Unit generator for /etc/fstab<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">systemd-fstab-generator — /etc/fstab 的单元生成器</font></font></font></p></div><div class="refsynopsisdiv" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><h2 data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Synopsis<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h2><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/lib/systemd/system-generators/systemd-fstab-generator</code></p></div><div class="refsect1" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><a name="id-1.5" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a><h2 id="Description" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Description<a class="headerlink" title="Permalink to this headline" href="#Description" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h2><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-fstab-generator</code> is a generator
+    that translates <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> (see
+    <a href="https://man7.org/linux/man-pages/man5/fstab.5.html" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab</span>(5)</span></a>
+    for details) into native systemd units early at boot and when
+    configuration of the system manager is reloaded. This will
+    instantiate mount and swap units as necessary.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-fstab-generator</code> 是一个生成器，用于在引导时和重新加载系统管理器配置时将 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> （有关详细信息，请参见 fstab(5)）翻译为本机 systemd 单元。这将根据需要实例化挂载和交换单元。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">passno</code> field is treated like a simple
+    boolean, and the ordering information is discarded. However, if
+    the root file system is checked, it is checked before all the
+    other file systems.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">passno</code> 字段被视为简单布尔值，并且排序信息被丢弃。但是，如果检查根文件系统，则会在检查所有其他文件系统之前检查它。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">See
+    <a href="systemd.mount.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.mount</span>(5)</span></a>
+    and
+    <a href="systemd.swap.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.swap</span>(5)</span></a>
+    for more information about special <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code>
+    mount options this generator understands.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">有关此生成器理解的特殊 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 挂载选项的更多信息，请参阅 systemd.mount(5) 和 systemd.swap(5)。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">One special topic is handling of symbolic links. Historical init
+    implementations supported symlinks in <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code>.
+    Because mount units will refuse mounts where the target is a symbolic link,
+    this generator will resolve any symlinks as far as possible when processing
+    <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> in order to enhance backwards compatibility.
+    If a symlink target does not exist at the time that this generator runs, it
+    is assumed that the symlink target is the final target of the mount.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">一个特殊主题是符号链接的处理。历史上的 init 实现支持 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 中的符号链接。因为挂载单元会拒绝目标为符号链接的挂载，所以在处理 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 时，此生成器将尽可能解析任何符号链接，以增强向后兼容性。如果符号链接目标在此生成器运行时不存在，则假定符号链接目标是挂载的最终目标。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-fstab-generator</code> implements
+    <a href="systemd.generator.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.generator</span>(7)</span></a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-fstab-generator</code> 实现了 systemd.generator(7)。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><a name="id-1.6" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a><h2 id="Kernel Command Line" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Kernel Command Line<a class="headerlink" title="Permalink to this headline" href="#Kernel%20Command%20Line" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内核命令行</font></font></font></h2><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-fstab-generator</code> understands the
+    following kernel command line parameters:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-fstab-generator</code> 理解以下内核命令行参数：</font></font></font></p><div class="variablelist" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><dl class="variablelist" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><dt id="fstab=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab=</code>, </span><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.fstab=</code></span><a class="headerlink" title="Permalink to this term" href="#fstab=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab=</code> ， <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.fstab=</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Takes a boolean argument. Defaults to "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">yes</code>". If
+        "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">no</code>", causes the generator to ignore any mounts or swap devices configured in
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code>. <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.fstab=</code> is honored only in the initrd, while
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab=</code> is honored by both the main system and the initrd.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受一个布尔参数。默认为 " <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">yes</code> "。如果 " <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">no</code> "，则导致生成器忽略在 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 中配置的任何挂载点或交换设备。 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.fstab=</code> 仅在 initrd 中受到尊重，而 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab=</code> 被主系统和 initrd 同时尊重。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v186" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 186.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 186 中。</font></font></font></p></dd><dt id="root=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">root=</code></span><a class="headerlink" title="Permalink to this term" href="#root=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Configures the operating system's root filesystem to mount when running in the
+        initrd. This accepts a device node path (usually <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/dev/disk/by-uuid/…</code> or
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/dev/disk/by-label/…</code> or similar), or the special values "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">gpt-auto</code>",
+        "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab</code>", and "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code>".<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配置操作系统的根文件系统在 initrd 运行时挂载。这接受设备节点路径（通常为 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/dev/disk/by-uuid/…</code> 或 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/dev/disk/by-label/…</code> 或类似的），或特殊值" <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">gpt-auto</code> "、" <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab</code> "和" <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code> "。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Use "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">gpt-auto</code>" to explicitly request automatic root file system discovery via
+        <a href="systemd-gpt-auto-generator.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-gpt-auto-generator</span>(8)</span></a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用" <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">gpt-auto</code> "显式请求通过 systemd-gpt-auto-generator(8)进行自动根文件系统发现。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Use "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab</code>" to explicitly request automatic root file system discovery via
+        the initrd <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> rather than via kernel command line.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 " <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab</code> " 通过 initrd <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 明确请求自动根文件系统发现，而不是通过内核命令行。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Use "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code>" in order to mount a <a href="https://man7.org/linux/man-pages/man5/tmpfs.5.html" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</span>(5)</span></a> file
+        system as root file system of the OS. This is useful in combination with
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> (see below) in order to combine a volatile root file system with a
+        separate, immutable <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> file system. Also see
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.volatile=</code> below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 " <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code> " 以将 tmpfs(5) 文件系统挂载为 OS 的根文件系统。这在与 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> （见下文）结合使用时非常有用，以将易失性根文件系统与单独的、不可变的 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 文件系统结合起来。另请参见下文的 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.volatile=</code> 。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v217" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 217.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 217 中添加。</font></font></font></p></dd><dt id="rootfstype=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootfstype=</code></span><a class="headerlink" title="Permalink to this term" href="#rootfstype=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Takes the root filesystem type that will be
+        passed to the mount command. <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootfstype=</code> is
+        honored by the initrd.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受将传递给挂载命令的根文件系统类型。 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootfstype=</code> 由 initrd 所支持。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v217" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 217.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 217 中添加。</font></font></font></p></dd><dt id="rootflags=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootflags=</code></span><a class="headerlink" title="Permalink to this term" href="#rootflags=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Takes the root filesystem mount options to use. <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootflags=</code> is
+        honored by the initrd.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">获取要使用的根文件系统挂载选项。 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootflags=</code> 由 initrd 支持。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Note that unlike most kernel command line options this setting does not override settings made
+        in configuration files (specifically: the mount option string in
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code>). See
+        <a href="systemd-remount-fs.service.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-remount-fs.service</span>(8)</span></a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，与大多数内核命令行选项不同，此设置不会覆盖在配置文件中进行的设置（具体来说： <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 中的挂载选项字符串）。请参阅 systemd-remount-fs.service(8)。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v217" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 217.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 217 中添加。</font></font></font></p></dd><dt id="mount.usr=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code></span><a class="headerlink" title="Permalink to this term" href="#mount.usr=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Takes the <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> filesystem
+        to be mounted by the initrd. If
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrfstype=</code> or
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrflags=</code> is set, then
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> will default to the value set in
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">root=</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">获取要由 initrd 挂载的 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 文件系统。如果设置了 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrfstype=</code> 或 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrflags=</code> ，那么 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> 将默认为 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">root=</code> 中设置的值。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Otherwise, this parameter defaults to the
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> entry found in
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> on the root filesystem.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">否则，此参数默认为根文件系统中找到的 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 条目。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> is honored by the initrd.
+        <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> 由 initrd 支持。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v217" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 217.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 217。</font></font></font></p></dd><dt id="mount.usrfstype=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrfstype=</code></span><a class="headerlink" title="Permalink to this term" href="#mount.usrfstype=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Takes the <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> filesystem
+        type that will be passed to the mount command. If
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> or
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrflags=</code> is set, then
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrfstype=</code> will default to the value
+        set in <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootfstype=</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">获取将传递给挂载命令的 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 文件系统类型。如果设置了 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> 或 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrflags=</code> ，那么 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrfstype=</code> 将默认为 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootfstype=</code> 中设置的值。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Otherwise, this value will be read from the
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> entry in
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> on the root filesystem.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">否则，此值将从根文件系统中的 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 条目中的 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 读取。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrfstype=</code> is honored by the
+        initrd.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrfstype=</code> 由 initrd 所尊重。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v217" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 217.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 217 中添加。</font></font></font></p></dd><dt id="mount.usrflags=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrflags=</code></span><a class="headerlink" title="Permalink to this term" href="#mount.usrflags=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Takes the <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> filesystem
+        mount options to use. If <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> or
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrfstype=</code> is set, then
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrflags=</code> will default to the value
+        set in <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootflags=</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">采用 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 文件系统挂载选项。如果设置了 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> 或 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrfstype=</code> ，那么 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrflags=</code> 将默认为 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rootflags=</code> 中设置的值。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Otherwise, this value will be read from the
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> entry in
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> on the root filesystem.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">否则，此值将从根文件系统中的 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 条目中的 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 读取。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrflags=</code> is honored by the
+        initrd.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usrflags=</code> 由 initrd 所尊重。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v217" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 217.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 217 中添加。</font></font></font></p></dd><dt id="roothash=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">roothash=</code>, </span><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">usrhash=</code></span><a class="headerlink" title="Permalink to this term" href="#roothash=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">roothash=</code> ， <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">usrhash=</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">These options are primarily read by
+        <a href="systemd-veritysetup-generator.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-veritysetup-generator</span>(8)</span></a>. When
+        set this indicates that the root file system (or <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code>) shall be mounted from
+        Verity volumes with the specified hashes. If these kernel command line options are set the root (or
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code>) file system is thus mounted from a device mapper volume
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/dev/mapper/root</code> (or <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/dev/mapper/usr</code>).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些选项主要由 systemd-veritysetup-generator(8)读取。设置此项表示应从具有指定哈希的 Verity 卷中挂载根文件系统（或 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> ）。如果设置了这些内核命令行选项，则根（或 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> ）文件系统将从设备映射器卷 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/dev/mapper/root</code> （或 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/dev/mapper/usr</code> ）挂载。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v251" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 251.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加在版本 251 中。</font></font></font></p></dd><dt id="systemd.volatile=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.volatile=</code></span><a class="headerlink" title="Permalink to this term" href="#systemd.volatile=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Controls whether the system shall boot up in volatile mode. Takes a boolean argument or the
+        special value <code class="option" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">state</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">控制系统是否应在易失性模式下启动。接受布尔参数或特殊值 <code class="option" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">state</code> 。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">If false (the default), this generator makes no changes to the mount tree and the system is booted up in
+        normal mode.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果为 false（默认值），此生成器不会对挂载树进行任何更改，系统将以正常模式启动。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">If true the generator ensures
+        <a href="systemd-volatile-root.service.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-volatile-root.service</span>(8)</span></a>
+        is run in the initrd. This service changes the mount table before transitioning to the host system,
+        so that a volatile memory file system ("<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code>") is used as root directory, with only
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> mounted into it from the configured root file system, in read-only mode.
+        This way the system operates in fully stateless mode, with all configuration and state reset at boot
+        and lost at shutdown, as <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/</code> and <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/var/</code> will be served
+        from the (initially unpopulated) volatile memory file system.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果为 true，则生成器确保在 initrd 中运行 systemd-volatile-root.service(8)。此服务在转换到主机系统之前更改挂载表，因此将使用易失性内存文件系统（" <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code> "）作为根目录，其中仅以只读模式从配置的根文件系统中挂载 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 。这样，系统将以完全无状态模式运行，所有配置和状态在启动时重置并在关闭时丢失，因为 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/</code> 和 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/var/</code> 将从（最初未填充的）易失性内存文件系统中提供。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">If set to <code class="option" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">state</code> the generator will leave the root directory mount point unaltered,
+        however will mount a "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code>" file system to <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/var/</code>. In this mode the normal
+        system configuration (i.e. the contents of "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/</code>") is in effect (and may be modified during
+        system runtime), however the system state (i.e. the contents of "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/var/</code>") is reset at boot and
+        lost at shutdown.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果设置为 <code class="option" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">state</code> ，生成器将保持根目录挂载点不变，但会将“ <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code> ”文件系统挂载到 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/var/</code> 。在此模式下，正常系统配置（即“ <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/</code> ”的内容）生效（并且可能在系统运行时进行修改），但系统状态（即“ <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/var/</code> ”的内容）在启动时重置并在关机时丢失。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">If this setting is set to "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">overlay</code>" the root file system is set up as
+        "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">overlayfs</code>" mount combining the read-only root directory with a writable
+        "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code>", so that no modifications are made to disk, but the file system may be modified
+        nonetheless with all changes being lost at reboot.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果将此设置设置为“ <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">overlay</code> ”，则根文件系统将设置为“ <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">overlayfs</code> ”挂载，将只读根目录与可写“ <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code> ”合并，因此不会对磁盘进行任何修改，但仍可修改文件系统，所有更改在重新启动时都会丢失。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Note that in none of these modes the root directory, <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/</code>, <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/var/</code>
+        or any other resources stored in the root file system are physically removed. It's thus safe to boot a system
+        that is normally operated in non-volatile mode temporarily into volatile mode, without losing data.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，在这些模式中，根目录 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/</code> 、 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/var/</code> 或存储在根文件系统中的任何其他资源都不会被物理移除。因此，可以安全地将通常以非易失性模式运行的系统临时引导到易失性模式，而不会丢失数据。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Note that with the exception of "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">overlay</code>" mode, enabling this setting will
+        only work correctly on operating systems that can boot up with only <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code>
+        mounted, and are able to automatically populate <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/</code>, and also
+        <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/var/</code> in case of "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.volatile=yes</code>".<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，除了 " <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">overlay</code> " 模式外，启用此设置只能在可以仅挂载 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 并能够自动填充 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/</code> 以及在 " <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.volatile=yes</code> " 情况下才能正常工作的操作系统上运行。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Also see <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">root=tmpfs</code> above, for a method to combine a
+        "<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code>" file system with a regular <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> file system (as
+        configured via <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code>). The main distinction between
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.volatile=yes</code>, and <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">root=tmpfs</code> in combination
+        <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> is that the former operates on top of a regular root file system and
+        temporarily obstructs the files and directories above its <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> subdirectory,
+        while the latter does not hide any files, but simply mounts a unpopulated tmpfs as root file system
+        and combines it with a user picked <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> file system.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">另请参阅上文的 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">root=tmpfs</code> ，了解一种将 " <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">tmpfs</code> " 文件系统与常规 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 文件系统（通过 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> 配置）组合的方法。 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.volatile=yes</code> 与 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">root=tmpfs</code> 在组合 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">mount.usr=</code> 方面的主要区别在于前者在常规根文件系统之上运行，并临时阻止其 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 子目录上方的文件和目录，而后者不隐藏任何文件，而只是将未填充的 tmpfs 挂载为根文件系统，并将其与用户选择的 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/usr/</code> 文件系统结合。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v233" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 233.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 233。</font></font></font></p></dd><dt id="systemd.swap=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.swap=</code></span><a class="headerlink" title="Permalink to this term" href="#systemd.swap=" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Takes a boolean argument or enables the option if specified
+        without an argument. If disabled, causes the generator to ignore
+        any swap devices configured in <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code>.
+        Defaults to enabled.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">接受布尔参数或在未指定参数的情况下启用该选项。如果禁用，会导致生成器忽略在 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 中配置的任何交换设备。默认为启用。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v246" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 246.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加于版本 246。</font></font></font></p></dd><dt id="systemd.mount-extra=WHAT:WHERE[:FSTYPE[:OPTIONS]]" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.mount-extra=<em class="replaceable"><code>WHAT</code></em>:<em class="replaceable"><code>WHERE</code></em>[:<em class="replaceable"><code>FSTYPE</code></em>[:<em class="replaceable"><code>OPTIONS</code></em>]]</code>, </span><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.systemd.mount-extra=<em class="replaceable"><code>WHAT</code></em>:<em class="replaceable"><code>WHERE</code></em>[:<em class="replaceable"><code>FSTYPE</code></em>[:<em class="replaceable"><code>OPTIONS</code></em>]]</code></span><a class="headerlink" title="Permalink to this term" href="#systemd.mount-extra=WHAT:WHERE%5B:FSTYPE%5B:OPTIONS%5D%5D" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.mount-extra=<em class="replaceable"><code>WHAT</code></em>:<em class="replaceable"><code>WHERE</code></em>[:<em class="replaceable"><code>FSTYPE</code></em>[:<em class="replaceable"><code>OPTIONS</code></em>]]</code> ， <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.systemd.mount-extra=<em class="replaceable"><code>WHAT</code></em>:<em class="replaceable"><code>WHERE</code></em>[:<em class="replaceable"><code>FSTYPE</code></em>[:<em class="replaceable"><code>OPTIONS</code></em>]]</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Specifies the mount unit. Takes at least two and at most four fields separated with a colon
+          ("<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">:</code>"). Each field is handled as the corresponding fstab field. This option can be
+          specified multiple times. <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.systemd.mount-extra=</code> is honored only in the initrd,
+          while <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.mount-extra=</code> is honored by both the main system and the initrd.
+          In the initrd, the mount point (and also source path if the mount is bind mount) specified in
+          <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.mount-extra=</code> is prefixed with <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/sysroot/</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定挂载单元。至少需要两个字段，最多四个字段，用冒号（" <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">:</code> "）分隔。每个字段都被视为对应的 fstab 字段。此选项可以指定多次。 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.systemd.mount-extra=</code> 仅在 initrd 中受到尊重，而 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.mount-extra=</code> 被主系统和 initrd 同时尊重。在 initrd 中，挂载点（如果挂载是绑定挂载，则还有源路径）中指定的 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.mount-extra=</code> 将以 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/sysroot/</code> 为前缀。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Example:
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例：</font></font></font></p><pre class="programlisting">systemd.mount-extra=/dev/sda1:/mount-point:ext4:rw,noatime</pre><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">
+          </p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v254" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 254.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 254 中添加。</font></font></font></p></dd><dt id="systemd.swap-extra=WHAT[:OPTIONS]" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.swap-extra=<em class="replaceable"><code>WHAT</code></em>[:<em class="replaceable"><code>OPTIONS</code></em>]</code>, </span><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.systemd.swap-extra=<em class="replaceable"><code>WHAT</code></em>[:<em class="replaceable"><code>OPTIONS</code></em>]</code></span><a class="headerlink" title="Permalink to this term" href="#systemd.swap-extra=WHAT%5B:OPTIONS%5D" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.swap-extra=<em class="replaceable"><code>WHAT</code></em>[:<em class="replaceable"><code>OPTIONS</code></em>]</code> ， <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.systemd.swap-extra=<em class="replaceable"><code>WHAT</code></em>[:<em class="replaceable"><code>OPTIONS</code></em>]</code> ¶</font></font></font></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Specifies the swap unit. Takes the block device to be used as a swap device, and optionally
+          takes mount options followed by a colon ("<code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">:</code>"). This option can be specified
+          multiple times. <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.systemd.swap-extra=</code> is honored only in the initrd, while
+          <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.swap-extra=</code> is honored by both the main system and the initrd.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定交换单元。获取要用作交换设备的块设备，可选地跟着挂载选项，后跟冒号（" <code class="literal" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">:</code> "）。此选项可以指定多次。 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">rd.systemd.swap-extra=</code> 仅在 initrd 中受到尊重，而 <code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.swap-extra=</code> 被主系统和 initrd 同时尊重。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">Example:
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例：</font></font></font></p><pre class="programlisting">systemd.swap-extra=/dev/sda2:x-systemd.makefs</pre><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">
+          </p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v254" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 254.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 254 中添加。</font></font></font></p></dd></dl></div></div><div class="refsect1" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><a name="id-1.7" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a><h2 id="System Credentials" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">System Credentials<a class="headerlink" title="Permalink to this headline" href="#System%20Credentials" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">系统凭据</font></font></font></h2><div class="variablelist" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><dl class="variablelist" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><dt id="fstab.extra" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><code class="varname" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab.extra</code></span><a class="headerlink" title="Permalink to this term" href="#fstab.extra" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a></dt><dd data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">This credential may contain addition mounts to establish, in the same format as
+        <a href="https://man7.org/linux/man-pages/man5/fstab.5.html" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab</span>(5)</span></a>, with
+        one mount per line. It is read in addition to <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此凭证可能包含附加挂载点，以与 fstab(5)相同的格式建立，每行一个挂载点。它将与 <code class="filename" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">/etc/fstab</code> 一起读取。</font></font></font></p><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1"><a name="v254" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a>Added in version 254.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 254 中添加。</font></font></font></p></dd></dl></div></div><div class="refsect1" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><a name="id-1.8" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"></a><h2 id="See Also" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">另请参阅 ¶</font></font></font></h2><p data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02" data-immersive-translate-paragraph="1">
+      <a href="systemd.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd</span>(1)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man5/fstab.5.html" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">fstab</span>(5)</span></a>,
+      <a href="systemd.mount.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.mount</span>(5)</span></a>,
+      <a href="systemd.swap.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd.swap</span>(5)</span></a>,
+      <a href="systemd-cryptsetup-generator.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-cryptsetup-generator</span>(8)</span></a>,
+      <a href="systemd-gpt-auto-generator.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">systemd-gpt-auto-generator</span>(8)</span></a>,
+      <a href="kernel-command-line.html#" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="citerefentry" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02"><span class="refentrytitle" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">kernel-command-line</span>(7)</span></a>,
+      <a class="ulink" href="https://systemd.io/ENVIRONMENT/" target="_top" data-immersive-translate-walked="de90af51-c5b3-4fe9-895d-23ee94f4fb02">Known Environment Variables</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">systemd(1)，fstab(5)，systemd.mount(5)，systemd.swap(5)，systemd-cryptsetup-generator(8)，systemd-gpt-auto-generator(8)，kernel-command-line(7)，已知环境变量</font></font></font>
+    </p></div></div>
+</body></html>

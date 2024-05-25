@@ -1,0 +1,206 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_error</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_error"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_error, SD_BUS_ERROR_MAKE_CONST, SD_BUS_ERROR_NULL, sd_bus_error_free, sd_bus_error_set, sd_bus_error_setf, sd_bus_error_setfv, sd_bus_error_set_const, sd_bus_error_set_errno, sd_bus_error_set_errnof, sd_bus_error_set_errnofv, sd_bus_error_get_errno, sd_bus_error_copy, sd_bus_error_move, sd_bus_error_is_set, sd_bus_error_has_name, sd_bus_error_has_names_sentinel, sd_bus_error_has_names — sd-bus error handling</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><pre class="funcsynopsisinfo">typedef struct {
+        const char *name;
+        const char *message;
+        …
+} sd_bus_error;</pre><p>
+        <code class="constant">SD_BUS_ERROR_MAKE_CONST(<em class="replaceable"><code>name</code></em>, <em class="replaceable"><code>message</code></em>)</code>
+      </p><p>
+        <code class="constant">SD_BUS_ERROR_NULL</code>
+      </p><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">void <b class="fsfunc">sd_bus_error_free</b>(</code></td><td>sd_bus_error *<var class="pdparam">e</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_set</b>(</code></td><td>sd_bus_error *<var class="pdparam">e</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">name</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">message</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_setf</b>(</code></td><td>sd_bus_error *<var class="pdparam">e</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">name</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">format</var>, </td></tr><tr><td> </td><td>…<code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_setfv</b>(</code></td><td>sd_bus_error *<var class="pdparam">e</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">name</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">format</var>, </td></tr><tr><td> </td><td>va_list <var class="pdparam">ap</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_set_const</b>(</code></td><td>sd_bus_error *<var class="pdparam">e</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">name</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">message</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_set_errno</b>(</code></td><td>sd_bus_error *<var class="pdparam">e</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">error</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_set_errnof</b>(</code></td><td>sd_bus_error *<var class="pdparam">e</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">error</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">format</var>, </td></tr><tr><td> </td><td>…<code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_set_errnofv</b>(</code></td><td>sd_bus_error *<var class="pdparam">e</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">error</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">format</var>, </td></tr><tr><td> </td><td>va_list <var class="pdparam">ap</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_get_errno</b>(</code></td><td>const sd_bus_error *<var class="pdparam">e</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_copy</b>(</code></td><td>sd_bus_error *<var class="pdparam">dst</var>, </td></tr><tr><td> </td><td>const sd_bus_error *<var class="pdparam">e</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_move</b>(</code></td><td>sd_bus_error *<var class="pdparam">dst</var>, </td></tr><tr><td> </td><td>sd_bus_error *<var class="pdparam">e</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_is_set</b>(</code></td><td>const sd_bus_error *<var class="pdparam">e</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_has_name</b>(</code></td><td>const sd_bus_error *<var class="pdparam">e</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">name</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_error_has_names_sentinel</b>(</code></td><td>const sd_bus_error *<var class="pdparam">e</var>, </td></tr><tr><td> </td><td>...<code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><p>
+        #define sd_bus_error_has_names(e, ...) sd_bus_error_has_names_sentinel(e, ..., NULL)
+      </p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>The <span class="structname">sd_bus_error</span> structure carries information about a D-Bus error
+    condition, or lack thereof. The functions described below may be used to set and query fields in this
+    structure.
+    </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The <em class="structfield"><code>name</code></em> field contains a short identifier of an error. It
+      should follow the rules for error names described in the D-Bus specification, subsection <a class="ulink" href="https://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-names#message-protocol-names" target="_top">Valid
+      D-Bus Names</a>. A number of common, standardized error names are described in
+      <a href="sd-bus-errors.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus-errors</span>(3)</span></a>, but
+      additional domain-specific errors may be defined by applications.</p></li><li class="listitem"><p>The <em class="structfield"><code>message</code></em> field usually contains a human-readable string
+      describing the details, but might be <code class="constant">NULL</code>.</p></li></ul></div><p>
+    An unset <span class="structname">sd_bus_error</span> structure should have both fields initialized to
+    <code class="constant">NULL</code>, and signifies lack of an error, i.e. success. Assign
+    <code class="constant">SD_BUS_ERROR_NULL</code> to the structure in order to initialize both fields to
+    <code class="constant">NULL</code>. When no longer necessary, resources held by the
+    <span class="structname">sd_bus_error</span> structure should be destroyed with
+    <code class="function">sd_bus_error_free()</code>.</p><p><code class="function">sd_bus_error_set()</code> sets an error structure to the specified name and message
+    strings. The strings will be copied into internal, newly allocated memory. It is essential to free the
+    contents again when they are not required anymore (see above). Do not use this call on error structures
+    that have already been set. If you intend to reuse an error structure, free the old data stored in it
+    with <code class="function">sd_bus_error_free()</code> first.</p><p><code class="function">sd_bus_error_set()</code> will return an <code class="varname">errno</code>-like value (see
+    <a href="https://man7.org/linux/man-pages/man3/errno.3.html"><span class="citerefentry"><span class="refentrytitle">errno</span>(3)</span></a>)
+    determined from the specified error name <em class="parameter"><code>name</code></em>. If <em class="parameter"><code>name</code></em> is
+    <code class="constant">NULL</code>, it is assumed that no error occurred, and <code class="constant">0</code> is returned.
+    If <em class="parameter"><code>name</code></em> is nonnull, a negative value is always returned. If
+    <em class="parameter"><code>e</code></em> is <code class="constant">NULL</code>, no error structure is initialized, but
+    <em class="parameter"><code>name</code></em> is still converted into an <code class="varname">errno</code>-style value.</p><p>Various well-known D-Bus errors are converted to well-known <code class="varname">errno</code> counterparts,
+    and the other ones to <code class="constant">-EIO</code>. See
+    <a href="sd-bus-errors.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus-errors</span>(3)</span></a> for a
+    list of well-known error names. Additional error mappings may be defined with
+    <a href="sd_bus_error_add_map.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_error_add_map</span>(3)</span></a>.
+    </p><p><code class="function">sd_bus_error_set()</code> is designed to be conveniently used in a
+    <code class="function">return</code> statement. If <em class="parameter"><code>message</code></em> is <code class="constant">NULL</code>, no
+    message is set. This call can fail if no memory may be allocated for the name and message strings, in
+    which case an <code class="constant">SD_BUS_ERROR_NO_MEMORY</code> error will be set instead and
+    <code class="constant">-ENOMEM</code> returned. </p><p><code class="function">sd_bus_error_setf()</code> and <code class="function">sd_bus_error_setfv()</code> are similar
+    to <code class="function">sd_bus_error_set()</code>, but take a <a href="https://man7.org/linux/man-pages/man3/printf.3.html"><span class="citerefentry"><span class="refentrytitle">printf</span>(3)</span></a> format
+    string and corresponding arguments to generate the <em class="structfield"><code>message</code></em> field.
+    <code class="function">sd_bus_error_setf()</code> uses variadic arguments, and
+    <code class="function">sd_bus_error_setfv()</code> accepts the arguments as a
+    <a href="https://man7.org/linux/man-pages/man3/va_arg.3.html"><span class="citerefentry"><span class="refentrytitle">va_arg</span>(3)</span></a>
+    parameter list.</p><p><code class="function">sd_bus_error_set_const()</code> is similar to
+    <code class="function">sd_bus_error_set()</code>, but the string parameters are not copied internally, and must
+    hence remain constant and valid for the lifetime of <em class="parameter"><code>e</code></em>. Use this call to avoid
+    memory allocations when setting error structures. Since this call does not allocate memory, it will not
+    fail with an out-of-memory condition as <code class="function">sd_bus_error_set()</code> may, as described
+    above. Alternatively, the <code class="constant">SD_BUS_ERROR_MAKE_CONST()</code> macro may be used to generate a
+    literal, constant bus error structure on-the-fly.</p><p><code class="function">sd_bus_error_set_errno()</code> will immediately return <code class="constant">0</code> if the
+    specified error parameter <em class="parameter"><code>error</code></em> is <code class="constant">0</code>. Otherwise, it will set
+    <em class="structfield"><code>name</code></em> from an <code class="varname">errno</code>-like value that is converted to a D-Bus
+    error. <a href="http://linux.die.net/man/3/strerror_r"><span class="citerefentry"><span class="refentrytitle">strerror_r</span>(3)</span></a> will
+    be used to set <em class="structfield"><code>message</code></em>. Well-known D-Bus error names will be used for
+    <em class="structfield"><code>name</code></em> if applicable, otherwise a name in the "<code class="literal">System.Error.</code>"
+    namespace will be generated. The sign of the specified error number is ignored and the absolute value is
+    used implicitly. If the specified error <em class="parameter"><code>error</code></em> is non-zero, the call always returns
+    a negative value, for convenient usage in <code class="function">return</code> statements. This call might fail
+    due to lack of memory, in which case an <code class="constant">SD_BUS_ERROR_NO_MEMORY</code> error is set instead,
+    and <code class="constant">-ENOMEM</code> is returned.</p><p><code class="function">sd_bus_error_set_errnof()</code> and <code class="function">sd_bus_error_set_errnof()</code>
+    are similar to <code class="function">sd_bus_error_set_errno()</code>, but in addition to
+    <em class="parameter"><code>error</code></em>, take a <a href="https://man7.org/linux/man-pages/man3/printf.3.html"><span class="citerefentry"><span class="refentrytitle">printf</span>(3)</span></a> format
+    string and corresponding arguments. The <em class="structfield"><code>message</code></em> field will be generated from
+    <em class="parameter"><code>format</code></em> and the arguments.
+    <code class="function">sd_bus_error_set_errnof()</code> uses variadic arguments, and
+    <code class="function">sd_bus_error_set_errnofv()</code> accepts the arguments as a
+    <a href="https://man7.org/linux/man-pages/man3/va_arg.3.html"><span class="citerefentry"><span class="refentrytitle">va_arg</span>(3)</span></a>
+    parameter list.</p><p><code class="function">sd_bus_error_get_errno()</code> converts the <em class="structfield"><code>name</code></em> field of
+    an error structure to an <code class="varname">errno</code>-like (positive) value using the same rules as
+    <code class="function">sd_bus_error_set()</code>.  If <em class="parameter"><code>e</code></em> is <code class="constant">NULL</code>,
+    <code class="constant">0</code> will be returned.</p><p><code class="function">sd_bus_error_copy()</code> will initialize <em class="parameter"><code>dst</code></em> using the
+    values in <em class="parameter"><code>e</code></em>, if <em class="parameter"><code>e</code></em> has been set with an error value before.
+    Otherwise, it will return immediately. If the strings in <em class="parameter"><code>e</code></em> were set using
+    <code class="function">sd_bus_error_set_const()</code>, they will be shared. Otherwise, they will be
+    copied. Before this call, <em class="parameter"><code>dst</code></em> must be unset, i.e. either freshly initialized with
+    <code class="constant">NULL</code> or reset using <code class="function">sd_bus_error_free()</code>.</p><p><code class="function">sd_bus_error_copy()</code> generally returns <code class="constant">0</code> or a negative
+    <code class="varname">errno</code>-like value based on the input parameter <em class="parameter"><code>e</code></em>:
+    <code class="constant">0</code> if it was unset and a negative integer if it was set to some error, similarly to
+    <code class="function">sd_bus_error_set()</code>. It may however also return an error generated internally, for
+    example <code class="constant">-ENOMEM</code> if a memory allocation fails.</p><p><code class="function">sd_bus_error_move()</code> is similar to <code class="function">sd_bus_error_copy()</code>,
+    but will move any error information from <em class="parameter"><code>e</code></em> into <em class="parameter"><code>dst</code></em>,
+    resetting the former. This function cannot fail, as no new memory is allocated. Note that if
+    <em class="parameter"><code>e</code></em> is not set, <em class="parameter"><code>dst</code></em> is initialized to
+    <code class="constant">SD_BUS_ERROR_NULL</code>. Moreover, if <em class="parameter"><code>dst</code></em> is
+    <code class="constant">NULL</code> no operation is executed on it and resources held by <em class="parameter"><code>e</code></em>
+    are freed and reset. Returns a converted <code class="varname">errno</code>-like, non-positive error value.</p><p><code class="function">sd_bus_error_is_set()</code> will return a
+    non-zero value if <em class="parameter"><code>e</code></em> is
+    non-<code class="constant">NULL</code> and an error has been set,
+    <code class="constant">false</code> otherwise.</p><p><code class="function">sd_bus_error_has_name()</code> will return a
+    non-zero value if <em class="parameter"><code>e</code></em> is
+    non-<code class="constant">NULL</code> and an error with the same
+    <em class="parameter"><code>name</code></em> has been set,
+    <code class="constant">false</code> otherwise.</p><p><code class="function">sd_bus_error_has_names_sentinel()</code> is similar to
+    <code class="function">sd_bus_error_has_name()</code>, but takes multiple names to check against. The list must be
+    terminated with <code class="constant">NULL</code>. <code class="function">sd_bus_error_has_names()</code>
+    is a macro wrapper around <code class="function">sd_bus_error_has_names_sentinel()</code> that adds the
+    <code class="constant">NULL</code> sentinel automatically.</p><p><code class="function">sd_bus_error_free()</code> will destroy
+    resources held by <em class="parameter"><code>e</code></em>. The parameter itself
+    will not be deallocated, and must be <a href="https://man7.org/linux/man-pages/man3/free.3.html"><span class="citerefentry"><span class="refentrytitle">free</span>(3)</span></a>d
+    by the caller if necessary. The function may also be called safely
+    on unset errors (error structures with both fields set to <code class="constant">NULL</code>),
+    in which case it performs no operation. This call will reset the
+    error structure after freeing the data, so that all fields are set
+    to <code class="constant">NULL</code>. The structure may be reused afterwards.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Reference ownership">Reference ownership<a class="headerlink" title="Permalink to this headline" href="#Reference%20ownership">¶</a></h2><p><span class="structname">sd_bus_error</span> is not reference-counted. Users should destroy resources held
+    by it by calling <code class="function">sd_bus_error_free()</code>. Usually, error structures are allocated on the
+    stack or passed in as function parameters, but they may also be allocated dynamically, in which case it
+    is the duty of the caller to <a href="https://man7.org/linux/man-pages/man3/free.3.html"><span class="citerefentry"><span class="refentrytitle">free</span>(3)</span></a> the memory
+    held by the structure itself after freeing its contents with
+    <code class="function">sd_bus_error_free()</code>.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>The functions <code class="function">sd_bus_error_set()</code>, <code class="function">sd_bus_error_setf()</code>,
+    and <code class="function">sd_bus_error_set_const()</code> always return <code class="constant">0</code> when the specified
+    error value is <code class="constant">NULL</code>, and a negative errno-like value corresponding to the
+    <em class="parameter"><code>name</code></em> parameter otherwise. The functions
+    <code class="function">sd_bus_error_set_errno()</code>, <code class="function">sd_bus_error_set_errnof()</code> and
+    <code class="function">sd_bus_error_set_errnofv()</code>, return <code class="constant">0</code> when the specified error
+    value is <code class="constant">0</code>, and a negative errno-like value corresponding to the
+    <em class="parameter"><code>error</code></em> parameter otherwise. If an error occurs internally, one of the negative
+    error values listed below will be returned. This allows those functions to be conveniently used in a
+    <code class="constant">return</code> statement, see the example below.</p><p><code class="function">sd_bus_error_get_errno()</code> returns
+    <code class="constant">false</code> when <em class="parameter"><code>e</code></em> is
+    <code class="constant">NULL</code>, and a positive errno value mapped from
+    <em class="parameter"><code>e-&gt;name</code></em> otherwise.</p><p><code class="function">sd_bus_error_copy()</code> and <code class="function">sd_bus_error_move()</code> return a
+    negative error value converted from the source error, and zero if the error has not been set.  This
+    allows those functions to be conveniently used in a <code class="constant">return</code> statement, see the
+    example below.</p><p><code class="function">sd_bus_error_is_set()</code> returns a
+    non-zero value when <em class="parameter"><code>e</code></em> and the
+    <em class="structfield"><code>name</code></em> field are
+    non-<code class="constant">NULL</code>, zero otherwise.</p><p><code class="function">sd_bus_error_has_name()</code>, <code class="function">sd_bus_error_has_names()</code>, and
+    <code class="function">sd_bus_error_has_names_sentinel()</code> return a non-zero value when <em class="parameter"><code>e</code></em> is
+    non-<code class="constant">NULL</code> and the <em class="structfield"><code>name</code></em> field is equal to one of the given
+    names, zero otherwise.</p><div class="refsect2"><a name="id-1.7.7"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Return value may indicate the following problems in the invocation of the function itself:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>Error was already set in the <span class="structname">sd_bus_error</span> structure when
+          one the error-setting functions was called.</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p></dd></dl></div><p>On success, <code class="function">sd_bus_error_set()</code>, <code class="function">sd_bus_error_setf()</code>,
+      <code class="function">sd_bus_error_set_const()</code>, <code class="function">sd_bus_error_set_errno()</code>,
+      <code class="function">sd_bus_error_set_errnof()</code>, <code class="function">sd_bus_error_set_errnofv()</code>,
+      <code class="function">sd_bus_error_copy()</code>, and <code class="function">sd_bus_error_move()</code> will return a
+      negative converted <code class="varname">errno</code>-style value, or <code class="constant">0</code> if the error
+      parameter is <code class="constant">NULL</code> or unset. D-Bus errors are converted to the integral
+      <code class="varname">errno</code>-style value, and the mapping mechanism is extensible, see the discussion
+      above. This effectively means that almost any negative <code class="varname">errno</code>-style value can be
+      returned.</p></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Using the negative return value to propagate an error</b></p><div class="example-contents"><pre class="programlisting">/* SPDX-License-Identifier: MIT-0 */
+
+#include &lt;errno.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;sd-bus.h&gt;
+
+int writer_with_negative_errno_return(int fd, sd_bus_error *error) {
+  const char *message = "Hello, World!\n";
+
+  ssize_t n = write(fd, message, strlen(message));
+  if (n &gt;= 0)
+    return n; /* On success, return the number of bytes written, possibly 0. */
+
+  /* On error, initialize the error structure, and also propagate the errno
+   * value that write(2) set for us. */
+  return sd_bus_error_set_errnof(error, errno, "Failed to write to fd %i: %m", fd);
+}
+</pre></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_error_free()</code>,
+    <code class="function">sd_bus_error_set()</code>,
+    <code class="function">sd_bus_error_setf()</code>,
+    <code class="function">sd_bus_error_set_const()</code>,
+    <code class="function">sd_bus_error_set_errno()</code>,
+    <code class="function">sd_bus_error_set_errnof()</code>,
+    <code class="function">sd_bus_error_get_errno()</code>,
+    <code class="function">sd_bus_error_copy()</code>,
+    <code class="function">sd_bus_error_is_set()</code>, and
+    <code class="function">sd_bus_error_has_name()</code> were added in version 209.</p><p><code class="function">sd_bus_error_set_errnofv()</code> was added in version 223.</p><p><code class="function">sd_bus_error_move()</code> was added in version 240.</p><p><code class="function">sd_bus_error_has_names_sentinel()</code> was added in version 247.</p><p><code class="function">sd_bus_error_setfv()</code> was added in version 252.</p></div><div class="refsect1"><a name="id-1.11"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd-bus-errors.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus-errors</span>(3)</span></a>,
+      <a href="sd_bus_error_add_map.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_error_add_map</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man3/errno.3.html"><span class="citerefentry"><span class="refentrytitle">errno</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man3/strerror_r.3.html"><span class="citerefentry"><span class="refentrytitle">strerror_r</span>(3)</span></a>
+    </p></div></div></body></html>

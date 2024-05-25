@@ -1,0 +1,138 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_pid_get_owner_uid</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_pid_get_owner_uid"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_pid_get_owner_uid, sd_pid_get_session, sd_pid_get_user_unit, sd_pid_get_unit, sd_pid_get_machine_name, sd_pid_get_slice, sd_pid_get_user_slice, sd_pid_get_cgroup, sd_pidfd_get_owner_uid, sd_pidfd_get_session, sd_pidfd_get_user_unit, sd_pidfd_get_unit, sd_pidfd_get_machine_name, sd_pidfd_get_slice, sd_pidfd_get_user_slice, sd_pidfd_get_cgroup, sd_peer_get_owner_uid, sd_peer_get_session, sd_peer_get_user_unit, sd_peer_get_unit, sd_peer_get_machine_name, sd_peer_get_slice, sd_peer_get_user_slice, sd_peer_get_cgroup — Determine the owner uid of the user unit or session,
+    or the session, user unit, system unit, container/VM or slice that
+    a specific PID or socket peer belongs to</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-login.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_get_owner_uid</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>uid_t *<var class="pdparam">uid</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_get_session</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">session</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_get_user_unit</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">unit</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_get_unit</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">unit</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_get_machine_name</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">name</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_get_slice</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">slice</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_get_user_slice</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">slice</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_get_cgroup</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">cgroup</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pidfd_get_owner_uid</b>(</code></td><td>int <var class="pdparam">pidfd</var>, </td></tr><tr><td> </td><td>uid_t *<var class="pdparam">uid</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pidfd_get_session</b>(</code></td><td>int <var class="pdparam">pidfd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">session</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pidfd_get_user_unit</b>(</code></td><td>int <var class="pdparam">pidfd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">unit</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pidfd_get_unit</b>(</code></td><td>int <var class="pdparam">pidfd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">unit</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pidfd_get_machine_name</b>(</code></td><td>int <var class="pdparam">pidfd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">name</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pidfd_get_slice</b>(</code></td><td>int <var class="pdparam">pidfd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">slice</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pidfd_get_user_slice</b>(</code></td><td>int <var class="pdparam">pidfd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">slice</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pidfd_get_cgroup</b>(</code></td><td>int <var class="pdparam">pidfd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">cgroup</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_peer_get_owner_uid</b>(</code></td><td>int <var class="pdparam">fd</var>, </td></tr><tr><td> </td><td>uid_t *<var class="pdparam">uid</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_peer_get_session</b>(</code></td><td>int <var class="pdparam">fd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">session</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_peer_get_user_unit</b>(</code></td><td>int <var class="pdparam">fd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">unit</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_peer_get_unit</b>(</code></td><td>int <var class="pdparam">fd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">unit</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_peer_get_machine_name</b>(</code></td><td>int <var class="pdparam">fd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">name</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_peer_get_slice</b>(</code></td><td>int <var class="pdparam">fd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">slice</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_peer_get_user_slice</b>(</code></td><td>int <var class="pdparam">fd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">slice</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_peer_get_cgroup</b>(</code></td><td>int <var class="pdparam">fd</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">cgroup</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_pid_get_owner_uid()</code> may be used to
+    determine the Unix UID (user identifier) which owns the login
+    session or systemd user unit of a process identified by the
+    specified PID. For processes which are not part of a login session
+    and not managed by a user manager, this function will fail with
+    <code class="constant">-ENODATA</code>.</p><p><code class="function">sd_pid_get_session()</code> may be used to
+    determine the login session identifier of a process identified by
+    the specified process identifier. The session identifier is a
+    short string, suitable for usage in file system paths. Please
+    note the login session may be limited to a stub process or two.
+    User processes may instead be started from their systemd user
+    manager, e.g. GUI applications started using DBus activation, as
+    well as service processes which are shared between multiple logins
+    of the same user. For processes which are not part of a login
+    session, this function will fail with <code class="constant">-ENODATA</code>.
+    The returned string needs to be freed with the libc <a href="https://man7.org/linux/man-pages/man3/free.3.html"><span class="citerefentry"><span class="refentrytitle">free</span>(3)</span></a>
+    call after use.</p><p><code class="function">sd_pid_get_user_unit()</code> may be used to
+    determine the systemd user unit (i.e. user service or scope unit)
+    identifier of a process identified by the specified PID. The
+    unit name is a short string, suitable for usage in file system
+    paths. For processes which are not managed by a user manager, this
+    function will fail with <code class="constant">-ENODATA</code>. The
+    returned string needs to be freed with the libc <a href="https://man7.org/linux/man-pages/man3/free.3.html"><span class="citerefentry"><span class="refentrytitle">free</span>(3)</span></a>
+    call after use.</p><p><code class="function">sd_pid_get_unit()</code> may be used to
+    determine the systemd system unit (i.e. system service or scope
+    unit) identifier of a process identified by the specified PID. The
+    unit name is a short string, suitable for usage in file system
+    paths.  Note that not all processes are part of a system
+    unit/service. For processes not being part of a systemd system
+    unit, this function will fail with <code class="constant">-ENODATA</code>.
+    (More specifically, this call will not work for kernel threads.)
+    The returned string needs to be freed with the libc <a href="https://man7.org/linux/man-pages/man3/free.3.html"><span class="citerefentry"><span class="refentrytitle">free</span>(3)</span></a>
+    call after use.</p><p><code class="function">sd_pid_get_machine_name()</code> may be used
+    to determine the name of the VM or container is a member of. The
+    machine name is a short string, suitable for usage in file system
+    paths. The returned string needs to be freed with the libc
+    <a href="https://man7.org/linux/man-pages/man3/free.3.html"><span class="citerefentry"><span class="refentrytitle">free</span>(3)</span></a>
+    call after use. For processes not part of a VM or container, this
+    function fails with <code class="constant">-ENODATA</code>.</p><p><code class="function">sd_pid_get_slice()</code> may be used to
+    determine the slice unit the process is a member of. See
+    <a href="systemd.slice.html#"><span class="citerefentry"><span class="refentrytitle">systemd.slice</span>(5)</span></a>
+    for details about slices. The returned string needs to be freed
+    with the libc
+    <a href="https://man7.org/linux/man-pages/man3/free.3.html"><span class="citerefentry"><span class="refentrytitle">free</span>(3)</span></a>
+    call after use.</p><p>Similarly, <code class="function">sd_pid_get_user_slice()</code>
+    returns the user slice (as managed by the user's systemd instance)
+    of a process.</p><p><code class="function">sd_pid_get_cgroup()</code> returns the control
+    group path of the specified process, relative to the root of the
+    hierarchy. Returns the path without trailing slash, except for
+    processes located in the root control group, where "/" is
+    returned. To find the actual control group path in the file system,
+    the returned path needs to be prefixed with
+    <code class="filename">/sys/fs/cgroup/</code> (if the unified control group
+    setup is used), or
+    <code class="filename">/sys/fs/cgroup/<em class="replaceable"><code>HIERARCHY</code></em>/</code>
+    (if the legacy multi-hierarchy control group setup is used).</p><p>If the <code class="varname">pid</code> parameter of any of these
+    functions is passed as 0, the operation is executed for the
+    calling process.</p><p>The <code class="function">sd_pidfd_get_owner_uid()</code>,
+    <code class="function">sd_pidfd_get_session()</code>,
+    <code class="function">sd_pidfd_get_user_unit()</code>,
+    <code class="function">sd_pidfd_get_unit()</code>,
+    <code class="function">sd_pidfd_get_machine_name()</code>,
+    <code class="function">sd_pidfd_get_slice()</code>,
+    <code class="function">sd_pidfd_get_user_slice()</code> and
+    <code class="function">sd_pidfd_get_cgroup()</code> calls operate similarly to their PID counterparts, but accept a
+    <code class="constant">PIDFD</code> instead of a <code class="constant">PID</code>, which means they are not subject to recycle
+    race conditions as the process is pinned by the file descriptor during the whole duration of the invocation.
+    Note that these require a kernel that supports <code class="constant">PIDFD</code>. A suitable file descriptor may be
+    acquired via
+    <a href="https://man7.org/linux/man-pages/man2/pidfd_open.2.html"><span class="citerefentry"><span class="refentrytitle">pidfd_open</span>(2)</span></a>.</p><p>The <code class="function">sd_peer_get_owner_uid()</code>,
+    <code class="function">sd_peer_get_session()</code>,
+    <code class="function">sd_peer_get_user_unit()</code>,
+    <code class="function">sd_peer_get_unit()</code>,
+    <code class="function">sd_peer_get_machine_name()</code>,
+    <code class="function">sd_peer_get_slice()</code>,
+    <code class="function">sd_peer_get_user_slice()</code> and
+    <code class="function">sd_peer_get_cgroup()</code> calls operate similarly to their PID counterparts, but accept a
+    connected <code class="constant">AF_UNIX</code> socket and retrieve information about the connected peer process.
+    Note that these fields are retrieved via <code class="filename">/proc/</code>, and hence are not suitable for
+    authorization purposes, as they are subject to races.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these calls return 0 or a positive integer. On failure, these calls return a negative
+    errno-style error code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-ESRCH"><span class="term"><code class="constant">-ESRCH</code></span><a class="headerlink" title="Permalink to this term" href="#-ESRCH">¶</a></dt><dd><p>The specified PID does not refer to a running process.</p></dd><dt id="-EBADF"><span class="term"><code class="constant">-EBADF</code></span><a class="headerlink" title="Permalink to this term" href="#-EBADF">¶</a></dt><dd><p>The specified socket file descriptor was invalid.</p></dd><dt id="-ENODATA"><span class="term"><code class="constant">-ENODATA</code></span><a class="headerlink" title="Permalink to this term" href="#-ENODATA">¶</a></dt><dd><p>The given field is not specified for the described process or peer.</p></dd><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>An input parameter was invalid (out of range, or <code class="constant">NULL</code>, where
+          that is not accepted).</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p>Note that the login session identifier as
+    returned by <code class="function">sd_pid_get_session()</code>
+    is completely unrelated to the process session
+    identifier as returned by
+    <a href="https://man7.org/linux/man-pages/man2/getsid.2.html"><span class="citerefentry"><span class="refentrytitle">getsid</span>(2)</span></a>.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_peer_get_cgroup()</code>,
+    <code class="function">sd_peer_get_machine_name()</code>,
+    <code class="function">sd_peer_get_owner_uid()</code>,
+    <code class="function">sd_peer_get_session()</code>,
+    <code class="function">sd_peer_get_slice()</code>,
+    <code class="function">sd_peer_get_unit()</code>,
+    <code class="function">sd_peer_get_user_slice()</code>,
+    <code class="function">sd_peer_get_user_unit()</code>,
+    <code class="function">sd_pid_get_cgroup()</code>,
+    <code class="function">sd_pid_get_machine_name()</code>,
+    <code class="function">sd_pid_get_owner_uid()</code>,
+    <code class="function">sd_pid_get_session()</code>,
+    <code class="function">sd_pid_get_slice()</code>,
+    <code class="function">sd_pid_get_unit()</code>,
+    <code class="function">sd_pid_get_user_slice()</code>, and
+    <code class="function">sd_pid_get_user_unit()</code> were added in version 236.</p><p><code class="function">sd_pidfd_get_owner_uid()</code>,
+    <code class="function">sd_pidfd_get_session()</code>,
+    <code class="function">sd_pidfd_get_user_unit()</code>,
+    <code class="function">sd_pidfd_get_unit()</code>,
+    <code class="function">sd_pidfd_get_machine_name()</code>,
+    <code class="function">sd_pidfd_get_slice()</code>,
+    <code class="function">sd_pidfd_get_user_slice()</code>, and
+    <code class="function">sd_pidfd_get_cgroup()</code> were added in version 253.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-login.html#"><span class="citerefentry"><span class="refentrytitle">sd-login</span>(3)</span></a>,
+      <a href="sd_session_is_active.html#"><span class="citerefentry"><span class="refentrytitle">sd_session_is_active</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/getsid.2.html"><span class="citerefentry"><span class="refentrytitle">getsid</span>(2)</span></a>,
+      <a href="systemd.slice.html#"><span class="citerefentry"><span class="refentrytitle">systemd.slice</span>(5)</span></a>,
+      <a href="systemd-machined.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-machined.service</span>(8)</span></a>
+    </p></div></div></body></html>

@@ -1,0 +1,100 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>org.freedesktop.timedate1</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="org.freedesktop.timedate1"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>org.freedesktop.timedate1 — The D-Bus interface of systemd-timedated</p></div><div class="refsect1"><a name="id-1.4"></a><h2 id="Introduction">Introduction<a class="headerlink" title="Permalink to this headline" href="#Introduction">¶</a></h2><p>
+    <a href="systemd-timedated.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-timedated.service</span>(8)</span></a>
+    is a system service that can be used to control the system time and related settings. This page
+    describes the D-Bus interface.</p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="The D-Bus API">The D-Bus API<a class="headerlink" title="Permalink to this headline" href="#The%20D-Bus%20API">¶</a></h2><p>The service exposes the following interfaces on the bus:</p><pre class="programlisting">
+node /org/freedesktop/timedate1 {
+  interface org.freedesktop.timedate1 {
+    methods:
+      SetTime(in  x usec_utc,
+              in  b relative,
+              in  b interactive);
+      SetTimezone(in  s timezone,
+                  in  b interactive);
+      SetLocalRTC(in  b local_rtc,
+                  in  b fix_system,
+                  in  b interactive);
+      SetNTP(in  b use_ntp,
+             in  b interactive);
+      ListTimezones(out as timezones);
+    properties:
+      readonly s Timezone = '...';
+      readonly b LocalRTC = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly b CanNTP = ...;
+      readonly b NTP = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly b NTPSynchronized = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t TimeUSec = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t RTCTimeUSec = ...;
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="refsect2"><a name="id-1.5.18"></a><h3 id="Methods">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods">¶</a></h3><p>Use <code class="function">SetTime()</code> to change the system clock. Pass a value of microseconds since
+      the UNIX epoch (1 Jan 1970 UTC). If <code class="varname">relative</code> is true, the passed usec value will be
+      added to the current system time. If it is false, the current system time will be set to the passed usec
+      value. If the system time is set with this method, the RTC will be updated as well.</p><p>Use <code class="function">SetTimezone()</code> to set the system timezone. Pass a value like
+      "<code class="literal">Europe/Berlin</code>" to set the timezone. Valid timezones are listed in
+      <code class="filename">/usr/share/zoneinfo/zone.tab</code>. If the RTC is configured to be maintained in local
+      time, it will be updated accordingly.</p><p>Use <code class="function">SetLocalRTC()</code> to control whether the RTC is in local time or UTC. It is
+      strongly recommended to maintain the RTC in UTC. However, some OSes (Windows) maintain the RTC in local
+      time, which might make it necessary to enable this feature. Note that this might create various problems as
+      daylight changes could be missed. If <code class="varname">fix_system</code> is "<code class="literal">true</code>",
+      the time from the RTC is read again and the system clock is adjusted according to the new setting. If
+      <code class="varname">fix_system</code> is "<code class="literal">false</code>", the system time is written to the RTC
+      taking the new setting into account. Use <code class="varname">fix_system=true</code> in installers and livecds
+      where the RTC is probably more reliable than the system time. Use <code class="varname">fix_system=false</code>
+      in configuration UIs that are run during normal operation and where the system clock is probably more
+      reliable than the RTC.</p><p>Use <code class="function">SetNTP()</code> to control whether the system clock is synchronized with the
+      network using <code class="filename">systemd-timesyncd</code>. This will enable and start or disable and stop
+      the chosen time synchronization service.</p><p><code class="function">ListTimezones()</code> returns a list of time zones known on the local system as an
+      array of names ("<code class="literal">["Africa/Abidjan", "Africa/Accra", ..., "UTC"]</code>").</p></div><div class="refsect2"><a name="id-1.5.19"></a><h3 id="Properties">Properties<a class="headerlink" title="Permalink to this headline" href="#Properties">¶</a></h3><p><code class="varname">Timezone</code> shows the currently configured time zone.
+      <code class="varname">LocalRTC</code> shows whether the RTC is configured to use UTC (false), or the local time
+      zone (true). <code class="varname">CanNTP</code> shows whether a service to perform time synchronization over the
+      network is available, and <code class="varname">NTP</code> shows whether such a service is enabled.</p><p><code class="varname">NTPSynchronized</code> shows whether the kernel reports the time as synchronized
+      (c.f.
+      <a href="https://man7.org/linux/man-pages/man3/adjtimex.3.html"><span class="citerefentry"><span class="refentrytitle">adjtimex</span>(3)</span></a>).
+      <code class="varname">TimeUSec</code> and <code class="varname">RTCTimeUSec</code> show the current time on the system and
+      in the RTC. The purpose of those three properties is to allow remote clients to access this information
+      over D-Bus. Local clients can access the information directly.</p><p>Whenever the <code class="varname">Timezone</code> and <code class="varname">LocalRTC</code> settings are changed via
+      the daemon, <code class="function">PropertyChanged</code> signals are sent out to which clients can subscribe.
+      </p><p>Note that this service will not inform you about system time changes. Use
+      <a href="https://man7.org/linux/man-pages/man3/timerfd.3.html"><span class="citerefentry"><span class="refentrytitle">timerfd</span>(3)</span></a>
+      with <code class="constant">CLOCK_REALTIME</code> and <code class="constant">TFD_TIMER_CANCEL_ON_SET</code> for that.
+      </p></div><div class="refsect2"><a name="id-1.5.20"></a><h3 id="Security">Security<a class="headerlink" title="Permalink to this headline" href="#Security">¶</a></h3><p>The <code class="varname">interactive</code> boolean parameters can be used to control whether
+      <a class="ulink" href="https://www.freedesktop.org/software/polkit/docs/latest/" target="_top">polkit</a>
+      should interactively ask the user for authentication credentials if required.</p><p>The polkit action for <code class="function">SetTimezone()</code> is
+      <code class="interfacename">org.freedesktop.timedate1.set-timezone</code>. For
+      <code class="function">SetLocalRTC()</code> it is
+      <code class="interfacename">org.freedesktop.timedate1.set-local-rtc</code>, for
+      <code class="function">SetTime()</code> it is <code class="interfacename">org.freedesktop.timedate1.set-time</code>
+      and for <code class="function">SetNTP()</code> it is
+      <code class="interfacename">org.freedesktop.timedate1.set-ntp</code>.
+      <code class="function">ListTimezones()</code> does not require any privileges.
+      </p></div></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.6.2"></a><p class="title"><b>Example 1. Introspect <code class="interfacename">org.freedesktop.timedate1</code> on the bus</b></p><div class="example-contents"><pre class="programlisting">
+$ gdbus introspect --system \
+  --dest org.freedesktop.timedate1 \
+  --object-path /org/freedesktop/timedate1
+      </pre></div></div><br class="example-break"></div><div class="refsect1"><a name="versioning"></a><h2 id="Versioning">Versioning<a class="headerlink" title="Permalink to this headline" href="#Versioning">¶</a></h2><p>These D-Bus interfaces follow <a class="ulink" href="https://0pointer.de/blog/projects/versioning-dbus.html" target="_top">
+    the usual interface versioning guidelines</a>.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="See also">See also<a class="headerlink" title="Permalink to this headline" href="#See%20also">¶</a></h2><p><a class="ulink" href="https://lists.freedesktop.org/archives/systemd-devel/2011-May/002526.html" target="_top">More information on how the system clock and RTC interact</a></p></div></div></body></html>

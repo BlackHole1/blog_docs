@@ -1,0 +1,249 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>resolvectl</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="resolvectl"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>resolvectl, resolvconf — Resolve domain names, IPV4 and IPv6 addresses, DNS resource records, and services; introspect and reconfigure the DNS resolver</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">resolvectl</code>  [OPTIONS...] {COMMAND} [NAME...]</p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>resolvectl</strong></span> may be used to resolve domain names, IPv4 and IPv6 addresses, DNS resource
+    records and services with the
+    <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>
+    resolver service. By default, the specified list of parameters will be resolved as hostnames, retrieving their IPv4
+    and IPv6 addresses. If the parameters specified are formatted as IPv4 or IPv6 addresses the reverse operation is
+    done, and a hostname is retrieved for the specified addresses.</p><p>The program's output contains information about the protocol used for the look-up and on which network
+    interface the data was discovered. It also contains information on whether the information could be
+    authenticated. All data for which local DNSSEC validation succeeds is considered authenticated. Moreover all data
+    originating from local, trusted sources is also reported authenticated, including resolution of the local host
+    name, the "<code class="literal">localhost</code>" hostname or all data from <code class="filename">/etc/hosts</code>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Commands">Commands<a class="headerlink" title="Permalink to this headline" href="#Commands">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="query HOSTNAME|ADDRESS…"><span class="term"><span class="command"><strong>query</strong></span> <em class="replaceable"><code>HOSTNAME|ADDRESS</code></em>…</span><a class="headerlink" title="Permalink to this term" href="#query%20HOSTNAME%7CADDRESS%E2%80%A6">¶</a></dt><dd><p>Resolve domain names, as well as IPv4 and IPv6 addresses. When used in conjunction
+        with <code class="option">--type=</code> or <code class="option">--class=</code> (see below), resolves low-level DNS
+        resource records.</p><p>If a single-label domain name is specified it is searched for according to the configured
+        search domains — unless <code class="option">--search=no</code> or
+        <code class="option">--type=</code>/<code class="option">--class=</code> are specified, both of which turn this logic
+        off.</p><p>If an international domain name is specified, it is automatically translated according to IDNA
+        rules when resolved via classic DNS — but not for look-ups via MulticastDNS or LLMNR. If
+        <code class="option">--type=</code>/<code class="option">--class=</code> is used IDNA translation is turned off and domain
+        names are processed as specified.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="service
+        [[NAME] TYPE]
+        DOMAIN"><span class="term"><span class="command"><strong>service</strong></span>
+        [[<em class="replaceable"><code>NAME</code></em>] <em class="replaceable"><code>TYPE</code></em>]
+        <em class="replaceable"><code>DOMAIN</code></em></span><a class="headerlink" title="Permalink to this term" href="#service%0A%20%20%20%20%20%20%20%20%5B%5BNAME%5D%20TYPE%5D%0A%20%20%20%20%20%20%20%20DOMAIN">¶</a></dt><dd><p>Resolve <a class="ulink" href="https://tools.ietf.org/html/rfc6763" target="_top">RFC 6763 DNS-SD</a> and
+        <a class="ulink" href="https://tools.ietf.org/html/rfc2782" target="_top">RFC 2782 SRV</a> services, depending on the
+        specified list of parameters. If three parameters are passed the first is assumed to be the DNS-SD
+        service name, the second the <code class="constant">SRV</code> service type, and the third the
+        domain to search in. In this case a full DNS-SD style <code class="constant">SRV</code> and
+        <code class="constant">TXT</code> lookup is executed. If only two parameters are specified, the
+        first is assumed to be the <code class="constant">SRV</code> service type, and the second the
+        domain to look in. In this case no <code class="constant">TXT</code> resource record is requested.
+        Finally, if only one parameter is specified, it is assumed to be a domain name, that is already
+        prefixed with an <code class="constant">SRV</code> type, and an <code class="constant">SRV</code> lookup is done (no <code class="constant">TXT</code>).</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="openpgp EMAIL@DOMAIN…"><span class="term"><span class="command"><strong>openpgp</strong></span> <em class="replaceable"><code>EMAIL@DOMAIN</code></em>…</span><a class="headerlink" title="Permalink to this term" href="#openpgp%20EMAIL@DOMAIN%E2%80%A6">¶</a></dt><dd><p>Query PGP keys stored as <code class="constant">OPENPGPKEY</code> resource records,
+        see <a class="ulink" href="https://tools.ietf.org/html/rfc7929" target="_top">RFC 7929</a>. Specified e-mail addresses
+        are converted to the corresponding DNS domain name, and any <code class="constant">OPENPGPKEY</code>
+        keys are printed.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="tlsa
+        [FAMILY]
+        DOMAIN[:PORT]…"><span class="term"><span class="command"><strong>tlsa</strong></span>
+        [<em class="replaceable"><code>FAMILY</code></em>]
+        <em class="replaceable"><code>DOMAIN</code></em>[:<em class="replaceable"><code>PORT</code></em>]…</span><a class="headerlink" title="Permalink to this term" href="#tlsa%0A%20%20%20%20%20%20%20%20%5BFAMILY%5D%0A%20%20%20%20%20%20%20%20DOMAIN%5B:PORT%5D%E2%80%A6">¶</a></dt><dd><p>Query TLS public keys stored as <code class="constant">TLSA</code> resource
+        records, see <a class="ulink" href="https://tools.ietf.org/html/rfc6698" target="_top">RFC 6698</a>. A query will be
+        performed for each of the specified names prefixed with the port and family
+        ("<code class="literal">_<em class="replaceable"><code>port</code></em>._<em class="replaceable"><code>family</code></em>.<em class="replaceable"><code>domain</code></em></code>").
+        The port number may be specified after a colon ("<code class="literal">:</code>"), otherwise
+        <code class="constant">443</code> will be used by default. The family may be specified as the first argument,
+        otherwise <code class="constant">tcp</code> will be used.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="status [LINK…]"><span class="term"><span class="command"><strong>status</strong></span> [<em class="replaceable"><code>LINK</code></em>…]</span><a class="headerlink" title="Permalink to this term" href="#status%20%5BLINK%E2%80%A6%5D">¶</a></dt><dd><p>Shows the global and per-link DNS settings currently in effect. If no command is specified,
+        this is the implied default.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="statistics"><span class="term"><span class="command"><strong>statistics</strong></span></span><a class="headerlink" title="Permalink to this term" href="#statistics">¶</a></dt><dd><p>Shows general resolver statistics, including information whether DNSSEC is
+        enabled and available, as well as resolution and validation statistics.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="reset-statistics"><span class="term"><span class="command"><strong>reset-statistics</strong></span></span><a class="headerlink" title="Permalink to this term" href="#reset-statistics">¶</a></dt><dd><p>Resets the statistics counters shown in <span class="command"><strong>statistics</strong></span> to zero.
+        This operation requires root privileges.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="flush-caches"><span class="term"><span class="command"><strong>flush-caches</strong></span></span><a class="headerlink" title="Permalink to this term" href="#flush-caches">¶</a></dt><dd><p>Flushes all DNS resource record caches the service maintains locally. This is mostly
+        equivalent to sending the <code class="constant">SIGUSR2</code> to the <span class="command"><strong>systemd-resolved</strong></span>
+        service.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="reset-server-features"><span class="term"><span class="command"><strong>reset-server-features</strong></span></span><a class="headerlink" title="Permalink to this term" href="#reset-server-features">¶</a></dt><dd><p>Flushes all feature level information the resolver learnt about specific servers, and ensures
+        that the server feature probing logic is started from the beginning with the next look-up request. This is
+        mostly equivalent to sending the <code class="constant">SIGRTMIN+1</code> to the <span class="command"><strong>systemd-resolved</strong></span>
+        service.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="dns [LINK [SERVER…]]"><span class="term"><span class="command"><strong>dns</strong></span> [<em class="replaceable"><code>LINK</code></em> [<em class="replaceable"><code>SERVER</code></em>…]], </span><span class="term"><span class="command"><strong>domain</strong></span> [<em class="replaceable"><code>LINK</code></em> [<em class="replaceable"><code>DOMAIN</code></em>…]], </span><span class="term"><span class="command"><strong>default-route</strong></span> [<em class="replaceable"><code>LINK</code></em> [<em class="replaceable"><code>BOOL</code></em>…]], </span><span class="term"><span class="command"><strong>llmnr</strong></span> [<em class="replaceable"><code>LINK</code></em> [<em class="replaceable"><code>MODE</code></em>]], </span><span class="term"><span class="command"><strong>mdns</strong></span> [<em class="replaceable"><code>LINK</code></em> [<em class="replaceable"><code>MODE</code></em>]], </span><span class="term"><span class="command"><strong>dnssec</strong></span> [<em class="replaceable"><code>LINK</code></em> [<em class="replaceable"><code>MODE</code></em>]], </span><span class="term"><span class="command"><strong>dnsovertls</strong></span> [<em class="replaceable"><code>LINK</code></em> [<em class="replaceable"><code>MODE</code></em>]], </span><span class="term"><span class="command"><strong>nta</strong></span> [<em class="replaceable"><code>LINK</code></em> [<em class="replaceable"><code>DOMAIN</code></em>…]]</span><a class="headerlink" title="Permalink to this term" href="#dns%20%5BLINK%20%5BSERVER%E2%80%A6%5D%5D">¶</a></dt><dd><p>Get/set per-interface DNS configuration. These commands may be used to configure various DNS
+          settings for network interfaces. These commands may be used to inform
+          <span class="command"><strong>systemd-resolved</strong></span> or <span class="command"><strong>systemd-networkd</strong></span> about per-interface DNS
+          configuration determined through external means. The <span class="command"><strong>dns</strong></span> command expects IPv4 or
+          IPv6 address specifications of DNS servers to use. Each address can optionally take a port number
+          separated with "<code class="literal">:</code>", a network interface name or index separated with
+          "<code class="literal">%</code>", and a Server Name Indication (SNI) separated with "<code class="literal">#</code>". When
+          IPv6 address is specified with a port number, then the address must be in the square brackets. That
+          is, the acceptable full formats are "<code class="literal">111.222.333.444:9953%ifname#example.com</code>" for
+          IPv4 and "<code class="literal">[1111:2222::3333]:9953%ifname#example.com</code>" for IPv6. The
+          <span class="command"><strong>domain</strong></span> command expects valid DNS domains, possibly prefixed with
+          "<code class="literal">~</code>", and configures a per-interface search or route-only domain. The
+          <span class="command"><strong>default-route</strong></span> command expects a boolean parameter, and configures whether the
+          link may be used as default route for DNS lookups, i.e. if it is suitable for lookups on domains no
+          other link explicitly is configured for. The <span class="command"><strong>llmnr</strong></span>, <span class="command"><strong>mdns</strong></span>,
+          <span class="command"><strong>dnssec</strong></span> and <span class="command"><strong>dnsovertls</strong></span> commands may be used to configure the
+          per-interface LLMNR, MulticastDNS, DNSSEC and DNSOverTLS settings. Finally, <span class="command"><strong>nta</strong></span>
+          command may be used to configure additional per-interface DNSSEC NTA domains.</p><p>Commands <span class="command"><strong>dns</strong></span>, <span class="command"><strong>domain</strong></span> and <span class="command"><strong>nta</strong></span> can take
+          a single empty string argument to clear their respective value lists.</p><p>For details about these settings, their possible values and their effect, see the
+          corresponding settings in
+          <a href="systemd.network.html#"><span class="citerefentry"><span class="refentrytitle">systemd.network</span>(5)</span></a>.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="revert LINK"><span class="term"><span class="command"><strong>revert <em class="replaceable"><code>LINK</code></em></strong></span></span><a class="headerlink" title="Permalink to this term" href="#revert%20LINK">¶</a></dt><dd><p>Revert the per-interface DNS configuration. If the DNS configuration is reverted all
+        per-interface DNS setting are reset to their defaults, undoing all effects of <span class="command"><strong>dns</strong></span>,
+        <span class="command"><strong>domain</strong></span>, <span class="command"><strong>default-route</strong></span>, <span class="command"><strong>llmnr</strong></span>,
+        <span class="command"><strong>mdns</strong></span>, <span class="command"><strong>dnssec</strong></span>, <span class="command"><strong>dnsovertls</strong></span>,
+        <span class="command"><strong>nta</strong></span>. Note that when a network interface disappears all configuration is lost
+        automatically, an explicit reverting is not necessary in that case.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="monitor"><span class="term"><span class="command"><strong>monitor</strong></span></span><a class="headerlink" title="Permalink to this term" href="#monitor">¶</a></dt><dd><p>Show a continuous stream of local client resolution queries and their
+        responses. Whenever a local query is completed the query's DNS resource lookup key and resource
+        records are shown. Note that this displays queries issued locally only, and does not immediately
+        relate to DNS requests submitted to configured DNS servers or the LLMNR or MulticastDNS zones, as
+        lookups may be answered from the local cache, or might result in multiple DNS transactions (for
+        example to validate DNSSEC information). If CNAME/CNAME redirection chains are followed, a separate
+        query will be displayed for each element of the chain. Use <code class="option">--json=</code> to enable JSON
+        output.</p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="show-cache"><span class="term"><span class="command"><strong>show-cache</strong></span></span><a class="headerlink" title="Permalink to this term" href="#show-cache">¶</a></dt><dd><p>Show current cache content, per scope. Use <code class="option">--json=</code> to enable JSON
+        output.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="show-server-state"><span class="term"><span class="command"><strong>show-server-state</strong></span></span><a class="headerlink" title="Permalink to this term" href="#show-server-state">¶</a></dt><dd><p>Show detailed server state information, per DNS Server. Use <code class="option">--json=</code>
+        to enable JSON output.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="log-level [LEVEL]"><span class="term"><span class="command"><strong>log-level</strong></span> [<em class="replaceable"><code>LEVEL</code></em>]</span><a class="headerlink" title="Permalink to this term" href="#log-level%20%5BLEVEL%5D">¶</a></dt><dd><p>If no argument is given, print the current log level of the manager. If an
+          optional argument <em class="replaceable"><code>LEVEL</code></em> is provided, then the command changes the
+          current log level of the manager to <em class="replaceable"><code>LEVEL</code></em> (accepts the same values as
+          <code class="option">--log-level=</code> described in
+          <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>).
+          </p><p><a name="v244"></a>Added in version 244.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="-4"><span class="term"><code class="option">-4</code>, </span><span class="term"><code class="option">-6</code></span><a class="headerlink" title="Permalink to this term" href="#-4">¶</a></dt><dd><p>By default, when resolving a hostname, both IPv4 and IPv6
+        addresses are acquired. By specifying <code class="option">-4</code> only IPv4 addresses are requested, by specifying
+        <code class="option">-6</code> only IPv6 addresses are requested.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="-i INTERFACE"><span class="term"><code class="option">-i</code> <em class="replaceable"><code>INTERFACE</code></em>, </span><span class="term"><code class="option">--interface=</code><em class="replaceable"><code>INTERFACE</code></em></span><a class="headerlink" title="Permalink to this term" href="#-i%20INTERFACE">¶</a></dt><dd><p>Specifies the network interface to execute the query on. This may either be specified as numeric
+        interface index or as network interface string (e.g. "<code class="literal">en0</code>"). Note that this option has no
+        effect if system-wide DNS configuration (as configured in <code class="filename">/etc/resolv.conf</code> or
+        <code class="filename">/etc/systemd/resolved.conf</code>) in place of per-link configuration is used.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="-p PROTOCOL"><span class="term"><code class="option">-p</code> <em class="replaceable"><code>PROTOCOL</code></em>, </span><span class="term"><code class="option">--protocol=</code><em class="replaceable"><code>PROTOCOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#-p%20PROTOCOL">¶</a></dt><dd><p>Specifies the network protocol for the query. May be one of "<code class="literal">dns</code>"
+        (i.e. classic unicast DNS), "<code class="literal">llmnr</code>" (<a class="ulink" href="https://tools.ietf.org/html/rfc4795" target="_top">Link-Local Multicast Name Resolution</a>),
+        "<code class="literal">llmnr-ipv4</code>", "<code class="literal">llmnr-ipv6</code>" (LLMNR via the indicated underlying IP
+        protocols), "<code class="literal">mdns</code>" (<a class="ulink" href="https://www.ietf.org/rfc/rfc6762.txt" target="_top">Multicast DNS</a>),
+        "<code class="literal">mdns-ipv4</code>", "<code class="literal">mdns-ipv6</code>" (MDNS via the indicated underlying IP protocols).
+        By default the lookup is done via all protocols suitable for the lookup. If used, limits the set of
+        protocols that may be used. Use this option multiple times to enable resolving via multiple protocols at the
+        same time. The setting "<code class="literal">llmnr</code>" is identical to specifying this switch once with
+        "<code class="literal">llmnr-ipv4</code>" and once via "<code class="literal">llmnr-ipv6</code>". Note that this option does not force
+        the service to resolve the operation with the specified protocol, as that might require a suitable network
+        interface and configuration.
+        The special value "<code class="literal">help</code>" may be used to list known values.
+        </p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="-t TYPE"><span class="term"><code class="option">-t</code> <em class="replaceable"><code>TYPE</code></em>, </span><span class="term"><code class="option">--type=</code><em class="replaceable"><code>TYPE</code></em>, </span><span class="term"><code class="option">-c</code> <em class="replaceable"><code>CLASS</code></em>, </span><span class="term"><code class="option">--class=</code><em class="replaceable"><code>CLASS</code></em></span><a class="headerlink" title="Permalink to this term" href="#-t%20TYPE">¶</a></dt><dd><p>When used in conjunction with the <span class="command"><strong>query</strong></span> command, specifies the DNS
+        resource record type (e.g. <code class="constant">A</code>, <code class="constant">AAAA</code>,
+        <code class="constant">MX</code>, …) and class (e.g. <code class="constant">IN</code>,
+        <code class="constant">ANY</code>, …) to look up. If these options are used a DNS resource record set matching
+        the specified class and type is requested. The class defaults to <code class="constant">IN</code> if only a
+        type is specified. The special value "<code class="literal">help</code>" may be used to list known values.</p><p>Without these options <span class="command"><strong>resolvectl query</strong></span> provides high-level domain name to
+        address and address to domain name resolution. With these options it provides low-level DNS resource
+        record resolution. The search domain logic is automatically turned off when these options are used,
+        i.e. specified domain names need to be fully qualified domain names. Moreover, IDNA internal domain
+        name translation is turned off as well, i.e. international domain names should be specified in
+        "<code class="literal">xn--…</code>" notation, unless look-up in MulticastDNS/LLMNR is desired, in which case
+        UTF-8 characters should be used.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="--service-address=BOOL"><span class="term"><code class="option">--service-address=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--service-address=BOOL">¶</a></dt><dd><p>Takes a boolean parameter. If true (the default), when doing a service lookup with
+        <code class="option">--service</code> the hostnames contained in the <code class="constant">SRV</code>
+        resource records are resolved as well.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="--service-txt=BOOL"><span class="term"><code class="option">--service-txt=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--service-txt=BOOL">¶</a></dt><dd><p>Takes a boolean parameter. If true (the default), when doing a DNS-SD service lookup
+        with <code class="option">--service</code> the <code class="constant">TXT</code> service metadata record is
+        resolved as well.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="--cname=BOOL"><span class="term"><code class="option">--cname=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--cname=BOOL">¶</a></dt><dd><p>Takes a boolean parameter. If true (the default), DNS <code class="constant">CNAME</code> or <code class="constant">DNAME</code> redirections are
+        followed. Otherwise, if a CNAME or DNAME record is encountered while resolving, an error is
+        returned.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="--validate=BOOL"><span class="term"><code class="option">--validate=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--validate=BOOL">¶</a></dt><dd><p>Takes a boolean parameter; used in conjunction with <span class="command"><strong>query</strong></span>. If true
+        (the default), DNSSEC validation is applied as usual — under the condition that it is enabled for the
+        network and for <code class="filename">systemd-resolved.service</code> as a whole. If false, DNSSEC validation
+        is disabled for the specific query, regardless of whether it is enabled for the network or in the
+        service. Note that setting this option to true does not force DNSSEC validation on systems/networks
+        where DNSSEC is turned off. This option is only suitable to turn off such validation where otherwise
+        enabled, not enable validation where otherwise disabled.</p><p><a name="v248"></a>Added in version 248.</p></dd><dt id="--synthesize=BOOL"><span class="term"><code class="option">--synthesize=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--synthesize=BOOL">¶</a></dt><dd><p>Takes a boolean parameter; used in conjunction with <span class="command"><strong>query</strong></span>. If true
+        (the default), select domains are resolved on the local system, among them
+        "<code class="literal">localhost</code>", "<code class="literal">_gateway</code>", "<code class="literal">_outbound</code>",
+        "<code class="literal">_localdnsstub</code>" and "<code class="literal">_localdnsproxy</code>" or entries from
+        <code class="filename">/etc/hosts</code>. If false these domains are not resolved locally, and either fail (in
+        case of "<code class="literal">localhost</code>", "<code class="literal">_gateway</code>" or "<code class="literal">_outbound</code>" and
+        suchlike) or go to the network via regular DNS/mDNS/LLMNR lookups (in case of
+        <code class="filename">/etc/hosts</code> entries).</p><p><a name="v248"></a>Added in version 248.</p></dd><dt id="--cache=BOOL"><span class="term"><code class="option">--cache=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--cache=BOOL">¶</a></dt><dd><p>Takes a boolean parameter; used in conjunction with <span class="command"><strong>query</strong></span>. If true
+        (the default), lookups use the local DNS resource record cache. If false, lookups are routed to the
+        network instead, regardless if already available in the local cache.</p><p><a name="v248"></a>Added in version 248.</p></dd><dt id="--zone=BOOL"><span class="term"><code class="option">--zone=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--zone=BOOL">¶</a></dt><dd><p>Takes a boolean parameter; used in conjunction with <span class="command"><strong>query</strong></span>. If true
+        (the default), lookups are answered from locally registered LLMNR or mDNS resource records, if
+        defined. If false, locally registered LLMNR/mDNS records are not considered for the lookup
+        request.</p><p><a name="v248"></a>Added in version 248.</p></dd><dt id="--trust-anchor=BOOL"><span class="term"><code class="option">--trust-anchor=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--trust-anchor=BOOL">¶</a></dt><dd><p>Takes a boolean parameter; used in conjunction with <span class="command"><strong>query</strong></span>. If true
+        (the default), lookups for DS and DNSKEY are answered from the local DNSSEC trust anchors if
+        possible. If false, the local trust store is not considered for the lookup request.</p><p><a name="v248"></a>Added in version 248.</p></dd><dt id="--network=BOOL"><span class="term"><code class="option">--network=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--network=BOOL">¶</a></dt><dd><p>Takes a boolean parameter; used in conjunction with <span class="command"><strong>query</strong></span>. If true
+        (the default), lookups are answered via DNS, LLMNR or mDNS network requests if they cannot be
+        synthesized locally, or be answered from the local cache, zone or trust anchors (see above). If false,
+        the request is not answered from the network and will thus fail if none of the indicated sources can
+        answer them.</p><p><a name="v248"></a>Added in version 248.</p></dd><dt id="--search=BOOL"><span class="term"><code class="option">--search=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--search=BOOL">¶</a></dt><dd><p>Takes a boolean parameter. If true (the default), any specified single-label
+        hostnames will be searched in the domains configured in the search domain list, if it is
+        non-empty. Otherwise, the search domain logic is disabled. Note that this option has no effect if
+        <code class="option">--type=</code> is used (see above), in which case the search domain logic is
+        unconditionally turned off.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="--raw=payload|packet"><span class="term"><code class="option">--raw</code>[<span class="optional">=payload|packet</span>]</span><a class="headerlink" title="Permalink to this term" href="#--raw=payload%7Cpacket">¶</a></dt><dd><p>Dump the answer as binary data. If there is no argument or if the argument is
+        "<code class="literal">payload</code>", the payload of the packet is exported. If the argument is
+        "<code class="literal">packet</code>", the whole packet is dumped in wire format, prefixed by
+        length specified as a little-endian 64-bit number. This format allows multiple packets
+        to be dumped and unambiguously parsed.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="--legend=BOOL"><span class="term"><code class="option">--legend=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--legend=BOOL">¶</a></dt><dd><p>Takes a boolean parameter. If true (the default), column headers and meta information about the
+        query response are shown. Otherwise, this output is suppressed.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="--stale-data=BOOL"><span class="term"><code class="option">--stale-data=</code><em class="replaceable"><code>BOOL</code></em></span><a class="headerlink" title="Permalink to this term" href="#--stale-data=BOOL">¶</a></dt><dd><p>Takes a boolean parameter; used in conjunction with <span class="command"><strong>query</strong></span>. If true
+        (the default), lookups are answered with stale data (expired resource records) if
+        possible. If false, the stale data is not considered for the lookup request.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="--json=MODE"><span class="term"><code class="option">--json=</code><em class="replaceable"><code>MODE</code></em></span><a class="headerlink" title="Permalink to this term" href="#--json=MODE">¶</a></dt><dd><p>Shows output formatted as JSON. Expects one of "<code class="literal">short</code>" (for the
+    shortest possible output without any redundant whitespace or line breaks), "<code class="literal">pretty</code>"
+    (for a pretty version of the same, with indentation and line breaks) or "<code class="literal">off</code>" (to turn
+    off JSON output, the default).</p></dd><dt id="-j"><span class="term"><code class="option">-j</code></span><a class="headerlink" title="Permalink to this term" href="#-j">¶</a></dt><dd><p>Short for <code class="option">--json=auto</code></p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Compatibility with
+    resolvconf(8)">Compatibility with
+    <a href="https://manpages.debian.org/unstable/resolvconf/resolvconf.8.en.html"><span class="citerefentry"><span class="refentrytitle">resolvconf</span>(8)</span></a><a class="headerlink" title="Permalink to this headline" href="#Compatibility%20with%0A%20%20%20%20resolvconf(8)">¶</a></h2><p><span class="command"><strong>resolvectl</strong></span> is a multi-call binary. When invoked as "<code class="literal">resolvconf</code>"
+    (generally achieved by means of a symbolic link of this name to the <span class="command"><strong>resolvectl</strong></span> binary) it
+    is run in a limited
+    <a href="https://manpages.debian.org/unstable/resolvconf/resolvconf.8.en.html"><span class="citerefentry"><span class="refentrytitle">resolvconf</span>(8)</span></a>
+    compatibility mode. It accepts mostly the same arguments and pushes all data into
+    <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>,
+    similar to how <code class="option">dns</code> and <code class="option">domain</code> commands operate. Note that
+    <span class="command"><strong>systemd-resolved.service</strong></span> is the only supported backend, which is different from other
+    implementations of this command.</p><p><code class="filename">/etc/resolv.conf</code> will only be updated with servers added with this command
+    when <code class="filename">/etc/resolv.conf</code> is a symlink to
+    <code class="filename">/run/systemd/resolve/resolv.conf</code>, and not a static file. See the discussion of
+    <code class="filename">/etc/resolv.conf</code> handling in
+    <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>.
+    </p><p>Not all operations supported by other implementations are supported natively. Specifically:</p><div class="variablelist"><dl class="variablelist"><dt id="-a"><span class="term"><code class="option">-a</code></span><a class="headerlink" title="Permalink to this term" href="#-a">¶</a></dt><dd><p>Registers per-interface DNS configuration data with
+        <span class="command"><strong>systemd-resolved</strong></span>. Expects a network interface name as only command line argument. Reads
+        <a href="https://man7.org/linux/man-pages/man5/resolv.conf.5.html"><span class="citerefentry"><span class="refentrytitle">resolv.conf</span>(5)</span></a>-compatible
+        DNS configuration data from its standard input. Relevant fields are "<code class="literal">nameserver</code>" and
+        "<code class="literal">domain</code>"/"<code class="literal">search</code>". This command is mostly identical to invoking
+        <span class="command"><strong>resolvectl</strong></span> with a combination of <code class="option">dns</code> and <code class="option">domain</code>
+        commands.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="-d"><span class="term"><code class="option">-d</code></span><a class="headerlink" title="Permalink to this term" href="#-d">¶</a></dt><dd><p>Unregisters per-interface DNS configuration data with <span class="command"><strong>systemd-resolved</strong></span>. This
+        command is mostly identical to invoking <span class="command"><strong>resolvectl revert</strong></span>.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="-f"><span class="term"><code class="option">-f</code></span><a class="headerlink" title="Permalink to this term" href="#-f">¶</a></dt><dd><p>When specified <code class="option">-a</code> and <code class="option">-d</code> will not complain about missing
+        network interfaces and will silently execute no operation in that case.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="-x"><span class="term"><code class="option">-x</code></span><a class="headerlink" title="Permalink to this term" href="#-x">¶</a></dt><dd><p>This switch for "exclusive" operation is supported only partially. It is mapped to an
+        additional configured search domain of "<code class="literal">~.</code>" — i.e. ensures that DNS traffic is preferably
+        routed to the DNS servers on this interface, unless there are other, more specific domains configured on other
+        interfaces.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="-m"><span class="term"><code class="option">-m</code>, </span><span class="term"><code class="option">-p</code></span><a class="headerlink" title="Permalink to this term" href="#-m">¶</a></dt><dd><p>These switches are not supported and are silently ignored.</p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="-u"><span class="term"><code class="option">-u</code>, </span><span class="term"><code class="option">-I</code>, </span><span class="term"><code class="option">-i</code>, </span><span class="term"><code class="option">-l</code>, </span><span class="term"><code class="option">-R</code>, </span><span class="term"><code class="option">-r</code>, </span><span class="term"><code class="option">-v</code>, </span><span class="term"><code class="option">-V</code>, </span><span class="term"><code class="option">--enable-updates</code>, </span><span class="term"><code class="option">--disable-updates</code>, </span><span class="term"><code class="option">--are-updates-enabled</code></span><a class="headerlink" title="Permalink to this term" href="#-u">¶</a></dt><dd><p>These switches are not supported and the command will fail if used.</p><p><a name="v239"></a>Added in version 239.</p></dd></dl></div><p>See
+    <a href="https://manpages.debian.org/unstable/resolvconf/resolvconf.8.en.html"><span class="citerefentry"><span class="refentrytitle">resolvconf</span>(8)</span></a>
+    for details on those command line options.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.9.2"></a><p class="title"><b>Example 1. Retrieve the addresses of the "<code class="literal">www.0pointer.net</code>" domain (<code class="constant">A</code> and <code class="constant">AAAA</code> resource records)</b></p><div class="example-contents"><pre class="programlisting">$ resolvectl query www.0pointer.net
+www.0pointer.net: 2a01:238:43ed:c300:10c3:bcf3:3266:da74
+                  85.214.157.71
+
+-- Information acquired via protocol DNS in 611.6ms.
+-- Data is authenticated: no
+</pre></div></div><br class="example-break"><div class="example"><a name="id-1.9.3"></a><p class="title"><b>Example 2. Retrieve the domain of the "<code class="literal">85.214.157.71</code>" IP address
+      (<code class="constant">PTR</code> resource record)</b></p><div class="example-contents"><pre class="programlisting">$ resolvectl query 85.214.157.71
+85.214.157.71: gardel.0pointer.net
+
+-- Information acquired via protocol DNS in 1.2997s.
+-- Data is authenticated: no
+</pre></div></div><br class="example-break"><div class="example"><a name="id-1.9.4"></a><p class="title"><b>Example 3. Retrieve the <code class="constant">MX</code> record of the "<code class="literal">yahoo.com</code>"
+      domain</b></p><div class="example-contents"><pre class="programlisting">$ resolvectl --legend=no -t MX query yahoo.com
+yahoo.com. IN MX    1 mta7.am0.yahoodns.net
+yahoo.com. IN MX    1 mta6.am0.yahoodns.net
+yahoo.com. IN MX    1 mta5.am0.yahoodns.net
+</pre></div></div><br class="example-break"><div class="example"><a name="id-1.9.5"></a><p class="title"><b>Example 4. Resolve an <code class="constant">SRV</code> service</b></p><div class="example-contents"><pre class="programlisting">$ resolvectl service _xmpp-server._tcp gmail.com
+_xmpp-server._tcp/gmail.com: alt1.xmpp-server.l.google.com:5269 [priority=20, weight=0]
+                             173.194.210.125
+                             alt4.xmpp-server.l.google.com:5269 [priority=20, weight=0]
+                             173.194.65.125
+                             …
+</pre></div></div><br class="example-break"><div class="example"><a name="id-1.9.6"></a><p class="title"><b>Example 5. Retrieve a PGP key (<code class="constant">OPENPGP</code> resource record)</b></p><div class="example-contents"><pre class="programlisting">$ resolvectl openpgp zbyszek@fedoraproject.org
+d08ee310438ca124a6149ea5cc21b6313b390dce485576eff96f8722._openpgpkey.fedoraproject.org. IN OPENPGPKEY
+        mQINBFBHPMsBEACeInGYJCb+7TurKfb6wGyTottCDtiSJB310i37/6ZYoeIay/5soJjlMyf
+        MFQ9T2XNT/0LM6gTa0MpC1st9LnzYTMsT6tzRly1D1UbVI6xw0g0vE5y2Cjk3xUwAynCsSs
+        …
+</pre></div></div><br class="example-break"><div class="example"><a name="id-1.9.7"></a><p class="title"><b>Example 6. Retrieve a TLS key (<code class="constant">TLSA</code> resource record)</b></p><div class="example-contents"><pre class="programlisting">$ resolvectl tlsa tcp fedoraproject.org:443
+_443._tcp.fedoraproject.org IN TLSA 0 0 1 19400be5b7a31fb733917700789d2f0a2471c0c9d506c0e504c06c16d7cb17c0
+        -- Cert. usage: CA constraint
+        -- Selector: Full Certificate
+        -- Matching type: SHA-256
+</pre><p>"<code class="literal">tcp</code>" and "<code class="literal">:443</code>" are optional and could be skipped.</p></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.10"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>,
+      <a href="systemd.dnssd.html#"><span class="citerefentry"><span class="refentrytitle">systemd.dnssd</span>(5)</span></a>,
+      <a href="systemd-networkd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-networkd.service</span>(8)</span></a>,
+      <a href="resolvconf.html#"><span class="citerefentry"><span class="refentrytitle">resolvconf</span>(8)</span></a>
+    </p></div></div></body></html>

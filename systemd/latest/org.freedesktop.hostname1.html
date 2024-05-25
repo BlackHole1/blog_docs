@@ -1,0 +1,656 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>org.freedesktop.hostname1</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="org.freedesktop.hostname1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><div class="titlepage" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></div><div class="refnamediv" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><h2 data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">org.freedesktop.hostname1 — The D-Bus interface of systemd-hostnamed<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">org.freedesktop.hostname1 — systemd-hostnamed 的 D-Bus 接口</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.4" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h2 id="Introduction" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Introduction<a class="headerlink" title="Permalink to this headline" href="#Introduction" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">简介 ¶</font></font></font></h2><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">
+    <a href="systemd-hostnamed.service.html#" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed.service</span>(8)</span></a>
+    is a system service that can be used to control the hostname and related machine metadata from user
+    programs. This page describes the hostname semantics and the D-Bus interface.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">systemd-hostnamed.service(8) 是一个系统服务，可用于从用户程序控制主机名和相关的机器元数据。本页描述了主机名语义和 D-Bus 接口。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.5" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h2 id="The D-Bus API" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The D-Bus API<a class="headerlink" title="Permalink to this headline" href="#The%20D-Bus%20API" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">D-Bus API ¶</font></font></font></h2><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The service exposes the following interfaces on the bus:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">该服务在总线上公开以下接口：</font></font></font></p><pre class="programlisting">node /org/freedesktop/hostname1 {
+  interface org.freedesktop.hostname1 {
+    methods:
+      SetHostname(in  s hostname,
+                  in  b interactive);
+      SetStaticHostname(in  s hostname,
+                        in  b interactive);
+      SetPrettyHostname(in  s hostname,
+                        in  b interactive);
+      SetIconName(in  s icon,
+                  in  b interactive);
+      SetChassis(in  s chassis,
+                 in  b interactive);
+      SetDeployment(in  s deployment,
+                    in  b interactive);
+      SetLocation(in  s location,
+                  in  b interactive);
+      GetProductUUID(in  b interactive,
+                     out ay uuid);
+      GetHardwareSerial(out s serial);
+      Describe(out s json);
+    properties:
+      readonly s Hostname = '...';
+      readonly s StaticHostname = '...';
+      readonly s PrettyHostname = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s DefaultHostname = '...';
+      readonly s HostnameSource = '...';
+      readonly s IconName = '...';
+      readonly s Chassis = '...';
+      readonly s Deployment = '...';
+      readonly s Location = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s KernelName = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s KernelRelease = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s KernelVersion = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s OperatingSystemPrettyName = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s OperatingSystemCPEName = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly t OperatingSystemSupportEnd = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s HomeURL = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s HardwareVendor = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s HardwareModel = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s FirmwareVersion = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s FirmwareVendor = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly t FirmwareDate = ...;
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><div class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><dl class="variablelist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></dl></div><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Whenever the hostname or other metadata is changed via the daemon,
+    <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PropertyChanged</code> signals are sent out to subscribed clients. Changing a hostname
+    using this interface is authenticated via
+    <a class="ulink" href="https://www.freedesktop.org/software/polkit/docs/latest/" target="_top" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">polkit</a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">每当通过守护程序更改主机名或其他元数据时，将向订阅的客户端发送 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PropertyChanged</code> 信号。使用此接口更改主机名经过 polkit 验证。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.6" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h2 id="Semantics" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Semantics<a class="headerlink" title="Permalink to this headline" href="#Semantics" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">语义 ¶</font></font></font></h2><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">StaticHostname</code> property exposes the "static" hostname configured in
+    <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hostname</code>. It is not always in sync with the current hostname as returned by the
+    <a href="https://man7.org/linux/man-pages/man3/gethostname.3.html" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">gethostname</span>(3)</span></a>
+    system call. If no static hostname is configured this property will be the empty string.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">StaticHostname</code> 属性公开了在 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hostname</code> 中配置的“静态”主机名。它并不总是与由 gethostname(3) 系统调用返回的当前主机名同步。如果没有配置静态主机名，则此属性将为空字符串。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">When <a href="systemd.html#" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd</span>(1)</span></a> or
+    <a href="systemd-hostnamed.service.html#" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed.service</span>(8)</span></a>
+    set the hostname, this static hostname <span class="emphasis" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><em data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">has the highest priority</em></span>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当 systemd(1) 或 systemd-hostnamed.service(8) 设置主机名时，此静态主机名具有最高优先级。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Hostname</code> property exposes the actual hostname configured in the kernel via
+    <a href="https://man7.org/linux/man-pages/man2/sethostname.2.html" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">sethostname</span>(2)</span></a>.
+    It can be different from the static hostname. This property is never empty.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Hostname</code> 属性公开了通过 sethostname(2) 在内核中配置的实际主机名。它可能与静态主机名不同。此属性永远不为空。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PrettyHostname</code> property exposes the <span class="emphasis" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><em data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">pretty hostname</em></span>
+    which is a free-form UTF-8 hostname for presentation to the user. User interfaces should ensure that the
+    pretty hostname and the static hostname stay in sync. E.g. when the former is "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Lennart’s
+    Computer</code>" the latter should be "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">lennarts-computer</code>". If no pretty hostname is
+    set this setting will be the empty string. Applications should then find a suitable fallback, such as the
+    dynamic hostname.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">" <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PrettyHostname</code> " 属性公开了漂亮的主机名，这是一个自由格式的 UTF-8 主机名，用于向用户展示。用户界面应确保漂亮的主机名和静态主机名保持同步。例如，当前者为 " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Lennart’s
+    Computer</code> " 时，后者应为 " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">lennarts-computer</code> "。如果没有设置漂亮的主机名，则此设置将为空字符串。应用程序应找到合适的回退，例如动态主机名。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">DefaultHostname</code> property exposes the default hostname (configured through
+    <a href="os-release.html#" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">os-release</span>(5)</span></a>, or a
+    fallback set at compilation time).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">" <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">DefaultHostname</code> " 属性公开了默认主机名（通过 os-release(5) 配置，或在编译时设置的回退）。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">HostnameSource</code> property exposes the origin of the currently configured
+    hostname. One of "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">static</code>" (set from <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hostname</code>),
+    "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">transient</code>" (a non-permanent hostname from an external source),
+    "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">default</code>" (the value from <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">os-release</code> or the compiled-in
+    fallback).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">" <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">HostnameSource</code> " 属性公开了当前配置的主机名的来源。其中之一是 " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">static</code> "（从 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hostname</code> 设置），" <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">transient</code> "（来自外部来源的非永久主机名），" <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">default</code> "（来自 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">os-release</code> 或编译时回退的值）。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">IconName</code> property exposes the <span class="emphasis" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><em data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">icon name</em></span> following the
+    XDG icon naming spec. If not set, information such as the chassis type (see below) is used to find a
+    suitable fallback icon name (i.e. "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">computer-laptop</code>"
+    vs. "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">computer-desktop</code>" is picked based on the chassis information). If no such data is
+    available, the empty string is returned. In that case an application should fall back to a replacement
+    icon, for example "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">computer</code>". If this property is set to the empty string, the automatic
+    fallback name selection is enabled again.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">" <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">IconName</code> " 属性公开遵循 XDG 图标命名规范的图标名称。如果未设置，则使用诸如机箱类型（见下文）之类的信息来查找合适的后备图标名称（即根据机箱信息选择“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">computer-laptop</code> ”还是“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">computer-desktop</code> ”）。如果没有此类数据可用，则返回空字符串。在这种情况下，应用程序应退回到替换图标，例如“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">computer</code> ”。如果将此属性设置为空字符串，则再次启用自动后备名称选择。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Chassis</code> property exposes a <span class="emphasis" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><em data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">chassis type</em></span>, one of the
+    currently defined chassis types: "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">desktop</code>", "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">laptop</code>",
+    "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">server</code>", "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">tablet</code>", "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">handset</code>", as well as the special
+    chassis types "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">vm</code>" and "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">container</code>" for virtualized systems. Note that
+    in most cases the chassis type will be determined automatically from DMI/SMBIOS/ACPI firmware
+    information. Writing to this setting is hence useful only to override misdetected chassis types, or to
+    configure the chassis type if it could not be auto-detected. Set this property to the empty string to
+    reenable the automatic detection of the chassis type from firmware information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">" <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Chassis</code> " 属性公开机箱类型，当前定义的机箱类型之一为：“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">desktop</code> ”、“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">laptop</code> ”、“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">server</code> ”、“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">tablet</code> ”、“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">handset</code> ”，以及特殊的机箱类型“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">vm</code> ”和“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">container</code> ”用于虚拟化系统。请注意，在大多数情况下，机箱类型将根据 DMI/SMBIOS/ACPI 固件信息自动确定。因此，仅在需要覆盖错误检测到的机箱类型或者在无法自动检测机箱类型时配置机箱类型时，才对此设置进行写入。将此属性设置为空字符串以重新启用从固件信息中自动检测机箱类型。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Note that <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> starts only on request and terminates after a
+    short idle period. This effectively means that <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PropertyChanged</code> messages are not sent
+    out for changes made directly on the files (as in: administrator edits the files with vi). This is
+    the intended behavior: manual configuration changes should require manual reloading.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意， <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> 仅在请求时启动，并在短暂的空闲期后终止。这实际上意味着对于直接在文件上进行的更改（例如：管理员使用 vi 编辑文件），不会发送 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PropertyChanged</code> 消息。这是预期的行为：手动配置更改应该需要手动重新加载。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The transient (dynamic) hostname exposed by the <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Hostname</code> property maps directly
+    to the kernel hostname. This hostname should be assumed to be highly dynamic, and hence should be watched
+    directly, without depending on <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PropertyChanged</code> messages from
+    <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code>. To accomplish this, open
+    <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/proc/sys/kernel/hostname</code> and
+    <a href="https://man7.org/linux/man-pages/man3/poll.3.html" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">poll</span>(3)</span></a>
+    for <code class="constant" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SIGHUP</code> which is triggered by the kernel every time the hostname changes. Again:
+    this is special for the transient (dynamic) hostname, and does not apply to the configured (fixed)
+    hostname.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Hostname</code> 属性公开的瞬态（动态）主机名直接映射到内核主机名。应该假定此主机名非常动态，因此应直接监视，而不依赖于来自 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> 的 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PropertyChanged</code> 消息。为了实现这一点，打开 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/proc/sys/kernel/hostname</code> 并对 <code class="constant" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SIGHUP</code> 进行 poll(3)，这是由内核触发的，每次主机名更改时都会触发。再次强调：这仅适用于瞬态（动态）主机名，不适用于配置的（固定）主机名。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Applications may read the hostname data directly if hostname change notifications
+    are not necessary. Use
+    <a href="https://man7.org/linux/man-pages/man2/gethostname.2.html" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">gethostname</span>(2)</span></a>,
+    <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hostname</code> (possibly with per-distribution fallbacks), and
+    <a href="machine-info.html#" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">machine-info</span>(3)</span></a>
+    for that. For more information on these files and syscalls see the respective man pages.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果不需要主机名更改通知，应用程序可以直接读取主机名数据。为此，请使用 gethostname(2)、 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hostname</code> （可能带有每个发行版的回退）和 machine-info(3)。有关这些文件和系统调用的更多信息，请参阅相应的 man 手册页。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">KernelName</code>, <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">KernelRelease</code>, and
+    <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">KernelVersion</code> expose the kernel name (e.g. "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Linux</code>"), release
+    (e.g. "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">5.0.0-11</code>"), and version (i.e. the build number, e.g. "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">#11</code>") as
+    reported by <a href="https://man7.org/linux/man-pages/man2/uname.2.html" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">uname</span>(2)</span></a>.
+    <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">OperatingSystemPrettyName</code>, <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">OperatingSystemCPEName</code>, and
+    <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">HomeURL</code> expose the <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PRETTY_NAME=</code>, <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">CPE_NAME=</code> and
+    <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">HOME_URL=</code> fields from
+    <a href="os-release.html#" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">os-release</span>(5)</span></a>. The
+    purpose of those properties is to allow remote clients to access this information over D-Bus. Local
+    clients can access the information directly.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">KernelName</code> ， <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">KernelRelease</code> 和 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">KernelVersion</code> 公开内核名称（例如“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Linux</code> ”），发布版本（例如“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">5.0.0-11</code> ”）和版本号（即构建号，例如“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">#11</code> ”），如 uname(2)报告的。 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">OperatingSystemPrettyName</code> ， <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">OperatingSystemCPEName</code> 和 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">HomeURL</code> 公开 os-release(5)中的 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PRETTY_NAME=</code> ， <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">CPE_NAME=</code> 和 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">HOME_URL=</code> 字段。这些属性的目的是允许远程客户端通过 D-Bus 访问此信息。本地客户端可以直接访问信息。</font></font></font></p><div class="refsect2" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.6.14" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h3 id="Methods" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">方法 ¶</font></font></font></h3><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetHostname()</code> sets the transient (dynamic) hostname, which is used if no
+      static hostname is set. This value must be an internet-style hostname, 7-bit lowercase ASCII, no
+      special chars/spaces. An empty string will unset the transient hostname.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetHostname()</code> 设置临时（动态）主机名，如果未设置静态主机名，则使用该主机名。该值必须是互联网风格的主机名，7 位小写 ASCII 字符，无特殊字符/空格。空字符串将取消设置临时主机名。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetStaticHostname()</code> sets the static hostname which is exposed by the
+      <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">StaticHostname</code> property. When called with an empty argument, the static
+      configuration in <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hostname</code> is removed. Since the static hostname has the
+      highest priority, calling this function usually affects also the <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Hostname</code> property
+      and the effective hostname configured in the kernel.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetStaticHostname()</code> 设置由 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">StaticHostname</code> 属性公开的静态主机名。当使用空参数调用时，将删除 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hostname</code> 中的静态配置。由于静态主机名具有最高优先级，通常调用此函数也会影响 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Hostname</code> 属性和内核中配置的有效主机名。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetPrettyHostname()</code> sets the pretty hostname which is exposed by the
+      <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PrettyHostname</code> property.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetPrettyHostname()</code> 设置了由 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PrettyHostname</code> 属性公开的漂亮主机名。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetIconName()</code>, <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetChassis()</code>,
+      <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetDeployment()</code>, and <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetLocation()</code> set the properties
+      <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">IconName</code> (the name of the icon representing for the machine),
+      <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Chassis</code> (the machine form factor), <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Deployment</code> (the system
+      deployment environment), and <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Location</code> (physical system location), respectively.
+      <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetIconName()</code> 、 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetChassis()</code> 、 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetDeployment()</code> 和 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetLocation()</code> 设置了属性 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">IconName</code> （代表机器的图标名称）、 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Chassis</code> （机器外形尺寸）、 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Deployment</code> （系统部署环境）和 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Location</code> （物理系统位置）。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PrettyHostname</code>, <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">IconName</code>, <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Chassis</code>,
+      <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Deployment</code>, and <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Location</code> are stored in
+      <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/machine-info</code>. See
+      <a href="machine-info.html#" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">machine-info</span>(5)</span></a> for
+      the semantics of those settings.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">PrettyHostname</code> 、 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">IconName</code> 、 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Chassis</code> 、 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Deployment</code> 和 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Location</code> 存储在 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/machine-info</code> 中。有关这些设置的语义，请参阅 machine-info(5)。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">GetProductUUID()</code> returns the "product UUID" as exposed by the kernel based
+      on DMI information in <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/sys/class/dmi/id/product_uuid</code>. Reading the file directly
+      requires root privileges, and this method allows access to unprivileged clients through the polkit
+      framework.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">GetProductUUID()</code> 返回基于 DMI 信息在 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/sys/class/dmi/id/product_uuid</code> 中由内核公开的“产品 UUID”。直接读取文件需要 root 权限，而此方法允许通过 polkit 框架访问非特权客户端。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Describe()</code> returns a JSON representation of all properties in one.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Describe()</code> 返回一个包含所有属性的 JSON 表示。</font></font></font></p></div><div class="refsect2" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.6.15" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h3 id="Security" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Security<a class="headerlink" title="Permalink to this headline" href="#Security" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">安全 ¶</font></font></font></h3><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">interactive</code> boolean parameters can be used to control whether polkit
+      should interactively ask the user for authentication credentials if required.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">interactive</code> 布尔参数可用于控制 polkit 是否在需要时与用户交互请求身份验证凭据。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The polkit action for <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetHostname()</code> is
+      <code class="interfacename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">org.freedesktop.hostname1.set-hostname</code>. For
+      <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetStaticHostname()</code> and <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetPrettyHostname()</code> it is
+      <code class="interfacename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">org.freedesktop.hostname1.set-static-hostname</code>. For
+      <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetIconName()</code>, <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetChassis()</code>, <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetDeployment()</code>
+      and <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetLocation()</code> it is
+      <code class="interfacename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">org.freedesktop.hostname1.set-machine-info</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetHostname()</code> 的 polkit 操作是 <code class="interfacename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">org.freedesktop.hostname1.set-hostname</code> 。对于 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetStaticHostname()</code> 和 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetPrettyHostname()</code> ，它是 <code class="interfacename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">org.freedesktop.hostname1.set-static-hostname</code> 。对于 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetIconName()</code> ， <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetChassis()</code> ， <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetDeployment()</code> 和 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">SetLocation()</code> ，它是 <code class="interfacename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">org.freedesktop.hostname1.set-machine-info</code> 。</font></font></font></p></div></div><div class="refsect1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.7" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h2 id="Recommendations" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Recommendations<a class="headerlink" title="Permalink to this headline" href="#Recommendations" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">建议 ¶</font></font></font></h2><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Here are three examples that show how the pretty hostname and the icon name should be used:
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这里有三个示例，展示了漂亮的主机名和图标名称应该如何使用：</font></font></font></p><div class="itemizedlist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><ul class="itemizedlist" style="list-style-type: disc; " data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">When registering DNS-SD services: use the pretty hostname in the service name, and pass
+      the icon name in the TXT data, if there is an icon name. Browsing clients can then show the server icon
+      on each service. This is especially useful for WebDAV applications or UPnP media sharing.
+      <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在注册 DNS-SD 服务时：在服务名称中使用漂亮的主机名，并在 TXT 数据中传递图标名称（如果有图标名称）。浏览客户端可以在每个服务上显示服务器图标。这对于 WebDAV 应用程序或 UPnP 媒体共享特别有用。</font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Set the bluetooth name to the pretty hostname.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将蓝牙名称设置为漂亮的主机名。</font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">When your file browser has a "Computer" icon, replace the name with the pretty hostname
+      if set, and the icon with the icon name, if it is set.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当您的文件浏览器有一个“计算机”图标时，如果设置了漂亮的主机名，则用该名称替换名称，并且如果设置了图标名称，则用图标名称替换图标。</font></font></font></p></li></ul></div><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">To properly handle name lookups with changing local hostnames without having to edit
+    <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hosts</code>, we recommend using <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> in combination
+    with <a href="nss-myhostname.html#" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="citerefentry" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><span class="refentrytitle" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">nss-myhostname</span>(3)</span></a>.
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为了正确处理具有更改的本地主机名的名称查找，而无需编辑 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">/etc/hosts</code> ，我们建议结合使用 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> 和 nss-myhostname(3)。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Here are some recommendations to follow when generating a static (internet) hostname from a pretty
+    name:
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">以下是在从漂亮的名称生成静态（互联网）主机名时应遵循的一些建议：</font></font></font></p><div class="itemizedlist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><ul class="itemizedlist" style="list-style-type: disc; " data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Generate a single DNS label only, not an FQDN. That means no dots allowed. Strip them,
+      or replace them with "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code>".<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">仅生成单个 DNS 标签，而不是 FQDN。这意味着不允许使用点。删除它们，或用“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code> ”替换它们。</font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">It's probably safer to not use any non-ASCII chars, even if DNS allows this in some way
+      these days. In fact, restrict your charset to "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">a-zA-Z0-9</code>" and "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code>".
+      Strip other chars, or try to replace them in some smart way with chars from this set, for example
+      "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">ä</code>" → "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">ae</code>", and use "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code>" as the replacement for all
+      punctuation characters and whitespace.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">即使 DNS 在某种程度上允许使用非 ASCII 字符，最好不要使用任何非 ASCII 字符。实际上，将字符集限制为“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">a-zA-Z0-9</code> ”和“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code> ”。删除其他字符，或尝试以一种聪明的方式用此集合中的字符替换它们，例如“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">ä</code> ”→“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">ae</code> ”，并使用“ <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code> ”作为所有标点符号字符和空格的替换。</font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Try to avoid creating repeated "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code>", as well as "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code>" as
+      the first or last char.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">尽量避免创建重复的 " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code> "，以及将 " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">-</code> " 作为第一个或最后一个字符。</font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Limit the hostname to 63 chars, which is the length of a DNS label.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将主机名限制在 63 个字符，这是 DNS 标签的长度。</font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">If after stripping special chars the empty string is the result, you can pass this
+      as-is to <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> in which case it will automatically use a suitable
+      fallback.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果去除特殊字符后得到空字符串，则可以将其原样传递给 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> ，这样它将自动使用适当的回退。</font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Uppercase characters should be replaced with their lowercase equivalents.
+      <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">大写字符应替换为其小写对应字符。</font></font></font></p></li></ul></div><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Note that while <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> applies some checks to the hostname you pass
+    they are much looser than the recommendations above. For example, <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code>
+    will also accept "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">_</code>" in the hostname, but we recommend not using this to avoid clashes
+    with DNS-SD service types. Also <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> allows longer hostnames, but
+    because of the DNS label limitations, we recommend not making use of this.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，虽然 <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> 对您传递的主机名进行了一些检查，但它们比上述建议要宽松得多。例如， <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> 也会接受主机名中的 " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">_</code> "，但我们建议避免使用此功能以避免与 DNS-SD 服务类型发生冲突。另外， <code class="filename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">systemd-hostnamed</code> 允许更长的主机名，但由于 DNS 标签的限制，我们建议不要使用这个功能。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Here are a couple of example conversions:
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这里有几个示例转换：</font></font></font></p><div class="itemizedlist" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><ul class="itemizedlist" style="list-style-type: disc; " data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">"<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Lennart's PC</code>" → "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">lennarts-pc</code>"<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Lennart's PC</code> " → " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">lennarts-pc</code> </font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">"<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Müllers Computer</code>" → "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">muellers-computer</code>"<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Müllers Computer</code> " → " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">muellers-computer</code> </font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">"<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Voran!</code>" → "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">voran</code>"<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Voran!</code> " → " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">voran</code> </font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">"<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Es war einmal ein Männlein</code>" → "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">es-war-einmal-ein-maennlein</code>"<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Es war einmal ein Männlein</code> " → " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">es-war-einmal-ein-maennlein</code> </font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">"<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Jawoll. Ist doch wahr!</code>" → "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">jawoll-ist-doch-wahr</code>"<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Jawoll. Ist doch wahr!</code> " → " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">jawoll-ist-doch-wahr</code> </font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">"<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">レナート</code>" → "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">localhost</code>"<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">レナート</code> " → " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">localhost</code> </font></font></font></p></li><li class="listitem" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">"<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">...zack!!! zack!...</code>" → "<code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">zack-zack</code>"<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">...zack!!! zack!...</code> " → " <code class="literal" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">zack-zack</code> </font></font></font></p></li></ul></div><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Of course, an already valid internet hostname label you enter and pass through this
+    conversion should stay unmodified, so that users have direct control of it, if they want — by simply
+    ignoring the fact that the pretty hostname is pretty and just edit it as if it was the normal internet
+    name.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当然，您输入并通过此转换的已经有效的互联网主机名标签应保持不变，以便用户可以直接控制它，如果他们希望 — 只需忽略漂亮的主机名很漂亮这个事实，而只是像编辑普通互联网名称一样编辑它。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="versioning" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h2 id="Versioning" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Versioning<a class="headerlink" title="Permalink to this headline" href="#Versioning" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版本控制 ¶</font></font></font></h2><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">These D-Bus interfaces follow <a class="ulink" href="https://0pointer.de/blog/projects/versioning-dbus.html" target="_top" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">
+    the usual interface versioning guidelines</a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些 D-Bus 接口遵循通常的接口版本控制指南。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.9" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h2 id="Examples" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 ¶</font></font></font></h2><div class="example" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.9.2" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><p class="title" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><b data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">Example&nbsp;1.&nbsp;Introspect <code class="interfacename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">org.freedesktop.hostname1</code> on the bus<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 1. 在公交车上审视 <code class="interfacename" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">org.freedesktop.hostname1</code> </font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><pre class="programlisting">$ gdbus introspect --system \
+  --dest org.freedesktop.hostname1 \
+  --object-path /org/freedesktop/hostname1
+      </pre></div></div><br class="example-break" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></div><div class="refsect1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.10" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h2 id="See also" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">See also<a class="headerlink" title="Permalink to this headline" href="#See%20also" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">另请参见 ¶</font></font></font></h2><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">David Zeuthen's original Fedora
+    <a class="ulink" href="https://fedoraproject.org/wiki/Features/BetterHostname" target="_top" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">Feature page about xdg-hostname</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">David Zeuthen 的原始 Fedora 功能页面关于 xdg-hostname</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.11" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h2 id="History" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">History<a class="headerlink" title="Permalink to this headline" href="#History" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h2><div class="refsect2" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"><a name="id-1.11.2" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83"></a><h3 id="The D-Bus API1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1">The D-Bus API<a class="headerlink" title="Permalink to this headline" href="#The%20D-Bus%20API1" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">D-Bus API ¶</font></font></font></h3><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">FirmwareVersion</code> and
+      <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">GetHardwareSerial()</code> were added in version 251.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版本 251 中添加了 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">FirmwareVersion</code> 和 <code class="function" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">GetHardwareSerial()</code> 。</font></font></font></p><p data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">OperatingSystemSupportEnd</code>,
+      <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">FirmwareVendor</code>, and
+      <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">FirmwareDate</code> were added in version 253.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">OperatingSystemSupportEnd</code> ， <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">FirmwareVendor</code> 和 <code class="varname" data-immersive-translate-walked="9d6a9d76-6c50-4e4f-bb69-89b6c7ca0a83">FirmwareDate</code> 在版本 253 中添加。</font></font></font></p></div></div></div>
+</body></html>

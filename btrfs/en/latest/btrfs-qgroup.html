@@ -1,0 +1,951 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+
+
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>btrfs-qgroup(8) — BTRFS  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css">
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css">
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script async="async" src="../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html">
+    <link rel="search" title="Search" href="search.html">
+    <link rel="next" title="btrfs-quota(8)" href="btrfs-quota.html">
+    <link rel="prev" title="btrfs-property(8)" href="btrfs-property.html">
+    <link href="_static/style.css" rel="stylesheet" type="text/css">
+
+
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/Documentation/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "btrfs-qgroup", "programming_language": "words", "project": "btrfs", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+
+ 
+  <div class="wy-grid-for-nav" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+      <div class="wy-side-scroll" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+        <div class="wy-side-nav-search" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+
+          
+          
+          <a href="index.html" class="icon icon-home" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">
+            BTRFS
+          </a>
+              <div class="version" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">
+                latest
+              <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">最新</font></font></font></div>
+<div role="search" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+    <input type="hidden" name="check_keywords" value="yes" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+    <input type="hidden" name="area" value="default" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+              <p class="caption" role="heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="caption-text" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概述</font></font></font></span></p>
+<ul class="current" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Introduction.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Status.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Status<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">状态</font></font></font></a></li>
+<li class="toctree-l1 current" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="man-index.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Manual pages<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">手册页面</font></font></font></a><ul class="current" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-man5.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs(5)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-balance.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-balance(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-check.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-check(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-convert.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-convert(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-device.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-device(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-filesystem.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-filesystem(8)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">btrfs-文件系统(8)</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-find-root.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-find-root(8)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">btrfs-查找根(8)</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-image.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-image(8)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">btrfs-镜像(8)</font></font></font></a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-inspect-internal.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-inspect-internal(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-map-logical.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-map-logical(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-property.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-property(8)</a></li>
+<li class="toctree-l2 current" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="current reference internal" href="#" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-qgroup(8)</a><ul data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<li class="toctree-l3" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#synopsis" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">SYNOPSIS<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></a></li>
+<li class="toctree-l3" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#description" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">DESCRIPTION<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></a></li>
+<li class="toctree-l3" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#qgroup" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">QGROUP</a></li>
+<li class="toctree-l3" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#subcommand" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">SUBCOMMAND<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">子命令</font></font></font></a></li>
+<li class="toctree-l3" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#quota-rescan" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">QUOTA RESCAN</a></li>
+<li class="toctree-l3" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#examples" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">EXAMPLES<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">例子</font></font></font></a><ul data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<li class="toctree-l4" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#make-a-parent-group-that-has-two-quota-group-children" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Make a parent group that has two quota group children<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个具有两个配额组子级的父组</font></font></font></a></li>
+</ul>
+</li>
+<li class="toctree-l3" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#exit-status" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">EXIT STATUS<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">退出状态</font></font></font></a></li>
+<li class="toctree-l3" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#availability" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">AVAILABILITY<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">可用性</font></font></font></a></li>
+<li class="toctree-l3" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="#see-also" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">SEE ALSO<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见</font></font></font></a></li>
+</ul>
+</li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-quota.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-quota(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-receive.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-receive(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-replace.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-replace(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-rescue.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-rescue(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-restore.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-restore(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-scrub.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-scrub(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-select-super.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-select-super(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-send.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-send(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-subvolume.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-subvolume(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfstune.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfstune(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="fsck.btrfs.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">fsck.btrfs(8)</a></li>
+<li class="toctree-l2" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="mkfs.btrfs.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">mkfs.btrfs(8)</a></li>
+</ul>
+</li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Administration.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Administration<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">管理</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Hardware.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Hardware considerations<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">硬件考虑</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Feature-by-version.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Changes (feature/version)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">变更（功能/版本）</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Kernel-by-version.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Changes (kernel/version)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">变更（内核/版本）</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="CHANGES.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Changes (btrfs-progs)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">变更（btrfs-progs）</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Contributors.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Contributors<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">贡献者</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Glossary.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Glossary<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">术语表</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="INSTALL.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Installation instructions<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">安装说明</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Source-repositories.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Source repositories<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">源代码库</font></font></font></a></li>
+</ul>
+<p class="caption" role="heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="caption-text" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Features<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">特性</font></font></font></span></p>
+<ul data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Common-features.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Common Linux features<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">常见的 Linux 特性</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Custom-ioctls.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Custom ioctls<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">自定义 ioctls</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Auto-repair.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Auto-repair on read<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">读取时自动修复</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Balance.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Balance<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">平衡</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Compression.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Compression<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">压缩</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Checksumming.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Checksumming<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">校验和</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Convert.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Convert<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">转换</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Deduplication.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Deduplication<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">重复数据删除</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Defragmentation.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Defragmentation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">碎片整理</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Inline-files.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Inline files<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内联文件</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Qgroups.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Quota groups<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配额组</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Reflink.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Reflink<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">引用链接</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Resize.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Resize<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">调整大小</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Scrub.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Scrub<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">擦拭</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Seeding-device.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Seeding device<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">种子设备</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Send-receive.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Send/receive<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发送/接收</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Subpage.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Subpage support<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">子页面支持</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Subvolumes.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Subvolumes<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">子卷</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Swapfile.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Swapfile<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">交换文件</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Tree-checker.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Tree checker<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">树检查器</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Trim.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Trim/discard<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">修剪/丢弃</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Volume-management.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Volume management<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">卷管理</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Zoned-mode.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Zoned mode<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">分区模式</font></font></font></a></li>
+</ul>
+<p class="caption" role="heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="caption-text" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Developer documentation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">开发者文档</font></font></font></span></p>
+<ul data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/Development-notes.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Development notes<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">开发说明</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/Developer-s-FAQ.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Developer’s FAQ<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">开发者常见问题解答</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="DocConventions.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Conventions and style for documentation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档约定和风格</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/Experimental.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Experimental features<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">实验性功能</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/dev-btrfs-design.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Btrfs design<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Btrfs 设计</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/dev-btrees.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Btrees</a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/On-disk-format.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">On-disk Format<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">磁盘格式</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/dev-send-stream.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Send stream format<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发送流格式</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/dev-json.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">JSON output<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">JSON 输出</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/dev-internal-apis.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Internal APIs<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内部 API</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="dev/ReleaseChecklist.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Release checklist<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发布清单</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="btrfs-ioctl.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-ioctl(2)</a></li>
+</ul>
+<p class="caption" role="heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="caption-text" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">TODO<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">待办事项</font></font></font></span></p>
+<ul data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Quick-start.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Quick start<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">快速开始</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="Interoperability.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Interoperability<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">互操作性</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a class="reference internal" href="trouble-index.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Troubleshooting pages<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">故障排除页面</font></font></font></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><nav class="wy-nav-top" aria-label="Mobile navigation menu" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">BTRFS</a>
+      </nav>
+
+      <div class="wy-nav-content" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+        <div class="rst-content" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+          <div role="navigation" aria-label="Page navigation" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+  <ul class="wy-breadcrumbs" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+      <li data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a href="index.html" class="icon icon-home" aria-label="Home" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a></li>
+          <li class="breadcrumb-item" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a href="man-index.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Manual pages<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">手册页面</font></font></font></a></li>
+      <li class="breadcrumb-item active" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-qgroup(8)</li>
+      <li class="wy-breadcrumbs-aside" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+              <a href="https://github.com/kdave/btrfs-progs/blob/devel/Documentation/btrfs-qgroup.rst" class="fa fa-github" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1"> Edit on GitHub<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 GitHub 上编辑</font></font></font></a>
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+           <div itemprop="articleBody" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+             
+  <section id="btrfs-qgroup-8" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h1 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">btrfs-qgroup(8)<a class="headerlink" href="#btrfs-qgroup-8" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a></h1>
+<section id="synopsis" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h2 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">SYNOPSIS<a class="headerlink" href="#synopsis" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要 </font></font></font></h2>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">btrfs qgroup</strong> &lt;subcommand&gt; &lt;args&gt;</p>
+</section>
+<section id="description" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h2 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述 </font></font></font></h2>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">btrfs qgroup</strong> is used to control quota group (qgroup) of a btrfs filesystem.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">btrfs qgroup 用于控制 btrfs 文件系统的配额组（qgroup）。</font></font></font></p>
+<div class="admonition note" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<p class="admonition-title" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Note<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">To use qgroup you need to enable quota first using <strong class="command" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">btrfs quota enable</strong>
+command.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">要使用 qgroup，您需要首先使用 btrfs quota enable 命令启用配额。</font></font></font></p>
+</div>
+<div class="admonition warning" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<p class="admonition-title" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Warning<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">警告</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Qgroup is not stable yet and will impact performance in current mainline
+kernel (v4.14).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Qgroup 还不稳定，会影响当前主线内核（v4.14）的性能。</font></font></font></p>
+</div>
+</section>
+<section id="qgroup" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h2 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">QGROUP<a class="headerlink" href="#qgroup" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a></h2>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Quota groups or qgroup in btrfs make a tree hierarchy, the leaf qgroups are
+attached to subvolumes. The size limits are set per qgroup and apply when any
+limit is reached in tree that contains a given subvolume.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Btrfs 中的配额组或 qgroup 形成树形层次结构，叶子 qgroup 附加到子卷上。每个 qgroup 都设置了大小限制，当包含给定子卷的树中达到任何限制时，这些限制就会应用。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">The limits are separated between shared and exclusive and reflect the extent
+ownership. For example a fresh snapshot shares almost all the blocks with the
+original subvolume, new writes to either subvolume will raise towards the
+exclusive limit.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">限制在共享和独占之间分隔，并反映所有权的范围。例如，新快照几乎与原始子卷共享所有块，对任一子卷的新写入将提升至独占限制。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">The qgroup identifiers conform to <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">level/id</em> where level 0 is reserved to the
+qgroups associated with subvolumes. Such qgroups are created automatically.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">qgroup 标识符符合级别/ID，其中级别 0 保留给与子卷关联的 qgroups。此类 qgroups 将自动创建。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">The qgroup hierarchy is built by commands <strong class="command" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">create</strong> and <strong class="command" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">assign</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">qgroup 层次结构是通过 create 和 assign 命令构建的。</font></font></font></p>
+<div class="admonition note" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<p class="admonition-title" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Note<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">If the qgroup of a subvolume is destroyed, quota about the subvolume will
+not be functional until qgroup <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">0/&lt;subvolume id&gt;</em> is created again.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果子卷的 qgroup 被销毁，则在重新创建 qgroup 0/&lt;subvolume id&gt; 之前，关于子卷的配额将无法正常工作。</font></font></font></p>
+</div>
+</section>
+<section id="subcommand" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h2 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">SUBCOMMAND<a class="headerlink" href="#subcommand" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">子命令 </font></font></font></h2>
+<dl data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">assign [options] &lt;src&gt; &lt;dst&gt; &lt;path&gt;<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">分配 [选项] &lt;src&gt; &lt;dst&gt; &lt;path&gt;</font></font></font></dt><dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Assign qgroup <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">src</em> as the child qgroup of <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">dst</em> in the btrfs filesystem
+identified by <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">path</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在由路径标识的 btrfs 文件系统中，将 qgroup src 分配为 dst 的子 qgroup。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><code class="docutils literal notranslate" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="pre">Options</span></code></p>
+<dl class="option-list" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--rescan</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">(default since: 4.19) Automatically schedule quota rescan if the new qgroup
+assignment would lead to quota inconsistency. See <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">QUOTA RESCAN</em> for more
+information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">（默认自 4.19 起）如果新的 qgroup 分配会导致配额不一致，自动安排配额重新扫描。有关更多信息，请参阅 QUOTA RESCAN。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--no-rescan</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Explicitly ask not to do a rescan, even if the assignment will make the quotas
+inconsistent. This may be useful for repeated calls where the rescan would add
+unnecessary overhead.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">明确要求不进行重新扫描，即使分配会使配额不一致。这对于重复调用而重新扫描会增加不必要的开销可能很有用。</font></font></font></p>
+</dd>
+</dl>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">create &lt;qgroupid&gt; &lt;path&gt;<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建&lt;qgroupid&gt; &lt;path&gt;</font></font></font></dt><dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Create a subvolume quota group.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个子卷配额组。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">For the <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">0/&lt;subvolume id&gt;</em> qgroup, a qgroup can be created even before the
+subvolume is created.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">对于 0/&lt;子卷 id&gt; qgroup，甚至在创建子卷之前就可以创建一个 qgroup。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">destroy &lt;qgroupid&gt; &lt;path&gt;<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">销毁 &lt;qgroupid&gt; &lt;路径&gt;</font></font></font></dt><dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Destroy a qgroup.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">销毁一个 qgroup。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">If a qgroup is not isolated, meaning it is a parent or child qgroup, then it
+can only be destroyed after the relationship is removed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果一个 qgroup 不是孤立的，也就是它是一个父 qgroup 或子 qgroup，那么只有在关系移除后才能销毁它。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">clear-stale &lt;path&gt;<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">清除陈旧的 &lt;路径&gt;</font></font></font></dt><dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Clear all stale qgroups whose subvolume does not exist anymore, this is the
+level 0 qgroup like 0/subvolid. Higher level qgroups are not deleted even
+if they don’t have any child qgroups.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">清除所有过时的 qgroups，其子卷不再存在，这是类似 0/subvolid 的级别 0 qgroup。即使没有任何子 qgroups，也不会删除更高级别的 qgroups。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">limit [options] &lt;size&gt;|none [&lt;qgroupid&gt;] &lt;path&gt;<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">限制 [选项] &lt;大小&gt;|无 [&lt;qgroupid&gt;] &lt;路径&gt;</font></font></font></dt><dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Limit the size of a qgroup to <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">size</em> or no limit in the btrfs filesystem
+identified by <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">path</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">限制由路径标识的 btrfs 文件系统中的 qgroup 的大小为大小或无限制。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">If <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">qgroupid</em> is not given, qgroup of the subvolume identified by <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">path</em>
+is used if possible.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果未提供 qgroupid，则尽可能使用路径标识的子卷的 qgroup。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><code class="docutils literal notranslate" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="pre">Options</span></code></p>
+<dl class="option-list" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">-c</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">limit amount of data after compression. This is the default, it is currently not
+possible to turn off this option.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">限制压缩后的数据量。这是默认设置，目前无法关闭此选项。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">-e</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">limit space exclusively assigned to this qgroup.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">限制专门分配给此 qgroup 的空间。</font></font></font></p>
+</dd>
+</dl>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">remove &lt;src&gt; &lt;dst&gt; &lt;path&gt;<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">删除 &lt;src&gt; &lt;dst&gt; &lt;path&gt;</font></font></font></dt><dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Remove the relationship between child qgroup <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">src</em> and parent qgroup <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">dst</em> in
+the btrfs filesystem identified by <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">path</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在由路径标识的 btrfs 文件系统中删除子 qgroup src 与父 qgroup dst 之间的关系。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><code class="docutils literal notranslate" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="pre">Options</span></code></p>
+<dl class="option-list" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--rescan</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">(default since: 4.19) Automatically schedule quota rescan if the removed qgroup
+relation would lead to quota inconsistency. See <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">QUOTA RESCAN</em> for more
+information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">（默认自 4.19 版本起）如果删除的 qgroup 关系会导致配额不一致，则自动安排配额重新扫描。有关更多信息，请参阅 QUOTA RESCAN。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--no-rescan</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Explicitly ask not to do a rescan, even if the removal will make the quotas
+inconsistent. This may be useful for repeated calls where the rescan would add
+unnecessary overhead.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">明确要求不要进行重新扫描，即使删除会使配额不一致。这对于重复调用可能很有用，因为重新扫描会增加不必要的开销。</font></font></font></p>
+</dd>
+</dl>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">show [options] &lt;path&gt;<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示 [选项] &lt;路径&gt;</font></font></font></dt><dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Show all qgroups in the btrfs filesystem identified by &lt;path&gt;.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示由 &lt;路径&gt; 标识的 btrfs 文件系统中的所有 qgroups。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><code class="docutils literal notranslate" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="pre">Options</span></code></p>
+<dl class="option-list" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">-p</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">print parent qgroup id.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印父 qgroup id。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">-c</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">print child qgroup id.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印子 qgroup id。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">-r</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">print limit of referenced size of qgroup.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印 qgroup 引用大小的限制。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">-e</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">print limit of exclusive size of qgroup.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印独占 qgroup 大小的限制。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">-F</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">list all qgroups which impact the given path(include ancestral qgroups)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">列出影响给定路径的所有 qgroup（包括祖先 qgroup）。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">-f</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">list all qgroups which impact the given path(exclude ancestral qgroups)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">列出影响给定路径的所有 qgroup（不包括祖先 qgroup）。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--raw</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">raw numbers in bytes, without the <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">B</em> suffix.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">以字节为单位显示原始数字，不带 B 后缀。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--human-readable</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">print human friendly numbers, base 1024, this is the default<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印人类友好的数字，基数为 1024，这是默认设置</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--iec</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">select the 1024 base for the following options, according to the IEC standard.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">根据 IEC 标准，选择 1024 为以下选项的基数。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--si</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">select the 1000 base for the following options, according to the SI standard.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">根据国际标准选择以下选项的 1000 进制基数。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--kbytes</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">show sizes in KiB, or kB with --si.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用--si 选项以 KiB 或 kB 显示大小。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--mbytes</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">show sizes in MiB, or MB with --si.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用--si 选项以 MiB 或 MB 显示大小。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--gbytes</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">show sizes in GiB, or GB with --si.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">以 GiB 显示大小，或使用 --si 以 GB 显示。</font></font></font></p>
+</dd>
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--tbytes</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">show sizes in TiB, or TB with --si.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">以 TiB 显示大小，或使用 --si 以 TB 显示。</font></font></font></p>
+</dd>
+</dl>
+<dl data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">--sort=[+/-]&lt;attr&gt;[,[+/-]&lt;attr&gt;]…</dt><dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">list qgroups in order of &lt;attr&gt;.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">按照&lt;attr&gt;的顺序列出 qgroups。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">&lt;attr&gt; can be one or more of qgroupid,rfer,excl,max_rfer,max_excl.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">&lt;attr&gt; 可以是 qgroupid、rfer、excl、max_rfer、max_excl 中的一个或多个。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Prefix <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">+</em> means ascending order and <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">-</em> means descending order of <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">attr</em>.
+If no prefix is given, use ascending order by default.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">前缀 + 表示按属性的升序排列，- 表示按属性的降序排列。如果没有给出前缀，则默认使用升序排列。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">If multiple <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">attr</em> values are given, use comma to separate.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果给出多个属性值，请使用逗号进行分隔。</font></font></font></p>
+</dd>
+</dl>
+<dl class="option-list" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><kbd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="option">--sync</span></kbd></dt>
+<dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">To retrieve information after updating the state of qgroups,
+force sync of the filesystem identified by <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">path</em> before getting information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在获取更新了 qgroups 状态的信息之后，强制同步由路径标识的文件系统以获取信息。</font></font></font></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="quota-rescan" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h2 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">QUOTA RESCAN<a class="headerlink" href="#quota-rescan" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">配额重新扫描 </font></font></font></h2>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">The rescan reads all extent sharing metadata and updates the respective qgroups
+accordingly.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">重新扫描读取所有范围共享元数据，并相应地更新各自的 qgroups。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">The information consists of bytes owned exclusively (<em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">excl</em>) or shared/referred
+to (<em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">rfer</em>). There’s no explicit information about which extents are shared or
+owned exclusively.  This means when qgroup relationship changes, extent owners
+change and qgroup numbers are no longer consistent unless we do a full rescan.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">该信息包括独占拥有的字节（excl）或共享/引用的字节（rfer）。关于哪些范围是共享的或独占拥有的没有明确的信息。这意味着当 qgroup 关系发生变化时，范围所有者也会发生变化，除非进行完整的重新扫描，否则 qgroup 号码将不再一致。</font></font></font></p>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">However there are cases where we can avoid a full rescan, if a subvolume whose
+<em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">rfer</em> number equals its <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">excl</em> number, which means all bytes are exclusively
+owned, then assigning/removing this subvolume only needs to add/subtract <em data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">rfer</em>
+number from its parent qgroup. This can speed up the rescan.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">但是有些情况下我们可以避免进行完整的重新扫描，如果一个子卷的 rfer 数等于其 excl 数，这意味着所有字节都是独占拥有的，那么分配/移除这个子卷只需要从其父 qgroup 中添加/减去 rfer 数即可。这可以加快重新扫描的速度。</font></font></font></p>
+</section>
+<section id="examples" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h2 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">EXAMPLES<a class="headerlink" href="#examples" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例</font></font></font></h2>
+<section id="make-a-parent-group-that-has-two-quota-group-children" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h3 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Make a parent group that has two quota group children<a class="headerlink" href="#make-a-parent-group-that-has-two-quota-group-children" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个具有两个配额组子项的父组</font></font></font></h3>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Given the following filesystem mounted at <code class="file docutils literal notranslate" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="pre">/mnt/my-vault</span></code><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">给定以下挂载在 <code class="file docutils literal notranslate" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="pre">/mnt/my-vault</span></code> 的文件系统</font></font></font></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Label: none  uuid: 60d2ab3b-941a-4f22-8d1a-315f329797b2
+       Total devices 1 FS bytes used 128.00KiB
+       devid    1 size 5.00GiB used 536.00MiB path /dev/vdb
+</pre></div>
+</div>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Enable quota and create subvolumes.  Check subvolume ids.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">启用配额并创建子卷。检查子卷 ID。</font></font></font></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/mnt/my-vault
+$<span class="w"> </span>btrfs<span class="w"> </span>quota<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>.
+$<span class="w"> </span>btrfs<span class="w"> </span>subvolume<span class="w"> </span>create<span class="w"> </span>a
+$<span class="w"> </span>btrfs<span class="w"> </span>subvolume<span class="w"> </span>create<span class="w"> </span>b
+$<span class="w"> </span>btrfs<span class="w"> </span>subvolume<span class="w"> </span>list<span class="w"> </span>.
+
+ID<span class="w"> </span><span class="m">261</span><span class="w"> </span>gen<span class="w"> </span><span class="m">61</span><span class="w"> </span>top<span class="w"> </span>level<span class="w"> </span><span class="m">5</span><span class="w"> </span>path<span class="w"> </span>a
+ID<span class="w"> </span><span class="m">262</span><span class="w"> </span>gen<span class="w"> </span><span class="m">62</span><span class="w"> </span>top<span class="w"> </span>level<span class="w"> </span><span class="m">5</span><span class="w"> </span>path<span class="w"> </span>b
+</pre></div>
+</div>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Create qgroup and set limit to 10MiB.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建 qgroup 并将限制设置为 10MiB。</font></font></font></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>btrfs<span class="w"> </span>qgroup<span class="w"> </span>create<span class="w"> </span><span class="m">1</span>/100<span class="w"> </span>.
+$<span class="w"> </span>btrfs<span class="w"> </span>qgroup<span class="w"> </span>limit<span class="w"> </span>10M<span class="w"> </span><span class="m">1</span>/100<span class="w"> </span>.
+$<span class="w"> </span>btrfs<span class="w"> </span>qgroup<span class="w"> </span>assign<span class="w"> </span><span class="m">0</span>/261<span class="w"> </span><span class="m">1</span>/100<span class="w"> </span>.
+$<span class="w"> </span>btrfs<span class="w"> </span>qgroup<span class="w"> </span>assign<span class="w"> </span><span class="m">0</span>/262<span class="w"> </span><span class="m">1</span>/100<span class="w"> </span>.
+</pre></div>
+</div>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">And check qgroups.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">然后检查 qgroups。</font></font></font></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>btrfs<span class="w"> </span>qgroup<span class="w"> </span>show<span class="w"> </span>.
+
+qgroupid<span class="w">         </span>rfer<span class="w">         </span>excl
+--------<span class="w">         </span>----<span class="w">         </span>----
+<span class="m">0</span>/5<span class="w">          </span><span class="m">16</span>.00KiB<span class="w">     </span><span class="m">16</span>.00KiB
+<span class="m">0</span>/261<span class="w">        </span><span class="m">16</span>.00KiB<span class="w">     </span><span class="m">16</span>.00KiB
+<span class="m">0</span>/262<span class="w">        </span><span class="m">16</span>.00KiB<span class="w">     </span><span class="m">16</span>.00KiB
+<span class="m">1</span>/100<span class="w">        </span><span class="m">32</span>.00KiB<span class="w">     </span><span class="m">32</span>.00KiB
+</pre></div>
+</div>
+</section>
+</section>
+<section id="exit-status" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h2 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">EXIT STATUS<a class="headerlink" href="#exit-status" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">退出状态 </font></font></font></h2>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">btrfs qgroup</strong> returns a zero exit status if it succeeds. Non zero is
+returned in case of failure.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果成功，btrfs qgroup 返回零退出状态。如果失败，则返回非零状态。</font></font></font></p>
+</section>
+<section id="availability" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h2 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">AVAILABILITY<a class="headerlink" href="#availability" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">可用性 </font></font></font></h2>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">btrfs</strong> is part of btrfs-progs.  Please refer to the documentation at
+<a class="reference external" href="../../index.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">https://btrfs.readthedocs.io</a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">btrfs 是 btrfs-progs 的一部分。请参考 https://btrfs.readthedocs.io 上的文档。</font></font></font></p>
+</section>
+<section id="see-also" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+<h2 data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">SEE ALSO<a class="headerlink" href="#see-also" title="Link to this heading" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 </font></font></font></h2>
+<p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1"><a class="reference internal" href="btrfs-quota.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="doc" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">btrfs-quota(8)</span></a>,
+<a class="reference internal" href="btrfs-subvolume.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="doc" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">btrfs-subvolume(8)</span></a>,
+<a class="reference internal" href="mkfs.btrfs.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><span class="doc" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">mkfs.btrfs(8)</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1"><div class="rst-footer-buttons" role="navigation" aria-label="Footer" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+        <a href="btrfs-property.html" class="btn btn-neutral float-left" title="btrfs-property(8)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="btrfs-quota.html" class="btn btn-neutral float-right" title="btrfs-quota(8)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr>
+
+  <div role="contentinfo" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+    <p data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">© Copyright .
+      <span class="commit" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">Revision <code data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">cae94956</code>.
+      </span><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">© 版权所有。修订版 <code data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">cae94956</code> 。</font></font></font></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">theme</a>
+    provided by <a href="https://readthedocs.org" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">Read the Docs</a>.
+   
+
+<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用由 Read the Docs 提供的主题构建的 Sphinx。</font></font></font></footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+    <span class="rst-current-version" data-toggle="rst-current-version" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">
+      <span class="fa fa-book" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"> Read the Docs</span>
+      v: latest
+      <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Read the Docs 版本：最新</font></font></font><span class="fa fa-caret-down" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"></span>
+    </span>
+    <div class="rst-other-versions" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+      <dl data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+        <dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Versions<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版本</font></font></font></dt>
+        
+          <dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a href="../../index.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">latest<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">最新</font></font></font></a></dd>
+        
+          <dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e"><a href="../stable/index.html" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">stable<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">稳定</font></font></font></a></dd>
+        
+      </dl>
+      <dl data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+        <dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Downloads<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">下载</font></font></font></dt>
+        
+      </dl>
+      <dl data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+        
+        <dt data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">On Read the Docs<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 Read the Docs 上</font></font></font></dt>
+          <dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+            <a href="https://readthedocs.org/projects/btrfs/?fromdocs=btrfs" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Project Home<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">项目主页</font></font></font></a>
+          </dd>
+          <dd data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e">
+            <a href="https://readthedocs.org/builds/btrfs/?fromdocs=btrfs" data-immersive-translate-walked="2da536e4-6bb7-4cb0-9d7e-af3d7f34889e" data-immersive-translate-paragraph="1">Builds<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">构建</font></font></font></a>
+          </dd>
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>

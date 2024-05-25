@@ -1,0 +1,189 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-pcrlock</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-pcrlock"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-pcrlock, systemd-pcrlock-file-system.service, systemd-pcrlock-firmware-code.service, systemd-pcrlock-firmware-config.service, systemd-pcrlock-machine-id.service, systemd-pcrlock-make-policy.service, systemd-pcrlock-secureboot-authority.service, systemd-pcrlock-secureboot-policy.service — Analyze and predict TPM2 PCR states and generate an access policy from the prediction</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">/usr/lib/systemd/systemd-pcrlock [OPTIONS...]</code> </p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>Note: this command is experimental for now. While it is likely to become a regular component of
+    systemd, it might still change in behaviour and interface.</p><p><span class="command"><strong>systemd-pcrlock</strong></span> is a tool that may be used to analyze and predict TPM2 PCR
+    measurements, and generate TPM2 access policies from the prediction which it stores in a TPM2 NV index
+    (i.e. in the TPM2 non-volatile memory). This may then be used to restrict access to TPM2 objects (such as
+    disk encryption keys) to system boot-ups in which only specific, trusted components are used.</p><p><span class="command"><strong>systemd-pcrlock</strong></span> uses as input for its analysis and prediction:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The UEFI firmware TPM2 event log
+      (i.e. <code class="filename">/sys/kernel/security/tpm0/binary_bios_measurements</code>) of the current
+      boot.</p></li><li class="listitem"><p>The userspace TPM2 event log
+      (i.e. <code class="filename">/run/log/systemd/tpm2-measure.log</code>) of the current
+      boot.</p></li><li class="listitem"><p>The current PCR state of the TPM2 chip.</p></li><li class="listitem"><p>Boot component definition files (<code class="filename">*.pcrlock</code> and
+      <code class="filename">*.pcrlock.d/*.pcrlock</code>, see
+      <a href="systemd.pcrlock.html#"><span class="citerefentry"><span class="refentrytitle">systemd.pcrlock</span>(5)</span></a>)
+      that each define expected measurements for one component of the boot process, permitting alternative
+      variants for each. (Variants may be used used to bless multiple kernel versions or boot loader versions
+      at the same time.)</p></li></ul></div><p>It uses these inputs to generate a combined event log, validating it against the PCR states. It
+    then attempts to recognize event log records and matches them against the defined components. For each PCR
+    where this can be done comprehensively (i.e. where all listed records and all defined components have
+    been matched) this may then be used to predict future PCR measurements, taking the alternative variants
+    defined for each component into account. This prediction may then be converted into a TPM2 access policy
+    (consisting of TPM2 <code class="function">PolicyPCR</code> and <code class="function">PolicyOR</code> items), which is
+    then stored in an NV index in the TPM2. This may be used to then lock secrets (such as disk encryption
+    keys) to these policies (via a TPM2 <code class="function">PolicyAuthorizeNV</code> policy).</p><p>Use tools such as
+    <a href="systemd-cryptenroll.html#"><span class="citerefentry"><span class="refentrytitle">systemd-cryptenroll</span>(1)</span></a>
+    or <a href="systemd-repart.html#"><span class="citerefentry"><span class="refentrytitle">systemd-repart</span>(8)</span></a> to
+    bind disk encryption to such a <span class="command"><strong>systemd-pcrlock</strong></span> TPM2 policy. Specifically, see the
+    <code class="option">--tpm2-pcrlock=</code> switches of these tools.</p><p>The access policy logic requires a TPM2 device that implements the
+    "<code class="literal">PolicyAuthorizeNV</code>" command, i.e. implements TPM 2.0 version 1.38 or newer.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Commands">Commands<a class="headerlink" title="Permalink to this headline" href="#Commands">¶</a></h2><p>The following commands are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="log"><span class="term"><span class="command"><strong>log</strong></span></span><a class="headerlink" title="Permalink to this term" href="#log">¶</a></dt><dd><p>This reads the combined TPM2 event log, validates it, matches it against the current
+        PCR values, and outputs both in tabular form. Combine with <code class="option">--json=</code> to generate
+        output in JSON format.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="cel"><span class="term"><span class="command"><strong>cel</strong></span></span><a class="headerlink" title="Permalink to this term" href="#cel">¶</a></dt><dd><p>This reads the combined TPM2 event log and writes it to STDOUT in <a class="ulink" href="https://trustedcomputinggroup.org/resource/canonical-event-log-format/" target="_top">TCG Common Event Log
+        Format (CEL-JSON)</a> format.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="list-components"><span class="term"><span class="command"><strong>list-components</strong></span></span><a class="headerlink" title="Permalink to this term" href="#list-components">¶</a></dt><dd><p>Shows a list of component definitions and their variants, i.e. the
+        <code class="filename">*.pcrlock</code> files discovered in <code class="filename">/var/lib/pcrlock.d/</code>,
+        <code class="filename">/usr/lib/pcrlock.d/</code>, and the other supported directories. See
+        <a href="systemd.pcrlock.html#"><span class="citerefentry"><span class="refentrytitle">systemd.pcrlock</span>(5)</span></a>
+        for details on these files and the full list of directories searched.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="predict"><span class="term"><span class="command"><strong>predict</strong></span></span><a class="headerlink" title="Permalink to this term" href="#predict">¶</a></dt><dd><p>Predicts the PCR state on future boots. This will analyze the TPM2 event log as
+        described above, recognize components, and then generate all possible resulting PCR values for all
+        combinations of component variants. Note that no prediction is made for PCRs whose value does not
+        match the event log records, for which unrecognized measurements are discovered or for which
+        components are defined that cannot be found in the event log. This is a safety measure to ensure that
+        any generated access policy can be fulfilled correctly on current and future boots.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="make-policy"><span class="term"><span class="command"><strong>make-policy</strong></span></span><a class="headerlink" title="Permalink to this term" href="#make-policy">¶</a></dt><dd><p>This predicts the PCR state for future boots, much like the
+        <span class="command"><strong>predict</strong></span> command above. It then uses this data to generate a TPM2 access policy
+        which it stores in a TPM2 NV index. The prediction and information about the used TPM2 and its NV
+        index are written to <code class="filename">/var/lib/systemd/pcrlock.json</code>.</p><p>The NV index is allocated on first invocation, and updated on subsequent invocations.</p><p>The NV index contents may be changed (and thus the policy stored in it updated) by providing an
+        access PIN. This PIN is normally generated automatically and stored in encrypted form (with an access
+        policy binding it to the NV index itself) in the aforementioned JSON policy file. This PIN may be
+        chosen by the user, via the <code class="option">--recovery-pin=</code> switch. If specified it may be used as
+        alternative path of access to update the policy.</p><p>If the new prediction matches the old this command terminates quickly and executes no further
+        operation. (Unless <code class="option">--force</code> is specified, see below.)</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="remove-policy"><span class="term"><span class="command"><strong>remove-policy</strong></span></span><a class="headerlink" title="Permalink to this term" href="#remove-policy">¶</a></dt><dd><p>Removes a previously generated policy. Deletes the
+        <code class="filename">/var/lib/systemd/pcrlock.json</code> file, and deallocates the NV index.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-firmware-code"><span class="term"><span class="command"><strong>lock-firmware-code</strong></span>, </span><span class="term"><span class="command"><strong>unlock-firmware-code</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-firmware-code">¶</a></dt><dd><p>Generates/removes <code class="filename">.pcrlock</code> files based on the TPM2 event log of
+        the current boot covering all records for PCRs 0 ("platform-code") and 2 ("external-code").</p><p>This operation allows locking the boot process to the current version of the firmware of the
+        system and its extension cards. This operation should only be used if the system vendor does not
+        provide suitable pcrlock data ahead of time.</p><p>Note that this data only matches the current version of the firmware. If a firmware update is
+        applied this data will be out-of-date and any access policy generated from it will no longer pass. It
+        is thus recommended to invoke <span class="command"><strong>unlock-firmware-code</strong></span> before doing a firmware update,
+        followed by <span class="command"><strong>make-policy</strong></span> to refresh the policy.</p><p><span class="command"><strong>systemd-pcrlock lock-firmware-code</strong></span> is invoked automatically at boot via the
+        <code class="filename">systemd-pcrlock-firmware-code.service</code> unit, if enabled. This ensures that an
+        access policy managed by <span class="command"><strong>systemd-pcrlock</strong></span> is automatically locked to the new
+        firmware version whenever the policy has been relaxed temporarily, in order to cover for firmware
+        updates, as described above.</p><p>The files are only generated from the event log if the event log matches the current TPM2 PCR
+        state.</p><p>This writes/removes the files
+        <code class="filename">/var/lib/pcrlock.d/250-firmware-code-early.pcrlock.d/generated.pcrlock</code> and
+        <code class="filename">/var/lib/pcrlock.d/550-firmware-code-late.pcrlock.d/generated.pcrlock</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-firmware-config"><span class="term"><span class="command"><strong>lock-firmware-config</strong></span>, </span><span class="term"><span class="command"><strong>unlock-firmware-config</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-firmware-config">¶</a></dt><dd><p>This is similar to
+        <span class="command"><strong>lock-firmware-code</strong></span>/<span class="command"><strong>unlock-firmware-code</strong></span> but locks down the
+        firmware configuration, i.e. PCRs 1 ("platform-config") and 3 ("external-config").</p><p>This functionality should be used with care as in most scenarios a minor firmware configuration
+        change should not invalidate access policies to TPM2 objects. Also note that some systems measure
+        unstable and unpredictable information (e.g. current CPU voltages, temperatures, as part of SMBIOS
+        data) to these PCRs, which means this form of lockdown cannot be used reliably on such systems. Use
+        this functionality only if the system and hardware is well known and does not suffer by these
+        limitations, for example in virtualized environments.</p><p>Use <span class="command"><strong>unlock-firmware-config</strong></span> before making firmware configuration changes. If
+        the <code class="filename">systemd-pcrlock-firmware-config.service</code> unit is enabled it will
+        automatically generate a pcrlock file from the new measurements.</p><p>This writes/removes the files
+        <code class="filename">/var/lib/pcrlock.d/250-firmware-config-early.pcrlock.d/generated.pcrlock</code> and
+        <code class="filename">/var/lib/pcrlock.d/550-firmware-config-late.pcrlock.d/generated.pcrlock</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-secureboot-policy"><span class="term"><span class="command"><strong>lock-secureboot-policy</strong></span>, </span><span class="term"><span class="command"><strong>unlock-secureboot-policy</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-secureboot-policy">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on the SecureBoot policy
+        currently enforced. This looks at the SecureBoot, PK, KEK, db, dbx, dbt, dbr EFI variables and
+        predicts their measurements to PCR 7 ("secure-boot-policy") on the next boot.</p><p>Use <span class="command"><strong>unlock-firmware-config</strong></span> before applying SecureBoot policy updates. If
+        the <code class="filename">systemd-pcrlock-secureboot-policy.service</code> unit is enabled it will
+        automatically generate a pcrlock file from the policy discovered.</p><p>This writes/removes the file
+        <code class="filename">/var/lib/pcrlock.d/230-secureboot-policy.pcrlock.d/generated.pcrlock</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-secureboot-authority"><span class="term"><span class="command"><strong>lock-secureboot-authority</strong></span>, </span><span class="term"><span class="command"><strong>unlock-secureboot-authority</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-secureboot-authority">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on the SecureBoot
+        authorities used to validate the boot path. SecureBoot authorities are the specific SecureBoot
+        database entries that where used to validate the UEFI PE binaries executed at boot. This looks at the
+        event log of the current boot, and uses relevant measurements on PCR 7
+        ("secure-boot-policy").</p><p>This writes/removes the file
+        <code class="filename">/var/lib/pcrlock.d/620-secureboot-authority.pcrlock.d/generated.pcrlock</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-gpt DEVICE"><span class="term"><span class="command"><strong>lock-gpt</strong></span>  [<em class="replaceable"><code>DEVICE</code></em>], </span><span class="term"><span class="command"><strong>unlock-gpt</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-gpt%20DEVICE">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on the GPT partition
+        table of the specified disk. If no disk is specified automatically determines the block device
+        backing the root file system. This locks the state of the disk partitioning of the booted medium,
+        which firmware measures to PCR 5 ("boot-loader-config").</p><p>This writes/removes the file
+        <code class="filename">/var/lib/pcrlock.d/600-gpt.pcrlock.d/generated.pcrlock</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-pe BINARY"><span class="term"><span class="command"><strong>lock-pe</strong></span>  [<em class="replaceable"><code>BINARY</code></em>], </span><span class="term"><span class="command"><strong>unlock-pe</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-pe%20BINARY">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on the specified PE
+        binary. This is useful for predicting measurements the firmware makes to PCR 4 ("boot-loader-code")
+        if the specified binary is part of the UEFI boot process. Use this on boot loader binaries and
+        suchlike. Use <span class="command"><strong>lock-uki</strong></span> (see below) for PE binaries that are unified kernel images
+        (UKIs).</p><p>Expects a path to the PE binary as argument. If not specified, reads the binary from STDIN
+        instead.</p><p>The pcrlock file to write must be specified via the <code class="option">--pcrlock=</code> switch.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-uki UKI"><span class="term"><span class="command"><strong>lock-uki</strong></span>  [<em class="replaceable"><code>UKI</code></em>], </span><span class="term"><span class="command"><strong>unlock-uki</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-uki%20UKI">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on the specified UKI PE
+        binary. This is useful for predicting measurements the firmware makes to PCR 4 ("boot-loader-code"),
+        and <a href="systemd-stub.html#"><span class="citerefentry"><span class="refentrytitle">systemd-stub</span>(7)</span></a>
+        makes to PCR 11 ("kernel-boot"), if the specified UKI is booted. This is a superset of
+        <span class="command"><strong>lock-pe</strong></span>.</p><p>Expects a path to the UKI PE binary as argument. If not specified, reads the binary from STDIN
+        instead.</p><p>The pcrlock file to write must be specified via the <code class="option">--pcrlock=</code> switch.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-machine-id"><span class="term"><span class="command"><strong>lock-machine-id</strong></span>, </span><span class="term"><span class="command"><strong>unlock-machine-id</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-machine-id">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on
+        <code class="filename">/etc/machine-id</code>. This is useful for predicting measurements
+        <a href="systemd-pcrmachine.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrmachine.service</span>(8)</span></a>
+        makes to PCR 15 ("system-identity").</p><p>This writes/removes the file
+        <code class="filename">/var/lib/pcrlock.d/820-machine-id.pcrlock</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-file-system PATH"><span class="term"><span class="command"><strong>lock-file-system</strong></span>  [<em class="replaceable"><code>PATH</code></em>], </span><span class="term"><span class="command"><strong>unlock-file-system</strong></span>  [<em class="replaceable"><code>PATH</code></em>]</span><a class="headerlink" title="Permalink to this term" href="#lock-file-system%20PATH">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on file system
+        identity. This is useful for predicting measurements
+        <a href="systemd-pcrfs@.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrfs@.service</span>(8)</span></a>
+        makes to PCR 15 ("system-identity") for the root and <code class="filename">/var/</code> file systems.</p><p>This writes/removes the files
+        <code class="filename">/var/lib/pcrlock.d/830-root-file-system.pcrlock</code> and
+        <code class="filename">/var/lib/pcrlock.d/840-file-system-<em class="replaceable"><code>path</code></em>.pcrlock</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-kernel-cmdline FILE"><span class="term"><span class="command"><strong>lock-kernel-cmdline</strong></span>  [<em class="replaceable"><code>FILE</code></em>], </span><span class="term"><span class="command"><strong>unlock-kernel-cmdline</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-kernel-cmdline%20FILE">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on
+        <code class="filename">/proc/cmdline</code> (or the specified file if given). This is useful for predicting
+        measurements the Linux kernel makes to PCR 9 ("kernel-initrd").</p><p>This writes/removes the file
+        <code class="filename">/var/lib/pcrlock.d/710-kernel-cmdline.pcrlock/generated.pcrlock</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-kernel-initrd FILE"><span class="term"><span class="command"><strong>lock-kernel-initrd</strong></span> <em class="replaceable"><code>FILE</code></em>, </span><span class="term"><span class="command"><strong>unlock-kernel-initrd</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-kernel-initrd%20FILE">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on a kernel initrd cpio
+        archive. This is useful for predicting measurements the Linux kernel makes to PCR 9
+        ("kernel-initrd"). Do not use for <span class="command"><strong>systemd-stub</strong></span> UKIs, as the initrd is combined
+        dynamically from various sources and hence does not take a single input, like this command.</p><p>This writes/removes the file
+        <code class="filename">/var/lib/pcrlock.d/720-kernel-initrd.pcrlock/generated.pcrlock</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="lock-raw FILE"><span class="term"><span class="command"><strong>lock-raw</strong></span>  [<em class="replaceable"><code>FILE</code></em>], </span><span class="term"><span class="command"><strong>unlock-raw</strong></span></span><a class="headerlink" title="Permalink to this term" href="#lock-raw%20FILE">¶</a></dt><dd><p>Generates/removes a <code class="filename">.pcrlock</code> file based on raw binary data. The
+        data is either read from the specified file or from STDIN (if none is specified). This requires that
+        <code class="option">--pcrs=</code> is specified. The generated pcrlock file is written to the file specified
+        via <code class="option">--pcrlock=</code> or to STDOUT (if none is specified).</p><p><a name="v255"></a>Added in version 255.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--raw-description"><span class="term"><code class="option">--raw-description</code></span><a class="headerlink" title="Permalink to this term" href="#--raw-description">¶</a></dt><dd><p>When displaying the TPM2 event log do not attempt to decode the records to provide a
+        friendly event log description string. Instead, show the binary payload data in escaped form.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--pcr="><span class="term"><code class="option">--pcr=</code></span><a class="headerlink" title="Permalink to this term" href="#--pcr=">¶</a></dt><dd><p>Specifies the PCR number to use. May be specified more than once to select multiple
+        PCRs.</p><p>This is used by <span class="command"><strong>lock-raw</strong></span> and <span class="command"><strong>lock-pe</strong></span> to select the
+        PCR to lock against.</p><p>If used with <span class="command"><strong>predict</strong></span> and <span class="command"><strong>make-policy</strong></span> this will override
+        which PCRs to include in the prediction and policy. If unspecified this defaults to PCRs 0-5, 7,
+        11-15. Note that these commands will not include any PCRs in the prediction/policy (even if specified
+        explicitly) if there are measurements in the event log that do not match the current PCR value, or
+        there are unrecognized measurements in the event log, or components define measurements not seen in
+        the event log.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--nv-index="><span class="term"><code class="option">--nv-index=</code></span><a class="headerlink" title="Permalink to this term" href="#--nv-index=">¶</a></dt><dd><p>Specifies to NV index to store the policy in. Honoured by
+        <span class="command"><strong>make-policy</strong></span>. If not specified the command will automatically pick a free NV
+        index.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--components="><span class="term"><code class="option">--components=</code></span><a class="headerlink" title="Permalink to this term" href="#--components=">¶</a></dt><dd><p>Takes a path to read <code class="filename">*.pcrlock</code> and
+        <code class="filename">*.pcrlock.d/*.pcrlock</code> files from. May be used more than once to specify multiple
+        such directories. If not specified defaults to <code class="filename">/etc/pcrlock.d/</code>,
+        <code class="filename">/run/pcrlock.d/</code>, <code class="filename">/var/lib/pcrlock.d/</code>,
+        <code class="filename">/usr/local/pcrlock.d/</code>, <code class="filename">/usr/lib/pcrlock.d/</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--location="><span class="term"><code class="option">--location=</code></span><a class="headerlink" title="Permalink to this term" href="#--location=">¶</a></dt><dd><p>Takes either a string or a colon-separated pair of strings. Configures up to which
+        point in the sorted list of defined components to analyze/predict PCRs to. Typically, the
+        <span class="command"><strong>systemd-pcrlock</strong></span> tool is invoked from a fully booted system after boot-up and
+        before shutdown. This means various components that are defined for shutdown have not been measured
+        yet, and should not be searched for. This option allows one to restrict which components are
+        considered for analysis (taking only components before some point into account, ignoring components
+        after them). The expected string is ordered against the filenames of the components defined. Any
+        components with a lexicographically later name are ignored. This logic applies to the
+        <span class="command"><strong>log</strong></span>, <span class="command"><strong>predict</strong></span>, and <span class="command"><strong>make-policy</strong></span> verbs. If a
+        colon-separated pair of strings are specified then they select which phases of the boot to include
+        in the prediction/policy. The first string defines where the first prediction shall be made, and the
+        second string defines where the last prediction shall be made. All such predictions are then combined
+        into one set.</p><p>If used with <span class="command"><strong>list-components</strong></span> the selected location range will be highlighted
+        in the component list.</p><p>Defaults to "<code class="literal">760-:940-</code>", which means the policies generated by default will
+        basically cover the whole runtime of the OS userspace, from the initrd (as "<code class="literal">760-</code>"
+        closely follows <code class="filename">750-enter-initrd.pcrlock</code>) until (and including) the main runtime
+        of the system (as "<code class="literal">940-</code>" is closely followed by
+        <code class="filename">950-shutdown.pcrlock</code>). See
+        <a href="systemd.pcrlock.html#"><span class="citerefentry"><span class="refentrytitle">systemd.pcrlock</span>(5)</span></a>
+        for a full list of well-known components, that illustrate where this range is placed by
+        default.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--recovery-pin="><span class="term"><code class="option">--recovery-pin=</code></span><a class="headerlink" title="Permalink to this term" href="#--recovery-pin=">¶</a></dt><dd><p>Takes a boolean. Defaults to false. Honoured by <span class="command"><strong>make-policy</strong></span>. If
+        true, will query the user for a PIN to unlock the TPM2 NV index with. If no policy was created before
+        this PIN is used to protect the newly allocated NV index. If a policy has been created before the PIN
+        is used to unlock write access to the NV index. If this option is not used a PIN is automatically
+        generated. Regardless if user supplied or automatically generated, it is stored in encrypted form in
+        the policy metadata file. The recovery PIN may be used to regain write access to an NV index in case
+        the access policy became out of date.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--pcrlock="><span class="term"><code class="option">--pcrlock=</code></span><a class="headerlink" title="Permalink to this term" href="#--pcrlock=">¶</a></dt><dd><p>Takes a file system path as argument. If specified overrides where to write the
+        generated pcrlock data to. Honoured by the various <span class="command"><strong>lock-*</strong></span> commands. If not
+        specified, a default path is generally used, as documented above.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--policy="><span class="term"><code class="option">--policy=</code></span><a class="headerlink" title="Permalink to this term" href="#--policy=">¶</a></dt><dd><p>Takes a file system path as argument. If specified overrides where to write pcrlock
+        policy metadata to. If not specified defaults to
+        <code class="filename">/var/lib/systemd/pcrlock.json</code>.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--force"><span class="term"><code class="option">--force</code></span><a class="headerlink" title="Permalink to this term" href="#--force">¶</a></dt><dd><p>If specified with <span class="command"><strong>make-policy</strong></span>, the predicted policy will be
+        written to the NV index even if it is detected to be the same as the previously stored
+        one.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--json=MODE"><span class="term"><code class="option">--json=</code><em class="replaceable"><code>MODE</code></em></span><a class="headerlink" title="Permalink to this term" href="#--json=MODE">¶</a></dt><dd><p>Shows output formatted as JSON. Expects one of "<code class="literal">short</code>" (for the
+    shortest possible output without any redundant whitespace or line breaks), "<code class="literal">pretty</code>"
+    (for a pretty version of the same, with indentation and line breaks) or "<code class="literal">off</code>" (to turn
+    off JSON output, the default).</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>On success, 0 is returned, a non-zero failure code otherwise.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd.pcrlock.html#"><span class="citerefentry"><span class="refentrytitle">systemd.pcrlock</span>(5)</span></a>,
+      <a href="systemd-cryptenroll.html#"><span class="citerefentry"><span class="refentrytitle">systemd-cryptenroll</span>(1)</span></a>,
+      <a href="systemd-cryptsetup@.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-cryptsetup@.service</span>(8)</span></a>,
+      <a href="systemd-repart.html#"><span class="citerefentry"><span class="refentrytitle">systemd-repart</span>(8)</span></a>,
+      <a href="systemd-pcrmachine.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrmachine.service</span>(8)</span></a>
+     </p></div></div></body></html>

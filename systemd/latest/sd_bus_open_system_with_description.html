@@ -1,0 +1,641 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_default</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><a name="sd_bus_default" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a><div class="titlepage" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></div><div class="refnamediv" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><h2 data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">sd_bus_default, sd_bus_default_user, sd_bus_default_system, sd_bus_open, sd_bus_open_with_description, sd_bus_open_user, sd_bus_open_user_with_description, sd_bus_open_user_machine, sd_bus_open_system, sd_bus_open_system_with_description, sd_bus_open_system_remote, sd_bus_open_system_machine — Acquire a connection to a system or user bus<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">sd_bus_default、sd_bus_default_user、sd_bus_default_system、sd_bus_open、sd_bus_open_with_description、sd_bus_open_user、sd_bus_open_user_with_description、sd_bus_open_user_machine、sd_bus_open_system、sd_bus_open_system_with_description、sd_bus_open_system_remote、sd_bus_open_system_machine — 获取到系统或用户总线的连接</font></font></font></p></div><div class="refsynopsisdiv" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><h2 data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Synopsis<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_default</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_default_user</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_default_system</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_open</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_open_with_description</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">description</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_open_user</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_open_user_with_description</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">description</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_open_user_machine</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">machine</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_open_system</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_open_system_with_description</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">description</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_open_system_remote</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">host</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_open_system_machine</b>(</code></td><td>sd_bus **<var class="pdparam">bus</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">machine</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div></div></div><div class="refsect1" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><a name="id-1.5" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a><h2 id="Description" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Description<a class="headerlink" title="Permalink to this headline" href="#Description" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h2><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code> acquires a bus
+    connection object to the user bus when invoked from within a user
+    slice (any session under "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">user-*.slice</code>", e.g.:
+    "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">user@1000.service</code>"), or to the system bus
+    otherwise. The connection object is associated with the calling
+    thread. Each time the function is invoked from the same thread,
+    the same object is returned, but its reference count is increased
+    by one, as long as at least one reference is kept. When the last
+    reference to the connection is dropped (using the
+    <a href="sd_bus_unref.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_unref</span>(3)</span></a>
+    call), the connection is terminated. Note that the connection is
+    not automatically terminated when the associated thread ends. It
+    is important to drop the last reference to the bus connection
+    explicitly before the thread ends, as otherwise, the connection will
+    leak. Also, queued but unread or unwritten messages keep the
+    bus referenced, see below.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当在用户切片（位于“ <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">user-*.slice</code> ”下的任何会话，例如：“ <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">user@1000.service</code> ”）中调用时， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code> 获取到用户总线的总线连接对象；否则获取到系统总线。连接对象与调用线程关联。每次从同一线程调用该函数时，都会返回相同的对象，但只要保留至少一个引用，其引用计数就会增加一次。当最后一个对连接的引用被释放（使用 sd_bus_unref(3) 调用）时，连接将被终止。请注意，当关联线程结束时，连接不会自动终止。在线程结束之前，必须显式放弃对总线连接的最后一个引用，否则连接将泄漏。此外，排队但未读取或未写入的消息会保持对总线的引用，请参见下文。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code> returns a user
+    bus connection object associated with the calling thread.
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> is similar, but
+    connects to the system bus. Note that
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code> is identical to these two
+    calls, depending on the execution context.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code> 返回与调用线程关联的用户总线连接对象。 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> 类似，但连接到系统总线。请注意，根据执行上下文， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code> 与这两个调用相同。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code> creates a new,
+    independent bus connection to the user bus when invoked in user
+    context, or the system bus
+    otherwise. <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user()</code> is similar, but
+    connects only to the user bus.
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code> does the same, but
+    connects to the system bus. In contrast to
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code>, and
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code>, these calls return
+    new, independent connection objects that are not associated with
+    the invoking thread and are not shared between multiple
+    invocations. It is recommended to share connections per thread to
+    efficiently make use the available resources. Thus, it is
+    recommended to use <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code> and
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> to connect to the
+    user or system buses.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code> 在用户上下文中调用时创建一个新的独立总线连接，否则连接到系统总线。 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user()</code> 类似，但仅连接到用户总线。 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code> 做同样的事情，但连接到系统总线。与 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code> 和 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> 相反，这些调用返回新的独立连接对象，不与调用线程关联，也不在多次调用之间共享。建议每个线程共享连接，以有效利用可用资源。因此，建议使用 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code> 和 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> 连接到用户或系统总线。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_with_description()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_with_description()</code>, and
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_with_description()</code> are similar to
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code>, <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user()</code>, and
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code>, but allow a description string to be set, see
+    <a href="sd_bus_set_description.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_set_description</span>(3)</span></a>.
+    <em class="parameter" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">description</code></em> may be <code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">NULL</code>, in which case this function
+    is equivalent to <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code>. This description string is used in log
+    messages about the bus object, and including a "name" for the bus makes them easier to
+    understand. Some messages are emitted during bus initialization, hence using this function is
+    preferable to setting the description later with
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_with_description()</code>. The argument is copied internally and will
+    not be referenced after the function returns.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_with_description()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_with_description()</code> 和 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_with_description()</code> 类似于 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user()</code> 和 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code> ，但允许设置描述字符串，请参见 sd_bus_set_description(3)。 <code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">description</code> 可能是 <code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">NULL</code> ，在这种情况下，此函数等效于 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code> 。此描述字符串用于关于总线对象的日志消息，并为总线指定“名称”使其更易于理解。在总线初始化期间会发出一些消息，因此最好使用此函数，而不是稍后使用 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_with_description()</code> 设置描述。参数在函数返回后会在内部复制，不会被引用。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">If the <code class="varname" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">$DBUS_SESSION_BUS_ADDRESS</code> environment
+    variable is set
+    (cf. <a href="https://man7.org/linux/man-pages/man7/environ.7.html" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">environ</span>(7)</span></a>),
+    it will be used as the address of the user bus. This variable can
+    contain multiple addresses separated by "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">;</code>". If
+    this variable is not set, a suitable default for the default user
+    D-Bus instance will be used.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果设置了 <code class="varname" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">$DBUS_SESSION_BUS_ADDRESS</code> 环境变量（参见 environ(7)），它将用作用户总线的地址。此变量可以包含由“ <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">;</code> ”分隔的多个地址。如果未设置此变量，将使用适当的默认值作为默认用户 D-Bus 实例。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">If the <code class="varname" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">$DBUS_SYSTEM_BUS_ADDRESS</code>
+    environment variable is set, it will be used as the address of the
+    system bus. This variable uses the same syntax as
+    <code class="varname" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">$DBUS_SESSION_BUS_ADDRESS</code>. If this variable is
+    not set, a suitable default for the default system D-Bus instance
+    will be used.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果设置了 <code class="varname" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">$DBUS_SYSTEM_BUS_ADDRESS</code> 环境变量，它将用作系统总线的地址。此变量使用与 <code class="varname" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">$DBUS_SESSION_BUS_ADDRESS</code> 相同的语法。如果未设置此变量，将使用适当的默认值作为默认系统 D-Bus 实例。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_remote()</code> connects to the system bus on
+    the specified host using
+    <a href="https://man7.org/linux/man-pages/man1/ssh.1.html" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">ssh</span>(1)</span></a>.
+    <em class="parameter" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">host</code></em> consists of an optional user name followed by the
+    "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code>" symbol, and the hostname, optionally followed by a
+    "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">:</code>" and a port, optionally followed by a
+    "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">/</code>" and a machine name. If the machine name is given, a connection
+    is created to the system bus in the specified container on the remote machine, and
+    otherwise a connection to the system bus on the specified host is created.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_remote()</code> 使用 ssh(1) 连接到指定主机上的系统总线。 <code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">host</code> 由可选用户名后跟“ <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code> ”符号、主机名组成，可选地后跟“ <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">:</code> ”和端口，可选地后跟“ <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">/</code> ”和机器名。如果提供了机器名，则在远程机器上的指定容器中创建到系统总线的连接，否则将创建到指定主机上的系统总线的连接。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Note that entering a container is a privileged operation, and will likely only
+    work for the root user on the remote machine.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，进入容器是一个特权操作，可能只适用于远程机器上的 root 用户。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_machine()</code> connects to the system bus in the specified
+    <em class="parameter" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">machine</code></em>, where <em class="parameter" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">machine</code></em> is the name of a local container,
+    possibly prefixed by a user name and a separating "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code>". If the container name is
+    specified as the special string "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">.host</code>" the connection is made to the local system. This
+    is useful to connect to the local system bus as specific user, e.g. "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">foobar@.host</code>" to
+    connect to the local system bus as local user "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">foobar</code>". If the "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code>"
+    syntax is used either the left-hand side or the right-hand side may be omitted (but not both) in which
+    case the local user name or "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">.host</code>" is implied. If the "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code>" syntax is
+    not used the connection is always made as root user. See
+    <a href="sd_bus_set_address.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_set_address</span>(3)</span></a>
+    for a description of the address syntax, and
+    <a href="machinectl.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">machinectl</span>(1)</span></a> for more
+    information about the "machine" concept. Note that connections into local containers are only available
+    to privileged processes at this time.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_machine()</code> 连接到指定的 <code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">machine</code> 中的系统总线，其中 <code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">machine</code> 是本地容器的名称，可能带有用户名称和分隔符 " <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code> "。如果容器名称指定为特殊字符串 " <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">.host</code> "，则连接将建立到本地系统。这对于作为特定用户连接到本地系统总线很有用，例如，" <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">foobar@.host</code> " 用于作为本地用户 " <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">foobar</code> " 连接到本地系统总线。如果使用 " <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code> " 语法，则左侧或右侧可以省略（但不能同时省略），在这种情况下，将暗示本地用户名或 " <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">.host</code> "。如果不使用 " <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code> " 语法，则始终以 root 用户身份进行连接。有关地址语法的描述，请参阅 sd_bus_set_address(3)，有关 "machine" 概念的更多信息，请参阅 machinectl(1)。请注意，目前只有特权进程才能连接到本地容器。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_machine()</code> is similar to
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_machine()</code>, but connects to the user bus of the root user, or if
+    the "<code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code>" syntax is used, of the specified user.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_machine()</code> 类似于 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_machine()</code> ，但连接到根用户的用户总线，或者如果使用 " <code class="literal" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">@</code> " 语法，则连接到指定用户的用户总线。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">These calls allocate a bus connection object and initiate
+    the connection to a well-known bus of some form. An alternative to
+    using these high-level calls is to create an unconnected bus
+    object with
+    <a href="sd_bus_new.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_new</span>(3)</span></a>
+    and to connect it with
+    <a href="sd_bus_start.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_start</span>(3)</span></a>.
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些调用分配一个总线连接对象并启动到某种形式的众所周知总线的连接。使用这些高级调用的替代方法是使用 sd_bus_new(3)创建一个未连接的总线对象，并使用 sd_bus_start(3)连接它。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><a name="id-1.6" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a><h2 id="Reference ownership" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Reference ownership<a class="headerlink" title="Permalink to this headline" href="#Reference%20ownership" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考所有权 ¶</font></font></font></h2><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">The functions <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_machine()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_remote()</code>, and
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_machine()</code> return a new
+    connection object and the caller owns the sole reference. When not
+    needed anymore, this reference should be destroyed with
+    <a href="sd_bus_unref.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_unref</span>(3)</span></a>.
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">函数 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_machine()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_remote()</code> 和 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_machine()</code> 返回一个新的连接对象，调用者拥有唯一引用。不再需要时，应使用 sd_bus_unref(3)销毁此引用。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">The functions <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code> and
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> do not necessarily
+    create a new object, but increase the connection reference of an
+    existing connection object by one. Use
+    <a href="sd_bus_unref.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_unref</span>(3)</span></a>
+    to drop the reference.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">函数 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code> 和 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> 不一定创建一个新对象，而是将现有连接对象的连接引用增加一。使用 sd_bus_unref(3)来丢弃引用。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Queued but unwritten/unread messages keep a reference to their bus connection object. For this reason, even
+    if an application dropped all references to a bus connection, it might not get destroyed right away. Until all
+    incoming queued messages are read, and until all outgoing unwritten messages are written, the bus object will stay
+    alive. <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_flush()</code> may be used to write all outgoing queued messages so they drop their
+    references. To flush the unread incoming messages, use <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_close()</code>, which will also close
+    the bus connection. When using the default bus logic, it is a good idea to first invoke
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_flush()</code> followed by <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_close()</code> when a thread or process
+    terminates, and thus its bus connection object should be freed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">排队但未写入/未读的消息会保留对它们的总线连接对象的引用。因此，即使应用程序放弃了对总线连接的所有引用，它也可能不会立即被销毁。直到所有传入的排队消息都被读取，以及直到所有传出的未写入消息都被写入，总线对象才会保持活动状态。 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_flush()</code> 可用于写入所有传出的排队消息，以便它们放弃它们的引用。要刷新未读的传入消息，请使用 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_close()</code> ，这也将关闭总线连接。在使用默认总线逻辑时，最好在线程或进程终止时首先调用 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_flush()</code> ，然后调用 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_close()</code> ，从而应该释放其总线连接对象。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Normally, slot objects (as created by
+    <a href="sd_bus_add_match.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_add_match</span>(3)</span></a> and similar
+    calls) keep a reference to their bus connection object, too. Thus, as long as a bus slot object remains referenced
+    its bus object will remain allocated too. Optionally, bus slot objects may be placed in "floating" mode. When in
+    floating mode the life cycle of the bus slot object is bound to the bus object, i.e. when the bus object is freed
+    the bus slot object is automatically unreferenced too. The floating state of a slot object may be controlled
+    explicitly with
+    <a href="sd_bus_slot_set_floating.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_slot_set_floating</span>(3)</span></a>,
+    though usually floating bus slot objects are created by passing <code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">NULL</code> as the
+    <em class="parameter" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">slot</code></em> parameter of <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_add_match()</code> and related calls, thus indicating
+    that the caller is not directly interested in referencing and managing the bus slot object.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通常，插槽对象（由 sd_bus_add_match（3）和类似调用创建）也会保留对总线连接对象的引用。因此，只要总线插槽对象保持引用，总线对象也将保持分配状态。总线插槽对象可以选择放置在“浮动”模式中。在浮动模式下，总线插槽对象的生命周期与总线对象绑定，即当总线对象被释放时，总线插槽对象也会自动取消引用。插槽对象的浮动状态可以通过 sd_bus_slot_set_floating（3）来显式控制，尽管通常通过将 <code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">NULL</code> 作为 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_add_match()</code> 和相关调用的 <code data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">slot</code> 参数传递来创建浮动总线插槽对象，从而表明调用方并不直接关心引用和管理总线插槽对象。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">The life cycle of the default bus connection should be the
+    responsibility of the code that creates/owns the thread the
+    default bus connection object is associated with. Library code
+    should neither call <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_flush()</code> nor
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_close()</code> on default bus objects unless
+    it does so in its own private, self-allocated thread. Library code
+    should not use the default bus object in other threads unless it
+    is clear that the program using it will life cycle the bus
+    connection object and flush and close it before exiting from the
+    thread. In libraries where it is not clear that the calling
+    program will life cycle the bus connection object, it is hence
+    recommended to use <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code>
+    instead of <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> and
+    related calls.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认总线连接的生命周期应由创建/拥有与默认总线连接对象关联的线程的代码负责。库代码不应在默认总线对象上调用 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_flush()</code> 或 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_close()</code> ，除非在其自己的私有、自分配的线程中这样做。库代码不应在其他线程中使用默认总线对象，除非清楚地知道使用它的程序将在退出线程之前生命周期总线连接对象并刷新并关闭它。在不清楚调用程序是否会生命周期总线连接对象的库中，建议使用 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code> 而不是 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> 和相关调用。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><a name="id-1.7" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a><h2 id="Return Value" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">返回值</font></font></font></h2><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">On success, these calls return 0 or a positive
+    integer. On failure, these calls return a negative
+    errno-style error code.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">成功时，这些调用返回 0 或正整数。失败时，这些调用返回负的 errno 风格错误代码。</font></font></font></p><div class="refsect2" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><a name="id-1.7.3" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a><h3 id="Errors" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">错误</font></font></font></h3><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Returned errors may indicate the following problems:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">返回的错误可能表示以下问题：</font></font></font></p><div class="variablelist" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><dl class="variablelist" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><dt id="-EINVAL" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a></dt><dd data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">The specified parameters are invalid.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定的参数无效。</font></font></font></p></dd><dt id="-ENOMEDIUM" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">-ENOMEDIUM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEDIUM" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a></dt><dd data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">The requested bus type is not available because of invalid environment (for example
+          the user session bus is not available because <code class="varname" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">$XDG_RUNTIME_DIR</code> is not set).
+          <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">由于无效环境（例如用户会话总线不可用，因为未设置 <code class="varname" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">$XDG_RUNTIME_DIR</code> ），所以请求的总线类型不可用。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><a name="v247" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a>Added in version 247.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 247 中添加。</font></font></font></p></dd><dt id="-ENOMEM" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a></dt><dd data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Memory allocation failed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内存分配失败。</font></font></font></p></dd><dt id="-ESOCKTNOSUPPORT" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">-ESOCKTNOSUPPORT</code></span><a class="headerlink" title="Permalink to this term" href="#-ESOCKTNOSUPPORT" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a></dt><dd data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">The protocol version required to connect to the selected bus is not
+          supported.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">连接到所选总线所需的协议版本不受支持。</font></font></font></p></dd></dl></div><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">In addition, other connection-related errors may be returned. See
+      <a href="sd_bus_send.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_send</span>(3)</span></a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此外，可能会返回其他与连接相关的错误。请参阅 sd_bus_send(3)。</font></font></font></p></div></div><div class="refsect1" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><a name="id-1.8" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a><h2 id="Notes" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">笔记 ¶</font></font></font></h2><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><a name="pkgconfig-text" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">libsystemd</code>&nbsp;<a href="http://linux.die.net/man/1/pkg-config" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">pkg-config</span>(1)</span></a>
+  file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此处描述的函数可作为共享库使用，可以与 <code class="constant" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">libsystemd</code> pkg-config(1) 文件一起编译并链接。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><a name="getenv" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">setenv()</code>
+from an early phase of the program when no other threads have been started.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此处描述的代码使用了 getenv(3)，该函数被声明为不支持多线程安全。这意味着调用此处描述的函数的代码不能从并行线程中调用 setenv(3)。建议仅在程序的早期阶段（没有启动其他线程时）调用 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">setenv()</code> 。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><a name="id-1.9" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a><h2 id="History" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">History<a class="headerlink" title="Permalink to this headline" href="#History" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h2><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_remote()</code>, and
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_machine()</code> were added in version 220.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_user()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_default_system()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_remote()</code> ，和 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_machine()</code> 在版本 220 中添加。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_with_description()</code>,
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_with_description()</code>, and
+    <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_with_description()</code> were added in version 240.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_with_description()</code> ， <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_with_description()</code> ，和 <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_system_with_description()</code> 在版本 240 中添加。</font></font></font></p><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_machine()</code> was added in version 248.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_open_user_machine()</code> 在版本 248 中添加。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><a name="id-1.10" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"></a><h2 id="See Also" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">另请参阅 ¶</font></font></font></h2><p data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072" data-immersive-translate-paragraph="1">
+      <a href="systemd.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_new.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_new</span>(3)</span></a>,
+      <a href="sd_bus_ref.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_ref</span>(3)</span></a>,
+      <a href="sd_bus_unref.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_unref</span>(3)</span></a>,
+      <a href="sd_bus_close.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">sd_bus_close</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man1/ssh.1.html" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">ssh</span>(1)</span></a>,
+      <a href="systemd-machined.service.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">systemd-machined.service</span>(8)</span></a>,
+      <a href="machinectl.html#" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="citerefentry" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072"><span class="refentrytitle" data-immersive-translate-walked="5edd9ee8-1f13-4872-b56d-a837f3dd8072">machinectl</span>(1)</span></a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">systemd(1)，sd-bus(3)，sd_bus_new(3)，sd_bus_ref(3)，sd_bus_unref(3)，sd_bus_close(3)，ssh(1)，systemd-machined.service(8)，machinectl(1)</font></font></font>
+    </p></div></div>
+</body></html>

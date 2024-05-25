@@ -1,0 +1,91 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_set_description</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_set_description"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_set_description, sd_bus_get_description, sd_bus_set_anonymous, sd_bus_is_anonymous, sd_bus_set_trusted, sd_bus_is_trusted, sd_bus_set_allow_interactive_authorization, sd_bus_get_allow_interactive_authorization, sd_bus_get_scope, sd_bus_get_tid, sd_bus_get_unique_name — Set or query properties of a bus object</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_set_description</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">description</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_get_description</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">description</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_set_anonymous</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">b</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_is_anonymous</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_set_trusted</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">b</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_is_trusted</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_set_allow_interactive_authorization</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">b</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_get_allow_interactive_authorization</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_get_scope</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">scope</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_get_tid</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>pid_t *<var class="pdparam">tid</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_get_unique_name</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">unique</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_bus_set_description()</code> sets the description string that is used in
+    logging to the specified string. The string is copied internally and freed when the bus object
+    is deallocated. The <em class="parameter"><code>description</code></em> argument may be
+    <code class="constant">NULL</code>, in which case the description is unset. This function must be called
+    before the bus is started.</p><p><code class="function">sd_bus_get_description()</code> returns a description string in
+    <em class="parameter"><code>description</code></em>. This string may have been previously set with
+    <code class="function">sd_bus_set_description()</code> or
+    <a href="sd_bus_open_with_description.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_open_with_description</span>(3)</span></a>
+    or similar. If not set this way, a default string like "<code class="literal">system</code>" or
+    "<code class="literal">user</code>" will be returned for the system or user buses, and
+    <code class="constant">-ENXIO</code> otherwise.</p><p><code class="function">sd_bus_set_anonymous()</code> enables or disables "anonymous authentication",
+    i.e. lack of authentication, of the bus peer. This function must be called before the bus is
+    started. See the
+    <a class="ulink" href="view-source:https://dbus.freedesktop.org/doc/dbus-specification.html#auth-mechanisms" target="_top">
+    D-Bus Authentication Mechanisms</a> section of the D-Bus specification for details.</p><p><code class="function">sd_bus_is_anonymous()</code> returns true if the bus connection allows
+    anonymous authentication (in the sense described in previous paragraph).</p><p><code class="function">sd_bus_set_trusted()</code> sets the "trusted" state on the
+    <em class="parameter"><code>bus</code></em> object. If true, all connections on the bus are trusted and access to
+    all privileged and unprivileged methods is granted. This function must be called before the bus
+    is started.</p><p><code class="function">sd_bus_is_trusted()</code> returns true if the bus connection is trusted (in
+    the sense described in previous paragraph).</p><p><code class="function">sd_bus_set_allow_interactive_authorization()</code> enables or disables
+    interactive authorization for method calls. If true, messages are marked with the
+    <code class="constant">ALLOW_INTERACTIVE_AUTHORIZATION</code> flag specified by the
+    <a class="ulink" href="view-source:https://dbus.freedesktop.org/doc/dbus-specification.html" target="_top">D-Bus</a>
+    specification, informing the receiving side that the caller is prepared to wait for interactive
+    authorization, which might take a considerable time to complete. If this flag is set, the user
+    may be queried for passwords or confirmation via
+    <a class="ulink" href="https://www.freedesktop.org/wiki/Software/polkit" target="_top">polkit</a> or a similar
+    framework.</p><p><code class="function">sd_bus_get_allow_interactive_authorization()</code> returns true if
+    interactive authorization is allowed and false if not.</p><p><code class="function">sd_bus_get_scope()</code> stores the scope of the given bus object in
+    <em class="parameter"><code>scope</code></em>. The scope of the system bus is "<code class="literal">system</code>". The
+    scope of a user session bus is "<code class="literal">user</code>". If the given bus object is not the
+    system or a user session bus, <code class="function">sd_bus_get_scope()</code> returns an error.</p><p><code class="function">sd_bus_get_tid()</code> stores the kernel thread id of the thread associated
+    with the given bus object in <em class="parameter"><code>tid</code></em>. If <em class="parameter"><code>bus</code></em> is a
+    default bus object obtained by calling one of the functions of the
+    <a href="sd_bus_default.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_default</span>(3)</span></a>
+    family of functions, it stores the thread id of the thread the bus object was created in.
+    Otherwise, if the bus object is attached to an event loop, it stores the thread id of the
+    thread the event loop object was created in. If <em class="parameter"><code>bus</code></em> is not a default bus
+    object and is not attached to an event loop, <code class="function">sd_bus_get_tid()</code> returns an
+    error.</p><p><code class="function">sd_bus_get_unique_name()</code> stores the unique name of the bus object on
+    the bus in <em class="parameter"><code>unique</code></em>. See
+    <a class="ulink" href="https://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-names-bus#message-protocol-names-bus" target="_top">
+    The D-Bus specification</a> for more information on bus names. Note that the caller does not
+    own the string stored in <em class="parameter"><code>unique</code></em> and should not free it.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these functions return a non-negative integer. On failure, they return a
+    negative errno-style error code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>An argument is invalid.</p></dd><dt id="-ENOPKG"><span class="term"><code class="constant">-ENOPKG</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOPKG">¶</a></dt><dd><p>The bus cannot be resolved.</p></dd><dt id="-EPERM"><span class="term"><code class="constant">-EPERM</code></span><a class="headerlink" title="Permalink to this term" href="#-EPERM">¶</a></dt><dd><p>The bus has already been started.</p></dd><dt id="-ECHILD"><span class="term"><code class="constant">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD">¶</a></dt><dd><p>The bus was created in a different process, library or module instance.</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p></dd><dt id="-ENODATA"><span class="term"><code class="constant">-ENODATA</code></span><a class="headerlink" title="Permalink to this term" href="#-ENODATA">¶</a></dt><dd><p>The bus object passed to <code class="function">sd_bus_get_scope()</code> was not a
+          system or user session bus.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ENXIO"><span class="term"><code class="constant">-ENXIO</code></span><a class="headerlink" title="Permalink to this term" href="#-ENXIO">¶</a></dt><dd><p>The bus object passed to <code class="function">sd_bus_get_tid()</code> was not a
+          default bus object and is not attached to an event loop.</p><p>The bus object passed to <code class="function">sd_bus_get_description()</code> did
+          not have a <em class="parameter"><code>description</code></em>.</p><p><a name="v246"></a>Added in version 246.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_set_description()</code>,
+    <code class="function">sd_bus_get_description()</code>,
+    <code class="function">sd_bus_set_anonymous()</code>,
+    <code class="function">sd_bus_set_trusted()</code>,
+    <code class="function">sd_bus_set_allow_interactive_authorization()</code>, and
+    <code class="function">sd_bus_get_allow_interactive_authorization()</code> were added in version 240.</p><p><code class="function">sd_bus_is_anonymous()</code>,
+    <code class="function">sd_bus_is_trusted()</code>,
+    <code class="function">sd_bus_get_scope()</code>,
+    <code class="function">sd_bus_get_tid()</code>, and
+    <code class="function">sd_bus_get_unique_name()</code> were added in version 246.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_default_user.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_default_user</span>(3)</span></a>,
+      <a href="sd_bus_default_system.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_default_system</span>(3)</span></a>,
+      <a href="sd_bus_open_user.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_open_user</span>(3)</span></a>,
+      <a href="sd_bus_open_system.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_open_system</span>(3)</span></a>
+    </p></div></div></body></html>

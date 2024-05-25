@@ -1,0 +1,128 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>user@.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="user@.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>user@.service, user-runtime-dir@.service, systemd-user-runtime-dir — System units to start the user manager</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">user@<em class="replaceable"><code>UID</code></em>.service</code></p><p><code class="filename">user-runtime-dir@<em class="replaceable"><code>UID</code></em>.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-user-runtime-dir</code></p><p><code class="filename">user-<em class="replaceable"><code>UID</code></em>.slice</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>The <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>
+    system manager (PID 1) starts user manager instances as
+    <code class="filename">user@<em class="replaceable"><code>UID</code></em>.service</code>, with the user's numerical UID used as
+    the instance identifier. These instances use the same executable as the system manager, but running in a
+    mode where it starts a different set of units. Each <span class="command"><strong>systemd --user</strong></span> instance manages a
+    hierarchy of units specific to that user. See
+    <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a> for a
+    discussion of units and
+    <a href="systemd.special.html#"><span class="citerefentry"><span class="refentrytitle">systemd.special</span>(7)</span></a> for a
+    list of units that form the basis of the unit hierarchies of system and user units.</p><p><code class="filename">user@<em class="replaceable"><code>UID</code></em>.service</code> is accompanied by the
+    system unit <code class="filename">user-runtime-dir@<em class="replaceable"><code>UID</code></em>.service</code>, which
+    creates the user's runtime directory
+    <code class="filename">/run/user/<em class="replaceable"><code>UID</code></em></code>, and then removes it when this
+    unit is stopped. <code class="filename">user-runtime-dir@<em class="replaceable"><code>UID</code></em>.service</code>
+    executes the <code class="filename">systemd-user-runtime-dir</code> binary to do the actual work.</p><p>User processes may be started by the <code class="filename">user@.service</code> instance, in which
+    case they will be part of that unit in the system hierarchy. They may also be started elsewhere,
+    for example by
+    <a href="http://linux.die.net/man/8/sshd"><span class="citerefentry"><span class="refentrytitle">sshd</span>(8)</span></a> or a
+    display manager like <span class="command"><strong>gdm</strong></span>, in which case they form a .scope unit (see
+    <a href="systemd.scope.html#"><span class="citerefentry"><span class="refentrytitle">systemd.scope</span>(5)</span></a>).
+    Both <code class="filename">user@<em class="replaceable"><code>UID</code></em>.service</code> and the scope units are
+    collected under the <code class="filename">user-<em class="replaceable"><code>UID</code></em>.slice</code>.</p><p>Individual <code class="filename">user-<em class="replaceable"><code>UID</code></em>.slice</code> slices are
+    collected under <code class="filename">user.slice</code>, see
+    <a href="systemd.special.html#"><span class="citerefentry"><span class="refentrytitle">systemd.special</span>(7)</span></a>.
+    </p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Controlling resources for logged-in users">Controlling resources for logged-in users<a class="headerlink" title="Permalink to this headline" href="#Controlling%20resources%20for%20logged-in%20users">¶</a></h2><p>Options that control resources available to logged-in users can be configured at a few
+    different levels. As described in the previous section, <code class="filename">user.slice</code> contains
+    processes of all users, so any resource limits on that slice apply to all users together. The
+    usual way to configure them would be through drop-ins, e.g. <code class="filename">/etc/systemd/system/user.slice.d/resources.conf</code>.
+    </p><p>The processes of a single user are collected under
+    <code class="filename">user-<em class="replaceable"><code>UID</code></em>.slice</code>. Resource limits for that user
+    can be configured through drop-ins for that unit, e.g. <code class="filename">/etc/systemd/system/user-1000.slice.d/resources.conf</code>. If the limits
+    should apply to all users instead, they may be configured through drop-ins for the truncated
+    unit name, <code class="filename">user-.slice</code>. For example, configuration in <code class="filename">/etc/systemd/system/user-.slice.d/resources.conf</code> is included in all
+    <code class="filename">user-<em class="replaceable"><code>UID</code></em>.slice</code> units, see
+    <a href="systemd.unit.html#"><span class="citerefentry"><span class="refentrytitle">systemd.unit</span>(5)</span></a>
+    for a discussion of the drop-in mechanism.</p><p>When a user logs in and a .scope unit is created for the session (see previous section),
+    the creation of the scope may be managed through
+    <a href="pam_systemd.html#"><span class="citerefentry"><span class="refentrytitle">pam_systemd</span>(8)</span></a>.
+    This PAM module communicates with
+    <a href="systemd-logind.html#"><span class="citerefentry"><span class="refentrytitle">systemd-logind</span>(8)</span></a>
+    to create the session scope and provide access to hardware resources. Resource limits for the
+    scope may be configured through the PAM module configuration, see
+    <a href="pam_systemd.html#"><span class="citerefentry"><span class="refentrytitle">pam_systemd</span>(8)</span></a>.
+    Configuring them through the normal unit configuration is also possible, but since
+    the name of the slice unit is generally unpredictable, this is less useful.</p><p>In general any resources that apply to units may be set for
+    <code class="filename">user@<em class="replaceable"><code>UID</code></em>.service</code> and the slice
+    units discussed above, see
+    <a href="systemd.resource-control.html#"><span class="citerefentry"><span class="refentrytitle">systemd.resource-control</span>(5)</span></a>
+    for an overview.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.7.2"></a><p class="title"><b>Example 1. Hierarchy of control groups with two logged in users</b></p><div class="example-contents"><pre class="programlisting">$ systemd-cgls
+Control group /:
+-.slice
+├─user.slice
+│ ├─user-1000.slice
+│ │ ├─user@1000.service
+│ │ │ ├─pulseaudio.service
+│ │ │ │ └─2386 /usr/bin/pulseaudio --daemonize=no
+│ │ │ └─gnome-terminal-server.service
+│ │ │   └─init.scope
+│ │ │     ├─ 4127 /usr/libexec/gnome-terminal-server
+│ │ │     └─ 4198 zsh
+│ │ …
+│ │ └─session-4.scope
+│ │   ├─ 1264 gdm-session-worker [pam/gdm-password]
+│ │   ├─ 2339 /usr/bin/gnome-shell
+│ │   …
+│ │ ├─session-19.scope
+│ │   ├─6497 sshd: zbyszek [priv]
+│ │   ├─6502 sshd: zbyszek@pts/6
+│ │   ├─6509 -zsh
+│ │   └─6602 systemd-cgls --no-pager
+│ …
+│ └─user-1001.slice
+│   ├─session-20.scope
+│   │ ├─6675 sshd: guest [priv]
+│   │ ├─6708 sshd: guest@pts/6
+│   │ └─6717 -bash
+│   └─user@1001.service
+│     ├─init.scope
+│     │ ├─6680 /usr/lib/systemd/systemd --user
+│     │ └─6688 (sd-pam)
+│     └─sleep.service
+│       └─6706 /usr/bin/sleep 30
+…</pre><p>User with UID 1000 is logged in using <span class="command"><strong>gdm</strong></span> (<code class="filename">session-4.scope</code>) and
+      <a href="http://linux.die.net/man/1/ssh"><span class="citerefentry"><span class="refentrytitle">ssh</span>(1)</span></a>
+      (<code class="filename">session-19.scope</code>), and also has a user manager instance
+      running (<code class="filename">user@1000.service</code>).  User with UID 1001 is logged
+      in using <span class="command"><strong>ssh</strong></span> (<code class="filename">session-20.scope</code>) and
+      also has a user manager instance running (<code class="filename">user@1001.service</code>).  Those are all (leaf) system units, and form
+      part of the slice hierarchy, with <code class="filename">user-1000.slice</code> and
+      <code class="filename">user-1001.slice</code> below <code class="filename">user.slice</code>.  User units are visible below the
+      <code class="filename">user@.service</code> instances (<code class="filename">pulseaudio.service</code>, <code class="filename">gnome-terminal-server.service</code>, <code class="filename">init.scope</code>, <code class="filename">sleep.service</code>).
+      </p></div></div><br class="example-break"><div class="example"><a name="id-1.7.3"></a><p class="title"><b>Example 2. Default user resource limits</b></p><div class="example-contents"><pre class="programlisting">$ systemctl cat user-1000.slice
+# /usr/lib/systemd/system/user-.slice.d/10-defaults.conf
+# …
+[Unit]
+Description=User Slice of UID %j
+After=systemd-user-sessions.service
+
+[Slice]
+TasksMax=33%</pre><p>The <code class="filename">user-<em class="replaceable"><code>UID</code></em>.slice</code> units by default don't
+     have a unit file. The resource limits are set through a drop-in, which can be easily replaced
+     or extended following standard drop-in mechanisms discussed in the first section.</p></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.8"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>,
+      <a href="systemd.slice.html#"><span class="citerefentry"><span class="refentrytitle">systemd.slice</span>(5)</span></a>,
+      <a href="systemd.resource-control.html#"><span class="citerefentry"><span class="refentrytitle">systemd.resource-control</span>(5)</span></a>,
+      <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>,
+      <a href="systemd.special.html#"><span class="citerefentry"><span class="refentrytitle">systemd.special</span>(7)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/pam.8.html"><span class="citerefentry"><span class="refentrytitle">pam</span>(8)</span></a>
+    </p></div></div></body></html>

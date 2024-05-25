@@ -1,0 +1,201 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_event_add_child</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_event_add_child"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_event_add_child, sd_event_add_child_pidfd, sd_event_source_get_child_pid, sd_event_source_get_child_pidfd, sd_event_source_get_child_pidfd_own, sd_event_source_set_child_pidfd_own, sd_event_source_get_child_process_own, sd_event_source_set_child_process_own, sd_event_source_send_child_signal, sd_event_child_handler_t — Add a child process state change event source to an event loop</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-event.h&gt;</pre><pre class="funcsynopsisinfo"><span class="token">typedef</span> struct sd_event_source sd_event_source;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">typedef int (*<b class="fsfunc">sd_event_child_handler_t</b>)(</code></td><td>sd_event_source *<var class="pdparam">s</var>, </td></tr><tr><td> </td><td>const siginfo_t *<var class="pdparam">si</var>, </td></tr><tr><td> </td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_add_child</b>(</code></td><td>sd_event *<var class="pdparam">event</var>, </td></tr><tr><td> </td><td>sd_event_source **<var class="pdparam">source</var>, </td></tr><tr><td> </td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">options</var>, </td></tr><tr><td> </td><td>sd_event_child_handler_t <var class="pdparam">handler</var>, </td></tr><tr><td> </td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_add_child_pidfd</b>(</code></td><td>sd_event *<var class="pdparam">event</var>, </td></tr><tr><td> </td><td>sd_event_source **<var class="pdparam">source</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">pidfd</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">options</var>, </td></tr><tr><td> </td><td>sd_event_child_handler_t <var class="pdparam">handler</var>, </td></tr><tr><td> </td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_get_child_pid</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td> </td><td>pid_t *<var class="pdparam">pid</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_get_child_pidfd</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_get_child_pidfd_own</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_set_child_pidfd_own</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">own</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_get_child_process_own</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_set_child_process_own</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">own</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_send_child_signal</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">sig</var>, </td></tr><tr><td> </td><td>const siginfo_t *<var class="pdparam">info</var>, </td></tr><tr><td> </td><td>unsigned <var class="pdparam">flags</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_event_add_child()</code> adds a new child process state change event source to an
+    event loop. The event loop object is specified in the <em class="parameter"><code>event</code></em> parameter, the event
+    source object is returned in the <em class="parameter"><code>source</code></em> parameter. The <em class="parameter"><code>pid</code></em>
+    parameter specifies the PID of the process to watch, which must be a direct child process of the invoking
+    process. The <em class="parameter"><code>options</code></em> parameter determines which state changes will be watched for.
+    It must contain an OR-ed mask of <code class="constant">WEXITED</code> (watch for the child process terminating),
+    <code class="constant">WSTOPPED</code> (watch for the child process being stopped by a signal), and
+    <code class="constant">WCONTINUED</code> (watch for the child process being resumed by a signal). See
+    <a href="https://man7.org/linux/man-pages/man2/waitid.2.html"><span class="citerefentry"><span class="refentrytitle">waitid</span>(2)</span></a>
+    for further information.</p><p>The <em class="parameter"><code>handler</code></em> must be a function to call when the process changes state or
+    <code class="constant">NULL</code>. The handler function will be passed the <em class="parameter"><code>userdata</code></em>
+    pointer, which may be chosen freely by the caller. The handler also receives a pointer to a
+    <span class="structname">siginfo_t</span> structure containing information about the child process event. The
+    handler may return negative to signal an error (see below), other return values are ignored. If
+    <em class="parameter"><code>handler</code></em> is <code class="constant">NULL</code>, a default handler that calls
+    <a href="sd_event_exit.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_exit</span>(3)</span></a> will be
+    used.</p><p>Only a single handler may be installed for a specific child process. The handler is enabled for a
+    single event (<code class="constant">SD_EVENT_ONESHOT</code>), but this may be changed with
+    <a href="sd_event_source_set_enabled.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_source_set_enabled</span>(3)</span></a>.
+    If the handler function returns a negative error code, it will either be disabled after the invocation,
+    even if the <code class="constant">SD_EVENT_ON</code> mode was requested before, or it will cause the loop to
+    terminate, see
+    <a href="sd_event_source_set_exit_on_failure.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_source_set_exit_on_failure</span>(3)</span></a>.
+    </p><p>To destroy an event source object use
+    <a href="sd_event_source_unref.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_source_unref</span>(3)</span></a>,
+    but note that the event source is only removed from the event loop
+    when all references to the event source are dropped. To make sure
+    an event source does not fire anymore, even when there's still a
+    reference to it kept, consider setting the event source to
+    <code class="constant">SD_EVENT_OFF</code> with
+    <a href="sd_event_source_set_enabled.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_source_set_enabled</span>(3)</span></a>.</p><p>The <code class="constant">SIGCHLD</code> signal must be blocked in all threads before this function is
+    called (using <a href="https://man7.org/linux/man-pages/man2/sigprocmask.2.html"><span class="citerefentry"><span class="refentrytitle">sigprocmask</span>(2)</span></a> or
+    <a href="https://man7.org/linux/man-pages/man3/pthread_sigmask.3.html"><span class="citerefentry"><span class="refentrytitle">pthread_sigmask</span>(3)</span></a>).</p><p>If the second parameter of <code class="function">sd_event_add_child()</code> is passed as
+    <code class="constant">NULL</code> no reference to the event source object is returned. In this case the event
+    source is considered "floating", and will be destroyed implicitly when the event loop itself is
+    destroyed.</p><p>Note that the <em class="parameter"><code>handler</code></em> function is
+    invoked at a time where the child process is not reaped yet (and
+    thus still is exposed as a zombie process by the kernel). However,
+    the child will be reaped automatically after the function
+    returns. Child processes for which no child process state change
+    event sources are installed will not be reaped by the event loop
+    implementation.</p><p>If the <em class="parameter"><code>handler</code></em> parameter to <code class="function">sd_event_add_child()</code> is
+    <code class="constant">NULL</code>, and the event source fires, this will be considered a request to exit the
+    event loop. In this case, the <em class="parameter"><code>userdata</code></em> parameter, cast to an integer, is passed as
+    the exit code parameter to
+    <a href="sd_event_exit.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_exit</span>(3)</span></a>.</p><p>If both a child process state change event source and a
+    <code class="constant">SIGCHLD</code> signal event source is installed in
+    the same event loop, the configured event source priorities decide
+    which event source is dispatched first. If the signal handler is
+    processed first, it should leave the child processes for which
+    child process state change event sources are installed unreaped.</p><p><code class="function">sd_event_add_child_pidfd()</code> is similar to
+    <code class="function">sd_event_add_child()</code> but takes a file descriptor referencing the process ("pidfd")
+    instead of the numeric PID. A suitable file descriptor may be acquired via <a href="https://man7.org/linux/man-pages/man2/pidfd_open.2.html"><span class="citerefentry"><span class="refentrytitle">pidfd_open</span>(2)</span></a> and
+    related calls. The passed file descriptor is not closed when the event source is freed again, unless
+    <code class="function">sd_event_source_set_child_pidfd_own()</code> is used to turn this behaviour on. Note that
+    regardless which of <code class="function">sd_event_add_child()</code> and
+    <code class="function">sd_event_add_child_pidfd()</code> is used for allocating an event source, the watched
+    process has to be a direct child process of the invoking process. Also in both cases
+    <code class="constant">SIGCHLD</code> has to be blocked in the invoking process.</p><p><code class="function">sd_event_source_get_child_pid()</code>
+    retrieves the configured PID of a child process state change event
+    source created previously with
+    <code class="function">sd_event_add_child()</code>. It takes the event
+    source object as the <em class="parameter"><code>source</code></em> parameter and a
+    pointer to a <span class="type">pid_t</span> variable to return the process ID
+    in.
+    </p><p><code class="function">sd_event_source_get_child_pidfd()</code> retrieves the file descriptor referencing
+    the watched process ("pidfd") if this functionality is available. On kernels that support the concept the
+    event loop will make use of pidfds to watch child processes, regardless if the individual event sources
+    are allocated via <code class="function">sd_event_add_child()</code> or
+    <code class="function">sd_event_add_child_pidfd()</code>. If the latter call was used to allocate the event
+    source, this function returns the file descriptor used for allocation. On kernels that do not support the
+    pidfd concept this function will fail with <code class="constant">EOPNOTSUPP</code>. This call takes the event
+    source object as the <em class="parameter"><code>source</code></em> parameter and returns the numeric file descriptor.
+    </p><p><code class="function">sd_event_source_get_child_pidfd_own()</code> may be used to query whether the pidfd
+    the event source encapsulates shall be closed when the event source is freed. This function returns zero
+    if the pidfd shall be left open, and positive if it shall be closed automatically. By default this
+    setting defaults to on if the event source was allocated via <code class="function">sd_event_add_child()</code>
+    and off if it was allocated via <code class="function">sd_event_add_child_pidfd()</code>. The
+    <code class="function">sd_event_source_set_child_pidfd_own()</code> function may be used to change the setting and
+    takes a boolean parameter with the new setting.</p><p><code class="function">sd_event_source_get_child_process_own()</code> may be used to query whether the
+    process the event source watches shall be killed (with <code class="constant">SIGKILL</code>) and reaped when the
+    event source is freed. This function returns zero if the process shell be left running, and positive if
+    it shall be killed and reaped automatically. By default this setting defaults to off. The
+    <code class="function">sd_event_source_set_child_process_own()</code> function may be used to change the setting
+    and takes a boolean parameter with the new setting. Note that currently if the calling process is
+    terminated abnormally the watched process might survive even thought the event source ceases to
+    exist. This behaviour might change eventually.</p><p><code class="function">sd_event_source_send_child_signal()</code> may be used to send a UNIX signal to the
+    watched process. If the pidfd concept is supported in the kernel, this is implemented via <a href="https://man7.org/linux/man-pages/man2/pidfd_send_signal.2.html"><span class="citerefentry"><span class="refentrytitle">pidfd_send_signal</span>(2)</span></a>
+    and otherwise via <a href="https://man7.org/linux/man-pages/man2/rt_sigqueueinfo.2.html"><span class="citerefentry"><span class="refentrytitle">rt_sigqueueinfo</span>(2)</span></a>
+    (or via <a href="https://man7.org/linux/man-pages/man2/kill.2.html"><span class="citerefentry"><span class="refentrytitle">kill</span>(2)</span></a> in case
+    <em class="parameter"><code>info</code></em> is <code class="constant">NULL</code>). The specified parameters match those of these
+    underlying system calls, except that the <em class="parameter"><code>info</code></em> is never modified (and is thus
+    declared constant). Like for the underlying system calls, the <em class="parameter"><code>flags</code></em> parameter
+    currently must be zero.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these functions return 0 or a positive
+    integer. On failure, they return a negative errno-style error
+    code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Not enough memory to allocate an object.</p></dd><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>An invalid argument has been passed. This includes
+          specifying an empty mask in <em class="parameter"><code>options</code></em> or a mask
+          which contains values different than a combination of
+          <code class="constant">WEXITED</code>, <code class="constant">WSTOPPED</code>, and
+          <code class="constant">WCONTINUED</code>.
+          </p></dd><dt id="-EBUSY"><span class="term"><code class="constant">-EBUSY</code></span><a class="headerlink" title="Permalink to this term" href="#-EBUSY">¶</a></dt><dd><p>A handler is already installed for this child process, or
+          <code class="constant">SIGCHLD</code> is not blocked.</p></dd><dt id="-ESTALE"><span class="term"><code class="constant">-ESTALE</code></span><a class="headerlink" title="Permalink to this term" href="#-ESTALE">¶</a></dt><dd><p>The event loop is already terminated.</p></dd><dt id="-ECHILD"><span class="term"><code class="constant">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD">¶</a></dt><dd><p>The event loop has been created in a different process, library or module instance.</p></dd><dt id="-EDOM"><span class="term"><code class="constant">-EDOM</code></span><a class="headerlink" title="Permalink to this term" href="#-EDOM">¶</a></dt><dd><p>The passed event source is not a child process event source.</p></dd><dt id="-EOPNOTSUPP"><span class="term"><code class="constant">-EOPNOTSUPP</code></span><a class="headerlink" title="Permalink to this term" href="#-EOPNOTSUPP">¶</a></dt><dd><p>A pidfd was requested but the kernel does not support this concept.</p><p><a name="v245"></a>Added in version 245.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Example">Example<a class="headerlink" title="Permalink to this headline" href="#Example">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Exit loop when the child terminates</b></p><div class="example-contents"><pre class="programlisting">/* SPDX-License-Identifier: MIT-0 */
+
+#include &lt;assert.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;sd-event.h&gt;
+
+int main(int argc, char **argv) {
+  pid_t pid = fork();
+  assert(pid &gt;= 0);
+
+  /* SIGCHLD signal must be blocked for sd_event_add_child to work */
+  sigset_t ss;
+  sigemptyset(&amp;ss);
+  sigaddset(&amp;ss, SIGCHLD);
+  sigprocmask(SIG_BLOCK, &amp;ss, NULL);
+
+  if (pid == 0)  /* child */
+    sleep(1);
+
+  else {         /* parent */
+    sd_event *e = NULL;
+    int r;
+
+    /* Create the default event loop */
+    sd_event_default(&amp;e);
+    assert(e);
+
+    /* We create a floating child event source (attached to 'e').
+     * The default handler will be called with 666 as userdata, which
+     * will become the exit value of the loop. */
+    r = sd_event_add_child(e, NULL, pid, WEXITED, NULL, (void*) 666);
+    assert(r &gt;= 0);
+
+    r = sd_event_loop(e);
+    assert(r == 666);
+
+    sd_event_unref(e);
+  }
+
+  return 0;
+}
+</pre></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_event_add_child()</code>,
+    <code class="function">sd_event_child_handler_t()</code>, and
+    <code class="function">sd_event_source_get_child_pid()</code> were added in version 217.</p><p><code class="function">sd_event_add_child_pidfd()</code>,
+    <code class="function">sd_event_source_get_child_pidfd()</code>,
+    <code class="function">sd_event_source_get_child_pidfd_own()</code>,
+    <code class="function">sd_event_source_set_child_pidfd_own()</code>,
+    <code class="function">sd_event_source_get_child_process_own()</code>,
+    <code class="function">sd_event_source_set_child_process_own()</code>, and
+    <code class="function">sd_event_source_send_child_signal()</code> were added in version 245.</p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-event.html#"><span class="citerefentry"><span class="refentrytitle">sd-event</span>(3)</span></a>,
+      <a href="sd_event_new.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_new</span>(3)</span></a>,
+      <a href="sd_event_now.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_now</span>(3)</span></a>,
+      <a href="sd_event_add_io.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_io</span>(3)</span></a>,
+      <a href="sd_event_add_time.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_time</span>(3)</span></a>,
+      <a href="sd_event_add_signal.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_signal</span>(3)</span></a>,
+      <a href="sd_event_add_inotify.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_inotify</span>(3)</span></a>,
+      <a href="sd_event_add_defer.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_defer</span>(3)</span></a>,
+      <a href="sd_event_source_set_enabled.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_source_set_enabled</span>(3)</span></a>,
+      <a href="sd_event_source_set_priority.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_source_set_priority</span>(3)</span></a>,
+      <a href="sd_event_source_set_userdata.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_source_set_userdata</span>(3)</span></a>,
+      <a href="sd_event_source_set_description.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_source_set_description</span>(3)</span></a>,
+      <a href="sd_event_source_set_floating.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_source_set_floating</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/waitid.2.html"><span class="citerefentry"><span class="refentrytitle">waitid</span>(2)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/sigprocmask.2.html"><span class="citerefentry"><span class="refentrytitle">sigprocmask</span>(2)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man3/pthread_sigmask.3.html"><span class="citerefentry"><span class="refentrytitle">pthread_sigmask</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/pidfd_open.2.html"><span class="citerefentry"><span class="refentrytitle">pidfd_open</span>(2)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/pidfd_send_signal.2.html"><span class="citerefentry"><span class="refentrytitle">pidfd_send_signal</span>(2)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/rt_sigqueueinfo.2.html"><span class="citerefentry"><span class="refentrytitle">rt_sigqueueinfo</span>(2)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/kill.2.html"><span class="citerefentry"><span class="refentrytitle">kill</span>(2)</span></a>
+    </p></div></div></body></html>

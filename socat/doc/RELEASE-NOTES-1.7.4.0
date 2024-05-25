@@ -1,0 +1,38 @@
+Socat 1.7.4.0 Release Notes
+
+For a list of fixes and new features see file CHANGES.
+
+
+Incompatible change:
+
+Address UDP-DATAGRAM:<address>:<remoteport>,bind=<localport>:
+Up to 1.7.3.4 it ignored incoming packets that did not come from <remoteport>.
+Therefore it was useless for protocols like SSDP.
+With 1.7.4.0 this address does not check the source port of incoming packets.
+Use option sourceport=<remoteport> to keep the old behaviour.
+
+
+Features based on deprecated APIs:
+
+The openssl-method option is obsolete, use openssl-min-proto-version and
+openssl-max-proto-version instead. If you need it nevertheless run configure
+with --enable-openssl-method
+
+The res-aaonly and res-primary resolver options are deprecated. Enable them with
+configure option --enable-res-deprecated
+
+
+Old Linux kernel and glibc:
+
+Socat now uses pselect() instead of select() when receiving incoming packets
+with UDP-RECVFROM. However, it turns out that, in particular io Debian-4 (Etch),
+the old method worked more reliable than the pselect() simulation of glibc.
+If this problem seems to affect you run configure, edit the generated config.h
+ile, outcomment the HAVE_PSELECT line, then run make.
+
+
+Nonlocal tests:
+
+The SNI feature can be tested against the badssl.com test web server. When you
+want to enable these tests use option -foreign:
+./test.sh -foreign OPENSSL_SNI OPENSSL_NO_SNI

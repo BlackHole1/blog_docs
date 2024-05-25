@@ -1,0 +1,878 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>podman-generate-systemd — Podman  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css">
+    <link rel="stylesheet" type="text/css" href="../../../_/static/css/badge_only.css">
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css">
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="../../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <link rel="index" title="Index" href="../genindex.html">
+    <link rel="search" title="Search" href="../search.html">
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css">
+  
+
+  
+  
+
+  
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "markdown/podman-generate-systemd.1", "programming_language": "go", "project": "podman", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "alabaster", "user_analytics_code": "", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+  
+
+    <div class="document" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+      <div class="documentwrapper" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+        <div class="bodywrapper" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+          
+
+          <div class="body" role="main" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+            
+  <section id="name" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h1 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">NAME<a class="headerlink" href="#name" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h1>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">podman-generate-systemd - [DEPRECATED] Generate systemd unit file(s) for a container or pod<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman-generate-systemd - [已弃用] 为容器或 Pod 生成 systemd 单元文件</font></font></font></p>
+</section>
+<section id="synopsis" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h1 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">SYNOPSIS<a class="headerlink" href="#synopsis" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h1>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">podman generate systemd</strong> [<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">options</em>] <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">container|pod</em><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman generate systemd [选项] 容器|pod</font></font></font></p>
+</section>
+<section id="description" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h1 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h1>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">DEPRECATED:
+Note: <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">podman generate systemd</strong> is deprecated. We recommend using <a class="reference internal" href="https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="std std-doc" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">Quadlet</span></a>
+files when running Podman containers or pods under systemd.  There are no plans to remove the command.
+It will receive urgent bug fixes but no new features.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">已弃用：注意：podman generate systemd 已弃用。我们建议在 systemd 下运行 Podman 容器或 Pod 时使用 Quadlet 文件。不计划删除该命令。它将接收紧急错误修复，但不会添加新功能。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">podman generate systemd</strong> creates a systemd unit file that can be used to control a container or pod.
+By default, the command prints the content of the unit files to stdout.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman generate systemd 创建一个 systemd 单元文件，可用于控制容器或 pod。默认情况下，该命令将单元文件的内容打印到标准输出。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Generating unit files for a pod requires the pod to be created with an infra container (see <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--infra=true</span></code>).  An infra container runs across the entire lifespan of a pod and is hence required for systemd to manage the life cycle of the pod’s main unit.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为 pod 生成单元文件需要使用 infra 容器创建 pod（请参见 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--infra=true</span></code> ）。Infra 容器在整个 pod 的生命周期内运行，因此对于 systemd 来管理 pod 的主单元的生命周期是必需的。</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<li data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note: When using this command with the remote client, including Mac and Windows (excluding WSL2) machines, place the generated units on the remote system.  Moreover, make sure that the <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">XDG_RUNTIME_DIR</span></code> environment variable is set.  If unset, set it via <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">export</span> <span class="pre">XDG_RUNTIME_DIR=/run/user/$(id</span> <span class="pre">-u)</span></code>._<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：在使用此命令与远程客户端时，包括 Mac 和 Windows（不包括 WSL2）机器时，将生成的单元文件放在远程系统上。此外，请确保设置 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">XDG_RUNTIME_DIR</span></code> 环境变量。如果未设置，请通过 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">export</span> <span class="pre">XDG_RUNTIME_DIR=/run/user/$(id</span> <span class="pre">-u)</span></code> 设置。</font></font></font></p></li>
+<li data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note: The generated <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">run</span></code> command contains an <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--sdnotify</span></code> option with the value taken from the container.
+If the container does not have any explicitly set value or the value is set to <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">ignore</strong>, the value <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">conmon</strong> is used.
+The reason for overriding the default value <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">container</strong> is that almost no container workloads send notify messages.
+Systemd waits for a ready message that never comes, if the value <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">container</strong> is used for a container
+that does not send notify messages. The use of the default value might have been unintentional by the user,
+therefore the overridden default value._<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：生成的 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">run</span></code> 命令包含一个 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--sdnotify</span></code> 选项，其值取自容器。如果容器没有明确设置值或值设置为忽略，则使用值 conmon。覆盖默认值容器的原因是几乎没有容器工作负载发送通知消息。如果值容器用于不发送通知消息的容器，systemd 将等待一个永远不会到来的准备消息。用户可能无意中使用了默认值，因此被覆盖的默认值。_</font></font></font></p></li>
+</ul>
+<section id="kubernetes-integration" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Kubernetes Integration<a class="headerlink" href="#kubernetes-integration" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Kubernetes 集成 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">A Kubernetes YAML can be executed in systemd via the <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman-kube@.service</span></code> systemd template.  The template’s argument is the path to the YAML file.  Given a <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">workload.yaml</span></code> file in the home directory, it can be executed as follows:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通过 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman-kube@.service</span></code> systemd 模板，可以在 systemd 中执行 Kubernetes YAML。模板的参数是 YAML 文件的路径。假设在主目录中有一个 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">workload.yaml</span></code> 文件，可以按如下方式执行：</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ escaped=$(systemd-escape ~/workload.yaml)
+$ systemctl --user start podman-kube@$escaped.service
+$ systemctl --user is-active podman-kube@$escaped.service
+active
+</pre></div>
+</div>
+</section>
+</section>
+<section id="options" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h1 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">OPTIONS<a class="headerlink" href="#options" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h1>
+<section id="after-dependency-name" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--after</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">dependency_name</em><a class="headerlink" href="#after-dependency-name" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Add the systemd unit after (<code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">After=</span></code>) option, that ordering dependencies between the list of dependencies and this service. This option may be specified more than once.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 systemd 单元之后添加（ <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">After=</span></code> ）选项，用于在依赖列表和此服务之间排序依赖关系。此选项可以指定多次。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">User-defined dependencies are appended to the generated unit file, but any existing options needed or defined by default (e.g., <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">online.target</span></code>) are <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">not</strong> removed or overridden.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">用户定义的依赖项将附加到生成的单元文件中，但不会删除或覆盖任何现有默认需要或默认定义的选项（例如， <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">online.target</span></code> ）。</font></font></font></p>
+</section>
+<section id="container-prefix-prefix" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--container-prefix</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">prefix</em><a class="headerlink" href="#container-prefix-prefix" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--container-prefix=前缀 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Set the systemd unit name prefix for containers. The default is <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">container</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为容器设置 systemd 单元名称前缀。默认值为 container。</font></font></font></p>
+</section>
+<section id="env-e-env" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--env</strong>, <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">-e</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">env</em><a class="headerlink" href="#env-e-env" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Set environment variables to the systemd unit files.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为 systemd 单元文件设置环境变量。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">If an environment variable is specified without a value, Podman checks the host environment for a value and sets the variable only if it is set on the host. As a special case, if an environment variable ending in <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">*</strong> is specified without a value, Podman searches the host environment for variables starting with the prefix and adds those variables to the systemd unit files.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果指定了环境变量但没有值，Podman 会检查主机环境是否有值，并仅在主机上设置了该变量时才设置该变量。作为特例，如果指定了以 * 结尾的环境变量但没有值，Podman 会在主机环境中搜索以该前缀开头的变量，并将这些变量添加到 systemd 单元文件中。</font></font></font></p>
+</section>
+<section id="files-f" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--files</strong>, <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">-f</strong><a class="headerlink" href="#files-f" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Generate files instead of printing to stdout.  The generated files are named {container,pod}-{ID,name}.service and are placed in the current working directory.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">生成文件而不是打印到标准输出。生成的文件名为 {container,pod}-{ID,name}.service，并放置在当前工作目录中。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note: On a system with SELinux enabled, the generated files inherits contexts from the current working directory. Depending on the SELinux setup, changes to the generated files using <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">restorecon</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">chcon</span></code>, or <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">semanage</span></code> may be required to allow systemd to access these files. Alternatively, use the <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">-Z</span></code> option when running <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">mv</span></code> or <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">cp</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：在启用 SELinux 的系统上，生成的文件会继承当前工作目录的上下文。根据 SELinux 的设置，可能需要使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">restorecon</span></code> 、 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">chcon</span></code> 或 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">semanage</span></code> 对生成的文件进行更改，以允许 systemd 访问这些文件。或者，在运行 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">mv</span></code> 或 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">cp</span></code> 时使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">-Z</span></code> 选项。</font></font></font></p>
+</section>
+<section id="format-format" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--format</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">format</em><a class="headerlink" href="#format-format" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Print the created units in the specified format (json). If <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--files</span></code> is specified, the paths to the created files are printed instead of the unit content.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">以指定的格式（json）打印创建的单元。如果指定了 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--files</span></code> ，则打印创建文件的路径，而不是单元内容。</font></font></font></p>
+</section>
+<section id="name-n" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--name</strong>, <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">-n</strong><a class="headerlink" href="#name-n" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--名称, -n ¶</font></font></font></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Use the name of the container for the start, stop, and description in the unit file<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在单元文件中使用容器的名称作为启动、停止和描述。</font></font></font></p>
+</section>
+<section id="new" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--new</strong><a class="headerlink" href="#new" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">This option yields unit files that do not expect containers and pods to exist.  Instead, new containers and pods are created based on their configuration files.  The unit files are created best effort and may need further editing; please review the generated files carefully before using them in production.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此选项生成的单元文件不需要容器和 Pod 存在。相反，根据其配置文件创建新的容器和 Pod。单元文件尽力创建，可能需要进一步编辑；请在将其用于生产环境之前仔细审查生成的文件。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note that <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> only works on containers and pods created directly via Podman (i.e., <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">[container]</span> <span class="pre">{create,run}</span></code> or <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">pod</span> <span class="pre">create</span></code>).  It does not work on containers or pods created via the REST API or via <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">kube</span> <span class="pre">play</span></code>.  For <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">kube</span> <span class="pre">play</span></code>, use the <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman-kube@.service</span></code> systemd template instead.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意， <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> 仅适用于通过 Podman 直接创建的容器和 Pod（即 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">[container]</span> <span class="pre">{create,run}</span></code> 或 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">pod</span> <span class="pre">create</span></code> ）。它不适用于通过 REST API 或 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">kube</span> <span class="pre">play</span></code> 创建的容器或 Pod。对于 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman</span> <span class="pre">kube</span> <span class="pre">play</span></code> ，请改用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">podman-kube@.service</span></code> systemd 模板。</font></font></font></p>
+</section>
+<section id="no-header" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--no-header</strong><a class="headerlink" href="#no-header" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Do not generate the header including meta data such as the Podman version and the timestamp.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">不生成包括 Podman 版本和时间戳等元数据的标题。</font></font></font></p>
+</section>
+<section id="pod-prefix-prefix" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--pod-prefix</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">prefix</em><a class="headerlink" href="#pod-prefix-prefix" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Set the systemd unit name prefix for pods. The default is <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">pod</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为 pod 设置 pods 的 systemd 单元名称前缀。默认值为 pod。</font></font></font></p>
+</section>
+<section id="requires-dependency-name" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--requires</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">dependency_name</em><a class="headerlink" href="#requires-dependency-name" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Set the systemd unit requires (<code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">Requires=</span></code>) option. Similar to wants, but declares a stronger requirement dependency.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">设置 systemd 单元的 requires ( <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">Requires=</span></code> ) 选项。类似于 wants，但声明了更强的依赖关系要求。</font></font></font></p>
+</section>
+<section id="restart-policy-policy" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--restart-policy</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">policy</em><a class="headerlink" href="#restart-policy-policy" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Set the systemd restart policy.  The restart-policy must be one of: “no”, “on-success”, “on-failure”, “on-abnormal”,
+“on-watchdog”, “on-abort”, or “always”.  The default policy is <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">on-failure</em> unless the container was created with a custom restart policy.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">设置 systemd 重启策略。重启策略必须是以下之一: “no”, “on-success”, “on-failure”, “on-abnormal”, “on-watchdog”, “on-abort”, 或 “always”。默认策略是 on-failure，除非容器是使用自定义重启策略创建的。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note that generating a unit without <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> on a container with a custom restart policy can lead to issues on shutdown; systemd attempts to stop the unit while Podman tries to restart it.  Creating the container without <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--restart</span></code> and using the <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--restart-policy</span></code> option when generating the unit file is recommended.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，在具有自定义重启策略的容器上生成一个没有 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> 的单元可能会导致关机时出现问题; systemd 尝试停止单元，而 Podman 尝试重新启动它。建议在生成单元文件时不使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--restart</span></code> 并使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--restart-policy</span></code> 选项来创建容器。</font></font></font></p>
+</section>
+<section id="restart-sec-time" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--restart-sec</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">time</em><a class="headerlink" href="#restart-sec-time" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Set the systemd service restartsec value. Configures the time to sleep before restarting a service (as configured with restart-policy).
+Takes a value in seconds.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">设置 systemd 服务的 restartsec 值。配置在重新启动服务之前休眠的时间（根据 restart-policy 配置）。以秒为单位设置值。</font></font></font></p>
+</section>
+<section id="separator-separator" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--separator</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">separator</em><a class="headerlink" href="#separator-separator" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Set the systemd unit name separator between the name/id of a container/pod and the prefix. The default is <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">-</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">设置容器/ Pod 的名称/ ID 与前缀之间的 systemd 单元名称分隔符。默认值为 -。</font></font></font></p>
+</section>
+<section id="start-timeout-value" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--start-timeout</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">value</em><a class="headerlink" href="#start-timeout-value" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Override the default start timeout for the container with the given value in seconds.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用给定的值（以秒为单位）覆盖容器的默认启动超时时间。</font></font></font></p>
+</section>
+<section id="stop-timeout-value" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--stop-timeout</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">value</em><a class="headerlink" href="#stop-timeout-value" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Override the default stop timeout for the container with the given value in seconds.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用给定的值（以秒为单位）覆盖容器的默认停止超时时间。</font></font></font></p>
+</section>
+<section id="template" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--template</strong><a class="headerlink" href="#template" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Add template specifiers to run multiple services from the systemd unit file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将模板说明符添加到 systemd 单元文件中以运行多个服务。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note that if <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> was not set to true, it is set to true by default. However, the command fails if <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> is set to <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">false</span></code> explicitly.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，如果 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> 未设置为 true，则默认设置为 true。但是，如果 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> 显式设置为 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">false</span></code> ，则命令将失败。</font></font></font></p>
+</section>
+<section id="wants-dependency-name" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">--wants</strong>=<em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">dependency_name</em><a class="headerlink" href="#wants-dependency-name" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Add the systemd unit wants (<code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">Wants=</span></code>) option, that this service is (weak) dependent on. This option may be specified more than once. This option does not influence the order in which services are started or stopped.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">添加 systemd 单元 wants ( <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">Wants=</span></code> ) 选项，表示此服务是 (弱) 依赖的。此选项可以指定多次。此选项不影响服务启动或停止的顺序。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">User-defined dependencies are appended to the generated unit file, but any existing options needed or defined by default (e.g., <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">online.target</span></code>) are <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">not</strong> removed or overridden.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">用户定义的依赖项将附加到生成的单元文件中，但不会删除或覆盖任何现有选项（例如， <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">online.target</span></code> ）。</font></font></font></p>
+</section>
+</section>
+<section id="examples" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h1 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">EXAMPLES<a class="headerlink" href="#examples" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例</font></font></font></h1>
+<section id="generate-and-print-a-systemd-unit-file-for-a-container" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Generate and print a systemd unit file for a container<a class="headerlink" href="#generate-and-print-a-systemd-unit-file-for-a-container" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为容器生成并打印一个 systemd 单元文件 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Generate a systemd unit file for a container running nginx with an <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">always</em> restart policy and 1-second timeout to stdout. Note that the <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">RequiresMountsFor</strong> option in the <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">Unit</strong> section ensures that the container storage for both the GraphRoot and the RunRoot are mounted prior to starting the service. For systems with container storage on disks like iSCSI or other remote block protocols, this ensures that Podman is not executed prior to any necessary storage operations coming online.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为运行 nginx 的容器生成一个 systemd 单元文件，具有始终重启策略和 1 秒超时到标准输出。请注意，Unit 部分中的 RequiresMountsFor 选项确保在启动服务之前挂载 GraphRoot 和 RunRoot 的容器存储。对于像 iSCSI 或其他远程块协议上的磁盘上的容器存储的系统，这确保 Podman 不会在任何必要的存储操作上线之前执行。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman create --name nginx nginx:latest
+$ podman generate systemd --restart-policy=always -t 1 nginx
+# container-de1e3223b1b888bc02d0962dd6cb5855eb00734061013ffdd3479d225abacdc6.service
+# autogenerated by Podman 1.8.0
+# Wed Mar 09 09:46:45 CEST 2020
+
+[Unit]
+Description=Podman container-de1e3223b1b888bc02d0962dd6cb5855eb00734061013ffdd3479d225abacdc6.service
+Documentation=man:podman-generate-systemd(1)
+Wants=network-online.target
+After=network-online.target
+RequiresMountsFor=/var/run/container/storage
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/podman start de1e3223b1b888bc02d0962dd6cb5855eb00734061013ffdd3479d225abacdc6
+ExecStop=/usr/bin/podman stop \
+        -t 1 de1e3223b1b888bc02d0962dd6cb5855eb00734061013ffdd3479d225abacdc6
+KillMode=none
+Type=forking
+PIDFile=/run/user/1000/overlay-containers/de1e3223b1b888bc02d0962dd6cb5855eb00734061013ffdd3479d225abacdc6/userdata/conmon.pid
+
+[Install]
+WantedBy=default.target
+</pre></div>
+</div>
+</section>
+<section id="generate-systemd-unit-file-for-a-container-with-new-flag" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Generate systemd unit file for a container with <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> flag<a class="headerlink" href="#generate-systemd-unit-file-for-a-container-with-new-flag" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为具有 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> 标志的容器生成 systemd 单元文件 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> flag generates systemd unit files that create and remove containers at service start and stop commands (see ExecStartPre and ExecStopPost service actions). Such unit files are not tied to a single machine and can easily be shared and used on other machines.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> 标志生成 systemd 单元文件，这些文件在服务启动和停止命令（参见 ExecStartPre 和 ExecStopPost 服务操作）时创建和删除容器。这种单元文件不与单个机器绑定，可以轻松共享并在其他机器上使用。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo podman generate systemd --new --files --name bb310a0780ae
+# container-busy_moser.service
+# autogenerated by Podman 1.8.3
+# Fri Apr  3 09:40:47 EDT 2020
+
+[Unit]
+Description=Podman container-busy_moser.service
+Documentation=man:podman-generate-systemd(1)
+Wants=network-online.target
+After=network-online.target
+RequiresMountsFor=/var/run/container/storage
+
+[Service]
+Environment=PODMAN_SYSTEMD_UNIT=%n
+Restart=on-failure
+ExecStartPre=/bin/rm -f %t/%n-pid %t/%n-cid
+ExecStart=/usr/local/bin/podman run \
+        --conmon-pidfile %t/%n-pid \
+	--cidfile %t/%n-cid \
+	--cgroups=no-conmon \
+	-d \
+	-dit alpine
+ExecStop=/usr/local/bin/podman stop \
+        --ignore \
+        --cidfile %t/%n-cid -t 10
+ExecStopPost=/usr/local/bin/podman rm \
+        --ignore \
+        -f \
+	--cidfile %t/%n-cid
+PIDFile=%t/%n-pid
+KillMode=none
+Type=forking
+
+[Install]
+WantedBy=default.target
+</pre></div>
+</div>
+</section>
+<section id="generate-systemd-unit-files-for-a-pod-with-two-simple-alpine-containers" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Generate systemd unit files for a pod with two simple alpine containers<a class="headerlink" href="#generate-systemd-unit-files-for-a-pod-with-two-simple-alpine-containers" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为一个包含两个简单的 alpine 容器的 pod 生成 systemd 单元文件 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code> must only be used on the pod unit and not used to start or stop containers individually. The containers are managed by the pod service along with the internal infra-container.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code> 只能用于 pod 单元，不能用于单独启动或停止容器。容器由 pod 服务管理，同时还有内部基础设施容器。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Use <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span> <span class="pre">status</span></code> or <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">journalctl</span></code> to examine container or pod unit files.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span> <span class="pre">status</span></code> 或 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">journalctl</span></code> 来检查容器或 pod 单元文件。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman pod create --name systemd-pod
+$ podman create --pod systemd-pod alpine top
+$ podman create --pod systemd-pod alpine top
+$ podman generate systemd --files --name systemd-pod
+/home/user/pod-systemd-pod.service
+/home/user/container-amazing_chandrasekhar.service
+/home/user/container-jolly_shtern.service
+$ cat pod-systemd-pod.service
+# pod-systemd-pod.service
+# autogenerated by Podman 1.8.0
+# Wed Mar 09 09:52:37 CEST 2020
+
+[Unit]
+Description=Podman pod-systemd-pod.service
+Documentation=man:podman-generate-systemd(1)
+Requires=container-amazing_chandrasekhar.service container-jolly_shtern.service
+Before=container-amazing_chandrasekhar.service container-jolly_shtern.service
+Wants=network-online.target
+After=network-online.target
+RequiresMountsFor=/var/run/container/storage
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/bin/podman start 77a818221650-infra
+ExecStop=/usr/bin/podman stop \
+        -t 10 77a818221650-infra
+KillMode=none
+Type=forking
+PIDFile=/run/user/1000/overlay-containers/ccfd5c71a088768774ca7bd05888d55cc287698dde06f475c8b02f696a25adcd/userdata/conmon.pid
+
+[Install]
+WantedBy=default.target
+</pre></div>
+</div>
+</section>
+<section id="installation-of-generated-systemd-unit-files" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Installation of generated systemd unit files.<a class="headerlink" href="#installation-of-generated-systemd-unit-files" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">生成的 systemd 单元文件的安装。¶</font></font></font></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Podman-generated unit files include an <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">[Install]</span></code> section, which carries installation information for the unit. It is used by the enable and disable commands of systemctl(1) during installation.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Podman 生成的单元文件包括一个 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">[Install]</span></code> 部分，其中包含单元的安装信息。在安装过程中，systemctl(1) 的 enable 和 disable 命令会使用它。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Once the systemd unit file is generated, install it to <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">/etc/systemd/system</em> to be run by the root user or to <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">$HOME/.config/systemd/user</em> for installing it as a non-root user. Enable the copied unit file or files using <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span> <span class="pre">enable</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">生成 systemd 单元文件后，将其安装到 /etc/systemd/system 以供 root 用户运行，或者安装到 $HOME/.config/systemd/user 以供非 root 用户安装。使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span> <span class="pre">enable</span></code> 启用复制的单元文件。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note: Copying unit files to <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">/etc/systemd/system</em> and enabling it marks the unit file to be automatically started at boot. And similarly, copying a unit file to <em data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">$HOME/.config/systemd/user</em> and enabling it marks the unit file to be automatically started on user login.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：将单元文件复制到 /etc/systemd/system 并启用它会将该单元文件标记为在启动时自动启动。类似地，将单元文件复制到 $HOME/.config/systemd/user 并启用它会将该单元文件标记为在用户登录时自动启动。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Generated systemd files.
+$ podman pod create --name systemd-pod
+$ podman create --pod systemd-pod alpine top
+$ podman generate systemd --files --name systemd-pod
+
+# Copy all the generated files.
+
+$ sudo cp pod-systemd-pod.service container-great_payne.service /etc/systemd/system
+$ systemctl enable pod-systemd-pod.service
+Created symlink /etc/systemd/system/multi-user.target.wants/pod-systemd-pod.service → /etc/systemd/system/pod-systemd-pod.service.
+Created symlink /etc/systemd/system/default.target.wants/pod-systemd-pod.service → /etc/systemd/system/pod-systemd-pod.service.
+$ systemctl is-enabled pod-systemd-pod.service
+enabled
+</pre></div>
+</div>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">To run the user services placed in <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">$HOME/.config/systemd/user</span></code> on first login of that user, enable the service with --user flag.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">要在用户首次登录时运行放置在 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">$HOME/.config/systemd/user</span></code> 中的用户服务，请使用 --user 标志启用该服务。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ systemctl --user enable &lt;.service&gt;
+</pre></div>
+</div>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">The systemd user instance is killed after the last session for the user is closed. The systemd user instance can be started at boot and kept running even after the user logs out by enabling <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">lingering</span></code> using<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当用户的最后一个会话关闭后，systemd 用户实例将被终止。通过启用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">lingering</span></code> ，可以在启动时启动 systemd 用户实例，并在用户注销后继续运行。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ loginctl enable-linger &lt;username&gt;
+</pre></div>
+</div>
+</section>
+<section id="use-systemctl-to-perform-operations-on-generated-installed-unit-files" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h2 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Use <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code> to perform operations on generated installed unit files.<a class="headerlink" href="#use-systemctl-to-perform-operations-on-generated-installed-unit-files" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code> 来执行对生成的已安装单元文件的操作。</font></font></font></h2>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Create and enable systemd unit files for a pod using the above examples as reference and use <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code> to perform operations.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建并启用一个 pod 的 systemd 单元文件，使用上面的示例作为参考，并使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code> 来执行操作。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Since systemctl defaults to using the root user, all the changes using the systemctl can be seen by appending sudo to the podman cli commands. To perform <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code> actions as a non-root user use the <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--user</span></code> flag when interacting with <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">由于 systemctl 默认使用 root 用户，通过在 podman cli 命令后附加 sudo 可以看到使用 systemctl 进行的所有更改。要作为非 root 用户执行 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code> 操作，请在与 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span></code> 交互时使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--user</span></code> 标志。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note: If the previously created containers or pods are using shared resources, such as ports, make sure to remove them before starting the generated systemd units.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意: 如果先前创建的容器或 pod 正在使用共享资源，例如端口，请确保在启动生成的 systemd 单元之前将它们删除。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ systemctl --user start pod-systemd-pod.service
+$ podman pod ps
+POD ID         NAME          STATUS    CREATED          # OF CONTAINERS   INFRA ID
+0815c7b8e7f5   systemd-pod   Running   29 minutes ago   2                 6c5d116f4bbe
+$ sudo podman ps # 0 Number of pods on root.
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+$ systemctl stop pod-systemd-pod.service
+$ podman pod ps
+POD ID         NAME          STATUS   CREATED          # OF CONTAINERS   INFRA ID
+272d2813c798   systemd-pod   Exited   29 minutes ago   2                 6c5d116f4bbe
+</pre></div>
+</div>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Create a simple alpine container and generate the systemd unit file with <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> flag.
+Enable the service and control operations using the systemctl commands.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个简单的 alpine 容器，并使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">--new</span></code> 标志生成 systemd 单元文件。 使用 systemctl 命令启用服务和控制操作。</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Note: When starting the container using <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span> <span class="pre">start</span></code> rather than altering the already running container it spins up a “new” container with similar configuration.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意: 使用 <code class="docutils literal notranslate" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="pre">systemctl</span> <span class="pre">start</span></code> 启动容器时，而不是修改已经运行的容器，它会启动一个具有类似配置的“新”容器。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Enable the service.
+
+$ sudo podman ps -a
+CONTAINER ID  IMAGE                            COMMAND  CREATED        STATUS     PORTS  NAMES
+bb310a0780ae  docker.io/library/alpine:latest  /bin/sh  2 minutes ago  Created           busy_moser
+$ sudo systemctl start container-busy_moser.service
+$ sudo podman ps -a
+CONTAINER ID  IMAGE                            COMMAND  CREATED        STATUS        PORTS      NAMES
+772df2f8cf3b  docker.io/library/alpine:latest  /bin/sh  1 second ago   Up 1 second              distracted_albattani
+bb310a0780ae  docker.io/library/alpine:latest  /bin/sh  3 minutes ago  Created                  busy_moser
+</pre></div>
+</div>
+</section>
+</section>
+<section id="see-also" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h1 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">SEE ALSO<a class="headerlink" href="#see-also" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference internal" href="podman.1.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="std std-doc" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">podman(1)</span></a></strong>, <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference internal" href="podman-container.1.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="std std-doc" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">podman-container(1)</span></a></strong>, <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">systemctl(1)</strong>, <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">systemd.unit(5)</strong>, <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">systemd.service(5)</strong>, <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference external" href="https://github.com/containers/conmon/blob/main/docs/conmon.8.md" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">conmon(8)</a></strong>, <strong data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference internal" href="https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="std std-doc" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">podman-systemd.unit(5)</span></a></strong></p>
+</section>
+<section id="history" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h1 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">HISTORY<a class="headerlink" href="#history" title="Link to this heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">April 2020, Updated details and added use case to use generated .service files as root and non-root, by Sujil Shah (sushah at redhat dot com)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2020 年 4 月，由 Sujil Shah（sushah at redhat dot com）更新了详细信息并添加了使用生成的 .service 文件作为根用户和非根用户的用例</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">August 2019, Updated with pod support by Valentin Rothberg (rothberg at redhat dot com)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2019 年 8 月，由 Valentin Rothberg（rothberg at redhat dot com）更新了对 pod 支持</font></font></font></p>
+<p data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">April 2019, Originally compiled by Brent Baude (bbaude at redhat dot com)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2019 年 4 月，最初由 Brent Baude（bbaude at redhat dot com）编写</font></font></font></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+        <div class="sphinxsidebarwrapper" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h1 class="logo" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a href="../index.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Podman</a></h1>
+
+
+
+
+
+
+
+
+<h3 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Navigation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">导航</font></font></font></h3>
+<p class="caption" role="heading" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><span class="caption-text" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Contents:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内容:</font></font></font></span></p>
+<ul data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<li class="toctree-l1" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference internal" href="../Introduction.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference internal" href="../Commands.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Commands<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">命令</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference internal" href="../Reference.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Reference<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference internal" href="../Tutorials.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Tutorials<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">教程</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference internal" href="../Search.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Search<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">搜索</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a class="reference external" href="https://podman-py.readthedocs.io/en/latest/" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Podman Python</a></li>
+</ul>
+
+<div class="relations" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+<h3 data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Related Topics<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关主题</font></font></font></h3>
+<ul data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+  <li data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"><a href="../index.html" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">Documentation overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档概述</font></font></font></a><ul data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154"></div>
+    </div>
+    <div class="footer" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154" data-immersive-translate-paragraph="1">
+      ©2019, team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">Alabaster 0.7.16</a>
+      
+      |
+      <a href="https://docs.podman.io/en/latest/_sources/markdown/podman-generate-systemd.1.md.txt" rel="nofollow" data-immersive-translate-walked="5cab3986-3c66-41a3-9f10-6fc52ec54154">Page source</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">©2019，团队。| 由 Sphinx 7.3.7 &amp; Alabaster 0.7.16 提供支持。| 页面来源</font></font></font>
+    </div>
+
+    
+
+    
+  
+</body></html>

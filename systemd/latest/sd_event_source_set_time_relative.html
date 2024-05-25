@@ -1,0 +1,602 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_event_add_time</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><a name="sd_event_add_time" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a><div class="titlepage" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></div><div class="refnamediv" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><h2 data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">sd_event_add_time, sd_event_add_time_relative, sd_event_source_get_time, sd_event_source_set_time, sd_event_source_set_time_relative, sd_event_source_get_time_accuracy, sd_event_source_set_time_accuracy, sd_event_source_get_time_clock, sd_event_time_handler_t — Add a timer event source to an event loop<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">sd_event_add_time, sd_event_add_time_relative, sd_event_source_get_time, sd_event_source_set_time, sd_event_source_set_time_relative, sd_event_source_get_time_accuracy, sd_event_source_set_time_accuracy, sd_event_source_get_time_clock, sd_event_time_handler_t — 将定时器事件源添加到事件循环</font></font></font></p></div><div class="refsynopsisdiv" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><h2 data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">Synopsis<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">简介</font></font></font></h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-event.h&gt;</pre><pre class="funcsynopsisinfo"><span class="token">typedef</span> struct sd_event_source sd_event_source;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">typedef int (*<b class="fsfunc">sd_event_time_handler_t</b>)(</code></td><td>sd_event_source *<var class="pdparam">s</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t <var class="pdparam">usec</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_add_time</b>(</code></td><td>sd_event *<var class="pdparam">event</var>, </td></tr><tr><td>&nbsp;</td><td>sd_event_source **<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>clockid_t <var class="pdparam">clock</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t <var class="pdparam">usec</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t <var class="pdparam">accuracy</var>, </td></tr><tr><td>&nbsp;</td><td>sd_event_time_handler_t <var class="pdparam">handler</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_add_time_relative</b>(</code></td><td>sd_event *<var class="pdparam">event</var>, </td></tr><tr><td>&nbsp;</td><td>sd_event_source **<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>clockid_t <var class="pdparam">clock</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t <var class="pdparam">usec</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t <var class="pdparam">accuracy</var>, </td></tr><tr><td>&nbsp;</td><td>sd_event_time_handler_t <var class="pdparam">handler</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_get_time</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t *<var class="pdparam">usec</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_set_time</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t <var class="pdparam">usec</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_set_time_relative</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t <var class="pdparam">usec</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_get_time_accuracy</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t *<var class="pdparam">usec</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_set_time_accuracy</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>uint64_t <var class="pdparam">usec</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_get_time_clock</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>clockid_t *<var class="pdparam">clock</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div></div></div><div class="refsect1" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><a name="id-1.5" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a><h2 id="Description" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">Description<a class="headerlink" title="Permalink to this headline" href="#Description" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h2><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> adds a new timer event source to an event loop. The event loop
+    object is specified in the <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">event</code></em> parameter, the event source object is returned in the
+    <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">source</code></em> parameter. The <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">clock</code></em> parameter takes a clock identifier, one
+    of <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_REALTIME</code>, <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_MONOTONIC</code>, <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_BOOTTIME</code>,
+    <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_REALTIME_ALARM</code>, or <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_BOOTTIME_ALARM</code>. See
+    <a href="https://man7.org/linux/man-pages/man2/timerfd_create.2.html" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">timerfd_create</span>(2)</span></a> for details
+    regarding the various types of clocks. The <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">usec</code></em> parameter specifies the earliest time, in
+    microseconds (μs), relative to the clock's epoch, when the timer shall be triggered. If a time already in the past
+    is specified (including <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">0</code>), this timer source "fires" immediately and is ready to be
+    dispatched. If the parameter is specified as <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">UINT64_MAX</code> the timer event will never elapse,
+    which may be used as an alternative to explicitly disabling a timer event source with
+    <a href="sd_event_source_set_enabled.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_enabled</span>(3)</span></a>. The
+    <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">accuracy</code></em> parameter specifies an additional accuracy value in μs specifying how much the
+    timer event may be delayed. Use <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">0</code> to select the default accuracy (250ms). Use 1μs for maximum
+    accuracy. Consider specifying 60000000μs (1min) or larger for long-running events that may be delayed
+    substantially. Picking higher accuracy values allows the system to coalesce timer events more aggressively,
+    improving power efficiency.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> 向事件循环添加一个新的计时器事件源。事件循环对象在 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">event</code> 参数中指定，事件源对象在 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">source</code> 参数中返回。 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">clock</code> 参数接受一个时钟标识符，可以是 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_REALTIME</code> 、 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_MONOTONIC</code> 、 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_BOOTTIME</code> 、 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_REALTIME_ALARM</code> 或 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_BOOTTIME_ALARM</code> 之一。有关各种时钟类型的详细信息，请参阅 timerfd_create(2)。 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">usec</code> 参数指定了计时器应触发的最早时间，单位为微秒（μs），相对于时钟的纪元。如果指定了已经过去的时间（包括 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">0</code> ），则此计时器源将立即“触发”并准备好被调度。如果参数指定为 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">UINT64_MAX</code> ，计时器事件将永远不会过期，这可以用作使用 sd_event_source_set_enabled(3)显式禁用计时器事件源的替代方法。 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">accuracy</code> 参数指定了一个额外的精度值，以μs 为单位，指定计时器事件可能被延迟的时间。使用 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">0</code> 选择默认精度（250ms）。使用 1μs 以获得最大精度。考虑指定 60000000μs（1 分钟）或更长的时间用于可能会被大幅延迟的长时间运行事件。 选择更高的准确度值可以使系统更积极地合并定时器事件，提高功率效率。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">The <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">handler</code></em> is a function to call when the timer elapses or
+    <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">NULL</code>. The <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">userdata</code></em> pointer will be passed to the handler
+    function, and may be chosen freely by the caller. The configured trigger time is also passed to the
+    handler, even if the call actually happens slightly later, subject to the specified accuracy value, the
+    kernel timer slack (see
+    <a href="https://man7.org/linux/man-pages/man2/prctl.2.html" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">prctl</span>(2)</span></a>), and
+    additional scheduling latencies. To query the actual time the handler was called use
+    <a href="sd_event_now.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_now</span>(3)</span></a>. The
+    handler may return negative to signal an error (see below), other return values are ignored. If
+    <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">handler</code></em> is <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">NULL</code>, a default handler that calls
+    <a href="sd_event_exit.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_exit</span>(3)</span></a> will be
+    used.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">handler</code> 是一个在定时器到期或 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">NULL</code> 时调用的函数。 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">userdata</code> 指针将传递给处理程序函数，并且可以由调用者自由选择。即使调用实际上稍后发生，也会将配置的触发时间传递给处理程序，受指定的准确度值、内核定时器松弛度（参见 prctl(2)）和额外的调度延迟的影响。要查询处理程序被调用的实际时间，请使用 sd_event_now(3)。处理程序可以返回负值以表示错误（请参阅下文），其他返回值将被忽略。如果 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">handler</code> 是 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">NULL</code> ，将使用调用 sd_event_exit(3) 的默认处理程序。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">By default, the timer will elapse once (<code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">SD_EVENT_ONESHOT</code>), but this may be
+    changed with
+    <a href="sd_event_source_set_enabled.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_enabled</span>(3)</span></a>.
+    If the handler function returns a negative error code, it will either be disabled after the invocation,
+    even if the <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">SD_EVENT_ON</code> mode was requested before, or it will cause the loop to
+    terminate, see
+    <a href="sd_event_source_set_exit_on_failure.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_exit_on_failure</span>(3)</span></a>.
+    Note that a timer event set to <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">SD_EVENT_ON</code> will fire continuously unless its
+    configured time is updated using <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">默认情况下，计时器将在一次（ <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">SD_EVENT_ONESHOT</code> ）后过期，但可以使用 sd_event_source_set_enabled(3)进行更改。如果处理程序函数返回负错误代码，则在调用后将禁用它，即使之前请求了 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">SD_EVENT_ON</code> 模式，或者它将导致循环终止，请参见 sd_event_source_set_exit_on_failure(3)。请注意，设置为 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">SD_EVENT_ON</code> 的计时器事件将持续触发，除非使用 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code> 更新其配置时间。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code> is like <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code>,
+    but takes a relative time specification. It's relative to the current time of the event loop iteration,
+    as returned by
+    <a href="sd_event_now.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_now</span>(3)</span></a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code> 类似于 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> ，但采用相对时间规范。它相对于事件循环迭代的当前时间，由 sd_event_now(3)返回。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">To destroy an event source object use
+    <a href="sd_event_source_unref.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_unref</span>(3)</span></a>,
+    but note that the event source is only removed from the event loop
+    when all references to the event source are dropped. To make sure
+    an event source does not fire anymore, even if it is still referenced,
+    disable the event source using
+    <a href="sd_event_source_set_enabled.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_enabled</span>(3)</span></a>
+    with <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">SD_EVENT_OFF</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">要销毁事件源对象，请使用 sd_event_source_unref(3)，但请注意，只有当对事件源的所有引用都被丢弃时，事件源才会从事件循环中移除。为了确保事件源不再触发，即使它仍然被引用，使用 sd_event_source_set_enabled(3) 禁用事件源，使用 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">SD_EVENT_OFF</code> 。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">If the second parameter of
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> is
+    <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">NULL</code> no reference to the event source object
+    is returned. In this case the event source is considered
+    "floating", and will be destroyed implicitly when the event loop
+    itself is destroyed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> 的第二个参数是 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">NULL</code> ，则不会返回对事件源对象的引用。在这种情况下，事件源被视为“浮动”，当事件循环本身被销毁时，事件源将隐式销毁。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">If the <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">handler</code></em> parameter to <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> is
+    <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">NULL</code>, and the event source fires, this will be considered a request to exit the
+    event loop. In this case, the <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">userdata</code></em> parameter, cast to an integer, is passed as
+    the exit code parameter to
+    <a href="sd_event_exit.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_exit</span>(3)</span></a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">handler</code> 参数为 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">NULL</code> ，并且事件源触发，则将视为请求退出事件循环。在这种情况下，将 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">userdata</code> 参数转换为整数，并将其作为退出代码参数传递给 sd_event_exit(3)。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">Use <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_BOOTTIME_ALARM</code> and
+    <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_REALTIME_ALARM</code> to define event sources
+    that may wake up the system from suspend.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_BOOTTIME_ALARM</code> 和 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">CLOCK_REALTIME_ALARM</code> 来定义可能唤醒系统从暂停中恢复的事件源。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">In order to set up relative timers (that is, relative to the
+    current time), retrieve the current time via
+    <a href="sd_event_now.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_now</span>(3)</span></a>,
+    add the desired timespan to it, and use the result as
+    the <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">usec</code></em> parameter to
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为了设置相对定时器（即相对于当前时间），通过 sd_event_now(3)获取当前时间，将所需的时间跨度添加到其中，并将结果用作 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">usec</code> 参数传递给 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> 。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">In order to set up repetitive timers (that is, timers that
+    are triggered in regular intervals), set up the timer normally,
+    for the first invocation. Each time the event handler is invoked,
+    update the timer's trigger time with
+    <a href="sd_event_source_set_time.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time</span>(3)</span></a> for the next timer
+    iteration, and reenable the timer using
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_enabled()</code>. To calculate
+    the next point in time to pass to
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code>, either use as
+    base the <em class="parameter" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">usec</code></em> parameter passed to the timer
+    callback, or the timestamp returned by
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_now()</code>. In the former case timer
+    events will be regular, while in the latter case the scheduling
+    latency will keep accumulating on the timer.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为了设置重复定时器（即以固定间隔触发的定时器），正常设置定时器，用于第一次调用。每次调用事件处理程序时，使用 sd_event_source_set_time(3)更新定时器的触发时间以进行下一个定时器迭代，并使用 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_enabled()</code> 重新启用定时器。要计算传递给 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code> 的下一个时间点，可以使用作为基础的 <code data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">usec</code> 参数传递给定时器回调，或者使用 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_now()</code> 返回的时间戳。在前一种情况下，定时器事件将是定期的，而在后一种情况下，调度延迟将在定时器上累积。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time()</code> retrieves the configured time value of an event
+    source created previously with <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> or
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code>. It takes the event source object and a pointer to a
+    variable to store the time in, relative to the selected clock's epoch, in μs. The returned value is
+    relative to the epoch, even if the event source was created with a relative time via
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time()</code> 检索先前使用 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> 或 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code> 创建的事件源的配置时间值。它接受事件源对象和一个指向变量的指针，用于以μs 为单位相对于所选时钟的纪元存储时间。返回的值是相对于纪元的，即使事件源是通过 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code> 使用相对时间创建的。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code> changes the time of an event source created
+    previously with <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> or
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code>. It takes the event source object and a time relative
+    to the selected clock's epoch, in μs.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code> 更改先前使用 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> 或 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code> 创建的事件源的时间。它接受事件源对象和相对于所选时钟的纪元的时间，以μs 为单位。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time_relative()</code> is similar to
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code>, but takes a time relative to the current time of the
+    event loop iteration, as returned by <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_now()</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time_relative()</code> 类似于 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code> ，但接受与事件循环迭代的当前时间相关的时间，由 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_now()</code> 返回。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time_accuracy()</code>
+    retrieves the configured accuracy value of an event source
+    created previously with <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code>. It
+    takes the event source object and a pointer to a variable to store
+    the accuracy in. The accuracy is specified in μs.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time_accuracy()</code> 检索之前使用 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> 创建的事件源的配置准确度值。它接受事件源对象和一个指向存储准确度的变量的指针。准确度以微秒为单位指定。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time_accuracy()</code>
+    changes the configured accuracy of a timer event source created
+    previously with <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code>. It takes
+    the event source object and accuracy, in μs.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time_accuracy()</code> 更改之前使用 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> 创建的定时器事件源的配置准确度。它接受事件源对象和准确度（以微秒为单位）。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time_clock()</code>
+    retrieves the configured clock of an event source created
+    previously with <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code>. It takes
+    the event source object and a pointer to a variable to store the
+    clock identifier in.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time_clock()</code> 检索之前使用 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> 创建的事件源的配置时钟。它接受事件源对象和一个指向存储时钟标识符的变量的指针。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><a name="id-1.6" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a><h2 id="Return Value" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">返回值 ¶</font></font></font></h2><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">On success, these functions return 0 or a positive
+    integer. On failure, they return a negative errno-style error
+    code. <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">成功时，这些函数返回 0 或正整数。失败时，它们返回负的 errno 风格的错误代码。</font></font></font></p><div class="refsect2" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><a name="id-1.6.3" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a><h3 id="Errors" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">错误 ¶</font></font></font></h3><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">Returned values may indicate the following problems:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">返回的值可能表示以下问题：</font></font></font></p><div class="variablelist" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><dl class="variablelist" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><dt id="-ENOMEM" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a></dt><dd data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">Not enough memory to allocate an object.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">没有足够的内存来分配对象。</font></font></font></p></dd><dt id="-EINVAL" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a></dt><dd data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">An invalid argument has been passed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">传递了无效参数。</font></font></font></p></dd><dt id="-ESTALE" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">-ESTALE</code></span><a class="headerlink" title="Permalink to this term" href="#-ESTALE" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a></dt><dd data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">The event loop is already terminated.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">事件循环已经终止。</font></font></font></p></dd><dt id="-ECHILD" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a></dt><dd data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">The event loop has been created in a different process, library or module instance.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">事件循环已在不同的进程、库或模块实例中创建。</font></font></font></p></dd><dt id="-EOPNOTSUPP" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">-EOPNOTSUPP</code></span><a class="headerlink" title="Permalink to this term" href="#-EOPNOTSUPP" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a></dt><dd data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">The selected clock is not supported by the event loop implementation.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">所选时钟不受事件循环实现支持。</font></font></font></p></dd><dt id="-EDOM" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">-EDOM</code></span><a class="headerlink" title="Permalink to this term" href="#-EDOM" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a></dt><dd data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">The passed event source is not a timer event source.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">传递的事件源不是定时器事件源。</font></font></font></p></dd><dt id="-EOVERFLOW" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">-EOVERFLOW</code></span><a class="headerlink" title="Permalink to this term" href="#-EOVERFLOW" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a></dt><dd data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">The passed relative time is outside of the allowed range for time values (i.e. the
+          specified value added to the current time is outside the 64 bit unsigned integer range).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">传递的相对时间超出了时间值的允许范围（即，添加到当前时间的指定值超出了 64 位无符号整数范围）。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><a name="v247" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a>Added in version 247.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 247 中添加。</font></font></font></p></dd></dl></div></div></div><div class="refsect1" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><a name="id-1.7" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a><h2 id="Notes" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意事项 ¶</font></font></font></h2><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><a name="pkgconfig-text" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">libsystemd</code>&nbsp;<a href="http://linux.die.net/man/1/pkg-config" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">pkg-config</span>(1)</span></a>
+  file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此处描述的函数可作为共享库使用，可以通过 <code class="constant" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">libsystemd</code> pkg-config(1) 文件进行编译和链接。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><a name="getenv" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">setenv()</code>
+from an early phase of the program when no other threads have been started.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此处描述的代码使用了 getenv(3)，该函数被声明为非多线程安全。这意味着调用此处描述的函数的代码不能从并行线程中调用 setenv(3)。建议仅在程序的早期阶段进行对 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">setenv()</code> 的调用，此时尚未启动其他线程。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><a name="id-1.8" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a><h2 id="History" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">History<a class="headerlink" title="Permalink to this headline" href="#History" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h2><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code>,
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time()</code>,
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code>,
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time_accuracy()</code>,
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time_accuracy()</code>, and
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time_clock()</code> were added in version 213.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time()</code> ， <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time()</code> ， <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time()</code> ， <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time_accuracy()</code> ， <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time_accuracy()</code> 和 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_get_time_clock()</code> 在版本 213 中添加。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_time_handler_t()</code> was added in version 217.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_time_handler_t()</code> 已在版本 217 中添加。</font></font></font></p><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code> and
+    <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time_relative()</code> were added in version 247.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_time_relative()</code> 和 <code class="function" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_time_relative()</code> 已在版本 247 中添加。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><a name="id-1.9" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"></a><h2 id="See Also" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h2><p data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3" data-immersive-translate-paragraph="1">
+      <a href="systemd.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">systemd</span>(1)</span></a>,
+      <a href="sd-event.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd-event</span>(3)</span></a>,
+      <a href="sd_event_new.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_new</span>(3)</span></a>,
+      <a href="sd_event_now.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_now</span>(3)</span></a>,
+      <a href="sd_event_add_io.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_io</span>(3)</span></a>,
+      <a href="sd_event_add_signal.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_signal</span>(3)</span></a>,
+      <a href="sd_event_add_child.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_child</span>(3)</span></a>,
+      <a href="sd_event_add_inotify.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_inotify</span>(3)</span></a>,
+      <a href="sd_event_add_defer.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_add_defer</span>(3)</span></a>,
+      <a href="sd_event_source_set_enabled.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_enabled</span>(3)</span></a>,
+      <a href="sd_event_source_set_priority.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_priority</span>(3)</span></a>,
+      <a href="sd_event_source_set_userdata.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_userdata</span>(3)</span></a>,
+      <a href="sd_event_source_set_description.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_description</span>(3)</span></a>,
+      <a href="sd_event_source_set_floating.html#" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">sd_event_source_set_floating</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/clock_gettime.2.html" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">clock_gettime</span>(2)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/timerfd_create.2.html" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">timerfd_create</span>(2)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/prctl.2.html" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="citerefentry" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3"><span class="refentrytitle" data-immersive-translate-walked="c53493ff-8798-4c35-aba1-3506edb584e3">prctl</span>(2)</span></a>
+    </p></div></div>
+</body></html>

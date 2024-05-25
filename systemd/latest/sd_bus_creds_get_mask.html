@@ -1,0 +1,192 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_creds_new_from_pid</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_creds_new_from_pid"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_creds_new_from_pid, sd_bus_creds_get_mask, sd_bus_creds_get_augmented_mask, sd_bus_creds_ref, sd_bus_creds_unref, sd_bus_creds_unrefp — Retrieve credentials object for the specified PID</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_creds_new_from_pid</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>uint64_t <var class="pdparam">creds_mask</var>, </td></tr><tr><td> </td><td>sd_bus_creds **<var class="pdparam">ret</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">uint64_t <b class="fsfunc">sd_bus_creds_get_mask</b>(</code></td><td>sd_bus_creds *<var class="pdparam">c</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">uint64_t <b class="fsfunc">sd_bus_creds_get_augmented_mask</b>(</code></td><td>sd_bus_creds *<var class="pdparam">c</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">sd_bus_creds *<b class="fsfunc">sd_bus_creds_ref</b>(</code></td><td>sd_bus_creds *<var class="pdparam">c</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">sd_bus_creds *<b class="fsfunc">sd_bus_creds_unref</b>(</code></td><td>sd_bus_creds *<var class="pdparam">c</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">void <b class="fsfunc">sd_bus_creds_unrefp</b>(</code></td><td>sd_bus_creds **<var class="pdparam">c</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p>
+      <code class="constant">SD_BUS_CREDS_PID</code>,
+      <code class="constant">SD_BUS_CREDS_PPID</code>,
+      <code class="constant">SD_BUS_CREDS_TID</code>,
+      <code class="constant">SD_BUS_CREDS_UID</code>,
+      <code class="constant">SD_BUS_CREDS_EUID</code>,
+      <code class="constant">SD_BUS_CREDS_SUID</code>,
+      <code class="constant">SD_BUS_CREDS_FSUID</code>,
+      <code class="constant">SD_BUS_CREDS_GID</code>,
+      <code class="constant">SD_BUS_CREDS_EGID</code>,
+      <code class="constant">SD_BUS_CREDS_SGID</code>,
+      <code class="constant">SD_BUS_CREDS_FSGID</code>,
+      <code class="constant">SD_BUS_CREDS_SUPPLEMENTARY_GIDS</code>,
+      <code class="constant">SD_BUS_CREDS_COMM</code>,
+      <code class="constant">SD_BUS_CREDS_TID_COMM</code>,
+      <code class="constant">SD_BUS_CREDS_EXE</code>,
+      <code class="constant">SD_BUS_CREDS_CMDLINE</code>,
+      <code class="constant">SD_BUS_CREDS_CGROUP</code>,
+      <code class="constant">SD_BUS_CREDS_UNIT</code>,
+      <code class="constant">SD_BUS_CREDS_SLICE</code>,
+      <code class="constant">SD_BUS_CREDS_USER_UNIT</code>,
+      <code class="constant">SD_BUS_CREDS_USER_SLICE</code>,
+      <code class="constant">SD_BUS_CREDS_SESSION</code>,
+      <code class="constant">SD_BUS_CREDS_OWNER_UID</code>,
+      <code class="constant">SD_BUS_CREDS_EFFECTIVE_CAPS</code>,
+      <code class="constant">SD_BUS_CREDS_PERMITTED_CAPS</code>,
+      <code class="constant">SD_BUS_CREDS_INHERITABLE_CAPS</code>,
+      <code class="constant">SD_BUS_CREDS_BOUNDING_CAPS</code>,
+      <code class="constant">SD_BUS_CREDS_SELINUX_CONTEXT</code>,
+      <code class="constant">SD_BUS_CREDS_AUDIT_SESSION_ID</code>,
+      <code class="constant">SD_BUS_CREDS_AUDIT_LOGIN_UID</code>,
+      <code class="constant">SD_BUS_CREDS_TTY</code>,
+      <code class="constant">SD_BUS_CREDS_UNIQUE_NAME</code>,
+      <code class="constant">SD_BUS_CREDS_WELL_KNOWN_NAMES</code>,
+      <code class="constant">SD_BUS_CREDS_DESCRIPTION</code>,
+      <code class="constant">SD_BUS_CREDS_AUGMENT</code>,
+      <code class="constant">_SD_BUS_CREDS_ALL</code>
+    </p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_bus_creds_new_from_pid()</code> creates a
+    new credentials object and fills it with information about the
+    process <em class="parameter"><code>pid</code></em>. The pointer to this object
+    will be stored in the <em class="parameter"><code>ret</code></em> pointer. Note that
+    credential objects may also be created and retrieved via
+    <a href="sd_bus_get_name_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_name_creds</span>(3)</span></a>,
+    <a href="sd_bus_get_owner_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_owner_creds</span>(3)</span></a>
+    and
+    <a href="sd_bus_message_get_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_creds</span>(3)</span></a>.</p><p>The information that will be stored is determined by
+    <em class="parameter"><code>creds_mask</code></em>. It may contain a subset of ORed
+    constants <code class="constant">SD_BUS_CREDS_PID</code>,
+    <code class="constant">SD_BUS_CREDS_PPID</code>,
+    <code class="constant">SD_BUS_CREDS_TID</code>,
+    <code class="constant">SD_BUS_CREDS_UID</code>,
+    <code class="constant">SD_BUS_CREDS_EUID</code>,
+    <code class="constant">SD_BUS_CREDS_SUID</code>,
+    <code class="constant">SD_BUS_CREDS_FSUID</code>,
+    <code class="constant">SD_BUS_CREDS_GID</code>,
+    <code class="constant">SD_BUS_CREDS_EGID</code>,
+    <code class="constant">SD_BUS_CREDS_SGID</code>,
+    <code class="constant">SD_BUS_CREDS_FSGID</code>,
+    <code class="constant">SD_BUS_CREDS_SUPPLEMENTARY_GIDS</code>,
+    <code class="constant">SD_BUS_CREDS_COMM</code>,
+    <code class="constant">SD_BUS_CREDS_TID_COMM</code>,
+    <code class="constant">SD_BUS_CREDS_EXE</code>,
+    <code class="constant">SD_BUS_CREDS_CMDLINE</code>,
+    <code class="constant">SD_BUS_CREDS_CGROUP</code>,
+    <code class="constant">SD_BUS_CREDS_UNIT</code>,
+    <code class="constant">SD_BUS_CREDS_SLICE</code>,
+    <code class="constant">SD_BUS_CREDS_USER_UNIT</code>,
+    <code class="constant">SD_BUS_CREDS_USER_SLICE</code>,
+    <code class="constant">SD_BUS_CREDS_SESSION</code>,
+    <code class="constant">SD_BUS_CREDS_OWNER_UID</code>,
+    <code class="constant">SD_BUS_CREDS_EFFECTIVE_CAPS</code>,
+    <code class="constant">SD_BUS_CREDS_PERMITTED_CAPS</code>,
+    <code class="constant">SD_BUS_CREDS_INHERITABLE_CAPS</code>,
+    <code class="constant">SD_BUS_CREDS_BOUNDING_CAPS</code>,
+    <code class="constant">SD_BUS_CREDS_SELINUX_CONTEXT</code>,
+    <code class="constant">SD_BUS_CREDS_AUDIT_SESSION_ID</code>,
+    <code class="constant">SD_BUS_CREDS_AUDIT_LOGIN_UID</code>,
+    <code class="constant">SD_BUS_CREDS_TTY</code>,
+    <code class="constant">SD_BUS_CREDS_UNIQUE_NAME</code>,
+    <code class="constant">SD_BUS_CREDS_WELL_KNOWN_NAMES</code>, and
+    <code class="constant">SD_BUS_CREDS_DESCRIPTION</code>. Use the special
+    value <code class="constant">_SD_BUS_CREDS_ALL</code> to request all
+    supported fields. The <code class="constant">SD_BUS_CREDS_AUGMENT</code>
+    constant may not be ORed into the mask for invocations of
+    <code class="function">sd_bus_creds_new_from_pid()</code>.</p><p>Fields can be retrieved from the credentials object using
+    <a href="sd_bus_creds_get_pid.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_creds_get_pid</span>(3)</span></a>
+    and other functions which correspond directly to the constants
+    listed above.</p><p>A mask of fields which were actually successfully retrieved
+    can be retrieved with
+    <code class="function">sd_bus_creds_get_mask()</code>. If the credentials
+    object was created with
+    <code class="function">sd_bus_creds_new_from_pid()</code>, this will be a
+    subset of fields requested in <em class="parameter"><code>creds_mask</code></em>.
+    </p><p>Similar to <code class="function">sd_bus_creds_get_mask()</code>, the
+    function <code class="function">sd_bus_creds_get_augmented_mask()</code>
+    returns a bitmask of field constants. The mask indicates which
+    credential fields have been retrieved in a non-atomic fashion. For
+    credential objects created via
+    <code class="function">sd_bus_creds_new_from_pid()</code>, this mask will be
+    identical to the mask returned by
+    <code class="function">sd_bus_creds_get_mask()</code>. However, for
+    credential objects retrieved via
+    <code class="function">sd_bus_get_name_creds()</code>, this mask will be set
+    for the credential fields that could not be determined atomically
+    at peer connection time, and which were later added by reading
+    augmenting credential data from
+    <code class="filename">/proc/</code>. Similarly, for credential objects
+    retrieved via <code class="function">sd_bus_get_owner_creds()</code>, the
+    mask is set for the fields that could not be determined atomically
+    at bus creation time, but have been augmented. Similarly, for
+    credential objects retrieved via
+    <code class="function">sd_bus_message_get_creds()</code>, the mask is set
+    for the fields that could not be determined atomically at message
+    sending time, but have been augmented. The mask returned by
+    <code class="function">sd_bus_creds_get_augmented_mask()</code> is always a
+    subset of (or identical to) the mask returned by
+    <code class="function">sd_bus_creds_get_mask()</code> for the same
+    object. The latter call hence returns all credential fields
+    available in the credential object, the former then marks the
+    subset of those that have been augmented. Note that augmented
+    fields are unsuitable for authorization decisions, as they may be
+    retrieved at different times, thus being subject to races. Hence,
+    augmented fields should be used exclusively for informational
+    purposes.
+    </p><p><code class="function">sd_bus_creds_ref()</code> creates a new
+    reference to the credentials object <em class="parameter"><code>c</code></em>. This
+    object will not be destroyed until
+    <code class="function">sd_bus_creds_unref()</code> has been called as many
+    times plus once more. Once the reference count has dropped to zero,
+    <em class="parameter"><code>c</code></em> cannot be used anymore, so further
+    calls to <code class="function">sd_bus_creds_ref(c)</code> or
+    <code class="function">sd_bus_creds_unref(c)</code> are illegal.</p><p><code class="function">sd_bus_creds_unref()</code> destroys a reference
+    to <em class="parameter"><code>c</code></em>.</p><p><code class="function">sd_bus_creds_unrefp()</code> is similar to
+    <code class="function">sd_bus_creds_unref()</code> but takes a pointer to a
+    pointer to an <span class="type">sd_bus_creds</span> object. This call is useful in
+    conjunction with GCC's and LLVM's <a class="ulink" href="https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html" target="_top">Clean-up
+    Variable Attribute</a>. Note that this function is defined as
+    inline function.</p><p><code class="function">sd_bus_creds_ref()</code>,
+    <code class="function">sd_bus_creds_unref()</code> and
+    <code class="function">sd_bus_creds_unrefp()</code> execute no operation if
+    the passed in bus credentials object is
+    <code class="constant">NULL</code>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, <code class="function">sd_bus_creds_new_from_pid()</code>
+    returns 0 or a positive integer. On failure, it returns a negative
+    errno-style error code.</p><p><code class="function">sd_bus_creds_get_mask()</code> returns the
+    mask of successfully acquired fields.</p><p><code class="function">sd_bus_creds_get_augmented_mask()</code>
+    returns the mask of fields that have been augmented from data in
+    <code class="filename">/proc/</code>, and are thus not suitable for
+    authorization decisions.</p><p><code class="function">sd_bus_creds_ref()</code> always returns the
+    argument.</p><p><code class="function">sd_bus_creds_unref()</code> always returns
+    <code class="constant">NULL</code>.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Reference ownership">Reference ownership<a class="headerlink" title="Permalink to this headline" href="#Reference%20ownership">¶</a></h2><p>Function <code class="function">sd_bus_creds_new_from_pid()</code>
+    creates a new object and the caller owns the sole reference. When
+    not needed anymore, this reference should be destroyed with
+    <a href="sd_bus_creds_unref.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_creds_unref</span>(3)</span></a>.
+    </p><div class="refsect2"><a name="id-1.7.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-ESRCH"><span class="term"><code class="constant">-ESRCH</code></span><a class="headerlink" title="Permalink to this term" href="#-ESRCH">¶</a></dt><dd><p>Specified <em class="parameter"><code>pid</code></em> could not be found.</p></dd><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>Specified parameter is invalid (<code class="constant">NULL</code> in case of output
+          parameters).</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p></dd><dt id="-EOPNOTSUPP"><span class="term"><code class="constant">-EOPNOTSUPP</code></span><a class="headerlink" title="Permalink to this term" href="#-EOPNOTSUPP">¶</a></dt><dd><p>One of the requested fields is unknown to the local system.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_creds_new_from_pid()</code>,
+    <code class="function">sd_bus_creds_get_mask()</code>,
+    <code class="function">sd_bus_creds_ref()</code>, and
+    <code class="function">sd_bus_creds_unref()</code> were added in version 209.</p><p><code class="function">sd_bus_creds_get_augmented_mask()</code> was added in version 223.</p><p><code class="function">sd_bus_creds_unrefp()</code> was added in version 229.</p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_creds_get_pid.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_creds_get_pid</span>(3)</span></a>,
+      <a href="sd_bus_get_name_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_name_creds</span>(3)</span></a>,
+      <a href="sd_bus_get_owner_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_owner_creds</span>(3)</span></a>,
+      <a href="sd_bus_message_get_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_creds</span>(3)</span></a>
+    </p></div></div></body></html>

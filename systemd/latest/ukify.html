@@ -1,0 +1,271 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>ukify</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="ukify"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>ukify — Combine components into a signed Unified Kernel Image for UEFI systems</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">ukify</code>  [OPTIONS...]  build </p></div><div class="cmdsynopsis"><p><code class="command">ukify</code>  [OPTIONS...]  genkey </p></div><div class="cmdsynopsis"><p><code class="command">ukify</code>  [OPTIONS...]  inspect   FILE... </p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>ukify</strong></span> is a tool whose primary purpose is to combine components (usually a
+    kernel, an initrd, and a UEFI boot stub) to create a
+    <a class="ulink" href="https://uapi-group.org/specifications/specs/unified_kernel_image/" target="_top">Unified Kernel Image (UKI)</a>
+    — a PE binary that can be executed by the firmware to start the embedded linux kernel.
+    See <a href="systemd-stub.html#"><span class="citerefentry"><span class="refentrytitle">systemd-stub</span>(7)</span></a>
+    for details about the stub.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Commands">Commands<a class="headerlink" title="Permalink to this headline" href="#Commands">¶</a></h2><p>The following commands are understood:</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="build"><span class="command"><strong>build</strong></span><a class="headerlink" title="Permalink to this headline" href="#build">¶</a></h3><p>This command creates a Unified Kernel Image. The two primary options that should be specified for
+      the <span class="command"><strong>build</strong></span> verb are <code class="varname">Linux=</code>/<code class="option">--linux=</code>, and
+      <code class="varname">Initrd=</code>/<code class="option">--initrd=</code>. <code class="varname">Initrd=</code> accepts multiple
+      whitespace-separated paths and <code class="option">--initrd=</code> can be specified multiple times.</p><p>Additional sections will be inserted into the UKI, either automatically or only if a specific
+      option is provided. See the discussions of
+      <code class="varname">Cmdline=</code>/<code class="option">--cmdline=</code>,
+      <code class="varname">OSRelease=</code>/<code class="option">--os-release=</code>,
+      <code class="varname">DeviceTree=</code>/<code class="option">--devicetree=</code>,
+      <code class="varname">Splash=</code>/<code class="option">--splash=</code>,
+      <code class="varname">PCRPKey=</code>/<code class="option">--pcrpkey=</code>,
+      <code class="varname">Uname=</code>/<code class="option">--uname=</code>,
+      <code class="varname">SBAT=</code>/<code class="option">--sbat=</code>,
+      and <code class="option">--section=</code>
+      below.</p><p><span class="command"><strong>ukify</strong></span> can also be used to assemble a PE binary that is not executable but
+      contains auxiliary data, for example additional kernel command line entries.</p><p>If PCR signing keys are provided via the
+      <code class="varname">PCRPrivateKey=</code>/<code class="option">--pcr-private-key=</code> and
+      <code class="varname">PCRPublicKey=</code>/<code class="option">--pcr-public-key=</code> options, PCR values that will be seen
+      after booting with the given kernel, initrd, and other sections, will be calculated, signed, and embedded
+      in the UKI.
+      <a href="systemd-measure.html#"><span class="citerefentry"><span class="refentrytitle">systemd-measure</span>(1)</span></a> is
+      used to perform this calculation and signing.</p><p>The calculation of PCR values is done for specific boot phase paths. Those can be specified with
+      the <code class="varname">Phases=</code>/<code class="option">--phases=</code> option. If not specified, the default provided
+      by <span class="command"><strong>systemd-measure</strong></span> is used. It is also possible to specify the
+      <code class="varname">PCRPrivateKey=</code>/<code class="option">--pcr-private-key=</code>,
+      <code class="varname">PCRPublicKey=</code>/<code class="option">--pcr-public-key=</code>, and
+      <code class="varname">Phases=</code>/<code class="option">--phases=</code> arguments more than once. Signatures will then be
+      performed with each of the specified keys. On the command line, when both <code class="option">--phases=</code> and
+      <code class="option">--pcr-private-key=</code> are used, they must be specified the same number of times, and then
+      the n-th boot phase path set will be signed by the n-th key. This can be used to build different trust
+      policies for different phases of the boot. In the config file, <code class="varname">PCRPrivateKey=</code>,
+      <code class="varname">PCRPublicKey=</code>, and <code class="varname">Phases=</code> are grouped into separate sections,
+      describing separate boot phases.</p><p>If a SecureBoot signing key is provided via the
+      <code class="varname">SecureBootPrivateKey=</code>/<code class="option">--secureboot-private-key=</code> option, the resulting
+      PE binary will be signed as a whole, allowing the resulting UKI to be trusted by SecureBoot. Also see the
+      discussion of automatic enrollment in
+      <a href="systemd-boot.html#"><span class="citerefentry"><span class="refentrytitle">systemd-boot</span>(7)</span></a>.
+      </p><p>If the stub and/or the kernel contain "<code class="literal">.sbat</code>" sections they will be merged in
+      the UKI so that revocation updates affecting either are considered when the UKI is loaded by Shim. For
+      more information on SBAT see
+      <a class="ulink" href="https://github.com/rhboot/shim/blob/main/SBAT.md" target="_top">Shim documentation</a>.
+      </p></div><div class="refsect2"><a name="id-1.6.4"></a><h3 id="genkey"><span class="command"><strong>genkey</strong></span><a class="headerlink" title="Permalink to this headline" href="#genkey">¶</a></h3><p>This command creates the keys for PCR signing and the key and certificate used for SecureBoot
+      signing. The same configuration options that determine what keys and in which paths will be needed for
+      signing when <span class="command"><strong>build</strong></span> is used, here determine which keys will be created. See the
+      discussion of <code class="varname">PCRPrivateKey=</code>/<code class="option">--pcr-private-key=</code>,
+      <code class="varname">PCRPublicKey=</code>/<code class="option">--pcr-public-key=</code>, and
+      <code class="varname">SecureBootPrivateKey=</code>/<code class="option">--secureboot-private-key=</code> below.</p><p>The output files must not exist.</p></div><div class="refsect2"><a name="id-1.6.5"></a><h3 id="inspect"><span class="command"><strong>inspect</strong></span><a class="headerlink" title="Permalink to this headline" href="#inspect">¶</a></h3><p>Display information about the sections in a given binary or binaries.
+      If <code class="option">--all</code> is given, all sections are shown.
+      Otherwise, if <code class="option">--section=</code> option is specified at least once, only those sections are shown.
+      Otherwise, well-known sections that are typically included in an UKI are shown.
+      For each section, its name, size, and sha256-digest is printed.
+      For text sections, the contents are printed.</p><p>Also see the description of <code class="option">-j</code>/<code class="option">--json=</code> and
+      <code class="option">--section=</code>.</p></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Configuration settings">Configuration settings<a class="headerlink" title="Permalink to this headline" href="#Configuration%20settings">¶</a></h2><p>Settings can appear in configuration files (the syntax with <code class="varname">SomeSetting=<em class="replaceable"><code>value</code></em></code>) and on the command line (the syntax
+    with <code class="option">--some-setting=<em class="replaceable"><code>value</code></em></code>). For some command
+    line parameters, a single-letter shortcut is also allowed. In the configuration files, the setting must
+    be in the appropriate section, so the descriptions are grouped by section below. When the same setting
+    appears in the configuration file and on the command line, generally the command line setting has higher
+    priority and overwrites the config file setting completely. If some setting behaves differently, this is
+    described below.</p><p>If no config file is provided via the option <code class="option">--config=<em class="replaceable"><code>PATH</code></em></code>,
+    <span class="command"><strong>ukify</strong></span> will try to look for a default configuration file in the following paths in this
+    order: <code class="filename">/run/systemd/ukify.conf</code>, <code class="filename">/etc/systemd/ukify.conf</code>,
+    <code class="filename">/usr/local/lib/systemd/ukify.conf</code>, and <code class="filename">/usr/lib/systemd/ukify.conf</code>,
+    and then load the first one found. <span class="command"><strong>ukify</strong></span> will proceed normally if no configuration file
+    is specified and no default one is found.</p><p>The <em class="replaceable"><code>LINUX</code></em> and <em class="replaceable"><code>INITRD</code></em> positional arguments, or
+    the equivalent <code class="varname">Linux=</code> and <code class="varname">Initrd=</code> settings, are optional. If more
+    than one initrd is specified, they will all be combined into a single PE section. This is useful to, for
+    example, prepend microcode before the actual initrd.</p><p>The following options and settings are understood:</p><div class="refsect2"><a name="id-1.7.6"></a><h3 id="Command line-only options">Command line-only options<a class="headerlink" title="Permalink to this headline" href="#Command%20line-only%20options">¶</a></h3><div class="variablelist"><dl class="variablelist"><dt id="--config=PATH"><span class="term"><code class="option">--config=<em class="replaceable"><code>PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--config=PATH">¶</a></dt><dd><p>Load configuration from the given config file. In general, settings specified in
+          the config file have lower precedence than the settings specified via options. In cases where the
+          command line option does not fully override the config file setting are explicitly mentioned in the
+          descriptions of individual options.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="--measure"><span class="term"><code class="option">--measure</code>, </span><span class="term"><code class="option">--no-measure</code></span><a class="headerlink" title="Permalink to this term" href="#--measure">¶</a></dt><dd><p>Enable or disable a call to
+          <a href="systemd-measure.html#"><span class="citerefentry"><span class="refentrytitle">systemd-measure</span>(1)</span></a>
+          to print pre-calculated PCR values. Defaults to false.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="--section=NAME:TEXT|@PATH"><span class="term"><code class="option">--section=<em class="replaceable"><code>NAME</code></em>:<em class="replaceable"><code>TEXT</code></em>|<em class="replaceable"><code>@PATH</code></em></code>, </span><span class="term"><code class="option">--section=<em class="replaceable"><code>NAME</code></em>:  text|binary [<span class="optional">@<em class="replaceable"><code>PATH</code></em></span>]</code></span><a class="headerlink" title="Permalink to this term" href="#--section=NAME:TEXT%7C@PATH">¶</a></dt><dd><p>For all verbs except <span class="command"><strong>inspect</strong></span>, the first syntax is used.
+          Specify an arbitrary additional section "<code class="literal"><em class="replaceable"><code>NAME</code></em></code>".
+          The argument may be a literal string, or "<code class="literal">@</code>" followed by a path name.
+          This option may be specified more than once. Any sections specified in this fashion will be
+          inserted (in order) before the "<code class="literal">.linux</code>" section which is always last.</p><p>For the <span class="command"><strong>inspect</strong></span> verb, the second syntax is used.
+          The section <em class="replaceable"><code>NAME</code></em> will be inspected (if found).
+          If the second argument is "<code class="literal">text</code>", the contents will be printed.
+          If the third argument is given, the contents will be saved to file <em class="replaceable"><code>PATH</code></em>.
+          </p><p>Note that the name is used as-is, and if the section name should start with a dot, it must be
+          included in <em class="replaceable"><code>NAME</code></em>.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="--tools=DIRS"><span class="term"><code class="option">--tools=<em class="replaceable"><code>DIRS</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--tools=DIRS">¶</a></dt><dd><p>Specify one or more directories with helper tools. <span class="command"><strong>ukify</strong></span> will
+          look for helper tools in those directories first, and if not found, try to load them from
+          <code class="varname">$PATH</code> in the usual fashion.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="--output=FILENAME"><span class="term"><code class="option">--output=<em class="replaceable"><code>FILENAME</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--output=FILENAME">¶</a></dt><dd><p>The output filename. If not specified, the name of the
+          <em class="replaceable"><code>LINUX</code></em> argument, with the suffix "<code class="literal">.unsigned.efi</code>" or
+          "<code class="literal">.signed.efi</code>" will be used, depending on whether signing for SecureBoot was
+          performed.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="--summary"><span class="term"><code class="option">--summary</code></span><a class="headerlink" title="Permalink to this term" href="#--summary">¶</a></dt><dd><p>Print a summary of loaded config and exit. This is useful to check how the options
+          from the configuration file and the command line are combined.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="--all"><span class="term"><code class="option">--all</code></span><a class="headerlink" title="Permalink to this term" href="#--all">¶</a></dt><dd><p>Print all sections (with <span class="command"><strong>inspect</strong></span> verb).</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--json"><span class="term"><code class="option">--json</code></span><a class="headerlink" title="Permalink to this term" href="#--json">¶</a></dt><dd><p>Generate JSON output (with <span class="command"><strong>inspect</strong></span> verb).</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect2"><a name="id-1.7.7"></a><h3 id="[UKI] section">[UKI] section<a class="headerlink" title="Permalink to this headline" href="#%5BUKI%5D%20section">¶</a></h3><div class="variablelist"><dl class="variablelist"><dt id="Linux=LINUX"><span class="term"><code class="varname">Linux=<em class="replaceable"><code>LINUX</code></em></code>, </span><span class="term"><code class="option">--linux=<em class="replaceable"><code>LINUX</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#Linux=LINUX">¶</a></dt><dd><p>A path to the kernel binary.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="Initrd=INITRD..."><span class="term"><code class="varname">Initrd=<em class="replaceable"><code>INITRD</code></em>...</code>, </span><span class="term"><code class="option">--initrd=<em class="replaceable"><code>LINUX</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#Initrd=INITRD...">¶</a></dt><dd><p>Zero or more initrd paths. In the configuration file, items are separated by
+          whitespace. The initrds are combined in the order of specification, with the initrds specified in
+          the config file first.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="Cmdline=TEXT|@PATH"><span class="term"><code class="varname">Cmdline=<em class="replaceable"><code>TEXT</code></em>|<em class="replaceable"><code>@PATH</code></em></code>, </span><span class="term"><code class="option">--cmdline=<em class="replaceable"><code>TEXT</code></em>|<em class="replaceable"><code>@PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#Cmdline=TEXT%7C@PATH">¶</a></dt><dd><p>The kernel command line (the "<code class="literal">.cmdline</code>" section). The argument may
+          be a literal string, or "<code class="literal">@</code>" followed by a path name. If not specified, no command
+          line will be embedded.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="OSRelease=TEXT|@PATH"><span class="term"><code class="varname">OSRelease=<em class="replaceable"><code>TEXT</code></em>|<em class="replaceable"><code>@PATH</code></em></code>, </span><span class="term"><code class="option">--os-release=<em class="replaceable"><code>TEXT</code></em>|<em class="replaceable"><code>@PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#OSRelease=TEXT%7C@PATH">¶</a></dt><dd><p>The os-release description (the "<code class="literal">.osrel</code>" section). The argument
+          may be a literal string, or "<code class="literal">@</code>" followed by a path name. If not specified, the
+          <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> file
+          will be picked up from the host system.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="DeviceTree=PATH"><span class="term"><code class="varname">DeviceTree=<em class="replaceable"><code>PATH</code></em></code>, </span><span class="term"><code class="option">--devicetree=<em class="replaceable"><code>PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#DeviceTree=PATH">¶</a></dt><dd><p>The devicetree description (the "<code class="literal">.dtb</code>" section). The argument is a
+          path to a compiled binary DeviceTree file. If not specified, the section will not be present.
+          </p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="Splash=PATH"><span class="term"><code class="varname">Splash=<em class="replaceable"><code>PATH</code></em></code>, </span><span class="term"><code class="option">--splash=<em class="replaceable"><code>PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#Splash=PATH">¶</a></dt><dd><p>A picture to display during boot (the "<code class="literal">.splash</code>" section). The
+          argument is a path to a BMP file. If not specified, the section will not be present.
+          </p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="PCRPKey=PATH"><span class="term"><code class="varname">PCRPKey=<em class="replaceable"><code>PATH</code></em></code>, </span><span class="term"><code class="option">--pcrpkey=<em class="replaceable"><code>PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#PCRPKey=PATH">¶</a></dt><dd><p>A path to a public key to embed in the "<code class="literal">.pcrpkey</code>" section. If not
+          specified, and there's exactly one
+          <code class="varname">PCRPublicKey=</code>/<code class="option">--pcr-public-key=</code> argument, that key will be used.
+          Otherwise, the section will not be present.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="Uname=VERSION"><span class="term"><code class="varname">Uname=<em class="replaceable"><code>VERSION</code></em></code>, </span><span class="term"><code class="option">--uname=<em class="replaceable"><code>VERSION</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#Uname=VERSION">¶</a></dt><dd><p>Specify the kernel version (as in <span class="command"><strong>uname -r</strong></span>, the
+          "<code class="literal">.uname</code>" section). If not specified, an attempt will be made to extract the
+          version string from the kernel image. It is recommended to pass this explicitly if known, because
+          the extraction is based on heuristics and not very reliable. If not specified and extraction fails,
+          the section will not be present.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="PCRBanks=PATH"><span class="term"><code class="varname">PCRBanks=<em class="replaceable"><code>PATH</code></em></code>, </span><span class="term"><code class="option">--pcr-banks=<em class="replaceable"><code>PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#PCRBanks=PATH">¶</a></dt><dd><p>A comma or space-separated list of PCR banks to sign a policy for. If not present,
+          all known banks will be used ("<code class="literal">sha1</code>", "<code class="literal">sha256</code>",
+          "<code class="literal">sha384</code>", "<code class="literal">sha512</code>"), which will fail if not supported by the
+          system.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="SecureBootSigningTool=SIGNER"><span class="term"><code class="varname">SecureBootSigningTool=<em class="replaceable"><code>SIGNER</code></em></code>, </span><span class="term"><code class="option">--signtool=<em class="replaceable"><code>SIGNER</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#SecureBootSigningTool=SIGNER">¶</a></dt><dd><p>Whether to use "<code class="literal">sbsign</code>" or "<code class="literal">pesign</code>".
+          Depending on this choice, different parameters are required in order to sign an image.
+          Defaults to "<code class="literal">sbsign</code>".</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="SecureBootPrivateKey=SB_KEY"><span class="term"><code class="varname">SecureBootPrivateKey=<em class="replaceable"><code>SB_KEY</code></em></code>, </span><span class="term"><code class="option">--secureboot-private-key=<em class="replaceable"><code>SB_KEY</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#SecureBootPrivateKey=SB_KEY">¶</a></dt><dd><p>A path to a private key to use for signing of the resulting binary. If the
+          <code class="varname">SigningEngine=</code>/<code class="option">--signing-engine=</code> option is used, this may also be
+          an engine-specific designation. This option is required by
+          <code class="varname">SecureBootSigningTool=sbsign</code>/<code class="option">--signtool=sbsign</code>. </p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="SecureBootCertificate=SB_CERT"><span class="term"><code class="varname">SecureBootCertificate=<em class="replaceable"><code>SB_CERT</code></em></code>, </span><span class="term"><code class="option">--secureboot-certificate=<em class="replaceable"><code>SB_CERT</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#SecureBootCertificate=SB_CERT">¶</a></dt><dd><p>A path to a certificate to use for signing of the resulting binary. If the
+          <code class="varname">SigningEngine=</code>/<code class="option">--signing-engine=</code> option is used, this may also
+          be an engine-specific designation. This option is required by
+          <code class="varname">SecureBootSigningTool=sbsign</code>/<code class="option">--signtool=sbsign</code>. </p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="SecureBootCertificateDir=SB_PATH"><span class="term"><code class="varname">SecureBootCertificateDir=<em class="replaceable"><code>SB_PATH</code></em></code>, </span><span class="term"><code class="option">--secureboot-certificate-dir=<em class="replaceable"><code>SB_PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#SecureBootCertificateDir=SB_PATH">¶</a></dt><dd><p>A path to a nss certificate database directory to use for signing of the resulting binary.
+          Takes effect when <code class="varname">SecureBootSigningTool=pesign</code>/<code class="option">--signtool=pesign</code> is used.
+          Defaults to <code class="filename">/etc/pki/pesign</code>.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="SecureBootCertificateName=SB_CERTNAME"><span class="term"><code class="varname">SecureBootCertificateName=<em class="replaceable"><code>SB_CERTNAME</code></em></code>, </span><span class="term"><code class="option">--secureboot-certificate-name=<em class="replaceable"><code>SB_CERTNAME</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#SecureBootCertificateName=SB_CERTNAME">¶</a></dt><dd><p>The name of the nss certificate database entry to use for signing of the resulting binary.
+          This option is required by <code class="varname">SecureBootSigningTool=pesign</code>/<code class="option">--signtool=pesign</code>.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="SecureBootCertificateValidity=DAYS"><span class="term"><code class="varname">SecureBootCertificateValidity=<em class="replaceable"><code>DAYS</code></em></code>, </span><span class="term"><code class="option">--secureboot-certificate-validity=<em class="replaceable"><code>DAYS</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#SecureBootCertificateValidity=DAYS">¶</a></dt><dd><p>Period of validity (in days) for a certificate created by
+          <span class="command"><strong>genkey</strong></span>. Defaults to 3650, i.e. 10 years.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="SigningEngine=ENGINE"><span class="term"><code class="varname">SigningEngine=<em class="replaceable"><code>ENGINE</code></em></code>, </span><span class="term"><code class="option">--signing-engine=<em class="replaceable"><code>ENGINE</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#SigningEngine=ENGINE">¶</a></dt><dd><p>An "engine" for signing of the resulting binary. This option is currently passed
+          verbatim to the <code class="option">--engine=</code> option of
+          <a href="https://www.archlinux.org/sbsign/sbsign.1.html"><span class="citerefentry"><span class="refentrytitle">sbsign</span>(1)</span></a>.
+          </p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="SignKernel=BOOL"><span class="term"><code class="varname">SignKernel=<em class="replaceable"><code>BOOL</code></em></code>, </span><span class="term"><code class="option">--sign-kernel</code>, </span><span class="term"><code class="option">--no-sign-kernel</code></span><a class="headerlink" title="Permalink to this term" href="#SignKernel=BOOL">¶</a></dt><dd><p>Override the detection of whether to sign the Linux binary itself before it is
+          embedded in the combined image. If not specified, it will be signed if a SecureBoot signing key is
+          provided via the
+          <code class="varname">SecureBootPrivateKey=</code>/<code class="option">--secureboot-private-key=</code> option and the
+          binary has not already been signed. If
+          <code class="varname">SignKernel=</code>/<code class="option">--sign-kernel</code> is true, and the binary has already
+          been signed, the signature will be appended anyway.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="SBAT=TEXT|@PATH"><span class="term"><code class="varname">SBAT=<em class="replaceable"><code>TEXT</code></em>|<em class="replaceable"><code>@PATH</code></em></code>, </span><span class="term"><code class="option">--sbat=<em class="replaceable"><code>TEXT</code></em>|<em class="replaceable"><code>@PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#SBAT=TEXT%7C@PATH">¶</a></dt><dd><p>SBAT metadata associated with the UKI or addon. SBAT policies are useful to revoke
+          whole groups of UKIs or addons with a single, static policy update that does not take space in
+          DBX/MOKX. If not specified manually, a default metadata entry consisting of
+          "<code class="literal">uki,1,UKI,uki,1,https://www.freedesktop.org/software/systemd/man/systemd-stub.html</code>"
+          will be used, to ensure it is always possible to revoke UKIs and addons. For more information on
+          SBAT see <a class="ulink" href="https://github.com/rhboot/shim/blob/main/SBAT.md" target="_top">Shim documentation</a>.
+          </p><p><a name="v254"></a>Added in version 254.</p></dd></dl></div></div><div class="refsect2"><a name="id-1.7.8"></a><h3 id="[PCRSignature:NAME] section">[PCRSignature:<em class="replaceable"><code>NAME</code></em>] section<a class="headerlink" title="Permalink to this headline" href="#%5BPCRSignature:NAME%5D%20section">¶</a></h3><p>In the config file, those options are grouped by section. On the command line, they
+      must be specified in the same order. The sections specified in both sources are combined.
+      </p><div class="variablelist"><dl class="variablelist"><dt id="PCRPrivateKey=PATH"><span class="term"><code class="varname">PCRPrivateKey=<em class="replaceable"><code>PATH</code></em></code>, </span><span class="term"><code class="option">--pcr-private-key=<em class="replaceable"><code>PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#PCRPrivateKey=PATH">¶</a></dt><dd><p>A private key to use for signing PCR policies. On the command line, this option may
+          be specified more than once, in which case multiple signatures will be made.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="PCRPublicKey=PATH"><span class="term"><code class="varname">PCRPublicKey=<em class="replaceable"><code>PATH</code></em></code>, </span><span class="term"><code class="option">--pcr-public-key=<em class="replaceable"><code>PATH</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#PCRPublicKey=PATH">¶</a></dt><dd><p>A public key to use for signing PCR policies.</p><p>On the command line, this option may be specified more than once, similarly to the
+          <code class="option">--pcr-private-key=</code> option. If not present, the public keys will be extracted from
+          the private keys. On the command line, if present, this option must be specified the same number of
+          times as the <code class="option">--pcr-private-key=</code> option.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="Phases=LIST"><span class="term"><code class="varname">Phases=<em class="replaceable"><code>LIST</code></em></code>, </span><span class="term"><code class="option">--phases=<em class="replaceable"><code>LIST</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#Phases=LIST">¶</a></dt><dd><p>A comma or space-separated list of colon-separated phase paths to sign a policy
+          for. Each set of boot phase paths will be signed with the corresponding private key. If not
+          present, the default of
+          <a href="systemd-measure.html#"><span class="citerefentry"><span class="refentrytitle">systemd-measure</span>(1)</span></a>
+          will be used.</p><p>On the command line, when this argument is present, it must appear the same number of times as
+          the <code class="option">--pcr-private-key=</code> option. </p><p><a name="v253"></a>Added in version 253.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Minimal invocation</b></p><div class="example-contents"><pre class="programlisting">$ ukify build \
+      --linux=/lib/modules/6.0.9-300.fc37.x86_64/vmlinuz \
+      --initrd=/some/path/initramfs-6.0.9-300.fc37.x86_64.img \
+      --cmdline='quiet rw'
+      </pre><p>This creates an unsigned UKI <code class="filename">./vmlinuz.unsigned.efi</code>.</p></div></div><br class="example-break"><div class="example"><a name="id-1.8.3"></a><p class="title"><b>Example 2. All the bells and whistles</b></p><div class="example-contents"><pre class="programlisting">$ ukify build \
+      --linux=/lib/modules/6.0.9-300.fc37.x86_64/vmlinuz \
+      --initrd=early_cpio \
+      --initrd=/some/path/initramfs-6.0.9-300.fc37.x86_64.img \
+      --sbat='sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+      uki.author.myimage,1,UKI for System,uki.author.myimage,1,https://www.freedesktop.org/software/systemd/man/systemd-stub.html' \
+      --pcr-private-key=pcr-private-initrd-key.pem \
+      --pcr-public-key=pcr-public-initrd-key.pem \
+      --phases='enter-initrd' \
+      --pcr-private-key=pcr-private-system-key.pem \
+      --pcr-public-key=pcr-public-system-key.pem \
+      --phases='enter-initrd:leave-initrd enter-initrd:leave-initrd:sysinit \
+                enter-initrd:leave-initrd:sysinit:ready' \
+      --pcr-banks=sha384,sha512 \
+      --secureboot-private-key=sb.key \
+      --secureboot-certificate=sb.cert \
+      --sign-kernel \
+      --cmdline='quiet rw rhgb'
+      </pre><p>This creates a signed UKI <code class="filename">./vmlinuz.signed.efi</code>.
+      The initrd section contains two concatenated parts, <code class="filename">early_cpio</code>
+      and <code class="filename">initramfs-6.0.9-300.fc37.x86_64.img</code>.
+      The policy embedded in the "<code class="literal">.pcrsig</code>" section will be signed for the initrd (the
+      <code class="constant">enter-initrd</code> phase) with the key
+      <code class="filename">pcr-private-initrd-key.pem</code>, and for the main system (phases
+      <code class="constant">leave-initrd</code>, <code class="constant">sysinit</code>, <code class="constant">ready</code>) with the
+      key <code class="filename">pcr-private-system-key.pem</code>. The Linux binary and the resulting
+      combined image will be signed with the SecureBoot key <code class="filename">sb.key</code>.</p></div></div><br class="example-break"><div class="example"><a name="id-1.8.4"></a><p class="title"><b>Example 3. All the bells and whistles, via a config file</b></p><div class="example-contents"><p>This is the same as the previous example, but this time the configuration is stored in a
+      file:</p><pre class="programlisting">$ cat ukify.conf
+[UKI]
+Initrd=early_cpio
+Cmdline=quiet rw rhgb
+
+SecureBootPrivateKey=sb.key
+SecureBootCertificate=sb.cert
+SignKernel=yes
+PCRBanks=sha384,sha512
+
+[PCRSignature:initrd]
+PCRPrivateKey=pcr-private-initrd-key.pem
+PCRPublicKey=pcr-public-initrd-key.pem
+Phases=enter-initrd
+
+[PCRSignature:system]
+PCRPrivateKey=pcr-private-system-key.pem
+PCRPublicKey=pcr-public-system-key.pem
+Phases=enter-initrd:leave-initrd
+       enter-initrd:leave-initrd:sysinit
+       enter-initrd:leave-initrd:sysinit:ready
+
+$ ukify -c ukify.conf build \
+        --linux=/lib/modules/6.0.9-300.fc37.x86_64/vmlinuz \
+        --initrd=/some/path/initramfs-6.0.9-300.fc37.x86_64.img
+      </pre><p>One "initrd" (<code class="filename">early_cpio</code>) is specified in the config file, and
+      the other initrd (<code class="filename">initramfs-6.0.9-300.fc37.x86_64.img</code>) is specified
+      on the command line. This may be useful for example when the first initrd contains microcode for the CPU
+      and does not need to be updated when the kernel version changes, unlike the actual initrd.</p></div></div><br class="example-break"><div class="example"><a name="id-1.8.5"></a><p class="title"><b>Example 4. Kernel command line auxiliary PE</b></p><div class="example-contents"><pre class="programlisting">ukify build \
+      --secureboot-private-key=sb.key \
+      --secureboot-certificate=sb.cert \
+      --cmdline='debug' \
+      --sbat='sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+      uki.addon.author,1,UKI Addon for System,uki.addon.author,1,https://www.freedesktop.org/software/systemd/man/systemd-stub.html'
+      --output=debug.cmdline
+      </pre><p>This creates a signed PE binary that contains the additional kernel command line parameter
+      "<code class="literal">debug</code>" with SBAT metadata referring to the owner of the addon.</p></div></div><br class="example-break"><div class="example"><a name="id-1.8.6"></a><p class="title"><b>Example 5. Decide signing policy and create certificate and keys</b></p><div class="example-contents"><p>First, let's create an config file that specifies what signatures shall be made:</p><pre class="programlisting"># cat &gt;/etc/kernel/uki.conf &lt;&lt;EOF
+[UKI]
+SecureBootPrivateKey=/etc/kernel/secure-boot.key.pem
+SecureBootCertificate=/etc/kernel/secure-boot.cert.pem
+
+[PCRSignature:initrd]
+Phases=enter-initrd
+PCRPrivateKey=/etc/kernel/pcr-initrd.key.pem
+PCRPublicKey=/etc/kernel/pcr-initrd.pub.pem
+
+[PCRSignature:system]
+Phases=enter-initrd:leave-initrd enter-initrd:leave-initrd:sysinit
+       enter-initrd:leave-initrd:sysinit:ready
+PCRPrivateKey=/etc/kernel/pcr-system.key.pem
+PCRPublicKey=/etc/kernel/pcr-system.pub.pem
+EOF</pre><p>Next, we can generate the certificate and keys:</p><pre class="programlisting"># ukify genkey --config=/etc/kernel/uki.conf
+Writing SecureBoot private key to /etc/kernel/secure-boot.key.pem
+Writing SecureBoot certificate to /etc/kernel/secure-boot.cert.pem
+Writing private key for PCR signing to /etc/kernel/pcr-initrd.key.pem
+Writing public key for PCR signing to /etc/kernel/pcr-initrd.pub.pem
+Writing private key for PCR signing to /etc/kernel/pcr-system.key.pem
+Writing public key for PCR signing to /etc/kernel/pcr-system.pub.pem
+</pre><p>(Both operations need to be done as root to allow write access
+      to <code class="filename">/etc/kernel/</code>.)</p><p>Subsequent invocations using the config file
+      (<span class="command"><strong>ukify build --config=/etc/kernel/uki.conf</strong></span>)
+      will use this certificate and key files. Note that the
+      <a href="kernel-install.html#"><span class="citerefentry"><span class="refentrytitle">kernel-install</span>(8)</span></a>
+      plugin <code class="filename">60-ukify.install</code> uses <code class="filename">/etc/kernel/uki.conf</code>
+      by default, so after this file has been created, installations of kernels that create a UKI on the
+      local machine using <span class="command"><strong>kernel-install</strong></span> will perform signing using this config.</p></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-stub.html#"><span class="citerefentry"><span class="refentrytitle">systemd-stub</span>(7)</span></a>,
+      <a href="systemd-boot.html#"><span class="citerefentry"><span class="refentrytitle">systemd-boot</span>(7)</span></a>,
+      <a href="systemd-measure.html#"><span class="citerefentry"><span class="refentrytitle">systemd-measure</span>(1)</span></a>,
+      <a href="systemd-pcrphase.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-pcrphase.service</span>(8)</span></a>
+     </p></div></div></body></html>

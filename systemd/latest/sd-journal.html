@@ -1,0 +1,89 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd-journal</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd-journal"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd-journal — APIs for submitting and querying log entries to and
+    from the journal</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-journal.h&gt;</pre></div><div class="cmdsynopsis"><p><code class="command">pkg-config --cflags --libs libsystemd</code> </p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">sd-journal.h</code> is part of
+    <a href="libsystemd.html#"><span class="citerefentry"><span class="refentrytitle">libsystemd</span>(3)</span></a> and
+    provides APIs to submit and query log entries. The APIs exposed act both as client for the
+    <a href="systemd-journald.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-journald.service</span>(8)</span></a>
+    journal service and as parser for the journal files on disk.
+    </p><p>See
+    <a href="sd_journal_print.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_print</span>(3)</span></a>,
+    <a href="sd_journal_stream_fd.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_stream_fd</span>(3)</span></a>,
+    <a href="sd_journal_open.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_open</span>(3)</span></a>,
+    <a href="sd_journal_next.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_next</span>(3)</span></a>,
+    <a href="sd_journal_get_realtime_usec.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_realtime_usec</span>(3)</span></a>,
+    <a href="sd_journal_add_match.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_add_match</span>(3)</span></a>,
+    <a href="sd_journal_seek_head.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_seek_head</span>(3)</span></a>,
+    <a href="sd_journal_enumerate_fields.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_enumerate_fields</span>(3)</span></a>,
+    <a href="sd_journal_get_cursor.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_cursor</span>(3)</span></a>,
+    <a href="sd_journal_get_cutoff_realtime_usec.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_cutoff_realtime_usec</span>(3)</span></a>,
+    <a href="sd_journal_get_cutoff_monotonic_usec.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_cutoff_monotonic_usec</span>(3)</span></a>,
+    <a href="sd_journal_get_usage.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_usage</span>(3)</span></a>,
+    <a href="sd_journal_get_catalog.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_catalog</span>(3)</span></a>,
+    <a href="sd_journal_get_fd.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_fd</span>(3)</span></a>,
+    <a href="sd_journal_has_runtime_files.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_has_runtime_files</span>(3)</span></a>
+    and
+    <a href="sd_journal_has_persistent_files.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_has_persistent_files</span>(3)</span></a>
+    for more information about the functions implemented.</p><p>Command line access for submitting entries to the journal is
+    available with the
+    <a href="systemd-cat.html#"><span class="citerefentry"><span class="refentrytitle">systemd-cat</span>(1)</span></a>
+    tool. Command line access for querying entries from the journal is
+    available with the
+    <a href="journalctl.html#"><span class="citerefentry"><span class="refentrytitle">journalctl</span>(1)</span></a>
+    tool.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Thread safety">Thread safety<a class="headerlink" title="Permalink to this headline" href="#Thread%20safety">¶</a></h2><p>Functions that operate on <span class="structname">sd_journal</span> objects are thread agnostic — given
+    <span class="structname">sd_journal</span> pointer may only be used from one specific thread at all times (and it has to
+    be the very same one during the entire lifetime of the object), but multiple, independent threads may use multiple,
+    independent objects safely. Other functions — those that are used to send entries to the journal, like
+    <a href="sd_journal_print.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_print</span>(3)</span></a> and similar,
+    or those that are used to retrieve global information like
+    <a href="sd_journal_stream_fd.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_stream_fd</span>(3)</span></a> and
+    <a href="sd_journal_get_catalog_for_message_id.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_catalog_for_message_id</span>(3)</span></a>
+    — are fully thread-safe and may be called from multiple threads in parallel.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd_journal_print.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_print</span>(3)</span></a>,
+      <a href="sd_journal_stream_fd.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_stream_fd</span>(3)</span></a>,
+      <a href="sd_journal_open.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_open</span>(3)</span></a>,
+      <a href="sd_journal_next.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_next</span>(3)</span></a>,
+      <a href="sd_journal_get_data.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_data</span>(3)</span></a>,
+      <a href="sd_journal_get_realtime_usec.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_realtime_usec</span>(3)</span></a>,
+      <a href="sd_journal_add_match.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_add_match</span>(3)</span></a>,
+      <a href="sd_journal_seek_head.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_seek_head</span>(3)</span></a>,
+      <a href="sd_journal_enumerate_fields.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_enumerate_fields</span>(3)</span></a>,
+      <a href="sd_journal_get_cursor.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_cursor</span>(3)</span></a>,
+      <a href="sd_journal_get_cutoff_realtime_usec.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_cutoff_realtime_usec</span>(3)</span></a>,
+      <a href="sd_journal_get_cutoff_monotonic_usec.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_cutoff_monotonic_usec</span>(3)</span></a>,
+      <a href="sd_journal_get_usage.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_usage</span>(3)</span></a>,
+      <a href="sd_journal_get_fd.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_fd</span>(3)</span></a>,
+      <a href="sd_journal_query_unique.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_query_unique</span>(3)</span></a>,
+      <a href="sd_journal_get_catalog.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_get_catalog</span>(3)</span></a>,
+      <a href="sd_journal_has_runtime_files.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_has_runtime_files</span>(3)</span></a>,
+      <a href="sd_journal_has_persistent_files.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_has_persistent_files</span>(3)</span></a>,
+      <a href="journalctl.html#"><span class="citerefentry"><span class="refentrytitle">journalctl</span>(1)</span></a>,
+      <a href="sd-id128.html#"><span class="citerefentry"><span class="refentrytitle">sd-id128</span>(3)</span></a>,
+      <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+    </p></div></div></body></html>

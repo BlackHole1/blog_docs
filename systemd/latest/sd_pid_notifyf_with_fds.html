@@ -1,0 +1,235 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_notify</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_notify"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_notify, sd_notifyf, sd_pid_notify, sd_pid_notifyf, sd_pid_notify_with_fds, sd_pid_notifyf_with_fds, sd_notify_barrier, sd_pid_notify_barrier — Notify service manager about start-up completion and other service status changes</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-daemon.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_notify</b>(</code></td><td>int <var class="pdparam">unset_environment</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">state</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_notifyf</b>(</code></td><td>int <var class="pdparam">unset_environment</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">format</var>, </td></tr><tr><td> </td><td>…<code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_notify</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">unset_environment</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">state</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_notifyf</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">unset_environment</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">format</var>, </td></tr><tr><td> </td><td>…<code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_notify_with_fds</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">unset_environment</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">state</var>, </td></tr><tr><td> </td><td>const int *<var class="pdparam">fds</var>, </td></tr><tr><td> </td><td>unsigned <var class="pdparam">n_fds</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_notifyf_with_fds</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">unset_environment</var>, </td></tr><tr><td> </td><td>const int *<var class="pdparam">fds</var>, </td></tr><tr><td> </td><td>size_t <var class="pdparam">n_fds</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">format</var>, </td></tr><tr><td> </td><td>…<code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_notify_barrier</b>(</code></td><td>int <var class="pdparam">unset_environment</var>, </td></tr><tr><td> </td><td>uint64_t <var class="pdparam">timeout</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_pid_notify_barrier</b>(</code></td><td>pid_t <var class="pdparam">pid</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">unset_environment</var>, </td></tr><tr><td> </td><td>uint64_t <var class="pdparam">timeout</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_notify()</code> may be called by a service to notify the service manager about
+    state changes. It can be used to send arbitrary information, encoded in an environment-block-like string.
+    Most importantly, it can be used for start-up or reload completion notifications.</p><p>If the <em class="parameter"><code>unset_environment</code></em> parameter is non-zero,
+    <code class="function">sd_notify()</code> will unset the <code class="varname">$NOTIFY_SOCKET</code> environment variable
+    before returning (regardless of whether the function call itself succeeded or not). Further calls to
+    <code class="function">sd_notify()</code> will then fail, and the variable is no longer inherited by child
+    processes.</p><p>The <em class="parameter"><code>state</code></em> parameter should contain a newline-separated list of variable
+    assignments, similar in style to an environment block. A trailing newline is implied if none is
+    specified. The string may contain any kind of variable assignments, but see the next section
+    for a list of assignments understood by the service manager.</p><p>Note that systemd will accept status data sent from a service only if the
+    <code class="varname">NotifyAccess=</code> option is correctly set in the service definition file. See
+    <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a> for
+    details.</p><p>Note that <code class="function">sd_notify()</code> notifications may be attributed to units correctly only
+    if either the sending process is still around at the time PID 1 processes the message, or if the sending
+    process is explicitly runtime-tracked by the service manager. The latter is the case if the service
+    manager originally forked off the process, i.e. on all processes that match
+    <code class="varname">NotifyAccess=</code><code class="option">main</code> or
+    <code class="varname">NotifyAccess=</code><code class="option">exec</code>. Conversely, if an auxiliary process of the unit
+    sends an <code class="function">sd_notify()</code> message and immediately exits, the service manager might not be
+    able to properly attribute the message to the unit, and thus will ignore it, even if
+    <code class="varname">NotifyAccess=</code><code class="option">all</code> is set for it.</p><p>Hence, to eliminate all race conditions involving lookup of the client's unit and attribution of
+    notifications to units correctly, <code class="function">sd_notify_barrier()</code> may be used. This call acts as
+    a synchronization point and ensures all notifications sent before this call have been picked up by the
+    service manager when it returns successfully. Use of <code class="function">sd_notify_barrier()</code> is needed
+    for clients which are not invoked by the service manager, otherwise this synchronization mechanism is
+    unnecessary for attribution of notifications to the unit.</p><p><code class="function">sd_notifyf()</code> is similar to <code class="function">sd_notify()</code> but takes a
+    <code class="function">printf()</code>-like format string plus arguments.</p><p><code class="function">sd_pid_notify()</code> and <code class="function">sd_pid_notifyf()</code> are similar to
+    <code class="function">sd_notify()</code> and <code class="function">sd_notifyf()</code> but take a process ID (PID) to use
+    as originating PID for the message as first argument. This is useful to send notification messages on
+    behalf of other processes, provided the appropriate privileges are available. If the PID argument is
+    specified as 0, the process ID of the calling process is used, in which case the calls are fully
+    equivalent to <code class="function">sd_notify()</code> and <code class="function">sd_notifyf()</code>.</p><p><code class="function">sd_pid_notify_with_fds()</code> is similar to <code class="function">sd_pid_notify()</code>
+    but takes an additional array of file descriptors. These file descriptors are sent along the notification
+    message to the service manager. This is particularly useful for sending "<code class="literal">FDSTORE=1</code>"
+    messages, as described above. The additional arguments are a pointer to the file descriptor array plus
+    the number of file descriptors in the array. If the number of file descriptors is passed as 0, the call
+    is fully equivalent to <code class="function">sd_pid_notify()</code>, i.e. no file descriptors are passed. Note
+    that file descriptors sent to the service manager on a message without "<code class="literal">FDSTORE=1</code>" are
+    immediately closed on reception.</p><p><code class="function">sd_pid_notifyf_with_fds()</code> is a combination of
+    <code class="function">sd_pid_notify_with_fds()</code> and <code class="function">sd_notifyf()</code>, i.e. it accepts both
+    a PID and a set of file descriptors as input, and processes a format string to generate the state
+    string.</p><p><code class="function">sd_notify_barrier()</code> allows the caller to synchronize against reception of
+    previously sent notification messages and uses the <code class="varname">BARRIER=1</code> command. It takes a
+    relative <code class="varname">timeout</code> value in microseconds which is passed to
+    <a href="https://man7.org/linux/man-pages/man2/ppoll.2.html"><span class="citerefentry"><span class="refentrytitle">ppoll</span>(2)</span></a>. A value of UINT64_MAX is interpreted as infinite timeout.</p><p><code class="function">sd_pid_notify_barrier()</code> is just like <code class="function">sd_notify_barrier()</code>,
+    but allows specifying the originating PID for the notification message.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Well-known assignments">Well-known assignments<a class="headerlink" title="Permalink to this headline" href="#Well-known%20assignments">¶</a></h2><p>The following assignments have a defined meaning:</p><div class="variablelist"><dl class="variablelist"><dt id="READY=1"><span class="term">READY=1</span><a class="headerlink" title="Permalink to this term" href="#READY=1">¶</a></dt><dd><p>Tells the service manager that service startup is finished, or the service finished
+        re-loading its configuration. This is only used by systemd if the service definition file has
+        <code class="varname">Type=notify</code> or <code class="varname">Type=notify-reload</code> set. Since there is little
+        value in signaling non-readiness, the only value services should send is "<code class="literal">READY=1</code>"
+        (i.e.  "<code class="literal">READY=0</code>" is not defined).</p></dd><dt id="RELOADING=1"><span class="term">RELOADING=1</span><a class="headerlink" title="Permalink to this term" href="#RELOADING=1">¶</a></dt><dd><p>Tells the service manager that the service is beginning to reload its configuration.
+        This is useful to allow the service manager to track the service's internal state, and present it to
+        the user. Note that a service that sends this notification must also send a
+        "<code class="literal">READY=1</code>" notification when it completed reloading its configuration. Reloads the
+        service manager is notified about with this mechanisms are propagated in the same way as they are
+        when originally initiated through the service manager. This message is particularly relevant for
+        <code class="varname">Type=notify-reload</code> services, to inform the service manager that the request to
+        reload the service has been received and is now being processed.</p><p><a name="v217"></a>Added in version 217.</p></dd><dt id="STOPPING=1"><span class="term">STOPPING=1</span><a class="headerlink" title="Permalink to this term" href="#STOPPING=1">¶</a></dt><dd><p>Tells the service manager that the service is beginning its shutdown. This is useful
+        to allow the service manager to track the service's internal state, and present it to the user.
+        </p><p><a name="v217"></a>Added in version 217.</p></dd><dt id="MONOTONIC_USEC=…"><span class="term">MONOTONIC_USEC=…</span><a class="headerlink" title="Permalink to this term" href="#MONOTONIC_USEC=%E2%80%A6">¶</a></dt><dd><p>A field carrying the monotonic timestamp (as per
+        <code class="constant">CLOCK_MONOTONIC</code>) formatted in decimal in μs, when the notification message was
+        generated by the client. This is typically used in combination with "<code class="literal">RELOADING=1</code>",
+        to allow the service manager to properly synchronize reload cycles. See
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+        for details, specifically "<code class="literal">Type=notify-reload</code>".</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="STATUS=…"><span class="term">STATUS=…</span><a class="headerlink" title="Permalink to this term" href="#STATUS=%E2%80%A6">¶</a></dt><dd><p>Passes a single-line UTF-8 status string back to the service manager that describes
+        the service state. This is free-form and can be used for various purposes: general state feedback,
+        fsck-like programs could pass completion percentages and failing programs could pass a human-readable
+        error message. Example: "<code class="literal">STATUS=Completed 66% of file system check…</code>"</p><p><a name="v233"></a>Added in version 233.</p></dd><dt id="NOTIFYACCESS=…"><span class="term">NOTIFYACCESS=…</span><a class="headerlink" title="Permalink to this term" href="#NOTIFYACCESS=%E2%80%A6">¶</a></dt><dd><p>Reset the access to the service status notification socket during runtime, overriding
+        <code class="varname">NotifyAccess=</code> setting in the service unit file. See
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+        for details, specifically "<code class="literal">NotifyAccess=</code>" for a list of accepted values.
+        </p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="ERRNO=…"><span class="term">ERRNO=…</span><a class="headerlink" title="Permalink to this term" href="#ERRNO=%E2%80%A6">¶</a></dt><dd><p>If a service fails, the errno-style error code, formatted as string. Example:
+        "<code class="literal">ERRNO=2</code>" for ENOENT.</p><p><a name="v233"></a>Added in version 233.</p></dd><dt id="BUSERROR=…"><span class="term">BUSERROR=…</span><a class="headerlink" title="Permalink to this term" href="#BUSERROR=%E2%80%A6">¶</a></dt><dd><p>If a service fails, the D-Bus error-style error code. Example:
+        "<code class="literal">BUSERROR=org.freedesktop.DBus.Error.TimedOut</code>". Note that this assignment is
+        currently not used by <span class="command"><strong>systemd</strong></span>.</p><p><a name="v233"></a>Added in version 233.</p></dd><dt id="EXIT_STATUS=…"><span class="term">EXIT_STATUS=…</span><a class="headerlink" title="Permalink to this term" href="#EXIT_STATUS=%E2%80%A6">¶</a></dt><dd><p>The exit status of a service or the manager itself. Note that
+        <span class="command"><strong>systemd</strong></span> currently does not consume this value when sent by services, so this
+        assignment is only informational. The manager will send this notification to <span class="emphasis"><em>its</em></span>
+        notification socket, which may be used to to collect an exit status from the system (a container or
+        VM) as it shuts down. For example,
+        <a href="https://manpages.debian.org/unstable/mkosi/mkosi.1.en.html"><span class="citerefentry"><span class="refentrytitle">mkosi</span>(1)</span></a>
+        makes use of this. The value to return may be set via the
+        <a href="systemctl.html#"><span class="citerefentry"><span class="refentrytitle">systemctl</span>(1)</span></a>
+        <span class="command"><strong>exit</strong></span> verb.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="MAINPID=…"><span class="term">MAINPID=…</span><a class="headerlink" title="Permalink to this term" href="#MAINPID=%E2%80%A6">¶</a></dt><dd><p>The main process ID (PID) of the service, in case the service manager did not fork
+        off the process itself. Example: "<code class="literal">MAINPID=4711</code>".</p><p><a name="v233"></a>Added in version 233.</p></dd><dt id="WATCHDOG=1"><span class="term">WATCHDOG=1</span><a class="headerlink" title="Permalink to this term" href="#WATCHDOG=1">¶</a></dt><dd><p>Tells the service manager to update the watchdog timestamp. This is the keep-alive
+        ping that services need to issue in regular intervals if <code class="varname">WatchdogSec=</code> is enabled
+        for it. See
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+        for information how to enable this functionality and
+        <a href="sd_watchdog_enabled.html#"><span class="citerefentry"><span class="refentrytitle">sd_watchdog_enabled</span>(3)</span></a>
+        for the details of how the service can check whether the watchdog is enabled. </p></dd><dt id="WATCHDOG=trigger"><span class="term">WATCHDOG=trigger</span><a class="headerlink" title="Permalink to this term" href="#WATCHDOG=trigger">¶</a></dt><dd><p>Tells the service manager that the service detected an internal error that should be
+        handled by the configured watchdog options. This will trigger the same behaviour as if
+        <code class="varname">WatchdogSec=</code> is enabled and the service did not send "<code class="literal">WATCHDOG=1</code>"
+        in time. Note that <code class="varname">WatchdogSec=</code> does not need to be enabled for
+        "<code class="literal">WATCHDOG=trigger</code>" to trigger the watchdog action. See
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+        for information about the watchdog behavior. </p><p><a name="v243"></a>Added in version 243.</p></dd><dt id="WATCHDOG_USEC=…"><span class="term">WATCHDOG_USEC=…</span><a class="headerlink" title="Permalink to this term" href="#WATCHDOG_USEC=%E2%80%A6">¶</a></dt><dd><p>Reset <code class="varname">watchdog_usec</code> value during runtime.  Notice that this is not
+        available when using <code class="function">sd_event_set_watchdog()</code> or
+        <code class="function">sd_watchdog_enabled()</code>.  Example :
+        "<code class="literal">WATCHDOG_USEC=20000000</code>"</p><p><a name="v233"></a>Added in version 233.</p></dd><dt id="EXTEND_TIMEOUT_USEC=…"><span class="term">EXTEND_TIMEOUT_USEC=…</span><a class="headerlink" title="Permalink to this term" href="#EXTEND_TIMEOUT_USEC=%E2%80%A6">¶</a></dt><dd><p>Tells the service manager to extend the startup, runtime or shutdown service timeout
+        corresponding the current state. The value specified is a time in microseconds during which the
+        service must send a new message. A service timeout will occur if the message isn't received, but only
+        if the runtime of the current state is beyond the original maximum times of
+        <code class="varname">TimeoutStartSec=</code>, <code class="varname">RuntimeMaxSec=</code>, and
+        <code class="varname">TimeoutStopSec=</code>.  See
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+        for effects on the service timeouts.</p><p><a name="v236"></a>Added in version 236.</p></dd><dt id="FDSTORE=1"><span class="term">FDSTORE=1</span><a class="headerlink" title="Permalink to this term" href="#FDSTORE=1">¶</a></dt><dd><p>Store file descriptors in the service manager. File descriptors sent this way will be
+        held for the service by the service manager and will later be handed back using the usual file
+        descriptor passing logic at the next start or restart of the service, see
+        <a href="sd_listen_fds.html#"><span class="citerefentry"><span class="refentrytitle">sd_listen_fds</span>(3)</span></a>.
+        Any open sockets and other file descriptors which should not be closed during a restart may be stored
+        this way. When a service is stopped, its file descriptor store is discarded and all file descriptors
+        in it are closed, except when overridden with <code class="varname">FileDescriptorStorePreserve=</code>, see
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>.
+        </p><p>The service manager will accept messages for a service only if its
+        <code class="varname">FileDescriptorStoreMax=</code> setting is non-zero (defaults to zero, see
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>).
+        The service manager will set the <code class="varname">$FDSTORE</code> environment variable for services that
+        have the file descriptor store enabled, see
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.
+        </p><p>If <code class="varname">FDPOLL=0</code> is not set and the file descriptors are pollable (see
+        <a href="https://man7.org/linux/man-pages/man2/epoll_ctl.2.html"><span class="citerefentry"><span class="refentrytitle">epoll_ctl</span>(2)</span></a>), then
+        any <code class="constant">EPOLLHUP</code> or <code class="constant">EPOLLERR</code> event seen on them will result in
+        their automatic removal from the store.</p><p>Multiple sets of file descriptors may be sent in separate messages, in which case the sets are
+        combined. The service manager removes duplicate file descriptors (those pointing to the same object)
+        before passing them to the service.</p><p>This functionality should be used to implement services that can restart after an explicit
+        request or a crash without losing state. Application state can either be serialized to a file in
+        <code class="filename">/run/</code>, or better, stored in a
+        <a href="https://man7.org/linux/man-pages/man2/memfd_create.2.html"><span class="citerefentry"><span class="refentrytitle">memfd_create</span>(2)</span></a>
+        memory file descriptor. Use <code class="function">sd_pid_notify_with_fds()</code> to send messages with
+        "<code class="literal">FDSTORE=1</code>". It is recommended to combine <code class="varname">FDSTORE=</code> with
+        <code class="varname">FDNAME=</code> to make it easier to manage the stored file descriptors.</p><p>For further information on the file descriptor store see the <a class="ulink" href="https://systemd.io/FILE_DESCRIPTOR_STORE" target="_top">File Descriptor Store</a> overview.</p><p><a name="v219"></a>Added in version 219.</p></dd><dt id="FDSTOREREMOVE=1"><span class="term">FDSTOREREMOVE=1</span><a class="headerlink" title="Permalink to this term" href="#FDSTOREREMOVE=1">¶</a></dt><dd><p>Removes file descriptors from the file descriptor store. This field needs to be
+        combined with <code class="varname">FDNAME=</code> to specify the name of the file descriptors to
+        remove.</p><p><a name="v236"></a>Added in version 236.</p></dd><dt id="FDNAME=…"><span class="term">FDNAME=…</span><a class="headerlink" title="Permalink to this term" href="#FDNAME=%E2%80%A6">¶</a></dt><dd><p>When used in combination with <code class="varname">FDSTORE=1</code>, specifies a name for the
+        submitted file descriptors. When used with <code class="varname">FDSTOREREMOVE=1</code>, specifies the name for
+        the file descriptors to remove. This name is passed to the service during activation, and may be
+        queried using
+        <a href="sd_listen_fds_with_names.html#"><span class="citerefentry"><span class="refentrytitle">sd_listen_fds_with_names</span>(3)</span></a>.
+        File descriptors submitted without this field will be called "<code class="literal">stored</code>".</p><p>The name may consist of arbitrary ASCII characters except control characters or
+        "<code class="literal">:</code>". It may not be longer than 255 characters. If a submitted name does not follow
+        these restrictions, it is ignored.</p><p>Note that if multiple file descriptors are submitted in a single message, the specified name
+        will be used for all of them. In order to assign different names to submitted file descriptors,
+        submit them in separate messages.</p><p><a name="v233"></a>Added in version 233.</p></dd><dt id="FDPOLL=0"><span class="term">FDPOLL=0</span><a class="headerlink" title="Permalink to this term" href="#FDPOLL=0">¶</a></dt><dd><p>When used in combination with <code class="varname">FDSTORE=1</code>, disables polling of the
+        stored file descriptors regardless of whether or not they are pollable. As this option disables
+        automatic cleanup of the stored file descriptors on EPOLLERR and EPOLLHUP, care must be taken to
+        ensure proper manual cleanup.  Use of this option is not generally recommended except for when
+        automatic cleanup has unwanted behavior such as prematurely discarding file descriptors from the
+        store.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="BARRIER=1"><span class="term">BARRIER=1</span><a class="headerlink" title="Permalink to this term" href="#BARRIER=1">¶</a></dt><dd><p>Tells the service manager that the client is explicitly requesting synchronization by
+        means of closing the file descriptor sent with this command. The service manager guarantees that the
+        processing of a <code class="varname">BARRIER=1</code> command will only happen after all previous notification
+        messages sent before this command have been processed. Hence, this command accompanied with a single
+        file descriptor can be used to synchronize against reception of all previous status messages. Note
+        that this command cannot be mixed with other notifications, and has to be sent in a separate message
+        to the service manager, otherwise all assignments will be ignored. Note that sending 0 or more than 1
+        file descriptor with this command is a violation of the protocol.</p><p><a name="v246"></a>Added in version 246.</p></dd></dl></div><p>The notification messages sent by services are interpreted by the service manager. Unknown
+    assignments may be logged, but are otherwise ignored. Thus, it is not useful to send assignments which
+    are not in this list. The service manager also sends some messages to <span class="emphasis"><em>its</em></span>
+    notification socket, which are then consumed by the machine or container manager.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On failure, these calls return a negative errno-style error code. If
+    <code class="varname">$NOTIFY_SOCKET</code> was not set and hence no status message could be sent, 0 is
+    returned. If the status was sent, these functions return a positive value. In order to support both
+    service managers that implement this scheme and those which do not, it is generally recommended to ignore
+    the return value of this call. Note that the return value simply indicates whether the notification
+    message was enqueued properly, it does not reflect whether the message could be processed
+    successfully. Specifically, no error is returned when a file descriptor is attempted to be stored using
+    <code class="varname">FDSTORE=1</code> but the service is not actually configured to permit storing of file
+    descriptors (see above).</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p><p>These functions send a single datagram with the state string as payload to the socket referenced in
+    the <code class="varname">$NOTIFY_SOCKET</code> environment variable. If the first character of
+    <code class="varname">$NOTIFY_SOCKET</code> is "<code class="literal">/</code>" or "<code class="literal">@</code>", the string is
+    understood as an <code class="constant">AF_UNIX</code> or Linux abstract namespace socket (respectively), and in
+    both cases the datagram is accompanied by the process credentials of the sending service, using
+    SCM_CREDENTIALS. If the string starts with "<code class="literal">vsock:</code>" then the string is understood as an
+    <code class="constant">AF_VSOCK</code> address, which is useful for hypervisors/VMMs or other processes on the
+    host to receive a notification when a virtual machine has finished booting. Note that in case the
+    hypervisor does not support <code class="constant">SOCK_DGRAM</code> over <code class="constant">AF_VSOCK</code>,
+    <code class="constant">SOCK_SEQPACKET</code> will be used instead. The address should be in the form:
+    "<code class="literal">vsock:CID:PORT</code>". Note that unlike other uses of vsock, the CID is mandatory and cannot
+    be "<code class="literal">VMADDR_CID_ANY</code>".  Note that PID1 will send the VSOCK packets from a privileged port
+    (i.e.: lower than 1024), as an attempt to address concerns that unprivileged processes in the guest might
+    try to send malicious notifications to the host, driving it to make destructive decisions based on
+    them.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="Environment">Environment<a class="headerlink" title="Permalink to this headline" href="#Environment">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="$NOTIFY_SOCKET"><span class="term"><code class="varname">$NOTIFY_SOCKET</code></span><a class="headerlink" title="Permalink to this term" href="#%24NOTIFY_SOCKET">¶</a></dt><dd><p>Set by the service manager for supervised processes for status and start-up
+        completion notification.  This environment variable specifies the socket
+        <code class="function">sd_notify()</code> talks to. See above for details.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.10"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.10.2"></a><p class="title"><b>Example 1. Start-up Notification</b></p><div class="example-contents"><p>When a service finished starting up, it might issue the following call to notify the service
+      manager:</p><pre class="programlisting">sd_notify(0, "READY=1");</pre></div></div><br class="example-break"><div class="example"><a name="id-1.10.3"></a><p class="title"><b>Example 2. Extended Start-up Notification</b></p><div class="example-contents"><p>A service could send the following after completing initialization:</p><pre class="programlisting">
+sd_notifyf(0, "READY=1\n"
+           "STATUS=Processing requests…\n"
+           "MAINPID=%lu",
+           (unsigned long) getpid());</pre></div></div><br class="example-break"><div class="example"><a name="id-1.10.4"></a><p class="title"><b>Example 3. Error Cause Notification</b></p><div class="example-contents"><p>A service could send the following shortly before exiting, on failure:</p><pre class="programlisting">
+sd_notifyf(0, "STATUS=Failed to start up: %s\n"
+           "ERRNO=%i",
+           strerror_r(errnum, (char[1024]){}, 1024),
+           errnum);</pre></div></div><br class="example-break"><div class="example"><a name="id-1.10.5"></a><p class="title"><b>Example 4. Store a File Descriptor in the Service Manager</b></p><div class="example-contents"><p>To store an open file descriptor in the service manager, in order to continue operation after a
+      service restart without losing state, use "<code class="literal">FDSTORE=1</code>":</p><pre class="programlisting">sd_pid_notify_with_fds(0, 0, "FDSTORE=1\nFDNAME=foobar", &amp;fd, 1);</pre></div></div><br class="example-break"><div class="example"><a name="id-1.10.6"></a><p class="title"><b>Example 5. Eliminating race conditions</b></p><div class="example-contents"><p>When the client sending the notifications is not spawned by the service manager, it may exit too
+      quickly and the service manager may fail to attribute them correctly to the unit. To prevent such
+      races, use <code class="function">sd_notify_barrier()</code> to synchronize against reception of all
+      notifications sent before this call is made.</p><pre class="programlisting">
+sd_notify(0, "READY=1");
+/* set timeout to 5 seconds */
+sd_notify_barrier(0, 5 * 1000000);
+      </pre></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.11"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_pid_notify()</code>,
+    <code class="function">sd_pid_notifyf()</code>, and
+    <code class="function">sd_pid_notify_with_fds()</code> were added in version 219.</p><p><code class="function">sd_notify_barrier()</code> was added in version 246.</p><p><code class="function">sd_pid_notifyf_with_fds()</code> and
+    <code class="function">sd_pid_notify_barrier()</code> were added in version 254.</p></div><div class="refsect1"><a name="id-1.12"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-daemon.html#"><span class="citerefentry"><span class="refentrytitle">sd-daemon</span>(3)</span></a>,
+      <a href="sd_listen_fds.html#"><span class="citerefentry"><span class="refentrytitle">sd_listen_fds</span>(3)</span></a>,
+      <a href="sd_listen_fds_with_names.html#"><span class="citerefentry"><span class="refentrytitle">sd_listen_fds_with_names</span>(3)</span></a>,
+      <a href="sd_watchdog_enabled.html#"><span class="citerefentry"><span class="refentrytitle">sd_watchdog_enabled</span>(3)</span></a>,
+      <a href="daemon.html#"><span class="citerefentry"><span class="refentrytitle">daemon</span>(7)</span></a>,
+      <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+    </p></div></div></body></html>

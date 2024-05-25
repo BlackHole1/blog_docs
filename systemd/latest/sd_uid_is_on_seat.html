@@ -1,0 +1,98 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_uid_get_state</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_uid_get_state"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_uid_get_state, sd_uid_is_on_seat, sd_uid_get_sessions, sd_uid_get_seats, sd_uid_get_display, sd_uid_get_login_time — Determine login state of a specific Unix user ID</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-login.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_uid_get_state</b>(</code></td><td>uid_t <var class="pdparam">uid</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">state</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_uid_is_on_seat</b>(</code></td><td>uid_t <var class="pdparam">uid</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">require_active</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">seat</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_uid_get_sessions</b>(</code></td><td>uid_t <var class="pdparam">uid</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">require_active</var>, </td></tr><tr><td> </td><td>char ***<var class="pdparam">sessions</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_uid_get_seats</b>(</code></td><td>uid_t <var class="pdparam">uid</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">require_active</var>, </td></tr><tr><td> </td><td>char ***<var class="pdparam">seats</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_uid_get_display</b>(</code></td><td>uid_t <var class="pdparam">uid</var>, </td></tr><tr><td> </td><td>char **<var class="pdparam">session</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_uid_get_login_time</b>(</code></td><td>uid_t <var class="pdparam">uid</var>, </td></tr><tr><td> </td><td>uint64_t *<var class="pdparam">usec</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_uid_get_state()</code> may be used to
+    determine the login state of a specific Unix user identifier. The
+    following states are currently known: "<code class="literal">offline</code>"
+    (user not logged in at all), "<code class="literal">lingering</code>" (user
+    not logged in, but some user services running),
+    "<code class="literal">online</code>" (user logged in, but not active, i.e.
+    has no session in the foreground), "<code class="literal">active</code>" (user
+    logged in, and has at least one active session, i.e. one session
+    in the foreground), "<code class="literal">closing</code>" (user not logged
+    in, and not lingering, but some processes are still around). In
+    the future additional states might be defined, client code should
+    be written to be robust in regards to additional state strings
+    being returned. The returned string needs to be freed with the
+    libc
+    <a href="https://man7.org/linux/man-pages/man3/free.3.html"><span class="citerefentry"><span class="refentrytitle">free</span>(3)</span></a>
+    call after use.</p><p><code class="function">sd_uid_is_on_seat()</code> may be used to
+    determine whether a specific user is logged in or active on a
+    specific seat. Accepts a Unix user identifier and a seat
+    identifier string as parameters. The
+    <em class="parameter"><code>require_active</code></em> parameter is a boolean
+    value. If non-zero (true), this function will test if the user is
+    active (i.e. has a session that is in the foreground and accepting
+    user input) on the specified seat, otherwise (false) only if the
+    user is logged in (and possibly inactive) on the specified
+    seat.</p><p><code class="function">sd_uid_get_sessions()</code> may be used to
+    determine the current sessions of the specified user. Accepts a
+    Unix user identifier as parameter. The
+    <em class="parameter"><code>require_active</code></em> parameter controls whether
+    the returned list shall consist of only those sessions where the
+    user is currently active (&gt; 0), where the user is currently
+    online but possibly inactive (= 0), or logged in but
+    possibly closing the session (&lt; 0). The call returns a
+    <code class="constant">NULL</code> terminated string array of session
+    identifiers in <em class="parameter"><code>sessions</code></em> which needs to be
+    freed by the caller with the libc
+    <a href="https://man7.org/linux/man-pages/man3/free.3.html"><span class="citerefentry"><span class="refentrytitle">free</span>(3)</span></a>
+    call after use, including all the strings referenced. If the
+    string array parameter is passed as <code class="constant">NULL</code>, the
+    array will not be filled in, but the return code still indicates
+    the number of current sessions. Note that instead of an empty
+    array <code class="constant">NULL</code> may be returned and should be
+    considered equivalent to an empty array.</p><p>Similarly, <code class="function">sd_uid_get_seats()</code> may be
+    used to determine the list of seats on which the user currently
+    has sessions. Similar semantics apply, however note that the user
+    may have multiple sessions on the same seat as well as sessions
+    with no attached seat and hence the number of entries in the
+    returned array may differ from the one returned by
+    <code class="function">sd_uid_get_sessions()</code>.</p><p><code class="function">sd_uid_get_display()</code> returns the name
+    of the "primary" session of a user. If the user has graphical
+    sessions, it will be the oldest graphical session. Otherwise, it
+    will be the oldest open session.</p><p><code class="function">sd_uid_get_login_time()</code> may be used to
+    determine the time the user's service manager has been invoked,
+    which is the time when the user's first active session, since which
+    they stayed logged in continuously, began. The <em class="parameter"><code>usec</code></em>
+    is in microseconds since the epoch (<code class="constant">CLOCK_REALTIME</code>).
+    This call will fail with <code class="constant">-ENXIO</code> if the user is not
+    currently logged in.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, <code class="function">sd_uid_get_state()</code> and
+    <code class="function">sd_uid_get_login_time()</code> returns 0 or a positive
+    integer. If the test succeeds, <code class="function">sd_uid_is_on_seat()</code>
+    returns a positive integer; if it fails, 0. <code class="function">sd_uid_get_sessions()</code>
+    and <code class="function">sd_uid_get_seats()</code> return the number of entries
+    in the returned arrays. <code class="function">sd_uid_get_display()</code>
+    returns a non-negative code on success. On failure, these calls return
+    a negative errno-style error code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-ENODATA"><span class="term"><code class="constant">-ENODATA</code></span><a class="headerlink" title="Permalink to this term" href="#-ENODATA">¶</a></dt><dd><p>The given field is not specified for the described user.</p></dd><dt id="-ENXIO"><span class="term"><code class="constant">-ENXIO</code></span><a class="headerlink" title="Permalink to this term" href="#-ENXIO">¶</a></dt><dd><p>The specified seat is unknown.</p></dd><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>An input parameter was invalid (out of range, or <code class="constant">NULL</code>,
+          where that is not accepted). This is also returned if the passed user ID is
+          <code class="constant">0xFFFF</code> or <code class="constant">0xFFFFFFFF</code>, which are undefined on Linux.
+          </p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_uid_get_display()</code> was added in version 213.</p><p><code class="function">sd_uid_get_login_time()</code> was added in version 254.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-login.html#"><span class="citerefentry"><span class="refentrytitle">sd-login</span>(3)</span></a>,
+      <a href="sd_pid_get_owner_uid.html#"><span class="citerefentry"><span class="refentrytitle">sd_pid_get_owner_uid</span>(3)</span></a>
+    </p></div></div></body></html>

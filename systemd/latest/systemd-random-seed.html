@@ -1,0 +1,55 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-random-seed.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-random-seed.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-random-seed.service, systemd-random-seed — Load and save the OS system random seed at boot and shutdown</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-random-seed.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-random-seed</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">systemd-random-seed.service</code> is a service that loads an on-disk random seed
+    into the kernel entropy pool during boot and saves it at shutdown. See
+    <a href="https://man7.org/linux/man-pages/man4/random.4.html"><span class="citerefentry"><span class="refentrytitle">random</span>(4)</span></a> for
+    details. By default, no entropy is credited when the random seed is written into the kernel entropy pool,
+    but this may be changed with <code class="varname">$SYSTEMD_RANDOM_SEED_CREDIT</code>, see below. On disk the random
+    seed is stored in <code class="filename">/var/lib/systemd/random-seed</code>.</p><p>Note that this service runs relatively late during the early boot phase, i.e. generally after the
+    initrd phase has finished and the <code class="filename">/var/</code> file system has been mounted. Many system
+    services require entropy much earlier than this — this service is hence of limited use for complex
+    system. It is recommended to use a boot loader that can pass an initial random seed to the kernel to
+    ensure that entropy is available from earliest boot on, for example
+    <a href="systemd-boot.html#"><span class="citerefentry"><span class="refentrytitle">systemd-boot</span>(7)</span></a>, with
+    its <span class="command"><strong>bootctl random-seed</strong></span> functionality.</p><p>When loading the random seed from disk, the file is immediately updated with a new seed retrieved
+    from the kernel, in order to ensure no two boots operate with the same random seed. This new seed is
+    retrieved synchronously from the kernel, which means the service will not complete start-up until the
+    random pool is fully initialized. On entropy-starved systems this may take a while. This functionality is
+    intended to be used as synchronization point for ordering services that require an initialized entropy
+    pool to function securely (i.e. services that access <code class="filename">/dev/urandom</code> without any
+    further precautions).</p><p>Care should be taken when creating OS images that are replicated to multiple systems: if the random
+    seed file is included unmodified each system will initialize its entropy pool with the same data, and
+    thus — if otherwise entropy-starved — generate the same or at least guessable random seed streams. As a
+    safety precaution crediting entropy is thus disabled by default. It is recommended to remove the random
+    seed from OS images intended for replication on multiple systems, in which case it is safe to enable
+    entropy crediting, see below. Also see <a class="ulink" href="https://systemd.io/BUILDING_IMAGES" target="_top">Safely Building
+    Images</a>.</p><p>See <a class="ulink" href="https://systemd.io/RANDOM_SEEDS" target="_top">Random Seeds</a> for further
+    information.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Environment">Environment<a class="headerlink" title="Permalink to this headline" href="#Environment">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_RANDOM_SEED_CREDIT"><span class="term"><code class="varname">$SYSTEMD_RANDOM_SEED_CREDIT</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_RANDOM_SEED_CREDIT">¶</a></dt><dd><p>By default, <code class="filename">systemd-random-seed.service</code> does not credit any
+        entropy when loading the random seed. With this option this behaviour may be changed: it either takes
+        a boolean parameter or the special string "<code class="literal">force</code>". Defaults to false, in which case
+        no entropy is credited. If true, entropy is credited if the random seed file and system state pass
+        various superficial concisistency checks. If set to "<code class="literal">force</code>" entropy is credited,
+        regardless of these checks, as long as the random seed file exists.</p><p><a name="v243"></a>Added in version 243.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man4/random.4.html"><span class="citerefentry"><span class="refentrytitle">random</span>(4)</span></a>,
+      <a href="systemd-boot.html#"><span class="citerefentry"><span class="refentrytitle">systemd-boot</span>(7)</span></a>,
+      <a href="systemd-stub.html#"><span class="citerefentry"><span class="refentrytitle">systemd-stub</span>(7)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man4/bootctl.4.html"><span class="citerefentry"><span class="refentrytitle">bootctl</span>(4)</span></a>,
+      <a href="systemd-boot-random-seed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-boot-random-seed.service</span>(8)</span></a>
+    </p></div></div></body></html>

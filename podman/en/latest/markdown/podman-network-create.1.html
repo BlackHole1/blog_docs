@@ -1,0 +1,773 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>podman-network-create — Podman  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css">
+    <link rel="stylesheet" type="text/css" href="../../../_/static/css/badge_only.css">
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css">
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="../../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <link rel="index" title="Index" href="../genindex.html">
+    <link rel="search" title="Search" href="../search.html">
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css">
+  
+
+  
+  
+
+  
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "markdown/podman-network-create.1", "programming_language": "go", "project": "podman", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "alabaster", "user_analytics_code": "", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+  
+
+    <div class="document" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+      <div class="documentwrapper" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+        <div class="bodywrapper" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+          
+
+          <div class="body" role="main" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+            
+  <section id="name" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h1 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">NAME<a class="headerlink" href="#name" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h1>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">podman-network-create - Create a Podman network<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman-network-create - 创建一个 Podman 网络</font></font></font></p>
+</section>
+<section id="synopsis" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h1 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">SYNOPSIS<a class="headerlink" href="#synopsis" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h1>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">podman network create</strong>  [<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">options</em>] [<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">name</em>]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman network create [选项] [名称]</font></font></font></p>
+</section>
+<section id="description" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h1 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h1>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create a network configuration for use with Podman. By default, Podman creates a bridge connection.
+A <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">Macvlan</em> connection can be created with the <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">-d macvlan</em> option. A parent device for macvlan or
+ipvlan can be designated with the <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">-o parent=<code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">&lt;device&gt;</span></code></em> or <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--network-interface=<code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">&lt;device&gt;</span></code></em> option.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为 Podman 创建一个网络配置。默认情况下，Podman 创建一个桥接连接。可以使用 -d macvlan 选项创建一个 Macvlan 连接。可以使用 -o parent= <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">&lt;device&gt;</span></code> 或 --network-interface= <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">&lt;device&gt;</span></code> 选项指定 macvlan 或 ipvlan 的父设备。</font></font></font></p>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">If no options are provided, Podman assigns a free subnet and name for the network.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果未提供选项，Podman 会为网络分配一个免费的子网和名称。</font></font></font></p>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Upon completion of creating the network, Podman displays the name of the newly added network.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建网络完成后，Podman 会显示新添加网络的名称。</font></font></font></p>
+</section>
+<section id="options" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h1 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">OPTIONS<a class="headerlink" href="#options" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h1>
+<section id="disable-dns" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--disable-dns</strong><a class="headerlink" href="#disable-dns" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Disables the DNS plugin for this network which if enabled, can perform container to container name
+resolution. It is only supported with the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> driver, for other drivers it is always disabled.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">禁用此网络的 DNS 插件，如果启用，可以执行容器到容器的名称解析。仅支持 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> 驱动程序，对于其他驱动程序，它始终被禁用。</font></font></font></p>
+</section>
+<section id="dns-ip" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--dns</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">ip</em><a class="headerlink" href="#dns-ip" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Set network-scoped DNS resolver/nameserver for containers in this network. If not set, the host servers from <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">/etc/resolv.conf</span></code> is used.  It can be overwritten on the container level with the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">podman</span> <span class="pre">run/create</span> <span class="pre">--dns</span></code> option. This option can be specified multiple times to set more than one IP.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为此网络中的容器设置网络范围的 DNS 解析器/名称服务器。如果未设置，则使用来自 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">/etc/resolv.conf</span></code> 的主机服务器。可以使用 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">podman</span> <span class="pre">run/create</span> <span class="pre">--dns</span></code> 选项在容器级别上进行覆盖。可以多次指定此选项以设置多个 IP。</font></font></font></p>
+</section>
+<section id="driver-d-driver" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--driver</strong>, <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">-d</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">driver</em><a class="headerlink" href="#driver-d-driver" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Driver to manage the network. Currently <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> and <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> are supported. Defaults to <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code>.
+As rootless the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> and <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> driver have no access to the host network interfaces because rootless networking requires a separate network namespace.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">用于管理网络的驱动程序。目前支持 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> 、 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> 和 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> 。默认为 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> 。作为无根用户， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> 和 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> 驱动程序无法访问主机网络接口，因为无根网络需要一个单独的网络命名空间。</font></font></font></p>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">The netavark backend allows the use of so called <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">netavark plugins</em>, see the
+<a class="reference external" href="https://github.com/containers/netavark/blob/main/plugin-API.md" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">plugin-API.md</a>
+documentation in netavark. The binary must be placed in a specified directory
+so podman can discover it, this list is set in <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">netavark_plugin_dirs</span></code> in
+<strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference external" href="https://github.com/containers/common/blob/main/docs/containers.conf.5.md" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">containers.conf(5)</a></strong>
+under the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">[network]</span></code> section.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">netavark 后端允许使用所谓的 netavark 插件，请参阅 netavark 中的 plugin-API.md 文档。必须将二进制文件放在指定目录中，以便 podman 可以发现它，此列表在 containers.conf(5) 中的 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">[network]</span></code> 部分下的 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">netavark_plugin_dirs</span></code> 中设置。</font></font></font></p>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">The name of the plugin can then be used as driver to create a network for your plugin.
+The list of all supported drivers and plugins can be seen with <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">podman</span> <span class="pre">info</span> <span class="pre">--format</span> <span class="pre">{{.Plugins.Network}}</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">然后可以使用插件的名称作为驱动程序来为插件创建网络。可以使用 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">podman</span> <span class="pre">info</span> <span class="pre">--format</span> <span class="pre">{{.Plugins.Network}}</span></code> 查看所有支持的驱动程序和插件列表。</font></font></font></p>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Note that the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> and <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> drivers do not support port forwarding. Support for port forwarding
+with a plugin depends on the implementation of the plugin.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> 和 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> 驱动程序不支持端口转发。插件是否支持端口转发取决于插件的实现。</font></font></font></p>
+</section>
+<section id="gateway-ip" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--gateway</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">ip</em><a class="headerlink" href="#gateway-ip" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Define a gateway for the subnet. To provide a gateway address, a
+<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">subnet</em> option is required. Can be specified multiple times.
+The argument order of the <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--subnet</strong>, <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--gateway</strong> and <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--ip-range</strong> options must match.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为子网定义网关。要提供网关地址，需要一个子网选项。可以指定多次。--subnet、--gateway 和 --ip-range 选项的参数顺序必须匹配。</font></font></font></p>
+</section>
+<section id="ignore" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--ignore</strong><a class="headerlink" href="#ignore" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Ignore the create request if a network with the same name already exists instead of failing.
+Note, trying to create a network with an existing name and different parameters does not change the configuration of the existing one.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果同名网络已经存在，则忽略创建请求，而不是失败。请注意，尝试使用现有名称和不同参数创建网络不会更改现有网络的配置。</font></font></font></p>
+</section>
+<section id="interface-name-name" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--interface-name</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">name</em><a class="headerlink" href="#interface-name-name" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">This option maps the <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">network_interface</em> option in the network config, see <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">podman network inspect</strong>.
+Depending on the driver, this can have different effects; for <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code>, it uses the bridge interface name.
+For <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> and <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code>, it is the parent device on the host. It is the same as <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">--opt</span> <span class="pre">parent=...</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此选项将网络配置中的 network_interface 选项映射到 podman network inspect 中查看的内容。根据驱动程序的不同，这可能会产生不同的效果；对于 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> ，它使用桥接口名称。对于 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> 和 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> ，它是主机上的父设备。它与 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">--opt</span> <span class="pre">parent=...</span></code> 相同。</font></font></font></p>
+</section>
+<section id="internal" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--internal</strong><a class="headerlink" href="#internal" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Restrict external access of this network when using a <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> network. Note when using the CNI backend
+DNS will be automatically disabled, see <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--disable-dns</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在使用 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> 网络时限制此网络的外部访问。注意，使用 CNI 后端时 DNS 将自动禁用，请参阅 --disable-dns。</font></font></font></p>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">When using the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> or <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> driver with this option no default route will be added to the container.
+Because it bypasses the host network stack no additional restrictions can be set by podman and if a
+privileged container is run it can set a default route themselves. If this is a concern then the
+container connections should be blocked on your actual network gateway.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当使用此选项与 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> 或 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> 驱动程序时，容器将不会添加默认路由。因为它绕过了主机网络堆栈，podman 无法设置额外的限制，如果运行特权容器，则可以自行设置默认路由。如果这是一个问题，那么容器连接应该在您的实际网络网关上被阻止。</font></font></font></p>
+</section>
+<section id="ip-range-range" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--ip-range</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">range</em><a class="headerlink" href="#ip-range-range" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--ip-range=range</font></font></font></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Allocate container IP from a range. The range must be a either a complete subnet in CIDR notation or be in
+the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">&lt;startIP&gt;-&lt;endIP&gt;</span></code> syntax which allows for a more flexible range compared to the CIDR subnet.
+The <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">ip-range</em> option must be used with a <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">subnet</em> option. Can be specified multiple times.
+The argument order of the <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--subnet</strong>, <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--gateway</strong> and <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--ip-range</strong> options must match.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">从范围中分配容器 IP。范围必须是 CIDR 表示法中的完整子网，或者是 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">&lt;startIP&gt;-&lt;endIP&gt;</span></code> 语法，与 CIDR 子网相比，允许更灵活的范围。ip-range 选项必须与子网选项一起使用。可以指定多次。--subnet、--gateway 和 --ip-range 选项的参数顺序必须匹配。</font></font></font></p>
+</section>
+<section id="ipam-driver-driver" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--ipam-driver</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">driver</em><a class="headerlink" href="#ipam-driver-driver" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Set the ipam driver (IP Address Management Driver) for the network. When unset podman chooses an
+ipam driver automatically based on the network driver.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为网络设置 IPAM 驱动程序（IP 地址管理驱动程序）。当未设置时，podman 会根据网络驱动程序自动选择一个 IPAM 驱动程序。</font></font></font></p>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Valid values are:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">有效值为:</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">dhcp</span></code>: IP addresses are assigned from a dhcp server on the network. When using the netavark backend
+the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">netavark-dhcp-proxy.socket</span></code> must be enabled in order to start the dhcp-proxy when a container is
+started, for CNI use the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">cni-dhcp.socket</span></code> unit instead.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">dhcp</span></code> ：IP 地址是从网络上的 dhcp 服务器分配的。在使用 netavark 后端时，必须启用 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">netavark-dhcp-proxy.socket</span></code> 以便在容器启动时启动 dhcp 代理，对于 CNI，请改用 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">cni-dhcp.socket</span></code> 单元。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">host-local</span></code>: IP addresses are assigned locally.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">host-local</span></code> ：IP 地址是本地分配的。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">none</span></code>: No ip addresses are assigned to the interfaces.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">none</span></code> ：接口未分配任何 IP 地址。</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">View the driver in the <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">podman network inspect</strong> output under the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipam_options</span></code> field.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 podman 网络检查输出中查看驱动程序在 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipam_options</span></code> 字段下。</font></font></font></p>
+</section>
+<section id="ipv6" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--ipv6</strong><a class="headerlink" href="#ipv6" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Enable IPv6 (Dual Stack) networking. If no subnets are given, it allocates an ipv4 and an ipv6 subnet.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">启用 IPv6（双栈）网络。如果没有给出子网，它会分配一个 IPv4 子网和一个 IPv6 子网。</font></font></font></p>
+</section>
+<section id="label-label" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--label</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">label</em><a class="headerlink" href="#label-label" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Set metadata for a network (e.g., --label mykey=value).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为网络设置元数据（例如，--label mykey=value）。</font></font></font></p>
+</section>
+<section id="opt-o-option" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--opt</strong>, <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">-o</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">option</em><a class="headerlink" href="#opt-o-option" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--opt，-o=选项</font></font></font></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Set driver specific options.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">设置特定于驱动程序的选项。</font></font></font></p>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">All drivers accept the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">mtu</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">metric</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">no_default_route</span></code> and options.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">所有驱动程序接受 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">mtu</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">metric</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">no_default_route</span></code> 和选项。</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">mtu</span></code>: Sets the Maximum Transmission Unit (MTU) and takes an integer value.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">mtu</span></code> ：设置最大传输单元（MTU）并接受整数值。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">metric</span></code> Sets the Route Metric for the default route created in every container joined to this network. Accepts a positive integer value. Can only be used with the Netavark network backend.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">metric</span></code> 设置每个加入此网络的容器中创建的默认路由的路由度量。接受正整数值。只能与 Netavark 网络后端一起使用。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">no_default_route</span></code>: If set to 1, Podman will not automatically add a default route to subnets. Routes can still be added
+manually by creating a custom route using <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">--route</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">no_default_route</span></code> ：如果设置为 1，Podman 将不会自动向子网添加默认路由。仍然可以通过创建自定义路由手动添加路由。</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Additionally the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> driver supports the following options:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此外， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> 驱动程序支持以下选项：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">vlan</span></code>: This option assign VLAN tag and enables vlan_filtering. Defaults to none.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">vlan</span></code> ：此选项分配 VLAN 标记并启用 vlan_filtering。默认为无。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">isolate</span></code>: This option isolates networks by blocking traffic between those that have this option enabled.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">isolate</span></code> ：此选项通过阻止启用此选项的网络之间的流量来隔离网络。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">com.docker.network.bridge.name</span></code>: This option assigns the given name to the created Linux Bridge<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">com.docker.network.bridge.name</span></code> ：此选项将给定的名称分配给创建的 Linux 桥接器。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">com.docker.network.driver.mtu</span></code>: Sets the Maximum Transmission Unit (MTU) and takes an integer value.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">com.docker.network.driver.mtu</span></code> ：设置最大传输单元（MTU），取整数值。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">vrf</span></code>: This option assigns a VRF to the bridge interface. It accepts the name of the VRF and defaults to none. Can only be used with the Netavark network backend.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">vrf</span></code> ：此选项将 VRF 分配给桥接口。它接受 VRF 的名称，默认为 none。只能与 Netavark 网络后端一起使用。</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">The <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> and <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> driver support the following options:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> 和 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> 驱动程序支持以下选项：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">parent</span></code>: The host device which is used for the macvlan interface. Defaults to the default route interface.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">parent</span></code> ：用于 macvlan 接口的主机设备。默认为默认路由接口。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">mode</span></code>: This option sets the specified ip/macvlan mode on the interface.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">mode</span></code> ：此选项在接口上设置指定的 ip/macvlan 模式。</font></font></font></p>
+<ul data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Supported values for <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> are <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">private</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">vepa</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">passthru</span></code>. Defaults to <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> 的支持值为 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">private</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">vepa</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">passthru</span></code> 。默认为 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bridge</span></code> 。</font></font></font></p></li>
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Supported values for <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> are <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">l2</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">l3</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">l3s</span></code>. Defaults to <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">l2</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">ipvlan</span></code> 的支持值为 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">l2</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">l3</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">l3s</span></code> 。默认为 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">l2</span></code> 。</font></font></font></p></li>
+</ul>
+</li>
+</ul>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Additionally the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> driver supports the <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bclim</span></code> option:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此外， <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">macvlan</span></code> 驱动程序支持 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bclim</span></code> 选项：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bclim</span></code>: Set the threshold for broadcast queueing. Must be a 32 bit integer. Setting this value to <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">-1</span></code> disables broadcast queueing altogether.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">bclim</span></code> ：设置广播排队的阈值。必须是一个 32 位整数。将此值设置为 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">-1</span></code> 将完全禁用广播排队。</font></font></font></p></li>
+</ul>
+</section>
+<section id="route-route" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--route</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">route</em><a class="headerlink" href="#route-route" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">A static route in the format <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">&lt;destination</span> <span class="pre">in</span> <span class="pre">CIDR</span> <span class="pre">notation&gt;,&lt;gateway&gt;,&lt;route</span> <span class="pre">metric</span> <span class="pre">(optional)&gt;</span></code>. This route will be added to every container in this network. Only available with the netavark backend. It can be specified multiple times if more than one static route is desired.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">一个以 <code class="docutils literal notranslate" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="pre">&lt;destination</span> <span class="pre">in</span> <span class="pre">CIDR</span> <span class="pre">notation&gt;,&lt;gateway&gt;,&lt;route</span> <span class="pre">metric</span> <span class="pre">(optional)&gt;</span></code> 格式的静态路由。此路由将被添加到此网络中的每个容器中。仅在 netavark 后端可用。如果需要多个静态路由，可以多次指定。</font></font></font></p>
+</section>
+<section id="subnet-subnet" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h2 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--subnet</strong>=<em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">subnet</em><a class="headerlink" href="#subnet-subnet" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a></h2>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">The subnet in CIDR notation. Can be specified multiple times to allocate more than one subnet for this network.
+The argument order of the <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--subnet</strong>, <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--gateway</strong> and <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">--ip-range</strong> options must match.
+This is useful to set a static ipv4 and ipv6 subnet.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">以 CIDR 表示的子网。可以多次指定以为此网络分配多个子网。--subnet、--gateway 和 --ip-range 选项的参数顺序必须匹配。这对设置静态 IPv4 和 IPv6 子网很有用。</font></font></font></p>
+</section>
+</section>
+<section id="example" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h1 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">EXAMPLE<a class="headerlink" href="#example" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">例子 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create a network with no options.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个没有选项的网络。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman network create
+podman2
+</pre></div>
+</div>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create a network named <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">newnet</em> that uses <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">192.5.0.0/16</em> for its subnet.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个名为 newnet 的网络，其子网使用 192.5.0.0/16。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman network create --subnet 192.5.0.0/16 newnet
+newnet
+</pre></div>
+</div>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create an IPv6 network named <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">newnetv6</em> with a subnet of <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">2001:db8::/64</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个名为 newnetv6 的 IPv6 网络，子网为 2001:db8::/64。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman network create --subnet 2001:db8::/64 --ipv6 newnetv6
+newnetv6
+</pre></div>
+</div>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create a network named <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">newnet</em> that uses <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">192.168.33.0/24</em> and defines a gateway as <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">192.168.133.3</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个名为 newnet 的网络，使用 192.168.33.0/24，并将网关定义为 192.168.133.3。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman network create --subnet 192.168.33.0/24 --gateway 192.168.33.3 newnet
+newnet
+</pre></div>
+</div>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create a network that uses a <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">192.168.55.0/24</em> subnet and has an IP address range of <em data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">192.168.55.129 - 192.168.55.254</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个使用 192.168.55.0/24 子网并具有 IP 地址范围为 192.168.55.129 - 192.168.55.254 的网络。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman network create --subnet 192.168.55.0/24 --ip-range 192.168.55.128/25
+podman5
+</pre></div>
+</div>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create a network with a static ipv4 and ipv6 subnet and set a gateway.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个具有静态 IPv4 和 IPv6 子网并设置网关的网络。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman network create --subnet 192.168.55.0/24 --gateway 192.168.55.3 --subnet fd52:2a5a:747e:3acd::/64 --gateway fd52:2a5a:747e:3acd::10
+podman4
+</pre></div>
+</div>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create a network with a static subnet and a static route.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用静态子网和静态路由创建网络。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman network create --subnet 192.168.33.0/24 --route 10.1.0.0/24,192.168.33.10 newnet
+</pre></div>
+</div>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create a network with a static subnet and a static route without a default
+route.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个具有静态子网和静态路由但没有默认路由的网络。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman network create --subnet 192.168.33.0/24 --route 10.1.0.0/24,192.168.33.10 --opt no_default_route=1 newnet
+</pre></div>
+</div>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Create a Macvlan based network using the host interface eth0. Macvlan networks can only be used as root.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用主机接口 eth0 创建基于 Macvlan 的网络。Macvlan 网络只能用作 root。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo podman network create -d macvlan -o parent=eth0 --subnet 192.5.0.0/16 newnet
+newnet
+</pre></div>
+</div>
+</section>
+<section id="see-also" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h1 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">SEE ALSO<a class="headerlink" href="#see-also" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference internal" href="podman.1.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="std std-doc" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">podman(1)</span></a></strong>, <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference internal" href="podman-network.1.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="std std-doc" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">podman-network(1)</span></a></strong>, <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference internal" href="podman-network-inspect.1.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="std std-doc" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">podman-network-inspect(1)</span></a></strong>, <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference internal" href="podman-network-ls.1.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="std std-doc" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">podman-network-ls(1)</span></a></strong>, <strong data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference external" href="https://github.com/containers/common/blob/main/docs/containers.conf.5.md" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">containers.conf(5)</a></strong></p>
+</section>
+<section id="history" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h1 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">HISTORY<a class="headerlink" href="#history" title="Link to this heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">August 2021, Updated with the new network format by Paul Holzinger <a class="reference external" href="mailto:pholzing%40redhat.com" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">pholzing<span data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">@</span>redhat<span data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">.</span>com</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2021 年 8 月，由 Paul Holzinger pholzing@redhat.com 更新了新的网络格式</font></font></font></p>
+<p data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">August 2019, Originally compiled by Brent Baude <a class="reference external" href="mailto:bbaude%40redhat.com" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">bbaude<span data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">@</span>redhat<span data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">.</span>com</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2019 年 8 月，最初由 Brent Baude bbaude@redhat.com 编译</font></font></font></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+        <div class="sphinxsidebarwrapper" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h1 class="logo" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a href="../index.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Podman</a></h1>
+
+
+
+
+
+
+
+
+<h3 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Navigation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">导航</font></font></font></h3>
+<p class="caption" role="heading" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><span class="caption-text" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Contents:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内容:</font></font></font></span></p>
+<ul data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<li class="toctree-l1" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference internal" href="../Introduction.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference internal" href="../Commands.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Commands<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">命令</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference internal" href="../Reference.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Reference<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference internal" href="../Tutorials.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Tutorials<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">教程</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference internal" href="../Search.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Search<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">搜索</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a class="reference external" href="https://podman-py.readthedocs.io/en/latest/" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Podman Python</a></li>
+</ul>
+
+<div class="relations" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+<h3 data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Related Topics<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关主题</font></font></font></h3>
+<ul data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+  <li data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"><a href="../index.html" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">Documentation overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档概述</font></font></font></a><ul data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35"></div>
+    </div>
+    <div class="footer" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35" data-immersive-translate-paragraph="1">
+      ©2019, team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">Alabaster 0.7.16</a>
+      
+      |
+      <a href="https://docs.podman.io/en/latest/_sources/markdown/podman-network-create.1.md.txt" rel="nofollow" data-immersive-translate-walked="7249d51d-eb69-4211-8cf9-580621198d35">Page source</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">©2019，团队。| 由 Sphinx 7.3.7 &amp; Alabaster 0.7.16 提供支持。| 页面来源</font></font></font>
+    </div>
+
+    
+
+    
+  
+</body></html>

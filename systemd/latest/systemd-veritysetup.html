@@ -1,0 +1,58 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-veritysetup@.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-veritysetup@.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-veritysetup@.service, systemd-veritysetup — Disk verity protection logic</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-veritysetup@.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-veritysetup</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">systemd-veritysetup@.service</code> is a service responsible for setting up verity
+    protection block devices. It should be instantiated for each device that requires verity
+    protection.</p><p>At early boot and when the system manager configuration is reloaded kernel command line configuration for
+    verity protected block devices is translated into <code class="filename">systemd-veritysetup@.service</code> units by
+    <a href="systemd-veritysetup-generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd-veritysetup-generator</span>(8)</span></a>.</p><p><code class="filename">systemd-veritysetup@.service</code> calls <span class="command"><strong>systemd-veritysetup</strong></span>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Commands">Commands<a class="headerlink" title="Permalink to this headline" href="#Commands">¶</a></h2><p>The following commands are understood by <span class="command"><strong>systemd-veritysetup</strong></span>:</p><div class="variablelist"><dl class="variablelist"><dt id="
+          attach
+          volume
+          datadevice
+          hashdevice
+          roothash
+          [option...]
+        "><span class="term">
+          <code class="option">attach</code>
+          <em class="replaceable"><code>volume</code></em>
+          <em class="replaceable"><code>datadevice</code></em>
+          <em class="replaceable"><code>hashdevice</code></em>
+          <em class="replaceable"><code>roothash</code></em>
+          [<em class="replaceable"><code>option</code></em>...]
+        </span><a class="headerlink" title="Permalink to this term" href="#%0A%20%20%20%20%20%20%20%20%20%20attach%0A%20%20%20%20%20%20%20%20%20%20volume%0A%20%20%20%20%20%20%20%20%20%20datadevice%0A%20%20%20%20%20%20%20%20%20%20hashdevice%0A%20%20%20%20%20%20%20%20%20%20roothash%0A%20%20%20%20%20%20%20%20%20%20%5Boption...%5D%0A%20%20%20%20%20%20%20%20">¶</a></dt><dd><p>Create a block device <em class="replaceable"><code>volume</code></em> using
+        <em class="replaceable"><code>datadevice</code></em> and <em class="replaceable"><code>hashdevice</code></em> as the backing
+        devices. <em class="replaceable"><code>roothash</code></em> forms the root of the tree of hashes stored on
+        <em class="replaceable"><code>hashdevice</code></em>. See
+        <a class="ulink" href="https://docs.kernel.org/admin-guide/device-mapper/verity.html" target="_top">
+          Kernel dm-verity</a> documentation for details.
+        </p><p><a name="v250"></a>Added in version 250.</p></dd><dt id="
+          detach
+          volume
+        "><span class="term">
+          <code class="option">detach</code>
+          <em class="replaceable"><code>volume</code></em>
+        </span><a class="headerlink" title="Permalink to this term" href="#%0A%20%20%20%20%20%20%20%20%20%20detach%0A%20%20%20%20%20%20%20%20%20%20volume%0A%20%20%20%20%20%20%20%20">¶</a></dt><dd><p>Detach (destroy) the block device
+        <em class="replaceable"><code>volume</code></em>.</p><p><a name="v250"></a>Added in version 250.</p></dd><dt id="
+          help
+        "><span class="term">
+          <code class="option">help</code>
+        </span><a class="headerlink" title="Permalink to this term" href="#%0A%20%20%20%20%20%20%20%20%20%20help%0A%20%20%20%20%20%20%20%20">¶</a></dt><dd><p>Print short information about command syntax.</p><p><a name="v250"></a>Added in version 250.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-veritysetup-generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd-veritysetup-generator</span>(8)</span></a>,
+      <a href="http://linux.die.net/man/8/veritysetup"><span class="citerefentry"><span class="refentrytitle">veritysetup</span>(8)</span></a>
+     </p></div></div></body></html>

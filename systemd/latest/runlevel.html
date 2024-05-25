@@ -1,0 +1,43 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>runlevel</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="runlevel"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>runlevel — Print previous and current SysV runlevel</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">runlevel</code>  [options...]</p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Overview">Overview<a class="headerlink" title="Permalink to this headline" href="#Overview">¶</a></h2><p>"Runlevels" are an obsolete way to start and stop groups of
+    services used in SysV init. systemd provides a compatibility layer
+    that maps runlevels to targets, and associated binaries like
+    <span class="command"><strong>runlevel</strong></span>. Nevertheless, only one runlevel can
+    be "active" at a given time, while systemd can activate multiple
+    targets concurrently, so the mapping to runlevels is confusing
+    and only approximate. Runlevels should not be used in new code,
+    and are mostly useful as a shorthand way to refer the matching
+    systemd targets in kernel boot parameters.</p><div class="table"><a name="id-1.5.3"></a><p class="title"><b>Table 1. Mapping between runlevels and systemd targets</b></p><div class="table-contents"><table class="table" summary="Mapping between runlevels and systemd targets" border="1"><colgroup><col align="left" class="runlevel"><col align="left" class="target"></colgroup><thead><tr><th align="left">Runlevel</th><th align="left">Target</th></tr></thead><tbody><tr><td align="left">0</td><td align="left"><code class="filename">poweroff.target</code></td></tr><tr><td align="left">1</td><td align="left"><code class="filename">rescue.target</code></td></tr><tr><td align="left">2, 3, 4</td><td align="left"><code class="filename">multi-user.target</code></td></tr><tr><td align="left">5</td><td align="left"><code class="filename">graphical.target</code></td></tr><tr><td align="left">6</td><td align="left"><code class="filename">reboot.target</code></td></tr></tbody></table></div></div><br class="table-break"></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>runlevel</strong></span> prints the previous and current
+    SysV runlevel if they are known.</p><p>The two runlevel characters are separated by a single space
+    character. If a runlevel cannot be determined, N is printed
+    instead. If neither can be determined, the word "unknown" is
+    printed.</p><p>Unless overridden in the environment, this will check the
+    utmp database for recent runlevel changes.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following option is understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--help"><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#--help">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>If one or both runlevels could be determined, 0 is returned,
+    a non-zero failure code otherwise.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="Environment">Environment<a class="headerlink" title="Permalink to this headline" href="#Environment">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="$RUNLEVEL"><span class="term"><code class="varname">$RUNLEVEL</code></span><a class="headerlink" title="Permalink to this term" href="#%24RUNLEVEL">¶</a></dt><dd><p>If <code class="varname">$RUNLEVEL</code> is set,
+        <span class="command"><strong>runlevel</strong></span> will print this value as current
+        runlevel and ignore utmp.</p></dd><dt id="$PREVLEVEL"><span class="term"><code class="varname">$PREVLEVEL</code></span><a class="headerlink" title="Permalink to this term" href="#%24PREVLEVEL">¶</a></dt><dd><p>If <code class="varname">$PREVLEVEL</code> is set,
+        <span class="command"><strong>runlevel</strong></span> will print this value as previous
+        runlevel and ignore utmp.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.10"></a><h2 id="Files">Files<a class="headerlink" title="Permalink to this headline" href="#Files">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="/run/utmp"><span class="term"><code class="filename">/run/utmp</code></span><a class="headerlink" title="Permalink to this term" href="#/run/utmp">¶</a></dt><dd><p>The utmp database <span class="command"><strong>runlevel</strong></span> reads the previous and current runlevel
+        from.</p><p><a name="v237"></a>Added in version 237.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.11"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd.target.html#"><span class="citerefentry"><span class="refentrytitle">systemd.target</span>(5)</span></a>,
+      <a href="systemctl.html#"><span class="citerefentry"><span class="refentrytitle">systemctl</span>(1)</span></a>
+    </p></div></div></body></html>

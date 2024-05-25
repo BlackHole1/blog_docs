@@ -1,0 +1,104 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>varlinkctl</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="varlinkctl"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>varlinkctl — Introspect with and invoke Varlink services</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">varlinkctl</code>  [OPTIONS...]  info   <em class="replaceable"><code>ADDRESS</code></em> </p></div><div class="cmdsynopsis"><p><code class="command">varlinkctl</code>  [OPTIONS...]  list-interfaces   <em class="replaceable"><code>ADDRESS</code></em> </p></div><div class="cmdsynopsis"><p><code class="command">varlinkctl</code>  [OPTIONS...]  introspect   <em class="replaceable"><code>ADDRESS</code></em>   <em class="replaceable"><code>INTERFACE</code></em> </p></div><div class="cmdsynopsis"><p><code class="command">varlinkctl</code>  [OPTIONS...]  call   <em class="replaceable"><code>ADDRESS</code></em>   <em class="replaceable"><code>METHOD</code></em>  [<em class="replaceable"><code>PARAMETERS</code></em>]</p></div><div class="cmdsynopsis"><p><code class="command">varlinkctl</code>  [OPTIONS...]  validate-idl  [<em class="replaceable"><code>FILE</code></em>]</p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>varlinkctl</strong></span> may be used to introspect and invoke <a class="ulink" href="https://varlink.org/" target="_top">Varlink</a> services.</p><p>Services are referenced by one of the following:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>A Varlink service reference starting with the "<code class="literal">unix:</code>" string, followed
+      by an absolute <code class="constant">AF_UNIX</code> path, or by "<code class="literal">@</code>" and an arbitrary string
+      (the latter for referencing sockets in the abstract namespace).</p></li><li class="listitem"><p>A Varlink service reference starting with the "<code class="literal">exec:</code>" string, followed
+      by an absolute path of a binary to execute.</p></li></ul></div><p>For convenience these two simpler (redundant) service address syntaxes are also supported:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>A file system path to an <code class="constant">AF_UNIX</code> socket, either absolute
+      (i.e. begins with "<code class="literal">/</code>") or relative (in which case it must begin with
+      "<code class="literal">./</code>").</p></li><li class="listitem"><p>A file system path to an executable, either absolute or relative (as above, must begin
+      with "<code class="literal">/</code>", resp. "<code class="literal">./</code>").</p></li></ul></div></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Commands">Commands<a class="headerlink" title="Permalink to this headline" href="#Commands">¶</a></h2><p>The following commands are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="info ADDRESS"><span class="term"><span class="command"><strong>info</strong></span> <em class="replaceable"><code>ADDRESS</code></em></span><a class="headerlink" title="Permalink to this term" href="#info%20ADDRESS">¶</a></dt><dd><p>Show brief information about the specified service, including vendor name and list of
+        implemented interfaces. Expects a service address in the formats described above.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="list-interfaces ADDRESS"><span class="term"><span class="command"><strong>list-interfaces</strong></span> <em class="replaceable"><code>ADDRESS</code></em></span><a class="headerlink" title="Permalink to this term" href="#list-interfaces%20ADDRESS">¶</a></dt><dd><p>Show list of interfaces implemented by the specified service. Expects a service
+        address in the formats described above.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="introspect ADDRESS INTERFACE"><span class="term"><span class="command"><strong>introspect</strong></span> <em class="replaceable"><code>ADDRESS</code></em> <em class="replaceable"><code>INTERFACE</code></em></span><a class="headerlink" title="Permalink to this term" href="#introspect%20ADDRESS%20INTERFACE">¶</a></dt><dd><p>Show interface definition of the specified interface provided by the specified
+        service. Expects a service address in the formats described above and a Varlink interface
+        name.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="call ADDRESS METHOD [ARGUMENTS]"><span class="term"><span class="command"><strong>call</strong></span> <em class="replaceable"><code>ADDRESS</code></em> <em class="replaceable"><code>METHOD</code></em> [<em class="replaceable"><code>ARGUMENTS</code></em>]</span><a class="headerlink" title="Permalink to this term" href="#call%20ADDRESS%20METHOD%20%5BARGUMENTS%5D">¶</a></dt><dd><p>Call the specified method of the specified service. Expects a service address in the
+        format described above, a fully qualified Varlink method name, and a JSON arguments object. If the
+        arguments object is not specified, it is read from STDIN instead. To pass an empty list of
+        parameters, specify the empty object "<code class="literal">{}</code>".</p><p>The reply parameters are written as JSON object to STDOUT.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="validate-idl [FILE]"><span class="term"><span class="command"><strong>validate-idl</strong></span> [<em class="replaceable"><code>FILE</code></em>]</span><a class="headerlink" title="Permalink to this term" href="#validate-idl%20%5BFILE%5D">¶</a></dt><dd><p>Reads a Varlink interface definition file, parses and validates it, then outputs it
+        with syntax highlighting. This checks for syntax and internal consistency of the interface. Expects a
+        file name to read the interface definition from. If omitted reads the interface definition from
+        STDIN.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="help"><span class="term"><span class="command"><strong>help</strong></span></span><a class="headerlink" title="Permalink to this term" href="#help">¶</a></dt><dd><p>Show command syntax help.</p><p><a name="v255"></a>Added in version 255.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--more"><span class="term"><code class="option">--more</code></span><a class="headerlink" title="Permalink to this term" href="#--more">¶</a></dt><dd><p>When used with <span class="command"><strong>call</strong></span>: expect multiple method replies. If this flag is
+        set the method call is sent with the <code class="constant">more</code> flag set, which tells the service to
+        generate multiple replies, if needed. The command remains running until the service sends a reply
+        message that indicates it is the last in the series. This flag should be set only for method calls
+        that support this mechanism.</p><p>If this mode is enabled output is automatically switched to JSON-SEQ mode, so that individual
+        reply objects can be easily discerned.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--oneway"><span class="term"><code class="option">--oneway</code></span><a class="headerlink" title="Permalink to this term" href="#--oneway">¶</a></dt><dd><p>When used with <span class="command"><strong>call</strong></span>: do not expect a method reply. If this flag
+        is set the method call is sent with the <code class="constant">oneway</code> flag set (the command exits
+        immediately after), which tells the service not to generate a reply.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--json=MODE"><span class="term"><code class="option">--json=</code><em class="replaceable"><code>MODE</code></em></span><a class="headerlink" title="Permalink to this term" href="#--json=MODE">¶</a></dt><dd><p>Selects the JSON output formatting, one of "<code class="literal">pretty</code>" (for nicely indented,
+          colorized output) or "<code class="literal">short</code>" (for terse output with minimal whitespace and no
+          newlines), defaults to "<code class="literal">short</code>".</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="-j"><span class="term"><code class="option">-j</code></span><a class="headerlink" title="Permalink to this term" href="#-j">¶</a></dt><dd><p>Equivalent to <code class="option">--json=pretty</code> when invoked interactively from a terminal. Otherwise
+          equivalent to <code class="option">--json=short</code>, in particular when the output is piped to some other
+          program.</p><p><a name="v255"></a>Added in version 255.</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Investigating a Service</b></p><div class="example-contents"><p>The following three commands inspect the "<code class="literal">io.systemd.Resolve</code>" service
+      implemented by
+      <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>,
+      listing general service information and implemented interfaces, and then displaying the interface
+      definition of its primary interface:</p><pre class="programlisting">$ varlinkctl info /run/systemd/resolve/io.systemd.Resolve
+    Vendor: The systemd Project
+   Product: systemd (systemd-resolved)
+   Version: 254 (254-1522-g4790521^)
+       URL: https://systemd.io/
+Interfaces: io.systemd
+            io.systemd.Resolve
+            org.varlink.service
+$ varlinkctl list-interfaces /run/systemd/resolve/io.systemd.Resolve
+io.systemd
+io.systemd.Resolve
+org.varlink.service
+$ varlinkctl introspect /run/systemd/resolve/io.systemd.Resolve io.systemd.Resolve
+interface io.systemd.Resolve
+type ResolvedAddress(
+        ifindex: ?int,
+        …</pre><p>(Interface definition has been truncated in the example above, in the interest of brevity.)</p></div></div><br class="example-break"><div class="example"><a name="id-1.8.3"></a><p class="title"><b>Example 2. Invoking a Method</b></p><div class="example-contents"><p>The following command resolves a hostname via <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>'s <code class="function">ResolveHostname</code>  method call.</p><pre class="programlisting">$ varlinkctl call /run/systemd/resolve/io.systemd.Resolve io.systemd.Resolve.ResolveHostname '{"name":"systemd.io","family":2}' -j
+{
+        "addresses" : [
+                {
+                        "ifindex" : 2,
+                        "family" : 2,
+                        "address" : [
+                                185,
+                                199,
+                                111,
+                                153
+                        ]
+                }
+        ],
+        "name" : "systemd.io",
+        "flags" : 1048577
+}</pre></div></div><br class="example-break"><div class="example"><a name="id-1.8.4"></a><p class="title"><b>Example 3. Investigating a Service Executable</b></p><div class="example-contents"><p>The following command inspects the <code class="filename">/usr/lib/systemd/systemd-pcrextend</code>
+      executable and the IPC APIs it provides. It then invokes a method on it:</p><pre class="programlisting"># varlinkctl info /usr/lib/systemd/systemd-pcrextend
+    Vendor: The systemd Project
+   Product: systemd (systemd-pcrextend)
+   Version: 254 (254-1536-g97734fb)
+       URL: https://systemd.io/
+Interfaces: io.systemd
+            io.systemd.PCRExtend
+            org.varlink.service
+# varlinkctl introspect /usr/lib/systemd/systemd-pcrextend io.systemd.PCRExtend
+interface io.systemd.PCRExtend
+
+method Extend(
+        pcr: int,
+        text: ?string,
+        data: ?string
+) -&gt; ()
+# varlinkctl call /usr/lib/systemd/systemd-pcrextend io.systemd.PCRExtend.Extend '{"pcr":15,"text":"foobar"}'
+{}</pre></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="busctl.html#"><span class="citerefentry"><span class="refentrytitle">busctl</span>(1)</span></a>,
+      <a class="ulink" href="https://varlink.org/" target="_top">Varlink</a>
+    </p></div></div></body></html>

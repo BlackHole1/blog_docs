@@ -1,0 +1,85 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-networkd-wait-online.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-networkd-wait-online.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-networkd-wait-online.service, systemd-networkd-wait-online@.service, systemd-networkd-wait-online — Wait for network to come online</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-networkd-wait-online.service</code></p><p><code class="filename">systemd-networkd-wait-online@.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-networkd-wait-online</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-networkd-wait-online</strong></span> is a
+    oneshot system service (see <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>), that waits for the network to be
+    configured. By default, it will wait for all links it is aware of
+    and which are managed by
+    <a href="systemd-networkd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-networkd.service</span>(8)</span></a>
+    to be fully configured or failed, and for at least one link to be online. Here, online means that
+    the link's operational state is equal or higher than "<code class="literal">degraded</code>". The threshold
+    can be configured by <code class="option">--operational-state=</code> option.</p><p>The service <code class="filename">systemd-networkd-wait-online.service</code> invokes
+    <span class="command"><strong>systemd-networkd-wait-online</strong></span> without any options. Thus, it waits for all managed
+    interfaces to be configured or failed, and for at least one to be online.</p><p>The service <code class="filename">systemd-networkd-wait-online@.service</code> takes an interface
+    name, and invokes <span class="command"><strong>systemd-networkd-wait-online</strong></span> with <code class="option">-i</code> and the
+    specified interface name. Thus, wait for the specified interface to be configured and online. For
+    example, <code class="filename">systemd-networkd-wait-online@eth0.service</code> waits for
+    <code class="filename">eth0</code> to be configured by <span class="command"><strong>systemd-networkd</strong></span> and online.
+    </p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="-i INTERFACE:MIN_OPERSTATE:MAX_OPERSTATE"><span class="term"><code class="option">-i</code> <em class="replaceable"><code>INTERFACE</code></em>[<span class="optional">:<em class="replaceable"><code>MIN_OPERSTATE</code></em>[<span class="optional">:<em class="replaceable"><code>MAX_OPERSTATE</code></em></span>]</span>], </span><span class="term"><code class="option">--interface=</code><em class="replaceable"><code>INTERFACE</code></em>[<span class="optional">:<em class="replaceable"><code>MIN_OPERSTATE</code></em>[<span class="optional">:<em class="replaceable"><code>MAX_OPERSTATE</code></em></span>]</span>]</span><a class="headerlink" title="Permalink to this term" href="#-i%20INTERFACE:MIN_OPERSTATE:MAX_OPERSTATE">¶</a></dt><dd><p>Network interface to wait for before deciding if the system is online. This
+        is useful when a system has several interfaces which will be configured, but a particular
+        one is necessary to access some network resources. When used, all other interfaces are ignored.
+        This option may be used more than once to wait for multiple network interfaces. When this
+        option is specified multiple times, then <span class="command"><strong>systemd-networkd-wait-online</strong></span> waits
+        for all specified interfaces to be online. Optionally, required minimum and maximum operational
+        states can be specified after a colon "<code class="literal">:</code>". Please see
+        <a href="networkctl.html#"><span class="citerefentry"><span class="refentrytitle">networkctl</span>(1)</span></a>
+        for possible operational states. If the operational state is not specified here, then
+        the value from <code class="varname">RequiredForOnline=</code> in the corresponding
+        <code class="filename">.network</code> file is used if present, and "<code class="literal">degraded</code>" otherwise.
+        </p><p><a name="v213"></a>Added in version 213.</p></dd><dt id="--ignore=INTERFACE"><span class="term"><code class="option">--ignore=</code><em class="replaceable"><code>INTERFACE</code></em></span><a class="headerlink" title="Permalink to this term" href="#--ignore=INTERFACE">¶</a></dt><dd><p>Network interfaces to be ignored when deciding
+        if the system is online. By default, only the loopback
+        interface is ignored. This option may be used more than once
+        to ignore multiple network interfaces. </p><p><a name="v219"></a>Added in version 219.</p></dd><dt id="-o MIN_OPERSTATE:MAX_OPERSTATE"><span class="term"><code class="option">-o</code> <em class="replaceable"><code>MIN_OPERSTATE</code></em>[<span class="optional">:<em class="replaceable"><code>MAX_OPERSTATE</code></em></span>], </span><span class="term"><code class="option">--operational-state=</code><em class="replaceable"><code>MIN_OPERSTATE</code></em>[<span class="optional">:<em class="replaceable"><code>MAX_OPERSTATE</code></em></span>]</span><a class="headerlink" title="Permalink to this term" href="#-o%20MIN_OPERSTATE:MAX_OPERSTATE">¶</a></dt><dd><p>Takes a minimum operational state and an optional maximum operational state.
+        Please see <a href="networkctl.html#"><span class="citerefentry"><span class="refentrytitle">networkctl</span>(1)</span></a>
+        for possible operational states. If set, the specified value overrides
+        <code class="varname">RequiredForOnline=</code> settings in <code class="filename">.network</code> files.
+        But this does not override operational states specified in <code class="option">--interface=</code> option.
+        </p><p><a name="v242"></a>Added in version 242.</p></dd><dt id="-4"><span class="term"><code class="option">-4</code>, </span><span class="term"><code class="option">--ipv4</code></span><a class="headerlink" title="Permalink to this term" href="#-4">¶</a></dt><dd><p>Waiting for an IPv4 address of each network interface to be configured. If this
+        option is specified with <code class="option">--any</code>, then
+        <span class="command"><strong>systemd-networkd-wait-online</strong></span> exits with success when at least one interface
+        becomes online and has an IPv4 address. If the required minimum operational state is
+        below "<code class="literal">routable</code>", then each link (or at least one link with
+        <code class="option">--any</code>) must have an IPv4 link-local or routable address. If the required
+        minimum operational state is "<code class="literal">routable</code>", then each link must have an IPv4
+        routable address.</p><p>If neither <code class="option">--ipv4</code> nor
+        <code class="option">--ipv6</code> is specified, then the value from
+        <code class="varname">RequiredFamilyForOnline=</code> in the corresponding <code class="filename">.network</code>
+        file is used if present.</p><p><a name="v249"></a>Added in version 249.</p></dd><dt id="-6"><span class="term"><code class="option">-6</code>, </span><span class="term"><code class="option">--ipv6</code></span><a class="headerlink" title="Permalink to this term" href="#-6">¶</a></dt><dd><p>Waiting for an IPv6 address of each network interface to be configured. If this
+        option is specified with <code class="option">--any</code>, then
+        <span class="command"><strong>systemd-networkd-wait-online</strong></span> exits with success when at least one interface
+        becomes online and has an IPv6 address. If the required minimum operational state is
+        below "<code class="literal">routable</code>", then each link (or at least one link with
+        <code class="option">--any</code>) must have an IPv6 link-local or routable address. If the required
+        minimum operational state is "<code class="literal">routable</code>", then each link must have an IPv6
+        routable address.</p><p>If neither <code class="option">--ipv4</code> nor
+        <code class="option">--ipv6</code> is specified, then the value from
+        <code class="varname">RequiredFamilyForOnline=</code> in the corresponding <code class="filename">.network</code>
+        file is used if present.</p><p><a name="v249"></a>Added in version 249.</p></dd><dt id="--any"><span class="term"><code class="option">--any</code></span><a class="headerlink" title="Permalink to this term" href="#--any">¶</a></dt><dd><p>Even if several interfaces are in configuring state,
+        <span class="command"><strong>systemd-networkd-wait-online</strong></span> exits with success when at least one interface
+        becomes online. When this option is specified with <code class="option">--interface=</code>, then
+        <span class="command"><strong>systemd-networkd-wait-online</strong></span> waits for one of the specified interfaces to be
+        online. This option is useful when some interfaces may not have carrier on boot.
+        </p><p><a name="v242"></a>Added in version 242.</p></dd><dt id="--timeout=SECS"><span class="term"><code class="option">--timeout=</code><em class="replaceable"><code>SECS</code></em></span><a class="headerlink" title="Permalink to this term" href="#--timeout=SECS">¶</a></dt><dd><p>Fail the service if the network is not online
+        by the time the timeout elapses. A timeout of 0 disables the
+        timeout. Defaults to 120 seconds. </p><p><a name="v219"></a>Added in version 219.</p></dd><dt id="-q"><span class="term"><code class="option">-q</code>, </span><span class="term"><code class="option">--quiet</code></span><a class="headerlink" title="Permalink to this term" href="#-q">¶</a></dt><dd><p>Suppress log messages.</p><p><a name="v242"></a>Added in version 242.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>,
+      <a href="systemd-networkd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-networkd.service</span>(8)</span></a>,
+      <a href="networkctl.html#"><span class="citerefentry"><span class="refentrytitle">networkctl</span>(1)</span></a>
+    </p></div></div></body></html>

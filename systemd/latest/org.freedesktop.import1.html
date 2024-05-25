@@ -1,0 +1,653 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>org.freedesktop.import1</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="org.freedesktop.import1" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><div class="titlepage" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></div><div class="refnamediv" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><h2 data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">org.freedesktop.import1 — The D-Bus interface of systemd-importd<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">org.freedesktop.import1 — systemd-importd 的 D-Bus 接口</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.4" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><h2 id="Introduction" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Introduction<a class="headerlink" title="Permalink to this headline" href="#Introduction" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">简介 ¶</font></font></font></h2><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">
+    <a href="systemd-importd.service.html#" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">systemd-importd.service</span>(8)</span></a>
+    is a system service which may be used to import, export and download additional system images. These
+    images can be used by tools such as
+    <a href="systemd-nspawn.html#" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">systemd-nspawn</span>(1)</span></a>
+     to run local containers. The service is used as the backend for <span class="command" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><strong data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">machinectl pull-raw</strong></span>,
+     <span class="command" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><strong data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">machinectl pull-tar</strong></span> and related commands. This page describes the D-Bus interface.
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">systemd-importd.service(8) 是一个系统服务，可用于导入、导出和下载额外的系统镜像。这些镜像可以被诸如 systemd-nspawn(1) 等工具使用来运行本地容器。该服务用作 machinectl pull-raw、machinectl pull-tar 和相关命令的后端。本页描述了 D-Bus 接口。</font></font></font></p><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Note that
+    <a href="systemd-importd.service.html#" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">systemd-importd.service</span>(8)</span></a>
+    is mostly a small companion service for
+    <a href="systemd-machined.service.html#" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">systemd-machined.service</span>(8)</span></a>.
+    Many operations to manipulate local container and VM images are hence available via the <span class="command" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><strong data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">systemd-machined</strong></span> D-Bus API, c.f.
+    <a href="org.freedesktop.machine1.html#" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">org.freedesktop.machine1</span>(5)</span></a>.
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，systemd-importd.service(8) 主要是 systemd-machined.service(8) 的一个小伴侣服务。因此，许多操作以操作本地容器和虚拟机镜像可通过 systemd-machined 的 D-Bus API 进行，参见 org.freedesktop.machine1(5)。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.5" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><h2 id="The Manager Object" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The Manager Object<a class="headerlink" title="Permalink to this headline" href="#The%20Manager%20Object" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">管理员对象 ¶</font></font></font></h2><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The service exposes the following interfaces on the Manager object on the bus:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">服务在总线上的管理员对象上公开以下接口：</font></font></font></p><pre class="programlisting">node /org/freedesktop/import1 {
+  interface org.freedesktop.import1.Manager {
+    methods:
+      ImportTar(in  h fd,
+                in  s local_name,
+                in  b force,
+                in  b read_only,
+                out u transfer_id,
+                out o transfer_path);
+      ImportRaw(in  h fd,
+                in  s local_name,
+                in  b force,
+                in  b read_only,
+                out u transfer_id,
+                out o transfer_path);
+      ImportFileSystem(in  h fd,
+                       in  s local_name,
+                       in  b force,
+                       in  b read_only,
+                       out u transfer_id,
+                       out o transfer_path);
+      ExportTar(in  s local_name,
+                in  h fd,
+                in  s format,
+                out u transfer_id,
+                out o transfer_path);
+      ExportRaw(in  s local_name,
+                in  h fd,
+                in  s format,
+                out u transfer_id,
+                out o transfer_path);
+      PullTar(in  s url,
+              in  s local_name,
+              in  s verify_mode,
+              in  b force,
+              out u transfer_id,
+              out o transfer_path);
+      PullRaw(in  s url,
+              in  s local_name,
+              in  s verify_mode,
+              in  b force,
+              out u transfer_id,
+              out o transfer_path);
+      ListTransfers(out a(usssdo) transfers);
+      CancelTransfer(in  u transfer_id);
+    signals:
+      TransferNew(u transfer_id,
+                  o transfer_path);
+      TransferRemoved(u transfer_id,
+                      o transfer_path,
+                      s result);
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="refsect2" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.5.17" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><h3 id="Methods" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">方法 ¶</font></font></font></h3><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportTar()</code> and <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportRaw()</code> import a system image and
+      place it into <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">/var/lib/machines/</code>. The first argument should be a file descriptor
+      (opened for reading) referring to the tar or raw file to import. It should reference a file on disk,
+      a pipe or a socket. When <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportTar()</code> is used the file descriptor should
+      refer to a tar file, optionally compressed with
+      <a href="http://linux.die.net/man/1/gzip" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">gzip</span>(1)</span></a>,
+      <a href="http://linux.die.net/man/1/bzip2" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">bzip2</span>(1)</span></a>,
+      or
+      <a href="http://linux.die.net/man/1/xz" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">xz</span>(1)</span></a>.
+      <span class="command" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><strong data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">systemd-importd</strong></span> will detect the used compression scheme (if any) automatically. When
+      <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportRaw()</code> is used the file descriptor should refer to a raw or qcow2 disk image
+      containing an MBR or GPT disk label, also optionally compressed with gzip, bzip2 or xz. In either case,
+      if the file is specified as a file descriptor on disk, progress information is generated for the import
+      operation (as in that case we know the total size on disk). If a socket or pipe is specified, progress information is not
+      available. The file descriptor argument is followed by a local name for the image. This should be a
+      name suitable as a hostname and will be used to name the imported image below
+      <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">/var/lib/machines/</code>. A tar import is placed as a directory tree or a
+      <a href="https://btrfs.readthedocs.io/en/latest/btrfs.html" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">btrfs</span>(8)</span></a>
+      subvolume below <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">/var/lib/machines/</code> under the specified name with no suffix
+      appended. A raw import is placed as a file in <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">/var/lib/machines/</code> with the
+      <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">.raw</code> suffix appended. If the <code class="option" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">force</code> argument is true, any
+      pre-existing image with the same name is removed before starting the operation. Otherwise, the
+      operation fails if an image with the same name already exists. Finally, the
+      <code class="option" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">read_only</code> argument controls
+      whether to create a writable or read-only image. Both methods return immediately after starting the import,
+      with the import transfer ongoing. They return a pair of transfer identifier and object path, which may
+      be used to retrieve progress information about the transfer or to cancel it. The transfer identifier is a
+      simple numeric identifier, the object path references an
+      <code class="interfacename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">org.freedesktop.import1.Transfer</code> object, see below. Listen for a
+      <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">TransferRemoved</code> signal for the transfer ID in order to detect when a transfer is
+      complete. The returned transfer object is useful to determine the current progress or log output of the
+      ongoing import operation.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportTar()</code> 和 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportRaw()</code> 导入一个系统镜像并将其放置到 <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">/var/lib/machines/</code> 中。第一个参数应该是一个文件描述符（用于读取），指向要导入的 tar 或原始文件。它应该引用磁盘上的文件、管道或套接字。当使用 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportTar()</code> 时，文件描述符应该指向一个 tar 文件，可选择使用 gzip(1)、bzip2(1) 或 xz(1) 进行压缩。systemd-importd 将自动检测所使用的压缩方案（如果有的话）。当使用 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportRaw()</code> 时，文件描述符应该指向一个包含 MBR 或 GPT 磁盘标签的原始或 qcow2 磁盘镜像，也可选择使用 gzip、bzip2 或 xz 进行压缩。在任一情况下，如果文件被指定为磁盘上的文件描述符，则将为导入操作生成进度信息（因为在这种情况下我们知道磁盘上的总大小）。如果指定了套接字或管道，则不提供进度信息。文件描述符参数后面是图像的本地名称。这应该是一个适合作为主机名的名称，并将用于在 <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">/var/lib/machines/</code> 下方命名导入的图像。tar 导入将作为目录树或 btrfs(8) 子卷放置在指定名称下的 <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">/var/lib/machines/</code> 下，不附加后缀。 原始导入文件被放置在 <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">/var/lib/machines/</code> 中，附加 <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">.raw</code> 后缀。如果 <code class="option" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">force</code> 参数为 true，则在开始操作之前删除任何同名的预先存在的图像。否则，如果同名图像已经存在，则操作将失败。最后， <code class="option" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">read_only</code> 参数控制是创建可写图像还是只读图像。这两种方法在开始导入后立即返回，导入传输仍在进行中。它们返回一对传输标识符和对象路径，可用于检索有关传输的进度信息或取消传输。传输标识符是一个简单的数字标识符，对象路径引用一个 <code class="interfacename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">org.freedesktop.import1.Transfer</code> 对象，请参见下文。监听 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">TransferRemoved</code> 信号以获取传输 ID，以便检测传输何时完成。返回的传输对象可用于确定正在进行的导入操作的当前进度或日志输出。</font></font></font></p><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ExportTar()</code> and <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ExportRaw()</code> implement the reverse
+      operation, and may be used to export a system image in order to place it in a tar or raw image. They
+      take the machine name to export as their first parameter, followed by a file descriptor (opened for writing)
+      where the tar or raw file will be written. It may either reference a file on disk or a pipe/socket. The
+      third argument specifies in which compression format to write the image. It takes one of
+      "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">uncompressed</code>", "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">xz</code>", "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">bzip2</code>" or
+      "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">gzip</code>", depending on which compression scheme is required. The image written to the
+      specified file descriptor will be a tar file in case of <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ExportTar()</code> or a raw disk
+      image in case of <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ExportRaw()</code>. Note that currently raw disk images may not be
+      exported as tar files, and vice versa. This restriction might be lifted eventually. The method
+      returns a transfer identifier and object path for cancelling or tracking the export operation, similarly
+      to <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportTar()</code> or <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportRaw()</code> as described above.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ExportTar()</code> 和 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ExportRaw()</code> 实现了相反的操作，可用于导出系统镜像以将其放置在 tar 或原始镜像中。它们将要导出的机器名称作为第一个参数，然后是一个文件描述符（用于写入），tar 或原始文件将被写入其中。它可以引用磁盘上的文件或管道/套接字。第三个参数指定要写入镜像的压缩格式。根据所需的压缩方案，它可以取" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">uncompressed</code> "、" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">xz</code> "、" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">bzip2</code> "或" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">gzip</code> "中的一个。写入到指定文件描述符的镜像将在 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ExportTar()</code> 的情况下是 tar 文件， <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ExportRaw()</code> 的情况下是原始磁盘镜像。请注意，目前原始磁盘镜像可能无法导出为 tar 文件，反之亦然。这种限制可能会最终取消。该方法返回一个传输标识符和对象路径，用于取消或跟踪导出操作，类似于上述描述的 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportTar()</code> 或 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportRaw()</code> 。</font></font></font></p><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">PullTar()</code> and <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">PullRaw()</code> may be used to download, verify
+      and import a system image from a URL. They take a URL argument which should point to a tar or
+      raw file on the "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">http://</code>" or "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">https://</code>" protocols, possibly
+      compressed with xz, bzip2 or gzip. The second argument is a local name for the image. It should be
+      suitable as a hostname, similarly to the matching argument of the <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportTar()</code> and
+      <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportRaw()</code> methods above. The third argument indicates the verification mode for
+      the image. It may be one of "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">no</code>", "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">checksum</code>",
+      "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">signature</code>". "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">no</code>" turns off any kind of verification of the image;
+      "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">checksum</code>" looks for a <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">SHA256SUM</code> file next to the downloaded
+      image and verifies any SHA256 hash value in that file against the image; "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">signature</code>"
+      does the same but also tries to authenticate the <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">SHA256SUM</code> file via
+      <a href="https://man7.org/linux/man-pages/man8/gpg.8.html" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="citerefentry" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><span class="refentrytitle" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">gpg</span>(8)</span></a>
+      first. The last argument indicates whether to replace a possibly pre-existing image with the same local
+      name (if "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">true</code>"), or whether to fail (if "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">false</code>"). Like the import
+      and export calls above, these calls return a pair of transfer identifier and object path for the ongoing
+      download.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">PullTar()</code> 和 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">PullRaw()</code> 可用于从 URL 下载、验证和导入系统镜像。它们接受一个 URL 参数，该参数应指向“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">http://</code> ”或“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">https://</code> ”协议上的一个 tar 或 raw 文件，可能使用 xz、bzip2 或 gzip 进行压缩。第二个参数是镜像的本地名称。它应适合用作主机名，类似于上述 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportTar()</code> 和 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ImportRaw()</code> 方法的匹配参数。第三个参数指示镜像的验证模式。它可以是“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">no</code> ”、“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">checksum</code> ”、“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">signature</code> ”中的一个。" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">no</code> " 关闭对镜像的任何验证；" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">checksum</code> " 在下载的镜像旁边查找一个 <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">SHA256SUM</code> 文件，并将该文件中的任何 SHA256 哈希值与镜像进行验证；" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">signature</code> " 执行相同操作，但还尝试首先通过 gpg(8) 对 <code class="filename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">SHA256SUM</code> 文件进行身份验证。最后一个参数指示是否用同一本地名称替换可能已存在的镜像（如果是“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">true</code> ”），或者是否失败（如果是“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">false</code> ”）。与上述导入和导出调用一样，这些调用返回正在进行下载的传输标识符和对象路径的一对。</font></font></font></p><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ListTransfers()</code> returns a list of ongoing import, export or download
+      operations as created with the six calls described above. It returns an array of structures which
+      consist of the numeric transfer identifier, a string indicating the operation (one of
+      "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">import-tar</code>", "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">import-raw</code>", "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">export-tar</code>",
+      "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">export-raw</code>", "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">pull-tar</code>" or "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">pull-raw</code>"), a string
+      describing the remote file (in case of download operations this is the source URL, in case of
+      import/export operations this is a short string describing the file descriptor passed in), a string
+      with the local machine image name, a progress value between 0.0 (for 0%) and 1.0 (for 100%), as well as
+      the transfer object path.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ListTransfers()</code> 返回一个正在进行的导入、导出或下载操作列表，这些操作是使用上述六个调用创建的。它返回一个结构数组，其中包含数字传输标识符、指示操作的字符串（其中之一为 " <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">import-tar</code> "、" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">import-raw</code> "、" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">export-tar</code> "、" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">export-raw</code> "、" <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">pull-tar</code> " 或 " <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">pull-raw</code> "）、描述远程文件的字符串（在下载操作中，这是源 URL，在导入/导出操作中，这是描述传递的文件描述符的简短字符串）、本地机器镜像名称的字符串、介于 0.0（表示 0%）和 1.0（表示 100%）之间的进度值，以及传输对象路径。</font></font></font></p><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">CancelTransfer()</code> may be used to cancel an ongoing import, export or download
+      operation. Simply specify the transfer identifier to cancel the ongoing operation.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">CancelTransfer()</code> 可用于取消正在进行的导入、导出或下载操作。只需指定要取消的传输标识符即可取消正在进行的操作。</font></font></font></p></div><div class="refsect2" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.5.18" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><h3 id="Signals" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Signals<a class="headerlink" title="Permalink to this headline" href="#Signals" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">信号 ¶</font></font></font></h3><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">TransferNew</code> signal is generated each time a new transfer is started with
+      the import, export or download calls described above. It carries the transfer ID and object path that
+      have just been created.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">每次使用上述导入、导出或下载调用启动新传输时，都会生成 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">TransferNew</code> 信号。它携带刚刚创建的传输 ID 和对象路径。</font></font></font></p><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">TransferRemoved</code> signal is sent each time a transfer finishes,
+      is canceled or fails. It also carries the transfer ID and object path, followed by a string indicating
+      the result of the operation, which is one of "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">done</code>" (on success),
+      "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">canceled</code>" or "<code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">failed</code>".<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">每当传输完成、被取消或失败时，都会发送 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">TransferRemoved</code> 信号。它还携带传输 ID 和对象路径，然后是一个字符串，指示操作的结果之一是“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">done</code> ”（成功时）、“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">canceled</code> ”或“ <code class="literal" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">failed</code> ”。</font></font></font></p></div></div><div class="refsect1" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.6" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><h2 id="The Transfer Object" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The Transfer Object<a class="headerlink" title="Permalink to this headline" href="#The%20Transfer%20Object" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">传输对象 ¶</font></font></font></h2><pre class="programlisting">node /org/freedesktop/import1/transfer/_1 {
+  interface org.freedesktop.import1.Transfer {
+    methods:
+      Cancel();
+    signals:
+      LogMessage(u priority,
+                 s line);
+    properties:
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly u Id = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s Local = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s Remote = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s Type = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s Verify = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly d Progress = ...;
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><dl class="variablelist" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></dl></div><div class="refsect2" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.6.13" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><h3 id="Methods1" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods1" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">方法 ¶</font></font></font></h3><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Cancel()</code> method may be used to cancel the transfer. It takes no
+      parameters. This method is pretty much equivalent to the <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">CancelTransfer()</code> method
+      on the <span class="structname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Manager</span> interface (see above), but is exposed on the
+      <span class="structname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Transfer</span> object itself instead of taking a transfer ID.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Cancel()</code> 方法可用于取消传输。它不需要参数。该方法与 Manager 接口上的 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">CancelTransfer()</code> 方法几乎等效（请参见上文），但是它是在传输对象本身上公开的，而不是需要传输 ID。</font></font></font></p></div><div class="refsect2" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.6.14" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><h3 id="Properties" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Properties<a class="headerlink" title="Permalink to this headline" href="#Properties" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">属性</font></font></font></h3><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Id</code> property exposes the numeric transfer ID of the transfer object.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Id</code> 属性公开传输对象的数字传输 ID。</font></font></font></p><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Local</code>, <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Remote</code> and <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Type</code> properties
+      expose the local container name of this transfer, the remote source (in case of download: the URL, in
+      case of import/export: a string describing the file descriptor passed in), and the type of operation
+      (see the Manager's <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ListTransfer()</code> method above for an explanation of the possible
+      values).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Local</code> ， <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Remote</code> 和 <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Type</code> 属性公开了此传输的本地容器名称，远程源（在下载的情况下：URL，在导入/导出的情况下：描述传递的文件描述符的字符串），以及操作类型（请参见上面的 Manager 的 <code class="function" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">ListTransfer()</code> 方法，了解可能的值的解释）。</font></font></font></p><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Verify</code> property exposes the selected verification setting and is only
+      defined for download operations (see above).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Verify</code> 属性公开了所选的验证设置，仅对下载操作定义（见上文）。</font></font></font></p><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">The <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Progress</code> property exposes the current progress of the transfer as a value
+      between 0.0 and 1.0. To show a progress bar on screen we recommend to query this value in regular
+      intervals, for example every 500&nbsp;ms or so.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">Progress</code> 属性公开了传输的当前进度，值介于 0.0 和 1.0 之间。为了在屏幕上显示进度条，我们建议定期查询此值，例如每 500 毫秒一次。</font></font></font></p></div></div><div class="refsect1" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.7" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><h2 id="Examples" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 ¶</font></font></font></h2><div class="example" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.7.2" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><p class="title" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><b data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Example&nbsp;1.&nbsp;Introspect <code class="interfacename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">org.freedesktop.import1.Manager</code> on the bus<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 1. 在公交车上审视 <code class="interfacename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">org.freedesktop.import1.Manager</code> </font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><pre class="programlisting">$ gdbus introspect --system \
+  --dest org.freedesktop.import1 \
+  --object-path /org/freedesktop/import1
+      </pre></div></div><br class="example-break" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><div class="example" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="id-1.7.3" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><p class="title" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><b data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Example&nbsp;2.&nbsp;Introspect <code class="interfacename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">org.freedesktop.import1.Transfer</code> on the bus<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 2. 在公交车上审视 <code class="interfacename" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">org.freedesktop.import1.Transfer</code> </font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><pre class="programlisting">$ gdbus introspect --system \
+  --dest org.freedesktop.import1 \
+  --object-path /org/freedesktop/import1/transfer/_1
+      </pre></div></div><br class="example-break" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></div><div class="refsect1" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"><a name="versioning" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818"></a><h2 id="Versioning" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">Versioning<a class="headerlink" title="Permalink to this headline" href="#Versioning" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版本控制 ¶</font></font></font></h2><p data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818" data-immersive-translate-paragraph="1">These D-Bus interfaces follow <a class="ulink" href="https://0pointer.de/blog/projects/versioning-dbus.html" target="_top" data-immersive-translate-walked="ca30af48-3c14-4ced-affa-4701e633b818">
+    the usual interface versioning guidelines</a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些 D-Bus 接口遵循通常的接口版本控制指南。</font></font></font></p></div></div>
+</body></html>

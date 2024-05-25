@@ -1,0 +1,31 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-time-wait-sync.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-time-wait-sync.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-time-wait-sync.service, systemd-time-wait-sync — Wait until kernel time is synchronized</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-time-wait-sync.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-time-wait-sync</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">systemd-time-wait-sync</code> is a system service that delays the start of units that
+    are ordered after <code class="filename">time-sync.target</code> (see
+    <a href="systemd.special.html#"><span class="citerefentry"><span class="refentrytitle">systemd.special</span>(7)</span></a> for
+    details) until the system time has been synchronized with an accurate remote reference time source by
+    <code class="filename">systemd-timesyncd.service</code>.</p><p><code class="filename">systemd-timesyncd.service</code> notifies <code class="filename">systemd-time-wait-sync</code>
+    about successful synchronization.  <code class="filename">systemd-time-wait-sync</code> also tries to detect when
+    the kernel marks the system clock as synchronized, but this detection is not reliable and is intended
+    only as a fallback for compatibility with alternative NTP services that can be used to synchronize time
+    (e.g., ntpd, chronyd).</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Files">Files<a class="headerlink" title="Permalink to this headline" href="#Files">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="/run/systemd/timesync/synchronized"><span class="term"><code class="filename">/run/systemd/timesync/synchronized</code></span><a class="headerlink" title="Permalink to this term" href="#/run/systemd/timesync/synchronized">¶</a></dt><dd><p>The presence of this file indicates to this service that the system clock has been synchronized.</p><p><a name="v239"></a>Added in version 239.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd.special.html#"><span class="citerefentry"><span class="refentrytitle">systemd.special</span>(7)</span></a>,
+      <a href="systemd-timesyncd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-timesyncd.service</span>(8)</span></a>,
+    </p></div></div></body></html>

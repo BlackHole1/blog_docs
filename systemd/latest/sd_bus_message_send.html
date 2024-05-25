@@ -1,0 +1,66 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_send</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_send"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_send, sd_bus_send_to, sd_bus_message_send — Queue a D-Bus message for transfer</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_send</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>sd_bus_message *<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>uint64_t *<var class="pdparam">cookie</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_send_to</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>sd_bus_message *<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">destination</var>, </td></tr><tr><td> </td><td>uint64_t *<var class="pdparam">cookie</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int sd_bus_message_send(</code></td><td>sd_bus_message *<var class="pdparam">m</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_bus_send()</code> queues the bus message object <em class="parameter"><code>m</code></em> for
+    transfer. If <em class="parameter"><code>bus</code></em> is <code class="constant">NULL</code>, the bus that
+    <em class="parameter"><code>m</code></em> is attached to is used. <em class="parameter"><code>bus</code></em> only needs to be set when the
+    message is sent to a different bus than the one it's attached to, for example when forwarding messages.
+    If the output parameter <em class="parameter"><code>cookie</code></em> is not <code class="constant">NULL</code>, it is set to the
+    message identifier. This value can later be used to match incoming replies to their corresponding
+    messages. If <em class="parameter"><code>cookie</code></em> is set to <code class="constant">NULL</code> and the message is not
+    sealed, <code class="function">sd_bus_send()</code> assumes the message <em class="parameter"><code>m</code></em> doesn't expect a
+    reply and adds the necessary headers to indicate this.</p><p>Note that in most scenarios, <code class="function">sd_bus_send()</code> should not be called
+    directly. Instead, use higher level functions such as
+    <a href="sd_bus_call_method.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_call_method</span>(3)</span></a> and
+    <a href="sd_bus_reply_method_return.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_reply_method_return</span>(3)</span></a>
+    which call <code class="function">sd_bus_send()</code> internally.</p><p><code class="function">sd_bus_send_to()</code> is a shorthand for sending a message to a specific
+    destination. It's main use case is to simplify sending unicast signal messages (signals that only have a
+    single receiver). It's behavior is similar to calling
+    <a href="sd_bus_message_set_destination.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_set_destination</span>(3)</span></a>
+    followed by calling <code class="function">sd_bus_send()</code>.</p><p><code class="function">sd_bus_send()</code>/<code class="function">sd_bus_send_to()</code> will write the message
+    directly to the underlying transport (e.g. kernel socket buffer) if possible. If the connection is not
+    set up fully yet the message is queued locally. If the transport buffers are congested any unwritten
+    message data is queued locally, too. If the connection has been closed or is currently being closed the
+    call fails.
+    <a href="sd_bus_process.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_process</span>(3)</span></a> should
+    be invoked to write out any queued message data to the transport.</p><p><code class="function">sd_bus_message_send()</code> is the same as <code class="function">sd_bus_send()</code> but
+    without the first and last argument. <code class="function">sd_bus_message_send(m)</code> is equivalent to
+    <code class="function">sd_bus_send(sd_bus_message_get_bus(m), m, NULL)</code>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these functions return a non-negative integer. On failure, they return a negative
+    errno-style error code.</p><div class="refsect2"><a name="errors"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>The input parameter <em class="parameter"><code>m</code></em> is <code class="constant">NULL</code>.
+          </p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-EOPNOTSUPP"><span class="term"><code class="constant">-EOPNOTSUPP</code></span><a class="headerlink" title="Permalink to this term" href="#-EOPNOTSUPP">¶</a></dt><dd><p>The bus connection does not support sending file descriptors.
+          </p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ECHILD"><span class="term"><code class="constant">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD">¶</a></dt><dd><p>The bus connection was allocated in a parent process and is being reused in a child
+          process after <code class="function">fork()</code>.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ENOBUFS"><span class="term"><code class="constant">-ENOBUFS</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOBUFS">¶</a></dt><dd><p>The bus connection's write queue is full.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ENOTCONN"><span class="term"><code class="constant">-ENOTCONN</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOTCONN">¶</a></dt><dd><p>The input parameter <em class="parameter"><code>bus</code></em> is
+          <code class="constant">NULL</code> or the bus is not connected.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ECONNRESET"><span class="term"><code class="constant">-ECONNRESET</code></span><a class="headerlink" title="Permalink to this term" href="#-ECONNRESET">¶</a></dt><dd><p>The bus connection was closed while waiting for the response.
+          </p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Memory allocation failed.</p><p><a name="v246"></a>Added in version 246.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_send()</code> and
+    <code class="function">sd_bus_send_to()</code> were added in version 246.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_call_method.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_call_method</span>(3)</span></a>,
+      <a href="sd_bus_message_set_destination.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_set_destination</span>(3)</span></a>,
+      <a href="sd_bus_reply_method_return.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_reply_method_return</span>(3)</span></a>,
+      <a href="sd_bus_process.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_process</span>(3)</span></a>
+    </p></div></div></body></html>

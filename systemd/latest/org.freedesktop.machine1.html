@@ -1,0 +1,793 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>org.freedesktop.machine1</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="org.freedesktop.machine1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><div class="titlepage" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></div><div class="refnamediv" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><h2 data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">org.freedesktop.machine1 — The D-Bus interface of systemd-machined<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">org.freedesktop.machine1 — systemd-machined 的 D-Bus 接口</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.4" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h2 id="Introduction" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Introduction<a class="headerlink" title="Permalink to this headline" href="#Introduction" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">简介 ¶</font></font></font></h2><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">
+    <a href="systemd-machined.service.html#" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="citerefentry" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="refentrytitle" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">systemd-machined.service</span>(8)</span></a>
+    is a system service that keeps track of locally running virtual machines and containers.
+    This page describes the D-Bus interface.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">systemd-machined.service(8) 是一个系统服务，用于跟踪本地运行的虚拟机和容器。本页描述了 D-Bus 接口。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.5" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h2 id="The Manager Object" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">The Manager Object<a class="headerlink" title="Permalink to this headline" href="#The%20Manager%20Object" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">管理员对象 ¶</font></font></font></h2><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">The service exposes the following interfaces on the Manager object on the bus:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">服务在总线上的管理员对象上公开以下接口：</font></font></font></p><pre class="programlisting">node /org/freedesktop/machine1 {
+  interface org.freedesktop.machine1.Manager {
+    methods:
+      GetMachine(in  s name,
+                 out o machine);
+      GetImage(in  s name,
+               out o image);
+      GetMachineByPID(in  u pid,
+                      out o machine);
+      ListMachines(out a(ssso) machines);
+      ListImages(out a(ssbttto) images);
+      @org.freedesktop.systemd1.Privileged("true")
+      CreateMachine(in  s name,
+                    in  ay id,
+                    in  s service,
+                    in  s class,
+                    in  u leader,
+                    in  s root_directory,
+                    in  a(sv) scope_properties,
+                    out o path);
+      @org.freedesktop.systemd1.Privileged("true")
+      CreateMachineWithNetwork(in  s name,
+                               in  ay id,
+                               in  s service,
+                               in  s class,
+                               in  u leader,
+                               in  s root_directory,
+                               in  ai ifindices,
+                               in  a(sv) scope_properties,
+                               out o path);
+      @org.freedesktop.systemd1.Privileged("true")
+      RegisterMachine(in  s name,
+                      in  ay id,
+                      in  s service,
+                      in  s class,
+                      in  u leader,
+                      in  s root_directory,
+                      out o path);
+      @org.freedesktop.systemd1.Privileged("true")
+      RegisterMachineWithNetwork(in  s name,
+                                 in  ay id,
+                                 in  s service,
+                                 in  s class,
+                                 in  u leader,
+                                 in  s root_directory,
+                                 in  ai ifindices,
+                                 out o path);
+      UnregisterMachine(in  s name);
+      TerminateMachine(in  s id);
+      KillMachine(in  s name,
+                  in  s who,
+                  in  i signal);
+      GetMachineAddresses(in  s name,
+                          out a(iay) addresses);
+      GetMachineOSRelease(in  s name,
+                          out a{ss} fields);
+      @org.freedesktop.systemd1.Privileged("true")
+      OpenMachinePTY(in  s name,
+                     out h pty,
+                     out s pty_path);
+      OpenMachineLogin(in  s name,
+                       out h pty,
+                       out s pty_path);
+      OpenMachineShell(in  s name,
+                       in  s user,
+                       in  s path,
+                       in  as args,
+                       in  as environment,
+                       out h pty,
+                       out s pty_path);
+      BindMountMachine(in  s name,
+                       in  s source,
+                       in  s destination,
+                       in  b read_only,
+                       in  b mkdir);
+      CopyFromMachine(in  s name,
+                      in  s source,
+                      in  s destination);
+      CopyToMachine(in  s name,
+                    in  s source,
+                    in  s destination);
+      CopyFromMachineWithFlags(in  s name,
+                               in  s source,
+                               in  s destination,
+                               in  t flags);
+      CopyToMachineWithFlags(in  s name,
+                             in  s source,
+                             in  s destination,
+                             in  t flags);
+      OpenMachineRootDirectory(in  s name,
+                               out h fd);
+      GetMachineUIDShift(in  s name,
+                         out u shift);
+      RemoveImage(in  s name);
+      RenameImage(in  s name,
+                  in  s new_name);
+      CloneImage(in  s name,
+                 in  s new_name,
+                 in  b read_only);
+      MarkImageReadOnly(in  s name,
+                        in  b read_only);
+      GetImageHostname(in  s name,
+                       out s hostname);
+      GetImageMachineID(in  s name,
+                        out ay id);
+      GetImageMachineInfo(in  s name,
+                          out a{ss} machine_info);
+      GetImageOSRelease(in  s name,
+                        out a{ss} os_release);
+      SetPoolLimit(in  t size);
+      SetImageLimit(in  s name,
+                    in  t size);
+      CleanPool(in  s mode,
+                out a(st) images);
+      MapFromMachineUser(in  s name,
+                         in  u uid_inner,
+                         out u uid_outer);
+      MapToMachineUser(in  u uid_outer,
+                       out s machine_name,
+                       out o machine_path,
+                       out u uid_inner);
+      MapFromMachineGroup(in  s name,
+                          in  u gid_inner,
+                          out u gid_outer);
+      MapToMachineGroup(in  u gid_outer,
+                        out s machine_name,
+                        out o machine_path,
+                        out u gid_inner);
+    signals:
+      MachineNew(s machine,
+                 o path);
+      MachineRemoved(s machine,
+                     o path);
+    properties:
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s PoolPath = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t PoolUsage = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t PoolLimit = ...;
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="refsect2" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.5.50" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h3 id="Methods" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">方法 ¶</font></font></font></h3><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachine()</code> may be used to get the machine object path for the machine with
+      the specified name. Similarly, <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineByPID()</code> gets the machine object the
+      specified PID belongs to if there is any.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachine()</code> 可用于获取具有指定名称的机器的机器对象路径。类似地，如果有的话， <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineByPID()</code> 获取指定 PID 所属的机器对象。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetImage()</code> may be used to get the image object path of the image with the
+      specified name.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetImage()</code> 可用于获取指定名称的图像的图像对象路径。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">ListMachines()</code> returns an array of all currently registered machines. The
+      structures in the array consist of the following fields: machine name, machine class, an identifier for
+      the service that registered the machine and the machine object path.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">ListMachines()</code> 返回当前注册的所有机器的数组。数组中的结构包括以下字段：机器名称、机器类、注册机器的服务标识符和机器对象路径。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">ListImages()</code> returns an array of all currently known images. The
+      structures in the array consist of the following fields: image name, type, read-only flag, creation
+      time, modification time, current disk space, and image object path.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">ListImages()</code> 返回当前已知图像的数组。数组中的结构包括以下字段：图像名称、类型、只读标志、创建时间、修改时间、当前磁盘空间和图像对象路径。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code> may be used to register a new virtual machine or container
+      with <span class="command" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><strong data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">systemd-machined</strong></span>, creating a scope unit for it. It accepts the following arguments: a
+      machine name chosen by the registrar, an optional UUID as a 32 byte array, a string that identifies the
+      service that registers the machine, a class string, the PID of the leader process of the machine, an
+      optional root directory of the container, and an array of additional properties to use for the scope
+      registration. The virtual machine name must be suitable as a hostname, and hence should follow the usual
+      DNS hostname rules, as well as the Linux hostname restrictions. Specifically, only 7 bit ASCII is
+      permitted, a maximum length of 64 characters is enforced, only characters from the set
+      "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">a-zA-Z0-9-_.</code>" are allowed, the name may not begin with a dot, and it may not contain
+      two dots immediately following each other. Container and VM managers should ideally use the hostname
+      used internally in the machine for this parameter. This recommendation is made in order to make the
+      machine name naturally resolvable using
+      <a href="nss-mymachines.html#" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="citerefentry" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="refentrytitle" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">nss-mymachines</span>(8)</span></a>. If
+      a container manager needs to embed characters outside of the indicated range, escaping is required,
+      possibly using "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">_</code>" as the escape character. Another (somewhat natural) option would be
+      to utilize Internet IDNA encoding. The UUID is passed as a 32 byte array or, if no suitable UUID is
+      available, an empty array (zero length) or zeroed out array shall be passed. The UUID should identify
+      the virtual machine/container uniquely and should ideally be the same UUID that
+      <code class="filename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">/etc/machine-id</code> in the VM/container is initialized from. The service string can be
+      free-form, but it is recommended to pass a short lowercase identifier like
+      "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">systemd-nspawn</code>", "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">libvirt-lxc</code>" or similar. The class string should
+      be either "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">container</code>" or "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">vm</code>" indicating whether the machine to
+      register is of the respective class. The leader PID should be the host PID of the init process of the
+      container or the encapsulating process of the VM. If the root directory of the container is known and
+      available in the host's hierarchy, it should be passed. Otherwise, pass the empty string instead. Finally, the
+      scope properties are passed as array in the same way as to PID1's
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">StartTransientUnit()</code> method. Calling this method will internally register a transient scope
+      unit for the calling client (utilizing the passed scope_properties) and move the leader PID into
+      it. The method returns an object path for the registered machine object that implements the
+      <code class="interfacename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">org.freedesktop.machine1.Machine</code> interface (see below). Also see the
+      <a class="ulink" href="https://www.freedesktop.org/wiki/Software/systemd/ControlGroupInterface" target="_top" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">New Control Group
+      Interfaces</a> for details about scope units and how to alter resource control settings on the
+      created machine at runtime.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code> 可用于使用 systemd-machined 注册新的虚拟机或容器，为其创建一个作用域单元。它接受以下参数：由注册者选择的机器名称、可选的 UUID 作为 32 字节数组、标识注册机器的服务的字符串、类字符串、机器的领导进程的 PID、容器的可选根目录，以及用于作用域注册的附加属性数组。虚拟机名称必须适合作为主机名，因此应遵循通常的 DNS 主机名规则，以及 Linux 主机名限制。具体来说，只允许 7 位 ASCII，强制执行最大长度为 64 个字符，只允许来自集合 " <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">a-zA-Z0-9-_.</code> " 的字符，名称不得以点开头，也不得包含两个紧随其后的点。容器和虚拟机管理器应理想地使用机器内部使用的主机名作为此参数。建议这样做是为了使机器名称可以自然地通过 nss-mymachines(8) 解析。 如果容器管理器需要嵌入指定范围之外的字符，则需要进行转义，可能使用“ <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">_</code> ”作为转义字符。另一个（相对自然的）选项是利用互联网 IDNA 编码。UUID 作为 32 字节数组传递，如果没有合适的 UUID 可用，则传递一个空数组（长度为零）或清零数组。UUID 应该唯一标识虚拟机/容器，并且最好是 VM/容器中初始化的 <code class="filename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">/etc/machine-id</code> 相同的 UUID。服务字符串可以是自由格式的，但建议传递一个短小写标识符，如“ <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">systemd-nspawn</code> ”、“ <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">libvirt-lxc</code> ”或类似的。类字符串应该是“ <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">container</code> ”或“ <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">vm</code> ”，表示要注册的机器属于相应的类。领导 PID 应该是容器的 init 进程的主机 PID 或 VM 的封装进程。如果容器的根目录已知并在主机的层次结构中可用，则应传递。否则，传递空字符串。最后，作用域属性与 PID1 的 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">StartTransientUnit()</code> 方法相同地作为数组传递。 调用此方法将在内部为调用客户端注册一个瞬态作用域单元（利用传递的 scope_properties）并将领导 PID 移入其中。该方法返回一个实现 <code class="interfacename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">org.freedesktop.machine1.Machine</code> 接口的已注册机器对象的对象路径（请参见下文）。还请参阅有关作用域单元的新控制组接口，以了解有关在运行时更改创建的机器上的资源控制设置的详细信息。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RegisterMachine()</code> is similar to <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code>.
+      However, it only registers a machine and does not create a scope unit for it. Instead, the caller's unit is
+      registered. We recommend to only use this method for container or VM managers that are run
+      multiple times, one instance for each container/VM they manage, and are invoked as system
+      services.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RegisterMachine()</code> 类似于 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code> 。但是，它仅注册一个机器，而不为其创建作用域单元。相反，调用者的单元被注册。我们建议仅将此方法用于多次运行的容器或 VM 管理器，每个容器/VM 管理器运行一个实例，并作为系统服务调用。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachineWithNetwork()</code> and
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RegisterMachineWithNetwork()</code> are similar to <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code>
+      and <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RegisterMachine()</code> but take an extra argument: an array of network interface
+      indices that point towards the virtual machine or container. The interface indices should reference one
+      or more network interfaces on the host that can be used to communicate with the guest. Commonly, the
+      passed interface index refers to the host side of a "veth" link (in case of containers), a
+      "tun"/"tap" link (in case of VMs), or the host side of a bridge interface that bridges access to the
+      VM/container interfaces. Specifying this information is useful to enable support for link-local IPv6
+      communication to the machines since the scope field of sockaddr_in6 can be initialized by the
+      specified ifindex.
+      <a href="nss-mymachines.html#" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="citerefentry" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="refentrytitle" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">nss-mymachines</span>(8)</span></a>
+      makes use of this information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachineWithNetwork()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RegisterMachineWithNetwork()</code> 类似于 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RegisterMachine()</code> ，但需要额外的参数：指向虚拟机或容器的网络接口索引数组。接口索引应该引用主机上可用于与客户端通信的一个或多个网络接口。通常，传递的接口索引指的是“veth”链路的主机端（对于容器）、“tun”/“tap”链路（对于虚拟机）或桥接接口的主机端，该桥接接口桥接到 VM/container 接口。指定这些信息对于启用对机器的链路本地 IPv6 通信支持很有用，因为 sockaddr_in6 的范围字段可以通过指定的 ifindex 初始化。nss-mymachines(8) 利用这些信息。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">KillMachine()</code> sends a UNIX signal to the machine's processes. As its arguments, it takes a
+      machine name (as originally passed to <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code> or returned by
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">ListMachines()</code>), an identifier that specifies what precisely to send the signal to (either
+      "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">leader</code>" or "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">all</code>"), and a numeric UNIX signal integer.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">KillMachine()</code> 向机器的进程发送 UNIX 信号。作为参数，它接受一个机器名称（最初传递给 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code> 或由 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">ListMachines()</code> 返回的名称）、一个指定要向其发送信号的内容的标识符（要么是“ <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">leader</code> ”，要么是“ <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">all</code> ”）和一个数字 UNIX 信号整数。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">TerminateMachine()</code> terminates a virtual machine, killing its processes. It
+      takes a machine name as its only argument.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">TerminateMachine()</code> 终止虚拟机，终止其进程。它只接受一个机器名称作为参数。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineAddresses()</code> retrieves the IP addresses of a container. This method
+      returns an array of pairs consisting of an address family specifier (<code class="constant" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">AF_INET</code> or
+      <code class="constant" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">AF_INET6</code>) and a byte array containing the addresses. This is only supported for
+      containers that make use of network namespacing.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineAddresses()</code> 检索容器的 IP 地址。此方法返回一个数组，其中包含一个地址族说明符（ <code class="constant" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">AF_INET</code> 或 <code class="constant" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">AF_INET6</code> ）和包含地址的字节数组。仅支持使用网络命名空间的容器。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineOSRelease()</code> retrieves the OS release information of a
+      container. This method returns an array of key value pairs read from the
+      <a href="os-release.html#" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="citerefentry" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="refentrytitle" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">os-release</span>(5)</span></a> file in
+      the container and is useful to identify the operating system used in a container.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineOSRelease()</code> 检索容器的操作系统发布信息。此方法返回从容器中的 os-release(5) 文件中读取的键值对数组，有助于识别容器中使用的操作系统。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">OpenMachinePTY()</code> allocates a pseudo TTY in the container and returns a file
+      descriptor and its path. This is equivalent to transitioning into the container and invoking
+      <a href="https://man7.org/linux/man-pages/man3/posix_openpt.3.html" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="citerefentry" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><span class="refentrytitle" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">posix_openpt</span>(3)</span></a>.
+      <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">OpenMachinePTY()</code> 在容器中分配一个伪 TTY，并返回文件描述符及其路径。这相当于进入容器并调用 posix_openpt(3)。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">OpenMachineLogin()</code> allocates a pseudo TTY in the container and ensures that
+      a getty login prompt of the container is running on the other end. It returns the file descriptor of
+      the PTY and the PTY path. This is useful for acquiring a pty with a login prompt from the
+      container.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">OpenMachineLogin()</code> 在容器中分配一个伪 TTY，并确保容器的 getty 登录提示在另一端运行。它返回 PTY 的文件描述符和 PTY 路径。这对于从容器获取带有登录提示的 pty 很有用。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">OpenMachineShell()</code> allocates a pseudo TTY in the container, as the specified
+      user, and invokes the executable at the specified path with a list of arguments (starting from
+      argv[0]) and an environment block. It then returns the file descriptor of the PTY and the PTY
+      path.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">OpenMachineShell()</code> 以指定的用户在容器中分配一个伪 TTY，并使用指定路径的可执行文件以及参数列表（从 argv[0]开始）和环境块来调用它。然后返回 PTY 的文件描述符和 PTY 路径。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">BindMountMachine()</code> bind mounts a file or directory from the host into the
+      container. Its arguments consist of a machine name, the source directory on the host, the destination directory in the
+      container, and two booleans, one indicating whether the bind mount shall be
+      read-only, the other indicating whether the destination mount point shall be created first, if it is
+      missing.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">BindMountMachine()</code> 将主机中的文件或目录绑定到容器中。它的参数包括机器名称、主机上的源目录、容器中的目标目录以及两个布尔值，一个指示绑定挂载是否为只读，另一个指示目标挂载点是否应首先创建（如果缺少）。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyFromMachine()</code> copies files or directories from a container into the
+      host. It takes a container name, a source directory in the container and a destination directory on the
+      host as arguments.
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyToMachine()</code> does the opposite and copies files from a source
+      directory on the host into a destination directory in the container.
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyFromMachineWithFlags()</code> and <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyToMachineWithFlags</code> do the same but take an additional flags argument.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyFromMachine()</code> 将文件或目录从容器复制到主机。它接受容器名称、容器中的源目录和主机上的目标目录作为参数。 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyToMachine()</code> 则相反，将文件从主机上的源目录复制到容器中的目标目录。 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyFromMachineWithFlags()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyToMachineWithFlags</code> 也是如此，但需要额外的标志参数。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RemoveImage()</code> removes the image with the specified name.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RemoveImage()</code> 删除指定名称的镜像。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RenameImage()</code> renames the specified image.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RenameImage()</code> 重命名指定的镜像。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CloneImage()</code> clones the specified image under a new name. It also takes a
+      boolean argument indicating whether the resulting image shall be read-only or not.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CloneImage()</code> 克隆指定的图像并使用新名称。它还接受一个布尔参数，指示生成的图像是否应为只读。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MarkImageReadOnly()</code> toggles the read-only flag of an image.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MarkImageReadOnly()</code> 切换图像的只读标志。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">SetPoolLimit()</code> sets an overall quota limit on the pool of images.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">SetPoolLimit()</code> 在图像池上设置总配额限制。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">SetImageLimit()</code> sets a per-image quota limit.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">SetImageLimit()</code> 设置每个图像的配额限制。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MapFromMachineUser()</code>, <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MapToMachineUser()</code>,
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MapFromMachineGroup()</code>, and <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MapToMachineGroup()</code> may be used to map
+      UIDs/GIDs from the host user namespace to a container user namespace or vice versa.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MapFromMachineUser()</code> ， <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MapToMachineUser()</code> ， <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MapFromMachineGroup()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MapToMachineGroup()</code> 可用于将主机用户命名空间中的 UID/GID 映射到容器用户命名空间，反之亦然。</font></font></font></p></div><div class="refsect2" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.5.51" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h3 id="Signals" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Signals<a class="headerlink" title="Permalink to this headline" href="#Signals" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">信号 ¶</font></font></font></h3><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MachineNew</code> and <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MachineRemoved</code> are sent whenever a new
+      machine is registered or removed. These signals carry the machine name and the object path to the corresponding
+      <code class="interfacename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">org.freedesktop.machine1.Machine</code> interface (see below).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">每当注册或移除新机器时，都会发送 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MachineNew</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">MachineRemoved</code> 。 这些信号携带机器名称和相应 <code class="interfacename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">org.freedesktop.machine1.Machine</code> 接口的对象路径（见下文）。</font></font></font></p></div><div class="refsect2" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.5.52" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h3 id="Properties" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Properties<a class="headerlink" title="Permalink to this headline" href="#Properties" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">属性</font></font></font></h3><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">PoolPath</code> specifies the file system path where images are written to.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">PoolPath</code> 指定图像写入的文件系统路径。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">PoolUsage</code> specifies the current usage size of the image pool in bytes.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">PoolUsage</code> 指定图像池的当前使用大小（以字节为单位）。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">PoolLimit</code> specifies the size limit of the image pool in bytes.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">PoolLimit</code> 指定图像池的大小限制（以字节为单位）。</font></font></font></p></div></div><div class="refsect1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.6" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h2 id="Machine Objects" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Machine Objects<a class="headerlink" title="Permalink to this headline" href="#Machine%20Objects" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">机器对象 ¶</font></font></font></h2><pre class="programlisting">node /org/freedesktop/machine1/machine/rawhide {
+  interface org.freedesktop.machine1.Machine {
+    methods:
+      Terminate();
+      Kill(in  s who,
+           in  i signal);
+      GetAddresses(out a(iay) addresses);
+      GetOSRelease(out a{ss} fields);
+      GetUIDShift(out u shift);
+      OpenPTY(out h pty,
+              out s pty_path);
+      OpenLogin(out h pty,
+                out s pty_path);
+      OpenShell(in  s user,
+                in  s path,
+                in  as args,
+                in  as environment,
+                out h pty,
+                out s pty_path);
+      BindMount(in  s source,
+                in  s destination,
+                in  b read_only,
+                in  b mkdir);
+      CopyFrom(in  s source,
+               in  s destination);
+      CopyTo(in  s source,
+             in  s destination);
+      CopyFromWithFlags(in  s source,
+                        in  s destination,
+                        in  t flags);
+      CopyToWithFlags(in  s source,
+                      in  s destination,
+                      in  t flags);
+      OpenRootDirectory(out h fd);
+    properties:
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s Name = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly ay Id = [...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly t Timestamp = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly t TimestampMonotonic = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s Service = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s Unit = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly u Leader = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s Class = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly s RootDirectory = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly ai NetworkInterfaces = [...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s State = '...';
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><dl class="variablelist" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></dl></div><div class="refsect2" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.6.30" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h3 id="Methods1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">方法 ¶</font></font></font></h3><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Terminate()</code> and <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Kill()</code> terminate/kill the machine. These methods
+      take the same arguments as <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">TerminateMachine()</code> and
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">KillMachine()</code> on the Manager interface, respectively.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Terminate()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Kill()</code> 终止/杀死机器。这些方法分别接受与 Manager 接口上的 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">TerminateMachine()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">KillMachine()</code> 相同的参数。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetAddresses()</code> and <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetOSRelease()</code> get the IP address and OS
+      release information from the machine. These methods take the same arguments as
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineAddresses()</code> and <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineOSRelease()</code> of the
+      Manager interface, respectively.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetAddresses()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetOSRelease()</code> 从机器获取 IP 地址和操作系统版本信息。这些方法分别接受与 Manager 接口上的 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineAddresses()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">GetMachineOSRelease()</code> 相同的参数。</font></font></font></p></div><div class="refsect2" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.6.31" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h3 id="Properties1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Properties<a class="headerlink" title="Permalink to this headline" href="#Properties1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">属性</font></font></font></h3><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Name</code> is the machine name as it was passed in during registration with
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code> on the manager object.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Name</code> 是在与 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachine()</code> 上的管理对象注册期间传递的机器名称。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Id</code> is the machine UUID.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Id</code> 是机器 UUID。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Timestamp</code> and <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">TimestampMonotonic</code> are the realtime and
+      monotonic timestamps when the virtual machines where created in microseconds since the epoch.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Timestamp</code> 和 <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">TimestampMonotonic</code> 是虚拟机创建时的实时和单调时间戳，以自纪元以来的微秒为单位。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Service</code> contains a short string identifying the registering service as passed
+      in during registration of the machine.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Service</code> 包含一个短字符串，用于标识在注册机器时传递的注册服务。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Unit</code> is the systemd scope or service unit name for the machine.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Unit</code> 是机器的 systemd 作用域或服务单元名称。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Leader</code> is the PID of the leader process of the machine.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Leader</code> 是机器的领导进程的 PID。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Class</code> is the class of the machine and is either the string "vm" (for real VMs
+      based on virtualized hardware) or "container" (for light-weight userspace virtualization sharing the
+      same kernel as the host).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">Class</code> 是机器的类别，可以是字符串 "vm"（基于虚拟化硬件的真实虚拟机）或 "container"（轻量级用户空间虚拟化，与主机共享相同的内核）。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RootDirectory</code> is the root directory of the container if it is known and
+      applicable or the empty string.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">RootDirectory</code> 是容器的根目录（如果已知且适用）或空字符串。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">NetworkInterfaces</code> contains an array of network interface indices that point
+      towards the container, the VM or the host. For details about this information see the description of
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachineWithNetwork()</code> above.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">NetworkInterfaces</code> 包含指向容器、虚拟机或主机的网络接口索引数组。有关此信息的详细信息，请参阅上述 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CreateMachineWithNetwork()</code> 的描述。</font></font></font></p><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">State</code> is the state of the machine and is one of "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">opening</code>",
+      "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">running</code>", or "<code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">closing</code>". Note that the state machine is not considered
+      part of the API and states might be removed or added without this being considered API breakage.
+      <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="varname" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">State</code> 是机器的状态之一，可以是 " <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">opening</code> "、" <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">running</code> " 或 " <code class="literal" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">closing</code> " 中的一个。请注意，状态机不被视为 API 的一部分，状态可能会被移除或添加而不被视为 API 的破坏。</font></font></font></p></div></div><div class="refsect1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.7" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h2 id="Examples" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 ¶</font></font></font></h2><div class="example" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.7.2" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><p class="title" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><b data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Example&nbsp;1.&nbsp;Introspect <code class="interfacename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">org.freedesktop.machine1.Manager</code> on the bus<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 1. 在公交车上审视 <code class="interfacename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">org.freedesktop.machine1.Manager</code> </font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><pre class="programlisting">$ gdbus introspect --system \
+  --dest org.freedesktop.machine1 \
+  --object-path /org/freedesktop/machine1
+      </pre></div></div><br class="example-break" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><div class="example" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.7.3" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><p class="title" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><b data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Example&nbsp;2.&nbsp;Introspect <code class="interfacename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">org.freedesktop.machine1.Machine</code> on the bus<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 2. 在公交车上审视 <code class="interfacename" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">org.freedesktop.machine1.Machine</code> </font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><pre class="programlisting">$ gdbus introspect --system \
+  --dest org.freedesktop.machine1 \
+  --object-path /org/freedesktop/machine1/machine/rawhide
+      </pre></div></div><br class="example-break" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></div><div class="refsect1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="versioning" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h2 id="Versioning" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Versioning<a class="headerlink" title="Permalink to this headline" href="#Versioning" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版本控制 ¶</font></font></font></h2><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">These D-Bus interfaces follow <a class="ulink" href="https://0pointer.de/blog/projects/versioning-dbus.html" target="_top" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">
+    the usual interface versioning guidelines</a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这些 D-Bus 接口遵循通常的接口版本控制指南。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.9" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h2 id="History" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">History<a class="headerlink" title="Permalink to this headline" href="#History" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h2><div class="refsect2" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.9.2" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h3 id="The Manager Object1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">The Manager Object<a class="headerlink" title="Permalink to this headline" href="#The%20Manager%20Object1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">管理员对象 ¶</font></font></font></h3><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyFromMachineWithFlags()</code> and
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyToMachineWithFlags()</code> were added in version 252.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版本 252 中添加了 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyFromMachineWithFlags()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyToMachineWithFlags()</code> 。</font></font></font></p></div><div class="refsect2" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"><a name="id-1.9.3" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed"></a><h3 id="Machine Objects1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1">Machine Objects<a class="headerlink" title="Permalink to this headline" href="#Machine%20Objects1" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">机器对象 ¶</font></font></font></h3><p data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyFromWithFlags()</code> and
+      <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyToWithFlags()</code> were added in version 252.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">版本 252 中添加了 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyFromWithFlags()</code> 和 <code class="function" data-immersive-translate-walked="59592c62-9d19-4f65-86fb-f66009c281ed">CopyToWithFlags()</code> 。</font></font></font></p></div></div></div>
+</body></html>

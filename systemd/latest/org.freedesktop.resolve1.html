@@ -1,0 +1,504 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>org.freedesktop.resolve1</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="org.freedesktop.resolve1"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>org.freedesktop.resolve1 — The D-Bus interface of systemd-resolved</p></div><div class="refsect1"><a name="id-1.4"></a><h2 id="Introduction">Introduction<a class="headerlink" title="Permalink to this headline" href="#Introduction">¶</a></h2><p>
+    <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>
+    is a system service that provides hostname resolution and caching using DNS, LLMNR, and mDNS. It also
+    does DNSSEC validation. This page describes the resolve semantics and the D-Bus interface.</p><p>This page contains an API reference only. If you are looking for a longer explanation how to use
+    this API, please consult
+    <a class="ulink" href="https://wiki.freedesktop.org/www/Software/systemd/writing-network-configuration-managers" target="_top">
+    Writing Network Configuration Managers</a> and
+    <a class="ulink" href="https://wiki.freedesktop.org/www/Software/systemd/writing-resolver-clients" target="_top">Writing Resolver
+    Clients</a>.
+    </p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="The Manager Object">The Manager Object<a class="headerlink" title="Permalink to this headline" href="#The%20Manager%20Object">¶</a></h2><p>The service exposes the following interfaces on the Manager object on the bus:</p><pre class="programlisting">
+node /org/freedesktop/resolve1 {
+  interface org.freedesktop.resolve1.Manager {
+    methods:
+      ResolveHostname(in  i ifindex,
+                      in  s name,
+                      in  i family,
+                      in  t flags,
+                      out a(iiay) addresses,
+                      out s canonical,
+                      out t flags);
+      ResolveAddress(in  i ifindex,
+                     in  i family,
+                     in  ay address,
+                     in  t flags,
+                     out a(is) names,
+                     out t flags);
+      ResolveRecord(in  i ifindex,
+                    in  s name,
+                    in  q class,
+                    in  q type,
+                    in  t flags,
+                    out a(iqqay) records,
+                    out t flags);
+      ResolveService(in  i ifindex,
+                     in  s name,
+                     in  s type,
+                     in  s domain,
+                     in  i family,
+                     in  t flags,
+                     out a(qqqsa(iiay)s) srv_data,
+                     out aay txt_data,
+                     out s canonical_name,
+                     out s canonical_type,
+                     out s canonical_domain,
+                     out t flags);
+      GetLink(in  i ifindex,
+              out o path);
+      SetLinkDNS(in  i ifindex,
+                 in  a(iay) addresses);
+      SetLinkDNSEx(in  i ifindex,
+                   in  a(iayqs) addresses);
+      SetLinkDomains(in  i ifindex,
+                     in  a(sb) domains);
+      SetLinkDefaultRoute(in  i ifindex,
+                          in  b enable);
+      SetLinkLLMNR(in  i ifindex,
+                   in  s mode);
+      SetLinkMulticastDNS(in  i ifindex,
+                          in  s mode);
+      SetLinkDNSOverTLS(in  i ifindex,
+                        in  s mode);
+      SetLinkDNSSEC(in  i ifindex,
+                    in  s mode);
+      SetLinkDNSSECNegativeTrustAnchors(in  i ifindex,
+                                        in  as names);
+      RevertLink(in  i ifindex);
+      RegisterService(in  s name,
+                      in  s name_template,
+                      in  s type,
+                      in  q service_port,
+                      in  q service_priority,
+                      in  q service_weight,
+                      in  aa{say} txt_datas,
+                      out o service_path);
+      UnregisterService(in  o service_path);
+      ResetStatistics();
+      FlushCaches();
+      ResetServerFeatures();
+    properties:
+      readonly s LLMNRHostname = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s LLMNR = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s MulticastDNS = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s DNSOverTLS = '...';
+      readonly a(iiay) DNS = [...];
+      readonly a(iiayqs) DNSEx = [...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly a(iiay) FallbackDNS = [...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
+      readonly a(iiayqs) FallbackDNSEx = [...];
+      readonly (iiay) CurrentDNSServer = ...;
+      readonly (iiayqs) CurrentDNSServerEx = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly a(isb) Domains = [...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly (tt) TransactionStatistics = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly (ttt) CacheStatistics = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s DNSSEC = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly (tttt) DNSSECStatistics = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly b DNSSECSupported = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly as DNSSECNegativeTrustAnchors = ['...', ...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s DNSStubListener = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s ResolvConfMode = '...';
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="refsect2"><a name="id-1.5.45"></a><h3 id="Methods">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods">¶</a></h3><p><code class="function">ResolveHostname()</code> takes a hostname and resolves it to one or more IP
+      addresses.  As parameters it takes the Linux network interface index to execute the query on, or 0 if
+      it may be done on any suitable interface. The <code class="varname">name</code> parameter specifies the hostname
+      to resolve. Note that if required, IDNA conversion is applied to this name unless it is resolved via
+      LLMNR or MulticastDNS. The <code class="varname">family</code> parameter limits the results to a specific address
+      family. It may be <code class="constant">AF_INET</code>, <code class="constant">AF_INET6</code> or
+      <code class="constant">AF_UNSPEC</code>. If <code class="constant">AF_UNSPEC</code> is specified (recommended), both
+      kinds are retrieved, subject to local network configuration (i.e. if no local, routable IPv6 address is
+      found, no IPv6 address is retrieved; and similarly for IPv4). A 64-bit <code class="varname">flags</code> field
+      may be used to alter the behaviour of the resolver operation (see below). The method returns an array
+      of address records. Each address record consists of the interface index the address belongs to, an
+      address family as well as a byte array with the actual IP address data (which either has 4 or 16
+      elements, depending on the address family). The returned address family will be one of
+      <code class="constant">AF_INET</code> or <code class="constant">AF_INET6</code>. For IPv6, the returned address interface
+      index should be used to initialize the .sin6_scope_id field of a
+      <span class="structname">struct sockaddr_in6</span> instance to permit support for resolution to link-local IP
+      addresses. The address array is followed by the canonical name of the host, which may or may not be
+      identical to the resolved hostname. Finally, a 64-bit <code class="varname">flags</code> field is returned that
+      is defined similarly to the <code class="varname">flags</code> field that was passed in, but contains information
+      about the resolved data (see below). If the hostname passed in is an IPv4 or IPv6 address formatted as
+      string, it is parsed, and the result is returned. In this case, no network communication is
+      done.</p><p><code class="function">ResolveAddress()</code> executes the reverse operation: it takes an IP address and
+      acquires one or more hostnames for it. As parameters it takes the interface index to execute the query
+      on, or <code class="constant">0</code> if all suitable interfaces are OK. The <code class="varname">family</code>
+      parameter indicates the address family of the IP address to resolve. It may be either
+      <code class="constant">AF_INET</code> or <code class="constant">AF_INET6</code>. The <code class="varname">address</code> parameter
+      takes the raw IP address data (as either a 4 or 16 byte array). The <code class="varname">flags</code> input
+      parameter may be used to alter the resolver operation (see below). The method returns an array of name
+      records, each consisting of an interface index and a hostname.  The <code class="varname">flags</code> output
+      field contains additional information about the resolver operation (see below).</p><p><code class="function">ResolveRecord()</code> takes a DNS resource record (RR) type, class and name, and
+      retrieves the full resource record set (RRset), including the RDATA, for it. As parameter it takes the
+      Linux network interface index to execute the query on, or <code class="constant">0</code> if it may be done on
+      any suitable interface. The <code class="varname">name</code> parameter specifies the RR domain name to look up
+      (no IDNA conversion is applied), followed by the 16-bit class and type fields (which may be
+      ANY). Finally, a <code class="varname">flags</code> field may be passed in to alter behaviour of the look-up (see
+      below). On completion, an array of RR items is returned. Each array entry consists of the network interface
+      index the RR was discovered on, the type and class field of the RR found, and a byte array of the raw
+      RR discovered. The raw RR data starts with the RR's domain name, in the original casing, followed
+      by the RR type, class, TTL and RDATA, in the binary format documented in
+      <a class="ulink" href="https://www.ietf.org/rfc/rfc1035.txt" target="_top">RFC 1035</a>. For RRs that support name
+      compression in the payload (such as MX or PTR), the compression is expanded in the returned
+      data.</p><p>Note that currently, the class field has to be specified as IN or ANY. Specifying a different
+      class will return an error indicating that look-ups of this kind are unsupported. Similarly, some
+      special types are not supported either (AXFR, OPT, …). While <code class="filename">systemd-resolved</code> parses and validates resource
+      records of many types, it is crucial that clients using this API understand that the RR data originates
+      from the network and should be thoroughly validated before use.</p><p><code class="function">ResolveService()</code> may be used to resolve a DNS
+      <code class="constant">SRV</code> service record, as well as the hostnames referenced in it, and
+      possibly an accompanying DNS-SD <code class="constant">TXT</code> record containing additional
+      service metadata.  The primary benefit of using this method over <code class="function">ResolveRecord()</code>
+      specifying the <code class="constant">SRV</code> type is that it will resolve the
+      <code class="constant">SRV</code> and <code class="constant">TXT</code> RRs as well as the
+      hostnames referenced in the SRV in a single operation. As parameters it takes a Linux network interface
+      index, a service name, a service type and a service domain. This method may be invoked in three
+      different modes:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>To resolve a DNS-SD service, specify the service name (e.g. "<code class="literal">Lennart's
+        Files</code>"), the service type (e.g. "<code class="literal">_webdav._tcp</code>") and the domain to search in
+        (e.g. "<code class="literal">local</code>") as the three service parameters. The service name must be in UTF-8
+        format, and no IDNA conversion is applied to it in this mode (as mandated by the DNS-SD
+        specifications). However, if necessary, IDNA conversion is applied to the domain parameter.</p></li><li class="listitem"><p>To resolve a plain <code class="constant">SRV</code> record, set the service name
+        parameter to the empty string and set the service type and domain properly. (IDNA conversion is
+        applied to the domain, if necessary.)</p></li><li class="listitem"><p>Alternatively, leave both the service name and type empty and specify the full domain
+        name of the <code class="constant">SRV</code> record (i.e. prefixed with the service type) in the
+        domain parameter. (No IDNA conversion is applied in this mode.)</p></li></ol></div><p>The <code class="varname">family</code> parameter of the <code class="function">ResolveService()</code> method encodes
+      the desired family of the addresses to resolve (use <code class="constant">AF_INET</code>,
+      <code class="constant">AF_INET6</code>, or <code class="constant">AF_UNSPEC</code>). If this is enabled (Use the
+      <code class="constant">NO_ADDRESS</code> flag to turn address resolution off, see below). The
+      <code class="varname">flags</code> parameter takes a couple of flags that may be used to alter the resolver
+      operation.</p><p>On completion, <code class="function">ResolveService()</code> returns an array of
+      <code class="constant">SRV</code> record structures. Each items consisting of the priority, weight and port
+      fields as well as the hostname to contact, as encoded in the <code class="constant">SRV</code>
+      record. Immediately following is an array of the addresses of this hostname, with each item consisting
+      of the interface index, the address family and the address data in a byte array. This address array is
+      followed by the canonicalized hostname. After this array of <code class="constant">SRV</code> record
+      structures an array of byte arrays follows that encodes the TXT RR strings, in case DNS-SD look-ups are
+      enabled. The next parameters are the canonical service name, type and domain. This may or may not be
+      identical to the parameters passed in. Finally, a <code class="varname">flags</code> field is returned that
+      contains information about the resolver operation performed.</p><p>The <code class="function">ResetStatistics()</code> method resets the various statistics counters that
+      <code class="filename">systemd-resolved</code> maintains to zero. (For details, see the statistics properties below.)</p><p>The <code class="function">GetLink()</code> method takes a network interface index and returns the object
+      path to the <code class="interfacename">org.freedesktop.resolve1.Link</code> object corresponding to it.
+      </p><p>The <code class="function">SetLinkDNS()</code> method sets the DNS servers to use on a specific
+      interface. This method (and the following ones) may be used by network management software to configure
+      per-interface DNS settings. It takes a network interface index as well as an array of DNS server IP
+      address records. Each array item consists of an address family (either <code class="constant">AF_INET</code> or
+      <code class="constant">AF_INET6</code>), followed by a 4-byte or 16-byte array with the raw address data. This
+      method is a one-step shortcut for retrieving the Link object for a network interface using
+      <code class="function">GetLink()</code> (see above) and then invoking the <code class="function">SetDNS()</code> method
+      (see below) on it.</p><p><code class="function">SetLinkDNSEx()</code> is similar to <code class="function">SetLinkDNS()</code>, but allows
+      an IP port (instead of the default 53) and DNS name to be specified for each DNS server. The server
+      name is used for Server Name Indication (SNI), which is useful when DNS-over-TLS is
+      used. C.f. <code class="varname">DNS=</code> in
+      <a href="resolved.conf.html#"><span class="citerefentry"><span class="refentrytitle">resolved.conf</span>(5)</span></a>.
+      </p><p><code class="function">SetLinkDefaultRoute()</code> specifies whether the link shall be used as the
+      default route for name queries. See the description of name routing in
+      <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>
+      for details.</p><p>The <code class="function">SetLinkDomains()</code> method sets the search and routing domains to use on a
+      specific network interface for DNS look-ups. It takes a network interface index and an array of domains,
+      each with a boolean parameter indicating whether the specified domain shall be used as a search domain
+      (false), or just as a routing domain (true). Search domains are used for qualifying single-label names into
+      FQDN when looking up hostnames, as well as for making routing decisions on which interface to send
+      queries ending in the domain to. Routing domains are only used for routing decisions and not used for single-label
+      name qualification. Pass the search domains in the order they should be used.</p><p>The <code class="function">SetLinkLLMNR()</code> method enables or disables LLMNR support on a specific
+      network interface. It takes a network interface index as well as a string that may either be empty or one of
+      "<code class="literal">yes</code>", "<code class="literal">no</code>" or "<code class="literal">resolve</code>". If empty, the systemd-wide
+      default LLMNR setting is used. If "<code class="literal">yes</code>", LLMNR is used for resolution of single-label
+      names and the local hostname is registered on all local LANs for LLMNR resolution by peers. If
+      "<code class="literal">no</code>", LLMNR is turned off fully on this interface. If "<code class="literal">resolve</code>", LLMNR
+      is only enabled for resolving names, but the local hostname is not registered for other peers to
+      use.</p><p>Similarly, the <code class="function">SetLinkMulticastDNS()</code> method enables or disables MulticastDNS
+      support on a specific interface. It takes the same parameters as <code class="function">SetLinkLLMNR()</code>
+      described above.</p><p>The <code class="function">SetLinkDNSSEC()</code> method enables or disables DNSSEC validation on a
+      specific network interface. It takes a network interface index as well as a string that may either be
+      empty or one of "<code class="literal">yes</code>", "<code class="literal">no</code>", or "<code class="literal">allow-downgrade</code>". When
+      empty, the system-wide default DNSSEC setting is used. If "<code class="literal">yes</code>", full DNSSEC validation
+      is done for all look-ups. If the selected DNS server does not support DNSSEC, look-ups will fail if this
+      mode is used. If "<code class="literal">no</code>", DNSSEC validation is fully disabled. If
+      "<code class="literal">allow-downgrade</code>", DNSSEC validation is enabled, but is turned off automatically if the
+      selected server does not support it (thus opening up behaviour to downgrade attacks). Note that DNSSEC
+      only applies to traditional DNS, not to LLMNR or MulticastDNS.</p><p>The <code class="function">SetLinkDNSSECNegativeTrustAnchors()</code> method may be used to configure DNSSEC
+      Negative Trust Anchors (NTAs) for a specific network interface. It takes a network interface index and a
+      list of domains as arguments.</p><p>The <code class="function">SetLinkDNSOverTLS()</code> method enables or disables DNS-over-TLS.
+      C.f. <code class="varname">DNSOverTLS=</code> in
+      <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>
+      for details.</p><p>Network management software integrating with <code class="filename">systemd-resolved</code> should call
+      <code class="function">SetLinkDNS()</code> or <code class="function">SetLinkDNSEx()</code>,
+      <code class="function">SetLinkDefaultRoute()</code>, <code class="function">SetLinkDomains()</code> and others after the
+      interface appeared in the kernel (and thus after a network interface index has been assigned), but
+      before the network interfaces is activated (<code class="constant">IFF_UP</code> set) so that all settings take
+      effect during the full time the network interface is up. It is safe to alter settings while the
+      interface is up, however. Use <code class="function">RevertLink()</code> (described below) to reset all
+      per-interface settings.</p><p>The <code class="function">RevertLink()</code> method may be used to revert all per-link settings
+      described above to the defaults.</p><div class="refsect3"><a name="id-1.5.45.23"></a><h4>The Flags Parameter</h4><p>The four methods above accept and return a 64-bit flags value. In most cases passing 0 is sufficient
+        and recommended. However, the following flags are defined to alter the look-up:</p><pre class="programlisting">/* Input+Output: Protocol/scope */
+#define SD_RESOLVED_DNS               (UINT64_C(1) &lt;&lt;  0)
+#define SD_RESOLVED_LLMNR_IPV4        (UINT64_C(1) &lt;&lt;  1)
+#define SD_RESOLVED_LLMNR_IPV6        (UINT64_C(1) &lt;&lt;  2)
+#define SD_RESOLVED_MDNS_IPV4         (UINT64_C(1) &lt;&lt;  3)
+#define SD_RESOLVED_MDNS_IPV6         (UINT64_C(1) &lt;&lt;  4)
+
+/* Input: Restrictions */
+#define SD_RESOLVED_NO_CNAME          (UINT64_C(1) &lt;&lt;  5)
+#define SD_RESOLVED_NO_TXT            (UINT64_C(1) &lt;&lt;  6)
+#define SD_RESOLVED_NO_ADDRESS        (UINT64_C(1) &lt;&lt;  7)
+#define SD_RESOLVED_NO_SEARCH         (UINT64_C(1) &lt;&lt;  8)
+#define SD_RESOLVED_NO_VALIDATE       (UINT64_C(1) &lt;&lt; 10)
+#define SD_RESOLVED_NO_SYNTHESIZE     (UINT64_C(1) &lt;&lt; 11)
+#define SD_RESOLVED_NO_CACHE          (UINT64_C(1) &lt;&lt; 12)
+#define SD_RESOLVED_NO_ZONE           (UINT64_C(1) &lt;&lt; 13)
+#define SD_RESOLVED_NO_TRUST_ANCHOR   (UINT64_C(1) &lt;&lt; 14)
+#define SD_RESOLVED_NO_NETWORK        (UINT64_C(1) &lt;&lt; 15)
+#define SD_RESOLVED_NO_STALE          (UINT64_C(1) &lt;&lt; 24)
+
+/* Output: Security */
+#define SD_RESOLVED_AUTHENTICATED     (UINT64_C(1) &lt;&lt;  9)
+#define SD_RESOLVED_CONFIDENTIAL      (UINT64_C(1) &lt;&lt; 18)
+
+/* Output: Origin */
+#define SD_RESOLVED_SYNTHETIC         (UINT64_C(1) &lt;&lt; 19)
+#define SD_RESOLVED_FROM_CACHE        (UINT64_C(1) &lt;&lt; 20)
+#define SD_RESOLVED_FROM_ZONE         (UINT64_C(1) &lt;&lt; 21)
+#define SD_RESOLVED_FROM_TRUST_ANCHOR (UINT64_C(1) &lt;&lt; 22)
+#define SD_RESOLVED_FROM_NETWORK      (UINT64_C(1) &lt;&lt; 23)
+</pre><p>On input, the first five flags control the protocols to use for the look-up. They refer to
+        classic unicast DNS, LLMNR via IPv4/UDP and IPv6/UDP respectively, as well as MulticastDNS via
+        IPv4/UDP and IPv6/UDP. If all of these five bits are off on input (which is strongly recommended) the
+        look-up will be done via all suitable protocols for the specific look-up. Note that these flags
+        operate as filter only, but cannot force a look-up to be done via a protocol. Specifically,
+        <code class="filename">systemd-resolved</code> will only route look-ups within the .local TLD to MulticastDNS
+        (plus some reverse look-up address domains), and single-label names to LLMNR (plus some reverse
+        address lookup domains). It will route neither of these to Unicast DNS servers. Also, it will do
+        LLMNR and Multicast DNS only on interfaces suitable for multicast.</p><p>On output, these five flags indicate which protocol was used to execute the operation, and
+        hence where the data was found.</p><p>The primary use cases for these five flags are follow-up look-ups based on DNS data retrieved
+        earlier. In this case it is often a good idea to limit the follow-up look-up to the protocol that was
+        used to discover the first DNS result.</p><p>The NO_CNAME flag controls whether CNAME/DNAME resource records shall be followed during the
+        look-up. This flag is only available at input, none of the functions will return it on output. If a
+        CNAME/DNAME RR is discovered while resolving a hostname, an error is returned instead. By default,
+        when the flag is off, CNAME/DNAME RRs are followed.</p><p>The NO_TXT and NO_ADDRESS flags only influence operation of the
+        <code class="function">ResolveService()</code> method. They are only defined for input, not output. If NO_TXT
+        is set, the DNS-SD TXT RR look-up is not done in the same operation. If NO_ADDRESS is set, the
+        discovered hostnames are not implicitly translated to their addresses.</p><p>The NO_SEARCH flag turns off the search domain logic. It is only defined for input in
+        <code class="function">ResolveHostname()</code>. When specified, single-label hostnames are not qualified
+        using defined search domains, if any are configured. Note that <code class="function">ResolveRecord()</code>
+        will never qualify single-label domain names using search domains. Also note that multi-label
+        hostnames are never subject to search list expansion.</p><p>NO_VALIDATE can be set to disable validation via DNSSEC even if it would normally be
+        used.</p><p>The next six flags allow disabling certain sources during resolution. NO_SYNTHESIZE disables
+        synthetic records, e.g. the local host name, see section SYNTHETIC RECORDS in
+        <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>
+        for more information. NO_CACHE disables the use of the cache of previously resolved records. NO_ZONE
+        disables answers using locally registered public LLMNR/mDNS resource records. NO_TRUST_ANCHOR
+        disables answers using locally configured trust anchors. NO_NETWORK requires all answers to be
+        provided without using the network, i.e. either from local sources or the cache. NO_STALE flag
+        can be set to disable answering request with stale records.</p><p>The AUTHENTICATED bit is defined only in the output flags of the four functions. If set, the
+        returned data has been fully authenticated. Specifically, this bit is set for all DNSSEC-protected
+        data for which a full trust chain may be established to a trusted domain anchor. It is also set for
+        locally synthesized data, such as "<code class="literal">localhost</code>" or data from
+        <code class="filename">/etc/hosts</code>. Moreover, it is set for all LLMNR or mDNS RRs which originate from
+        the local host. Applications that require authenticated RR data for operation should check this flag
+        before trusting the data. Note that <code class="filename">systemd-resolved</code> will never return
+        invalidated data, hence this flag simply allows one to discern the cases where data is known to be
+        trusted, or where there is proof that the data is "rightfully" unauthenticated (which includes cases
+        where the underlying protocol or server does not support authenticating data).</p><p>CONFIDENTIAL means the query was resolved via encrypted channels or never left this
+        system.</p><p>The next five bits flags are used in output and provide information about the origin of the
+        answer. FROM_SYNTHETIC means the query was (at least partially) synthesized locally. FROM_CACHE means
+        the query was answered (at least partially) using the cache. FROM_ZONE means the query was answered
+        (at least partially) based on public, locally registered records. FROM_TRUST_ANCHOR means the query
+        was answered (at least partially) using local trust anchors. FROM_NETWORK means the query was
+        answered (at least partially) using the network.</p></div></div><div class="refsect2"><a name="id-1.5.46"></a><h3 id="Properties">Properties<a class="headerlink" title="Permalink to this headline" href="#Properties">¶</a></h3><p>The <code class="varname">LLMNR</code> and <code class="varname">MulticastDNS</code> properties report whether LLMNR
+      and MulticastDNS are (globally) enabled. Each may be one of "<code class="literal">yes</code>",
+      "<code class="literal">no</code>", and "<code class="literal">resolve</code>". See <code class="function">SetLinkLLMNR()</code>
+      and <code class="function">SetLinkMulticastDNS()</code> above.</p><p><code class="varname">LLMNRHostname</code> contains the hostname currently exposed on the network via
+      LLMNR. It usually follows the system hostname as may be queried via
+      <a href="https://man7.org/linux/man-pages/man3/gethostname.3.html"><span class="citerefentry"><span class="refentrytitle">gethostname</span>(3)</span></a>,
+      but may differ if a conflict is detected on the network.</p><p><code class="varname">DNS</code> and <code class="varname">DNSEx</code> contain arrays of all DNS servers currently
+      used by <code class="filename">systemd-resolved</code>. <code class="varname">DNS</code> contains information similar to
+      the DNS server data in <code class="filename">/run/systemd/resolve/resolv.conf</code>. Each structure in the
+      array consists of a numeric network interface index, an address family, and a byte array containing the
+      DNS server address (either 4 bytes in length for IPv4 or 16 bytes in lengths for IPv6).
+      <code class="varname">DNSEx</code> is similar, but additionally contains the IP port and server name (used for
+      Server Name Indication, SNI). Both arrays contain DNS servers configured system-wide, including those
+      possibly read from a foreign <code class="filename">/etc/resolv.conf</code> or the <code class="varname">DNS=</code>
+      setting in <code class="filename">/etc/systemd/resolved.conf</code>, as well as per-interface DNS server
+      information either retrieved from
+      <a href="systemd-networkd.html#"><span class="citerefentry"><span class="refentrytitle">systemd-networkd</span>(8)</span></a>,
+      or configured by external software via <code class="function">SetLinkDNS()</code> or
+      <code class="function">SetLinkDNSEx()</code> (see above). The network interface index will be 0 for the
+      system-wide configured services and non-zero for the per-link servers.</p><p><code class="varname">FallbackDNS</code> and <code class="varname">FallbackDNSEx</code> contain arrays of all DNS
+      servers configured as fallback servers, if any, using the same format as <code class="varname">DNS</code> and
+      <code class="varname">DNSEx</code> described above. See the description of <code class="varname">FallbackDNS=</code> in
+      <a href="resolved.conf.html#"><span class="citerefentry"><span class="refentrytitle">resolved.conf</span>(5)</span></a> for
+      the description of when those servers are used.</p><p><code class="varname">CurrentDNSServer</code> and <code class="varname">CurrentDNSServerEx</code> specify the server
+      that is currently used for query resolution, in the same format as a single entry in the
+      <code class="varname">DNS</code> and <code class="varname">DNSEx</code> arrays described above.</p><p>Similarly, the <code class="varname">Domains</code> property contains an array of all search and routing
+      domains currently used by <code class="filename">systemd-resolved</code>. Each entry consists of a network
+      interface index (again, 0 encodes system-wide entries), the actual domain name, and whether the entry
+      is used only for routing (true) or for both routing and searching (false).</p><p>The <code class="varname">TransactionStatistics</code> property contains information about the number of
+      transactions <code class="filename">systemd-resolved</code> has processed. It contains a pair of unsigned 64-bit counters, the first
+      containing the number of currently ongoing transactions, the second the number of total transactions
+      <code class="filename">systemd-resolved</code> is processing or has processed. The latter value may be reset using the
+      <code class="function">ResetStatistics()</code> method described above. Note that the number of transactions does
+      not directly map to the number of issued resolver bus method calls. While simple look-ups usually require a
+      single transaction only, more complex look-ups might result in more, for example when CNAMEs or DNSSEC
+      are in use.</p><p>The <code class="varname">CacheStatistics</code> property contains information about the executed cache
+      operations so far. It exposes three 64-bit counters: the first being the total number of current cache
+      entries (both positive and negative), the second the number of cache hits, and the third the number of
+      cache misses. The latter counters may be reset using <code class="function">ResetStatistics()</code> (see
+      above).</p><p>The <code class="varname">DNSSEC</code> property specifies current status of DNSSEC validation. It is one
+      of "<code class="literal">yes</code>" (validation is enforced), "<code class="literal">no</code>" (no validation is done),
+      "<code class="literal">allow-downgrade</code>" (validation is done if the current DNS server supports it). See the
+      description of <code class="varname">DNSSEC=</code> in
+      <a href="resolved.conf.html#"><span class="citerefentry"><span class="refentrytitle">resolved.conf</span>(5)</span></a>.
+      </p><p>The <code class="varname">DNSSECStatistics</code> property contains information about the DNSSEC
+      validations executed so far. It contains four 64-bit counters: the number of secure, insecure, bogus,
+      and indeterminate DNSSEC validations so far. The counters are increased for each validated RRset, and
+      each non-existence proof. The secure counter is increased for each operation that successfully verified
+      a signed reply, the insecure counter is increased for each operation that successfully verified that an
+      unsigned reply is rightfully unsigned. The bogus counter is increased for each operation where the
+      validation did not check out and the data is likely to have been tempered with. Finally the
+      indeterminate counter is increased for each operation which did not complete because the necessary keys
+      could not be acquired or the cryptographic algorithms were unknown.</p><p>The <code class="varname">DNSSECSupported</code> boolean property reports whether DNSSEC is enabled and
+      the selected DNS servers support it. It combines information about system-wide and per-link DNS
+      settings (see below), and only reports true if DNSSEC is enabled and supported on every interface for
+      which DNS is configured and for the system-wide settings if there are any. Note that <code class="filename">systemd-resolved</code> assumes
+      DNSSEC is supported by DNS servers until it verifies that this is not the case. Thus, the reported
+      value may initially be true, until the first transactions are executed.</p><p>The <code class="varname">DNSOverTLS</code> boolean property reports whether DNS-over-TLS is enabled.
+      </p><p>The <code class="varname">ResolvConfMode</code> property exposes how <code class="filename">/etc/resolv.conf</code>
+      is managed on the host. Currently, the values "<code class="literal">uplink</code>", "<code class="literal">stub</code>",
+      "<code class="literal">static</code>" (these three correspond to the three different files
+      <code class="filename">systemd-resolved.service</code> provides), "<code class="literal">foreign</code>" (the file is
+      managed by admin or another service, <code class="filename">systemd-resolved.service</code> just consumes it),
+      "<code class="literal">missing</code>" (<code class="filename">/etc/resolv.conf</code> is missing).</p><p>The <code class="varname">DNSStubListener</code> property reports whether the stub listener on port 53 is
+      enabled. Possible values are "<code class="literal">yes</code>" (enabled), "<code class="literal">no</code>" (disabled),
+      "<code class="literal">udp</code>" (only the UDP listener is enabled), and "<code class="literal">tcp</code>" (only the TCP
+      listener is enabled).</p></div></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Link Object">Link Object<a class="headerlink" title="Permalink to this headline" href="#Link%20Object">¶</a></h2><pre class="programlisting">
+node /org/freedesktop/resolve1/link/_1 {
+  interface org.freedesktop.resolve1.Link {
+    methods:
+      SetDNS(in  a(iay) addresses);
+      SetDNSEx(in  a(iayqs) addresses);
+      SetDomains(in  a(sb) domains);
+      SetDefaultRoute(in  b enable);
+      SetLLMNR(in  s mode);
+      SetMulticastDNS(in  s mode);
+      SetDNSOverTLS(in  s mode);
+      SetDNSSEC(in  s mode);
+      SetDNSSECNegativeTrustAnchors(in  as names);
+      Revert();
+    properties:
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly t ScopesMask = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly a(iay) DNS = [...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly a(iayqs) DNSEx = [...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly (iay) CurrentDNSServer = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly (iayqs) CurrentDNSServerEx = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly a(sb) Domains = [...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly b DefaultRoute = ...;
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s LLMNR = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s MulticastDNS = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s DNSOverTLS = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly s DNSSEC = '...';
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly as DNSSECNegativeTrustAnchors = ['...', ...];
+      @org.freedesktop.DBus.Property.EmitsChangedSignal("false")
+      readonly b DNSSECSupported = ...;
+  };
+  interface org.freedesktop.DBus.Peer { ... };
+  interface org.freedesktop.DBus.Introspectable { ... };
+  interface org.freedesktop.DBus.Properties { ... };
+};
+    </pre><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><div class="variablelist"><dl class="variablelist"></dl></div><p>For each Linux network interface a "Link" object is created which exposes per-link DNS
+    configuration and state. Use <code class="function">GetLink()</code> on the Manager interface to retrieve the
+    object path for a link object given the network interface index (see above).</p><div class="refsect2"><a name="id-1.6.29"></a><h3 id="Methods1">Methods<a class="headerlink" title="Permalink to this headline" href="#Methods1">¶</a></h3><p>The various methods exposed by the Link interface are equivalent to their similarly named
+      counterparts on the Manager interface. e.g. <code class="function">SetDNS()</code> on the Link object maps to
+      <code class="function">SetLinkDNS()</code> on the Manager object, the main difference being that the later
+      expects an interface index to be specified. Invoking the methods on the Manager interface has the
+      benefit of reducing roundtrips, as it is not necessary to first request the Link object path via
+      <code class="function">GetLink()</code> before invoking the methods. The same relationship holds for
+      <code class="function">SetDNSEx()</code>, <code class="function">SetDomains()</code>,
+      <code class="function">SetDefaultRoute()</code>, <code class="function">SetLLMNR()</code>,
+      <code class="function">SetMulticastDNS()</code>, <code class="function">SetDNSOverTLS()</code>,
+      <code class="function">SetDNSSEC()</code>, <code class="function">SetDNSSECNegativeTrustAnchors()</code>, and
+      <code class="function">Revert()</code>. For further details on these methods see the
+      <code class="interfacename">Manager</code> documentation above.</p></div><div class="refsect2"><a name="id-1.6.30"></a><h3 id="Properties1">Properties<a class="headerlink" title="Permalink to this headline" href="#Properties1">¶</a></h3><p><code class="varname">ScopesMask</code> defines which resolver scopes are currently active on this
+      interface. This 64-bit unsigned integer field is a bit mask consisting of a subset of the bits of the
+      flags parameter describe above. Specifically, it may have the DNS, LLMNR and MDNS bits (the latter in
+      IPv4 and IPv6 flavours) set. Each individual bit is set when the protocol applies to a specific
+      interface and is enabled for it. It is unset otherwise. Specifically, a multicast-capable interface in
+      the "UP" state with an IP address is suitable for LLMNR or MulticastDNS, and any interface that is UP and
+      has an IP address is suitable for DNS. Note the relationship of the bits exposed here with the LLMNR
+      and MulticastDNS properties also exposed on the Link interface. The latter expose what is *configured*
+      to be used on the interface, the former expose what is actually used on the interface, taking into
+      account the abilities of the interface.</p><p><code class="varname">DNSSECSupported</code> exposes a boolean field that indicates whether DNSSEC is
+      currently configured and in use on the interface. Note that if DNSSEC is enabled on an interface, it is
+      assumed available until it is detected that the configured server does not actually support it. Thus,
+      this property may initially report that DNSSEC is supported on an interface.</p><p><code class="varname">DefaultRoute</code> exposes a boolean field that indicates whether the interface will
+      be used as default route for name queries. See <code class="function">SetLinkDefaultRoute()</code> above.</p><p>The other properties reflect the state of the various configuration settings for the link which
+      may be set with the various methods calls such as <code class="function">SetDNS()</code> or
+      <code class="function">SetLLMNR()</code>.</p></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Common Errors">Common Errors<a class="headerlink" title="Permalink to this headline" href="#Common%20Errors">¶</a></h2><p>Many bus methods <code class="filename">systemd-resolved</code> exposes (in particular the resolver methods such
+    as <code class="function">ResolveHostname()</code> on the <code class="interfacename">Manager</code> interface) may return
+    some of the following errors:</p><div class="variablelist"><dl class="variablelist"><dt id="org.freedesktop.resolve1.NoNameServers"><span class="term"><code class="constant">org.freedesktop.resolve1.NoNameServers</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.NoNameServers">¶</a></dt><dd><p>No suitable DNS servers were found to resolve a request.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.InvalidReply"><span class="term"><code class="constant">org.freedesktop.resolve1.InvalidReply</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.InvalidReply">¶</a></dt><dd><p>A response from the selected DNS server was not understood.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.NoSuchRR"><span class="term"><code class="constant">org.freedesktop.resolve1.NoSuchRR</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.NoSuchRR">¶</a></dt><dd><p>The requested name exists, but there is no resource record of the requested type for
+      it. (This is the DNS NODATA case).</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.CNameLoop"><span class="term"><code class="constant">org.freedesktop.resolve1.CNameLoop</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.CNameLoop">¶</a></dt><dd><p>The look-up failed because a CNAME or DNAME loop was detected.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.Aborted"><span class="term"><code class="constant">org.freedesktop.resolve1.Aborted</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.Aborted">¶</a></dt><dd><p>The look-up was aborted because the selected protocol became unavailable while the
+      operation was ongoing.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.NoSuchService"><span class="term"><code class="constant">org.freedesktop.resolve1.NoSuchService</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.NoSuchService">¶</a></dt><dd><p>A service look-up was successful, but the <code class="constant">SRV</code> record
+      reported that the service is not available.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.DnssecFailed"><span class="term"><code class="constant">org.freedesktop.resolve1.DnssecFailed</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.DnssecFailed">¶</a></dt><dd><p>The acquired response did not pass DNSSEC validation.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.NoTrustAnchor"><span class="term"><code class="constant">org.freedesktop.resolve1.NoTrustAnchor</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.NoTrustAnchor">¶</a></dt><dd><p>No chain of trust could be established for the response to a configured DNSSEC trust
+      anchor.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.ResourceRecordTypeUnsupported"><span class="term"><code class="constant">org.freedesktop.resolve1.ResourceRecordTypeUnsupported</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.ResourceRecordTypeUnsupported">¶</a></dt><dd><p>The requested resource record type is not supported on the selected DNS servers. This
+      error is generated for example when an RRSIG record is requested from a DNS server that does not
+      support DNSSEC.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.NoSuchLink"><span class="term"><code class="constant">org.freedesktop.resolve1.NoSuchLink</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.NoSuchLink">¶</a></dt><dd><p>No network interface with the specified network interface index exists.
+      </p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.LinkBusy"><span class="term"><code class="constant">org.freedesktop.resolve1.LinkBusy</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.LinkBusy">¶</a></dt><dd><p>The requested configuration change could not be made because
+      <a href="systemd-networkd.html#"><span class="citerefentry"><span class="refentrytitle">systemd-networkd</span>(8)</span></a>,
+      already took possession of the interface and supplied configuration data for it.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.NetworkDown"><span class="term"><code class="constant">org.freedesktop.resolve1.NetworkDown</code></span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.NetworkDown">¶</a></dt><dd><p>The requested look-up failed because the system is currently not connected to any
+      suitable network.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="org.freedesktop.resolve1.DnsError.NXDOMAIN"><span class="term"><code class="constant">org.freedesktop.resolve1.DnsError.NXDOMAIN</code>, </span><span class="term"><code class="constant">org.freedesktop.resolve1.DnsError.REFUSED</code>, </span><span class="term">...</span><a class="headerlink" title="Permalink to this term" href="#org.freedesktop.resolve1.DnsError.NXDOMAIN">¶</a></dt><dd><p>The look-up failed with a DNS return code reporting a failure. The error names used as
+      suffixes here are defined in by IANA in
+      <a class="ulink" href="https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6#dns-parameters-6" target="_top">DNS RCODEs</a>.
+      </p><p><a name="v246"></a>Added in version 246.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Introspect <code class="interfacename">org.freedesktop.resolve1.Manager</code> on the bus</b></p><div class="example-contents"><pre class="programlisting">
+$ gdbus introspect --system \
+  --dest org.freedesktop.resolve1 \
+  --object-path /org/freedesktop/resolve1
+      </pre></div></div><br class="example-break"><div class="example"><a name="id-1.8.3"></a><p class="title"><b>Example 2. Introspect <code class="interfacename">org.freedesktop.resolve1.Link</code> on the bus</b></p><div class="example-contents"><pre class="programlisting">
+$ gdbus introspect --system \
+  --dest org.freedesktop.resolve1 \
+  --object-path /org/freedesktop/resolve1/link/_11
+      </pre></div></div><br class="example-break"></div><div class="refsect1"><a name="versioning"></a><h2 id="Versioning">Versioning<a class="headerlink" title="Permalink to this headline" href="#Versioning">¶</a></h2><p>These D-Bus interfaces follow <a class="ulink" href="https://0pointer.de/blog/projects/versioning-dbus.html" target="_top">
+    the usual interface versioning guidelines</a>.</p></div></div></body></html>

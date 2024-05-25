@@ -1,0 +1,53 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_slot_set_floating</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_slot_set_floating"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_slot_set_floating, sd_bus_slot_get_floating — Control whether a bus slot object is "floating"</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_slot_set_floating</b>(</code></td><td>sd_bus_slot *<var class="pdparam">slot</var>, </td></tr><tr><td> </td><td>int <var class="pdparam">b</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_slot_get_floating</b>(</code></td><td>sd_bus_slot *<var class="pdparam">slot</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_bus_slot_set_floating()</code> controls whether the specified bus slot object
+    <em class="parameter"><code>slot</code></em> shall be "floating" or not. A floating bus slot object's lifetime is bound to the
+    lifetime of the bus object it is associated with, meaning that it remains allocated as long as the bus object
+    itself and is freed automatically when the bus object is freed. Regular (i.e. non-floating) bus slot objects keep
+    the bus referenced, hence the bus object remains allocated at least as long as there remains at least one
+    referenced bus slot object around. The floating state hence controls the direction of referencing between the bus
+    object and the bus slot objects: if floating the bus pins the bus slot, and otherwise the bus slot pins the bus
+    objects. Use <code class="function">sd_bus_slot_set_floating()</code> to switch between both modes: if the
+    <em class="parameter"><code>b</code></em> parameter is zero, the slot object is considered floating, otherwise it is made a regular
+    (non-floating) slot object.</p><p>Bus slot objects may be allocated with calls such as
+    <a href="sd_bus_add_match.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_match</span>(3)</span></a>. If the
+    <em class="parameter"><code>slot</code></em> of these functions is non-<code class="constant">NULL</code> the slot object will be of the
+    regular kind (i.e. non-floating), otherwise it will be created floating. With
+    <code class="function">sd_bus_slot_set_floating()</code> a bus slot object allocated as regular can be converted into a
+    floating object and back. This is particularly useful for creating a bus slot object, then changing parameters of
+    it, and then turning it into a floating object, whose lifecycle is managed by the bus object.</p><p><code class="function">sd_bus_slot_get_floating()</code> returns the current floating state of the specified bus slot
+    object. It returns negative on error, zero if the bus slot object is a regular (non-floating) object and positive
+    otherwise.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these functions return 0 or a positive integer. On failure, they return a negative
+    errno-style error code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>The <em class="parameter"><code>slot</code></em> parameter is <code class="constant">NULL</code>.</p></dd><dt id="-ECHILD"><span class="term"><code class="constant">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD">¶</a></dt><dd><p>The bus connection has been created in a different process, library or module instance.</p></dd><dt id="-ESTALE"><span class="term"><code class="constant">-ESTALE</code></span><a class="headerlink" title="Permalink to this term" href="#-ESTALE">¶</a></dt><dd><p>The bus object the specified bus slot object is associated with has already been
+          freed, and hence no change in the floating state can be made anymore.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_slot_set_floating()</code> and
+    <code class="function">sd_bus_slot_get_floating()</code> were added in version 239.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_slot_set_destroy_callback.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_slot_set_destroy_callback</span>(3)</span></a>,
+      <a href="sd_bus_add_match.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_match</span>(3)</span></a>
+    </p></div></div></body></html>

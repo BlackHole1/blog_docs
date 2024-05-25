@@ -1,0 +1,602 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+.immersive-translate-target-wrapper {word-break: break-word;}
+</style></head><body data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_event_add_inotify</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">Index </a>·
+  <a href="systemd.directives.html" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">Directives </a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">索引 · 指令</font></font></font><span style="float:right" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">systemd 255</span><hr><div class="refentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><a name="sd_event_add_inotify" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a><div class="titlepage" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></div><div class="refnamediv" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><h2 data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Name<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h2><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">sd_event_add_inotify, sd_event_add_inotify_fd, sd_event_source_get_inotify_mask, sd_event_inotify_handler_t — Add an "inotify" file system inode event source to an event loop<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">sd_event_add_inotify, sd_event_add_inotify_fd, sd_event_source_get_inotify_mask, sd_event_inotify_handler_t — 将“inotify”文件系统 inode 事件源添加到事件循环中</font></font></font></p></div><div class="refsynopsisdiv" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><h2 data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Synopsis<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">简介</font></font></font></h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-event.h&gt;</pre><pre class="funcsynopsisinfo"><span class="token">typedef</span> struct sd_event_source sd_event_source;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">typedef int (*<b class="fsfunc">sd_event_inotify_handler_t</b>)(</code></td><td>sd_event_source *<var class="pdparam">s</var>, </td></tr><tr><td>&nbsp;</td><td>const struct inotify_event *<var class="pdparam">event</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_add_inotify</b>(</code></td><td>sd_event *<var class="pdparam">event</var>, </td></tr><tr><td>&nbsp;</td><td>sd_event_source **<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td>&nbsp;</td><td>uint32_t <var class="pdparam">mask</var>, </td></tr><tr><td>&nbsp;</td><td>sd_event_inotify_handler_t <var class="pdparam">handler</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_add_inotify_fd</b>(</code></td><td>sd_event *<var class="pdparam">event</var>, </td></tr><tr><td>&nbsp;</td><td>sd_event_source **<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>int <var class="pdparam">fd</var>, </td></tr><tr><td>&nbsp;</td><td>uint32_t <var class="pdparam">mask</var>, </td></tr><tr><td>&nbsp;</td><td>sd_event_inotify_handler_t <var class="pdparam">handler</var>, </td></tr><tr><td>&nbsp;</td><td>void *<var class="pdparam">userdata</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tbody><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_get_inotify_mask</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td>&nbsp;</td><td>uint32_t *<var class="pdparam">mask</var><code>)</code>;</td></tr></tbody></table><div class="funcprototype-spacer">&nbsp;</div></div></div><div class="refsect1" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><a name="id-1.5" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a><h2 id="Description" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Description<a class="headerlink" title="Permalink to this headline" href="#Description" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h2><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> adds a new <a href="https://man7.org/linux/man-pages/man7/inotify.7.html" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">inotify</span>(7)</span></a> file
+    system inode event source to an event loop. The event loop object is specified in the
+    <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">event</code></em> parameter, the event source object is returned in the
+    <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">source</code></em> parameter. The <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">path</code></em> parameter specifies the path of
+    the file system inode to watch. The <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">mask</code></em> parameter specifies which types of inode
+    events to watch specifically. It must contain an OR-ed combination of <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_ACCESS</code>,
+    <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_ATTRIB</code>, <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_CLOSE_WRITE</code>, … flags. See <a href="https://man7.org/linux/man-pages/man7/inotify.7.html" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">inotify</span>(7)</span></a> for
+    further information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> 向事件循环中添加一个新的 inotify(7)文件系统 inode 事件源。事件循环对象在 <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">event</code> 参数中指定，事件源对象在 <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">source</code> 参数中返回。 <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">path</code> 参数指定要监视的文件系统 inode 的路径。 <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">mask</code> 参数指定要具体监视的 inode 事件类型。它必须包含 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_ACCESS</code> ， <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_ATTRIB</code> ， <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_CLOSE_WRITE</code> 等标志的 OR 组合。有关详细信息，请参阅 inotify(7)。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">The <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">handler</code></em> must reference a function to call when the inode changes or
+    <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">NULL</code>. The handler function will be passed the <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">userdata</code></em> pointer,
+    which may be chosen freely by the caller. The handler also receives a pointer to a <span class="structname" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">struct
+    inotify_event</span> structure containing information about the inode event. The handler may return
+    negative to signal an error (see below), other return values are ignored. If
+    <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">handler</code></em> is <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">NULL</code>, a default handler that calls
+    <a href="sd_event_exit.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_exit</span>(3)</span></a> will be
+    used.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">handler</code> 必须引用一个在 inode 更改时调用的函数或 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">NULL</code> 。处理程序函数将接收 <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">userdata</code> 指针，该指针可以由调用者自由选择。处理程序还接收一个指向包含有关 inode 事件信息的 struct inotify_event 结构的指针。处理程序可以返回负值以表示错误（请参阅下文），其他返回值将被忽略。如果 <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">handler</code> 是 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">NULL</code> ，将使用一个调用 sd_event_exit(3)的默认处理程序。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify_fd()</code> is identical to
+    <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code>, except that it takes a file descriptor to an inode (possibly
+    an <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">O_PATH</code> one, but any other will do too) instead of a path in the file system.
+    <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify_fd()</code> 与 <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> 相同，只是它接受一个指向 inode 的文件描述符（可能是 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">O_PATH</code> 的一个，但也可以是其他任何的）而不是文件系统中的路径。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">If multiple event sources are installed for the same inode the backing inotify watch descriptor is
+    automatically shared. The mask parameter may contain any flag defined by the inotify API, with the exception of
+    <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_MASK_ADD</code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果为相同的 inode 安装了多个事件源，则后备的 inotify 监视描述符会自动共享。掩码参数可以包含 inotify API 定义的任何标志，但不包括 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_MASK_ADD</code> 。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">The handler is enabled continuously (<code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">SD_EVENT_ON</code>), but this may be changed with
+    <a href="sd_event_source_set_enabled.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_set_enabled</span>(3)</span></a>.
+    Alternatively, the <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_ONESHOT</code> mask flag may be used to request
+    <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">SD_EVENT_ONESHOT</code> mode. If the handler function returns a negative error code, it
+    will be disabled after the invocation, even if the <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">SD_EVENT_ON</code> mode was requested
+    before.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">处理程序持续启用（ <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">SD_EVENT_ON</code> ），但可以使用 sd_event_source_set_enabled(3) 进行更改。或者，可以使用 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_ONESHOT</code> 掩码标志请求 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">SD_EVENT_ONESHOT</code> 模式。如果处理程序函数返回负错误代码，则在调用后将被禁用，即使之前请求了 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">SD_EVENT_ON</code> 模式也是如此。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">As a special limitation the priority of inotify event sources may only be altered (see
+    <a href="sd_event_source_set_priority.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_set_priority</span>(3)</span></a>)
+    in the time between creation of the event source object with <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> and the
+    beginning of the next event loop iteration. Attempts of changing the priority any later will be refused. Consider
+    freeing and allocating a new inotify event source to change the priority at that point.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">作为特殊限制，只能在使用 sd_event_source_set_priority(3) 改变 inotify 事件源的优先级的时间段内（请参见 sd_event_source_set_priority(3)），即在使用 <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> 创建事件源对象和下一个事件循环迭代开始之间。任何尝试在此之后更改优先级都将被拒绝。考虑释放并分配一个新的 inotify 事件源以在那一点上更改优先级。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">To destroy an event source object use
+    <a href="sd_event_source_unref.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_unref</span>(3)</span></a>, but note
+    that the event source is only removed from the event loop when all references to the event source are dropped. To
+    make sure an event source does not fire anymore, even when there's still a reference to it kept, consider disabling
+    it with
+    <a href="sd_event_source_set_enabled.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_set_enabled</span>(3)</span></a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">要销毁事件源对象，请使用 sd_event_source_unref(3)，但请注意，只有在所有对事件源的引用都被丢弃时，事件源才会从事件循环中移除。为确保事件源不再触发，即使仍然保留对其的引用，请考虑使用 sd_event_source_set_enabled(3) 进行禁用。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">If the second parameter of <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> is passed as
+    <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">NULL</code> no reference to the event source object is returned. In this case the event
+    source is considered "floating", and will be destroyed implicitly when the event loop itself is
+    destroyed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果 <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> 的第二个参数传递为 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">NULL</code> ，则不会返回对事件源对象的引用。在这种情况下，事件源被视为“浮动”，并且将在事件循环本身被销毁时隐式销毁。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">If the <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">handler</code></em> parameter to <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> is
+    <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">NULL</code>, and the event source fires, this will be considered a request to exit the
+    event loop. In this case, the <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">userdata</code></em> parameter, cast to an integer, is passed as
+    the exit code parameter to
+    <a href="sd_event_exit.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_exit</span>(3)</span></a>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果 <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">handler</code> 参数为 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">NULL</code> ，并且事件源触发，则将视为请求退出事件循环。在这种情况下，将 <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">userdata</code> 参数转换为整数，并将其作为退出代码参数传递给 sd_event_exit(3)。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_get_inotify_mask()</code> retrieves the configured inotify watch mask of an
+    event source created previously with <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code>. It takes the event source object
+    as the <em class="parameter" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">source</code></em> parameter and a pointer to a <span class="type" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">uint32_t</span> variable to return the mask
+    in.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_get_inotify_mask()</code> 检索先前使用 <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> 创建的事件源的配置的 inotify 监视掩码。它将事件源对象作为 <code data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">source</code> 参数，并返回掩码的 uint32_t 变量的指针。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><a name="id-1.6" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a><h2 id="Return Value" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">返回值 ¶</font></font></font></h2><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">On success, these functions return 0 or a positive integer. On failure, they return a negative errno-style
+    error code.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">成功时，这些函数返回 0 或正整数。失败时，它们返回负的 errno 风格的错误代码。</font></font></font></p><div class="refsect2" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><a name="id-1.6.3" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a><h3 id="Errors" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">错误 ¶</font></font></font></h3><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Returned errors may indicate the following problems:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">返回的错误可能表示以下问题：</font></font></font></p><div class="variablelist" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><dl class="variablelist" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><dt id="-ENOMEM" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a></dt><dd data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Not enough memory to allocate an object.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">没有足够的内存来分配对象。</font></font></font></p></dd><dt id="-EINVAL" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a></dt><dd data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">An invalid argument has been passed. This includes specifying a mask with
+          <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_MASK_ADD</code> set.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">传递了无效参数。这包括指定了设置为 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">IN_MASK_ADD</code> 的掩码。</font></font></font></p></dd><dt id="-ESTALE" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">-ESTALE</code></span><a class="headerlink" title="Permalink to this term" href="#-ESTALE" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a></dt><dd data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">The event loop is already terminated.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">事件循环已经终止。</font></font></font></p></dd><dt id="-ECHILD" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a></dt><dd data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">The event loop has been created in a different process, library or module instance.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">事件循环已在不同的进程、库或模块实例中创建。</font></font></font></p></dd><dt id="-EDOM" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">-EDOM</code></span><a class="headerlink" title="Permalink to this term" href="#-EDOM" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a></dt><dd data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">The passed event source is not an inotify process event source.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">传递的事件源不是 inotify 进程事件源。</font></font></font></p></dd><dt id="-EBADF" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">-EBADF</code></span><a class="headerlink" title="Permalink to this term" href="#-EBADF" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a></dt><dd data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">The passed file descriptor is not valid.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">传递的文件描述符无效。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><a name="v250" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a>Added in version 250.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 250 中添加。</font></font></font></p></dd><dt id="-ENOSYS" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><span class="term" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">-ENOSYS</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOSYS" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a></dt><dd data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify_fd()</code> was called without
+          <code class="filename" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">/proc/</code> mounted.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify_fd()</code> 被调用，但未挂载 <code class="filename" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">/proc/</code> 。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><a name="v250" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a>Added in version 250.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在版本 250 中添加。</font></font></font></p></dd></dl></div></div></div><div class="refsect1" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><a name="id-1.7" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a><h2 id="Examples" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 ¶</font></font></font></h2><div class="example" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><a name="id-1.7.2" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a><p class="title" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><b data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Example&nbsp;1.&nbsp;A simple program that uses inotify to monitor one or two directories<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例 1。一个简单的程序，使用 inotify 监视一个或两个目录。</font></font></font></b></p><div class="example-contents" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><pre class="programlisting">/* SPDX-License-Identifier: MIT-0 */
+
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/inotify.h&gt;
+
+#include &lt;systemd/sd-event.h&gt;
+
+#define _cleanup_(f) __attribute__((cleanup(f)))
+
+static int inotify_handler(sd_event_source *source,
+                           const struct inotify_event *event,
+                           void *userdata) {
+
+  const char *desc = NULL;
+
+  sd_event_source_get_description(source, &amp;desc);
+
+  if (event-&gt;mask &amp; IN_Q_OVERFLOW)
+    printf("inotify-handler &lt;%s&gt;: overflow\n", desc);
+  else if (event-&gt;mask &amp; IN_CREATE)
+    printf("inotify-handler &lt;%s&gt;: create on %s\n", desc, event-&gt;name);
+  else if (event-&gt;mask &amp; IN_DELETE)
+    printf("inotify-handler &lt;%s&gt;: delete on %s\n", desc, event-&gt;name);
+  else if (event-&gt;mask &amp; IN_MOVED_TO)
+    printf("inotify-handler &lt;%s&gt;: moved-to on %s\n", desc, event-&gt;name);
+
+  /* Terminate the program if an "exit" file appears */
+  if ((event-&gt;mask &amp; (IN_CREATE|IN_MOVED_TO)) &amp;&amp;
+      strcmp(event-&gt;name, "exit") == 0)
+    sd_event_exit(sd_event_source_get_event(source), 0);
+
+  return 1;
+}
+
+int main(int argc, char **argv) {
+  _cleanup_(sd_event_unrefp) sd_event *event = NULL;
+  _cleanup_(sd_event_source_unrefp) sd_event_source *source1 = NULL, *source2 = NULL;
+
+  const char *path1 = argc &gt; 1 ? argv[1] : "/tmp";
+  const char *path2 = argc &gt; 2 ? argv[2] : NULL;
+
+  /* Note: failure handling is omitted for brevity */
+
+  sd_event_default(&amp;event);
+
+  sd_event_add_inotify(event, &amp;source1, path1,
+                       IN_CREATE | IN_DELETE | IN_MODIFY | IN_MOVED_TO,
+                       inotify_handler, NULL);
+  if (path2)
+    sd_event_add_inotify(event, &amp;source2, path2,
+                         IN_CREATE | IN_DELETE | IN_MODIFY | IN_MOVED_TO,
+                         inotify_handler, NULL);
+
+  sd_event_loop(event);
+
+  return 0;
+}
+</pre></div></div><br class="example-break" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></div><div class="refsect1" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><a name="id-1.8" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a><h2 id="Notes" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意事项 ¶</font></font></font></h2><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><a name="pkgconfig-text" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">libsystemd</code>&nbsp;<a href="http://linux.die.net/man/1/pkg-config" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">pkg-config</span>(1)</span></a>
+  file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此处描述的函数可作为共享库使用，可以通过 <code class="constant" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">libsystemd</code> pkg-config(1) 文件进行编译和链接。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><a name="getenv" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">setenv()</code>
+from an early phase of the program when no other threads have been started.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此处描述的代码使用了 getenv(3)，该函数被声明为非多线程安全。这意味着调用此处描述的函数的代码不能从并行线程中调用 setenv(3)。建议仅在程序的早期阶段进行对 <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">setenv()</code> 的调用，此时尚未启动其他线程。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><a name="id-1.9" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a><h2 id="History" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">History<a class="headerlink" title="Permalink to this headline" href="#History" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h2><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_inotify_handler_t()</code>,
+    <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code>, and
+    <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_get_inotify_mask()</code> were added in version 239.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_inotify_handler_t()</code> ， <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify()</code> 和 <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_get_inotify_mask()</code> 在版本 239 中添加。</font></font></font></p><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1"><code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify_fd()</code> was added in version 250.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1"> <code class="function" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_inotify_fd()</code> 已在版本 250 中添加。</font></font></font></p></div><div class="refsect1" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><a name="id-1.10" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"></a><h2 id="See Also" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h2><p data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1" data-immersive-translate-paragraph="1">
+      <a href="systemd.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">systemd</span>(1)</span></a>,
+      <a href="sd-event.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd-event</span>(3)</span></a>,
+      <a href="sd_event_new.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_new</span>(3)</span></a>,
+      <a href="sd_event_now.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_now</span>(3)</span></a>,
+      <a href="sd_event_add_io.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_io</span>(3)</span></a>,
+      <a href="sd_event_add_time.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_time</span>(3)</span></a>,
+      <a href="sd_event_add_signal.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_signal</span>(3)</span></a>,
+      <a href="sd_event_add_defer.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_defer</span>(3)</span></a>,
+      <a href="sd_event_add_child.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_add_child</span>(3)</span></a>,
+      <a href="sd_event_source_set_enabled.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_set_enabled</span>(3)</span></a>,
+      <a href="sd_event_source_set_priority.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_set_priority</span>(3)</span></a>,
+      <a href="sd_event_source_set_userdata.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_set_userdata</span>(3)</span></a>,
+      <a href="sd_event_source_set_description.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_set_description</span>(3)</span></a>,
+      <a href="sd_event_source_set_floating.html#" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">sd_event_source_set_floating</span>(3)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man2/waitid.2.html" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="citerefentry" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1"><span class="refentrytitle" data-immersive-translate-walked="f2acda0e-2b65-4a67-bbb4-c6ed66c08bd1">waitid</span>(2)</span></a>
+    </p></div></div>
+</body></html>

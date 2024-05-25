@@ -1,0 +1,86 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-machined.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-machined.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-machined.service, systemd-machined — Virtual machine and container registration manager</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-machined.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-machined</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-machined</strong></span> is a system service that keeps track of locally running virtual
+    machines and containers.</p><p><span class="command"><strong>systemd-machined</strong></span> is useful for registering and keeping track of both OS
+    containers (containers that share the host kernel but run a full init system of their own and behave in
+    most regards like a full virtual operating system rather than just one virtualized app) and full virtual
+    machines (virtualized hardware running normal operating systems and possibly different kernels).</p><p><span class="command"><strong>systemd-machined</strong></span> should <span class="emphasis"><em>not</em></span> be used for registering/keeping
+    track of application sandbox containers. A <span class="emphasis"><em>machine</em></span> in the context of
+    <span class="command"><strong>systemd-machined</strong></span> is supposed to be an abstract term covering both OS containers and
+    full virtual machines, but not application sandboxes.</p><p>Machines registered with machined are exposed in various ways in the system. For example:
+    </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Tools like
+      <a href="https://man7.org/linux/man-pages/man1/ps.1.html"><span class="citerefentry"><span class="refentrytitle">ps</span>(1)</span></a>
+      will show to which machine a specific process belongs in a column of
+      its own, and so will
+      <a class="ulink" href="https://help.gnome.org/users/gnome-system-monitor/" target="_top">gnome-system-monitor</a> or
+      <a href="systemd-cgls.html#"><span class="citerefentry"><span class="refentrytitle">systemd-cgls</span>(1)</span></a>.</p></li><li class="listitem"><p>systemd's various tools
+      (<a href="systemctl.html#"><span class="citerefentry"><span class="refentrytitle">systemctl</span>(1)</span></a>,
+      <a href="journalctl.html#"><span class="citerefentry"><span class="refentrytitle">journalctl</span>(1)</span></a>,
+      <a href="loginctl.html#"><span class="citerefentry"><span class="refentrytitle">loginctl</span>(1)</span></a>,
+      <a href="hostnamectl.html#"><span class="citerefentry"><span class="refentrytitle">hostnamectl</span>(1)</span></a>,
+      <a href="timedatectl.html#"><span class="citerefentry"><span class="refentrytitle">timedatectl</span>(1)</span></a>,
+      <a href="localectl.html#"><span class="citerefentry"><span class="refentrytitle">localectl</span>(1)</span></a>,
+      <a href="machinectl.html#"><span class="citerefentry"><span class="refentrytitle">machinectl</span>(1)</span></a>, ...)
+      support the <code class="option">-M</code> switch to operate on local containers instead of the host system.
+      </p></li><li class="listitem"><p><span class="command"><strong>systemctl list-machines</strong></span> will show the system state of all local
+      containers, connecting to the container's init system for that.</p></li><li class="listitem"><p>systemctl's <code class="option">--recursive</code> switch has the effect of not only showing the
+      locally running services, but recursively showing the services of all registered containers.</p></li><li class="listitem"><p>The <span class="command"><strong>machinectl</strong></span> command provides access to a number of useful
+      operations on registered containers, such as introspecting them, rebooting, shutting them down, and
+      getting a login prompt on them.</p></li><li class="listitem"><p>The
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a> library
+      exposes the
+      <a href="sd_bus_open_system_machine.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_open_system_machine</span>(3)</span></a>
+      call to connect to the system bus of any registered container.</p></li><li class="listitem"><p>The
+      <a href="nss-mymachines.html#"><span class="citerefentry"><span class="refentrytitle">nss-mymachines</span>(8)</span></a>
+      module makes sure all registered containers can be resolved via normal glibc
+      <a href="https://man7.org/linux/man-pages/man3/gethostbyname.3.html"><span class="citerefentry"><span class="refentrytitle">gethostbyname</span>(3)</span></a>
+      or
+      <a href="https://man7.org/linux/man-pages/man3/getaddrinfo.3.html"><span class="citerefentry"><span class="refentrytitle">getaddrinfo</span>(3)</span></a>
+      calls.</p></li></ul></div><p>See
+    <a href="systemd-nspawn.html#"><span class="citerefentry"><span class="refentrytitle">systemd-nspawn</span>(1)</span></a>
+    for some examples on how to run containers with OS tools.</p><p>If you are interested in writing a VM or container manager that makes use of machined, please have
+    look at <a class="ulink" href="https://www.freedesktop.org/wiki/Software/systemd/writing-vm-managers" target="_top">Writing
+    Virtual Machine or Container Managers</a>. Also see the <a class="ulink" href="https://www.freedesktop.org/wiki/Software/systemd/ControlGroupInterface" target="_top">New Control Group
+    Interfaces</a>.</p><p>The daemon provides both a C library interface
+    (which is shared with <a href="systemd-logind.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-logind.service</span>(8)</span></a>)
+    as well as a D-Bus interface.
+    The library interface may be used to introspect and watch the state of virtual machines/containers.
+    The bus interface provides the same but in addition may also be used to register or terminate
+    machines.
+    For more information please consult
+    <a href="sd-login.html#"><span class="citerefentry"><span class="refentrytitle">sd-login</span>(3)</span></a>
+    and
+    <a href="org.freedesktop.machine1.html#"><span class="citerefentry"><span class="refentrytitle">org.freedesktop.machine1</span>(5)</span></a>
+    and
+    <a href="org.freedesktop.LogControl1.html#"><span class="citerefentry"><span class="refentrytitle">org.freedesktop.LogControl1</span>(5)</span></a>.
+    </p><p>A small companion daemon
+    <a href="systemd-importd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-importd.service</span>(8)</span></a>
+    is also available, which implements importing, exporting, and downloading of container and VM images.
+    </p><p>For each container registered with <code class="filename">systemd-machined.service</code> that employs user
+    namespacing, users/groups are synthesized for the used UIDs/GIDs. These are made available to the system
+    using the <a class="ulink" href="https://systemd.io/USER_GROUP_API" target="_top">User/Group Record Lookup API via
+    Varlink</a>, and thus may be resolved with
+    <a href="userdbctl.html#"><span class="citerefentry"><span class="refentrytitle">userdbctl</span>(1)</span></a> or the
+    usual glibc NSS calls.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="machinectl.html#"><span class="citerefentry"><span class="refentrytitle">machinectl</span>(1)</span></a>,
+      <a href="systemd-nspawn.html#"><span class="citerefentry"><span class="refentrytitle">systemd-nspawn</span>(1)</span></a>,
+      <a href="nss-mymachines.html#"><span class="citerefentry"><span class="refentrytitle">nss-mymachines</span>(8)</span></a>,
+      <a href="systemd.special.html#"><span class="citerefentry"><span class="refentrytitle">systemd.special</span>(7)</span></a>
+    </p></div></div></body></html>

@@ -1,0 +1,75 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-machine-id-setup</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-machine-id-setup"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-machine-id-setup — Initialize the machine ID in /etc/machine-id</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">systemd-machine-id-setup</code> </p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-machine-id-setup</strong></span> may be used by
+    system installer tools to initialize the machine ID stored in
+    <code class="filename">/etc/machine-id</code> at install time, with a
+    provisioned or randomly generated ID. See
+    <a href="machine-id.html#"><span class="citerefentry"><span class="refentrytitle">machine-id</span>(5)</span></a>
+    for more information about this file.</p><p>If the tool is invoked without the <code class="option">--commit</code>
+    switch, <code class="filename">/etc/machine-id</code> is initialized with a
+    valid, new machine ID if it is missing or empty. The new machine
+    ID will be acquired in the following fashion:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>If a valid D-Bus machine ID is already
+      configured for the system, the D-Bus machine ID is copied and
+      used to initialize the machine ID in
+      <code class="filename">/etc/machine-id</code>.</p></li><li class="listitem"><p>If run inside a KVM virtual machine and a UUID
+      is configured (via the <code class="option">-uuid</code>
+      option), this UUID is used to initialize the machine ID. The
+      caller must ensure that the UUID passed is sufficiently unique
+      and is different for every booted instance of the
+      VM.</p></li><li class="listitem"><p>Similarly, if run inside a Linux container environment and a UUID is configured for the
+      container, this is used to initialize the machine ID. For details, see the documentation of the <a class="ulink" href="https://systemd.io/CONTAINER_INTERFACE" target="_top">Container Interface</a>.</p></li><li class="listitem"><p>Otherwise, a new ID is randomly
+      generated.</p></li></ol></div><p>The <code class="option">--commit</code> switch may be used to commit a
+    transient machined ID to disk, making it persistent. For details,
+    see below.</p><p>Use
+    <a href="systemd-firstboot.html#"><span class="citerefentry"><span class="refentrytitle">systemd-firstboot</span>(1)</span></a>
+    to initialize the machine ID on mounted (but not booted) system
+    images.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--root=path"><span class="term"><code class="option">--root=<em class="replaceable"><code>path</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--root=path">¶</a></dt><dd><p>Takes a directory path as argument. All paths operated on will be prefixed with the
+        given alternate <em class="replaceable"><code>root</code></em> path, including the path for
+        <code class="filename">/etc/machine-id</code> itself.</p><p><a name="v212"></a>Added in version 212.</p></dd><dt id="--image=path"><span class="term"><code class="option">--image=<em class="replaceable"><code>path</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--image=path">¶</a></dt><dd><p>Takes a path to a device node or regular file as argument. This is similar to
+        <code class="option">--root=</code> as described above, but operates on a disk image instead of a directory
+        tree.</p><p><a name="v249"></a>Added in version 249.</p></dd><dt id="--image-policy=policy"><span class="term"><code class="option">--image-policy=<em class="replaceable"><code>policy</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--image-policy=policy">¶</a></dt><dd><p>Takes an image policy string as argument, as per
+    <a href="systemd.image-policy.html#"><span class="citerefentry"><span class="refentrytitle">systemd.image-policy</span>(7)</span></a>. The
+    policy is enforced when operating on the disk image specified via <code class="option">--image=</code>, see
+    above. If not specified defaults to the "<code class="literal">*</code>" policy, i.e. all recognized file systems
+    in the image are used.</p></dd><dt id="--commit"><span class="term"><code class="option">--commit</code></span><a class="headerlink" title="Permalink to this term" href="#--commit">¶</a></dt><dd><p>Commit a transient machine ID to disk. This
+        command may be used to convert a transient machine ID into a
+        persistent one. A transient machine ID file is one that was
+        bind mounted from a memory file system (usually
+        "<code class="literal">tmpfs</code>") to
+        <code class="filename">/etc/machine-id</code> during the early phase of
+        the boot process. This may happen because
+        <code class="filename">/etc/</code> is initially read-only and was
+        missing a valid machine ID file at that point.</p><p>This command will execute no operation if
+        <code class="filename">/etc/machine-id</code> is not mounted from a
+        memory file system, or if <code class="filename">/etc/</code> is
+        read-only. The command will write the current transient
+        machine ID to disk and unmount the
+        <code class="filename">/etc/machine-id</code> mount point in a
+        race-free manner to ensure that this file is always valid and
+        accessible for other processes.</p><p>This command is primarily used by the
+        <a href="systemd-machine-id-commit.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-machine-id-commit.service</span>(8)</span></a>
+        early boot service.</p><p><a name="v227"></a>Added in version 227.</p></dd><dt id="--print"><span class="term"><code class="option">--print</code></span><a class="headerlink" title="Permalink to this term" href="#--print">¶</a></dt><dd><p>Print the machine ID generated or committed after the operation is complete.</p><p><a name="v231"></a>Added in version 231.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>On success, 0 is returned, a non-zero failure code
+    otherwise.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="machine-id.html#"><span class="citerefentry"><span class="refentrytitle">machine-id</span>(5)</span></a>,
+      <a href="systemd-machine-id-commit.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-machine-id-commit.service</span>(8)</span></a>,
+      <a href="https://dbus.freedesktop.org/doc/dbus-uuidgen.1.html"><span class="citerefentry"><span class="refentrytitle">dbus-uuidgen</span>(1)</span></a>,
+      <a href="systemd-firstboot.html#"><span class="citerefentry"><span class="refentrytitle">systemd-firstboot</span>(1)</span></a>
+    </p></div></div></body></html>

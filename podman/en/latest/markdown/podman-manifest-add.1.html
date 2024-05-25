@@ -1,0 +1,773 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>podman-manifest-add — Podman  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css">
+    <link rel="stylesheet" type="text/css" href="../../../_/static/css/badge_only.css">
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css">
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="../../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <link rel="index" title="Index" href="../genindex.html">
+    <link rel="search" title="Search" href="../search.html">
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css">
+  
+
+  
+  
+
+  
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "markdown/podman-manifest-add.1", "programming_language": "go", "project": "podman", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "alabaster", "user_analytics_code": "", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+  
+
+    <div class="document" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+      <div class="documentwrapper" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+        <div class="bodywrapper" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+          
+
+          <div class="body" role="main" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+            
+  <section id="name" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h1 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">NAME<a class="headerlink" href="#name" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h1>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">podman-manifest-add - Add an image or artifact to a manifest list or image index<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman-manifest-add - 将图像或工件添加到清单列表或图像索引</font></font></font></p>
+</section>
+<section id="synopsis" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h1 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">SYNOPSIS<a class="headerlink" href="#synopsis" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h1>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">podman manifest add</strong> [<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">options</em>] <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">listnameorindexname</em> [<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">transport</em>]:<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">imagename</em> <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">imageorartifactname</em> […]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman manifest add [选项] listnameorindexname [传输]:imagename imageorartifactname […]</font></font></font></p>
+</section>
+<section id="description" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h1 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h1>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Adds the specified image to the specified manifest list or image index, or
+creates an artifact manifest and adds it to the specified image index.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将指定的图像添加到指定的清单列表或图像索引，或创建一个工件清单并将其添加到指定的图像索引。</font></font></font></p>
+</section>
+<section id="return-value" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h1 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">RETURN VALUE<a class="headerlink" href="#return-value" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">返回值 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">The list image’s ID.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">列表图像的 ID。</font></font></font></p>
+</section>
+<section id="options" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h1 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">OPTIONS<a class="headerlink" href="#options" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h1>
+<section id="all" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--all</strong><a class="headerlink" href="#all" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">If the image which is added to the list or index is itself a list or
+index, add all of the contents to the local list.  By default, only one image
+from such a list or index is added to the list or index.  Combining
+<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--all</em> with any of the other options described below is NOT recommended.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果添加到列表或索引的图像本身是一个列表或索引，则将所有内容添加到本地列表中。默认情况下，只会将这样的列表或索引中的一个图像添加到列表或索引中。不建议将--all 与下面描述的任何其他选项结合使用。</font></font></font></p>
+</section>
+<section id="annotation-annotation-value" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--annotation</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">annotation=value</em><a class="headerlink" href="#annotation-annotation-value" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--annotation=注释=值 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Set an annotation on the entry for the specified image or artifact.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在指定的图像或工件条目上设置注释。</font></font></font></p>
+</section>
+<section id="arch-architecture" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--arch</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">architecture</em><a class="headerlink" href="#arch-architecture" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Override the architecture which the list or index records as a requirement for
+the image.  If <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">imageName</em> refers to a manifest list or image index, the
+architecture information is retrieved from it.  Otherwise, it is
+retrieved from the image’s configuration information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">覆盖列表或索引记录的体系结构，作为图像的要求。如果 imageName 指的是清单列表或图像索引，则从中检索体系结构信息。否则，将从图像的配置信息中检索。</font></font></font></p>
+</section>
+<section id="artifact" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--artifact</strong><a class="headerlink" href="#artifact" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--工件 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Create an artifact manifest and add it to the image index.  Arguments after the
+index name will be interpreted as file names rather than as image references.
+In most scenarios, the <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--artifact-type</strong> option should also be specified.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建一个工件清单并将其添加到镜像索引中。索引名称后面的参数将被解释为文件名，而不是镜像引用。在大多数情况下，还应该指定 --工件类型 选项。</font></font></font></p>
+</section>
+<section id="artifact-config-path" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--artifact-config</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em><a class="headerlink" href="#artifact-config-path" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--工件配置=路径 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">When creating an artifact manifest and adding it to the image index, use the
+specified file’s contents as the configuration blob in the artifact manifest.
+In most scenarios, leaving the default value, which signifies an empty
+configuration, unchanged, is the preferred option.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在创建工件清单并将其添加到镜像索引时，使用指定文件的内容作为工件清单中的配置 blob。在大多数情况下，保持默认值不变，即表示空配置，是首选选项。</font></font></font></p>
+</section>
+<section id="artifact-config-type-type" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--artifact-config-type</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">type</em><a class="headerlink" href="#artifact-config-type-type" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">When creating an artifact manifest and adding it to the image index, use the
+specified MIME type as the <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">mediaType</span></code> associated with the configuration blob
+in the artifact manifest.  In most scenarios, leaving the default value, which
+signifies either an empty configuration or the standard OCI configuration type,
+unchanged, is the preferred option.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在创建工件清单并将其添加到镜像索引时，使用指定的 MIME 类型作为与工件清单中的配置 blob 关联的 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">mediaType</span></code> 。在大多数情况下，保持默认值不变，即表示空配置或标准 OCI 配置类型，是首选选项。</font></font></font></p>
+</section>
+<section id="artifact-exclude-titles" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--artifact-exclude-titles</strong><a class="headerlink" href="#artifact-exclude-titles" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">When creating an artifact manifest and adding it to the image index, do not
+set “org.opencontainers.image.title” annotations equal to the file’s basename
+for each file added to the artifact manifest.  Tools which retrieve artifacts
+from a registry may use these values to choose names for files when saving
+artifacts to disk, so this option is not recommended unless it is required
+for interoperability with a particular registry.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在创建工件清单并将其添加到镜像索引时，不要将“org.opencontainers.image.title”注释设置为每个添加到工件清单的文件的基本名称。从注册表中检索工件的工具可能会使用这些值来选择文件的名称，因此除非与特定注册表的互操作性需要，否则不建议使用此选项。</font></font></font></p>
+</section>
+<section id="artifact-layer-type-type" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--artifact-layer-type</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">type</em><a class="headerlink" href="#artifact-layer-type-type" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">When creating an artifact manifest and adding it to the image index, use the
+specified MIME type as the <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">mediaType</span></code> associated with the files’ contents.  If
+not specified, guesses based on either the files names or their contents will
+be made and used, but the option should be specified if certainty is needed.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在创建工件清单并将其添加到镜像索引时，使用指定的 MIME 类型作为与文件内容关联的 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">mediaType</span></code> 。如果未指定，则将根据文件名称或其内容进行猜测并使用，但如果需要确定性，则应指定该选项。</font></font></font></p>
+</section>
+<section id="artifact-subject-imagename" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--artifact-subject</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">imageName</em><a class="headerlink" href="#artifact-subject-imagename" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">When creating an artifact manifest and adding it to the image index, set the
+<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">subject</em> field in the artifact manifest to mark the artifact manifest as being
+associated with the specified image in some way.  An artifact manifest can only
+be associated with, at most, one subject.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在创建工件清单并将其添加到镜像索引时，在工件清单中设置主题字段，以标记工件清单与某种方式关联的指定图像。工件清单最多只能与一个主题关联。</font></font></font></p>
+</section>
+<section id="artifact-type-type" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--artifact-type</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">type</em><a class="headerlink" href="#artifact-type-type" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--artifact-type=类型 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">When creating an artifact manifest, use the specified MIME type as the
+manifest’s <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">artifactType</span></code> value instead of the less informative default value.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在创建工件清单时，使用指定的 MIME 类型作为清单的 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">artifactType</span></code> 值，而不是不太具信息性的默认值。</font></font></font></p>
+</section>
+<section id="authfile-path" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--authfile</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em><a class="headerlink" href="#authfile-path" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Path of the authentication file. Default is <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">${XDG_RUNTIME_DIR}/containers/auth.json</span></code> on Linux, and <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">$HOME/.config/containers/auth.json</span></code> on Windows/macOS.
+The file is created by <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference internal" href="podman-login.1.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="std std-doc" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">podman login</span></a></strong>. If the authorization state is not found there, <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">$HOME/.docker/config.json</span></code> is checked, which is set using <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker login</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">认证文件的路径。在 Linux 上默认为 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">${XDG_RUNTIME_DIR}/containers/auth.json</span></code> ，在 Windows/macOS 上默认为 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">$HOME/.config/containers/auth.json</span></code> 。该文件由 podman login 创建。如果授权状态未在那里找到，则会检查 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">$HOME/.docker/config.json</span></code> ，该值是使用 docker login 设置的。</font></font></font></p>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Note: There is also the option to override the default path of the authentication file by setting the <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">REGISTRY_AUTH_FILE</span></code> environment variable. This can be done with <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">export REGISTRY_AUTH_FILE=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em></strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：还有一种选择，可以通过设置 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">REGISTRY_AUTH_FILE</span></code> 环境变量来覆盖认证文件的默认路径。可以通过 export REGISTRY_AUTH_FILE=path 来实现。</font></font></font></p>
+</section>
+<section id="cert-dir-path" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--cert-dir</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em><a class="headerlink" href="#cert-dir-path" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Use certificates at <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em> (*.crt, *.cert, *.key) to connect to the registry. (Default: /etc/containers/certs.d)
+For details, see <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference external" href="https://github.com/containers/image/blob/main/docs/containers-certs.d.5.md" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">containers-certs.d(5)</a></strong>.
+(This option is not available with the remote Podman client, including Mac and Windows (excluding WSL2) machines)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用证书路径（*.crt, *.cert, *.key）连接到注册表。 （默认值：/etc/containers/certs.d）有关详细信息，请参阅 containers-certs.d(5)。 （此选项不适用于远程 Podman 客户端，包括 Mac 和 Windows（不包括 WSL2）机器）</font></font></font></p>
+</section>
+<section id="creds-username-password" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--creds</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">[username[:password]]</em><a class="headerlink" href="#creds-username-password" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--creds=[用户名[:密码]] ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">The [username[:password]] to use to authenticate with the registry, if required.
+If one or both values are not supplied, a command line prompt appears and the
+value can be entered. The password is entered without echo.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果需要，用于与注册表进行身份验证的[用户名[:密码]]。如果一个或两个值未提供，将出现命令行提示，并可以输入该值。密码输入时不会显示。</font></font></font></p>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Note that the specified credentials are only used to authenticate against
+target registries.  They are not used for mirrors or when the registry gets
+rewritten (see <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">containers-registries.conf(5)</span></code>); to authenticate against those
+consider using a <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">containers-auth.json(5)</span></code> file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，指定的凭据仅用于对目标注册表进行身份验证。它们不用于镜像或注册表被重写时（请参阅 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">containers-registries.conf(5)</span></code> ）；要对其进行身份验证，请考虑使用 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">containers-auth.json(5)</span></code> 文件。</font></font></font></p>
+</section>
+<section id="features-feature" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--features</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">feature</em><a class="headerlink" href="#features-feature" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--features=特性 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Specify the features list which the list or index records as requirements for
+the image.  This option is rarely used.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定要求图像的特性列表，该列表或索引记录为图像的要求。此选项很少使用。</font></font></font></p>
+</section>
+<section id="os-os" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--os</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">OS</em><a class="headerlink" href="#os-os" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--os=操作系统 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Override the OS which the list or index records as a requirement for the image.
+If <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">imagename</em> refers to a manifest list or image index, the OS information
+is retrieved from it.  Otherwise, it is retrieved from the image’s
+configuration information.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">覆盖列表或索引记录为图像要求的操作系统。如果 imagename 指的是清单列表或图像索引，则从中检索操作系统信息。否则，将从图像的配置信息中检索。</font></font></font></p>
+</section>
+<section id="os-version-version" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--os-version</strong>=<em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">version</em><a class="headerlink" href="#os-version-version" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--os-version=版本 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Specify the OS version which the list or index records as a requirement for the
+image.  This option is rarely used.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定列表或索引记录为图像要求的操作系统版本。此选项很少使用。</font></font></font></p>
+</section>
+<section id="tls-verify" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--tls-verify</strong><a class="headerlink" href="#tls-verify" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Require HTTPS and verify certificates when contacting registries (default: <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">true</strong>).
+If explicitly set to <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">true</strong>, TLS verification is used.
+If set to <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">false</strong>, TLS verification is not used.
+If not specified, TLS verification is used unless the target registry
+is listed as an insecure registry in <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference external" href="https://github.com/containers/image/blob/main/docs/containers-registries.conf.5.md" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">containers-registries.conf(5)</a></strong><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在联系注册表时需要 HTTPS 并验证证书（默认值为 true）。如果显式设置为 true，则使用 TLS 验证。如果设置为 false，则不使用 TLS 验证。如果未指定，则除非目标注册表在 containers-registries.conf(5) 中被列为不安全注册表，否则将使用 TLS 验证。</font></font></font></p>
+</section>
+<section id="variant" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h2 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">--variant</strong><a class="headerlink" href="#variant" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--变体 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Specify the variant which the list or index records for the image.  This option
+is typically used to distinguish between multiple entries which share the same
+architecture value, but which expect different versions of its instruction set.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定列表或索引记录图像的变体。此选项通常用于区分共享相同架构值但期望其指令集的不同版本的多个条目。</font></font></font></p>
+</section>
+</section>
+<section id="transport" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h1 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Transport<a class="headerlink" href="#transport" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">传输</font></font></font></h1>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Multiple transports are supported:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">支持多种传输方式：</font></font></font></p>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker://</strong><em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker-reference</em> <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">(default)</em>
+An image in a registry implementing the “Docker Registry HTTP API V2”. By default, uses the authorization state in <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">$XDG_RUNTIME_DIR/containers/auth.json</span></code>, which is set using <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">(podman</span> <span class="pre">login)</span></code>. If the authorization state is not found there, <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">$HOME/.docker/config.json</span></code> is checked, which is set using <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">(docker</span> <span class="pre">login)</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">docker://docker-reference（默认）一个在实现“Docker Registry HTTP API V2”的注册表中的镜像。默认情况下，使用 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">$XDG_RUNTIME_DIR/containers/auth.json</span></code> 中设置的授权状态，该状态是使用 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">(podman</span> <span class="pre">login)</span></code> 设置的。如果在那里找不到授权状态，则会检查 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">$HOME/.docker/config.json</span></code> ，该状态是使用 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">(docker</span> <span class="pre">login)</span></code> 设置的。</font></font></font></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ podman manifest add mylist:v1.11 docker://quay.io/username/myimage
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">containers-storage:</strong><em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">oci-reference</em>
+An image in <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">oci-reference</em> format stored in the local container storage. <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">oci-reference</em> must contain a tag.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">containers-storage:oci-reference 存储在本地容器存储中以 oci-reference 格式的镜像。oci-reference 必须包含一个标签。</font></font></font></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ podman manifest add mylist:v1.11 containers-storage:quay.io/username/myimage
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">dir:</strong><em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em>
+An existing local directory <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em> storing the manifest, layer tarballs, and signatures as individual files. This
+is a non-standardized format, primarily useful for debugging or noninvasive container inspection.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">dir:path 存储着清单、层 tarballs 和签名作为单独文件的现有本地目录路径。这是一种非标准化格式，主要用于调试或非侵入式容器检查。</font></font></font></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ podman manifest add dir:/tmp/myimage
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker-archive:</strong><em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em>[<strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">:</strong><em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker-reference</em>]
+An image is stored in the <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">docker</span> <span class="pre">save</span></code> formatted file.  <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker-reference</em> is only used when creating such a
+file, and it must not contain a digest.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">docker-archive:path[:docker-reference] 图像存储在 <code class="docutils literal notranslate" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="pre">docker</span> <span class="pre">save</span></code> 格式的文件中。创建此类文件时仅使用 docker-reference，并且不得包含摘要。</font></font></font></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ podman manifest add docker-archive:/tmp/myimage
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker-daemon:</strong><em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker-reference</em>
+An image in <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker-reference</em> format stored in the docker daemon internal storage. The <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">docker-reference</em> can also be an image ID (docker-daemon:algo:digest).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">docker-daemon:docker-reference 以 docker-reference 格式存储在 docker 守护程序内部存储中的图像。docker-reference 也可以是图像 ID（docker-daemon:algo:digest）。</font></font></font></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo podman manifest add docker-daemon:docker.io/library/myimage:33
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">oci-archive:</strong><em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">:</strong><em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">tag</em>
+An image <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">tag</em> in a directory compliant with “Open Container Image Layout Specification” at <em data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">path</em>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">oci-archive:path:tag 在路径上符合“Open Container Image Layout Specification”规范的目录中的图像标签。</font></font></font></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ podman manifest add oci-archive:/tmp/myimage
+</pre></div>
+</div>
+</section>
+<section id="example" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h1 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">EXAMPLE<a class="headerlink" href="#example" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">例子 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Add specified default image from source manifest list to destination manifest list:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将源清单列表中指定的默认图像添加到目标清单列表中：</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">podman</span> <span class="n">manifest</span> <span class="n">add</span> <span class="n">mylist</span><span class="p">:</span><span class="n">v1</span><span class="mf">.11</span> <span class="n">docker</span><span class="p">:</span><span class="o">//</span><span class="n">fedora</span>
+<span class="mi">71</span><span class="n">c201d10fffdcac52968a000d85a0a016ca1c7d5473948000d3131c1773d965</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Add all images from source manfest list to destination manifest list:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将源清单列表中的所有图像添加到目标清单列表中：</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">podman</span> <span class="n">manifest</span> <span class="n">add</span> <span class="o">--</span><span class="nb">all</span> <span class="n">mylist</span><span class="p">:</span><span class="n">v1</span><span class="mf">.11</span> <span class="n">docker</span><span class="p">:</span><span class="o">//</span><span class="n">fedora</span>
+<span class="mi">71</span><span class="n">c201d10fffdcac52968a000d85a0a016ca1c7d5473948000d3131c1773d965</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Add selected image matching arch and variant from source manifest list to destination manifest list:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将与源清单列表中的架构和变体匹配的选定图像添加到目标清单列表中：</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">podman</span> <span class="n">manifest</span> <span class="n">add</span> <span class="o">--</span><span class="n">arch</span> <span class="n">arm64</span> <span class="o">--</span><span class="n">variant</span> <span class="n">v8</span> <span class="n">mylist</span><span class="p">:</span><span class="n">v1</span><span class="mf">.11</span> <span class="n">docker</span><span class="p">:</span><span class="o">//</span><span class="mi">71</span><span class="n">c201d10fffdcac52968a000d85a0a016ca1c7d5473948000d3131c1773d965</span>
+</pre></div>
+</div>
+</section>
+<section id="see-also" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h1 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">SEE ALSO<a class="headerlink" href="#see-also" title="Link to this heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference internal" href="podman.1.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="std std-doc" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">podman(1)</span></a></strong>, <strong data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference internal" href="podman-manifest.1.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="std std-doc" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">podman-manifest(1)</span></a></strong></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+        <div class="sphinxsidebarwrapper" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h1 class="logo" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a href="../index.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Podman</a></h1>
+
+
+
+
+
+
+
+
+<h3 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Navigation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">导航</font></font></font></h3>
+<p class="caption" role="heading" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><span class="caption-text" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Contents:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内容:</font></font></font></span></p>
+<ul data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<li class="toctree-l1" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference internal" href="../Introduction.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference internal" href="../Commands.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Commands<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">命令</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference internal" href="../Reference.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Reference<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference internal" href="../Tutorials.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Tutorials<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">教程</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference internal" href="../Search.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Search<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">搜索</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a class="reference external" href="https://podman-py.readthedocs.io/en/latest/" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Podman Python</a></li>
+</ul>
+
+<div class="relations" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+<h3 data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Related Topics<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关主题</font></font></font></h3>
+<ul data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+  <li data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"><a href="../index.html" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">Documentation overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档概述</font></font></font></a><ul data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc"></div>
+    </div>
+    <div class="footer" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc" data-immersive-translate-paragraph="1">
+      ©2019, team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">Alabaster 0.7.16</a>
+      
+      |
+      <a href="https://docs.podman.io/en/latest/_sources/markdown/podman-manifest-add.1.md.txt" rel="nofollow" data-immersive-translate-walked="e4cabbc5-25c9-427f-8dea-29f32dc6c4cc">Page source</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">©2019，团队。| 由 Sphinx 7.3.7 &amp; Alabaster 0.7.16 提供支持。| 页面来源</font></font></font>
+    </div>
+
+    
+
+    
+  
+</body></html>

@@ -1,0 +1,891 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>podman-ps — Podman  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css">
+    <link rel="stylesheet" type="text/css" href="../../../_/static/css/badge_only.css">
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css">
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="../../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <link rel="index" title="Index" href="../genindex.html">
+    <link rel="search" title="Search" href="../search.html">
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css">
+  
+
+  
+  
+
+  
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "markdown/podman-ps.1", "programming_language": "go", "project": "podman", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "alabaster", "user_analytics_code": "", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+  
+
+    <div class="document" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+      <div class="documentwrapper" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+        <div class="bodywrapper" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+          
+
+          <div class="body" role="main" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+            
+  <section id="name" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h1 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">NAME<a class="headerlink" href="#name" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h1>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">podman-ps - Print out information about containers<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman-ps - 打印有关容器的信息</font></font></font></p>
+</section>
+<section id="synopsis" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h1 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">SYNOPSIS<a class="headerlink" href="#synopsis" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h1>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">podman ps</strong> [<em data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">options</em>]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman ps [选项]</font></font></font></p>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">podman container ps</strong> [<em data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">options</em>]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman container ps [选项]</font></font></font></p>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">podman container list</strong> [<em data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">options</em>]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman 容器列表[选项]</font></font></font></p>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">podman container ls</strong> [<em data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">options</em>]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman 容器 ls [选项]</font></font></font></p>
+</section>
+<section id="description" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h1 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h1>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">podman ps</strong> lists the running containers on the system. Use the <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--all</strong> flag to view
+all the containers information.  By default it lists:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman ps 列出系统上正在运行的容器。使用--all 标志查看所有容器信息。默认情况下，它列出：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<li data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">container id<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器 ID</font></font></font></p></li>
+<li data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">the name of the image the container is using<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器使用的镜像名称</font></font></font></p></li>
+<li data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">the COMMAND the container is executing<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器正在执行的命令</font></font></font></p></li>
+<li data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">the time the container was created<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器创建的时间</font></font></font></p></li>
+<li data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">the status of the container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器的状态</font></font></font></p></li>
+<li data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">port mappings the container is using<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器正在使用的端口映射</font></font></font></p></li>
+<li data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">alternative names for the container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器的替代名称</font></font></font></p></li>
+</ul>
+</section>
+<section id="options" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h1 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">OPTIONS<a class="headerlink" href="#options" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h1>
+<section id="all-a" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--all</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">-a</strong><a class="headerlink" href="#all-a" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Show all the containers, default is only running containers.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示所有容器，默认仅显示正在运行的容器。</font></font></font></p>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Note: Podman shares containers storage with other tools such as Buildah and CRI-O. In some cases these <code class="docutils literal notranslate" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><span class="pre">external</span></code> containers might also exist in the same storage. Use the <code class="docutils literal notranslate" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><span class="pre">--external</span></code> option to see these external containers. External containers show the ‘storage’ status.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：Podman 与 Buildah 和 CRI-O 等其他工具共享容器存储。在某些情况下，这些 <code class="docutils literal notranslate" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><span class="pre">external</span></code> 容器也可能存在于相同的存储中。使用 <code class="docutils literal notranslate" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><span class="pre">--external</span></code> 选项查看这些外部容器。外部容器显示“存储”状态。</font></font></font></p>
+</section>
+<section id="external" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--external</strong><a class="headerlink" href="#external" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--外部 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Display external containers that are not controlled by Podman but are stored in containers storage.  These external containers are generally created via other container technology such as Buildah or CRI-O and may depend on the same container images that Podman is also using.  External containers are denoted with either a ‘buildah’ or ‘storage’ in the COMMAND and STATUS column of the ps output.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示存储在容器存储中但不受 Podman 控制的外部容器。这些外部容器通常是通过其他容器技术（如 Buildah 或 CRI-O）创建的，并且可能依赖于 Podman 也在使用的相同容器映像。外部容器在 ps 输出的 COMMAND 和 STATUS 列中用 'buildah' 或 'storage' 表示。</font></font></font></p>
+</section>
+<section id="filter-f" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--filter</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">-f</strong><a class="headerlink" href="#filter-f" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Filter what containers are shown in the output.
+Multiple filters can be given with multiple uses of the --filter flag.
+Filters with the same key work inclusive with the only exception being
+<code class="docutils literal notranslate" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><span class="pre">label</span></code> which is exclusive. Filters with different keys always work exclusive.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">过滤输出中显示的容器。可以使用多个 --filter 标志给出多个过滤器。具有相同键的过滤器与唯一例外的 <code class="docutils literal notranslate" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><span class="pre">label</span></code> 一起包含工作。具有不同键的过滤器始终是互斥的。</font></font></font></p>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Valid filters are listed below:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">下面列出了有效的过滤器：</font></font></font></p>
+<table class="docutils align-default" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<thead data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><th class="head"><p><strong>Filter</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>id</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[ID] Container’s ID (CID prefix match by default; accepts regex)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[ID] 容器的 ID（默认情况下是 CID 前缀匹配；接受正则表达式）</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>name</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[Name] Container’s name (accepts regex)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[名称] 容器的名称（接受正则表达式）</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>label</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[Key] or [Key=Value] Label assigned to a container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[键] 或 [键=值] 分配给容器的标签</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">label!<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">标签！</font></font></font></p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[Key] or [Key=Value] Label NOT assigned to a container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[键] 或 [键=值] 标签未分配给容器</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>exited</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[Int] Container’s exit code<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[整数] 容器的退出代码</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>status</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[Status] Container’s status: ‘created’, ‘exited’, ‘paused’, ‘running’, ‘unknown’<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[状态] 容器的状态: '已创建'，'已退出'，'已暂停'，'运行中'，'未知'</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>ancestor</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[ImageName] Image or descendant used to create container (accepts regex)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[镜像名称] 用于创建容器的镜像或后代（接受正则表达式）</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>before</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[ID] or [Name] Containers created before this container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[ID] 或 [名称] 在此容器之前创建的容器</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>since</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[ID] or [Name] Containers created since this container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">自创建此容器以来的[ID]或[名称]容器</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>volume</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[VolumeName] or [MountpointDestination] Volume mounted in container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器中挂载的[VolumeName]或[MountpointDestination]卷</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>health</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[Status] healthy or unhealthy<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[状态]健康或不健康</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>pod</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[Pod] name or full or partial ID of pod<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[Pod] Pod 的名称或完整或部分 ID</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>network</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[Network] name or full ID of network<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[Network] 网络的名称或完整 ID</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>until</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">[DateTime] container created before the given duration or time.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">[DateTime] 在给定的持续时间或时间之前创建的容器</font></font></font></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="format-format" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--format</strong>=<em data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">format</em><a class="headerlink" href="#format-format" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Pretty-print containers to JSON or using a Go template<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将容器漂亮地打印成 JSON 或使用 Go 模板</font></font></font></p>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Valid placeholders for the Go template are listed below:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">Go 模板的有效占位符如下所示：</font></font></font></p>
+<table class="docutils align-default" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<thead data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><th class="head"><p><strong>Placeholder</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.AutoRemove</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">If true, containers are removed on exit<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果为真，则容器在退出时被移除</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.CIDFile</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Container ID File<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器 ID 文件</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Command</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Quoted command used<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用引号引起的命令</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">.Created …<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">.创建…</font></font></font></p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Creation time for container, Y-M-D H:M:S<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器的创建时间，年-月-日 时:分:秒</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.CreatedAt</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Creation time for container (same as above)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器的创建时间（同上）</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.CreatedHuman</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Creation time, relative<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">创建时间，相对时间</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.ExitCode</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Container exit code<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器退出代码</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Exited</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">“true” if container has exited<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果容器已退出则为“true”</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.ExitedAt</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Time (epoch seconds) that container exited<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器退出的时间（epoch 秒）</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">.ExposedPorts …<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">.暴露的端口…</font></font></font></p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Map of exposed ports on this container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">此容器上暴露端口的映射</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.ID</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Container ID<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器 ID</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Image</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Image Name/ID<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">镜像名称/ID</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.ImageID</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Image ID<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">图像 ID</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.IsInfra</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">“true” if infra container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果是基础设施容器，则为“true”</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">.Label <em data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">string</em><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">.标签字符串</font></font></font></p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Specified label of the container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器的指定标签</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">.Labels …<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">.标签 …</font></font></font></p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">All the labels assigned to the container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">分配给容器的所有标签</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Mounts</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Volumes mounted in the container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">挂载在容器中的卷</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Names</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Name of container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器的名称</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Networks</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Show all networks connected to the container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示连接到容器的所有网络</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Pid</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Process ID on host system<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">主机系统上的进程 ID</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Pod</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Pod the container is associated with (SHA)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">与容器关联的 Pod（SHA）</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.PodName</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">PodName of the container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器的 Pod 名称</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Ports</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Forwarded and exposed ports<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">转发和暴露端口</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Restarts</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Display the container restart count<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示容器重新启动计数</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.RunningFor</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Time elapsed since container was started<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器启动后经过的时间</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Size</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Size of container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器大小</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.StartedAt</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Time (epoch seconds) the container started<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器启动时间（epoch 秒）</font></font></font></p></td>
+</tr>
+<tr class="row-odd" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.State</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Human-friendly description of ctr state<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">ctr 状态的人性化描述</font></font></font></p></td>
+</tr>
+<tr class="row-even" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><td><p>.Status</p></td>
+<td data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Status of container<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">容器状态</font></font></font></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="help-h" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--help</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">-h</strong><a class="headerlink" href="#help-h" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--help，-h ¶</font></font></font></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Print usage statement<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印使用说明</font></font></font></p>
+</section>
+<section id="last-n" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--last</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">-n</strong><a class="headerlink" href="#last-n" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Print the n last created containers (all states)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印最后创建的 n 个容器（所有状态）</font></font></font></p>
+</section>
+<section id="latest-l" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--latest</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">-l</strong><a class="headerlink" href="#latest-l" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Show the latest container created (all states) (This option is not available with the remote Podman client, including Mac and Windows (excluding WSL2) machines)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示最新创建的容器（所有状态）（此选项在远程 Podman 客户端中不可用，包括 Mac 和 Windows（不包括 WSL2）机器）</font></font></font></p>
+</section>
+<section id="namespace-ns" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--namespace</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--ns</strong><a class="headerlink" href="#namespace-ns" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Display namespace information<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示命名空间信息</font></font></font></p>
+</section>
+<section id="no-trunc" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--no-trunc</strong><a class="headerlink" href="#no-trunc" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Do not truncate the output (default <em data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">false</em>).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">不要截断输出（默认为 false）。</font></font></font></p>
+</section>
+<section id="noheading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--noheading</strong><a class="headerlink" href="#noheading" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--noheading</font></font></font></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Omit the table headings from the listing of containers.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">从容器列表中省略表头。</font></font></font></p>
+</section>
+<section id="pod-p" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--pod</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">-p</strong><a class="headerlink" href="#pod-p" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Display the pods the containers are associated with<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示容器关联的 Pod。</font></font></font></p>
+</section>
+<section id="quiet-q" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--quiet</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">-q</strong><a class="headerlink" href="#quiet-q" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Print the numeric IDs of the containers only<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">仅打印容器的数字 ID</font></font></font></p>
+</section>
+<section id="size-s" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--size</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">-s</strong><a class="headerlink" href="#size-s" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--size，-s ¶</font></font></font></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Display the total file size<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示总文件大小</font></font></font></p>
+</section>
+<section id="sort-created" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--sort</strong>=<em data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">created</em><a class="headerlink" href="#sort-created" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--sort=created</font></font></font></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Sort by command, created, id, image, names, runningfor, size, or status”,
+Note: Choosing size sorts by size of rootFs, not alphabetically like the rest of the options<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">按命令、创建时间、ID、镜像、名称、运行时间、大小或状态排序”，注意：选择大小会按照 rootFs 的大小排序，而不是像其他选项一样按字母顺序排序</font></font></font></p>
+</section>
+<section id="sync" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--sync</strong><a class="headerlink" href="#sync" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Force a sync of container state with the OCI runtime.
+In some cases, a container’s state in the runtime can become out of sync with Podman’s state.
+This updates Podman’s state based on what the OCI runtime reports.
+Forcibly syncing is much slower, but can resolve inconsistent state issues.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">强制同步容器状态与 OCI 运行时。在某些情况下，容器在运行时的状态可能与 Podman 的状态不同步。这将根据 OCI 运行时报告的内容更新 Podman 的状态。强制同步速度较慢，但可以解决不一致的状态问题。</font></font></font></p>
+</section>
+<section id="watch-w" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h2 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">--watch</strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">-w</strong><a class="headerlink" href="#watch-w" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a></h2>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Refresh the output with current containers on an interval in seconds.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">每隔几秒刷新输出，显示当前容器。</font></font></font></p>
+</section>
+</section>
+<section id="examples" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h1 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">EXAMPLES<a class="headerlink" href="#examples" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例</font></font></font></h1>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">List running containers.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">列出正在运行的容器。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman ps
+CONTAINER ID  IMAGE                            COMMAND    CREATED        STATUS        PORTS                                                   NAMES
+4089df24d4f3  docker.io/library/centos:latest  /bin/bash  2 minutes ago  Up 2 minutes  0.0.0.0:80-&gt;8080/tcp, 0.0.0.0:2000-2006-&gt;2000-2006/tcp  manyports
+92f58933c28c  docker.io/library/centos:latest  /bin/bash  3 minutes ago  Up 3 minutes  192.168.99.100:1000-1006-&gt;1000-1006/tcp                 zen_sanderson
+</pre></div>
+</div>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">List all containers.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">列出所有容器。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman ps -a
+CONTAINER ID   IMAGE         COMMAND         CREATED       STATUS                    PORTS     NAMES
+02f65160e14ca  redis:alpine  "redis-server"  19 hours ago  Exited (-1) 19 hours ago  6379/tcp  k8s_podsandbox1-redis_podsandbox1_redhat.test.crio_redhat-test-crio_0
+69ed779d8ef9f  redis:alpine  "redis-server"  25 hours ago  Created                   6379/tcp  k8s_container1_podsandbox1_redhat.test.crio_redhat-test-crio_1
+</pre></div>
+</div>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">List all containers including their size. Note: this can take longer since Podman needs to calculate the size from the file system.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">列出所有容器，包括它们的大小。注意：这可能需要更长的时间，因为 Podman 需要从文件系统计算大小。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman ps -a -s
+CONTAINER ID   IMAGE         COMMAND         CREATED       STATUS                    PORTS     NAMES                                                                  SIZE
+02f65160e14ca  redis:alpine  "redis-server"  20 hours ago  Exited (-1) 20 hours ago  6379/tcp  k8s_podsandbox1-redis_podsandbox1_redhat.test.crio_redhat-test-crio_0  27.49 MB
+69ed779d8ef9f  redis:alpine  "redis-server"  25 hours ago  Created                   6379/tcp  k8s_container1_podsandbox1_redhat.test.crio_redhat-test-crio_1         27.49 MB
+</pre></div>
+</div>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">List all containers, running or not, using a custom Go format.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">列出所有容器，无论是否正在运行，使用自定义的 Go 格式。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman ps -a --format "{{.ID}}  {{.Image}}  {{.Labels}}  {{.Mounts}}"
+02f65160e14ca  redis:alpine  tier=backend  proc,tmpfs,devpts,shm,mqueue,sysfs,cgroup,/var/run/,/var/run/
+69ed779d8ef9f  redis:alpine  batch=no,type=small  proc,tmpfs,devpts,shm,mqueue,sysfs,cgroup,/var/run/,/var/run/
+</pre></div>
+</div>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">List all containers and display their namespaces.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">列出所有容器并显示它们的命名空间。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman ps --ns -a
+CONTAINER ID    NAMES                                                                   PID     CGROUP       IPC          MNT          NET          PIDNS        USER         UTS
+3557d882a82e3   k8s_container2_podsandbox1_redhat.test.crio_redhat-test-crio_1          29910   4026531835   4026532585   4026532593   4026532508   4026532595   4026531837   4026532594
+09564cdae0bec   k8s_container1_podsandbox1_redhat.test.crio_redhat-test-crio_1          29851   4026531835   4026532585   4026532590   4026532508   4026532592   4026531837   4026532591
+a31ebbee9cee7   k8s_podsandbox1-redis_podsandbox1_redhat.test.crio_redhat-test-crio_0   29717   4026531835   4026532585   4026532587   4026532508   4026532589   4026531837   4026532588
+</pre></div>
+</div>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">List all containers including size sorted by names.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">按名称排序列出所有容器，包括大小。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman ps -a --size --sort names
+CONTAINER ID   IMAGE         COMMAND         CREATED       STATUS                    PORTS     NAMES
+69ed779d8ef9f  redis:alpine  "redis-server"  25 hours ago  Created                   6379/tcp  k8s_container1_podsandbox1_redhat.test.crio_redhat-test-crio_1
+02f65160e14ca  redis:alpine  "redis-server"  19 hours ago  Exited (-1) 19 hours ago  6379/tcp  k8s_podsandbox1-redis_podsandbox1_redhat.test.crio_redhat-test-crio_0
+</pre></div>
+</div>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">List all external containers created by tools other than Podman.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">列出由除 Podman 之外的工具创建的所有外部容器。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman ps --external -a
+CONTAINER ID  IMAGE                             COMMAND  CREATED      STATUS  PORTS  NAMES
+69ed779d8ef9f  redis:alpine  "redis-server"  25 hours ago  Created                   6379/tcp  k8s_container1_podsandbox1_redhat.test.crio_redhat-test-crio_1
+38a8a78596f9  docker.io/library/busybox:latest  buildah  2 hours ago  storage        busybox-working-container
+fd7b786b5c32  docker.io/library/alpine:latest   buildah  2 hours ago  storage        alpine-working-container
+f78620804e00  scratch                           buildah  2 hours ago  storage        working-container
+</pre></div>
+</div>
+</section>
+<section id="ps" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h1 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">ps<a class="headerlink" href="#ps" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">源</font></font></font></h1>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Print a list of containers<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印容器列表</font></font></font></p>
+</section>
+<section id="see-also" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h1 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">SEE ALSO<a class="headerlink" href="#see-also" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a class="reference internal" href="podman.1.html" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><span class="std std-doc" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">podman(1)</span></a></strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a class="reference external" href="https://github.com/containers/buildah/blob/main/docs/buildah.1.md" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">buildah(1)</a></strong>, <strong data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a class="reference external" href="https://github.com/cri-o/cri-o/blob/main/docs/crio.8.md" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">crio(8)</a></strong></p>
+</section>
+<section id="history" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h1 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">HISTORY<a class="headerlink" href="#history" title="Link to this heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">August 2017, Originally compiled by Urvashi Mohnani <a class="reference external" href="mailto:umohnani%40redhat.com" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">umohnani<span data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">@</span>redhat<span data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">.</span>com</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2017 年 8 月，最初由 Urvashi Mohnani umohnani@redhat.com 编写</font></font></font></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+        <div class="sphinxsidebarwrapper" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h1 class="logo" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a href="../index.html" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Podman</a></h1>
+
+
+
+
+
+
+
+
+<h3 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Navigation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">导航</font></font></font></h3>
+<p class="caption" role="heading" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><span class="caption-text" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Contents:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内容:</font></font></font></span></p>
+<ul data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<li class="toctree-l1" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a class="reference internal" href="../Introduction.html" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a class="reference internal" href="../Commands.html" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Commands<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">命令</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a class="reference internal" href="../Reference.html" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Reference<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a class="reference internal" href="../Tutorials.html" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Tutorials<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">教程</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a class="reference internal" href="../Search.html" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Search<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">搜索</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a class="reference external" href="https://podman-py.readthedocs.io/en/latest/" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Podman Python</a></li>
+</ul>
+
+<div class="relations" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+<h3 data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Related Topics<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关主题</font></font></font></h3>
+<ul data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+  <li data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"><a href="../index.html" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">Documentation overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档概述</font></font></font></a><ul data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a"></div>
+    </div>
+    <div class="footer" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a" data-immersive-translate-paragraph="1">
+      ©2019, team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/markdown/podman-ps.1.md.txt" rel="nofollow" data-immersive-translate-walked="8336eaab-defc-41d1-a9f6-cfd15bc2b97a">Page source</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">©2019，团队。| 由 Sphinx 7.3.7 &amp; Alabaster 0.7.16 提供支持。| 页面来源</font></font></font>
+    </div>
+
+    
+
+    
+  
+</body></html>

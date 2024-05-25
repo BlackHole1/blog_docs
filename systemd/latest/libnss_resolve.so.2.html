@@ -1,0 +1,80 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>nss-resolve</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="nss-resolve"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>nss-resolve, libnss_resolve.so.2 — Hostname resolution via <code class="filename">systemd-resolved.service</code></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">libnss_resolve.so.2</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>nss-resolve</strong></span> is a plug-in module for the GNU Name Service Switch (NSS) functionality of the
+    GNU C Library (<span class="command"><strong>glibc</strong></span>) enabling it to resolve hostnames via the
+    <a href="systemd-resolved.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved</span>(8)</span></a> local network
+    name resolution service. It replaces the <span class="command"><strong>nss-dns</strong></span> plug-in module that traditionally resolves
+    hostnames via DNS.</p><p>To activate the NSS module, add "<code class="literal">resolve [!UNAVAIL=return]</code>" to the line starting
+    with "<code class="literal">hosts:</code>" in <code class="filename">/etc/nsswitch.conf</code>. Specifically, it is
+    recommended to place "<code class="literal">resolve</code>" early in <code class="filename">/etc/nsswitch.conf</code>'s
+    "<code class="literal">hosts:</code>" line. It should be before the "<code class="literal">files</code>" entry, since
+    <code class="filename">systemd-resolved</code> supports <code class="filename">/etc/hosts</code> internally, but with
+    caching. To the contrary, it should be after "<code class="literal">mymachines</code>", to give hostnames given to
+    local VMs and containers precedence over names received over DNS. Finally, we recommend placing
+    "<code class="literal">dns</code>" somewhere after "<code class="literal">resolve</code>", to fall back to
+    <span class="command"><strong>nss-dns</strong></span> if <code class="filename">systemd-resolved.service</code> is not available.</p><p>Note that <span class="command"><strong>systemd-resolved</strong></span> will synthesize DNS resource records in a few cases,
+    for example for "<code class="literal">localhost</code>" and the current local hostname, see
+    <a href="systemd-resolved.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved</span>(8)</span></a> for
+    the full list. This duplicates the functionality of
+    <a href="nss-myhostname.html#"><span class="citerefentry"><span class="refentrytitle">nss-myhostname</span>(8)</span></a>, but
+    it is still recommended (see examples below) to keep <span class="command"><strong>nss-myhostname</strong></span> configured in
+    <code class="filename">/etc/nsswitch.conf</code>, to keep those names resolveable if
+    <span class="command"><strong>systemd-resolved</strong></span> is not running.</p><p>Please keep in mind that <span class="command"><strong>nss-myhostname</strong></span> (and <span class="command"><strong>nss-resolve</strong></span>) also resolve
+    in the other direction — from locally attached IP addresses to
+    hostnames. If you rely on that lookup being provided by DNS, you might
+    want to order things differently.
+    </p><p>Communication between <span class="command"><strong>nss-resolve</strong></span> and
+    <code class="filename">systemd-resolved.service</code> takes place via the
+    <code class="filename">/run/systemd/resolve/io.systemd.Resolve</code> <code class="constant">AF_UNIX</code> socket.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Environment variables">Environment variables<a class="headerlink" title="Permalink to this headline" href="#Environment%20variables">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_NSS_RESOLVE_VALIDATE"><span class="term"><code class="varname">$SYSTEMD_NSS_RESOLVE_VALIDATE</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_NSS_RESOLVE_VALIDATE">¶</a></dt><dd><p>Takes a boolean argument. When false, cryptographic validation of resource records
+        via DNSSEC will be disabled. This may be useful for testing, or when system time is known to be
+        unreliable.</p><p><a name="v250"></a>Added in version 250.</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_NSS_RESOLVE_SYNTHESIZE"><span class="term"><code class="varname">$SYSTEMD_NSS_RESOLVE_SYNTHESIZE</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_NSS_RESOLVE_SYNTHESIZE">¶</a></dt><dd><p>Takes a boolean argument. When false, synthetic records, e.g. for the local host
+        name, will not be returned. See section SYNTHETIC RECORDS in
+        <a href="systemd-resolved.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved.service</span>(8)</span></a>
+        for more information. This may be useful to query the "public" resource records, independent of the
+        configuration of the local machine.</p><p><a name="v250"></a>Added in version 250.</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_NSS_RESOLVE_CACHE"><span class="term"><code class="varname">$SYSTEMD_NSS_RESOLVE_CACHE</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_NSS_RESOLVE_CACHE">¶</a></dt><dd><p>Takes a boolean argument. When false, the cache of previously queried records will
+        not be used by
+        <a href="systemd-resolved.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved</span>(8)</span></a>.
+        </p><p><a name="v250"></a>Added in version 250.</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_NSS_RESOLVE_ZONE"><span class="term"><code class="varname">$SYSTEMD_NSS_RESOLVE_ZONE</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_NSS_RESOLVE_ZONE">¶</a></dt><dd><p>Takes a boolean argument. When false, answers using locally registered public
+        LLMNR/mDNS resource records will not be returned.</p><p><a name="v250"></a>Added in version 250.</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_NSS_RESOLVE_TRUST_ANCHOR"><span class="term"><code class="varname">$SYSTEMD_NSS_RESOLVE_TRUST_ANCHOR</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_NSS_RESOLVE_TRUST_ANCHOR">¶</a></dt><dd><p>Takes a boolean argument. When false, answers using locally configured trust anchors
+        will not be used.</p><p><a name="v250"></a>Added in version 250.</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_NSS_RESOLVE_NETWORK"><span class="term"><code class="varname">$SYSTEMD_NSS_RESOLVE_NETWORK</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_NSS_RESOLVE_NETWORK">¶</a></dt><dd><p>Takes a boolean argument. When false, answers will be returned without using the
+        network, i.e. either from local sources or the cache in
+        <a href="systemd-resolved.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved</span>(8)</span></a>.
+        </p><p><a name="v250"></a>Added in version 250.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Example">Example<a class="headerlink" title="Permalink to this headline" href="#Example">¶</a></h2><p>Here is an example <code class="filename">/etc/nsswitch.conf</code> file that enables
+    <span class="command"><strong>nss-resolve</strong></span> correctly:</p><pre class="programlisting">passwd:         files systemd
+group:          files [SUCCESS=merge] systemd
+shadow:         files systemd
+gshadow:        files systemd
+
+hosts:          mymachines <span class="command"><strong>resolve [!UNAVAIL=return]</strong></span> files myhostname dns
+networks:       files
+
+protocols:      db files
+services:       db files
+ethers:         db files
+rpc:            db files
+
+netgroup:       nis</pre></div><div class="refsect1"><a name="id-1.8"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-resolved.html#"><span class="citerefentry"><span class="refentrytitle">systemd-resolved</span>(8)</span></a>,
+      <a href="nss-systemd.html#"><span class="citerefentry"><span class="refentrytitle">nss-systemd</span>(8)</span></a>,
+      <a href="nss-myhostname.html#"><span class="citerefentry"><span class="refentrytitle">nss-myhostname</span>(8)</span></a>,
+      <a href="nss-mymachines.html#"><span class="citerefentry"><span class="refentrytitle">nss-mymachines</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man5/nsswitch.conf.5.html"><span class="citerefentry"><span class="refentrytitle">nsswitch.conf</span>(5)</span></a>,
+      <a href="systemd.syntax.html#"><span class="citerefentry"><span class="refentrytitle">systemd.syntax</span>(5)</span></a>
+    </p></div></div></body></html>

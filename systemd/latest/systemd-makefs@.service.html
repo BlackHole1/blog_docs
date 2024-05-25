@@ -1,0 +1,66 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-makefs@.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-makefs@.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-makefs@.service, systemd-mkswap@.service, systemd-growfs@.service, systemd-growfs-root.service, systemd-makefs, systemd-growfs — Creating and growing file systems on demand</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-makefs@<em class="replaceable"><code>device</code></em>.service</code></p><p><code class="filename">systemd-mkswap@<em class="replaceable"><code>device</code></em>.service</code></p><p><code class="filename">systemd-growfs@<em class="replaceable"><code>mountpoint</code></em>.service</code></p><p><code class="filename">systemd-growfs-root.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-makefs</code></p><p><code class="filename">/usr/lib/systemd/systemd-growfs</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">systemd-makefs@.service</code>,
+    <code class="filename">systemd-mkswap@.service</code>,
+    <code class="filename">systemd-growfs@.service</code>, and
+    <code class="filename">systemd-growfs-root.service</code> are used to implement the
+    <code class="option">x-systemd.makefs</code> and <code class="option">x-systemd.growfs</code> options
+    in <a href="https://man7.org/linux/man-pages/man5/fstab.5.html"><span class="citerefentry"><span class="refentrytitle">fstab</span>(5)</span></a>,
+    see <a href="systemd.mount.html#"><span class="citerefentry"><span class="refentrytitle">systemd.mount</span>(5)</span></a>.
+    They are instantiated for each device for which the file system or swap structure
+    needs to be initialized, and for each mount point where the file system needs to
+    be grown.</p><p>These services are started at boot, either right before or right after the
+    mount point or swap device are used.</p><p><code class="filename">systemd-makefs</code> knows very little about specific file
+    systems and swap devices, and after checking that the block device does not already
+    contain a file system or other content, it will execute binaries specific to
+    each filesystem type (<code class="filename">/sbin/mkfs.<em class="replaceable"><code>type</code></em></code>
+    or <code class="filename">/sbin/mkswap</code>). For certain file system types (currently
+    ext2/ext3/<a href="https://man7.org/linux/man-pages/man5/ext4.5.html"><span class="citerefentry"><span class="refentrytitle">ext4</span>(5)</span></a>,
+    <a href="https://btrfs.readthedocs.io/en/latest/btrfs-man5.html"><span class="citerefentry"><span class="refentrytitle">btrfs</span>(5)</span></a>,
+    <a href="https://man7.org/linux/man-pages/man5/xfs.5.html"><span class="citerefentry"><span class="refentrytitle">xfs</span>(5)</span></a>,
+    f2fs, vfat) and for swap devices, it will configure reasonable defaults and set
+    the file system label and UUID based on the device name.</p><p><code class="filename">systemd-growfs</code> knows very little about specific file
+    systems and swap devices, and will instruct the kernel to grow the mounted
+    filesystem to full size of the underlying block device. Nevertheless, it needs
+    to know the
+    <a href="https://man7.org/linux/man-pages/man2/ioctl.2.html"><span class="citerefentry"><span class="refentrytitle">ioctl</span>(2)</span></a>
+    number specific to each file system, so only certain types are supported.
+    Currently:
+    <a href="https://man7.org/linux/man-pages/man5/ext4.5.html"><span class="citerefentry"><span class="refentrytitle">ext4</span>(5)</span></a>,
+    <a href="https://btrfs.readthedocs.io/en/latest/btrfs-man5.html"><span class="citerefentry"><span class="refentrytitle">btrfs</span>(5)</span></a>,
+    <a href="https://man7.org/linux/man-pages/man5/xfs.5.html"><span class="citerefentry"><span class="refentrytitle">xfs</span>(5)</span></a>,
+    
+    and dm-crypt partitions (see
+    <a href="http://linux.die.net/man/8/cryptsetup"><span class="citerefentry"><span class="refentrytitle">cryptsetup</span>(8)</span></a>).
+    </p><p>If the creation of a file system or swap device fails, the mount point or
+    swap is failed too. If the growing of a file system fails, a warning is emitted.
+    </p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd.mount.html#"><span class="citerefentry"><span class="refentrytitle">systemd.mount</span>(8)</span></a>,
+      <a href="systemd-fstab-generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd-fstab-generator</span>(8)</span></a>,
+      <a href="systemd-repart.html#"><span class="citerefentry"><span class="refentrytitle">systemd-repart</span>(8)</span></a>,
+      <a href="https://btrfs.readthedocs.io/en/latest/mkfs.btrfs.html"><span class="citerefentry"><span class="refentrytitle">mkfs.btrfs</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/mkfs.cramfs.8.html"><span class="citerefentry"><span class="refentrytitle">mkfs.cramfs</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/mkfs.ext4.8.html"><span class="citerefentry"><span class="refentrytitle">mkfs.ext4</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/mkfs.fat.8.html"><span class="citerefentry"><span class="refentrytitle">mkfs.fat</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/mkfs.hfsplus.8.html"><span class="citerefentry"><span class="refentrytitle">mkfs.hfsplus</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/mkfs.minix.8.html"><span class="citerefentry"><span class="refentrytitle">mkfs.minix</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/mkfs.ntfs.8.html"><span class="citerefentry"><span class="refentrytitle">mkfs.ntfs</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man8/mkfs.xfs.8.html"><span class="citerefentry"><span class="refentrytitle">mkfs.xfs</span>(8)</span></a>
+    </p></div></div></body></html>

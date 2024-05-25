@@ -1,0 +1,83 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_event_source_set_priority</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_event_source_set_priority"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_event_source_set_priority, sd_event_source_get_priority, SD_EVENT_PRIORITY_IMPORTANT, SD_EVENT_PRIORITY_NORMAL, SD_EVENT_PRIORITY_IDLE — Set or retrieve the priority of event sources</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-event.h&gt;</pre><pre class="funcsynopsisinfo"><span class="token">enum</span> {
+        <code class="constant">SD_EVENT_PRIORITY_IMPORTANT</code> = -100,
+        <code class="constant">SD_EVENT_PRIORITY_NORMAL</code> = 0,
+        <code class="constant">SD_EVENT_PRIORITY_IDLE</code> = 100,
+};</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_set_priority</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td> </td><td>int64_t <var class="pdparam">priority</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_event_source_get_priority</b>(</code></td><td>sd_event_source *<var class="pdparam">source</var>, </td></tr><tr><td> </td><td>int64_t *<var class="pdparam">priority</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_event_source_set_priority()</code> may be
+    used to set the priority for the event source object specified as
+    <em class="parameter"><code>source</code></em>. The priority is specified as an
+    arbitrary signed 64-bit integer. The priority is initialized to
+    <code class="constant">SD_EVENT_PRIORITY_NORMAL</code> (0) when the event
+    source is allocated with a call such as
+    <a href="sd_event_add_io.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_io</span>(3)</span></a>
+    or
+    <a href="sd_event_add_time.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_time</span>(3)</span></a>,
+    and may be changed with this call. If multiple event sources have seen events at the same time, they are dispatched in the order indicated by the
+    event sources' priorities. Event sources with smaller priority
+    values are dispatched first. As well-known points of reference,
+    the constants <code class="constant">SD_EVENT_PRIORITY_IMPORTANT</code>
+    (-100), <code class="constant">SD_EVENT_PRIORITY_NORMAL</code> (0) and
+    <code class="constant">SD_EVENT_PRIORITY_IDLE</code> (100) may be used to
+    indicate event sources that shall be dispatched early, normally or
+    late. It is recommended to specify priorities based on these
+    definitions, and relative to them — however, the full 64-bit
+    signed integer range is available for ordering event
+    sources.</p><p>Priorities define the order in which event sources that have
+    seen events are dispatched. Care should be taken to ensure that
+    high-priority event sources (those with negative priority values
+    assigned) do not cause starvation of low-priority event sources
+    (those with positive priority values assigned).</p><p>The order in which event sources with the same priority are
+    dispatched is undefined, but the event loop generally tries to
+    dispatch them in the order it learnt about events on them. As the
+    backing kernel primitives do not provide accurate information
+    about the order in which events occurred this is not necessarily
+    reliable. However, it is guaranteed that if events are seen on
+    multiple same-priority event sources at the same time, each one is
+    not dispatched again until all others have been dispatched
+    once. This behavior guarantees that within each priority
+    particular event sources do not starve or dominate the event
+    loop.</p><p>The priority of event sources may be changed at any time of their lifetime, with the exception of inotify
+    event sources (i.e. those created with
+    <a href="sd_event_add_inotify.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_inotify</span>(3)</span></a>) whose
+    priority may only be changed in the time between their initial creation and the first subsequent event loop
+    iteration.</p><p><code class="function">sd_event_source_get_priority()</code> may be
+    used to query the current priority assigned to the event source
+    object <em class="parameter"><code>source</code></em>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, <code class="function">sd_event_source_set_priority()</code> and
+    <code class="function">sd_event_source_get_priority()</code> return a non-negative integer. On failure, they
+    return a negative errno-style error code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p><em class="parameter"><code>source</code></em> is not a valid pointer to an
+          <span class="structname">sd_event_source</span> object.</p></dd><dt id="-ENOMEM"><span class="term"><code class="constant">-ENOMEM</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOMEM">¶</a></dt><dd><p>Not enough memory.</p></dd><dt id="-ESTALE"><span class="term"><code class="constant">-ESTALE</code></span><a class="headerlink" title="Permalink to this term" href="#-ESTALE">¶</a></dt><dd><p>The event loop is already terminated.</p></dd><dt id="-ECHILD"><span class="term"><code class="constant">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD">¶</a></dt><dd><p>The event loop has been created in a different process, library or module instance.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_event_source_set_priority()</code> and
+    <code class="function">sd_event_source_get_priority()</code> were added in version 229.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="sd-event.html#"><span class="citerefentry"><span class="refentrytitle">sd-event</span>(3)</span></a>,
+      <a href="sd_event_add_io.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_io</span>(3)</span></a>,
+      <a href="sd_event_add_time.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_time</span>(3)</span></a>,
+      <a href="sd_event_add_signal.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_signal</span>(3)</span></a>,
+      <a href="sd_event_add_child.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_child</span>(3)</span></a>,
+      <a href="sd_event_add_inotify.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_inotify</span>(3)</span></a>,
+      <a href="sd_event_add_defer.html#"><span class="citerefentry"><span class="refentrytitle">sd_event_add_defer</span>(3)</span></a>
+    </p></div></div></body></html>

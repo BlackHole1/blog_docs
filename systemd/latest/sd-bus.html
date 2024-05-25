@@ -1,0 +1,175 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd-bus</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd-bus"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd-bus — A lightweight D-Bus IPC client library</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre></div><div class="cmdsynopsis"><p><code class="command">pkg-config --cflags --libs libsystemd</code> </p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="filename">sd-bus.h</code> is part of
+    <a href="libsystemd.html#"><span class="citerefentry"><span class="refentrytitle">libsystemd</span>(3)</span></a> and
+    provides an implementation of a D-Bus IPC client. See
+    <a class="ulink" href="https://www.freedesktop.org/software/dbus/" target="_top">https://www.freedesktop.org/software/dbus/</a>
+    for more information about D-Bus IPC.</p><p>See
+    </p><div class="literallayout"><p><a href="sd_bus_add_match.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_match</span>(3)</span></a>,<br>
+<a href="sd_bus_add_object.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_object</span>(3)</span></a>,<br>
+<a href="sd_bus_add_object_manager.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_object_manager</span>(3)</span></a>,<br>
+<a href="sd_bus_add_object_vtable.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_object_vtable</span>(3)</span></a>,<br>
+<a href="sd_bus_add_fallback.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_fallback</span>(3)</span></a>,<br>
+<a href="sd_bus_add_fallback_vtable.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_fallback_vtable</span>(3)</span></a>,<br>
+<a href="sd_bus_add_filter.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_filter</span>(3)</span></a>,<br>
+<a href="sd_bus_add_node_enumerator.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_add_node_enumerator</span>(3)</span></a>,<br>
+<a href="sd_bus_attach_event.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_attach_event</span>(3)</span></a>,<br>
+<a href="sd_bus_call.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_call</span>(3)</span></a>,<br>
+<a href="sd_bus_call_async.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_call_async</span>(3)</span></a>,<br>
+<a href="sd_bus_call_method.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_call_method</span>(3)</span></a>,<br>
+<a href="sd_bus_call_method_async.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_call_method_async</span>(3)</span></a>,<br>
+<a href="sd_bus_can_send.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_can_send</span>(3)</span></a>,<br>
+<a href="sd_bus_close.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_close</span>(3)</span></a>,<br>
+<a href="sd_bus_creds_get_pid.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_creds_get_pid</span>(3)</span></a>,<br>
+<a href="sd_bus_creds_new_from_pid.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_creds_new_from_pid</span>(3)</span></a>,<br>
+<a href="sd_bus_default.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_default</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_interfaces_added.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_interfaces_added</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_interfaces_added_strv.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_interfaces_added_strv</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_interfaces_removed.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_interfaces_removed</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_interfaces_removed_strv.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_interfaces_removed_strv</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_object_added.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_object_added</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_object_removed.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_object_removed</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_properties_changed.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_properties_changed</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_properties_changed_strv.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_properties_changed_strv</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_signal.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_signal</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_signalv.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_signalv</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_signal_to.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_signal_to</span>(3)</span></a>,<br>
+<a href="sd_bus_emit_signal_tov.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_emit_signal_tov</span>(3)</span></a>,<br>
+<a href="sd-bus-errors.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus-errors</span>(3)</span></a>,<br>
+<a href="sd_bus_error.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_error</span>(3)</span></a>,<br>
+<a href="sd_bus_error_add_map.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_error_add_map</span>(3)</span></a>,<br>
+<a href="sd_bus_get_address.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_address</span>(3)</span></a>,<br>
+<a href="sd_bus_get_allow_interactive_authorization.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_allow_interactive_authorization</span>(3)</span></a>,<br>
+<a href="sd_bus_get_bus_id.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_bus_id</span>(3)</span></a>,<br>
+<a href="sd_bus_get_creds_mask.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_creds_mask</span>(3)</span></a>,<br>
+<a href="sd_bus_get_current_handler.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_current_handler</span>(3)</span></a>,<br>
+<a href="sd_bus_get_current_message.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_current_message</span>(3)</span></a>,<br>
+<a href="sd_bus_get_current_slot.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_current_slot</span>(3)</span></a>,<br>
+<a href="sd_bus_get_current_userdata.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_current_userdata</span>(3)</span></a>,<br>
+<a href="sd_bus_get_exit_on_disconnect.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_exit_on_disconnect</span>(3)</span></a>,<br>
+<a href="sd_bus_get_fd.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_fd</span>(3)</span></a>,<br>
+<a href="sd_bus_get_method_call_timeout.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_method_call_timeout</span>(3)</span></a>,<br>
+<a href="sd_bus_get_n_queued_read.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_n_queued_read</span>(3)</span></a>,<br>
+<a href="sd_bus_get_name_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_name_creds</span>(3)</span></a>,<br>
+<a href="sd_bus_get_name_machine_id.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_name_machine_id</span>(3)</span></a>,<br>
+<a href="sd_bus_get_owner_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_owner_creds</span>(3)</span></a>,<br>
+<a href="sd_bus_get_property.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_property</span>(3)</span></a>,<br>
+<a href="sd_bus_get_property_string.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_property_string</span>(3)</span></a>,<br>
+<a href="sd_bus_get_property_strv.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_property_strv</span>(3)</span></a>,<br>
+<a href="sd_bus_get_property_trivial.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_property_trivial</span>(3)</span></a>,<br>
+<a href="sd_bus_get_scope.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_scope</span>(3)</span></a>,<br>
+<a href="sd_bus_get_tid.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_tid</span>(3)</span></a>,<br>
+<a href="sd_bus_get_unique_name.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_get_unique_name</span>(3)</span></a>,<br>
+<a href="sd_bus_interface_name_is_valid.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_interface_name_is_valid</span>(3)</span></a>,<br>
+<a href="sd_bus_is_bus_client.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_is_bus_client</span>(3)</span></a>,<br>
+<a href="sd_bus_is_monitor.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_is_monitor</span>(3)</span></a>,<br>
+<a href="sd_bus_is_server.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_is_server</span>(3)</span></a>,<br>
+<a href="sd_bus_list_names.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_list_names</span>(3)</span></a>,<br>
+<a href="sd_bus_message_append.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_append</span>(3)</span></a>,<br>
+<a href="sd_bus_message_append_array.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_append_array</span>(3)</span></a>,<br>
+<a href="sd_bus_message_append_basic.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_append_basic</span>(3)</span></a>,<br>
+<a href="sd_bus_message_append_string_memfd.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_append_string_memfd</span>(3)</span></a>,<br>
+<a href="sd_bus_message_append_strv.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_append_strv</span>(3)</span></a>,<br>
+<a href="sd_bus_message_at_end.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_at_end</span>(3)</span></a>,<br>
+<a href="sd_bus_message_close_container.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_close_container</span>(3)</span></a>,<br>
+<a href="sd_bus_message_copy.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_copy</span>(3)</span></a>,<br>
+<a href="sd_bus_message_dump.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_dump</span>(3)</span></a>,<br>
+<a href="sd_bus_message_enter_container.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_enter_container</span>(3)</span></a>,<br>
+<a href="sd_bus_message_exit_container.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_exit_container</span>(3)</span></a>,<br>
+<a href="sd_bus_message_get_allow_interactive_authorization.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_allow_interactive_authorization</span>(3)</span></a>,<br>
+<a href="sd_bus_message_get_cookie.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_cookie</span>(3)</span></a>,<br>
+<a href="sd_bus_message_get_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_creds</span>(3)</span></a>,<br>
+<a href="sd_bus_message_get_errno.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_errno</span>(3)</span></a>,<br>
+<a href="sd_bus_message_get_error.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_error</span>(3)</span></a>,<br>
+<a href="sd_bus_message_get_monotonic_usec.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_monotonic_usec</span>(3)</span></a>,<br>
+<a href="sd_bus_message_get_sender.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_sender</span>(3)</span></a>,<br>
+<a href="sd_bus_message_get_signature.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_signature</span>(3)</span></a>,<br>
+<a href="sd_bus_message_get_type.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_get_type</span>(3)</span></a>,<br>
+<a href="sd_bus_message_new.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new</span>(3)</span></a>,<br>
+<a href="sd_bus_message_new_method_call.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_method_call</span>(3)</span></a>,<br>
+<a href="sd_bus_message_new_method_error.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_method_error</span>(3)</span></a>,<br>
+<a href="sd_bus_message_new_signal.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_signal</span>(3)</span></a>,<br>
+<a href="sd_bus_message_new_signal_to.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_new_signal_to</span>(3)</span></a>,<br>
+<a href="sd_bus_message_open_container.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_open_container</span>(3)</span></a>,<br>
+<a href="sd_bus_message_peek_type.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_peek_type</span>(3)</span></a>,<br>
+<a href="sd_bus_message_read.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_read</span>(3)</span></a>,<br>
+<a href="sd_bus_message_read_array.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_read_array</span>(3)</span></a>,<br>
+<a href="sd_bus_message_read_basic.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_read_basic</span>(3)</span></a>,<br>
+<a href="sd_bus_message_read_strv.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_read_strv</span>(3)</span></a>,<br>
+<a href="sd_bus_message_rewind.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_rewind</span>(3)</span></a>,<br>
+<a href="sd_bus_message_seal.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_seal</span>(3)</span></a>,<br>
+<a href="sd_bus_message_send.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_send</span>(3)</span></a>,<br>
+<a href="sd_bus_message_set_allow_interactive_authorization.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_set_allow_interactive_authorization</span>(3)</span></a>,<br>
+<a href="sd_bus_message_set_destination.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_set_destination</span>(3)</span></a>,<br>
+<a href="sd_bus_message_set_expect_reply.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_set_expect_reply</span>(3)</span></a>,<br>
+<a href="sd_bus_message_set_sender.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_set_sender</span>(3)</span></a>,<br>
+<a href="sd_bus_message_skip.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_skip</span>(3)</span></a>,<br>
+<a href="sd_bus_message_verify_type.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_verify_type</span>(3)</span></a>,<br>
+<a href="sd_bus_negotiate_fds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_negotiate_fds</span>(3)</span></a>,<br>
+<a href="sd_bus_new.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_new</span>(3)</span></a>,<br>
+<a href="sd_bus_path_encode.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_path_encode</span>(3)</span></a>,<br>
+<a href="sd_bus_process.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_process</span>(3)</span></a>,<br>
+<a href="sd_bus_query_sender_creds.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_query_sender_creds</span>(3)</span></a>,<br>
+<a href="sd_bus_query_sender_privilege.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_query_sender_privilege</span>(3)</span></a>,<br>
+<a href="sd_bus_reply_method_error.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_reply_method_error</span>(3)</span></a>,<br>
+<a href="sd_bus_reply_method_return.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_reply_method_return</span>(3)</span></a>,<br>
+<a href="sd_bus_request_name.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_request_name</span>(3)</span></a>,<br>
+<a href="sd_bus_send.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_send</span>(3)</span></a>,<br>
+<a href="sd_bus_send_to.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_send_to</span>(3)</span></a>,<br>
+<a href="sd_bus_set_address.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_address</span>(3)</span></a>,<br>
+<a href="sd_bus_set_allow_interactive_authorization.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_allow_interactive_authorization</span>(3)</span></a>,<br>
+<a href="sd_bus_set_bus_client.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_bus_client</span>(3)</span></a>,<br>
+<a href="sd_bus_set_close_on_exit.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_close_on_exit</span>(3)</span></a>,<br>
+<a href="sd_bus_set_connected_signal.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_connected_signal</span>(3)</span></a>,<br>
+<a href="sd_bus_set_description.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_description</span>(3)</span></a>,<br>
+<a href="sd_bus_set_exit_on_disconnect.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_exit_on_disconnect</span>(3)</span></a>,<br>
+<a href="sd_bus_set_method_call_timeout.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_method_call_timeout</span>(3)</span></a>,<br>
+<a href="sd_bus_set_monitor.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_monitor</span>(3)</span></a>,<br>
+<a href="sd_bus_set_property.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_property</span>(3)</span></a>,<br>
+<a href="sd_bus_set_propertyv.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_propertyv</span>(3)</span></a>,<br>
+<a href="sd_bus_set_sender.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_sender</span>(3)</span></a>,<br>
+<a href="sd_bus_set_server.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_server</span>(3)</span></a>,<br>
+<a href="sd_bus_set_watch_bind.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_set_watch_bind</span>(3)</span></a><br>
+<a href="sd_bus_slot_get_current_handler.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_slot_get_current_handler</span>(3)</span></a>,<br>
+<a href="sd_bus_slot_get_current_message.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_slot_get_current_message</span>(3)</span></a>,<br>
+<a href="sd_bus_slot_get_current_userdata.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_slot_get_current_userdata</span>(3)</span></a>,<br>
+<a href="sd_bus_slot_set_description.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_slot_set_description</span>(3)</span></a>,<br>
+<a href="sd_bus_slot_set_destroy_callback.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_slot_set_destroy_callback</span>(3)</span></a>,<br>
+<a href="sd_bus_slot_set_floating.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_slot_set_floating</span>(3)</span></a>,<br>
+<a href="sd_bus_slot_set_userdata.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_slot_set_userdata</span>(3)</span></a>,<br>
+<a href="sd_bus_start.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_start</span>(3)</span></a>,<br>
+<a href="sd_bus_track_add_name.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_track_add_name</span>(3)</span></a>,<br>
+<a href="sd_bus_track_new.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_track_new</span>(3)</span></a><br>
+</p></div><p>
+    for more information about the functions available.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-event.html#"><span class="citerefentry"><span class="refentrytitle">sd-event</span>(3)</span></a>,
+      <a href="busctl.html#"><span class="citerefentry"><span class="refentrytitle">busctl</span>(1)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man1/dbus-daemon.1.html"><span class="citerefentry"><span class="refentrytitle">dbus-daemon</span>(1)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man1/dbus-send.1.html"><span class="citerefentry"><span class="refentrytitle">dbus-send</span>(1)</span></a>
+    </p></div></div></body></html>

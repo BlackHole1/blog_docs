@@ -1,0 +1,124 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-inhibit</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-inhibit"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-inhibit — Execute a program with an inhibition lock taken</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">systemd-inhibit [OPTIONS...]  [COMMAND]  [ARGUMENTS...]</code> </p></div><div class="cmdsynopsis"><p><code class="command">systemd-inhibit [OPTIONS...] --list</code> </p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-inhibit</strong></span> may be used to execute a
+    program with a shutdown, sleep, or idle inhibitor lock taken. The
+    lock will be acquired before the specified command line is
+    executed and released afterwards.</p><p>Inhibitor locks may be used to block or delay system sleep
+    and shutdown requests from the user, as well as automatic idle
+    handling of the OS. This is useful to avoid system suspends while
+    an optical disc is being recorded, or similar operations that
+    should not be interrupted.</p><p>For more information see the <a class="ulink" href="https://www.freedesktop.org/wiki/Software/systemd/inhibit" target="_top">Inhibitor
+    Lock Developer Documentation</a>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--what="><span class="term"><code class="option">--what=</code></span><a class="headerlink" title="Permalink to this term" href="#--what=">¶</a></dt><dd><p>Takes a colon-separated list of one or more
+        operations to inhibit:
+        "<code class="literal">shutdown</code>",
+        "<code class="literal">sleep</code>",
+        "<code class="literal">idle</code>",
+        "<code class="literal">handle-power-key</code>",
+        "<code class="literal">handle-suspend-key</code>",
+        "<code class="literal">handle-hibernate-key</code>",
+        "<code class="literal">handle-lid-switch</code>",
+        for inhibiting reboot/power-off/halt/kexec/soft-reboot,
+        suspending/hibernating, the automatic idle detection, or the
+        low-level handling of the power/sleep key and the lid switch,
+        respectively. If omitted, defaults to
+        "<code class="literal">idle:sleep:shutdown</code>".</p></dd><dt id="--who="><span class="term"><code class="option">--who=</code></span><a class="headerlink" title="Permalink to this term" href="#--who=">¶</a></dt><dd><p>Takes a short, human-readable descriptive
+        string for the program taking the lock. If not passed,
+        defaults to the command line string.</p></dd><dt id="--why="><span class="term"><code class="option">--why=</code></span><a class="headerlink" title="Permalink to this term" href="#--why=">¶</a></dt><dd><p>Takes a short, human-readable descriptive
+        string for the reason for taking the lock. Defaults to
+        "Unknown reason".</p></dd><dt id="--mode="><span class="term"><code class="option">--mode=</code></span><a class="headerlink" title="Permalink to this term" href="#--mode=">¶</a></dt><dd><p>Takes either "<code class="literal">block</code>" or
+        "<code class="literal">delay</code>" and describes how the lock is
+        applied. If "<code class="literal">block</code>" is used (the default),
+        the lock prohibits any of the requested operations without
+        time limit, and only privileged users may override it. If
+        "<code class="literal">delay</code>" is used, the lock can only delay the
+        requested operations for a limited time. If the time elapses,
+        the lock is ignored and the operation executed. The time limit
+        may be specified in
+        <a href="logind.conf.html#"><span class="citerefentry"><span class="refentrytitle">logind.conf</span>(5)</span></a>.
+        Note that "<code class="literal">delay</code>" is only available for
+        "<code class="literal">sleep</code>" and
+        "<code class="literal">shutdown</code>".</p></dd><dt id="--list"><span class="term"><code class="option">--list</code></span><a class="headerlink" title="Permalink to this term" href="#--list">¶</a></dt><dd><p>Lists all active inhibition locks instead of
+        acquiring one.</p></dd><dt id="--no-pager"><span class="term"><code class="option">--no-pager</code></span><a class="headerlink" title="Permalink to this term" href="#--no-pager">¶</a></dt><dd><p>Do not pipe output into a pager.</p></dd><dt id="--no-legend"><span class="term"><code class="option">--no-legend</code></span><a class="headerlink" title="Permalink to this term" href="#--no-legend">¶</a></dt><dd><p>Do not print the legend, i.e. column headers and the
+      footer with hints.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>Returns the exit status of the executed program.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Example">Example<a class="headerlink" title="Permalink to this headline" href="#Example">¶</a></h2><pre class="programlisting"># systemd-inhibit wodim foobar.iso</pre><p>This burns the ISO image
+    <code class="filename">foobar.iso</code> on a CD using
+    <a href="https://man7.org/linux/man-pages/man1/wodim.1.html"><span class="citerefentry"><span class="refentrytitle">wodim</span>(1)</span></a>,
+    and inhibits system sleeping, shutdown and idle while
+    doing so.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="Environment">Environment<a class="headerlink" title="Permalink to this headline" href="#Environment">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="$SYSTEMD_LOG_LEVEL"><span class="term"><code class="varname">$SYSTEMD_LOG_LEVEL</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_LEVEL">¶</a></dt><dd><p><a name="log-level-body"></a>The maximum log level of emitted messages (messages with a higher
+      log level, i.e. less important ones, will be suppressed). Either one of (in order of decreasing
+      importance) <code class="constant">emerg</code>, <code class="constant">alert</code>, <code class="constant">crit</code>,
+      <code class="constant">err</code>, <code class="constant">warning</code>, <code class="constant">notice</code>,
+      <code class="constant">info</code>, <code class="constant">debug</code>, or an integer in the range 0…7. See
+      <a href="https://man7.org/linux/man-pages/man3/syslog.3.html"><span class="citerefentry"><span class="refentrytitle">syslog</span>(3)</span></a>
+      for more information.</p></dd><dt id="$SYSTEMD_LOG_COLOR"><span class="term"><code class="varname">$SYSTEMD_LOG_COLOR</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_COLOR">¶</a></dt><dd><p><a name="log-color-body"></a>A boolean. If true, messages written to the tty will be colored
+      according to priority.</p><p>This setting is only useful when messages are written directly to the terminal, because
+      <a href="journalctl.html#"><span class="citerefentry"><span class="refentrytitle">journalctl</span>(1)</span></a> and
+      other tools that display logs will color messages based on the log level on their own.</p></dd><dt id="$SYSTEMD_LOG_TIME"><span class="term"><code class="varname">$SYSTEMD_LOG_TIME</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_TIME">¶</a></dt><dd><p><a name="log-time-body"></a>A boolean. If true, console log messages will be prefixed with a
+      timestamp.</p><p>This setting is only useful when messages are written directly to the terminal or a file, because
+      <a href="journalctl.html#"><span class="citerefentry"><span class="refentrytitle">journalctl</span>(1)</span></a> and
+      other tools that display logs will attach timestamps based on the entry metadata on their own.</p></dd><dt id="$SYSTEMD_LOG_LOCATION"><span class="term"><code class="varname">$SYSTEMD_LOG_LOCATION</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_LOCATION">¶</a></dt><dd><p><a name="log-location-body"></a>A boolean. If true, messages will be prefixed with a filename
+      and line number in the source code where the message originates.</p><p>Note that the log location is often attached as metadata to journal entries anyway. Including it
+      directly in the message text can nevertheless be convenient when debugging programs.</p></dd><dt id="$SYSTEMD_LOG_TID"><span class="term"><code class="varname">$SYSTEMD_LOG_TID</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_TID">¶</a></dt><dd><p><a name="log-tid-body"></a>A boolean. If true, messages will be prefixed with the current
+      numerical thread ID (TID).</p><p>Note that the this information is attached as metadata to journal entries anyway. Including it
+      directly in the message text can nevertheless be convenient when debugging programs.</p></dd><dt id="$SYSTEMD_LOG_TARGET"><span class="term"><code class="varname">$SYSTEMD_LOG_TARGET</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_TARGET">¶</a></dt><dd><p><a name="log-target-body"></a>The destination for log messages. One of
+      <code class="constant">console</code> (log to the attached tty), <code class="constant">console-prefixed</code> (log to
+      the attached tty but with prefixes encoding the log level and "facility", see <a href="https://man7.org/linux/man-pages/man3/syslog.3.html"><span class="citerefentry"><span class="refentrytitle">syslog</span>(3)</span></a>,
+      <code class="constant">kmsg</code> (log to the kernel circular log buffer), <code class="constant">journal</code> (log to
+      the journal), <code class="constant">journal-or-kmsg</code> (log to the journal if available, and to kmsg
+      otherwise), <code class="constant">auto</code> (determine the appropriate log target automatically, the default),
+      <code class="constant">null</code> (disable log output).</p></dd><dt id="$SYSTEMD_LOG_RATELIMIT_KMSG"><span class="term"><code class="varname">$SYSTEMD_LOG_RATELIMIT_KMSG</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LOG_RATELIMIT_KMSG">¶</a></dt><dd><p><a name="log-ratelimit-kmsg-body"></a> Whether to ratelimit kmsg or not. Takes a boolean.
+      Defaults to "<code class="literal">true</code>". If disabled, systemd will not ratelimit messages written to kmsg.
+      </p></dd><dt id="$SYSTEMD_PAGER"><span class="term"><code class="varname">$SYSTEMD_PAGER</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_PAGER">¶</a></dt><dd><p>Pager to use when <code class="option">--no-pager</code> is not given; overrides
+      <code class="varname">$PAGER</code>. If neither <code class="varname">$SYSTEMD_PAGER</code> nor <code class="varname">$PAGER</code> are set, a
+      set of well-known pager implementations are tried in turn, including
+      <a href="https://man7.org/linux/man-pages/man1/less.1.html"><span class="citerefentry"><span class="refentrytitle">less</span>(1)</span></a> and
+      <a href="https://man7.org/linux/man-pages/man1/more.1.html"><span class="citerefentry"><span class="refentrytitle">more</span>(1)</span></a>, until one is found. If
+      no pager implementation is discovered no pager is invoked. Setting this environment variable to an empty string
+      or the value "<code class="literal">cat</code>" is equivalent to passing <code class="option">--no-pager</code>.</p><p>Note: if <code class="varname">$SYSTEMD_PAGERSECURE</code> is not set, <code class="varname">$SYSTEMD_PAGER</code>
+      (as well as <code class="varname">$PAGER</code>) will be silently ignored.</p></dd><dt id="$SYSTEMD_LESS"><span class="term"><code class="varname">$SYSTEMD_LESS</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LESS">¶</a></dt><dd><p>Override the options passed to <span class="command"><strong>less</strong></span> (by default
+      "<code class="literal">FRSXMK</code>").</p><p>Users might want to change two options in particular:</p><div class="variablelist"><dl class="variablelist"><dt id="K"><span class="term"><code class="option">K</code></span><a class="headerlink" title="Permalink to this term" href="#K">¶</a></dt><dd></dd><dt id="X"><span class="term"><code class="option">X</code></span><a class="headerlink" title="Permalink to this term" href="#X">¶</a></dt><dd></dd></dl></div><p>See
+      <a href="https://man7.org/linux/man-pages/man1/less.1.html"><span class="citerefentry"><span class="refentrytitle">less</span>(1)</span></a>
+      for more discussion.</p></dd><dt id="$SYSTEMD_LESSCHARSET"><span class="term"><code class="varname">$SYSTEMD_LESSCHARSET</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_LESSCHARSET">¶</a></dt><dd><p>Override the charset passed to <span class="command"><strong>less</strong></span> (by default "<code class="literal">utf-8</code>", if
+      the invoking terminal is determined to be UTF-8 compatible).</p></dd><dt id="$SYSTEMD_PAGERSECURE"><span class="term"><code class="varname">$SYSTEMD_PAGERSECURE</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_PAGERSECURE">¶</a></dt><dd><p>Takes a boolean argument. When true, the "secure" mode of the pager is enabled; if
+      false, disabled. If <code class="varname">$SYSTEMD_PAGERSECURE</code> is not set at all, secure mode is enabled
+      if the effective UID is not the same as the owner of the login session, see
+      <a href="https://man7.org/linux/man-pages/man2/geteuid.2.html"><span class="citerefentry"><span class="refentrytitle">geteuid</span>(2)</span></a>
+      and <a href="sd_pid_get_owner_uid.html#"><span class="citerefentry"><span class="refentrytitle">sd_pid_get_owner_uid</span>(3)</span></a>.
+      In secure mode, <code class="option">LESSSECURE=1</code> will be set when invoking the pager, and the pager shall
+      disable commands that open or create new files or start new subprocesses. When
+      <code class="varname">$SYSTEMD_PAGERSECURE</code> is not set at all, pagers which are not known to implement
+      secure mode will not be used. (Currently only
+      <a href="https://man7.org/linux/man-pages/man1/less.1.html"><span class="citerefentry"><span class="refentrytitle">less</span>(1)</span></a>
+      implements secure mode.)</p><p>Note: when commands are invoked with elevated privileges, for example under <a href="https://man7.org/linux/man-pages/man8/sudo.8.html"><span class="citerefentry"><span class="refentrytitle">sudo</span>(8)</span></a> or
+      <a href="http://linux.die.net/man/1/pkexec"><span class="citerefentry"><span class="refentrytitle">pkexec</span>(1)</span></a>, care
+      must be taken to ensure that unintended interactive features are not enabled. "Secure" mode for the
+      pager may be enabled automatically as describe above. Setting <code class="varname">SYSTEMD_PAGERSECURE=0</code>
+      or not removing it from the inherited environment allows the user to invoke arbitrary commands. Note
+      that if the <code class="varname">$SYSTEMD_PAGER</code> or <code class="varname">$PAGER</code> variables are to be
+      honoured, <code class="varname">$SYSTEMD_PAGERSECURE</code> must be set too. It might be reasonable to completely
+      disable the pager using <code class="option">--no-pager</code> instead.</p></dd><dt id="$SYSTEMD_COLORS"><span class="term"><code class="varname">$SYSTEMD_COLORS</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_COLORS">¶</a></dt><dd><p>Takes a boolean argument. When true, <span class="command"><strong>systemd</strong></span> and related utilities
+      will use colors in their output, otherwise the output will be monochrome. Additionally, the variable can
+      take one of the following special values: "<code class="literal">16</code>", "<code class="literal">256</code>" to restrict the use
+      of colors to the base 16 or 256 ANSI colors, respectively. This can be specified to override the automatic
+      decision based on <code class="varname">$TERM</code> and what the console is connected to.</p></dd><dt id="$SYSTEMD_URLIFY"><span class="term"><code class="varname">$SYSTEMD_URLIFY</code></span><a class="headerlink" title="Permalink to this term" href="#%24SYSTEMD_URLIFY">¶</a></dt><dd><p>The value must be a boolean. Controls whether clickable links should be generated in
+      the output for terminal emulators supporting this. This can be specified to override the decision that
+      <span class="command"><strong>systemd</strong></span> makes based on <code class="varname">$TERM</code> and other conditions.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.10"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="logind.conf.html#"><span class="citerefentry"><span class="refentrytitle">logind.conf</span>(5)</span></a>
+    </p></div></div></body></html>

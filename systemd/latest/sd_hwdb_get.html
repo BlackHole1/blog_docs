@@ -1,0 +1,91 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_hwdb_get</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_hwdb_get"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_hwdb_get, sd_hwdb_seek, sd_hwdb_enumerate, SD_HWDB_FOREACH_PROPERTY — Seek to a location in hwdb or access entries</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-hwdb.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_hwdb_get</b>(</code></td><td>sd_hwdb *<var class="pdparam">hwdb</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">modalias</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">key</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_hwdb_seek</b>(</code></td><td>sd_hwdb *<var class="pdparam">hwdb</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">modalias</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_hwdb_enumerate</b>(</code></td><td>sd_hwdb *<var class="pdparam">hwdb</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">key</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">value</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef"><b class="fsfunc">SD_HWDB_FOREACH_PROPERTY</b>(</code></td><td>hwdb, </td></tr><tr><td> </td><td>modalias, </td></tr><tr><td> </td><td>key, </td></tr><tr><td> </td><td>value<code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_hwdb_get()</code> queries the <em class="parameter"><code>hwdb</code></em> object created earlier
+    with <a href="sd_hwdb_new.html#"><span class="citerefentry"><span class="refentrytitle">sd_hwdb_new</span>(3)</span></a> for
+    entries matching the specified string <em class="parameter"><code>modalias</code></em>, and returns the value
+    corresponding to the key <em class="parameter"><code>key</code></em>. The value is returned as a
+    <code class="constant">NUL</code>-terminated string in <em class="parameter"><code>value</code></em>. It must not be modified by
+    the caller and is valid as long as a reference to <em class="parameter"><code>hwdb</code></em> is kept. When multiple
+    patterns in the database match <em class="parameter"><code>modalias</code></em>, the one with the highest priority is
+    used. See <a href="hwdb.html#"><span class="citerefentry"><span class="refentrytitle">hwdb</span>(7)</span></a> for
+    details.</p><p><code class="function">sd_hwdb_seek()</code> selects entries matching the specified string
+    <em class="parameter"><code>modalias</code></em>. Subsequent queries with <code class="function">sd_hwdb_enumerate()</code> will
+    access the key-value pairs for that string.</p><p><code class="function">sd_hwdb_enumerate()</code> returns (in turn) all the key-value pairs defined for the
+    string used with <code class="function">sd_hwdb_seek()</code>. Each pair is returned as
+    <code class="constant">NUL</code>-terminated strings in <em class="parameter"><code>key</code></em> and
+    <em class="parameter"><code>value</code></em>. The strings must not be modified by the caller and are valid as long as a
+    reference to <em class="parameter"><code>hwdb</code></em> is kept. When multiple patterns in the database match
+    <em class="parameter"><code>modalias</code></em>, the combination of all matching key-value pairs is used. See
+    <a href="hwdb.html#"><span class="citerefentry"><span class="refentrytitle">hwdb</span>(7)</span></a> for
+    details.</p><p>The <code class="function">SD_HWDB_FOREACH_PROPERTY()</code> macro combines
+    <code class="function">sd_hwdb_seek()</code> and <code class="function">sd_hwdb_enumerate()</code>. No error handling is
+    performed and iteration simply stops on error. See the example below.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, <code class="function">sd_hwdb_get()</code> and <code class="function">sd_hwdb_seek()</code> return a
+    non-negative integer. On failure, they return a negative errno-style error code.</p><p><code class="function">sd_hwdb_enumerate()</code> returns a positive integer if another key-value pair was found or zero if
+    all entries have already been enumerated. On failure, it returns a negative errno-style error code.
+    </p><div class="refsect2"><a name="id-1.6.4"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>A parameter is <code class="constant">NULL</code>.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ENOENT"><span class="term"><code class="constant">-ENOENT</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOENT">¶</a></dt><dd><p>An entry for the specified <em class="parameter"><code>modalias</code></em> was not found.
+          </p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-EAGAIN"><span class="term"><code class="constant">-EAGAIN</code></span><a class="headerlink" title="Permalink to this term" href="#-EAGAIN">¶</a></dt><dd><p><code class="function">sd_hwdb_seek()</code> was not called before
+          <code class="function">sd_hwdb_enumerate()</code>.</p><p><a name="v246"></a>Added in version 246.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Look up hwdb entries for a USB device</b></p><div class="example-contents"><pre class="programlisting">/* SPDX-License-Identifier: MIT-0 */
+
+#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;sd-hwdb.h&gt;
+
+int print_usb_properties(uint16_t vid, uint16_t pid) {
+  char match[STRLEN("usb:vp") + DECIMAL_STR_MAX(uint16_t) * 2];
+  sd_hwdb *hwdb;
+  const char *key, *value;
+  int r;
+
+  /* Match this USB vendor and product ID combination */
+  xsprintf(match, "usb:v%04Xp%04X", vid, pid);
+
+  r = sd_hwdb_new(&amp;hwdb);
+  if (r &lt; 0)
+    return r;
+
+  SD_HWDB_FOREACH_PROPERTY(hwdb, match, key, value)
+    printf("%s: \"%s\" → \"%s\"\n", match, key, value);
+
+  sd_hwdb_unref(hwdb);
+  return 0;
+}
+
+int main(int argc, char **argv) {
+  print_usb_properties(0x046D, 0xC534);
+  return 0;
+}
+</pre><p>The effect is similar to calling <span class="command"><strong>systemd-hwdb query usb:v046DpC534</strong></span>.
+      </p></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_hwdb_get()</code>,
+    <code class="function">sd_hwdb_seek()</code>,
+    <code class="function">sd_hwdb_enumerate()</code>, and
+    <code class="function">SD_HWDB_FOREACH_PROPERTY()</code> were added in version 246.</p></div><div class="refsect1"><a name="id-1.10"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-udevd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-udevd.service</span>(8)</span></a>,
+      <a href="sd-hwdb.html#"><span class="citerefentry"><span class="refentrytitle">sd-hwdb</span>(3)</span></a>,
+      <a href="systemd-hwdb.html#"><span class="citerefentry"><span class="refentrytitle">systemd-hwdb</span>(8)</span></a>
+    </p></div></div></body></html>

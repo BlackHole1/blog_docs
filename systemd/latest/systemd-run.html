@@ -1,0 +1,278 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-run</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-run"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-run — Run programs in transient scope units, service units, or path-, socket-, or timer-triggered service units</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">systemd-run</code>  [OPTIONS...]  <em class="replaceable"><code>COMMAND</code></em>
+       [ARGS...]
+       </p></div><div class="cmdsynopsis"><p><code class="command">systemd-run</code>  [OPTIONS...] [PATH OPTIONS...] {<em class="replaceable"><code>COMMAND</code></em>} [ARGS...]</p></div><div class="cmdsynopsis"><p><code class="command">systemd-run</code>  [OPTIONS...] [SOCKET OPTIONS...] {<em class="replaceable"><code>COMMAND</code></em>} [ARGS...]</p></div><div class="cmdsynopsis"><p><code class="command">systemd-run</code>  [OPTIONS...] [TIMER OPTIONS...] {<em class="replaceable"><code>COMMAND</code></em>} [ARGS...]</p></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-run</strong></span> may be used to create and start a transient <code class="filename">.service</code> or
+    <code class="filename">.scope</code> unit and run the specified <em class="replaceable"><code>COMMAND</code></em> in it. It may also be
+    used to create and start a transient <code class="filename">.path</code>, <code class="filename">.socket</code>, or
+    <code class="filename">.timer</code> unit, that activates a <code class="filename">.service</code> unit when elapsing.</p><p>If a command is run as transient service unit, it will be started and managed by the service manager like any
+    other service, and thus shows up in the output of <span class="command"><strong>systemctl list-units</strong></span> like any other unit. It
+    will run in a clean and detached execution environment, with the service manager as its parent process. In this
+    mode, <span class="command"><strong>systemd-run</strong></span> will start the service asynchronously in the background and return after the
+    command has begun execution (unless <code class="option">--no-block</code> or <code class="option">--wait</code> are specified, see
+    below).</p><p>If a command is run as transient scope unit, it will be executed by <span class="command"><strong>systemd-run</strong></span>
+    itself as parent process and will thus inherit the execution environment of the caller. However, the
+    processes of the command are managed by the service manager similarly to normal services, and will show
+    up in the output of <span class="command"><strong>systemctl list-units</strong></span>. Execution in this case is synchronous, and
+    will return only when the command finishes. This mode is enabled via the <code class="option">--scope</code> switch
+    (see below).</p><p>If a command is run with path, socket, or timer options such as <code class="option">--on-calendar=</code> (see below),
+    a transient path, socket, or timer unit is created alongside the service unit for the specified command. Only the
+    transient path, socket, or timer unit is started immediately, the transient service unit will be triggered by the
+    path, socket, or timer unit. If the <code class="option">--unit=</code> option is specified, the
+    <em class="replaceable"><code>COMMAND</code></em> may be omitted. In this case, <span class="command"><strong>systemd-run</strong></span> creates only a
+    <code class="filename">.path</code>, <code class="filename">.socket</code>, or <code class="filename">.timer</code> unit that triggers the
+    specified unit.</p><p>By default, services created with <span class="command"><strong>systemd-run</strong></span> default to the
+    <code class="option">simple</code> type, see the description of <code class="varname">Type=</code> in
+    <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a> for
+    details. Note that when this type is used, the service manager (and thus the
+    <span class="command"><strong>systemd-run</strong></span> command) considers service start-up successful as soon as the
+    <code class="function">fork()</code> for the main service process succeeded, i.e. before the
+    <code class="function">execve()</code> is invoked, and thus even if the specified command cannot be started.
+    Consider using the <code class="option">exec</code> service type (i.e. <code class="option">--property=Type=exec</code>) to
+    ensure that <span class="command"><strong>systemd-run</strong></span> returns successfully only if the specified command line has
+    been successfully started.</p><p>After <span class="command"><strong>systemd-run</strong></span> passes the command to the service manager, the manager
+    performs variable expansion. This means that dollar characters ("<code class="literal">$</code>") which should not be
+    expanded need to be escaped as "<code class="literal">$$</code>". Expansion can also be disabled using
+    <code class="varname">--expand-environment=no</code>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>The following options are understood:</p><div class="variablelist"><dl class="variablelist"><dt id="--no-ask-password"><span class="term"><code class="option">--no-ask-password</code></span><a class="headerlink" title="Permalink to this term" href="#--no-ask-password">¶</a></dt><dd><p>Do not query the user for authentication for
+        privileged operations.</p><p><a name="v226"></a>Added in version 226.</p></dd><dt id="--scope"><span class="term"><code class="option">--scope</code></span><a class="headerlink" title="Permalink to this term" href="#--scope">¶</a></dt><dd><p>Create a transient <code class="filename">.scope</code> unit instead of the default transient
+          <code class="filename">.service</code> unit (see above).
+          </p><p><a name="v206"></a>Added in version 206.</p></dd><dt id="--unit="><span class="term"><code class="option">--unit=</code>, </span><span class="term"><code class="option">-u</code></span><a class="headerlink" title="Permalink to this term" href="#--unit=">¶</a></dt><dd><p>Use this unit name instead of an automatically
+        generated one.</p><p><a name="v206"></a>Added in version 206.</p></dd><dt id="--property="><span class="term"><code class="option">--property=</code>, </span><span class="term"><code class="option">-p</code></span><a class="headerlink" title="Permalink to this term" href="#--property=">¶</a></dt><dd><p>Sets a property on the scope or service unit that is created. This option takes an assignment
+        in the same format as
+        <a href="systemctl.html#"><span class="citerefentry"><span class="refentrytitle">systemctl</span>(1)</span></a>'s
+        <span class="command"><strong>set-property</strong></span> command.</p><p><a name="v211"></a>Added in version 211.</p></dd><dt id="--description="><span class="term"><code class="option">--description=</code></span><a class="headerlink" title="Permalink to this term" href="#--description=">¶</a></dt><dd><p>Provide a description for the service, scope, path, socket, or timer unit. If not specified,
+        the command itself will be used as a description. See <code class="varname">Description=</code> in
+        <a href="systemd.unit.html#"><span class="citerefentry"><span class="refentrytitle">systemd.unit</span>(5)</span></a>.
+        </p><p><a name="v206"></a>Added in version 206.</p></dd><dt id="--slice="><span class="term"><code class="option">--slice=</code></span><a class="headerlink" title="Permalink to this term" href="#--slice=">¶</a></dt><dd><p>Make the new <code class="filename">.service</code> or <code class="filename">.scope</code> unit part
+        of the specified slice, instead of <code class="filename">system.slice</code> (when running in
+        <code class="option">--system</code> mode) or the root slice (when running in <code class="option">--user</code>
+        mode).</p><p><a name="v206"></a>Added in version 206.</p></dd><dt id="--slice-inherit"><span class="term"><code class="option">--slice-inherit</code></span><a class="headerlink" title="Permalink to this term" href="#--slice-inherit">¶</a></dt><dd><p>Make the new <code class="filename">.service</code> or <code class="filename">.scope</code> unit part
+        of the inherited slice. This option can be combined with <code class="option">--slice=</code>.</p><p>An inherited slice is located within <span class="command"><strong>systemd-run</strong></span> slice. Example: if
+        <span class="command"><strong>systemd-run</strong></span> slice is <code class="filename">foo.slice</code>, and the
+        <code class="option">--slice=</code> argument is <code class="filename">bar</code>, the unit will be placed under the
+        <code class="filename">foo-bar.slice</code>.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="--expand-environment=BOOL"><span class="term"><code class="option">--expand-environment=<em class="replaceable"><code>BOOL</code></em></code></span><a class="headerlink" title="Permalink to this term" href="#--expand-environment=BOOL">¶</a></dt><dd><p>Expand environment variables in command arguments. If enabled, environment variables
+        specified as "<code class="literal">${<em class="replaceable"><code>VARIABLE</code></em>}</code>" will be expanded in the same
+        way as in commands specified via <code class="varname">ExecStart=</code> in units. With
+        <code class="varname">--scope</code>, this expansion is performed by <span class="command"><strong>systemd-run</strong></span> itself, and
+        in other cases by the service manager that spawns the command. Note that this is similar to, but not
+        the same as variable expansion in
+        <a href="https://man7.org/linux/man-pages/man1/bash.1.html"><span class="citerefentry"><span class="refentrytitle">bash</span>(1)</span></a>
+        and other shells.</p><p>The default is to enable this option in all cases, except for <code class="varname">--scope</code> where
+        it is disabled by default, for backward compatibility reasons. Note that this will be changed in a
+        future release, where it will be switched to enabled by default as well.</p><p>See
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+        for a description of variable expansion. Disabling variable expansion is useful if the specified
+        command includes or may include a "<code class="literal">$</code>" sign.</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="-r"><span class="term"><code class="option">-r</code>, </span><span class="term"><code class="option">--remain-after-exit</code></span><a class="headerlink" title="Permalink to this term" href="#-r">¶</a></dt><dd><p>After the service process has terminated, keep the service around until it is explicitly
+        stopped. This is useful to collect runtime information about the service after it finished running. Also see
+        <code class="varname">RemainAfterExit=</code> in
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>.
+        </p><p><a name="v207"></a>Added in version 207.</p></dd><dt id="--send-sighup"><span class="term"><code class="option">--send-sighup</code></span><a class="headerlink" title="Permalink to this term" href="#--send-sighup">¶</a></dt><dd><p>When terminating the scope or service unit, send a SIGHUP immediately after SIGTERM. This is
+        useful to indicate to shells and shell-like processes that the connection has been severed. Also see
+        <code class="varname">SendSIGHUP=</code> in
+        <a href="systemd.kill.html#"><span class="citerefentry"><span class="refentrytitle">systemd.kill</span>(5)</span></a>.
+        </p><p><a name="v207"></a>Added in version 207.</p></dd><dt id="--service-type="><span class="term"><code class="option">--service-type=</code></span><a class="headerlink" title="Permalink to this term" href="#--service-type=">¶</a></dt><dd><p>Sets the service type. Also see
+        <code class="varname">Type=</code> in
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>. This
+        option has no effect in conjunction with
+        <code class="option">--scope</code>. Defaults to
+        <code class="constant">simple</code>.</p><p><a name="v211"></a>Added in version 211.</p></dd><dt id="--uid="><span class="term"><code class="option">--uid=</code>, </span><span class="term"><code class="option">--gid=</code></span><a class="headerlink" title="Permalink to this term" href="#--uid=">¶</a></dt><dd><p>Runs the service process under the specified UNIX user and group. Also see
+        <code class="varname">User=</code> and <code class="varname">Group=</code> in
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.</p><p><a name="v211"></a>Added in version 211.</p></dd><dt id="--nice="><span class="term"><code class="option">--nice=</code></span><a class="headerlink" title="Permalink to this term" href="#--nice=">¶</a></dt><dd><p>Runs the service process with the specified
+        nice level. Also see <code class="varname">Nice=</code> in
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.</p><p><a name="v211"></a>Added in version 211.</p></dd><dt id="--working-directory="><span class="term"><code class="option">--working-directory=</code></span><a class="headerlink" title="Permalink to this term" href="#--working-directory=">¶</a></dt><dd><p>Runs the service process with the specified working directory. Also see
+        <code class="varname">WorkingDirectory=</code> in
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="--same-dir"><span class="term"><code class="option">--same-dir</code>, </span><span class="term"><code class="option">-d</code></span><a class="headerlink" title="Permalink to this term" href="#--same-dir">¶</a></dt><dd><p>Similar to <code class="option">--working-directory=</code>, but uses the current working
+        directory of the caller for the service to execute.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="-E NAME[=VALUE]"><span class="term"><code class="option">-E <em class="replaceable"><code>NAME</code></em>[=<em class="replaceable"><code>VALUE</code></em>]</code>, </span><span class="term"><code class="option">--setenv=<em class="replaceable"><code>NAME</code></em>[=<em class="replaceable"><code>VALUE</code></em>]</code></span><a class="headerlink" title="Permalink to this term" href="#-E%20NAME%5B=VALUE%5D">¶</a></dt><dd><p>Runs the service process with the specified environment variable set. This parameter
+        may be used more than once to set multiple variables. When "<code class="literal">=</code>" and
+        <em class="replaceable"><code>VALUE</code></em> are omitted, the value of the variable with the same name in the
+        program environment will be used.</p><p>Also see <code class="varname">Environment=</code> in
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.</p><p><a name="v211"></a>Added in version 211.</p></dd><dt id="--pty"><span class="term"><code class="option">--pty</code>, </span><span class="term"><code class="option">-t</code></span><a class="headerlink" title="Permalink to this term" href="#--pty">¶</a></dt><dd><p>When invoking the command, the transient service connects its standard input, output and error
+        to the terminal <span class="command"><strong>systemd-run</strong></span> is invoked on, via a pseudo TTY device. This allows running
+        programs that expect interactive user input/output as services, such as interactive command shells.</p><p>Note that
+        <a href="machinectl.html#"><span class="citerefentry"><span class="refentrytitle">machinectl</span>(1)</span></a>'s
+        <span class="command"><strong>shell</strong></span> command is usually a better alternative for requesting a new, interactive login
+        session on the local host or a local container.</p><p>See below for details on how this switch combines with <code class="option">--pipe</code>.</p><p><a name="v219"></a>Added in version 219.</p></dd><dt id="--pipe"><span class="term"><code class="option">--pipe</code>, </span><span class="term"><code class="option">-P</code></span><a class="headerlink" title="Permalink to this term" href="#--pipe">¶</a></dt><dd><p>If specified, standard input, output, and error of the transient service are inherited from the
+        <span class="command"><strong>systemd-run</strong></span> command itself. This allows <span class="command"><strong>systemd-run</strong></span>
+        to be used within shell pipelines.
+        Note that this mode is not suitable for interactive command shells and similar, as the
+        service process will not become a TTY controller when invoked on a terminal. Use <code class="option">--pty</code> instead
+        in that case.</p><p>When both <code class="option">--pipe</code> and <code class="option">--pty</code> are used in combination the more appropriate
+        option is automatically determined and used. Specifically, when invoked with standard input, output and error
+        connected to a TTY <code class="option">--pty</code> is used, and otherwise <code class="option">--pipe</code>.</p><p>When this option is used the original file descriptors <span class="command"><strong>systemd-run</strong></span> receives are passed
+        to the service processes as-is. If the service runs with different privileges than
+        <span class="command"><strong>systemd-run</strong></span>, this means the service might not be able to re-open the passed file
+        descriptors, due to normal file descriptor access restrictions. If the invoked process is a shell script that
+        uses the <span class="command"><strong>echo "hello" &gt;/dev/stderr</strong></span> construct for writing messages to stderr, this might
+        cause problems, as this only works if stderr can be re-opened. To mitigate this use the construct <span class="command"><strong>echo
+        "hello" &gt;&amp;2</strong></span> instead, which is mostly equivalent and avoids this pitfall.</p><p><a name="v235"></a>Added in version 235.</p></dd><dt id="--shell"><span class="term"><code class="option">--shell</code>, </span><span class="term"><code class="option">-S</code></span><a class="headerlink" title="Permalink to this term" href="#--shell">¶</a></dt><dd><p>A shortcut for "<code class="literal">--pty --same-dir --wait --collect --service-type=exec $SHELL</code>",
+        i.e. requests an interactive shell in the current working directory, running in service context, accessible
+        with a single switch.</p><p><a name="v240"></a>Added in version 240.</p></dd><dt id="--quiet"><span class="term"><code class="option">--quiet</code>, </span><span class="term"><code class="option">-q</code></span><a class="headerlink" title="Permalink to this term" href="#--quiet">¶</a></dt><dd><p>Suppresses additional informational output
+        while running. This is particularly useful in combination with
+        <code class="option">--pty</code> when it will suppress the initial
+        message explaining how to terminate the TTY connection.</p><p><a name="v219"></a>Added in version 219.</p></dd><dt id="--on-active="><span class="term"><code class="option">--on-active=</code>, </span><span class="term"><code class="option">--on-boot=</code>, </span><span class="term"><code class="option">--on-startup=</code>, </span><span class="term"><code class="option">--on-unit-active=</code>, </span><span class="term"><code class="option">--on-unit-inactive=</code></span><a class="headerlink" title="Permalink to this term" href="#--on-active=">¶</a></dt><dd><p>Defines a monotonic timer relative to different starting points for starting the specified
+        command. See <code class="varname">OnActiveSec=</code>, <code class="varname">OnBootSec=</code>, <code class="varname">OnStartupSec=</code>,
+        <code class="varname">OnUnitActiveSec=</code> and <code class="varname">OnUnitInactiveSec=</code> in
+        <a href="systemd.timer.html#"><span class="citerefentry"><span class="refentrytitle">systemd.timer</span>(5)</span></a> for
+        details. These options are shortcuts for <span class="command"><strong>--timer-property=</strong></span> with the relevant properties.
+        These options may not be combined with <code class="option">--scope</code> or <code class="option">--pty</code>.</p><p><a name="v218"></a>Added in version 218.</p></dd><dt id="--on-calendar="><span class="term"><code class="option">--on-calendar=</code></span><a class="headerlink" title="Permalink to this term" href="#--on-calendar=">¶</a></dt><dd><p>Defines a calendar timer for starting the specified command. See <code class="varname">OnCalendar=</code>
+        in <a href="systemd.timer.html#"><span class="citerefentry"><span class="refentrytitle">systemd.timer</span>(5)</span></a>. This
+        option is a shortcut for <span class="command"><strong>--timer-property=OnCalendar=</strong></span>. This option may not be combined with
+        <code class="option">--scope</code> or <code class="option">--pty</code>.</p><p><a name="v218"></a>Added in version 218.</p></dd><dt id="--on-clock-change"><span class="term"><code class="option">--on-clock-change</code>, </span><span class="term"><code class="option">--on-timezone-change</code></span><a class="headerlink" title="Permalink to this term" href="#--on-clock-change">¶</a></dt><dd><p>Defines a trigger based on system clock jumps or timezone changes for starting the
+        specified command. See <code class="varname">OnClockChange=</code> and <code class="varname">OnTimezoneChange=</code> in
+        <a href="systemd.timer.html#"><span class="citerefentry"><span class="refentrytitle">systemd.timer</span>(5)</span></a>. These
+        options are shortcuts for <span class="command"><strong>--timer-property=OnClockChange=yes</strong></span> and
+        <span class="command"><strong>--timer-property=OnTimezoneChange=yes</strong></span>. These options may not be combined with
+        <code class="option">--scope</code> or <code class="option">--pty</code>.</p><p><a name="v242"></a>Added in version 242.</p></dd><dt id="--path-property="><span class="term"><code class="option">--path-property=</code>, </span><span class="term"><code class="option">--socket-property=</code>, </span><span class="term"><code class="option">--timer-property=</code></span><a class="headerlink" title="Permalink to this term" href="#--path-property=">¶</a></dt><dd><p>Sets a property on the path, socket, or timer unit that is created. This option is
+        similar to <code class="option">--property=</code>, but applies to the transient path, socket, or timer unit
+        rather than the transient service unit created. This option takes an assignment in the same format as
+        <a href="systemctl.html#"><span class="citerefentry"><span class="refentrytitle">systemctl</span>(1)</span></a>'s
+        <span class="command"><strong>set-property</strong></span> command. These options may not be combined with
+        <code class="option">--scope</code> or <code class="option">--pty</code>.</p><p><a name="v218"></a>Added in version 218.</p></dd><dt id="--no-block"><span class="term"><code class="option">--no-block</code></span><a class="headerlink" title="Permalink to this term" href="#--no-block">¶</a></dt><dd><p>Do not synchronously wait for the unit start operation to finish. If this option is not specified, the
+          start request for the transient unit will be verified, enqueued and <span class="command"><strong>systemd-run</strong></span> will wait
+          until the unit's start-up is completed. By passing this argument, it is only verified and enqueued. This
+          option may not be combined with <code class="option">--wait</code>.</p><p><a name="v220"></a>Added in version 220.</p></dd><dt id="--wait"><span class="term"><code class="option">--wait</code></span><a class="headerlink" title="Permalink to this term" href="#--wait">¶</a></dt><dd><p>Synchronously wait for the transient service to terminate. If this option is specified, the
+        start request for the transient unit is verified, enqueued, and waited for. Subsequently the invoked unit is
+        monitored, and it is waited until it is deactivated again (most likely because the specified command
+        completed). On exit, terse information about the unit's runtime is shown, including total runtime (as well as
+        CPU usage, if <code class="option">--property=CPUAccounting=1</code> was set) and the exit code and status of the main
+        process. This output may be suppressed with <code class="option">--quiet</code>. This option may not be combined with
+        <code class="option">--no-block</code>, <code class="option">--scope</code> or the various path, socket, or timer options.</p><p><a name="v232"></a>Added in version 232.</p></dd><dt id="-G"><span class="term"><code class="option">-G</code>, </span><span class="term"><code class="option">--collect</code></span><a class="headerlink" title="Permalink to this term" href="#-G">¶</a></dt><dd><p>Unload the transient unit after it completed, even if it failed. Normally, without this option,
+        all units that ran and failed are kept in memory until the user explicitly resets their failure state with
+        <span class="command"><strong>systemctl reset-failed</strong></span> or an equivalent command. On the other hand, units that ran
+        successfully are unloaded immediately. If this option is turned on the "garbage collection" of units is more
+        aggressive, and unloads units regardless if they exited successfully or failed. This option is a shortcut for
+        <span class="command"><strong>--property=CollectMode=inactive-or-failed</strong></span>, see the explanation for
+        <code class="varname">CollectMode=</code> in
+        <a href="systemd.unit.html#"><span class="citerefentry"><span class="refentrytitle">systemd.unit</span>(5)</span></a> for further
+        information.</p><p><a name="v236"></a>Added in version 236.</p></dd><dt id="--user"><span class="term"><code class="option">--user</code></span><a class="headerlink" title="Permalink to this term" href="#--user">¶</a></dt><dd><p><a name="user-text"></a>Talk to the service manager of the calling user,
+      rather than the service manager of the system.</p></dd><dt id="--system"><span class="term"><code class="option">--system</code></span><a class="headerlink" title="Permalink to this term" href="#--system">¶</a></dt><dd><p><a name="system-text"></a>Talk to the service manager of the system. This is the
+      implied default.</p></dd><dt id="-H"><span class="term"><code class="option">-H</code>, </span><span class="term"><code class="option">--host=</code></span><a class="headerlink" title="Permalink to this term" href="#-H">¶</a></dt><dd><p><a name="host-text"></a>Execute the operation remotely. Specify a hostname, or a
+      username and hostname separated by "<code class="literal">@</code>", to
+      connect to. The hostname may optionally be suffixed by a
+      port ssh is listening on, separated by "<code class="literal">:</code>", and then a
+      container name, separated by "<code class="literal">/</code>", which
+      connects directly to a specific container on the specified
+      host. This will use SSH to talk to the remote machine manager
+      instance. Container names may be enumerated with
+      <span class="command"><strong>machinectl -H
+      <em class="replaceable"><code>HOST</code></em></strong></span>. Put IPv6 addresses in brackets.</p></dd><dt id="-M"><span class="term"><code class="option">-M</code>, </span><span class="term"><code class="option">--machine=</code></span><a class="headerlink" title="Permalink to this term" href="#-M">¶</a></dt><dd><p><a name="machine-text"></a>Execute operation on a local container. Specify a container name to connect to, optionally
+      prefixed by a user name to connect as and a separating "<code class="literal">@</code>" character. If the special
+      string "<code class="literal">.host</code>" is used in place of the container name, a connection to the local
+      system is made (which is useful to connect to a specific user's user bus: "<code class="literal">--user
+      --machine=lennart@.host</code>"). If the "<code class="literal">@</code>" syntax is not used, the connection is
+      made as root user. If the "<code class="literal">@</code>" syntax is used either the left hand side or the right hand
+      side may be omitted (but not both) in which case the local user name and "<code class="literal">.host</code>" are
+      implied.</p></dd><dt id="-h"><span class="term"><code class="option">-h</code>, </span><span class="term"><code class="option">--help</code></span><a class="headerlink" title="Permalink to this term" href="#-h">¶</a></dt><dd><p><a name="help-text"></a>Print a short help text and exit.
+    </p></dd><dt id="--version"><span class="term"><code class="option">--version</code></span><a class="headerlink" title="Permalink to this term" href="#--version">¶</a></dt><dd><p><a name="version-text"></a>Print a short version string and exit.</p></dd></dl></div><p>All command line arguments after the first non-option argument become part of the command line of
+    the launched process.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Exit status">Exit status<a class="headerlink" title="Permalink to this headline" href="#Exit%20status">¶</a></h2><p>On success, 0 is returned. If <span class="command"><strong>systemd-run</strong></span> failed to start the service, a
+    non-zero return value will be returned. If <span class="command"><strong>systemd-run</strong></span> waits for the service to
+    terminate, the return value will be propagated from the service. 0 will be returned on success, including
+    all the cases where systemd considers a service to have exited cleanly, see the discussion of
+    <code class="varname">SuccessExitStatus=</code> in
+    <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>.
+    </p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Examples">Examples<a class="headerlink" title="Permalink to this headline" href="#Examples">¶</a></h2><div class="example"><a name="id-1.8.2"></a><p class="title"><b>Example 1. Logging environment variables provided by systemd to services</b></p><div class="example-contents"><pre class="programlisting"># systemd-run env
+Running as unit: run-19945.service
+# journalctl -u run-19945.service
+Sep 08 07:37:21 bupkis systemd[1]: Starting /usr/bin/env...
+Sep 08 07:37:21 bupkis systemd[1]: Started /usr/bin/env.
+Sep 08 07:37:21 bupkis env[19948]: PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+Sep 08 07:37:21 bupkis env[19948]: LANG=en_US.UTF-8
+Sep 08 07:37:21 bupkis env[19948]: BOOT_IMAGE=/vmlinuz-3.11.0-0.rc5.git6.2.fc20.x86_64</pre></div></div><br class="example-break"><div class="example"><a name="id-1.8.3"></a><p class="title"><b>Example 2. Limiting resources available to a command</b></p><div class="example-contents"><pre class="programlisting"># systemd-run -p IOWeight=10 updatedb</pre><p>This command invokes the <a href="https://man7.org/linux/man-pages/man8/updatedb.8.html"><span class="citerefentry"><span class="refentrytitle">updatedb</span>(8)</span></a>
+      tool, but lowers the block I/O weight for it to 10. See
+      <a href="systemd.resource-control.html#"><span class="citerefentry"><span class="refentrytitle">systemd.resource-control</span>(5)</span></a>
+      for more information on the <code class="varname">IOWeight=</code> property.</p></div></div><br class="example-break"><div class="example"><a name="id-1.8.4"></a><p class="title"><b>Example 3. Running commands at a specified time</b></p><div class="example-contents"><p>The following command will touch a file after 30 seconds.</p><pre class="programlisting"># date; systemd-run --on-active=30 --timer-property=AccuracySec=100ms /bin/touch /tmp/foo
+Mon Dec  8 20:44:24 KST 2014
+Running as unit: run-71.timer
+Will run service as unit: run-71.service
+# journalctl -b -u run-71.timer
+-- Journal begins at Fri 2014-12-05 19:09:21 KST, ends at Mon 2014-12-08 20:44:54 KST. --
+Dec 08 20:44:38 container systemd[1]: Starting /bin/touch /tmp/foo.
+Dec 08 20:44:38 container systemd[1]: Started /bin/touch /tmp/foo.
+# journalctl -b -u run-71.service
+-- Journal begins at Fri 2014-12-05 19:09:21 KST, ends at Mon 2014-12-08 20:44:54 KST. --
+Dec 08 20:44:48 container systemd[1]: Starting /bin/touch /tmp/foo...
+Dec 08 20:44:48 container systemd[1]: Started /bin/touch /tmp/foo.</pre></div></div><br class="example-break"><div class="example"><a name="id-1.8.5"></a><p class="title"><b>Example 4. Allowing access to the tty</b></p><div class="example-contents"><p>The following command invokes
+      <a href="https://man7.org/linux/man-pages/man1/bash.1.html"><span class="citerefentry"><span class="refentrytitle">bash</span>(1)</span></a>
+      as a service passing its standard input, output and error to the calling TTY.</p><pre class="programlisting"># systemd-run -t --send-sighup bash</pre></div></div><br class="example-break"><div class="example"><a name="id-1.8.6"></a><p class="title"><b>Example 5. Start <span class="command">screen</span> as a user service</b></p><div class="example-contents"><pre class="programlisting">$ systemd-run --scope --user screen
+Running scope as unit run-r14b0047ab6df45bfb45e7786cc839e76.scope.
+
+$ screen -ls
+There is a screen on:
+        492..laptop     (Detached)
+1 Socket in /var/run/screen/S-fatima.
+</pre><p>This starts the <span class="command"><strong>screen</strong></span> process as a child of the
+      <span class="command"><strong>systemd --user</strong></span> process that was started by
+      <code class="filename">user@.service</code>, in a scope unit. A
+      <a href="systemd.scope.html#"><span class="citerefentry"><span class="refentrytitle">systemd.scope</span>(5)</span></a>
+      unit is used instead of a
+      <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+      unit, because <span class="command"><strong>screen</strong></span> will exit when detaching from the terminal,
+      and a service unit would be terminated. Running <span class="command"><strong>screen</strong></span>
+      as a user unit has the advantage that it is not part of the session scope.
+      If <code class="varname">KillUserProcesses=yes</code> is configured in
+      <a href="logind.conf.html#"><span class="citerefentry"><span class="refentrytitle">logind.conf</span>(5)</span></a>,
+      the default, the session scope will be terminated when the user logs
+      out of that session.</p><p>The <code class="filename">user@.service</code> is started automatically
+      when the user first logs in, and stays around as long as at least one
+      login session is open. After the user logs out of the last session,
+      <code class="filename">user@.service</code> and all services underneath it
+      are terminated. This behavior is the default, when "lingering" is
+      not enabled for that user. Enabling lingering means that
+      <code class="filename">user@.service</code> is started automatically during
+      boot, even if the user is not logged in, and that the service is
+      not terminated when the user logs out.</p><p>Enabling lingering allows the user to run processes without being logged in,
+      for example to allow <span class="command"><strong>screen</strong></span> to persist after the user logs out,
+      even if the session scope is terminated. In the default configuration, users can
+      enable lingering for themselves:</p><pre class="programlisting">$ loginctl enable-linger</pre></div></div><br class="example-break"><div class="example"><a name="id-1.8.7"></a><p class="title"><b>Example 6. Variable expansion by the manager</b></p><div class="example-contents"><pre class="programlisting">$ systemd-run -t echo "&lt;${INVOCATION_ID}&gt;" '&lt;${INVOCATION_ID}&gt;'
+      &lt;&gt; &lt;5d0149bfa2c34b79bccb13074001eb20&gt;
+      </pre><p>The first argument is expanded by the shell (double quotes), but the second one is not expanded
+      by the shell (single quotes).
+      <a href="https://man7.org/linux/man-pages/man1/echo.1.html"><span class="citerefentry"><span class="refentrytitle">echo</span>(1)</span></a>
+      is called with ["<code class="literal">/usr/bin/echo</code>",
+      "<code class="literal">&lt;&gt;</code>", "<code class="literal">&lt;${INVOCATION_ID}&gt;</code>"] as the argument array, and then
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>
+      generates <code class="varname">${INVOCATION_ID}</code> and substitutes it in the command-line. This substitution
+      could not be done on the client side, because the target ID that will be set for the service isn't
+      known before the call is made.</p></div></div><br class="example-break"><div class="example"><a name="id-1.8.8"></a><p class="title"><b>Example 7. Variable expansion and output redirection using a shell</b></p><div class="example-contents"><p>Variable expansion by
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>
+      can be disabled with <code class="varname">--expand-environment=no</code>.</p><p>Disabling variable expansion can be useful if the command to execute contains dollar characters
+      and escaping them would be inconvenient. For example, when a shell is used:</p><pre class="programlisting">$ systemd-run --expand-environment=no -t bash \
+      -c 'echo $SHELL $$ &gt;/dev/stdout'
+/bin/bash 12345
+      </pre><p>The last argument is passed verbatim to the
+      <a href="https://man7.org/linux/man-pages/man1/bash.1.html"><span class="citerefentry"><span class="refentrytitle">bash</span>(1)</span></a>
+      shell which is started by the service unit. The shell expands "<code class="literal">$SHELL</code>" to the path of
+      the shell, and "<code class="literal">$$</code>" to its process number, and then those strings are passed to the
+      <span class="command"><strong>echo</strong></span> built-in and printed to standard output (which in this case is connected to the
+      calling terminal).</p></div></div><br class="example-break"><div class="example"><a name="id-1.8.9"></a><p class="title"><b>Example 8. Return value</b></p><div class="example-contents"><pre class="programlisting">$ systemd-run --user --wait true
+$ systemd-run --user --wait -p SuccessExitStatus=11 bash -c 'exit 11'
+$ systemd-run --user --wait -p SuccessExitStatus=SIGUSR1 --expand-environment=no \
+      bash -c 'kill -SIGUSR1 $$'</pre><p>Those three invocations will succeed, i.e. terminate with an exit code of 0.</p></div></div><br class="example-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemctl.html#"><span class="citerefentry"><span class="refentrytitle">systemctl</span>(1)</span></a>,
+      <a href="systemd.unit.html#"><span class="citerefentry"><span class="refentrytitle">systemd.unit</span>(5)</span></a>,
+      <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>,
+      <a href="systemd.scope.html#"><span class="citerefentry"><span class="refentrytitle">systemd.scope</span>(5)</span></a>,
+      <a href="systemd.slice.html#"><span class="citerefentry"><span class="refentrytitle">systemd.slice</span>(5)</span></a>,
+      <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>,
+      <a href="systemd.resource-control.html#"><span class="citerefentry"><span class="refentrytitle">systemd.resource-control</span>(5)</span></a>,
+      <a href="systemd.timer.html#"><span class="citerefentry"><span class="refentrytitle">systemd.timer</span>(5)</span></a>,
+      <a href="systemd-mount.html#"><span class="citerefentry"><span class="refentrytitle">systemd-mount</span>(1)</span></a>,
+      <a href="machinectl.html#"><span class="citerefentry"><span class="refentrytitle">machinectl</span>(1)</span></a>
+    </p></div></div></body></html>

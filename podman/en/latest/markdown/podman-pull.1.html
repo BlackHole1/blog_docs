@@ -1,0 +1,831 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>podman-pull — Podman  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css">
+    <link rel="stylesheet" type="text/css" href="../../../_/static/css/badge_only.css">
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css">
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="../../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <link rel="index" title="Index" href="../genindex.html">
+    <link rel="search" title="Search" href="../search.html">
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css">
+  
+
+  
+  
+
+  
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "markdown/podman-pull.1", "programming_language": "go", "project": "podman", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "alabaster", "user_analytics_code": "", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+  
+
+    <div class="document" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+      <div class="documentwrapper" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+        <div class="bodywrapper" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+          
+
+          <div class="body" role="main" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+            
+  <section id="name" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">NAME<a class="headerlink" href="#name" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h1>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">podman-pull - Pull an image from a registry<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman-pull - 从注册表中拉取镜像</font></font></font></p>
+</section>
+<section id="synopsis" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">SYNOPSIS<a class="headerlink" href="#synopsis" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h1>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman pull</strong> [<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">options</em>] <em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">source</em> [<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">source</em>…]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman pull [选项] 源 [源…]</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman image pull</strong> [<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">options</em>] <em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">source</em> [<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">source</em>…]<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman image pull [选项] 源 [源…]</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman pull</strong> [<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">options</em>] [<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">transport</em>]<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">name</em>[:<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">tag</em>|@<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">digest</em>]</p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman image pull</strong> [<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">options</em>] [<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">transport</em>]<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">name</em>[:<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">tag</em>|@<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">digest</em>]</p>
+</section>
+<section id="description" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h1>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">podman pull copies an image from a registry onto the local machine. The command can pull one or more images.  If the image reference in the command line argument does not contain a registry, it is referred to as a<code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">short-name</span></code> reference. If the image is a ‘short-name’ reference, Podman prompts the user for the specific container registry to pull the image from, if an alias for the short-name has not been specified in the <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">short-name-aliases.conf</span></code>.  If an image tag is not specified, <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman pull</strong> defaults to the image with the <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">latest</strong> tag (if it exists) and pulls it. After the image is pulled, podman prints the full image ID.  <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman pull</strong> can also pull images using a digest <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman pull</strong> <em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">image</em>@<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">digest</em> and can also be used to pull images from archives and local storage using different transports.
+<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">IMPORTANT: Images are stored in local image storage.</em><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman pull 将镜像从注册表复制到本地计算机。该命令可以拉取一个或多个镜像。如果命令行参数中的镜像引用不包含注册表，则称为 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">short-name</span></code> 引用。如果镜像是“短名称”引用，则 Podman 会提示用户从特定容器注册表中拉取镜像，如果短名称的别名未在 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">short-name-aliases.conf</span></code> 中指定。如果未指定镜像标签，podman pull 默认拉取具有最新标签的镜像（如果存在）并拉取它。在拉取镜像后，podman 会打印完整的镜像 ID。podman pull 还可以使用摘要 podman pull image@digest 拉取镜像，并且还可以使用不同的传输方式从存档和本地存储中拉取镜像。重要提示：镜像存储在本地镜像存储中。</font></font></font></p>
+</section>
+<section id="source" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">SOURCE<a class="headerlink" href="#source" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">源</font></font></font></h1>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">SOURCE is the location from which the container image is pulled from. It supports all transports from <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference external" href="https://github.com/containers/image/blob/main/docs/containers-transports.5.md" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">containers-transports(5)</a></strong>. If no transport is specified, the input is subject to short-name resolution and the <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">docker</span></code> (i.e., container registry) transport is used.  For remote clients, including Mac and Windows (excluding WSL2) machines, <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">docker</span></code> is the only supported transport.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">源是从中拉取容器镜像的位置。它支持来自 containers-transports(5) 的所有传输。如果未指定传输，则输入将受到短名称解析的影响，并使用 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">docker</span></code> （即容器注册表）传输。对于远程客户端，包括 Mac 和 Windows（不包括 WSL2）机器， <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">docker</span></code> 是唯一支持的传输。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Pull from a container registry
+$ podman pull quay.io/username/myimage
+
+# Pull from a container registry with short-name resolution
+$ podman pull fedora
+
+# Pull from a container registry via the docker transport
+$ podman pull docker://quay.io/username/myimage
+
+# Pull from a local directory
+$ podman pull dir:/tmp/myimage
+
+# Pull from a tarball in the docker-archive format
+$ podman pull docker-archive:/tmp/myimage
+
+# Pull from a local docker daemon
+$ sudo podman pull docker-daemon:docker.io/library/myimage:33
+
+# Pull from a tarball in the OCI-archive format
+$ podman pull oci-archive:/tmp/myimage
+</pre></div>
+</div>
+</section>
+<section id="options" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">OPTIONS<a class="headerlink" href="#options" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h1>
+<section id="all-tags-a" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--all-tags</strong>, <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">-a</strong><a class="headerlink" href="#all-tags-a" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--all-tags, -a</font></font></font></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">All tagged images in the repository are pulled.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">存储库中的所有标记图像都被拉取。</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">IMPORTANT: When using the all-tags flag, Podman does not iterate over the search registries in the <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference external" href="https://github.com/containers/image/blob/main/docs/containers-registries.conf.5.md" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">containers-registries.conf(5)</a></strong> but always uses docker.io for unqualified image names.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">重要提示：在使用 all-tags 标志时，Podman 不会在 containers-registries.conf(5) 中的搜索注册表上进行迭代，而是始终使用 docker.io 作为未经限定的图像名称。</font></font></font></em></p>
+</section>
+<section id="arch-arch" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--arch</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">ARCH</em><a class="headerlink" href="#arch-arch" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Override the architecture, defaults to hosts, of the image to be pulled. For example, <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">arm</span></code>.
+Unless overridden, subsequent lookups of the same image in the local storage matches this architecture, regardless of the host.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">覆盖要拉取的镜像的架构，默认为主机的架构。例如， <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">arm</span></code> 。除非被覆盖，否则在本地存储中对相同镜像的后续查找将匹配此架构，而不考虑主机。</font></font></font></p>
+</section>
+<section id="authfile-path" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--authfile</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">path</em><a class="headerlink" href="#authfile-path" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Path of the authentication file. Default is <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">${XDG_RUNTIME_DIR}/containers/auth.json</span></code> on Linux, and <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">$HOME/.config/containers/auth.json</span></code> on Windows/macOS.
+The file is created by <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference internal" href="podman-login.1.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="std std-doc" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman login</span></a></strong>. If the authorization state is not found there, <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">$HOME/.docker/config.json</span></code> is checked, which is set using <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">docker login</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">认证文件的路径。在 Linux 上默认为 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">${XDG_RUNTIME_DIR}/containers/auth.json</span></code> ，在 Windows/macOS 上默认为 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">$HOME/.config/containers/auth.json</span></code> 。该文件由 podman login 创建。如果授权状态未在那里找到，则会检查 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">$HOME/.docker/config.json</span></code> ，该值是使用 docker login 设置的。</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Note: There is also the option to override the default path of the authentication file by setting the <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">REGISTRY_AUTH_FILE</span></code> environment variable. This can be done with <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">export REGISTRY_AUTH_FILE=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">path</em></strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：还有一种选择，可以通过设置 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">REGISTRY_AUTH_FILE</span></code> 环境变量来覆盖认证文件的默认路径。可以通过 export REGISTRY_AUTH_FILE=path 来实现。</font></font></font></p>
+</section>
+<section id="cert-dir-path" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--cert-dir</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">path</em><a class="headerlink" href="#cert-dir-path" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Use certificates at <em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">path</em> (*.crt, *.cert, *.key) to connect to the registry. (Default: /etc/containers/certs.d)
+For details, see <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference external" href="https://github.com/containers/image/blob/main/docs/containers-certs.d.5.md" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">containers-certs.d(5)</a></strong>.
+(This option is not available with the remote Podman client, including Mac and Windows (excluding WSL2) machines)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用证书路径（*.crt, *.cert, *.key）连接到注册表。 （默认值：/etc/containers/certs.d）有关详细信息，请参阅 containers-certs.d(5)。 （此选项不适用于远程 Podman 客户端，包括 Mac 和 Windows（不包括 WSL2）机器）</font></font></font></p>
+</section>
+<section id="creds-username-password" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--creds</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">[username[:password]]</em><a class="headerlink" href="#creds-username-password" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--creds=[用户名[:密码]] ¶</font></font></font></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">The [username[:password]] to use to authenticate with the registry, if required.
+If one or both values are not supplied, a command line prompt appears and the
+value can be entered. The password is entered without echo.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">如果需要，用于与注册表进行身份验证的[用户名[:密码]]。如果一个或两个值未提供，将出现命令行提示，并可以输入该值。密码输入时不会显示。</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Note that the specified credentials are only used to authenticate against
+target registries.  They are not used for mirrors or when the registry gets
+rewritten (see <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">containers-registries.conf(5)</span></code>); to authenticate against those
+consider using a <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">containers-auth.json(5)</span></code> file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，指定的凭据仅用于对目标注册表进行身份验证。它们不用于镜像或注册表被重写时（请参阅 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">containers-registries.conf(5)</span></code> ）；要对其进行身份验证，请考虑使用 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">containers-auth.json(5)</span></code> 文件。</font></font></font></p>
+</section>
+<section id="decryption-key-key-passphrase" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--decryption-key</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">key[:passphrase]</em><a class="headerlink" href="#decryption-key-key-passphrase" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">The [key[:passphrase]] to be used for decryption of images. Key can point to keys and/or certificates. Decryption is tried with all keys. If the key is protected by a passphrase, it is required to be passed in the argument and omitted otherwise.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">用于解密图像的密钥[:密码]。密钥可以指向密钥和/或证书。尝试使用所有密钥进行解密。如果密钥受密码保护，则需要在参数中传递密码，否则应省略。</font></font></font></p>
+</section>
+<section id="disable-content-trust" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--disable-content-trust</strong><a class="headerlink" href="#disable-content-trust" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">This is a Docker-specific option to disable image verification to a container
+registry and is not supported by Podman. This option is a NOOP and provided
+solely for scripting compatibility.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">这是一个 Docker 特定选项，用于禁用对容器注册表的镜像验证，不受 Podman 支持。此选项是一个 NOOP，并且仅用于脚本兼容性。</font></font></font></p>
+</section>
+<section id="help-h" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--help</strong>, <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">-h</strong><a class="headerlink" href="#help-h" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--help，-h ¶</font></font></font></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Print the usage statement.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">打印用法说明。</font></font></font></p>
+</section>
+<section id="os-os" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--os</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">OS</em><a class="headerlink" href="#os-os" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--os=操作系统 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Override the OS, defaults to hosts, of the image to be pulled. For example, <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">windows</span></code>.
+Unless overridden, subsequent lookups of the same image in the local storage matches this OS, regardless of the host.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">覆盖要拉取的镜像的操作系统，默认为主机。例如， <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">windows</span></code> 。除非被覆盖，否则在本地存储中对相同镜像的后续查找将匹配此操作系统，而不考虑主机。</font></font></font></p>
+</section>
+<section id="platform-os-arch" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--platform</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">OS/ARCH</em><a class="headerlink" href="#platform-os-arch" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Specify the platform for selecting the image.  (Conflicts with --arch and --os)
+The <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">--platform</span></code> option can be used to override the current architecture and operating system.
+Unless overridden, subsequent lookups of the same image in the local storage matches this platform, regardless of the host.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">指定用于选择镜像的平台。(与 --arch 和 --os 冲突) <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">--platform</span></code> 选项可用于覆盖当前的架构和操作系统。除非被覆盖，否则在本地存储中对相同镜像的后续查找将匹配此平台，而不考虑主机。</font></font></font></p>
+</section>
+<section id="quiet-q" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--quiet</strong>, <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">-q</strong><a class="headerlink" href="#quiet-q" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Suppress output information when pulling images<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在拉取图像时抑制输出信息。</font></font></font></p>
+</section>
+<section id="retry-attempts" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--retry</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">attempts</em><a class="headerlink" href="#retry-attempts" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Number of times to retry pulling or pushing images between the registry and
+local storage in case of failure. Default is <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">3</strong>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在发生失败时，重试在注册表和本地存储之间拉取或推送镜像的次数。默认值为 3。</font></font></font></p>
+</section>
+<section id="retry-delay-duration" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--retry-delay</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">duration</em><a class="headerlink" href="#retry-delay-duration" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--retry-delay=持续时间 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Duration of delay between retry attempts when pulling or pushing images between
+the registry and local storage in case of failure. The default is to start at two seconds and then exponentially back off. The delay is used when this value is set, and no exponential back off occurs.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在发生失败时，拉取或推送镜像在注册表和本地存储之间重试尝试之间的延迟持续时间。默认值是从两秒开始，然后指数级地减少。当设置了此值且没有指数级减少时，将使用延迟。</font></font></font></p>
+</section>
+<section id="tls-verify" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--tls-verify</strong><a class="headerlink" href="#tls-verify" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Require HTTPS and verify certificates when contacting registries (default: <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">true</strong>).
+If explicitly set to <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">true</strong>, TLS verification is used.
+If set to <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">false</strong>, TLS verification is not used.
+If not specified, TLS verification is used unless the target registry
+is listed as an insecure registry in <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference external" href="https://github.com/containers/image/blob/main/docs/containers-registries.conf.5.md" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">containers-registries.conf(5)</a></strong><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在联系注册表时需要 HTTPS 并验证证书（默认值为 true）。如果显式设置为 true，则使用 TLS 验证。如果设置为 false，则不使用 TLS 验证。如果未指定，则除非目标注册表在 containers-registries.conf(5) 中被列为不安全注册表，否则将使用 TLS 验证。</font></font></font></p>
+</section>
+<section id="variant-variant" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h2 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">--variant</strong>=<em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">VARIANT</em><a class="headerlink" href="#variant-variant" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a></h2>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Use <em data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">VARIANT</em> instead of the default architecture variant of the container image. Some images can use multiple variants of the arm architectures, such as arm/v5 and arm/v7.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 VARIANT 替代容器镜像的默认架构变体。某些镜像可以使用 arm 架构的多个变体，例如 arm/v5 和 arm/v7。</font></font></font></p>
+</section>
+</section>
+<section id="files" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">FILES<a class="headerlink" href="#files" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文件 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">short-name-aliases.conf</strong> (<code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">/var/cache/containers/short-name-aliases.conf</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">$HOME/.cache/containers/short-name-aliases.conf</span></code>)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">短名称别名.conf ( <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">/var/cache/containers/short-name-aliases.conf</span></code> , <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">$HOME/.cache/containers/short-name-aliases.conf</span></code> )</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">When users specify images that do not include the container registry where the
+image is stored, this is called a short name. The use of unqualified-search registries entails an ambiguity as it is unclear from which registry a given image, referenced by a short name, may be pulled from.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">当用户指定不包括存储图像的容器注册表的图像时，这被称为短名称。 使用未经合格搜索注册表会导致歧义，因为不清楚通过短名称引用的给定图像可能从哪个注册表中拉取。</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Using short names is subject to the risk of hitting squatted registry namespaces. If the unqualified-search registries are set to [“public-registry.com”,  “my-private-registry.com”] an attacker may take over a namespace of <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">public-registry.com</span></code> such that an image may be pulled from <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">public-registry.com</span></code> instead of the intended source <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">my-private-registry.com</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用短名称存在命中被占用注册表命名空间的风险。 如果未经合格搜索注册表设置为 [“public-registry.com”, “my-private-registry.com”]，攻击者可能接管 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">public-registry.com</span></code> 的命名空间，以便从 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">public-registry.com</span></code> 而不是预期的源 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">my-private-registry.com</span></code> 拉取图像。</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">While it is highly recommended to always use fully-qualified image references, existing deployments using short names may not be easily changed. To circumvent the aforementioned ambiguity, so called short-name aliases can be configured that point to a fully-qualified image reference. Distributions often ship a default shortnames.conf expansion file in /etc/containers/registries.conf.d/ directory. Administrators can use this directory to add their own local short-name expansion files.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">虽然强烈建议始终使用完全合格的镜像引用，但使用短名称的现有部署可能不容易更改。为了避免上述的歧义，可以配置所谓的短名称别名，指向完全合格的镜像引用。发行版通常在 /etc/containers/registries.conf.d/ 目录中提供一个默认的 shortnames.conf 扩展文件。管理员可以使用此目录添加自己的本地短名称扩展文件。</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">When pulling an image, if the user does not specify the complete registry, container engines attempt to expand the short-name into a full name. If the command is executed with a tty, the user is prompted to select a registry from the
+default list unqualified registries defined in registries.conf. The user’s selection is then stored in a cache file to be used in all future short-name expansions. Rootful short-names are stored in /var/cache/containers/short-name-aliases.conf. Rootless short-names are stored in the $HOME/.cache/containers/short-name-aliases.conf file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在拉取镜像时，如果用户没有指定完整的注册表，容器引擎会尝试将短名称扩展为完整名称。如果使用 tty 执行命令，则会提示用户从 registries.conf 中定义的默认列表中选择一个注册表。然后将用户的选择存储在缓存文件中，以便在所有未来的短名称扩展中使用。Rootful 短名称存储在 /var/cache/containers/short-name-aliases.conf 中。Rootless 短名称存储在 $HOME/.cache/containers/short-name-aliases.conf 文件中。</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">For more information on short-names, see <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">containers-registries.conf(5)</span></code><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">有关短名称的更多信息，请参见 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">containers-registries.conf(5)</span></code> </font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">registries.conf</strong> (<code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">/etc/containers/registries.conf</span></code>)</p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">registries.conf is the configuration file which specifies which container registries is consulted when completing image names which do not include a registry or domain portion.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">registries.conf 是配置文件，指定在完成不包括注册表或域部分的图像名称时要查询哪些容器注册表。</font></font></font></p>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">NOTE: Use the environment variable <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">TMPDIR</span></code> to change the temporary storage location of downloaded container images. Podman defaults to use <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">/var/tmp</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：使用环境变量 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">TMPDIR</span></code> 来更改下载容器镜像的临时存储位置。Podman 默认使用 <code class="docutils literal notranslate" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="pre">/var/tmp</span></code> 。</font></font></font></p>
+</section>
+<section id="examples" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">EXAMPLES<a class="headerlink" href="#examples" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例</font></font></font></h1>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Pull a single image with short name resolution.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用短名称解析拉取单个镜像。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman pull alpine:latest
+Resolved "alpine" as an alias (/etc/containers/registries.conf.d/000-shortnames.conf)
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob 5843afab3874 done
+Copying config d4ff818577 done
+Writing manifest to image destination
+Storing signatures
+d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83
+</pre></div>
+</div>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Pull multiple images with/without short name resolution.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用/不使用短名称解析拉取多个镜像。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">podman</span> <span class="n">pull</span> <span class="n">busybox</span><span class="p">:</span><span class="n">musl</span> <span class="n">alpine</span> <span class="n">quay</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">libpod</span><span class="o">/</span><span class="n">cirros</span>
+<span class="n">Trying</span> <span class="n">to</span> <span class="n">pull</span> <span class="n">docker</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">library</span><span class="o">/</span><span class="n">busybox</span><span class="p">:</span><span class="n">musl</span><span class="o">...</span>
+<span class="n">Getting</span> <span class="n">image</span> <span class="n">source</span> <span class="n">signatures</span>
+<span class="n">Copying</span> <span class="n">blob</span> <span class="mi">0</span><span class="n">c52b060233b</span> <span class="p">[</span><span class="o">--------------------------------------</span><span class="p">]</span> <span class="mf">0.0</span><span class="n">b</span> <span class="o">/</span> <span class="mf">0.0</span><span class="n">b</span>
+<span class="n">Copying</span> <span class="n">config</span> <span class="mi">9</span><span class="n">ad2c435a8</span> <span class="n">done</span>
+<span class="n">Writing</span> <span class="n">manifest</span> <span class="n">to</span> <span class="n">image</span> <span class="n">destination</span>
+<span class="n">Storing</span> <span class="n">signatures</span>
+<span class="mi">9</span><span class="n">ad2c435a887e3f723654e09b48563de44aa3c7950246b2e9305ec85dd3422db</span>
+<span class="n">Trying</span> <span class="n">to</span> <span class="n">pull</span> <span class="n">docker</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">library</span><span class="o">/</span><span class="n">alpine</span><span class="p">:</span><span class="n">latest</span><span class="o">...</span>
+<span class="n">Getting</span> <span class="n">image</span> <span class="n">source</span> <span class="n">signatures</span>
+<span class="n">Copying</span> <span class="n">blob</span> <span class="mi">5843</span><span class="n">afab3874</span> <span class="p">[</span><span class="o">--------------------------------------</span><span class="p">]</span> <span class="mf">0.0</span><span class="n">b</span> <span class="o">/</span> <span class="mf">0.0</span><span class="n">b</span>
+<span class="n">Copying</span> <span class="n">config</span> <span class="n">d4ff818577</span> <span class="n">done</span>
+<span class="n">Writing</span> <span class="n">manifest</span> <span class="n">to</span> <span class="n">image</span> <span class="n">destination</span>
+<span class="n">Storing</span> <span class="n">signatures</span>
+<span class="n">d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83</span>
+<span class="n">Trying</span> <span class="n">to</span> <span class="n">pull</span> <span class="n">quay</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">libpod</span><span class="o">/</span><span class="n">cirros</span><span class="p">:</span><span class="n">latest</span><span class="o">...</span>
+<span class="n">Getting</span> <span class="n">image</span> <span class="n">source</span> <span class="n">signatures</span>
+<span class="n">Copying</span> <span class="n">blob</span> <span class="mi">8</span><span class="n">da581cc9286</span> <span class="n">done</span>
+<span class="n">Copying</span> <span class="n">blob</span> <span class="mi">856628</span><span class="n">d95d17</span> <span class="n">done</span>
+<span class="n">Copying</span> <span class="n">blob</span> <span class="n">f513001ba4ab</span> <span class="n">done</span>
+<span class="n">Copying</span> <span class="n">config</span> <span class="mi">3</span><span class="n">c82e4d066</span> <span class="n">done</span>
+<span class="n">Writing</span> <span class="n">manifest</span> <span class="n">to</span> <span class="n">image</span> <span class="n">destination</span>
+<span class="n">Storing</span> <span class="n">signatures</span>
+<span class="mi">3</span><span class="n">c82e4d066cf6f9e50efaead6e3ff7fddddf5527826afd68e5a969579fc4db4a</span>
+</pre></div>
+</div>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Pull an image using its digest.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用摘要拉取镜像。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman pull alpine@sha256:d7342993700f8cd7aba8496c2d0e57be0666e80b4c441925fc6f9361fa81d10e
+Trying to pull docker.io/library/alpine@sha256:d7342993700f8cd7aba8496c2d0e57be0666e80b4c441925fc6f9361fa81d10e...
+Getting image source signatures
+Copying blob 188c0c94c7c5 done
+Copying config d6e46aa247 done
+Writing manifest to image destination
+Storing signatures
+d6e46aa2470df1d32034c6707c8041158b652f38d2a9ae3d7ad7e7532d22ebe0
+</pre></div>
+</div>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Pull an image by specifying an authentication file.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通过指定认证文件拉取镜像。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman pull --authfile temp-auths/myauths.json docker://docker.io/umohnani/finaltest
+Trying to pull docker.io/umohnani/finaltest:latest...Getting image source signatures
+Copying blob sha256:6d987f6f42797d81a318c40d442369ba3dc124883a0964d40b0c8f4f7561d913
+ 1.90 MB / 1.90 MB [========================================================] 0s
+Copying config sha256:ad4686094d8f0186ec8249fc4917b71faa2c1030d7b5a025c29f26e19d95c156
+ 1.41 KB / 1.41 KB [========================================================] 0s
+Writing manifest to image destination
+Storing signatures
+03290064078cb797f3e0a530e78c20c13dd22a3dd3adf84a5da2127b48df0438
+</pre></div>
+</div>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Pull an image by authenticating to a registry.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通过向注册表进行身份验证来拉取镜像。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman pull --creds testuser:testpassword docker.io/umohnani/finaltest
+Trying to pull docker.io/umohnani/finaltest:latest...Getting image source signatures
+Copying blob sha256:6d987f6f42797d81a318c40d442369ba3dc124883a0964d40b0c8f4f7561d913
+ 1.90 MB / 1.90 MB [========================================================] 0s
+Copying config sha256:ad4686094d8f0186ec8249fc4917b71faa2c1030d7b5a025c29f26e19d95c156
+ 1.41 KB / 1.41 KB [========================================================] 0s
+Writing manifest to image destination
+Storing signatures
+03290064078cb797f3e0a530e78c20c13dd22a3dd3adf84a5da2127b48df0438
+</pre></div>
+</div>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Pull an image using tls verification.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 TLS 验证拉取镜像。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman pull --tls-verify=false --cert-dir image/certs docker.io/umohnani/finaltest
+Trying to pull docker.io/umohnani/finaltest:latest...Getting image source signatures
+Copying blob sha256:6d987f6f42797d81a318c40d442369ba3dc124883a0964d40b0c8f4f7561d913
+ 1.90 MB / 1.90 MB [========================================================] 0s
+Copying config sha256:ad4686094d8f0186ec8249fc4917b71faa2c1030d7b5a025c29f26e19d95c156
+ 1.41 KB / 1.41 KB [========================================================] 0s
+Writing manifest to image destination
+Storing signatures
+03290064078cb797f3e0a530e78c20c13dd22a3dd3adf84a5da2127b48df0438
+</pre></div>
+</div>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Pull an image by overriding the host architecture.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通过覆盖主机架构拉取镜像。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman pull --arch=arm arm32v7/debian:stretch
+Trying to pull docker.io/arm32v7/debian:stretch...
+Getting image source signatures
+Copying blob b531ae4a3925 done
+Copying config 3cba58dad5 done
+Writing manifest to image destination
+Storing signatures
+3cba58dad5d9b35e755b48b634acb3fdd185ab1c996ac11510cc72c17780e13c
+</pre></div>
+</div>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Pull an image with up to 6 retries, delaying 10 seconds between retries in quet mode.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在安静模式下，最多重试 6 次，每次重试之间延迟 10 秒拉取镜像。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman --remote pull -q --retry 6 --retry-delay 10s ubi9
+4d6addf62a90e392ff6d3f470259eb5667eab5b9a8e03d20b41d0ab910f92170
+</pre></div>
+</div>
+</section>
+<section id="see-also" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">SEE ALSO<a class="headerlink" href="#see-also" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference internal" href="podman.1.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="std std-doc" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman(1)</span></a></strong>, <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference internal" href="podman-push.1.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="std std-doc" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman-push(1)</span></a></strong>, <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference internal" href="podman-login.1.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="std std-doc" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">podman-login(1)</span></a></strong>, <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference external" href="https://github.com/containers/image/blob/main/docs/containers-certs.d.5.md" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">containers-certs.d(5)</a></strong>, <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference external" href="https://github.com/containers/image/blob/main/docs/containers-registries.conf.5.md" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">containers-registries.conf(5)</a></strong>, <strong data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference external" href="https://github.com/containers/image/blob/main/docs/containers-transports.5.md" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">containers-transports(5)</a></strong></p>
+</section>
+<section id="history" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">HISTORY<a class="headerlink" href="#history" title="Link to this heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">July 2017, Originally compiled by Urvashi Mohnani <a class="reference external" href="mailto:umohnani%40redhat.com" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">umohnani<span data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">@</span>redhat<span data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">.</span>com</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2017 年 7 月，最初由 Urvashi Mohnani umohnani@redhat.com 编写</font></font></font></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+        <div class="sphinxsidebarwrapper" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h1 class="logo" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a href="../index.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Podman</a></h1>
+
+
+
+
+
+
+
+
+<h3 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Navigation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">导航</font></font></font></h3>
+<p class="caption" role="heading" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><span class="caption-text" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Contents:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内容:</font></font></font></span></p>
+<ul data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<li class="toctree-l1" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference internal" href="../Introduction.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference internal" href="../Commands.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Commands<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">命令</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference internal" href="../Reference.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Reference<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference internal" href="../Tutorials.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Tutorials<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">教程</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference internal" href="../Search.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Search<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">搜索</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a class="reference external" href="https://podman-py.readthedocs.io/en/latest/" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Podman Python</a></li>
+</ul>
+
+<div class="relations" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+<h3 data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Related Topics<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关主题</font></font></font></h3>
+<ul data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+  <li data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"><a href="../index.html" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">Documentation overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档概述</font></font></font></a><ul data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff"></div>
+    </div>
+    <div class="footer" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff" data-immersive-translate-paragraph="1">
+      ©2019, team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">Alabaster 0.7.16</a>
+      
+      |
+      <a href="https://docs.podman.io/en/latest/_sources/markdown/podman-pull.1.md.txt" rel="nofollow" data-immersive-translate-walked="29dbfa80-bc61-443e-9c99-a951646db0ff">Page source</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">©2019，团队。| 由 Sphinx 7.3.7 &amp; Alabaster 0.7.16 提供支持。| 页面来源</font></font></font>
+    </div>
+
+    
+
+    
+  
+</body></html>

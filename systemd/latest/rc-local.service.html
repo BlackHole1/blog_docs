@@ -1,0 +1,40 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-rc-local-generator</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-rc-local-generator"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-rc-local-generator, rc-local.service — Compatibility generator and service to start <code class="filename">/etc/rc.local</code> during boot</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">/usr/lib/systemd/system-generators/systemd-rc-local-generator</code></p><p><code class="filename">rc-local.service</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-rc-local-generator</strong></span> is a generator that checks whether
+    <code class="filename">/etc/rc.local</code> exists and is executable, and if it is, pulls the
+    <code class="filename">rc-local.service</code> unit into the boot process. This unit is responsible for running
+    this script during late boot. The script is run after <code class="filename">network.target</code>, but in
+    parallel with most other regular system services.</p><p>Note that <code class="filename">rc-local.service</code> runs with slightly different semantics than the
+    original System V version, which was executed "last" in the boot process, which is a concept that does
+    not translate to systemd.</p><p>Also note that <code class="filename">rc-local.service</code> is ordered after
+    <code class="filename">network.target</code>, which does not mean that the network is functional, see
+    <a href="systemd.special.html#"><span class="citerefentry"><span class="refentrytitle">systemd.special</span>(7)</span></a>.
+    If the script requires a configured network connection, it may be desirable to pull in and order it after
+    <code class="filename">network-online.target</code> with a drop-in:</p><pre class="programlisting"># /etc/systemd/system/rc-local.service.d/network.conf
+[Unit]
+Wants=network-online.target
+After=network-online.target
+</pre><p>Support for <code class="filename">/etc/rc.local</code> is provided for compatibility with specific System
+    V systems only. However, it is strongly recommended to avoid making use of this script today, and instead
+    provide proper unit files with appropriate dependencies for any scripts to run during the boot process.
+    Note that the path to the script is set at compile time and varies between distributions.</p><p><code class="filename">systemd-rc-local-generator</code> implements
+    <a href="systemd.generator.html#"><span class="citerefentry"><span class="refentrytitle">systemd.generator</span>(7)</span></a>.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemctl.html#"><span class="citerefentry"><span class="refentrytitle">systemctl</span>(1)</span></a>
+    </p></div></div></body></html>

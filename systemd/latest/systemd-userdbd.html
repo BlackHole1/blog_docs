@@ -1,0 +1,45 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-userdbd.service</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-userdbd.service"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-userdbd.service, systemd-userdbd — JSON User/Group Record Query Multiplexer/NSS Compatibility</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">systemd-userdbd.service</code></p><p><code class="filename">/usr/lib/systemd/systemd-userdbd</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-userdbd</strong></span> is a system service that multiplexes user/group lookups to all
+    local services that provide JSON user/group record definitions to the system. In addition it synthesizes
+    JSON user/group records from classic UNIX/glibc NSS user/group records in order to provide full backwards
+    compatibility. It may also pick up statically defined JSON user/group records from files in
+    <code class="filename">/etc/userdb/</code>, <code class="filename">/run/userdb/</code>,
+    <code class="filename">/run/host/userdb/</code> and <code class="filename">/usr/lib/userdb/</code> with the
+    "<code class="literal">.user</code>" extension.</p><p>Most of <span class="command"><strong>systemd-userdbd</strong></span>'s functionality is accessible through the
+    <a href="userdbctl.html#"><span class="citerefentry"><span class="refentrytitle">userdbctl</span>(1)</span></a>
+    command.</p><p>The user and group records this service provides access to follow the <a class="ulink" href="https://systemd.io/USER_RECORD" target="_top">JSON User Records</a> and <a class="ulink" href="https://systemd.io/GROUP_RECORD" target="_top">JSON Group Record</a> definitions. This service implements the
+    <a class="ulink" href="https://systemd.io/USER_GROUP_API" target="_top">User/Group Record Lookup API via Varlink</a>, and
+    multiplexes access other services implementing this API, too. It is thus both server and client of this
+    API.</p><p>This service provides three distinct <a class="ulink" href="https://varlink.org/" target="_top">Varlink</a> services:
+    <code class="constant">io.systemd.Multiplexer</code> provides a single, unified API for querying JSON user and
+    group records. Internally it talks to all other user/group record services running on the system in
+    parallel and forwards any information discovered. This simplifies clients substantially since they need
+    to talk to a single service only instead of all of them in
+    parallel. <code class="constant">io.systemd.NameServiceSwitch</code> provides compatibility with classic
+    UNIX/glibc NSS user records, i.e. converts <span class="type">struct passwd</span> and <span class="type">struct group</span>
+    records as acquired with APIs such as <a href="https://man7.org/linux/man-pages/man1/getpwnam.1.html"><span class="citerefentry"><span class="refentrytitle">getpwnam</span>(1)</span></a> to
+    JSON user/group records, thus hiding the differences between the services as much as
+    possible. <code class="constant">io.systemd.DropIn</code> makes JSON user/group records from the aforementioned
+    drop-in directories available.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="nss-systemd.html#"><span class="citerefentry"><span class="refentrytitle">nss-systemd</span>(8)</span></a>,
+      <a href="userdbctl.html#"><span class="citerefentry"><span class="refentrytitle">userdbctl</span>(1)</span></a>,
+      <a href="systemd-homed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-homed.service</span>(8)</span></a>
+    </p></div></div></body></html>

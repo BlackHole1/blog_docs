@@ -1,0 +1,39 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-hibernate-resume-generator</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-hibernate-resume-generator"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-hibernate-resume-generator — Unit generator for resume= kernel parameter</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">/usr/lib/systemd/system-generators/systemd-hibernate-resume-generator</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>systemd-hibernate-resume-generator</strong></span> is a
+    generator that initiates the procedure to resume the system from hibernation.
+    It creates the
+    <a href="systemd-hibernate-resume.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-hibernate-resume.service</span>(8)</span></a>
+    unit according to the value of <code class="option">resume=</code> parameter
+    specified on the kernel command line, or the value of EFI variable
+    <code class="varname">HibernateLocation</code>, which will instruct the kernel
+    to resume the system from the hibernation image on that device.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Kernel Command Line">Kernel Command Line<a class="headerlink" title="Permalink to this headline" href="#Kernel%20Command%20Line">¶</a></h2><p><code class="filename">systemd-hibernate-resume-generator</code>
+    understands the following kernel command line parameters:</p><div class="variablelist"><dl class="variablelist"><dt id="resume="><span class="term"><code class="varname">resume=</code></span><a class="headerlink" title="Permalink to this term" href="#resume=">¶</a></dt><dd><p>Takes a path to the resume device. Both
+        persistent block device paths like
+        <code class="filename">/dev/disk/by-foo/bar</code> and
+        <a href="https://man7.org/linux/man-pages/man5/fstab.5.html"><span class="citerefentry"><span class="refentrytitle">fstab</span>(5)</span></a>-style
+        specifiers like "<code class="literal">FOO=bar</code>" are
+        supported.</p><p><a name="v217"></a>Added in version 217.</p></dd><dt id="resume_offset="><span class="term"><code class="varname">resume_offset=</code></span><a class="headerlink" title="Permalink to this term" href="#resume_offset=">¶</a></dt><dd><p>Takes the page offset of the swap space from the resume device.
+        Defaults to "<code class="literal">0</code>".</p><p><a name="v254"></a>Added in version 254.</p></dd><dt id="resumeflags="><span class="term"><code class="varname">resumeflags=</code></span><a class="headerlink" title="Permalink to this term" href="#resumeflags=">¶</a></dt><dd><p>Takes the resume device mount options to
+        use. Defaults <code class="varname">rootflags=</code> if not specified.</p><p><a name="v243"></a>Added in version 243.</p></dd><dt id="noresume"><span class="term"><code class="varname">noresume</code></span><a class="headerlink" title="Permalink to this term" href="#noresume">¶</a></dt><dd><p>Do not try to resume from hibernation. If this parameter is
+        present, <code class="varname">resume=</code> is ignored.</p><p><a name="v240"></a>Added in version 240.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd-hibernate-resume.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-hibernate-resume.service</span>(8)</span></a>,
+      <a href="kernel-command-line.html#"><span class="citerefentry"><span class="refentrytitle">kernel-command-line</span>(7)</span></a>
+    </p></div></div></body></html>

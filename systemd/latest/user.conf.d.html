@@ -1,0 +1,326 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>systemd-system.conf</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="systemd-system.conf"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>systemd-system.conf, system.conf.d, systemd-user.conf, user.conf.d — System and session service manager configuration files</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">/etc/systemd/system.conf</code>,
+    <code class="filename">/etc/systemd/system.conf.d/*.conf</code>,
+    <code class="filename">/run/systemd/system.conf.d/*.conf</code>,
+    <code class="filename">/usr/lib/systemd/system.conf.d/*.conf</code></p><p><code class="filename">~/.config/systemd/user.conf</code>,
+    <code class="filename">/etc/systemd/user.conf</code>,
+    <code class="filename">/etc/systemd/user.conf.d/*.conf</code>,
+    <code class="filename">/run/systemd/user.conf.d/*.conf</code>,
+    <code class="filename">/usr/lib/systemd/user.conf.d/*.conf</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p>When run as a system instance, <span class="command"><strong>systemd</strong></span> interprets the configuration file
+    <code class="filename">system.conf</code> and the files in <code class="filename">system.conf.d</code> directories; when
+    run as a user instance, it interprets the configuration file <code class="filename">user.conf</code> (either in
+    the home directory of the user, or if not found, under <code class="filename">/etc/systemd/</code>) and the files
+    in <code class="filename">user.conf.d</code> directories. These configuration files contain a few settings
+    controlling basic manager operations.</p><p>See
+    <a href="systemd.syntax.html#"><span class="citerefentry"><span class="refentrytitle">systemd.syntax</span>(7)</span></a> for a
+    general description of the syntax.</p></div><div class="refsection"><a name="main-conf"></a><h2>Configuration Directories and Precedence</h2><p>The default configuration is set during compilation, so configuration is only needed when it is
+    necessary to deviate from those defaults. The main configuration file is either in
+    <code class="filename">/usr/lib/systemd/</code> or <code class="filename">/etc/systemd/</code> and contains commented out
+    entries showing the defaults as a guide to the administrator. Local overrides can be created by creating
+    drop-ins, as described below. The main configuration file can also be edited for this purpose (or a copy
+    in <code class="filename">/etc/</code> if it's shipped in <code class="filename">/usr/</code>) however using drop-ins for
+    local configuration is recommended over modifications to the main configuration file.</p><p>In addition to the "main" configuration file, drop-in configuration snippets are read from
+    <code class="filename">/usr/lib/systemd/*.conf.d/</code>, <code class="filename">/usr/local/lib/systemd/*.conf.d/</code>,
+    and <code class="filename">/etc/systemd/*.conf.d/</code>. Those drop-ins have higher precedence and override the
+    main configuration file. Files in the <code class="filename">*.conf.d/</code> configuration subdirectories are
+    sorted by their filename in lexicographic order, regardless of in which of the subdirectories they
+    reside. When multiple files specify the same option, for options which accept just a single value, the
+    entry in the file sorted last takes precedence, and for options which accept a list of values, entries
+    are collected as they occur in the sorted files.</p><p>When packages need to customize the configuration, they can install drop-ins under
+    <code class="filename">/usr/</code>. Files in <code class="filename">/etc/</code> are reserved for the local administrator,
+    who may use this logic to override the configuration files installed by vendor packages. Drop-ins have to
+    be used to override package drop-ins, since the main configuration file has lower precedence. It is
+    recommended to prefix all filenames in those subdirectories with a two-digit number and a dash, to
+    simplify the ordering of the files. This also defined a concept of drop-in priority to allow
+    distributions to ship drop-ins within a specific range lower than the range used by users. This should
+    lower the risk of package drop-ins overriding accidentally drop-ins defined by users.</p><p>To disable a configuration file supplied by the vendor, the recommended way is to place a symlink
+    to <code class="filename">/dev/null</code> in the configuration directory in <code class="filename">/etc/</code>, with the
+    same filename as the vendor configuration file.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Options">Options<a class="headerlink" title="Permalink to this headline" href="#Options">¶</a></h2><p>All options are configured in the
+    [Manager] section:</p><div class="variablelist"><dl class="variablelist"><dt id="LogColor="><span class="term"><code class="varname">LogColor=</code>, </span><span class="term"><code class="varname">LogLevel=</code>, </span><span class="term"><code class="varname">LogLocation=</code>, </span><span class="term"><code class="varname">LogTarget=</code>, </span><span class="term"><code class="varname">LogTime=</code>, </span><span class="term"><code class="varname">DumpCore=yes</code>, </span><span class="term"><code class="varname">CrashChangeVT=no</code>, </span><span class="term"><code class="varname">CrashShell=no</code>, </span><span class="term"><code class="varname">CrashReboot=no</code>, </span><span class="term"><code class="varname">ShowStatus=yes</code>, </span><span class="term"><code class="varname">DefaultStandardOutput=journal</code>, </span><span class="term"><code class="varname">DefaultStandardError=inherit</code></span><a class="headerlink" title="Permalink to this term" href="#LogColor=">¶</a></dt><dd><p>Configures various parameters of basic manager operation. These options may be overridden by
+        the respective process and kernel command line arguments. See
+        <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a> for
+        details.</p><p><a name="v198"></a>Added in version 198.</p></dd><dt id="CtrlAltDelBurstAction="><span class="term"><code class="varname">CtrlAltDelBurstAction=</code></span><a class="headerlink" title="Permalink to this term" href="#CtrlAltDelBurstAction=">¶</a></dt><dd><p>Defines what action will be performed
+        if user presses Ctrl-Alt-Delete more than 7 times in 2s.
+        Can be set to "<code class="literal">reboot-force</code>", "<code class="literal">poweroff-force</code>",
+        "<code class="literal">reboot-immediate</code>", "<code class="literal">poweroff-immediate</code>"
+        or disabled with "<code class="literal">none</code>". Defaults to
+        "<code class="literal">reboot-force</code>".
+        </p><p><a name="v232"></a>Added in version 232.</p></dd><dt id="CPUAffinity="><span class="term"><code class="varname">CPUAffinity=</code></span><a class="headerlink" title="Permalink to this term" href="#CPUAffinity=">¶</a></dt><dd><p>Configures the CPU affinity for the service manager as well as the default CPU
+        affinity for all forked off processes. Takes a list of CPU indices or ranges separated by either
+        whitespace or commas. CPU ranges are specified by the lower and upper CPU indices separated by a
+        dash. This option may be specified more than once, in which case the specified CPU affinity masks are
+        merged. If the empty string is assigned, the mask is reset, all assignments prior to this will have
+        no effect. Individual services may override the CPU affinity for their processes with the
+        <code class="varname">CPUAffinity=</code> setting in unit files, see
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.</p><p><a name="v198"></a>Added in version 198.</p></dd><dt id="NUMAPolicy="><span class="term"><code class="varname">NUMAPolicy=</code></span><a class="headerlink" title="Permalink to this term" href="#NUMAPolicy=">¶</a></dt><dd><p>Configures the NUMA memory policy for the service manager and the default NUMA memory policy
+        for all forked off processes. Individual services may override the default policy with the
+        <code class="varname">NUMAPolicy=</code> setting in unit files, see
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.</p><p><a name="v243"></a>Added in version 243.</p></dd><dt id="NUMAMask="><span class="term"><code class="varname">NUMAMask=</code></span><a class="headerlink" title="Permalink to this term" href="#NUMAMask=">¶</a></dt><dd><p>Configures the NUMA node mask that will be associated with the selected NUMA policy. Note that
+        <code class="option">default</code> and <code class="option">local</code> NUMA policies don't require explicit NUMA node mask and
+        value of the option can be empty. Similarly to <code class="varname">NUMAPolicy=</code>, value can be overridden
+        by individual services in unit files, see
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>.</p><p><a name="v243"></a>Added in version 243.</p></dd><dt id="RuntimeWatchdogSec="><span class="term"><code class="varname">RuntimeWatchdogSec=</code>, </span><span class="term"><code class="varname">RebootWatchdogSec=</code>, </span><span class="term"><code class="varname">KExecWatchdogSec=</code></span><a class="headerlink" title="Permalink to this term" href="#RuntimeWatchdogSec=">¶</a></dt><dd><p>Configure the hardware watchdog at runtime and at reboot. Takes a timeout value in
+        seconds (or in other time units if suffixed with "<code class="literal">ms</code>", "<code class="literal">min</code>",
+        "<code class="literal">h</code>", "<code class="literal">d</code>", "<code class="literal">w</code>"), or the special strings
+        "<code class="literal">off</code>" or "<code class="literal">default</code>". If set to "<code class="literal">off</code>"
+        (alternatively: "<code class="literal">0</code>") the watchdog logic is disabled: no watchdog device is opened,
+        configured, or pinged. If set to the special string "<code class="literal">default</code>" the watchdog is opened
+        and pinged in regular intervals, but the timeout is not changed from the default. If set to any other
+        time value the watchdog timeout is configured to the specified value (or a value close to it,
+        depending on hardware capabilities).</p><p>If <code class="varname">RuntimeWatchdogSec=</code> is set to a non-zero value, the watchdog hardware
+        (<code class="filename">/dev/watchdog0</code> or the path specified with <code class="varname">WatchdogDevice=</code> or
+        the kernel option <code class="varname">systemd.watchdog-device=</code>) will be programmed to automatically
+        reboot the system if it is not contacted within the specified timeout interval. The system manager
+        will ensure to contact it at least once in half the specified timeout interval. This feature requires
+        a hardware watchdog device to be present, as it is commonly the case in embedded and server
+        systems. Not all hardware watchdogs allow configuration of all possible reboot timeout values, in
+        which case the closest available timeout is picked.</p><p><code class="varname">RebootWatchdogSec=</code> may be used to configure the hardware watchdog when the
+        system is asked to reboot. It works as a safety net to ensure that the reboot takes place even if a
+        clean reboot attempt times out. Note that the <code class="varname">RebootWatchdogSec=</code> timeout applies
+        only to the second phase of the reboot, i.e. after all regular services are already terminated, and
+        after the system and service manager process (PID 1) got replaced by the
+        <code class="filename">systemd-shutdown</code> binary, see system
+        <a href="bootup.html#"><span class="citerefentry"><span class="refentrytitle">bootup</span>(7)</span></a> for
+        details. During the first phase of the shutdown operation the system and service manager remains
+        running and hence <code class="varname">RuntimeWatchdogSec=</code> is still honoured. In order to define a
+        timeout on this first phase of system shutdown, configure <code class="varname">JobTimeoutSec=</code> and
+        <code class="varname">JobTimeoutAction=</code> in the [Unit] section of the
+        <code class="filename">shutdown.target</code> unit. By default <code class="varname">RuntimeWatchdogSec=</code> defaults
+        to 0 (off), and <code class="varname">RebootWatchdogSec=</code> to 10min.</p><p><code class="varname">KExecWatchdogSec=</code> may be used to additionally enable the watchdog when kexec
+        is being executed rather than when rebooting. Note that if the kernel does not reset the watchdog on
+        kexec (depending on the specific hardware and/or driver), in this case the watchdog might not get
+        disabled after kexec succeeds and thus the system might get rebooted, unless
+        <code class="varname">RuntimeWatchdogSec=</code> is also enabled at the same time.  For this reason it is
+        recommended to enable <code class="varname">KExecWatchdogSec=</code> only if
+        <code class="varname">RuntimeWatchdogSec=</code> is also enabled.</p><p>These settings have no effect if a hardware watchdog is not available.</p><p><a name="v198"></a>Added in version 198.</p></dd><dt id="RuntimeWatchdogPreSec="><span class="term"><code class="varname">RuntimeWatchdogPreSec=</code></span><a class="headerlink" title="Permalink to this term" href="#RuntimeWatchdogPreSec=">¶</a></dt><dd><p>Configure the hardware watchdog device pre-timeout value.
+        Takes a timeout value in seconds (or in other time units similar to
+        <code class="varname">RuntimeWatchdogSec=</code>). A watchdog pre-timeout is a
+        notification generated by the watchdog before the watchdog reset might
+        occur in the event the watchdog has not been serviced. This notification
+        is handled by the kernel and can be configured to take an action (i.e.
+        generate a kernel panic) using <code class="varname">RuntimeWatchdogPreGovernor=</code>.
+        Not all watchdog hardware or drivers support generating a pre-timeout and
+        depending on the state of the system, the kernel may be unable to take the
+        configured action before the watchdog reboot. The watchdog will be configured
+        to generate the pre-timeout event at the amount of time specified by
+        <code class="varname">RuntimeWatchdogPreSec=</code> before the runtime watchdog timeout
+        (set by <code class="varname">RuntimeWatchdogSec=</code>). For example, if the we have
+        <code class="varname">RuntimeWatchdogSec=30</code> and
+        <code class="varname">RuntimeWatchdogPreSec=10</code>, then the pre-timeout event
+        will occur if the watchdog has not pinged for 20s (10s before the
+        watchdog would fire). By default, <code class="varname">RuntimeWatchdogPreSec=</code>
+        defaults to 0 (off). The value set for <code class="varname">RuntimeWatchdogPreSec=</code>
+        must be smaller than the timeout value for <code class="varname">RuntimeWatchdogSec=</code>.
+        This setting has no effect if a hardware watchdog is not available or the
+        hardware watchdog does not support a pre-timeout and will be ignored by the
+        kernel if the setting is greater than the actual watchdog timeout.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="RuntimeWatchdogPreGovernor="><span class="term"><code class="varname">RuntimeWatchdogPreGovernor=</code></span><a class="headerlink" title="Permalink to this term" href="#RuntimeWatchdogPreGovernor=">¶</a></dt><dd><p>Configure the action taken by the hardware watchdog device
+        when the pre-timeout expires. The default action for the pre-timeout event
+        depends on the kernel configuration, but it is usually to log a kernel
+        message. For a list of valid actions available for a given watchdog device,
+        check the content of the
+        <code class="filename">/sys/class/watchdog/watchdog<em class="replaceable"><code>X</code></em>/pretimeout_available_governors</code>
+        file. Typically, available governor types are <code class="varname">noop</code> and <code class="varname">panic</code>.
+        Availability, names and functionality might vary depending on the specific device driver
+        in use. If the <code class="filename">pretimeout_available_governors</code> sysfs file is empty,
+        the governor might be built as a kernel module and might need to be manually loaded
+        (e.g. <code class="varname">pretimeout_noop.ko</code>), or the watchdog device might not support
+        pre-timeouts.</p><p><a name="v251"></a>Added in version 251.</p></dd><dt id="WatchdogDevice="><span class="term"><code class="varname">WatchdogDevice=</code></span><a class="headerlink" title="Permalink to this term" href="#WatchdogDevice=">¶</a></dt><dd><p>Configure the hardware watchdog device that the
+        runtime and shutdown watchdog timers will open and use. Defaults
+        to <code class="filename">/dev/watchdog0</code>. This setting has no
+        effect if a hardware watchdog is not available.</p><p><a name="v236"></a>Added in version 236.</p></dd><dt id="CapabilityBoundingSet="><span class="term"><code class="varname">CapabilityBoundingSet=</code></span><a class="headerlink" title="Permalink to this term" href="#CapabilityBoundingSet=">¶</a></dt><dd><p>Controls which capabilities to include in the
+        capability bounding set for PID 1 and its children. See
+        <a href="https://man7.org/linux/man-pages/man7/capabilities.7.html"><span class="citerefentry"><span class="refentrytitle">capabilities</span>(7)</span></a>
+        for details. Takes a whitespace-separated list of capability
+        names as read by
+        <a href="https://www.mankier.com/3/cap_from_name"><span class="citerefentry"><span class="refentrytitle">cap_from_name</span>(3)</span></a>.
+        Capabilities listed will be included in the bounding set, all
+        others are removed. If the list of capabilities is prefixed
+        with ~, all but the listed capabilities will be included, the
+        effect of the assignment inverted. Note that this option also
+        affects the respective capabilities in the effective,
+        permitted and inheritable capability sets. The capability
+        bounding set may also be individually configured for units
+        using the <code class="varname">CapabilityBoundingSet=</code> directive
+        for units, but note that capabilities dropped for PID 1 cannot
+        be regained in individual units, they are lost for
+        good.</p><p><a name="v198"></a>Added in version 198.</p></dd><dt id="NoNewPrivileges="><span class="term"><code class="varname">NoNewPrivileges=</code></span><a class="headerlink" title="Permalink to this term" href="#NoNewPrivileges=">¶</a></dt><dd><p>Takes a boolean argument. If true, ensures that PID 1
+        and all its children can never gain new privileges through
+        <a href="https://man7.org/linux/man-pages/man2/execve.2.html"><span class="citerefentry"><span class="refentrytitle">execve</span>(2)</span></a>
+        (e.g. via setuid or setgid bits, or filesystem capabilities).
+        Defaults to false. General purpose distributions commonly rely
+        on executables with setuid or setgid bits and will thus not
+        function properly with this option enabled. Individual units
+        cannot disable this option.
+        Also see <a class="ulink" href="https://docs.kernel.org/userspace-api/no_new_privs.html" target="_top">No New Privileges Flag</a>.
+        </p><p><a name="v239"></a>Added in version 239.</p></dd><dt id="SystemCallArchitectures="><span class="term"><code class="varname">SystemCallArchitectures=</code></span><a class="headerlink" title="Permalink to this term" href="#SystemCallArchitectures=">¶</a></dt><dd><p>Takes a space-separated list of architecture
+        identifiers. Selects from which architectures system calls may
+        be invoked on this system. This may be used as an effective
+        way to disable invocation of non-native binaries system-wide,
+        for example to prohibit execution of 32-bit x86 binaries on
+        64-bit x86-64 systems. This option operates system-wide, and
+        acts similar to the
+        <code class="varname">SystemCallArchitectures=</code> setting of unit
+        files, see
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>
+        for details. This setting defaults to the empty list, in which
+        case no filtering of system calls based on architecture is
+        applied. Known architecture identifiers are
+        "<code class="literal">x86</code>", "<code class="literal">x86-64</code>",
+        "<code class="literal">x32</code>", "<code class="literal">arm</code>" and the special
+        identifier "<code class="literal">native</code>". The latter implicitly
+        maps to the native architecture of the system (or more
+        specifically, the architecture the system manager was compiled
+        for). Set this setting to "<code class="literal">native</code>" to
+        prohibit execution of any non-native binaries. When a binary
+        executes a system call of an architecture that is not listed
+        in this setting, it will be immediately terminated with the
+        SIGSYS signal.</p><p><a name="v209"></a>Added in version 209.</p></dd><dt id="TimerSlackNSec="><span class="term"><code class="varname">TimerSlackNSec=</code></span><a class="headerlink" title="Permalink to this term" href="#TimerSlackNSec=">¶</a></dt><dd><p>Sets the timer slack in nanoseconds for PID 1,
+        which is inherited by all executed processes, unless
+        overridden individually, for example with the
+        <code class="varname">TimerSlackNSec=</code> setting in service units
+        (for details see
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>).
+        The timer slack controls the accuracy of wake-ups triggered by
+        system timers. See
+        <a href="https://man7.org/linux/man-pages/man2/prctl.2.html"><span class="citerefentry"><span class="refentrytitle">prctl</span>(2)</span></a>
+        for more information. Note that in contrast to most other time
+        span definitions this parameter takes an integer value in
+        nano-seconds if no unit is specified. The usual time units are
+        understood too.</p><p><a name="v198"></a>Added in version 198.</p></dd><dt id="StatusUnitFormat="><span class="term"><code class="varname">StatusUnitFormat=</code></span><a class="headerlink" title="Permalink to this term" href="#StatusUnitFormat=">¶</a></dt><dd><p>Takes <code class="option">name</code>, <code class="option">description</code> or
+        <code class="option">combined</code> as the value. If <code class="option">name</code>, the system manager will use unit
+        names in status messages (e.g. "<code class="literal">systemd-journald.service</code>"), instead of the longer
+        and more informative descriptions set with <code class="varname">Description=</code> (e.g. "<code class="literal">Journal
+        Logging Service</code>"). If <code class="option">combined</code>, the system manager will use both unit names
+        and descriptions in status messages (e.g. "<code class="literal">systemd-journald.service - Journal Logging
+        Service</code>").</p><p>See
+        <a href="systemd.unit.html#"><span class="citerefentry"><span class="refentrytitle">systemd.unit</span>(5)</span></a> for
+        details about unit names and <code class="varname">Description=</code>.</p><p><a name="v243"></a>Added in version 243.</p></dd><dt id="DefaultTimerAccuracySec="><span class="term"><code class="varname">DefaultTimerAccuracySec=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultTimerAccuracySec=">¶</a></dt><dd><p>Sets the default accuracy of timer units. This
+        controls the global default for the
+        <code class="varname">AccuracySec=</code> setting of timer units, see
+        <a href="systemd.timer.html#"><span class="citerefentry"><span class="refentrytitle">systemd.timer</span>(5)</span></a>
+        for details. <code class="varname">AccuracySec=</code> set in individual
+        units override the global default for the specific unit.
+        Defaults to 1min. Note that the accuracy of timer units is
+        also affected by the configured timer slack for PID 1, see
+        <code class="varname">TimerSlackNSec=</code> above.</p><p><a name="v212"></a>Added in version 212.</p></dd><dt id="DefaultTimeoutStartSec="><span class="term"><code class="varname">DefaultTimeoutStartSec=</code>, </span><span class="term"><code class="varname">DefaultTimeoutStopSec=</code>, </span><span class="term"><code class="varname">DefaultTimeoutAbortSec=</code>, </span><span class="term"><code class="varname">DefaultRestartSec=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultTimeoutStartSec=">¶</a></dt><dd><p>Configures the default timeouts for starting, stopping and aborting of units, as well
+        as the default time to sleep between automatic restarts of units, as configured per-unit in
+        <code class="varname">TimeoutStartSec=</code>, <code class="varname">TimeoutStopSec=</code>,
+        <code class="varname">TimeoutAbortSec=</code> and <code class="varname">RestartSec=</code> (for services, see
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+        for details on the per-unit settings). For non-service units,
+        <code class="varname">DefaultTimeoutStartSec=</code> sets the default <code class="varname">TimeoutSec=</code> value.
+        </p><p><code class="varname">DefaultTimeoutStartSec=</code> and <code class="varname">DefaultTimeoutStopSec=</code>
+        default to 90 s in the system manager and 90 s in the user manager.
+        <code class="varname">DefaultTimeoutAbortSec=</code> is not set by default so that all units fall back to
+        <code class="varname">TimeoutStopSec=</code>. <code class="varname">DefaultRestartSec=</code> defaults to 100 ms.
+        </p><p><a name="v209"></a>Added in version 209.</p></dd><dt id="DefaultDeviceTimeoutSec="><span class="term"><code class="varname">DefaultDeviceTimeoutSec=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultDeviceTimeoutSec=">¶</a></dt><dd><p>Configures the default timeout for waiting for devices. It can be changed per
+        device via the <code class="varname">x-systemd.device-timeout=</code> option in <code class="filename">/etc/fstab</code>
+        and <code class="filename">/etc/crypttab</code> (see
+        <a href="systemd.mount.html#"><span class="citerefentry"><span class="refentrytitle">systemd.mount</span>(5)</span></a>,
+        <a href="crypttab.html#"><span class="citerefentry"><span class="refentrytitle">crypttab</span>(5)</span></a>).
+        Defaults to 90 s in the system manager and 90 s in the user manager.
+        </p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="DefaultStartLimitIntervalSec="><span class="term"><code class="varname">DefaultStartLimitIntervalSec=</code>, </span><span class="term"><code class="varname">DefaultStartLimitBurst=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultStartLimitIntervalSec=">¶</a></dt><dd><p>Configure the default unit start rate
+        limiting, as configured per-service by
+        <code class="varname">StartLimitIntervalSec=</code> and
+        <code class="varname">StartLimitBurst=</code>. See
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+        for details on the per-service settings.
+        <code class="varname">DefaultStartLimitIntervalSec=</code> defaults to
+        10s. <code class="varname">DefaultStartLimitBurst=</code> defaults to
+        5.</p><p><a name="v209"></a>Added in version 209.</p></dd><dt id="DefaultEnvironment="><span class="term"><code class="varname">DefaultEnvironment=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultEnvironment=">¶</a></dt><dd><p>Configures environment variables passed to all executed processes. Takes a
+        space-separated list of variable assignments. See <a href="https://man7.org/linux/man-pages/man7/environ.7.html"><span class="citerefentry"><span class="refentrytitle">environ</span>(7)</span></a> for
+        details about environment variables.</p><p>Simple "<code class="literal">%</code>"-specifier expansion is supported, see below for a list of supported
+        specifiers.</p><p>Example:
+
+        </p><pre class="programlisting">DefaultEnvironment="VAR1=word1 word2" VAR2=word3 "VAR3=word 5 6"</pre><p>
+
+        Sets three variables
+        "<code class="literal">VAR1</code>",
+        "<code class="literal">VAR2</code>",
+        "<code class="literal">VAR3</code>".</p><p><a name="v205"></a>Added in version 205.</p></dd><dt id="ManagerEnvironment="><span class="term"><code class="varname">ManagerEnvironment=</code></span><a class="headerlink" title="Permalink to this term" href="#ManagerEnvironment=">¶</a></dt><dd><p>Takes the same arguments as <code class="varname">DefaultEnvironment=</code>, see above. Sets
+        environment variables just for the manager process itself. In contrast to user managers, these variables
+        are not inherited by processes spawned by the system manager, use <code class="varname">DefaultEnvironment=</code>
+        for that. Note that these variables are merged into the existing environment block. In particular, in
+        case of the system manager, this includes variables set by the kernel based on the kernel command line.</p><p>Setting environment variables for the manager process may be useful to modify its behaviour.
+        See <a class="ulink" href="https://systemd.io/ENVIRONMENT" target="_top">Known Environment Variables</a> for a
+        descriptions of some variables understood by <span class="command"><strong>systemd</strong></span>.</p><p>Simple "<code class="literal">%</code>"-specifier expansion is supported, see below for a list of supported
+        specifiers.</p><p><a name="v248"></a>Added in version 248.</p></dd><dt id="DefaultCPUAccounting="><span class="term"><code class="varname">DefaultCPUAccounting=</code>, </span><span class="term"><code class="varname">DefaultMemoryAccounting=</code>, </span><span class="term"><code class="varname">DefaultTasksAccounting=</code>, </span><span class="term"><code class="varname">DefaultIOAccounting=</code>, </span><span class="term"><code class="varname">DefaultIPAccounting=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultCPUAccounting=">¶</a></dt><dd><p>Configure the default resource accounting settings, as configured per-unit by
+        <code class="varname">CPUAccounting=</code>, <code class="varname">MemoryAccounting=</code>,
+        <code class="varname">TasksAccounting=</code>, <code class="varname">IOAccounting=</code> and
+        <code class="varname">IPAccounting=</code>. See
+        <a href="systemd.resource-control.html#"><span class="citerefentry"><span class="refentrytitle">systemd.resource-control</span>(5)</span></a>
+        for details on the per-unit settings.</p><p><code class="varname">DefaultCPUAccounting=</code> defaults to yes when running on kernel ≥4.15, and no on older versions.
+        <code class="varname">DefaultMemoryAccounting=</code> defaults to yes.
+        <code class="varname">DefaultTasksAccounting=</code> defaults to yes.
+        The other settings default to no.</p><p><a name="v211"></a>Added in version 211.</p></dd><dt id="DefaultTasksMax="><span class="term"><code class="varname">DefaultTasksMax=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultTasksMax=">¶</a></dt><dd><p>Configure the default value for the per-unit <code class="varname">TasksMax=</code> setting. See
+        <a href="systemd.resource-control.html#"><span class="citerefentry"><span class="refentrytitle">systemd.resource-control</span>(5)</span></a>
+        for details. This setting applies to all unit types that support resource control settings, with the exception
+        of slice units. Defaults to 15% of the minimum of <code class="varname">kernel.pid_max=</code>, <code class="varname">kernel.threads-max=</code>
+        and root cgroup <code class="varname">pids.max</code>.
+        Kernel has a default value for <code class="varname">kernel.pid_max=</code> and an algorithm of counting in case of more than 32 cores.
+        For example, with the default <code class="varname">kernel.pid_max=</code>, <code class="varname">DefaultTasksMax=</code> defaults to 4915,
+        but might be greater in other systems or smaller in OS containers.</p><p><a name="v228"></a>Added in version 228.</p></dd><dt id="DefaultLimitCPU="><span class="term"><code class="varname">DefaultLimitCPU=</code>, </span><span class="term"><code class="varname">DefaultLimitFSIZE=</code>, </span><span class="term"><code class="varname">DefaultLimitDATA=</code>, </span><span class="term"><code class="varname">DefaultLimitSTACK=</code>, </span><span class="term"><code class="varname">DefaultLimitCORE=</code>, </span><span class="term"><code class="varname">DefaultLimitRSS=</code>, </span><span class="term"><code class="varname">DefaultLimitNOFILE=</code>, </span><span class="term"><code class="varname">DefaultLimitAS=</code>, </span><span class="term"><code class="varname">DefaultLimitNPROC=</code>, </span><span class="term"><code class="varname">DefaultLimitMEMLOCK=</code>, </span><span class="term"><code class="varname">DefaultLimitLOCKS=</code>, </span><span class="term"><code class="varname">DefaultLimitSIGPENDING=</code>, </span><span class="term"><code class="varname">DefaultLimitMSGQUEUE=</code>, </span><span class="term"><code class="varname">DefaultLimitNICE=</code>, </span><span class="term"><code class="varname">DefaultLimitRTPRIO=</code>, </span><span class="term"><code class="varname">DefaultLimitRTTIME=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultLimitCPU=">¶</a></dt><dd><p>These settings control various default resource limits for processes executed by
+        units. See
+        <a href="https://man7.org/linux/man-pages/man2/setrlimit.2.html"><span class="citerefentry"><span class="refentrytitle">setrlimit</span>(2)</span></a> for
+        details. These settings may be overridden in individual units using the corresponding
+        <code class="varname">LimitXXX=</code> directives and they accept the same parameter syntax,
+        see <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>
+        for details. Note that these resource limits are only defaults
+        for units, they are not applied to the service manager process (i.e. PID 1) itself.</p><p>Most of these settings are unset, which means the resource limits are inherited from the kernel or, if
+        invoked in a container, from the container manager. However, the following have defaults:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="varname">DefaultLimitNOFILE=</code> defaults to 1024:524288.
+          </p></li><li class="listitem"><p><code class="varname">DefaultLimitMEMLOCK=</code> defaults to 8M.</p></li><li class="listitem"><p><code class="varname">DefaultLimitCORE=</code> does not have a default but it is worth mentioning that
+          <code class="varname">RLIMIT_CORE</code> is set to "<code class="literal">infinity</code>" by PID 1 which is inherited by its
+          children.</p></li></ul></div><p>Note that the service manager internally in PID 1 bumps <code class="varname">RLIMIT_NOFILE</code> and
+        <code class="varname">RLIMIT_MEMLOCK</code> to higher values, however the limit is reverted to the mentioned
+        defaults for all child processes forked off.</p><p><a name="v198"></a>Added in version 198.</p></dd><dt id="DefaultOOMPolicy="><span class="term"><code class="varname">DefaultOOMPolicy=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultOOMPolicy=">¶</a></dt><dd><p>Configure the default policy for reacting to processes being killed by the Linux
+        Out-Of-Memory (OOM) killer or <span class="command"><strong>systemd-oomd</strong></span>. This may be used to pick a global default for the per-unit
+        <code class="varname">OOMPolicy=</code> setting. See
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>
+        for details. Note that this default is not used for services that have <code class="varname">Delegate=</code>
+        turned on.</p><p><a name="v243"></a>Added in version 243.</p></dd><dt id="DefaultOOMScoreAdjust="><span class="term"><code class="varname">DefaultOOMScoreAdjust=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultOOMScoreAdjust=">¶</a></dt><dd><p>Configures the default OOM score adjustments of processes run by the service
+        manager. This defaults to unset (meaning the forked off processes inherit the service manager's OOM
+        score adjustment value), except if the service manager is run for an unprivileged user, in which case
+        this defaults to the service manager's OOM adjustment value plus 100 (this makes service processes
+        slightly more likely to be killed under memory pressure than the manager itself). This may be used to
+        pick a global default for the per-unit <code class="varname">OOMScoreAdjust=</code> setting. See
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a> for
+        details. Note that this setting has no effect on the OOM score adjustment value of the service
+        manager process itself, it retains the original value set during its invocation.</p><p><a name="v250"></a>Added in version 250.</p></dd><dt id="DefaultSmackProcessLabel="><span class="term"><code class="varname">DefaultSmackProcessLabel=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultSmackProcessLabel=">¶</a></dt><dd><p>Takes a <code class="option">SMACK64</code> security label as the argument. The process executed
+        by a unit will be started under this label if <code class="varname">SmackProcessLabel=</code> is not set in the
+        unit. See <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>
+        for the details.</p><p>If the value is "<code class="literal">/</code>", only labels specified with <code class="varname">SmackProcessLabel=</code>
+        are assigned and the compile-time default is ignored.</p><p><a name="v252"></a>Added in version 252.</p></dd><dt id="ReloadLimitIntervalSec="><span class="term"><code class="varname">ReloadLimitIntervalSec=</code>, </span><span class="term"><code class="varname">ReloadLimitBurst=</code></span><a class="headerlink" title="Permalink to this term" href="#ReloadLimitIntervalSec=">¶</a></dt><dd><p>Rate limiting for daemon-reload requests. Default to unset, and any number of daemon-reload
+        operations can be requested at any time. <code class="varname">ReloadLimitIntervalSec=</code> takes a value in seconds
+        to configure the rate limit window, and <code class="varname">ReloadLimitBurst=</code> takes a positive integer to
+        configure the maximum allowed number of reloads within the configured time window.</p><p><a name="v253"></a>Added in version 253.</p></dd><dt id="DefaultMemoryPressureWatch="><span class="term"><code class="varname">DefaultMemoryPressureWatch=</code>, </span><span class="term"><code class="varname">DefaultMemoryPressureThresholdSec=</code></span><a class="headerlink" title="Permalink to this term" href="#DefaultMemoryPressureWatch=">¶</a></dt><dd><p>Configures the default settings for the per-unit
+        <code class="varname">MemoryPressureWatch=</code> and <code class="varname">MemoryPressureThresholdSec=</code>
+        settings. See
+        <a href="systemd.resource-control.html#"><span class="citerefentry"><span class="refentrytitle">systemd.resource-control</span>(5)</span></a>
+        for details. Defaults to "<code class="literal">auto</code>" and "<code class="literal">200ms</code>", respectively. This
+        also sets the memory pressure monitoring threshold for the service manager itself.</p><p><a name="v254"></a>Added in version 254.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Specifiers">Specifiers<a class="headerlink" title="Permalink to this headline" href="#Specifiers">¶</a></h2><p>Specifiers may be used in the <code class="varname">DefaultEnvironment=</code> and
+    <code class="varname">ManagerEnvironment=</code> settings. The following expansions are understood:</p><div class="table"><a name="id-1.8.3"></a><p class="title"><b>Table 1. Specifiers available</b></p><div class="table-contents"><table class="table" summary="Specifiers available" border="1"><colgroup><col align="left" class="spec"><col align="left" class="mean"><col align="left" class="detail"></colgroup><thead><tr><th align="left">Specifier</th><th align="left">Meaning</th><th align="left">Details</th></tr></thead><tbody><tr><td align="left"><a name="a"></a>"<code class="literal">%a</code>"</td><td align="left">Architecture</td><td align="left">A short string identifying the architecture of the local system. A string such as <code class="constant">x86</code>, <code class="constant">x86-64</code> or <code class="constant">arm64</code>. See the architectures defined for <code class="varname">ConditionArchitecture=</code> in <a href="systemd.unit.html#"><span class="citerefentry"><span class="refentrytitle">systemd.unit</span>(5)</span></a> for a full list.</td></tr><tr><td align="left"><a name="A"></a>"<code class="literal">%A</code>"</td><td align="left">Operating system image version</td><td align="left">The operating system image version identifier of the running system, as read from the <code class="varname">IMAGE_VERSION=</code> field of <code class="filename">/etc/os-release</code>. If not set, resolves to an empty string. See <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> for more information.</td></tr><tr><td align="left"><a name="b"></a>"<code class="literal">%b</code>"</td><td align="left">Boot ID</td><td align="left">The boot ID of the running system, formatted as string. See <a href="https://man7.org/linux/man-pages/man4/random.4.html"><span class="citerefentry"><span class="refentrytitle">random</span>(4)</span></a> for more information.</td></tr><tr><td align="left"><a name="B"></a>"<code class="literal">%B</code>"</td><td align="left">Operating system build ID</td><td align="left">The operating system build identifier of the running system, as read from the <code class="varname">BUILD_ID=</code> field of <code class="filename">/etc/os-release</code>. If not set, resolves to an empty string. See <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> for more information.</td></tr><tr><td align="left"><a name="H"></a>"<code class="literal">%H</code>"</td><td align="left">Host name</td><td align="left">The hostname of the running system.</td></tr><tr><td align="left"><a name="l"></a>"<code class="literal">%l</code>"</td><td align="left">Short host name</td><td align="left">The hostname of the running system, truncated at the first dot to remove any domain component.</td></tr><tr><td align="left"><a name="m"></a>"<code class="literal">%m</code>"</td><td align="left">Machine ID</td><td align="left">The machine ID of the running system, formatted as string. See <a href="machine-id.html#"><span class="citerefentry"><span class="refentrytitle">machine-id</span>(5)</span></a> for more information.</td></tr><tr><td align="left"><a name="M"></a>"<code class="literal">%M</code>"</td><td align="left">Operating system image identifier</td><td align="left">The operating system image identifier of the running system, as read from the <code class="varname">IMAGE_ID=</code> field of <code class="filename">/etc/os-release</code>. If not set, resolves to an empty string. See <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> for more information.</td></tr><tr><td align="left"><a name="o"></a>"<code class="literal">%o</code>"</td><td align="left">Operating system ID</td><td align="left">The operating system identifier of the running system, as read from the <code class="varname">ID=</code> field of <code class="filename">/etc/os-release</code>. See <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> for more information.</td></tr><tr><td align="left"><a name="v"></a>"<code class="literal">%v</code>"</td><td align="left">Kernel release</td><td align="left">Identical to <span class="command"><strong>uname -r</strong></span> output.</td></tr><tr><td align="left"><a name="w"></a>"<code class="literal">%w</code>"</td><td align="left">Operating system version ID</td><td align="left">The operating system version identifier of the running system, as read from the <code class="varname">VERSION_ID=</code> field of <code class="filename">/etc/os-release</code>. If not set, resolves to an empty string. See <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> for more information.</td></tr><tr><td align="left"><a name="W"></a>"<code class="literal">%W</code>"</td><td align="left">Operating system variant ID</td><td align="left">The operating system variant identifier of the running system, as read from the <code class="varname">VARIANT_ID=</code> field of <code class="filename">/etc/os-release</code>. If not set, resolves to an empty string. See <a href="os-release.html#"><span class="citerefentry"><span class="refentrytitle">os-release</span>(5)</span></a> for more information.</td></tr><tr><td align="left"><a name="T"></a>"<code class="literal">%T</code>"</td><td align="left">Directory for temporary files</td><td align="left">This is either <code class="filename">/tmp</code> or the path "<code class="literal">$TMPDIR</code>", "<code class="literal">$TEMP</code>" or "<code class="literal">$TMP</code>" are set to. (Note that the directory may be specified without a trailing slash.)</td></tr><tr><td align="left"><a name="V"></a>"<code class="literal">%V</code>"</td><td align="left">Directory for larger and persistent temporary files</td><td align="left">This is either <code class="filename">/var/tmp</code> or the path "<code class="literal">$TMPDIR</code>", "<code class="literal">$TEMP</code>" or "<code class="literal">$TMP</code>" are set to. (Note that the directory may be specified without a trailing slash.)</td></tr><tr><td align="left">"<code class="literal">%h</code>"</td><td align="left">User home directory</td><td align="left">This is the home directory of the <span class="emphasis"><em>user running the service manager instance</em></span>.</td></tr><tr><td align="left">"<code class="literal">%u</code>"</td><td align="left">Username</td><td align="left">This is the username of the <span class="emphasis"><em>user running the service manager instance</em></span>.</td></tr><tr><td align="left">"<code class="literal">%U</code>"</td><td align="left">User id</td><td align="left">This is the user id of the <span class="emphasis"><em>user running the service manager instance</em></span>.</td></tr><tr><td align="left">"<code class="literal">%g</code>"</td><td align="left">Primary group</td><td align="left">This is the primary group of the <span class="emphasis"><em>user running the service manager instance</em></span>.</td></tr><tr><td align="left">"<code class="literal">%G</code>"</td><td align="left">Primary group id</td><td align="left">This is the primary group id of the <span class="emphasis"><em>user running the service manager instance</em></span>.</td></tr><tr><td align="left">"<code class="literal">%s</code>"</td><td align="left">User shell</td><td align="left">This is the shell of the <span class="emphasis"><em>user running the service manager instance</em></span>.</td></tr><tr><td align="left"><a name="percent"></a>"<code class="literal">%%</code>"</td><td align="left">Single percent sign</td><td align="left">Use "<code class="literal">%%</code>" in place of "<code class="literal">%</code>" to specify a single percent sign.</td></tr></tbody></table></div></div><br class="table-break"></div><div class="refsect1"><a name="id-1.9"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><div class="variablelist"><dl class="variablelist"><dt id="systemd 252"><span class="term">systemd 252</span><a class="headerlink" title="Permalink to this term" href="#systemd%20252">¶</a></dt><dd><p>Option <code class="varname">DefaultBlockIOAccounting=</code> was deprecated. Please switch
+          to the unified cgroup hierarchy.</p><p><a name="v252"></a>Added in version 252.</p></dd></dl></div></div><div class="refsect1"><a name="id-1.10"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+        <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+        <a href="systemd.directives.html#"><span class="citerefentry"><span class="refentrytitle">systemd.directives</span>(7)</span></a>,
+        <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>,
+        <a href="systemd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd.service</span>(5)</span></a>,
+        <a href="https://man7.org/linux/man-pages/man7/environ.7.html"><span class="citerefentry"><span class="refentrytitle">environ</span>(7)</span></a>,
+        <a href="https://man7.org/linux/man-pages/man7/capabilities.7.html"><span class="citerefentry"><span class="refentrytitle">capabilities</span>(7)</span></a>
+      </p></div></div></body></html>

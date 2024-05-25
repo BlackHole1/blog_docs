@@ -1,0 +1,119 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>nss-systemd</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="nss-systemd"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>nss-systemd, libnss_systemd.so.2 — UNIX user and group name resolution for user/group lookup via Varlink</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><p><code class="filename">libnss_systemd.so.2</code></p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><span class="command"><strong>nss-systemd</strong></span> is a plug-in module for the GNU Name Service Switch (NSS)
+    functionality of the GNU C Library (<span class="command"><strong>glibc</strong></span>), providing UNIX user and group name
+    resolution for services implementing the <a class="ulink" href="https://systemd.io/USER_GROUP_API" target="_top">User/Group Record
+    Lookup API via Varlink</a>, such as the system and service manager
+    <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a> (for its
+    <code class="varname">DynamicUser=</code> feature, see
+    <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a> for
+    details),
+    <a href="systemd-homed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-homed.service</span>(8)</span></a>, or <a href="systemd-machined.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-machined.service</span>(8)</span></a>.</p><p>This module also ensures that the root and nobody users and groups (i.e. the users/groups with the UIDs/GIDs
+    0 and 65534) remain resolvable at all times, even if they aren't listed in <code class="filename">/etc/passwd</code> or
+    <code class="filename">/etc/group</code>, or if these files are missing.</p><p>This module preferably utilizes
+    <a href="systemd-userdbd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-userdbd.service</span>(8)</span></a>
+    for resolving users and groups, but also works without the service running.</p><p>To activate the NSS module, add "<code class="literal">systemd</code>" to the lines starting with
+    "<code class="literal">passwd:</code>", "<code class="literal">group:</code>", "<code class="literal">shadow:</code>" and
+    "<code class="literal">gshadow:</code>" in <code class="filename">/etc/nsswitch.conf</code>.</p><p>It is recommended to place "<code class="literal">systemd</code>" after the "<code class="literal">files</code>" entry of
+    the <code class="filename">/etc/nsswitch.conf</code> lines so that <code class="filename">/etc/passwd</code>,
+    <code class="filename">/etc/group</code>, <code class="filename">/etc/shadow</code> and <code class="filename">/etc/gshadow</code>
+    based mappings take precedence.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Static Drop-In JSON User/Group Records">Static Drop-In JSON User/Group Records<a class="headerlink" title="Permalink to this headline" href="#Static%20Drop-In%20JSON%20User/Group%20Records">¶</a></h2><p>Besides user/group records acquired via the aforementioned Varlink IPC interfaces and the
+    synthesized root and nobody accounts, this module also makes user and group accounts available to the
+    system that are defined in static drop-in files in the <code class="filename">/etc/userdb/</code>,
+    <code class="filename">/run/userdb/</code>, <code class="filename">/run/host/userdb/</code> and
+    <code class="filename">/usr/lib/userdb/</code> directories.</p><p>This is a simple mechanism to provide static user and group records via JSON drop-in files. Such
+    user records should be defined in the format described by the <a class="ulink" href="https://systemd.io/USER_RECORD" target="_top">JSON User Records</a> specification and be placed in one of the
+    aforementioned directories under a file name composed of the user name suffixed with
+    <code class="filename">.user</code>, with a world-readable access mode. A symlink named after the user record's
+    UID formatted in decimal and suffixed with <code class="filename">.user</code> pointing to the primary record file
+    should be created as well, in order to allow both lookups by username and by UID. Privileged user record
+    data (e.g. hashed UNIX passwords) may optionally be provided as well, in a pair of separate companion
+    files with the <code class="filename">.user-privileged</code> suffix. The data should be stored in a regular file
+    named after the user name, suffixed with <code class="filename">.user-privileged</code>, and a symlink pointing to
+    it, named after the used numeric UID formatted in decimal with the same suffix. These companion files
+    should not be readable to anyone but root. Example:</p><pre class="programlisting">-rw-r--r--. 1 root root  723 May 10 foobar.user
+-rw-------. 1 root root  123 May 10 foobar.user-privileged
+lrwxrwxrwx. 1 root root   19 May 10 4711.user -&gt; foobar.user
+lrwxrwxrwx. 1 root root   19 May 10 4711.user-privileged -&gt; foobar.user-privileged</pre><p>Similarly, group records following the format described in <a class="ulink" href="https://systemd.io/GROUP_RECORD" target="_top">JSON Group Record</a> may be defined, using the file suffixes
+    <code class="filename">.group</code> and <code class="filename">.group-privileged</code>.</p><p>The primary user/group record files (i.e. those with the <code class="filename">.user</code> and
+    <code class="filename">.group</code> suffixes) should not contain the "<code class="literal">privileged</code>" section as
+    described in the specifications. The privileged user/group record files (i.e. those with the
+    <code class="filename">.user-privileged</code> and <code class="filename">.group-privileged</code> suffixes) should
+    contain this section, exclusively.</p><p>Note that static user/group records generally do not override conflicting records in
+    <code class="filename">/etc/passwd</code> or <code class="filename">/etc/group</code> or other account databases. In fact,
+    before dropping in these files a reasonable level of care should be taken to avoid user/group name and
+    UID/GID conflicts.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Configuration in /etc/nsswitch.conf">Configuration in <code class="filename">/etc/nsswitch.conf</code><a class="headerlink" title="Permalink to this headline" href="#Configuration%20in%20/etc/nsswitch.conf">¶</a></h2><p>Here is an example <code class="filename">/etc/nsswitch.conf</code> file that enables
+    <span class="command"><strong>nss-systemd</strong></span> correctly:</p><pre class="programlisting">passwd:         files <span class="command"><strong>systemd</strong></span>
+group:          files <span class="command"><strong>[SUCCESS=merge] systemd</strong></span>
+shadow:         files <span class="command"><strong>systemd</strong></span>
+gshadow:        files <span class="command"><strong>systemd</strong></span>
+
+hosts:          mymachines resolve [!UNAVAIL=return] files myhostname dns
+networks:       files
+
+protocols:      db files
+services:       db files
+ethers:         db files
+rpc:            db files
+
+netgroup:       nis</pre></div><div class="refsect1"><a name="id-1.8"></a><h2 id="Example: Mappings provided by systemd-machined.service">Example: Mappings provided by <code class="filename">systemd-machined.service</code><a class="headerlink" title="Permalink to this headline" href="#Example:%20Mappings%20provided%20by%20systemd-machined.service">¶</a></h2><p>The container "<code class="literal">rawhide</code>" is spawned using
+    <a href="systemd-nspawn.html#"><span class="citerefentry"><span class="refentrytitle">systemd-nspawn</span>(1)</span></a>:
+    </p><pre class="programlisting"># systemd-nspawn -M rawhide --boot --network-veth --private-users=pick
+Spawning container rawhide on /var/lib/machines/rawhide.
+Selected user namespace base 20119552 and range 65536.
+...
+
+$ machinectl --max-addresses=3
+MACHINE CLASS     SERVICE        OS     VERSION ADDRESSES
+rawhide container systemd-nspawn fedora 30      169.254.40.164 fe80::94aa:3aff:fe7b:d4b9
+
+$ getent passwd vu-rawhide-0 vu-rawhide-81
+vu-rawhide-0:*:20119552:65534:vu-rawhide-0:/:/usr/sbin/nologin
+vu-rawhide-81:*:20119633:65534:vu-rawhide-81:/:/usr/sbin/nologin
+
+$ getent group vg-rawhide-0 vg-rawhide-81
+vg-rawhide-0:*:20119552:
+vg-rawhide-81:*:20119633:
+
+$ ps -o user:15,pid,tty,command -e|grep '^vu-rawhide'
+vu-rawhide-0      692 ?        /usr/lib/systemd/systemd
+vu-rawhide-0      731 ?        /usr/lib/systemd/systemd-journald
+vu-rawhide-192    734 ?        /usr/lib/systemd/systemd-networkd
+vu-rawhide-193    738 ?        /usr/lib/systemd/systemd-resolved
+vu-rawhide-0      742 ?        /usr/lib/systemd/systemd-logind
+vu-rawhide-81     744 ?        /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+vu-rawhide-0      746 ?        /usr/sbin/sshd -D ...
+vu-rawhide-0      752 ?        /usr/lib/systemd/systemd --user
+vu-rawhide-0      753 ?        (sd-pam)
+vu-rawhide-0     1628 ?        login -- zbyszek
+vu-rawhide-1000  1630 ?        /usr/lib/systemd/systemd --user
+vu-rawhide-1000  1631 ?        (sd-pam)
+vu-rawhide-1000  1637 pts/8    -zsh
+</pre></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="systemd.exec.html#"><span class="citerefentry"><span class="refentrytitle">systemd.exec</span>(5)</span></a>,
+      <a href="nss-resolve.html#"><span class="citerefentry"><span class="refentrytitle">nss-resolve</span>(8)</span></a>,
+      <a href="nss-myhostname.html#"><span class="citerefentry"><span class="refentrytitle">nss-myhostname</span>(8)</span></a>,
+      <a href="nss-mymachines.html#"><span class="citerefentry"><span class="refentrytitle">nss-mymachines</span>(8)</span></a>,
+      <a href="systemd-userdbd.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-userdbd.service</span>(8)</span></a>,
+      <a href="systemd-homed.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-homed.service</span>(8)</span></a>,
+      <a href="systemd-machined.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-machined.service</span>(8)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man5/nsswitch.conf.5.html"><span class="citerefentry"><span class="refentrytitle">nsswitch.conf</span>(5)</span></a>,
+      <a href="https://man7.org/linux/man-pages/man1/getent.1.html"><span class="citerefentry"><span class="refentrytitle">getent</span>(1)</span></a>
+    </p></div></div></body></html>

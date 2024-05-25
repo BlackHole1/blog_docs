@@ -1,0 +1,45 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_device_ref</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_device_ref"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_device_ref, sd_device_unref, sd_device_unrefp — Create or destroy references to a device object</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-device.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">sd_device* <b class="fsfunc">sd_device_ref</b>(</code></td><td>sd_device *<var class="pdparam">device</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">sd_device* <b class="fsfunc">sd_device_unref</b>(</code></td><td>sd_device *<var class="pdparam">device</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">void <b class="fsfunc">sd_device_unrefp</b>(</code></td><td>sd_device **<var class="pdparam">device</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div><p><code class="function">sd_device_ref()</code> increases the internal reference counter of
+    <em class="parameter"><code>device</code></em> by one.</p><p><code class="function">sd_device_unref()</code> decreases the internal reference counter of
+    <em class="parameter"><code>device</code></em> by one. Once the reference count has dropped to zero,
+    <em class="parameter"><code>device</code></em> is destroyed and cannot be used anymore, so further calls to
+    <code class="function">sd_device_ref()</code> or <code class="function">sd_device_unref()</code> are illegal.</p><p><code class="function">sd_device_unrefp()</code> is similar to <code class="function">sd_device_unref()</code> but
+    takes a pointer to a pointer to an <span class="type">sd_device</span> object. This call is useful in conjunction with
+    GCC's and LLVM's <a class="ulink" href="https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html" target="_top">Clean-up
+    Variable Attribute</a>. Note that this function is defined as an inline function. Use a declaration
+    like the following, in order to allocate a device object that is freed automatically as the code block is
+    left:</p><pre class="programlisting">{
+  __attribute__((cleanup(sd_device_unrefp))) sd_device *device = NULL;
+  int r;
+  …
+  r = sd_device_new_from_syspath(&amp;device, "…");
+  if (r &lt; 0) {
+    errno = -r;
+    fprintf(stderr, "Failed to allocate device: %m\n");
+  }
+  …
+}</pre><p><code class="function">sd_device_ref()</code> and <code class="function">sd_device_unref()</code> execute no
+    operation if the argument is <code class="constant">NULL</code>. <code class="function">sd_device_unrefp()</code> will
+    first dereference its argument, which must not be <code class="constant">NULL</code>, and will execute no
+    operation if <span class="emphasis"><em>that</em></span> is <code class="constant">NULL</code>.</p></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p><code class="function">sd_device_ref()</code> always returns the argument, and
+    <code class="function">sd_device_unref()</code> always returns <code class="constant">NULL</code>.
+    </p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_device_ref()</code>,
+    <code class="function">sd_device_unref()</code>, and
+    <code class="function">sd_device_unrefp()</code> were added in version 251.</p></div></div></body></html>

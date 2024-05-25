@@ -1,0 +1,816 @@
+<html><head><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.immersive-translate-target-wrapper[dir='rtl'] {
+  text-align: right;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+  text-decoration-style: dashed !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+  text-decoration-style: dotted !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(--immersive-translate-theme-wavy-borderColor) !important;
+  text-decoration-style: wavy !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;}
+.immersive-translate-target-wrapper[dir='rtl'] [data-immersive-translate-class-bak*='block-wrapper'] {display:block;}
+</style></head><body data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>podman-kube-generate — Podman  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css">
+    <link rel="stylesheet" type="text/css" href="../../../_/static/css/badge_only.css">
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css">
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="../../../_/static/javascript/readthedocs-doc-embed.js"></script>
+    <link rel="index" title="Index" href="../genindex.html">
+    <link rel="search" title="Search" href="../search.html">
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css">
+  
+
+  
+  
+
+  
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="../../../_/static/css/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "markdown/podman-kube-generate.1", "programming_language": "go", "project": "podman", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "alabaster", "user_analytics_code": "", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="../../../_/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+
+  
+
+    <div class="document" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+      <div class="documentwrapper" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+        <div class="bodywrapper" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+          
+
+          <div class="body" role="main" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+            
+  <section id="name" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h1 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">NAME<a class="headerlink" href="#name" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">名称</font></font></font></h1>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">podman-kube-generate - Generate Kubernetes YAML based on containers, pods or volumes<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman-kube-generate - 根据容器、Pod 或卷生成基于 Kubernetes 的 YAML</font></font></font></p>
+</section>
+<section id="synopsis" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h1 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">SYNOPSIS<a class="headerlink" href="#synopsis" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">概要</font></font></font></h1>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">podman kube generate</strong> [<em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">options</em>] <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">container…</em> | <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">pod…</em> | <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">volume…</em><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman kube generate [选项] 容器... | Pod... | 卷...</font></font></font></p>
+</section>
+<section id="description" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h1 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">描述</font></font></font></h1>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">podman kube generate</strong> generates Kubernetes YAML (v1 specification) from Podman containers, pods or volumes. Regardless of whether
+the input is for containers or pods, Podman generates the specification as a Pod by default. The input may be in the form
+of one or more containers, pods or volumes names or IDs.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">podman kube generate 从 Podman 容器、Pod 或卷生成 Kubernetes YAML（v1 规范）。无论输入是容器还是 Pod，Podman 默认生成 Pod 规范。输入可以是一个或多个容器、Pod 或卷的名称或 ID 的形式。</font></font></font></p>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">Podman</span> <span class="pre">Containers</span> <span class="pre">or</span> <span class="pre">Pods</span></code></p>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Volumes appear in the generated YAML according to two different volume types. Bind-mounted volumes become <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">hostPath</em> volume types and named volumes become <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">persistentVolumeClaim</em> volume types. Generated <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">hostPath</em> volume types are one of three subtypes depending on the state of the host path: <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">DirectoryOrCreate</em> when no file or directory exists at the host, <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">Directory</em> when host path is a directory, or <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">File</em> when host path is a file. The value for <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">claimName</em> for a <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">persistentVolumeClaim</em> is the name of the named volume registered in Podman.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">生成的 YAML 中的卷根据两种不同的卷类型显示。绑定挂载的卷变成 hostPath 卷类型，命名卷变成 persistentVolumeClaim 卷类型。生成的 hostPath 卷类型根据主机路径的状态有三种子类型之一：当主机上不存在文件或目录时为 DirectoryOrCreate，当主机路径为目录时为 Directory，或者当主机路径为文件时为 File。persistentVolumeClaim 的 claimName 值是在 Podman 中注册的命名卷的名称。</font></font></font></p>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Potential name conflicts between volumes are avoided by using a standard naming scheme for each volume type. The <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">hostPath</em> volume types are named according to the path on the host machine, replacing forward slashes with hyphens less any leading and trailing forward slashes. The special case of the filesystem root, <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">/</span></code>, translates to the name <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">root</span></code>. Additionally, the name is suffixed with <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">-host</span></code> to avoid naming conflicts with <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">persistentVolumeClaim</em> volumes. Each <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">persistentVolumeClaim</em> volume type uses the name of its associated named volume suffixed with <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">-pvc</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通过为每种卷类型使用标准命名方案来避免卷之间的潜在名称冲突。hostPath 卷类型根据主机上的路径命名，将正斜杠替换为连字符，去除任何前导和尾随正斜杠。文件系统根目录的特殊情况 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">/</span></code> 转换为名称 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">root</span></code> 。此外，名称后缀为 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">-host</span></code> 以避免与 persistentVolumeClaim 卷的命名冲突。每个 persistentVolumeClaim 卷类型使用其关联的命名卷的名称后缀为 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">-pvc</span></code> 。</font></font></font></p>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Note that if an init container is created with type <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">once</span></code> and the pod has been started, it does not show up in the generated kube YAML as <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">once</span></code> type init containers are deleted after they are run. If the pod has only been created and not started, it is in the generated kube YAML.
+Init containers created with type <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">always</span></code> are always generated in the kube YAML as they are never deleted, even after running to completion.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，如果使用类型 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">once</span></code> 创建了一个 init 容器，并且 pod 已经启动，它不会显示在生成的 kube YAML 中，因为 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">once</span></code> 类型的 init 容器在运行后会被删除。如果 pod 只是被创建而没有启动，它会出现在生成的 kube YAML 中。使用类型 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">always</span></code> 创建的 init 容器总是会在 kube YAML 中生成，因为它们永远不会被删除，即使运行完成后也是如此。</font></font></font></p>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1"><em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">Note</em>: When using volumes and generating a Kubernetes YAML for an unprivileged and rootless podman container on an <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">SELinux enabled system</strong>,  one of the following options must be completed:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">注意：在使用卷并为启用 SELinux 的系统上的非特权和无根 podman 容器生成 Kubernetes YAML 时，必须完成以下选项之一：</font></font></font></p>
+<ul class="simple" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<li data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Add the “privileged: true” option to the pod spec<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将“privileged: true”选项添加到 pod spec 中</font></font></font></p></li>
+<li data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Add <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">type:</span> <span class="pre">spc_t</span></code> under the <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">securityContext</span></code> <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">seLinuxOptions</span></code> in the pod spec<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在 pod 规范中的 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">securityContext</span></code> <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">seLinuxOptions</span></code> 下添加 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">type:</span> <span class="pre">spc_t</span></code> </font></font></font></p></li>
+<li data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Relabel the volume via the CLI command <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">chcon</span> <span class="pre">-t</span> <span class="pre">container_file_t</span> <span class="pre">-R</span> <span class="pre">&lt;directory&gt;</span></code><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">通过 CLI 命令 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">chcon</span> <span class="pre">-t</span> <span class="pre">container_file_t</span> <span class="pre">-R</span> <span class="pre">&lt;directory&gt;</span></code> 重新标记卷</font></font></font></p></li>
+</ul>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Once completed, the correct permissions are in place to access the volume when the pod/container is created in a Kubernetes cluster.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">完成后，在 Kubernetes 集群中创建 pod/container 时，正确的权限已经设置好以访问卷</font></font></font></p>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Note that the generated Kubernetes YAML file can be used to re-run the deployment via podman-play-kube(1).<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，生成的 Kubernetes YAML 文件可用于通过 podman-play-kube(1) 重新运行部署。</font></font></font></p>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Note that if the pod being generated was created with the <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">--infra-name</strong> flag set, then the generated kube yaml will have the <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">io.podman.annotations.infra.name</strong> set where the value is the name of the infra container set by the user.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">请注意，如果生成的 Pod 是使用 --infra-name 标志创建的，则生成的 kube yaml 将具有用户设置的基础设施容器名称的 io.podman.annotations.infra.name 设置为值。</font></font></font></p>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Also note that both Deployment and DaemonSet can only have <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">restartPolicy</span></code> set to <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">Always</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">还请注意，部署和 DaemonSet 只能将 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">restartPolicy</span></code> 设置为 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">Always</span></code> 。</font></font></font></p>
+</section>
+<section id="options" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h1 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">OPTIONS<a class="headerlink" href="#options" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">选项</font></font></font></h1>
+<section id="filename-f-filename" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h2 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">--filename</strong>, <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">-f</strong>=<em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">filename</em><a class="headerlink" href="#filename-f-filename" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--文件名, -f=文件名 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Output to the given file instead of STDOUT. If the file already exists, <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">kube</span> <span class="pre">generate</span></code> refuses to replace it and returns an error.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">将输出写入指定文件，而不是标准输出。如果文件已经存在， <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">kube</span> <span class="pre">generate</span></code> 拒绝替换它并返回错误。</font></font></font></p>
+</section>
+<section id="podman-only" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h2 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">--podman-only</strong><a class="headerlink" href="#podman-only" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--仅限 podman ¶</font></font></font></h2>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Add podman-only reserved annotations in generated YAML file (Cannot be used by Kubernetes)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在生成的 YAML 文件中添加仅限于 podman 的保留注释（不能被 Kubernetes 使用）</font></font></font></p>
+</section>
+<section id="replicas-r-replica-count" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h2 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">--replicas</strong>, <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">-r</strong>=<em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">replica count</em><a class="headerlink" href="#replicas-r-replica-count" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">--replicas, -r=副本数量 ¶</font></font></font></h2>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">The value to set <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">replicas</span></code> to when generating a <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">Deployment</strong> kind.
+Note: this can only be set with the option <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">--type=deployment</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">在生成 Deployment 类型时设置 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">replicas</span></code> 的值。注意：只能使用选项 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">--type=deployment</span></code> 进行设置。</font></font></font></p>
+</section>
+<section id="service-s" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h2 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">--service</strong>, <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">-s</strong><a class="headerlink" href="#service-s" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a></h2>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Generate a Kubernetes service object in addition to the Pods. Used to generate a Service specification for the corresponding Pod output. In particular, if the object has portmap bindings, the service specification includes a NodePort declaration to expose the service. A random port is assigned by Podman in the specification.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">生成一个 Kubernetes 服务对象，除了 Pods 外。用于为相应的 Pod 输出生成一个 Service 规范。特别是，如果对象具有端口映射绑定，服务规范将包括一个 NodePort 声明以公开服务。Podman 在规范中分配一个随机端口。</font></font></font></p>
+</section>
+<section id="type-t-pod-deployment-daemonset" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h2 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">--type</strong>, <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">-t</strong>=<em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">pod</em> | <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">deployment</em> | <em data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">daemonset</em><a class="headerlink" href="#type-t-pod-deployment-daemonset" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a></h2>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">The Kubernetes kind to generate in the YAML file. Currently, the only supported Kubernetes specifications are <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">Pod</span></code>, <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">Deployment</span></code> and <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">DaemonSet</span></code>. By default, the <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">Pod</span></code> specification is generated.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">生成在 YAML 文件中的 Kubernetes 类型。目前，唯一支持的 Kubernetes 规范是 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">Pod</span></code> ， <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">Deployment</span></code> 和 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">DaemonSet</span></code> 。默认情况下，生成 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">Pod</span></code> 规范。</font></font></font></p>
+</section>
+</section>
+<section id="examples" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h1 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">EXAMPLES<a class="headerlink" href="#examples" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">示例</font></font></font></h1>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Create Kubernetes Pod YAML for the specified container.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为指定的容器创建 Kubernetes Pod YAML。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman kube generate some-mariadb
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-4.8.2
+
+# NOTE: If you generated this yaml from an unprivileged and rootless podman container on an SELinux
+# enabled system, check the podman generate kube man page for steps to follow to ensure that your pod/container
+# has the right permissions to access the volumes added.
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2024-01-09T02:24:55Z"
+  labels:
+    app: some-mariadb-pod
+  name: some-mariadb-pod
+spec:
+  containers:
+  - args:
+    - mariadbd
+    env:
+    - name: MARIADB_ROOT_PASSWORD
+      value: x
+    image: docker.io/library/mariadb:10.11
+    name: some-mariadb
+    ports:
+    - containerPort: 3306
+      hostPort: 34891
+    volumeMounts:
+    - mountPath: /var/lib/mysql
+      name: mariadb_data-pvc
+  volumes:
+  - name: mariadb_data-pvc
+    persistentVolumeClaim:
+      claimName: mariadb_data
+</pre></div>
+</div>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Create Kubernetes Deployment YAML with 3 replicas for the specified container.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">使用 3 个副本为指定容器创建 Kubernetes 部署 YAML。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman kube generate --type deployment --replicas 3 dep-ct
+r
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-4.5.0-dev
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: "2023-03-27T20:45:08Z"
+  labels:
+    app: dep-ctr-pod
+  name: dep-ctr-pod-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dep-ctr-pod
+  template:
+    metadata:
+      annotations:
+        io.podman.annotations.ulimit: nofile=524288:524288,nproc=127332:127332
+      creationTimestamp: "2023-03-27T20:45:08Z"
+      labels:
+        app: dep-ctr-pod
+      name: dep-ctr-pod
+    spec:
+      containers:
+      - command:
+        - top
+        image: docker.io/library/alpine:latest
+        name: dep-ctr
+</pre></div>
+</div>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Create Kubernetes Pod YAML for the specified container with the host directory <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">/home/user/my-data</span></code> bind-mounted onto the container path <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">/volume</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为指定容器创建 Kubernetes Pod YAML，将主机目录 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">/home/user/my-data</span></code> 绑定到容器路径 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">/volume</span></code> 上。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman kube generate my-container-with-bind-mounted-data
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-3.1.0-dev
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-03-18T16:26:08Z"
+  labels:
+    app: my-container-with-bind-mounted-data
+  name: my-container-with-bind-mounted-data
+spec:
+  containers:
+  - command:
+    - /bin/sh
+    image: docker.io/library/alpine:latest
+    name: test-bind-mount
+    volumeMounts:
+    - mountPath: /volume
+      name: home-user-my-data-host
+  restartPolicy: Never
+  volumes:
+  - hostPath:
+      path: /home/user/my-data
+      type: Directory
+    name: home-user-my-data-host
+</pre></div>
+</div>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Create Kubernetes Pod YAML for the specified container with named volume <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">priceless-data</span></code> mounted onto the container path <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">/volume</span></code>.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为指定容器创建 Kubernetes Pod YAML，将命名卷 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">priceless-data</span></code> 挂载到容器路径 <code class="docutils literal notranslate" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="pre">/volume</span></code> 上。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ podman kube generate my-container-using-priceless-data
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-3.1.0-dev
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-03-18T16:26:08Z"
+  labels:
+    app: my-container-using-priceless-data
+  name: my-container-using-priceless-data
+spec:
+  containers:
+  - command:
+    - /bin/sh
+    image: docker.io/library/alpine:latest
+    name: test-bind-mount
+    volumeMounts:
+    - mountPath: /volume
+      name: priceless-data-pvc
+  restartPolicy: Never
+  volumes:
+  - name: priceless-data-pvc
+    persistentVolumeClaim:
+      claimName: priceless-data
+</pre></div>
+</div>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Create Kubernetes Pod YAML for the specified pod and include a service.<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">为指定的 Pod 创建 Kubernetes Pod YAML，并包含一个服务。</font></font></font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo podman kube generate -s demoweb
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-0.12.2-dev
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: 2018-12-18T15:16:06Z
+  labels:
+    app: demoweb
+  name: demoweb-libpod
+spec:
+  containers:
+  - command:
+    - python3
+    - /root/code/graph.py
+    image: quay.io/baude/demoweb:latest
+    name: practicalarchimedes
+    tty: true
+    workingDir: /root/code
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2018-12-18T15:16:06Z
+  labels:
+    app: demoweb
+  name: demoweb-libpod
+spec:
+  ports:
+  - name: "8050"
+    nodePort: 31269
+    port: 8050
+    targetPort: 0
+  selector:
+    app: demoweb
+  type: NodePort
+status:
+  loadBalancer: {}
+</pre></div>
+</div>
+</section>
+<section id="see-also" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h1 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">SEE ALSO<a class="headerlink" href="#see-also" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参见 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1"><strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="podman.1.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="std std-doc" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">podman(1)</span></a></strong>, <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="podman-container.1.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="std std-doc" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">podman-container(1)</span></a></strong>, <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="podman-pod.1.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="std std-doc" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">podman-pod(1)</span></a></strong>, <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="podman-kube-play.1.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="std std-doc" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">podman-kube-play(1)</span></a></strong>, <strong data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="podman-kube-down.1.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="std std-doc" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">podman-kube-down(1)</span></a></strong></p>
+</section>
+<section id="history" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h1 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">HISTORY<a class="headerlink" href="#history" title="Link to this heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">¶</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">历史 ¶</font></font></font></h1>
+<p data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">December 2018, Originally compiled by Brent Baude (bbaude at redhat dot com)<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">2018 年 12 月，最初由 Brent Baude (bbaude at redhat dot com) 编译。</font></font></font></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+        <div class="sphinxsidebarwrapper" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h1 class="logo" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a href="../index.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Podman</a></h1>
+
+
+
+
+
+
+
+
+<h3 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Navigation<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">导航</font></font></font></h3>
+<p class="caption" role="heading" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><span class="caption-text" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Contents:<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">内容:</font></font></font></span></p>
+<ul data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<li class="toctree-l1" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="../Introduction.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Introduction<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">介绍</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="../Commands.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Commands<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">命令</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="../Reference.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Reference<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">参考</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="../Tutorials.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Tutorials<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">教程</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference internal" href="../Search.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Search<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">搜索</font></font></font></a></li>
+<li class="toctree-l1" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a class="reference external" href="https://podman-py.readthedocs.io/en/latest/" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Podman Python</a></li>
+</ul>
+
+<div class="relations" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+<h3 data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Related Topics<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">相关主题</font></font></font></h3>
+<ul data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+  <li data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"><a href="../index.html" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">Documentation overview<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">文档概述</font></font></font></a><ul data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be"></div>
+    </div>
+    <div class="footer" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be" data-immersive-translate-paragraph="1">
+      ©2019, team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">Alabaster 0.7.16</a>
+      
+      |
+      <a href="https://docs.podman.io/en/latest/_sources/markdown/podman-kube-generate.1.md.txt" rel="nofollow" data-immersive-translate-walked="6c3d4bb1-2a81-44d2-9ae2-6fa525d862be">Page source</a><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">©2019，团队。| 由 Sphinx 7.3.7 &amp; Alabaster 0.7.16 提供支持。| 页面来源</font></font></font>
+    </div>
+
+    
+
+    
+  
+</body></html>

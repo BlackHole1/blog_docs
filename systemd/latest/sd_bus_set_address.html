@@ -1,0 +1,78 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_set_address</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_set_address"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_set_address, sd_bus_get_address, sd_bus_set_exec — Set or query the address of the bus connection</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_set_address</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">address</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_get_address</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>const char **<var class="pdparam">address</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_set_exec</b>(</code></td><td>sd_bus *<var class="pdparam">bus</var>, </td></tr><tr><td> </td><td>const char *<var class="pdparam">path</var>, </td></tr><tr><td> </td><td>char *const *<var class="pdparam">argv</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_bus_set_address()</code> configures a list of addresses of bus brokers to try to
+    connect to from a subsequent
+    <a href="sd_bus_start.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_start</span>(3)</span></a> call.
+    The argument is a "<code class="literal">;</code>"-separated list of addresses to try. Each item must be one of the
+    following:
+    </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>A unix socket address specified as
+        "<code class="literal">unix:guid=<em class="replaceable"><code>guid</code></em>,path=<em class="replaceable"><code>path</code></em></code>" or
+        "<code class="literal">unix:guid=<em class="replaceable"><code>guid</code></em>,abstract=<em class="replaceable"><code>path</code></em></code>".
+        Exactly one of the <code class="varname">path=</code> and <code class="varname">abstract=</code> keys must be present,
+        while <code class="varname">guid=</code> is optional.</p></li><li class="listitem"><p>A TCP socket address specified as
+        "<code class="literal">tcp:[guid=<em class="replaceable"><code>guid</code></em>,][host=<em class="replaceable"><code>host</code></em>][,port=<em class="replaceable"><code>port</code></em>][,family=<em class="replaceable"><code>family</code></em>]</code>".
+        One or both of the <code class="varname">host=</code> and <code class="varname">port=</code> keys must be present, while
+        the rest is optional. <em class="replaceable"><code>family</code></em> may be either <code class="option">ipv4</code> or
+        <code class="option">ipv6</code>.</p></li><li class="listitem"><p>An executable to spawn specified as
+        "<code class="literal">unixexec:guid=<em class="replaceable"><code>guid</code></em>,path=<em class="replaceable"><code>path</code></em>,argv1=<em class="replaceable"><code>argument</code></em>,argv2=<em class="replaceable"><code>argument</code></em>,...</code>".
+        The <code class="varname">path=</code> key must be present, while <code class="varname">guid=</code> is optional.</p></li><li class="listitem"><p>A machine (container) to connect to specified as
+        "<code class="literal">x-machine-unix:guid=<em class="replaceable"><code>guid</code></em>,machine=<em class="replaceable"><code>machine</code></em>,pid=<em class="replaceable"><code>pid</code></em></code>".
+        Exactly one of the <code class="varname">machine=</code> and <code class="varname">pid=</code> keys must be present,
+        while <code class="varname">guid=</code> is optional. <em class="parameter"><code>machine</code></em> is the name of a local
+        container. See
+        <a href="machinectl.html#"><span class="citerefentry"><span class="refentrytitle">machinectl</span>(1)</span></a> for
+        more information about the "machine" concept. "<code class="literal">machine=.host</code>" may be used to specify
+        the host machine. A connection to the standard system bus socket inside of the specified machine will
+        be created.</p></li></ul></div><p>In all cases, parameter <em class="parameter"><code>guid</code></em> is an identifier of the remote peer, in the
+    syntax accepted by
+    <a href="sd_id128_from_string.html#"><span class="citerefentry"><span class="refentrytitle">sd_id128_from_string</span>(3)</span></a>.
+    If specified, the identifier returned by the peer after the connection is established will be checked and
+    the connection will be rejected in case of a mismatch.</p><p>Note that the addresses passed to <code class="function">sd_bus_set_address()</code> may not be verified
+    immediately. If they are invalid, an error may be returned e.g. from a subsequent call to
+    <a href="sd_bus_start.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_start</span>(3)</span></a>.
+    </p><p><code class="function">sd_bus_get_address()</code> returns any previously set addresses. In addition to
+    being explicitly set by <code class="function">sd_bus_set_address()</code>, the address will also be set
+    automatically by
+    <a href="sd_bus_open.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_open</span>(3)</span></a> and
+    similar calls, based on environment variables or built-in defaults.</p><p><code class="function">sd_bus_set_exec()</code> is a shorthand function for setting a
+    "<code class="literal">unixexec</code>" address that spawns the given executable with the given arguments.
+    If <em class="parameter"><code>argv</code></em> is <code class="constant">NULL</code>, the given executable is spawned
+    without any extra arguments.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>On success, these functions return a non-negative integer. On failure, they return a negative
+    errno-style error code.</p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>The input parameters <em class="parameter"><code>bus</code></em> or <em class="parameter"><code>address</code></em> are <code class="constant">NULL</code>.
+          </p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ENOPKG"><span class="term"><code class="constant">-ENOPKG</code></span><a class="headerlink" title="Permalink to this term" href="#-ENOPKG">¶</a></dt><dd><p>The bus object <em class="parameter"><code>bus</code></em> could not be resolved.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-EPERM"><span class="term"><code class="constant">-EPERM</code></span><a class="headerlink" title="Permalink to this term" href="#-EPERM">¶</a></dt><dd><p>The input parameter <em class="parameter"><code>bus</code></em> is in a wrong state
+          (<code class="function">sd_bus_set_address()</code> may only be called once on a newly-created bus object).</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ECHILD"><span class="term"><code class="constant">-ECHILD</code></span><a class="headerlink" title="Permalink to this term" href="#-ECHILD">¶</a></dt><dd><p>The bus object <em class="parameter"><code>bus</code></em> was created in a different
+          process.</p><p><a name="v246"></a>Added in version 246.</p></dd><dt id="-ENODATA"><span class="term"><code class="constant">-ENODATA</code></span><a class="headerlink" title="Permalink to this term" href="#-ENODATA">¶</a></dt><dd><p>The bus object <em class="parameter"><code>bus</code></em> has no address configured.</p><p><a name="v246"></a>Added in version 246.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p><p><a name="getenv"></a>The code described here uses
+<a href="https://man7.org/linux/man-pages/man3/getenv.3.html"><span class="citerefentry"><span class="refentrytitle">getenv</span>(3)</span></a>,
+which is declared to be not multi-thread-safe. This means that the code calling the functions described
+here must not call
+<a href="https://man7.org/linux/man-pages/man3/setenv.3.html"><span class="citerefentry"><span class="refentrytitle">setenv</span>(3)</span></a>
+from a parallel thread. It is recommended to only do calls to <code class="function">setenv()</code>
+from an early phase of the program when no other threads have been started.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_set_address()</code>,
+    <code class="function">sd_bus_get_address()</code>, and
+    <code class="function">sd_bus_set_exec()</code> were added in version 246.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_new.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_new</span>(3)</span></a>,
+      <a href="sd_bus_start.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_start</span>(3)</span></a>,
+      <a href="systemd-machined.service.html#"><span class="citerefentry"><span class="refentrytitle">systemd-machined.service</span>(8)</span></a>,
+      <a href="machinectl.html#"><span class="citerefentry"><span class="refentrytitle">machinectl</span>(1)</span></a>
+    </p></div></div></body></html>

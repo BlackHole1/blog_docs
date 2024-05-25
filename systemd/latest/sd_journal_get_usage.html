@@ -1,0 +1,34 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_journal_get_usage</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_journal_get_usage"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_journal_get_usage — Journal disk usage</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-journal.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_journal_get_usage</b>(</code></td><td>sd_journal *<var class="pdparam">j</var>, </td></tr><tr><td> </td><td>uint64_t *<var class="pdparam">bytes</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_journal_get_usage()</code> determines the
+    total disk space currently used by journal files (in bytes). If
+    <code class="constant">SD_JOURNAL_LOCAL_ONLY</code> was passed when opening
+    the journal, this value will only reflect the size of journal
+    files of the local host, otherwise of all hosts.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p><code class="function">sd_journal_get_usage()</code> returns 0 on
+    success or a negative errno-style error code.</p></div><div class="refsect1"><a name="id-1.7"></a><h2 id="Notes">Notes<a class="headerlink" title="Permalink to this headline" href="#Notes">¶</a></h2><p><a name="strict"></a>All functions listed here are thread-agnostic and only a single specific thread may operate on a
+given object during its entire lifetime. It's safe to allocate multiple independent objects and use each from a
+specific thread in parallel. However, it's not safe to allocate such an object in one thread, and operate or free it
+from any other, even if locking is used to ensure these threads don't operate on it at the very same time.</p><p><a name="pkgconfig-text"></a>Functions described here are available as a shared
+  library, which can be compiled against and linked to with the
+  <code class="constant">libsystemd</code> <a href="http://linux.die.net/man/1/pkg-config"><span class="citerefentry"><span class="refentrytitle">pkg-config</span>(1)</span></a>
+  file.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_journal_get_usage()</code> was added in version 190.</p></div><div class="refsect1"><a name="id-1.9"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-journal.html#"><span class="citerefentry"><span class="refentrytitle">sd-journal</span>(3)</span></a>,
+      <a href="sd_journal_open.html#"><span class="citerefentry"><span class="refentrytitle">sd_journal_open</span>(3)</span></a>,
+    </p></div></div></body></html>

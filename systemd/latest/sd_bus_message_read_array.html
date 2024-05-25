@@ -1,0 +1,44 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>sd_bus_message_read_array</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../nav.js"></script><style>
+    a.headerlink {
+      color: #c60f0f;
+      font-size: 0.8em;
+      padding: 0 4px 0 4px;
+      text-decoration: none;
+      visibility: hidden;
+    }
+
+    a.headerlink:hover {
+      background-color: #c60f0f;
+      color: white;
+    }
+
+    h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, dt:hover > a.headerlink {
+      visibility: visible;
+    }
+  </style><a href="index.html">Index </a>·
+  <a href="systemd.directives.html">Directives </a><span style="float:right">systemd 255</span><hr><div class="refentry"><a name="sd_bus_message_read_array"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>sd_bus_message_read_array — Access an array of elements in a message</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;systemd/sd-bus.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef">int <b class="fsfunc">sd_bus_message_read_array</b>(</code></td><td>sd_bus_message *<var class="pdparam">m</var>, </td></tr><tr><td> </td><td>char <var class="pdparam">type</var>, </td></tr><tr><td> </td><td>const void **<var class="pdparam">ptr</var>, </td></tr><tr><td> </td><td>size_t *<var class="pdparam">size</var><code>)</code>;</td></tr></table><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a name="id-1.5"></a><h2 id="Description">Description<a class="headerlink" title="Permalink to this headline" href="#Description">¶</a></h2><p><code class="function">sd_bus_message_read_array()</code> provides access to an array elements in the
+    bus message <em class="parameter"><code>m</code></em>. The "read pointer" in the message must be right before an array of type
+    <em class="parameter"><code>type</code></em>. As a special case, <em class="parameter"><code>type</code></em> may be
+    <code class="constant">NUL</code>, in which case any trivial type is acceptable. A pointer to the array data is returned
+    in the parameter <em class="parameter"><code>ptr</code></em> and the size of array data (in bytes) is returned in the
+    parameter <em class="parameter"><code>size</code></em>. If the returned <em class="parameter"><code>size</code></em> parameter is 0, a
+    valid non-null pointer will be returned as <em class="parameter"><code>ptr</code></em>, but it may not be
+    dereferenced. The data is aligned as appropriate for the data type. The data is part of the message — it
+    may not be modified and is valid only as long as the message is referenced. After this function returns,
+    the "read pointer" points at the next element after the array.</p><p>Note that this function only supports arrays of trivial types, i.e. arrays of booleans, the various
+    integer types, as well as floating point numbers. In particular it may not be used for arrays of strings,
+    structures or similar.</p></div><div class="refsect1"><a name="id-1.6"></a><h2 id="Return Value">Return Value<a class="headerlink" title="Permalink to this headline" href="#Return%20Value">¶</a></h2><p>
+      On success and when an array was read, <code class="function">sd_bus_message_read_array()</code> returns an
+      integer greater than zero. If invoked while inside a container element (such as an array, e.g. when
+      operating on an array of arrays) and the final element of the outer container has been read already and
+      the read pointer is thus behind the last element of the outer container this call returns 0 (and the
+      returned pointer will be <code class="constant">NULL</code> and the size will be 0). On failure, it returns a
+      negative errno-style error code.
+    </p><div class="refsect2"><a name="id-1.6.3"></a><h3 id="Errors">Errors<a class="headerlink" title="Permalink to this headline" href="#Errors">¶</a></h3><p>Returned errors may indicate the following problems:</p><div class="variablelist"><dl class="variablelist"><dt id="-EINVAL"><span class="term"><code class="constant">-EINVAL</code></span><a class="headerlink" title="Permalink to this term" href="#-EINVAL">¶</a></dt><dd><p>Specified type is invalid or not a trivial type (see above), or the message
+          parameter or one of the output parameters are <code class="constant">NULL</code>.</p></dd><dt id="-EOPNOTSUPP"><span class="term"><code class="constant">-EOPNOTSUPP</code></span><a class="headerlink" title="Permalink to this term" href="#-EOPNOTSUPP">¶</a></dt><dd><p>The byte order in the message is different than native byte
+          order.</p></dd><dt id="-EPERM"><span class="term"><code class="constant">-EPERM</code></span><a class="headerlink" title="Permalink to this term" href="#-EPERM">¶</a></dt><dd><p>The message is not sealed.</p></dd><dt id="-EBADMSG"><span class="term"><code class="constant">-EBADMSG</code></span><a class="headerlink" title="Permalink to this term" href="#-EBADMSG">¶</a></dt><dd><p>The message cannot be parsed.</p></dd></dl></div></div></div><div class="refsect1"><a name="id-1.7"></a><h2 id="History">History<a class="headerlink" title="Permalink to this headline" href="#History">¶</a></h2><p><code class="function">sd_bus_message_read_array()</code> was added in version 240.</p></div><div class="refsect1"><a name="id-1.8"></a><h2 id="See Also">See Also<a class="headerlink" title="Permalink to this headline" href="#See%20Also">¶</a></h2><p>
+      <a href="systemd.html#"><span class="citerefentry"><span class="refentrytitle">systemd</span>(1)</span></a>,
+      <a href="sd-bus.html#"><span class="citerefentry"><span class="refentrytitle">sd-bus</span>(3)</span></a>,
+      <a href="sd_bus_message_read.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_read</span>(3)</span></a>,
+      <a href="sd_bus_message_read_strv.html#"><span class="citerefentry"><span class="refentrytitle">sd_bus_message_read_strv</span>(3)</span></a>
+    </p></div></div></body></html>
