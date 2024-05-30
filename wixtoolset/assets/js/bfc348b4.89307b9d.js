@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwixweb=self.webpackChunkwixweb||[]).push([[3810],{92457:e=>{e.exports=JSON.parse('{"permalink":"/wixtoolset/news/page/7","page":7,"postsPerPage":10,"totalPages":8,"totalCount":74,"previousPage":"/wixtoolset/news/page/6","nextPage":"/wixtoolset/news/page/8","blogDescription":"Updates about the WiX Toolset","blogTitle":"WiX Toolset News"}')}}]);
